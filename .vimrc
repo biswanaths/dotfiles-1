@@ -1,8 +1,12 @@
 "-----------------------"
-" File: .VIMRC          "
-" Author: Watabou       "
-" Version: 1.0          "
+"File: .VIMRC          "
+"Author: Watabou       "
+"Version: 1.0          "
 "-----------------------"
+ 
+"Pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 " General Settings
 syntax on
@@ -11,7 +15,7 @@ set shiftwidth=2
 set tabstop=2
 
 if has("autocmd")
-  filetype plugin indent on
+    filetype plugin indent on
 endif
 
 set magic
@@ -65,7 +69,7 @@ set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
-"Typo Fixes
+"Typos
 iab anf and
 iab adn and
 iab teh the
@@ -75,10 +79,12 @@ iab treu true
 
 "Mapping Settings
 imap <C-l> <Space>=><Space>
+imap <C-p> +
+map <F2> :NERDTreeToggle<CR>
 
 "Theme Settings
 colorscheme molokai
-let g:molokai_original=1
+let g:molokai_original=0
 
 " Intelligent tab completion
 inoremap <silent> <Tab> <C-r>=<SID>InsertTabWrapper(1)<CR>
