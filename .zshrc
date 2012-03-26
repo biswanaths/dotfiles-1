@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+# Borrowed some functions from Derek Wyatt's amazing .zshrc file 
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
