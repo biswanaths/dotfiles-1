@@ -8,16 +8,19 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+"Exuberant Ctags Path
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+set tags=tags
+
 " General Settings
+set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 syntax on
 set background=dark
 set shiftwidth=2
 set tabstop=2
 set magic
 set showcmd
-set modeline
 set nocompatible "I want vim not vi
-set hidden
 set ffs=unix,dos,mac
 set encoding=utf8
 set history=200
@@ -76,12 +79,15 @@ iab treu true
 
 "Mapping Settings
 imap <C-l> <Space>=><Space>
+"My plus key is kinda wonky, shut up.
 imap <C-p> +
+" Some shortcuts to commonly used toggles and other stuff.
 map <F2> :NERDTreeToggle<CR>
+"Reindent the entire file.
 map <F3> gg=G
 
 "Theme Settings
 colorscheme molokai
-let g:molokai_original=0
+let g:molokai_original=1
 
 "End of .vimrc File"
