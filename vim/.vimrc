@@ -34,7 +34,7 @@ set scrolloff=3
 set hidden "Manage multiple buffers effectively. 
 set shiftwidth=2
 set tabstop=2
-set cpoptions+=$
+set cpoptions+=$ "Makes the c command even more useful
 set magic
 set showcmd
 set ffs=unix,dos,mac
