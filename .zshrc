@@ -1,35 +1,20 @@
 # Path to your oh-my-zsh configuration.
-# Borrowed some functions from Derek Wyatt's amazing .zshrc file 
 ZSH=$HOME/.oh-my-zsh
-
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="miloshadzic"
+DISABLE_AUTO_UPDATE="true"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Useful aliases
+alias rm="rm -v -i"
+alias mv="mv -v -i"
+alias cp="cp -v -i"
+alias musicmpd="mpd && mpdscribble && ncmpcpp"
+alias vim="mvim -v"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git mercurial autojump compleat gem github textmate battery osx)
 
 source $ZSH/oh-my-zsh.sh
@@ -46,6 +31,9 @@ setopt correctall autocd recexact longlistjobs
 setopt autoresume histignoredups pushdsilent
 setopt autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
+
+#Stderr
+exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
@@ -157,13 +145,11 @@ zstyle ':completion:*:ssh:*' group-order \
 zstyle '*' single-ignored show
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH # Load macports funtion
-export MANPATH=/opt/local/share/man:$MANPATH # Load the man pages for port
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
 
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/bin/vim
 export JAVA_HOME=/usr/local/jdk
 
 if which dircolors > /dev/null; then
@@ -299,4 +285,3 @@ function findClass
         fi
         return 0
     }
-
