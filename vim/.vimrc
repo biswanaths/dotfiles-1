@@ -46,6 +46,7 @@ set textwidth=80
 set diffopt+=iwhite
 
 set scrolloff=8
+set mouse=a
 set hidden "Manage multiple buffers effectively. 
 set cpoptions+=$
 set magic
@@ -127,8 +128,11 @@ nmap <leader>l mQviwu`Q
 "Theme Settings
 colorscheme molokai
 let g:molokai_original = 1
-set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
+
+"Cursor shape settings
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 "End of .vimrc File"
