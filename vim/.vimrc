@@ -14,10 +14,16 @@ filetype indent on
 "Pathogen
 call pathogen#infect()
 call pathogen#helptags()
+
 "Exuberant Ctags Path
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 set tags=tags;~/
+
+"Set TagBar width from 40 to 30.
 let g:tagbar_width = 30
+
+"Set gundo preview width
+let g:gundo_preview_height=1
 
 "Java Omnicompletion
 if has("autocmd")
@@ -25,17 +31,14 @@ if has("autocmd")
 endif
 
 " General Settings
-"Status Line
-
 if has ("gui_running")
     set guioptions-=T
     set guioptions-=r
 endif
 
-if has("statusline") && !&cp
-	set laststatus=2
-    set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-endif
+"Status Line + Powerline
+set laststatus=2
+let g:Powerline_symbols='fancy'
 
 "Use vim's title instead of the terminal's
 set title
@@ -107,11 +110,14 @@ iab treu true
 imap <C-l> <Space>=><Space>
 "Reindent the entire file.
 nmap <leader>fef ggVG=
-            
-"Tagbar
-nnoremap <silent> <F9> :TagbarToggle<CR>
+
+"Help for vim is mapped to F1 automatically. 
 "NerdTree
-map <F2> :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+"Gundo
+nnoremap <F3> :GundoToggle<CR>
+"Tagbar
+nnoremap <silent> <F4> :TagbarToggle<CR>
 
 "Puts pwd into the path
 cmap <C-P> <C-R>=expand("%:p:h") . "/"
@@ -132,6 +138,7 @@ let g:molokai_original = 1
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
 
 "Cursor shape settings
+"Changes the cursor shape depending on the current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
