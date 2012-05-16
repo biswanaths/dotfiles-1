@@ -11,9 +11,14 @@ ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 
 # Autoload stuff
-autoload -U colors; colors
-autoload -U promptinit; promptinit
-autoload -U compinit; compinit;
+
+autoload -U compinit promptinit colors
+compinit
+promptinit
+colors
+
+# Load fasd. 
+eval "$(fasd --init auto)"
 
 # Theme Options
 
@@ -30,8 +35,10 @@ alias cp="cp -vi"   # Set verbose and interaction on by default
 alias mv="mv -vi"   # Set verbose and interaction on by default
 alias ll="ls -l"    # Show all dirs and files by list and permissions
 alias la="ls -a"    # Show all dirs and files
-alias j="z"         # Use fasd instead of autojump
 alias c="clear"     # Clear the screen easily.
+alias sv="source ~/.vimrc"
+alias sz="source ~/.zshrc"
+alias j="z"
 
 # Load all the plugins
 plugins=(brew battery git autojump compleat osx)
@@ -62,10 +69,23 @@ HISTSIZE=1000
 SAVEHIST=1000
 HOSTNAME="`hostname`"
 
-# Some more options
-bindkey '^I' complete-word # complete on tab, leave expansion to _expand 
+# Some zsh completion style options
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Functions
+
+# Inserts sudo at the beginning of the line with Option-s
+insert sudo() {
+    zle beginning-of-line
+    zle -U "sudo "
+}
+
+# Key bindings
+bindkey '^I' complete-word # complete on tab, leave expansion to _expand 
+bindkey "^[s" insert-sudo
+
+################################# End of .zshrc ###############################

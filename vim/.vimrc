@@ -69,6 +69,9 @@ set mousehide
 "Manage multiple buffers effectively. 
 set hidden
 
+" Fast terminal connection
+set ttyfast
+
 " Change the behavior of the change command so that it shows a dollar sign at
 " the point where the text will change upto.
 set cpoptions+=$
@@ -87,6 +90,10 @@ set encoding=utf8
 
 "Store some history
 set history=1000
+
+" For persistent undo. This setting will restore the file's undos even if it's
+" reloaded.
+set undofile
 
 "Store a specified amount of undos
 set undolevels=300
@@ -123,8 +130,6 @@ set shiftwidth=4
 set tabstop=4
 set copyindent
 set preserveindent 
-"set list
-"set listchars=tab:¦\
 
 set wildmenu
 set wildmode=list:longest
@@ -144,7 +149,6 @@ set diffopt=filler,iwhite
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-
 
 "Typos
 iab anf and
@@ -166,6 +170,9 @@ let java_allow_cpp_keywords=1
 
 "Change mapleader to "," character
 let mapleader=","
+
+" If in insert mode, pressing jj will take you back to normal mode
+inoremap jj <ESC>
 
 "Reindent the entire file.
 nmap ,fef ggVG=
@@ -216,6 +223,9 @@ let g:molokai_original = 1
 "Changes the cursor shape depending on the current mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Save file when focus is lost
+au FocusLost * :wa
 
 " Various Plugin Settings
 
