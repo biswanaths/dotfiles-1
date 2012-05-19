@@ -20,6 +20,9 @@ colors
 # Load fasd. 
 eval "$(fasd --init auto)"
 
+# Hub 
+eval "$(hub alias -s)"
+
 # Theme Options
 
 # Using a theme inspired by Steve Losh. 
@@ -28,7 +31,7 @@ ZSH_THEME="macademia"
 # Uncomment this if you want automatic updates
 # DISABLE_AUTO_UPDATE="true"
 
-# Cool aliases personalized for me.
+# Cool aliases personalized to my liking.
 alias vim="mvim -v"                                 # Use MacVim inside iTerm.
 alias cp="cp -vi"                                   # Set verbose and interaction on by default
 alias mv="mv -i -v"                                 # Set verbose and interaction on by default
@@ -44,7 +47,7 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Load all the plugins
-plugins=(autojump brew compleat git github osx rvm textmate zsh-syntax-highlighting)
+plugins=(autojump brew git compleat zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Shell options

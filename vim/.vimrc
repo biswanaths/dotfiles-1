@@ -1,11 +1,10 @@
-
 "-----------------------"
 " File: .vimrc          "
 " Author: Watabou       "
-" Modified: 05/13/2012  "
+" Modified: 05/18/2012  "
 "-----------------------"
 
-" Vim not vi 
+" Let's use vim instead of vi 
 set nocompatible
 
 " Load Pathogen
@@ -22,7 +21,6 @@ filetype indent on
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 set tags=tags;~/
 
-
 "Java Omnicompletion
 if has("autocmd")
     autocmd FileType java setlocal omnifunc=javacomplete#Complete
@@ -37,17 +35,18 @@ if has ("gui_running")
 endif
 
 "Status Line + Powerline
+
 set laststatus=2
 
 " Set powerline theme to fancy by default
-" Note: Only use fancy if you have patched the font first! Else, use 'unicode'
+" Note : Only use fancy if you have patched the font first! Else, use 'unicode'
 let g:Powerline_symbols='fancy'
 
 "Uncomment the following and comment the above to use a different Powerline theme
 "let Powerline_theme='skwp'
 "let Powerline_colorscheme='skwp'
 
-"Use vim's title instead of the terminal's
+"Use vim's title
 set title
 
 "Set text width 
@@ -60,7 +59,7 @@ set diffopt+=iwhite
 " and bottom when scrolling
 set scrolloff=8
 
-"Allow use of the mouse for [a]ll modes
+"Allow use of the mouse for all modes
 set mouse=a
 
 "Hide the mouse when typing
@@ -86,16 +85,16 @@ set showcmd
 set ffs=unix,dos,mac
 
 "Set the default encoding
-set encoding=utf8
+set encoding=utf-8
 
 "Store some history
 set history=1000
 
-" For persistent undo. This setting will restore the file's undos even if it's
+" Use persistent undo that enables vim to undo the file even if the file's
 " reloaded.
 set undofile
 
-"Store a specified amount of undos
+"Store a specified amount of undos -- useful for persistent undo.
 set undolevels=300
 
 "Allow backspacing over indent, end of line, and start
@@ -149,16 +148,18 @@ set diffopt=filler,iwhite
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
 
 "Typos
 iab anf and
 iab adn and
 iab flase false
 iab teh the
-iab Teh the
+iab Teh The
 iab thre there
 iab treu true
 iab Taht That
+iab taht that
 iab tath that
 iab Seperate Separate
 iab seperate separate
@@ -183,6 +184,10 @@ nmap <silent> ,wa :1,9000bwipeout<cr>
 "Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 
+" Yank text to the OS X clipboard
+noremap ,y "*y
+noremap ,yy "*Y
+
 " Change directory to the current file's directory
 nmap <silent> ,cd :lcd %h<CR>
 
@@ -204,17 +209,14 @@ nmap ,l mQviwu`Q
 "Theme Settings
 
 " For Solarized:
-"set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
 
 " For Molokai: 
-colorscheme molokai
+"colorscheme molokai
 "Use original colors
-let g:molokai_original = 1
+"let g:molokai_original = 1
 
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
@@ -229,7 +231,7 @@ au FocusLost * :wa
 
 " Various Plugin Settings
 
-"----------- NERDTree Settings -------------------------
+"----------- NERDTree Settings --------------------------
 
 "Always show the bookmarks
 let NERDTreeShowBookmarks=1
@@ -237,7 +239,7 @@ let NERDTreeShowBookmarks=1
 "NERDTree open and close toggle
 nmap <F2> :NERDTreeToggle<CR>
 
-"----------- Tagbar Settings ---------------------------
+"----------- Tagbar Settings ----------------------------
 
 "Tagbar Toggle 
 nnoremap <silent> <F4> :TagbarToggle<CR>
@@ -245,7 +247,7 @@ nnoremap <silent> <F4> :TagbarToggle<CR>
 "Set TagBar width from 40 to 30.
 let g:tagbar_width = 30
 
-"----------- Gundo Settings ---------------------------
+"----------- Gundo Settings -----------------------------
 
 "Gundo toggle
 nnoremap <F3> :GundoToggle<CR>
@@ -253,10 +255,14 @@ nnoremap <F3> :GundoToggle<CR>
 "Set gundo preview width
 let g:gundo_preview_height=1
 
-"----------- FuzzyFinder Settings --------------------
+"Set gundo preview and window width
+let g:gundo_width=30
 
+"----------- FuzzyFinder Settings -----------------------
 "FuzzyFinder File
-nmap <silent> ,ff :FufFile<cr>
+"Start search in home directory since I rarely want
+"to search a file outside my home directory.
+nmap <silent> ,ff :FufFile ~/<cr>
 
 "FuzzyFinder Buffer
 nmap <silent> ,fb :FufBuffer<cr>
@@ -264,9 +270,17 @@ nmap <silent> ,fb :FufBuffer<cr>
 "Start FuzzyFinder in ~/.vim dir
 nmap <silent> ,fv :FufFile ~/.vim/<cr>
 
-"----------- Yankring Settings -----------------------
+"----------- Yankring Settings --------------------------
 
 "Yankring history file
 let g:yankring_history_dir = '~/.vim/tmp'
 
-"--------------------End of .vimrc File------------------
+"---------- Vim-Notes Settings----------------------------
+
+"Specify the directory where all notes are stored
+let g:notes_directory = '~/Documents/Uni/Notes'
+
+" Append .txt extension to all notes.
+let g:notes_suffix = '.txt'
+
+"-------------------- End of .vimrc File -----------------------------
