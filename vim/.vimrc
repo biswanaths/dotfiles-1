@@ -1,7 +1,7 @@
 "-----------------------"
 " File: .vimrc          "
 " Author: Watabou       "
-" Modified: 05/18/2012  "
+" Modified: 05/19/2012  "
 "-----------------------"
 
 " Let's use vim instead of vi 
@@ -178,6 +178,9 @@ inoremap jj <ESC>
 "Reindent the entire file.
 nmap ,fef ggVG=
 
+" Ack -- better than grep.
+nmap ,a <Esc>:Ack! 
+
 " Wipe out all buffers
 nmap <silent> ,wa :1,9000bwipeout<cr>
 
@@ -221,10 +224,15 @@ colorscheme solarized
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
 
-"Cursor shape settings
 "Changes the cursor shape depending on the current mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" Tmux wasn't changing the cursor for me so a little if statement:
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else 
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " Save file when focus is lost
 au FocusLost * :wa
@@ -282,5 +290,22 @@ let g:notes_directory = '~/Documents/Uni/Notes'
 
 " Append .txt extension to all notes.
 let g:notes_suffix = '.txt'
+
+"---------- Vim-Indent-Guides Settings--------------------
+
+"Change the colors of the indents
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size=1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey  ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
+
+
+"---------- Vim-EasyTags Settings ------------------------
+
+"Let easy tags be always enabled
+let g:easytags_always_enabled = 1
+
+"Change the location of easytags file
+let g:easytags_file = '~/.vim/tags'
 
 "-------------------- End of .vimrc File -----------------------------
