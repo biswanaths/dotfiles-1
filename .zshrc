@@ -31,6 +31,10 @@ ZSH_THEME="macademia"
 # Uncomment this if you want automatic updates
 # DISABLE_AUTO_UPDATE="true"
 
+# Load all the plugins
+plugins=(autojump brew compleat git osx rvm zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
 # Cool aliases personalized to my liking.
 alias vim="mvim -v"                                 # Use MacVim inside iTerm.
 alias cp="cp -vi"                                   # Set verbose and interaction on by default
@@ -38,6 +42,7 @@ alias mv="mv -i -v"                                 # Set verbose and interactio
 alias ll="ls -l"                                    # Show all dirs and files by list and permissions
 alias la="ls -a"                                    # Show all dirs and files
 alias c="clear"                                     # Clear the screen easily.
+alias ez="mvim -v ~/.zshrc"                         # edit .zshrc file easily.
 alias sz="source ~/.zshrc"                          # Reload .zshrc easily.
 alias j="z"                                         # fasd > autojump
 alias musicmpd="mpd && mpdscribble && ncmpcpp"      # some fantastic music players
@@ -46,17 +51,34 @@ alias musicmpd="mpd && mpdscribble && ncmpcpp"      # some fantastic music playe
 alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killall Finder"
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
-# Load all the plugins
-plugins=(autojump brew git compleat zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
-
 # Shell options
-setopt MENUCOMPLETE
-setopt ALL_EXPORT
-setopt notify globdots correct pushdtohome cdablevars autolist
-setopt correctall autocd recexact longlistjobs
-setopt autoresume histignoredups pushdsilent
-setopt autopushd pushdminus extendedglob rcquotes mailwarning
+setopt menucomplete       # On an ambiguous completion, inserts first match immediately.
+setopt printexitvalue     # Alert if something failed.
+setopt nobeep             # beeps are annoying.
+setopt notify             # report status of background jobs immediately.
+setopt globdots           # don't require a leading period in a filename to be matched. 
+setopt correct            # correct the spelling of commands.
+setopt pushdtohome        # just entering pushd will cd to home folder.
+setopt cdablevars         # try expand a "cd" argument if. 
+setopt autolist           # automatically list choices when zsh doesn't understand a command.
+setopt correctall         # try to correct the spelling of all arguments in a line.
+setopt autocd             # imply "cd" when I only type a path. 
+setopt recexact           # when completing, recognize exact matches. 
+setopt longlistjobs       # list jobs in the long format.
+setopt autoresume         # use single word simple commands for resumption of a existing job.
+setopt histignoredups     # don't add duplicate commands into the history list.
+setopt histreduceblanks   # and don't add blanks either.
+setopt histignorespace    # done add a command to history that starts with a space
+setopt pushdsilent        # don't print the directory stack after pushd/popd.
+setopt autopushd          # make "cd" command = pushd.
+setopt pushdminus         # exchange + and - when used with a number to specify a dir in the stack. 
+setopt extendedglob       # enable more globbing features.
+setopt rcquotes           # allow multiple quotes to signify a single quote within a single quoted string.
+setopt globcomplete       # expand globs
+setopt rmstarwait         # if issuing the "rm *", tell zsh to wait 10 seconds. (enough time to cancel/hit ctrl-c)
+setopt completeinword     # complete inside a word.
+setopt sharehistory       # share history between multiple shells
+
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
 
@@ -68,8 +90,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # History settings
 HISTFILE=$HOME/.zhistory
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+
 HOSTNAME="`hostname`"
 
 # Some zsh completion style options
@@ -80,7 +103,12 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' verbose yes
+
+# color listing
+zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# make completion prettier with colors!
+zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
 # complete process ids
 zstyle ':completion:*:*:kill:*' menu yes select
@@ -94,12 +122,14 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # Inserts sudo at the beginning of the line with Option-s
 insert sudo() {
-    zle beginning-of-line
-    zle -U "sudo "
+zle beginning-of-line
+zle -U "sudo "
 }
 
-# Key bindings
+# Key bindings 
+
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand 
-bindkey "^[s" insert-sudo
+bindkey "^[s" insert-sudo  # insert a sudo at the beginning of the line
+bindkey -v                 # Let's use vi mode instead of emacs.
 
 ################################# End of .zshrc ###############################
