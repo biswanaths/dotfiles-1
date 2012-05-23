@@ -130,8 +130,12 @@ set tabstop=4
 set copyindent
 set preserveindent 
 
+" Wild menu settings
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest,list
+" tell wildmenu to ignore these types of files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.bmp,*.gif,*.jpg,*.jpeg,*.png
+set wildignore+=*.pages,*.ichat,*.DS_Store,.git,.hg,.svn
 set wildchar=<TAB>
 
 "Completes by the whole tag, instead of just the function name
@@ -168,6 +172,19 @@ iab seperate separate
 let java_allow_cpp_keywords=1
 
 "Mapping Settings
+
+" okay let's try no arrow keys...
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" I'm not ready yet for no arrow keys in insert mode.
+
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
 "Change mapleader to "," character
 let mapleader=","
@@ -213,6 +230,7 @@ nmap ,l mQviwu`Q
 
 " For Solarized:
 set background=dark
+call togglebg#map("")
 let g:solarized_termtrans=1
 colorscheme solarized
 
@@ -265,6 +283,10 @@ let g:gundo_preview_height=1
 
 "Set gundo preview and window width
 let g:gundo_width=30
+
+
+"----------- CtrlP Settings -----------------------------
+let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
 
 "----------- FuzzyFinder Settings -----------------------
 "FuzzyFinder File
