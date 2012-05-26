@@ -149,6 +149,7 @@ set hlsearch
 set diffopt=filler,iwhite
 
 " Backup settings
+set noswapfile
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -174,10 +175,10 @@ let java_allow_cpp_keywords=1
 "Mapping Settings
 
 " okay let's try no arrow keys...
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 " I'm not ready yet for no arrow keys in insert mode.
 
@@ -239,18 +240,17 @@ colorscheme solarized
 "Use original colors
 "let g:molokai_original = 1
 
-" Changes matching parens to underlining instead of a glaring color
-:hi MatchParen cterm=underline ctermbg=none ctermfg=none
-
-"Changes the cursor shape depending on the current mode
-" Tmux wasn't changing the cursor for me so a little if statement:
+" Add support for cursor shape depending on the normal or insert mode.
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else 
+else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Changes matching parens to underlining instead of a glaring color
+:hi MatchParen cterm=underline ctermbg=none ctermfg=none
 
 " Save file when focus is lost
 au FocusLost * :wa
