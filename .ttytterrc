@@ -1,0 +1,17 @@
+#TTYtter settings
+avatar=eog %U&
+urlopen=firefoxUX %U&
+ssl=1
+pause=auto
+mentions=1
+ansi=1
+vcheck=1
+newline=1
+dostream=1
+hold=15
+backload=40
+simplestart=0
+verify=1
+readline="ttytter stormdragon2976 colindean vkoser reuteras "
+notifies=dm,me,reply,search,default
+#end TTYtter settings
