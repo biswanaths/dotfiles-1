@@ -1,0 +1,11 @@
+set wait_key = no
+set folder = ~/Library/Mail
+set timeout = 3
+unset move
+set delete
+set quit
+set beep_new
+set status_format = "-%r- %v ---[ Folder: %f, Msgs: %m%?n? New: %n?%?d? Del: %d?%?t? Tag: %t?%?l? %l? ]%?p?---- .: %p waiting to send :. ?--%>- (%P) ---"
+
+# colorscheme
+source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc

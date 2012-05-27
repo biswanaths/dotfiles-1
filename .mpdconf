@@ -1,0 +1,19 @@
+music_directory         "/Users/watabou/Music/iTunes/iTunes\ Music"
+playlist_directory      "~/.mpd/playlists"
+db_file                 "~/.mpd/db"
+log_file                "~/.mpd/mpd.log"
+pid_file                "~/.mpd/mpd.pid"
+state_file              "/.mpd/mpd.state"
+auto_update             "no"
+
+audio_output {
+        type            "osx"
+        name            "macchiato"
+        mixer_type      "software"
+}
+
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+}
