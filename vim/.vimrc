@@ -96,6 +96,9 @@ set backspace=indent,eol,start
 "Set line break
 set linebreak
 
+"wrap by default
+set wrap
+
 "Cmd height = 2 lines
 set cmdheight=2
 
@@ -122,7 +125,7 @@ set preserveindent
 
 " Wild menu settings
 set wildmenu
-set wildmode=longest,list
+set wildmode=list:longest
 " tell wildmenu to ignore these types of files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.bmp,*.gif,*.jpg,*.jpeg,*.png
 set wildignore+=*.pages,*.ichat,*.DS_Store,.git,.hg,.svn
@@ -279,9 +282,14 @@ let g:gundo_width=30
 
 "----------- CtrlP Settings -----------------------------
 
+"Specify the cache directory
 let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
 
+"Specify a smaller window height.
 let g:ctrlp_max_height=20
+
+"Don't interfere with Yankring
+let g:ctrlp_map=',ctp'
 
 "----------- FuzzyFinder Settings -----------------------
 "FuzzyFinder File
@@ -324,13 +332,19 @@ let g:easytags_always_enabled = 1
 "Change the location of easytags file
 let g:easytags_file = '~/.vim/tags/tags'
 
-"Generate tags for members. Caution: might double the size of the tags file,
-"but I like it.
+"Generate tags for members.
 let g:easytags_include_members = 1
 
 " Change the syntax highlighting of a member
 highlight link cMember Underlined
 
-"}}}
+"------------ Clang_Complete Settings --------------------
 
+"Auto select the first entry but don't insert into code
+let g:clang_auto_select=1
+
+"Close preview window after completion. 
+let g:clang_close_preview=1
+
+"}}}
 "-------------------- End of .vimrc File -----------------------------

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 ITUNES_TRACK=$(osascript <<EOF
 if appIsRunning("iTunes") then
     tell app "iTunes" to get the name of the current track
@@ -20,5 +20,7 @@ on appIsRunning(appName)
 end appIsRunning
 EOF)
 
-    echo '#[fg=colour137,bg=colour234]⮂#[bg=colour137,fg=colour16,bold] ♫' $ITUNES_TRACK '#[nobold]-#[bold]' $ITUNES_ARTIST '#[fg=colour254,bg=colour137,nobold]'
+# Musical Symbols: ☊ ♫ ♪. Use anyone you like.
+
+    echo '#[fg=blue]☊' $ITUNES_TRACK '#[nobold]-#[bold]' $ITUNES_ARTIST
 fi
