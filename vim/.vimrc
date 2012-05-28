@@ -17,21 +17,14 @@ filetype on
 filetype plugin on
 filetype indent on
 
-"Exuberant Ctags Path
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-set tags=tags;~/
-
-"Java Omnicompletion
-if has("autocmd")
-    autocmd FileType java setlocal omnifunc=javacomplete#Complete
-endif
+"OmniCompletion
+set ofu=syntaxcomplete#Complete
 
 " General Settings
 if has ("gui_running")
     " remove the toolbars and the right scrollbars. 
     set guioptions-=T
     set guioptions-=r
-
 endif
 
 "Status Line + Powerline
@@ -109,9 +102,6 @@ set cmdheight=2
 "Don't beep
 set noerrorbells
 
-" Instead, flash the screen
-set visualbell
-
 "Line numbering
 set number
 
@@ -146,7 +136,6 @@ set incsearch
 set ignorecase
 set showmatch
 set hlsearch
-set diffopt=filler,iwhite
 
 " Backup settings
 set noswapfile
@@ -175,13 +164,10 @@ let java_allow_cpp_keywords=1
 "Mapping Settings
 
 " okay let's try no arrow keys...
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-
-" I'm not ready yet for no arrow keys in insert mode.
-
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 "imap <up> <nop>
 "imap <down> <nop>
 "imap <left> <nop>
@@ -190,8 +176,11 @@ let java_allow_cpp_keywords=1
 "Change mapleader to "," character
 let mapleader=","
 
-" If in insert mode, pressing jj will take you back to normal mode
-inoremap jj <ESC>
+" Ok, lets try remapping j and k to gj and gk
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 "Reindent the entire file.
 nmap ,fef ggVG=
@@ -221,6 +210,10 @@ nnoremap <C-E> ,
 "Puts pwd into the path
 cmap <C-P><C-R>=expand("%:p:h") . "/"
 
+" Change the height of the status bar
+nnoremap ,1 :set cmdheight=1<cr>
+nnoremap ,2 :set cmdheight=2<cr>
+
 "Change case
 "Uppercase
 nmap ,u mQviwU`Q
@@ -232,7 +225,6 @@ nmap ,l mQviwu`Q
 " For Solarized:
 set background=dark
 call togglebg#map("")
-let g:solarized_termtrans=1
 colorscheme solarized
 
 " For Molokai: 
@@ -241,13 +233,11 @@ colorscheme solarized
 "let g:molokai_original = 1
 
 " Add support for cursor shape depending on the normal or insert mode.
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Gui cursor
+set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
@@ -255,7 +245,7 @@ endif
 " Save file when focus is lost
 au FocusLost * :wa
 
-" Various Plugin Settings
+" Various Plugin Settings {{{
 
 "----------- NERDTree Settings --------------------------
 
@@ -273,6 +263,9 @@ nnoremap <silent> <F4> :TagbarToggle<CR>
 "Set TagBar width from 40 to 30.
 let g:tagbar_width = 30
 
+"Automatically open tagbar for a supported file
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+
 "----------- Gundo Settings -----------------------------
 
 "Gundo toggle
@@ -284,9 +277,11 @@ let g:gundo_preview_height=1
 "Set gundo preview and window width
 let g:gundo_width=30
 
-
 "----------- CtrlP Settings -----------------------------
+
 let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
+
+let g:ctrlp_max_height=20
 
 "----------- FuzzyFinder Settings -----------------------
 "FuzzyFinder File
@@ -321,13 +316,21 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey  ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
 
-
 "---------- Vim-EasyTags Settings ------------------------
 
 "Let easy tags be always enabled
 let g:easytags_always_enabled = 1
 
 "Change the location of easytags file
-let g:easytags_file = '~/.vim/tags'
+let g:easytags_file = '~/.vim/tags/tags'
+
+"Generate tags for members. Caution: might double the size of the tags file,
+"but I like it.
+let g:easytags_include_members = 1
+
+" Change the syntax highlighting of a member
+highlight link cMember Underlined
+
+"}}}
 
 "-------------------- End of .vimrc File -----------------------------
