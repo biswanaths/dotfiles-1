@@ -35,7 +35,7 @@ set laststatus=2
 " Note : Only use fancy if you have patched the font first! Else, use 'unicode'
 let g:Powerline_symbols='fancy'
 
-"Uncomment the following and comment the above to use a different Powerline theme
+"Uncomment the following and comment the above to use a different theme.
 "let Powerline_theme='skwp'
 "let Powerline_colorscheme='skwp'
 
@@ -239,8 +239,9 @@ colorscheme solarized
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Gui cursor
-set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+" Highlight code that goes beyond the 80 column limit
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
