@@ -29,15 +29,17 @@ endif
 
 "Status Line + Powerline
 
-set laststatus=2
+set laststatus=2   "Always show the status bar.
 
 " Set powerline theme to fancy by default
-" Note : Only use fancy if you have patched the font first! Else, use 'unicode'
+" note: only works with patched fonts. :h powerline.txt
 let g:Powerline_symbols='fancy'
 
-"Uncomment the following and comment the above to use a different theme.
-"let Powerline_theme='skwp'
-"let Powerline_colorscheme='skwp'
+"Keep status bar height small.
+set cmdheight=1
+
+"Assume 256 colors.
+set t_Co=256
 
 "Use vim's title
 set title
@@ -96,11 +98,8 @@ set backspace=indent,eol,start
 "Set line break
 set linebreak
 
-"wrap by default
+"wrap text by default
 set wrap
-
-"Cmd height = 2 lines
-set cmdheight=2
 
 "Don't beep
 set noerrorbells
@@ -134,13 +133,13 @@ set wildchar=<TAB>
 "Completes by the whole tag, instead of just the function name
 set showfulltag
 
-" Searching settings
+"Searching settings
 set incsearch
 set ignorecase
 set showmatch
 set hlsearch
 
-" Backup settings
+"Backup settings
 set noswapfile
 set backup
 set backupdir=~/.vim/backup
@@ -161,7 +160,7 @@ iab tath that
 iab Seperate Separate
 iab seperate separate
 
-"Allow java syntax highlight accept cpp keywords
+"Allow java syntax highlight to accept cpp keywords
 let java_allow_cpp_keywords=1
 
 "Mapping Settings
@@ -239,10 +238,6 @@ colorscheme solarized
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Highlight code that goes beyond the 80 column limit
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
 
@@ -265,7 +260,7 @@ nmap <F2> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
 
 "Set TagBar width from 40 to 30.
-let g:tagbar_width = 30
+let g:tagbar_width=30
 
 "Automatically open tagbar for a supported file
 autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -307,20 +302,20 @@ nmap <silent> ,fv :FufFile ~/.vim/<cr>
 "----------- Yankring Settings --------------------------
 
 "Yankring history file
-let g:yankring_history_dir = '~/.vim/tmp'
+let g:yankring_history_dir='~/.vim/tmp'
 
 "---------- Vim-Notes Settings----------------------------
 
 "Specify the directory where all notes are stored
-let g:notes_directory = '~/Documents/Uni/Notes'
+let g:notes_directory='~/Documents/Uni/Notes'
 
 " Append .txt extension to all notes.
-let g:notes_suffix = '.txt'
+let g:notes_suffix='.txt'
 
 "---------- Vim-Indent-Guides Settings--------------------
 
 "Change the colors of the indents
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors=0
 let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey  ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
@@ -328,23 +323,20 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
 "---------- Vim-EasyTags Settings ------------------------
 
 "Let easy tags be always enabled
-let g:easytags_always_enabled = 1
+let g:easytags_always_enabled=1
 
 "Change the location of easytags file
-let g:easytags_file = '~/.vim/tags/tags'
+let g:easytags_file='~/.vim/tags/tags'
 
 "Generate tags for members.
-let g:easytags_include_members = 1
-
-" Change the syntax highlighting of a member
-highlight link cMember Underlined
+let g:easytags_include_members=1
 
 "------------ Clang_Complete Settings --------------------
 
-"Auto select the first entry but don't insert into code
+"Auto select the first entry but don't insert it into code
 let g:clang_auto_select=1
 
-"Close preview window after completion. 
+"Auto close preview window
 let g:clang_close_preview=1
 
 "}}}
