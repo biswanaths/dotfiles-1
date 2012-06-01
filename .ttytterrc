@@ -1,6 +1,6 @@
 #TTYtter settings
 avatar=eog %U&
-urlopen=firefoxUX %U&
+urlopen=firefox %U&
 ssl=1
 pause=auto
 mentions=1
@@ -9,9 +9,13 @@ vcheck=1
 newline=1
 dostream=1
 hold=15
-backload=40
-simplestart=0
+backload=20
+simplestart=1
+nocounter=1
 verify=1
 readline="ttytter stormdragon2976 colindean vkoser reuteras "
+exts=/Users/watabou/.ttytter/ttytter-extensions/soundpack.pl,/Users/watabou/.ttytter/ttytter-extensions/tts.pl,/Users/watabou/.ttytter/ttytter-extensions/timestamp.pl,/Users/watabou/.ttytter/ttytter-extensions/rate_limit.pl
+notifytype=soundpack
+extpref_soundpack=christmas
 notifies=dm,me,reply,search,default
 #end TTYtter settings
