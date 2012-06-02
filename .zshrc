@@ -38,7 +38,7 @@ ZSH_THEME="macademia"
 DISABLE_AUTO_UPDATE="true"
 
 # Load all the plugins
-plugins=(brew compleat git github pip rvm osx zsh-syntax-highlighting)
+plugins=(brew compleat gem git github pip rvm osx zsh-syntax-highlighting)
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -53,6 +53,7 @@ alias c="clear"
 alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias evi="mvim -v ~/.vimrc"
+alias updateBrew="brew update;brew outdated;brew upgrade;brew cleanup"
 alias j="z" # For fasd
 alias musicmpd="mpd && mpdscribble && ncmpcpp" # start mpd server, scrobbling and client.
 alias top="htop" # Since htop > top. Requires htop to be installed.

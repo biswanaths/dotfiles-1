@@ -20,7 +20,7 @@ filetype indent on
 "OmniCompletion
 set ofu=syntaxcomplete#Complete
 
-" General Settings
+" General Settings {{{
 if has ("gui_running")
     " remove the toolbars and the right scrollbars. 
     set guioptions-=T
@@ -28,15 +28,13 @@ if has ("gui_running")
 endif
 
 "Status Line + Powerline
-
 set laststatus=2   "Always show the status bar.
-
 " Set powerline theme to fancy by default
 " note: only works with patched fonts. :h powerline.txt
 let g:Powerline_symbols='fancy'
 
 "Keep status bar height small.
-set cmdheight=1
+set cmdheight=2
 
 "Assume 256 colors.
 set t_Co=256
@@ -112,6 +110,7 @@ set ruler
 
 "Sets vim to auto read if the file has been changed externally. 
 set autoread 
+"}}}
 
 " Indent settings 
 set autoindent
@@ -129,7 +128,6 @@ set wildmode=list:longest
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.bmp,*.gif,*.jpg,*.jpeg,*.png
 set wildignore+=*.pages,*.ichat,*.DS_Store,.git,.hg,.svn
 set wildchar=<TAB>
-
 "Completes by the whole tag, instead of just the function name
 set showfulltag
 
@@ -225,14 +223,17 @@ nmap ,l mQviwu`Q
 "Theme Settings
 
 " For Solarized:
-set background=dark
-call togglebg#map("")
-colorscheme solarized
+"set background=dark
+"call togglebg#map("")
+"colorscheme solarized
 
 " For Molokai: 
-"colorscheme molokai
+colorscheme molokai
 "Use original colors
-"let g:molokai_original = 1
+let g:molokai_original = 1
+
+" set the gui font to look nice
+set guifont=Inconsolata-dz\ for\ Powerline:h12
 
 " Add support for cursor shape depending on the normal or insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
