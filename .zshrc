@@ -12,7 +12,6 @@ export ARCHFLAGS="-arch x86_64"
 ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
-export RUBYOPT=rubygems
 export EDITOR='mvim -v'
 export JAVA_HOME=/usr/local/jdk
 export PAGER=less
@@ -39,7 +38,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Load all the plugins
 plugins=(brew compleat gem git github pip rvm osx zsh-syntax-highlighting)
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Cool aliases personalized to my liking.
@@ -64,7 +62,6 @@ alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall
 # Zsh options
 setopt menucomplete       # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst       # complete functions in the prompt.
-setopt nobeep             # beeps are annoying.
 setopt notify             # report status of background jobs immediately.
 setopt globdots           # don't require a leading period in a filename to be matched. 
 setopt correct            # correct the spelling of commands.
@@ -111,6 +108,7 @@ zstyle ':completion:*' verbose yes
 # color listing
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # This partially colors depending on what the user has typed when hitting tab:
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
 
