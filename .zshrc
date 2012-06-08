@@ -33,11 +33,11 @@ eval "$(hub alias -s)"
 # Using a theme inspired by Steve Losh. 
 ZSH_THEME="macademia"
 
-# Disable zsh auto update.
+# Disable oh-my-zsh auto update.
 DISABLE_AUTO_UPDATE="true"
 
 # Load all the plugins
-plugins=(brew compleat gem git github pip rvm osx zsh-syntax-highlighting)
+plugins=(brew compleat gem git rvm osx zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Cool aliases personalized to my liking.
@@ -123,5 +123,6 @@ zstyle ':completion:*:options' description yes
 # change syntax highlighting for the path from underlining to a color
 # Use with zsh-syntax-highlighting plugin
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+
 # }}}
 ################################# End of .zshrc ###############################
