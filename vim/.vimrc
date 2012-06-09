@@ -7,9 +7,50 @@
 " Let's use vim instead of vi 
 set nocompatible
 
-" Load Pathogen
-call pathogen#infect()
-call pathogen#helptags()
+" Vundle settings
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let vundle manage bundles
+Bundle 'gmarik/vundle'
+
+" My bundles:
+Bundle 'ehamberg/vim-cute-python'
+Bundle 'ervandew/supertab'
+Bundle 'garbas/vim-snipmate'
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'majutsushi/tagbar'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'mattn/gist-vim'
+Bundle 'mattsa/vim-fuzzee'
+Bundle 'mileszs/ack.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tomtom/tlib_vim'
+Bundle 'Watabou90/snipmate-snippets'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-notes'
+
+" Plugins from vim-scripts
+Bundle 'Rainbow-Parenthesis'
+Bundle 'YankRing.vim'
+
+"Vim Colors
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'Lucius'
 
 " Filetype settings
 syntax on
@@ -234,7 +275,9 @@ else
 endif
 
 " set the gui font to look nice
-set guifont=Inconsolata-dz\ for\ Powerline:h12
+if has("gui_running")
+    set guifont=Inconsolata-dz\ for\ Powerline:h12
+endif
 
 " Focus reporting for iTerm2:
 " Credit to sjl for these settings:
