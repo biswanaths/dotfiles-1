@@ -61,7 +61,7 @@ set mousehide
 "Manage multiple buffers effectively. 
 set hidden
 
-" Fast terminal connection
+" Faster terminal.
 set ttyfast
 
 " Change the behavior of the change command so that it shows a dollar sign at
@@ -163,7 +163,6 @@ let java_allow_cpp_keywords=1
 if has("autocmd")
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
     autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-    autocmd FileType java set tags=~/.tags
 endif
 
 "Mapping Settings
@@ -180,12 +179,6 @@ map <right> <nop>
 
 "Change mapleader to "," character
 let mapleader=","
-
-" Ok, lets try remapping j and k to gj and gk
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
 
 "Reindent the entire file.
 nmap ,fef ggVG=
@@ -243,9 +236,41 @@ endif
 " set the gui font to look nice
 set guifont=Inconsolata-dz\ for\ Powerline:h12
 
-" Add support for cursor shape depending on the normal or insert mode.
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" Focus reporting for iTerm2:
+" Credit to sjl for these settings:
+let enable_focus_reporting  = "\<Esc>[?1004h"
+let disable_focus_reporting = "\<Esc>[?1004l" 
+
+let save_screen    = "\<Esc>[?1049h"
+let restore_screen = "\<Esc>[?1049l"
+
+let cursor_to_bar   = "\<Esc>]50;CursorShape=1\x7"
+let cursor_to_block = "\<Esc>]50;CursorShape=0\x7"
+
+" Focus reporting when running tmux 
+if exists('$TMUX')
+    " wrap the below sequences with these:
+    let tmux_start = "\<Esc>Ptmux;"
+    let tmux_end   = "/<Esc>\\"
+
+    let enable_focus_reporting   = tmux_start . "\<Esc>" . enable_focus_reporting  . tmux_end
+    let disable_focus_reporting  = tmux_start . "\<Esc>" . disable_focus_reporting . tmux_end
+
+    let cursor_to_bar   = tmux_start . "<\Esc>" . cursor_to_bar   . tmux_end
+    let cursor_to_block = tmux_start . "<\Esc>" . cursor_to_block . tmux_end 
+endif
+
+" When vim starts, enable focus reporting and save the screen
+let &t_ti = enable_focus_reporting . save_screen
+" When exiting vim, disable focus reporting and save the screen
+let &t_te = disable_focus_reporting . restore_screen
+
+" Change cursor shape depending on the mode
+let &t_SI = cursor_to_bar
+let &t_EI = cursor_to_block
+
+execute "set <f24>=<\Esc>[0"
+execute "set <f24>=<\Esc>[1"
 
 " Changes matching parens to underlining instead of a glaring color
 :hi MatchParen cterm=underline ctermbg=none ctermfg=none
