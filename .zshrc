@@ -25,7 +25,14 @@ zstyle ':omz:load' omodule \
     'alias' \
     'completion' \
     'utility' \
-    'prompt'
+    'prompt' \
+    'alias' \
+    'syntax-highlighting' \
+    'osx' \
+    'python' \
+    'ruby' \
+    'git' \
+    'archive'
 
 # Specifies theme
 zstyle ':omz:module:prompt' theme 'steeef'
@@ -41,11 +48,6 @@ export PAGER=less
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/" 
 export LESSHISTSIZE=1000
-
-# Auto load zsh goodies. 
-autoload -U promptinit colors
-promptinit
-colors
 
 # Load fasd. 
 eval "$(fasd --init auto)"
@@ -114,9 +116,6 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 
 # default completions:
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-
-# always use verbose completions
-zstyle ':completion:*' verbose yes
 
 # color listing
 zmodload -i zsh/complist
