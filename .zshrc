@@ -8,8 +8,31 @@
 # Use 64-bit architecture for compiling as default
 export ARCHFLAGS="-arch x86_64"
 
-# Zsh Environment Variables 
-ZSH=$HOME/.oh-my-zsh
+# Sets Oh My Zsh options
+zstyle ':omz:module:editor' keymap 'vi'         # set keymap to vi-mode
+zstyle ':omz:module:editor' dot-expansion 'no'  # convert .... to ../..
+zstyle ':omz:*:*' case-sensitive 'no'           # ignore case
+zstyle ':omz:*:*' color 'yes'                   # colors are nice.
+zstyle ':omz:module:terminal' auto-title 'yes'  # automatically set terminal title
+# set oh-my-zsh modules to load
+zstyle ':omz:load' omodule \
+    'environment' \
+    'terminal' \
+    'editor' \
+    'history' \
+    'directory' \
+    'spectrum' \
+    'alias' \
+    'completion' \
+    'utility' \
+    'prompt'
+
+# Specifies theme
+zstyle ':omz:module:prompt' theme 'steeef'
+# Source omz
+source "$OMZ/init.zsh"
+
+# Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export EDITOR='mvim -v'
@@ -29,16 +52,6 @@ eval "$(fasd --init auto)"
 
 # Load hub.
 eval "$(hub alias -s)"
-
-# Using a theme inspired by Steve Losh. 
-ZSH_THEME="macademia"
-
-# Disable oh-my-zsh auto update.
-DISABLE_AUTO_UPDATE="true"
-
-# Load all the plugins
-plugins=(brew compleat gem git rvm osx zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
 
 # Cool aliases personalized to my liking.
 alias vim="mvim -v" 
@@ -119,10 +132,6 @@ zstyle ':completion:*:kill:*' force-list always
 # completion styles for descriptions
 zstyle ':completion:*:options' auto-description '%d'
 zstyle ':completion:*:options' description yes
-
-# change syntax highlighting for the path from underlining to a color
-# Use with zsh-syntax-highlighting plugin
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # }}}
 ################################# End of .zshrc ###############################
