@@ -64,7 +64,7 @@ alias cp="cp -vi"
 alias rm="rm -vi"
 alias mv="mv -vi" 
 alias ll="ls -l" 
-alias la="ls -a"
+alias la="ls -A"
 alias c="clear"
 alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
@@ -83,23 +83,16 @@ setopt prompt_subst       # complete functions in the prompt.
 setopt notify             # report status of background jobs immediately.
 setopt globdots           # don't require a leading period in a filename to be matched. 
 setopt correct            # correct the spelling of commands.
-setopt pushdtohome        # just entering pushd will cd to home folder.
-setopt cdablevars         # try expand a "cd" argument if. 
 setopt autolist           # automatically list choices when zsh doesn't understand a command.
 setopt correctall         # try to correct the spelling of all arguments in a line.
-setopt autocd             # imply "cd" when I only type a path. 
 setopt recexact           # when completing, recognize exact matches. 
 setopt longlistjobs       # list jobs in the long format.
 setopt autoresume         # use single word simple commands for resumption of a existing job.
-setopt pushdsilent        # don't print the directory stack after pushd/popd.
-setopt autopushd          # make "cd" command = pushd.
 setopt pushdminus         # exchange + and - when used with a number to specify a dir in the stack. 
-setopt extendedglob       # enable more globbing features.
 setopt rcquotes           # allow multiple quotes to signify a single quote within a single quoted string.
 setopt globcomplete       # expand globs
 setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 seconds.
 setopt completeinword     # complete inside a word.
-setopt noclobber          # don't overwrite files by default
 
 # History settings
 HISTFILE=$HOME/.zhistory
