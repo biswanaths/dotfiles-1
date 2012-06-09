@@ -9,11 +9,15 @@
 export ARCHFLAGS="-arch x86_64"
 
 # Sets Oh My Zsh options
-zstyle ':omz:module:editor' keymap 'vi'         # set keymap to vi-mode
-zstyle ':omz:module:editor' dot-expansion 'no'  # convert .... to ../..
-zstyle ':omz:*:*' case-sensitive 'no'           # ignore case
-zstyle ':omz:*:*' color 'yes'                   # colors are nice.
-zstyle ':omz:module:terminal' auto-title 'yes'  # automatically set terminal title
+zstyle ':omz:module:editor' keymap 'emacs'         # use emacs bindings
+zstyle ':omz:module:editor' dot-expansion 'no'     # convert .... to ../..
+zstyle ':omz:*:*' case-sensitive 'no'              # ignore case
+zstyle ':omz:*:*' color 'yes'                      # colors are nice.
+zstyle ':omz:module:terminal' auto-title 'yes'     # automatically set terminal title
+zstyle ':omz:module:update' auto-update 'no'       # don't auto update
+zstyle ':omz:module:update:remote' name 'origin'   # set the name of the update remote
+zstyle ':omz:module:update:remote' branch 'master' # set the branch of the update remote
+
 # set oh-my-zsh modules to load
 zstyle ':omz:load' omodule \
     'environment' \
@@ -28,9 +32,8 @@ zstyle ':omz:load' omodule \
     'prompt' \
     'alias' \
     'syntax-highlighting' \
+    'history-substring-search' \
     'osx' \
-    'python' \
-    'ruby' \
     'git' \
     'archive'
 
@@ -88,10 +91,6 @@ setopt autocd             # imply "cd" when I only type a path.
 setopt recexact           # when completing, recognize exact matches. 
 setopt longlistjobs       # list jobs in the long format.
 setopt autoresume         # use single word simple commands for resumption of a existing job.
-setopt extendedhistory    # save commands with a time stamp.
-setopt histignoredups     # don't add duplicate commands into the history list.
-setopt histreduceblanks   # and don't add blanks either.
-setopt histignorespace    # done add a command to history that starts with a space
 setopt pushdsilent        # don't print the directory stack after pushd/popd.
 setopt autopushd          # make "cd" command = pushd.
 setopt pushdminus         # exchange + and - when used with a number to specify a dir in the stack. 
@@ -100,7 +99,6 @@ setopt rcquotes           # allow multiple quotes to signify a single quote with
 setopt globcomplete       # expand globs
 setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 seconds.
 setopt completeinword     # complete inside a word.
-setopt sharehistory       # share history between multiple shells
 setopt noclobber          # don't overwrite files by default
 
 # History settings
