@@ -158,8 +158,13 @@ iab tath that
 iab Seperate Separate
 iab seperate separate
 
-"Allow java syntax highlight to accept cpp keywords
+" Java omni complete and misc. stuff
 let java_allow_cpp_keywords=1
+if has("autocmd")
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+    autocmd FileType java set tags=~/.tags
+endif
 
 "Mapping Settings
 
@@ -222,15 +227,18 @@ nmap ,l mQviwu`Q
 
 "Theme Settings
 
-" For Solarized:
+"solarized:
 "set background=dark
 "call togglebg#map("")
 "colorscheme solarized
 
-" For Molokai: 
-colorscheme molokai
-"Use original colors
-let g:molokai_original = 1
+"monokai:
+if has('gui_running')
+    colorscheme monokai "the much nicer version of molokai
+else
+    colorscheme molokai 
+    let g:molokai_original = 1
+endif
 
 " set the gui font to look nice
 set guifont=Inconsolata-dz\ for\ Powerline:h12
