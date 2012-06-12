@@ -9,7 +9,7 @@ set nocompatible
 
 " Vundle settings
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Let vundle manage bundles
@@ -34,6 +34,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
@@ -77,8 +78,10 @@ let g:Powerline_symbols='fancy'
 "Keep status bar height small.
 set cmdheight=2
 
-"Assume 256 colors.
-set t_Co=256
+" Use 256 colors
+if &term!="xterm"
+    set t_Co=256
+endif
 
 "Use vim's title
 set title
@@ -268,10 +271,10 @@ nmap ,l mQviwu`Q
 
 "monokai:
 if has('gui_running')
-    colorscheme monokai "the much nicer version of molokai
+    colorscheme monokai
 else
     colorscheme molokai 
-    let g:molokai_original = 1
+    let g:molokai_original=1
 endif
 
 " set the gui font to look nice
@@ -349,14 +352,6 @@ let g:notes_directory='~/Documents/Uni/Notes'
 
 " Append .txt extension to all notes.
 let g:notes_suffix='.txt'
-
-"---------- Vim-Indent-Guides Settings--------------------
-
-"Change the colors of the indents
-let g:indent_guides_auto_colors=0
-let g:indent_guides_guide_size=1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey  ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
 
 "---------- Vim-EasyTags Settings ------------------------
 
