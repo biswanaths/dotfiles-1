@@ -26,18 +26,16 @@ zstyle ':omz:load' omodule \
     'history' \
     'directory' \
     'spectrum' \
-    'alias' \
-    'completion' \
     'utility' \
+    'completion' \
     'prompt' \
-    'alias' \
     'syntax-highlighting' \
     'history-substring-search' \
     'osx' \
     'git' \
     'archive'
 
-# Specifies theme
+# Specify the theme
 zstyle ':omz:module:prompt' theme 'steeef'
 # Source omz
 source "$OMZ/init.zsh"
@@ -45,6 +43,7 @@ source "$OMZ/init.zsh"
 # Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
+export PATH=/usr/local/share/python:$PATH
 export EDITOR='mvim -v'
 export JAVA_HOME=/usr/local/jdk
 export PAGER=less
@@ -59,7 +58,8 @@ eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
 
 # Cool aliases personalized to my liking.
-alias vim="mvim -v" 
+alias vim="mvim -v"
+alias vi="mvim -v"
 alias cp="cp -vi"
 alias rm="rm -vi"
 alias mv="mv -vi" 
@@ -92,36 +92,9 @@ setopt pushdminus         # exchange + and - when used with a number to specify 
 setopt rcquotes           # allow multiple quotes to signify a single quote within a single quoted string.
 setopt globcomplete       # expand globs
 setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 seconds.
-setopt completeinword     # complete inside a word.
 
 # History settings
 HISTFILE=$HOME/.zhistory
 HISTSIZE=2000
 SAVEHIST=2000
-
-# Some zsh styling options {{{
-
-# Use cache to speed some stuff 
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
-
-# default completions:
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-
-# color listing
-zmodload -i zsh/complist
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# This partially colors depending on what the user has typed when hitting tab:
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
-
-# complete process ids for the kill command
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-
-# completion styles for descriptions
-zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:options' description yes
-
-# }}}
 ################################# End of .zshrc ###############################
