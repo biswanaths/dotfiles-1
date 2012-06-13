@@ -55,7 +55,7 @@ if [[ -z "$LANG" ]]; then
 fi
 
 # Editors
-export EDITOR='nano'
+export EDITOR='mvim -v'
 export VISUAL='nano'
 export PAGER='less'
 
