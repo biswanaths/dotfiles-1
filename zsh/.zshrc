@@ -44,9 +44,7 @@ source "$OMZ/init.zsh"
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=/usr/local/share/python:$PATH
-export EDITOR='mvim -v'
 export JAVA_HOME=/usr/local/jdk
-export PAGER=less
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/" 
 export LESSHISTSIZE=1000
