@@ -4,7 +4,7 @@
 " Modified: 06/09/2012  "
 "-----------------------"
 
-" Let's use vim instead of vi 
+" Let's use vim instead of vi
 set nocompatible
 
 " Vundle settings
@@ -33,6 +33,7 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplcache'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-endwise'
@@ -53,11 +54,11 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'Lucius'
 
-" Filetype settings
-syntax on
+"Turn on all filetype indenting, plugins, and syntax highlighting
 filetype on
 filetype plugin on
 filetype indent on
+syntax on
 
 "OmniCompletion
 set ofu=syntaxcomplete#Complete
@@ -69,11 +70,8 @@ if has ("gui_running")
     set guioptions-=r
 endif
 
-"Status Line + Powerline
-set laststatus=2   "Always show the status bar.
-" Set powerline theme to fancy by default
-" note: only works with patched fonts. :h powerline.txt
-let g:Powerline_symbols='fancy'
+"Always show the status
+set laststatus=2
 
 "Keep status bar height small.
 set cmdheight=2
@@ -143,6 +141,9 @@ set linebreak
 "wrap text by default
 set wrap
 
+"Don't continue comment after I press o or O
+set formatoptions-=o
+
 "Don't beep
 set noerrorbells
 
@@ -161,7 +162,7 @@ set autoindent
 set smartindent
 set expandtab
 set shiftwidth=4
-set tabstop=4
+set softtabstop=4
 set copyindent
 set preserveindent 
 
@@ -205,7 +206,6 @@ iab seperate separate
 " Java omni complete and misc. stuff
 let java_allow_cpp_keywords=1
 if has("autocmd")
-    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
     autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif
 
@@ -264,33 +264,42 @@ nmap ,l mQviwu`Q
 
 "Theme Settings
 
-"solarized:
-"set background=dark
-"call togglebg#map("")
-"colorscheme solarized
+" Set theme to Solarized
+set background=dark
+call togglebg#map("")
+colorscheme solarized
 
-"monokai:
-if has('gui_running')
-    colorscheme monokai
-else
-    colorscheme molokai 
-    let g:molokai_original=1
-endif
+" Or set theme to Monokai
+"if has('gui_running')
+"    colorscheme monokai
+"else
+"    colorscheme molokai 
+"    let g:molokai_original=1
+"endif
 
 " set the gui font to look nice
 if has("gui_running")
     set guifont=Inconsolata-dz\ for\ Powerline:h12
 endif
 
-" Changes matching parens to underlining instead of a glaring color
-:hi MatchParen cterm=underline ctermbg=none ctermfg=none
-
 " Various Plugin Settings {{{
+
+"----------- Powerline Settings -------------------------
+let g:Powerline_symbols='fancy'
 
 "----------- NERDTree Settings --------------------------
 
 "Always show the bookmarks
 let NERDTreeShowBookmarks=1
+
+"Use minimal UI
+let NERDTreeMinimalUI=1
+
+"Set the window width
+let NERDtreeWinSize=30
+
+"Use arrows for directories
+let NERDTreeDirArrows=1
 
 "NERDTree open and close toggle
 nmap <F2> :NERDTreeToggle<CR>
@@ -298,13 +307,10 @@ nmap <F2> :NERDTreeToggle<CR>
 "----------- Tagbar Settings ----------------------------
 
 "Tagbar Toggle 
-nnoremap <silent> <F4> :TagbarToggle<CR>
+nnoremap <silent> ,T :TagbarToggle<CR>
 
 "Set TagBar width from 40 to 30.
 let g:tagbar_width=30
-
-"Automatically open tagbar for a supported file
-autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 "----------- Gundo Settings -----------------------------
 
@@ -314,10 +320,19 @@ nnoremap <F3> :GundoToggle<CR>
 "Set gundo preview width
 let g:gundo_preview_height=1
 
+"Open on the right instead of the left
+let g:gundo_right=1
+
 "Set gundo preview and window width
 let g:gundo_width=30
 
 "----------- CtrlP Settings -----------------------------
+
+"Ignore these files
+let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
+
+"default to filename searches
+let g:ctrl_p_by_filename=1
 
 "Specify the cache directory
 let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
@@ -325,8 +340,9 @@ let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
 "Specify a smaller window height.
 let g:ctrlp_max_height=20
 
-"Don't interfere with Yankring
-let g:ctrlp_map=',ctp'
+"Don't interfere with Yankring's paste.
+let g:ctrlp_map=',t'
+nnoremap <silent> ,t :CtrlPMixed<CR>
 
 "----------- FuzzyFinder Settings -----------------------
 "FuzzyFinder File
@@ -363,6 +379,48 @@ let g:easytags_file='~/.vim/tags/tags'
 
 "Generate tags for members.
 let g:easytags_include_members=1
+
+"------------ NeoComlCache Settings ----------------------
+
+" General settings
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_max_list=10
+let g:neocomplcache_auto_completion_start_length=4
+inoremap <D-Space> <C-n>
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"------------ Syntastic Settings -------------------------
+
+"Mark errors with :signs
+let g:syntastic_enable_signs=1
+
+"Automatically jump to the error after saving
+let g:sytastic_auto_jump=0
+
+"Show the error list automatically
+let g:syntastic_auto_loc_list=1
 
 "------------ Clang_Complete Settings --------------------
 
