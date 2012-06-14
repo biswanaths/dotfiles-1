@@ -397,6 +397,7 @@ let g:neocomplcache_enable_underbar_completion=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_max_list=10
 let g:neocomplcache_auto_completion_start_length=4
+let g:neocomplcache_temporary_dir='~/.vim/tmp/neocon/'
 inoremap <D-Space> <C-n>
 
 " Define keyword.
