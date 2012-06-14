@@ -5,9 +5,6 @@
 #     Random Comment: zsh rules!      #
 #######################################
 
-# Use 64-bit architecture for compiling as default
-export ARCHFLAGS="-arch x86_64"
-
 # Sets Oh My Zsh options
 zstyle ':omz:module:editor' keymap 'emacs'         # use emacs bindings
 zstyle ':omz:module:editor' dot-expansion 'no'     # convert .... to ../..
@@ -44,6 +41,7 @@ source "$OMZ/init.zsh"
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=/usr/local/share/python:$PATH
+export ARCHFLAGS='-arch x86_64'
 export JAVA_HOME=/usr/local/jdk
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/" 
@@ -76,6 +74,7 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Zsh options
+# Many other great zsh options ommitted since omz sets them. 
 setopt menucomplete       # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst       # complete functions in the prompt.
 setopt notify             # report status of background jobs immediately.
@@ -90,15 +89,15 @@ setopt pushdminus         # exchange + and - when used with a number to specify 
 setopt rcquotes           # allow multiple quotes to signify a single quote within a single quoted string.
 setopt globcomplete       # expand globs
 setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 seconds.
+unsetopt beep             # for the love of science, don't beep at me.
 
 # History settings
 HISTFILE=$HOME/.zhistory
 HISTSIZE=2000
 SAVEHIST=2000
 
-# Load git user credentials
+# Source git user credentials
 if [[ -a ~/.secrets ]]; then
     source ~/.secrets;
 fi
-
 ################################# End of .zshrc ###############################
