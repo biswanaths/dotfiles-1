@@ -46,7 +46,6 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-notes'
 
 " Plugins from vim-scripts
-Bundle 'Rainbow-Parenthesis'
 Bundle 'YankRing.vim'
 
 "Vim Colors
@@ -103,7 +102,7 @@ set mousehide
 "Manage multiple buffers effectively. 
 set hidden
 
-" Faster terminal.
+" Fast terminal.
 set ttyfast
 
 " Change the behavior of the change command so that it shows a dollar sign at
@@ -135,7 +134,7 @@ set undolevels=300
 "Allow backspacing over indent, end of line, and start
 set backspace=indent,eol,start
 
-"Set line break
+"Wrap lines at convenient points
 set linebreak
 
 "wrap text by default
@@ -160,11 +159,18 @@ set autoread
 " Indent settings 
 set autoindent
 set smartindent
-set expandtab
+set smarttab
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=2
+set tabstop=2
+set expandtab
 set copyindent
 set preserveindent 
+
+" Folds
+set foldmethod=indent  " Fold based on indent
+set foldnestmax=3      " deepest folds are 3 levels
+set nofoldenable       " don't fold by default.
 
 " Wild menu settings
 set wildmenu
@@ -383,7 +389,9 @@ let g:easytags_include_members=1
 "------------ NeoComlCache Settings ----------------------
 
 " General settings
+let g:neocomplcache_enable_cursor_hold_i=1
 let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_auto_select=1
 let g:neocomplcache_enable_camel_case_completion=1
 let g:neocomplcache_enable_underbar_completion=1
 let g:neocomplcache_enable_smart_case=1
@@ -429,6 +437,5 @@ let g:clang_auto_select=1
 
 "Auto close preview window
 let g:clang_close_preview=1
-
 "}}}
 "-------------------- End of .vimrc File -----------------------------
