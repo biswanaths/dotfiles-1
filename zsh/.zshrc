@@ -95,4 +95,10 @@ setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 s
 HISTFILE=$HOME/.zhistory
 HISTSIZE=2000
 SAVEHIST=2000
+
+# Load git user credentials
+if [[ -a ~/.secrets ]]; then
+    source ~/.secrets;
+fi
+
 ################################# End of .zshrc ###############################
