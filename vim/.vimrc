@@ -34,7 +34,6 @@ Bundle 'rstacruz/sparkup'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplcache'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-endwise'
@@ -67,14 +66,19 @@ set ofu=syntaxcomplete#Complete
 if has ("gui_running")
     " remove the toolbars and the right scrollbars. 
     set guioptions-=T
+    set guioptions-=l
+    set guioptions-=L
     set guioptions-=r
+    set guioptions-=R
+
+    highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
 "Always show the status
 set laststatus=2
 
 "Keep status bar height small.
-set cmdheight=2
+set cmdheight=1
 
 " Use 256 colors
 if &term!="xterm"
@@ -84,7 +88,7 @@ endif
 "Use vim's title
 set title
 
-"Set text width 
+"Set text width to be 80 characters long. 
 set textwidth=80
 
 "Diff ignores whitespace
@@ -144,8 +148,14 @@ set wrap
 "Don't continue comment after I press o or O
 set formatoptions-=o
 
-"Don't beep
-set noerrorbells
+"For the love of science, don't beep.
+set visualbell
+
+" Printing options
+set printoptions=header:0,duplex:long,paper:letter
+
+" Add the unnamed register to the clipboard
+set clipboard+=unnamed
 
 "Line numbering
 set number
@@ -169,9 +179,11 @@ set copyindent
 set preserveindent 
 
 " Folds
-set foldmethod=indent  " Fold based on indent
+set foldmethod=manual  " Fold based on indent
 set foldnestmax=3      " deepest folds are 3 levels
 set nofoldenable       " don't fold by default.
+" specifies the commands which open folds
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 
 " Wild menu settings
 set wildmenu
@@ -196,6 +208,15 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 set undodir=~/.vim/tmp
 
+"Return vim to the same line after reopening a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line ("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
 "Typos
 iab anf and
 iab adn and
@@ -218,15 +239,24 @@ endif
 
 "Mapping Settings
 
-" okay let's try no arrow keys...
+" Disable the arrow keys in command mode.
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" And disable it in insert mode.
 "imap <up> <nop>
 "imap <down> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
+
+" map the hjkl keys to jump to the next visual line instead of the next line
+" number if the line is wrapped.
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 "Change mapleader to "," character
 let mapleader=","
@@ -387,40 +417,6 @@ let g:easytags_file='~/.vim/tags/tags'
 "Generate tags for members.
 let g:easytags_include_members=1
 
-"------------ NeoComlCache Settings ----------------------
-
-" General settings
-let g:neocomplcache_enable_cursor_hold_i=1
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_auto_select=1
-let g:neocomplcache_enable_camel_case_completion=1
-let g:neocomplcache_enable_underbar_completion=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_max_list=10
-let g:neocomplcache_auto_completion_start_length=4
-let g:neocomplcache_temporary_dir='~/.vim/tmp/neocon/'
-inoremap <D-Space> <C-n>
-
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "------------ Syntastic Settings -------------------------
 
 "Mark errors with :signs
