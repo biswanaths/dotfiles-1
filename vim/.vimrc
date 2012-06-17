@@ -21,7 +21,6 @@ Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -41,6 +40,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'Watabou90/snipmate-snippets'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-notes'
@@ -50,14 +50,10 @@ Bundle 'YankRing.vim'
 
 "Vim Colors
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lucius'
 
-"Turn on all filetype indenting, plugins, and syntax highlighting
-filetype on
-filetype plugin on
-filetype indent on
+"Turn on all filetype stuff to on including syntax highlighting
 syntax on
+filetype plugin indent on
 
 "OmniCompletion
 set ofu=syntaxcomplete#Complete
@@ -167,16 +163,15 @@ set ruler
 set autoread 
 "}}}
 
-" Indent settings 
+" Indent settings
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
 set autoindent
 set smartindent
-set smarttab
-set shiftwidth=4
-set softtabstop=2
-set tabstop=2
-set expandtab
+set preserveindent
 set copyindent
-set preserveindent 
 
 " Folds
 set foldmethod=manual  " Fold based on indent
@@ -233,7 +228,10 @@ iab seperate separate
 
 " Java omni complete and misc. stuff
 let java_allow_cpp_keywords=1
+
+" Some autocmds for filetypes
 if has("autocmd")
+    autocmd Filetype ruby compiler ruby
     autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif
 
@@ -251,7 +249,7 @@ map <right> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
 
-" map the hjkl keys to jump to the next visual line instead of the next line
+" map the hj keys to jump to the next visual line instead of the next line
 " number if the line is wrapped.
 noremap j gj
 noremap k gk
@@ -345,6 +343,12 @@ nmap <F2> :NERDTreeToggle<CR>
 
 "Tagbar Toggle 
 nnoremap <silent> ,T :TagbarToggle<CR>
+
+"Let tagbar expand the gui window when it opens
+let g:tagbar_expand=1
+
+"Omit useless stuff
+let g:tagbar_compact=1
 
 "Set TagBar width from 40 to 30.
 let g:tagbar_width=30
