@@ -27,17 +27,22 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'mattn/gist-vim'
 Bundle 'mattsa/vim-fuzzee'
 Bundle 'mileszs/ack.vim'
+Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'rstacruz/sparkup'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplcache'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
+Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
 Bundle 'vim-ruby/vim-ruby'
@@ -50,13 +55,12 @@ Bundle 'YankRing.vim'
 
 "Vim Colors
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'larssmit/vim-getafe'
+Bundle 'telamon/vim-color-github'
 
 "Turn on all filetype stuff to on including syntax highlighting
 syntax on
 filetype plugin indent on
-
-"OmniCompletion
-set ofu=syntaxcomplete#Complete
 
 " General Settings {{{
 if has ("gui_running")
@@ -66,7 +70,6 @@ if has ("gui_running")
     set guioptions-=L
     set guioptions-=r
     set guioptions-=R
-
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
@@ -74,7 +77,7 @@ endif
 set laststatus=2
 
 "Keep status bar height small.
-set cmdheight=1
+set cmdheight=2
 
 " Use 256 colors
 if &term!="xterm"
@@ -231,8 +234,18 @@ let java_allow_cpp_keywords=1
 
 " Some autocmds for filetypes
 if has("autocmd")
+    " Ruby
     autocmd Filetype ruby compiler ruby
+    " Java
     autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+endif
+
+"Omni Completion
+if has("autocmd") && exists("+omnifunc")
+    autocmd FileType *
+      \ if &omnifunc == "" |
+      \   setlocal omnifunc=syntaxcomplete#Complete |
+      \ endif
 endif
 
 "Mapping Settings
@@ -327,6 +340,9 @@ let g:Powerline_symbols='fancy'
 "Always show the bookmarks
 let NERDTreeShowBookmarks=1
 
+"Use a different location for the bookmarks file
+let g:NERDTreeBookmarksFile='~/.vim/backup/'
+
 "Use minimal UI
 let NERDTreeMinimalUI=1
 
@@ -420,6 +436,35 @@ let g:easytags_file='~/.vim/tags/tags'
 
 "Generate tags for members.
 let g:easytags_include_members=1
+
+"------------ NeoComplCache Settings ---------------------
+
+" General settings
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcahce_enable_underbar_completion=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_auto_completion_start_length=4
+let g:neocomplcache_force_overwrite_completefunc=1
+let g:neocomplcache_temporary_dir='~/.vim/tmp/neocon'
+
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "------------ Syntastic Settings -------------------------
 
