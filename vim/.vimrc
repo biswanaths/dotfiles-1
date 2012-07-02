@@ -229,9 +229,6 @@ iab tath that
 iab Seperate Separate
 iab seperate separate
 
-" Java omni complete and misc. stuff
-let java_allow_cpp_keywords=1
-
 " Some autocmds for filetypes
 if has("autocmd")
     " Ruby
@@ -262,7 +259,7 @@ map <right> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
 
-" map the hj keys to jump to the next visual line instead of the next line
+" map the jk  keys to jump to the next visual line instead of the next line
 " number if the line is wrapped.
 noremap j gj
 noremap k gk
