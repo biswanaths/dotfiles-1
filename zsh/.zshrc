@@ -39,6 +39,7 @@ source "$OMZ/init.zsh"
 
 # Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+eval "$(rbenv init -)"
 export PATH=/usr/local/share/python:$PATH
 export ARCHFLAGS='-arch x86_64'
 export JAVA_HOME=/usr/local/jdk
