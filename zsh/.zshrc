@@ -5,53 +5,29 @@
 #     Random Comment: zsh rules!      #
 #######################################
 
-# Sets Oh My Zsh options
-zstyle ':omz:module:editor' keymap 'emacs'         # use emacs bindings
-zstyle ':omz:module:editor' dot-expansion 'no'     # convert .... to ../..
-zstyle ':omz:*:*' case-sensitive 'no'              # ignore case
-zstyle ':omz:*:*' color 'yes'                      # colors are nice.
-zstyle ':omz:module:terminal' auto-title 'yes'     # automatically set terminal title
-zstyle ':omz:module:update' auto-update 'no'       # don't auto update
-zstyle ':omz:module:update:remote' name 'origin'   # set the name of the update remote
-zstyle ':omz:module:update:remote' branch 'master' # set the branch of the update remote
+# Path to my oh-my-zsh config
+ZSH=$HOME/.oh-my-zsh
 
-# set oh-my-zsh modules to load
-zstyle ':omz:load' omodule \
-    'environment' \
-    'terminal' \
-    'editor' \
-    'history' \
-    'directory' \
-    'spectrum' \
-    'utility' \
-    'completion' \
-    'prompt' \
-    'syntax-highlighting' \
-    'history-substring-search' \
-    'osx' \
-    'git' \
-    'archive'
+# Theme name
+ZSH_THEME="steeef"
 
-# Specify the theme
-zstyle ':omz:module:prompt' theme 'steeef'
-# Source omz
-source "$OMZ/init.zsh"
+# OMZ Options
+DISABLE_AUTO_UPDATE="true"
+
+# Plugins to use
+plugins=(brew cpanm fasd git hub history-substring-search rbenv osx sublime zsh-syntax-highlighting)
+
+# Load OMZ
+source $ZSH/oh-my-zsh.sh
 
 # Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 eval "$(rbenv init -)"
 export PATH=/usr/local/share/python:$PATH
 export ARCHFLAGS='-arch x86_64'
-export JAVA_HOME=/usr/local/jdk
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/" 
 export LESSHISTSIZE=1000
-
-# Load fasd. 
-eval "$(fasd --init auto)"
-
-# Load hub.
-eval "$(hub alias -s)"
 
 # Cool aliases personalized to my liking.
 alias vim="mvim -v"
@@ -96,8 +72,4 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=2000
 SAVEHIST=2000
 
-# Source git user credentials
-if [[ -a ~/.secrets ]]; then
-    source ~/.secrets;
-fi
 ################################# End of .zshrc ###############################

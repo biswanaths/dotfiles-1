@@ -7,56 +7,8 @@
 " Let's use vim instead of vi
 set nocompatible
 
-" Vundle settings
-filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let vundle manage bundles
-Bundle 'gmarik/vundle'
-
-" My bundles:
-Bundle 'ehamberg/vim-cute-python'
-Bundle 'ervandew/supertab'
-Bundle 'garbas/vim-snipmate'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'majutsushi/tagbar'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'mattn/gist-vim'
-Bundle 'mattsa/vim-fuzzee'
-Bundle 'mileszs/ack.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'rstacruz/sparkup'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplcache'
-Bundle 'sjl/gundo.vim'
-Bundle 'sjl/vitality.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-surround'
-Bundle 'tomtom/tlib_vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'Watabou90/snipmate-snippets'
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-notes'
-
-" Plugins from vim-scripts
-Bundle 'YankRing.vim'
-
-"Vim Colors
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'larssmit/vim-getafe'
-Bundle 'telamon/vim-color-github'
+" Use pathogen to manage bundles
+call pathogen#infect()
 
 "Turn on all filetype stuff to on including syntax highlighting
 syntax on
@@ -314,6 +266,10 @@ set background=dark
 call togglebg#map("")
 colorscheme solarized
 
+" Change the cursor shape depending on the mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " Or set theme to Monokai
 "if has('gui_running')
 "    colorscheme monokai
@@ -379,36 +335,6 @@ let g:gundo_right=1
 
 "Set gundo preview and window width
 let g:gundo_width=30
-
-"----------- CtrlP Settings -----------------------------
-
-"Ignore these files
-let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
-
-"default to filename searches
-let g:ctrl_p_by_filename=1
-
-"Specify the cache directory
-let g:ctrlp_cache_dir=$HOME.'/.vim/tmp/.cache/ctrlp'
-
-"Specify a smaller window height.
-let g:ctrlp_max_height=20
-
-"Don't interfere with Yankring's paste.
-let g:ctrlp_map=',t'
-nnoremap <silent> ,t :CtrlPMixed<CR>
-
-"----------- FuzzyFinder Settings -----------------------
-"FuzzyFinder File
-"Start search in home directory since I rarely want
-"to search a file outside my home directory.
-nmap <silent> ,ff :FufFile ~/<cr>
-
-"FuzzyFinder Buffer
-nmap <silent> ,fb :FufBuffer<cr>
-
-"Start FuzzyFinder in ~/.vim dir
-nmap <silent> ,fv :FufFile ~/.vim/<cr>
 
 "----------- Yankring Settings --------------------------
 
