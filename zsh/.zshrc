@@ -49,22 +49,33 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Zsh options
-# Many other great zsh options ommitted since omz sets them. 
-setopt menucomplete       # On an ambiguous completion, inserts first match immediately.
-setopt prompt_subst       # complete functions in the prompt.
-setopt notify             # report status of background jobs immediately.
-setopt globdots           # don't require a leading period in a filename to be matched. 
-setopt correct            # correct the spelling of commands.
-setopt autolist           # automatically list choices when zsh doesn't understand a command.
-setopt correctall         # try to correct the spelling of all arguments in a line.
-setopt recexact           # when completing, recognize exact matches. 
-setopt longlistjobs       # list jobs in the long format.
-setopt autoresume         # use single word simple commands for resumption of a existing job.
-setopt pushdminus         # exchange + and - when used with a number to specify a dir in the stack. 
-setopt rcquotes           # allow multiple quotes to signify a single quote within a single quoted string.
-setopt globcomplete       # expand globs
-setopt rmstarwait         # if issuing the "rm *" command, tell zsh to wait 10 seconds.
-unsetopt beep             # for the love of science, don't beep at me.
+setopt menucomplete                     # On an ambiguous completion, inserts first match immediately.
+setopt prompt_subst                     # complete functions in the prompt.
+setopt notify                           # report status of background jobs immediately.
+setopt globdots                         # don't require a leading period in a filename to be matched.
+setopt correct                          # correct the spelling of commands.
+setopt pushdtohome                      # just entering pushd will cd to home folder.
+setopt cdablevars                       # try expand a "cd" argument if.
+setopt autolist                         # automatically list choices when zsh doesn't understand a command.
+setopt correctall                       # try to correct the spelling of all arguments in a line.
+setopt autocd                           # imply "cd" when I only type a path.
+setopt recexact                         # when completing, recognize exact matches.
+setopt longlistjobs                     # list jobs in the long format.
+setopt autoresume                       # use single word simple commands for resumption of a existing job.
+setopt extendedhistory                  # save commands with a time stamp.
+setopt histignoredups                   # don't add duplicate commands into the history list.
+setopt histreduceblanks                 # and don't add blanks either.
+setopt histignorespace                  # done add a command to history that starts with a space
+setopt pushdsilent                      # don't print the directory stack after pushd/popd.
+setopt autopushd                        # make "cd" command = pushd.
+setopt pushdminus                       # exchange + and - when used with a number to specify a dir in the stack.
+setopt extendedglob                     # enable more globbing features.
+setopt rcquotes                         # allow multiple quotes to signify a single quote within a single quoted string.
+setopt globcomplete                     # expand globs
+setopt rmstarwait                       # if issuing the "rm *" command, tell zsh to wait 10 seconds.
+setopt completeinword                   # complete inside a word.
+setopt sharehistory                     # share history between multiple shells
+setopt noclobber                        # don't overwrite files by default
 
 # History settings
 HISTFILE=$HOME/.zhistory
