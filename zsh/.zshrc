@@ -30,7 +30,6 @@ export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
 
 # Cool aliases personalized to my liking.
-alias vim="mvim -v"
 alias vi="mvim -v"
 alias cp="cp -vi"
 alias rm="rm -vi"
@@ -41,7 +40,7 @@ alias c="clear"
 alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias evi="mvim -v ~/.vimrc"
-alias updateBrew="brew update;brew outdated;brew upgrade;brew cleanup"
+alias updateBrew="brew update;brew upgrade;brew cleanup"
 alias j="z" # For fasd
 alias musicmpd="mpd && mpdscribble && ncmpcpp" # start mpd server, scrobbling and client.
 alias top="htop" # Since htop > top. Requires htop to be installed.
