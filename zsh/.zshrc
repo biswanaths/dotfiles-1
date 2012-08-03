@@ -30,6 +30,7 @@ export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
 
 # Cool aliases personalized to my liking.
+alias vim="mvim -v"
 alias vi="mvim -v"
 alias cp="cp -vi"
 alias rm="rm -vi"

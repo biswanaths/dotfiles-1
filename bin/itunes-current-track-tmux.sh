@@ -22,5 +22,5 @@ EOF)
 
 # Musical Symbols: ☊ ♫ ♪. Use anyone you like.
 
-    echo '#[fg=blue]☊' $ITUNES_TRACK '#[nobold]-#[bold]' $ITUNES_ARTIST
+    echo ' | ☊' $ITUNES_TRACK '-' $ITUNES_ARTIST
 fi
