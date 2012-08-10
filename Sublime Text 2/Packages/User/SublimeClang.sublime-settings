@@ -1,0 +1,30 @@
+{
+    // Whether or not to automatically show the output panel.
+    // If set to false, the default key-binding alt+d,alt+p
+    // will show it
+    "show_output_panel": false,
+
+    // Don't show stuff in the autocomplete list when the name starts with the following
+    "dont_complete_startswith":
+    [
+        "~",
+        "operator"
+    ],
+
+    // If set to true it'll add for example "-x c++" to the options for c++ files
+    "add_language_option": true,
+
+    // Additional language specific options for clang.
+    // This option only works when "add_language_option" is set to true.
+    "additional_language_options":
+    {
+        // For example, you can use "c++": ["-std=c++11"] to enable C++11 features.
+        "c++" : ["-std=c++11"],
+        "c": [],
+        "objc": [],
+        "objc++": []
+    },
+
+    // Whether or not to hide the clang output panel when it's empty
+    "hide_output_when_empty": true
+}

@@ -1,0 +1,3 @@
+{
+	"cmd": ["g++", "-Wall" , "$file", "-o", "$file_base_name"]
+}
