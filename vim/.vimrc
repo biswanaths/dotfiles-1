@@ -183,8 +183,8 @@ iab seperate separate
 
 " Some autocmds for filetypes
 if has("autocmd")
-    " Ruby
-    autocmd Filetype ruby compiler ruby
+    "Ruby
+    autocmd FileType ruby compiler ruby
     " Java
     autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif
@@ -265,10 +265,6 @@ nmap ,l mQviwu`Q
 set background=dark
 call togglebg#map("")
 colorscheme solarized
-
-" Change the cursor shape depending on the mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Or set theme to Monokai
 "if has('gui_running')
@@ -382,12 +378,10 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "------------ Syntastic Settings -------------------------
 
@@ -397,9 +391,6 @@ let g:syntastic_enable_signs=1
 "Automatically jump to the error after saving
 let g:sytastic_auto_jump=0
 
-"Show the error list automatically
-let g:syntastic_auto_loc_list=1
-
 "------------ Clang_Complete Settings --------------------
 
 "Auto select the first entry but don't insert it into code
@@ -408,4 +399,10 @@ let g:clang_auto_select=1
 "Auto close preview window
 let g:clang_close_preview=1
 "}}}
+
+"----------- SuperTab Settings ---------------------------
+
+" Remab the default completion type
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
 "-------------------- End of .vimrc File -----------------------------
