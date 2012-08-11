@@ -1,0 +1,15 @@
+<snippet>
+    <content>
+        <![CDATA[std::cout << "${1}" << std::endl;]]>
+    </content>
+    <tabTrigger>
+        scout
+    </tabTrigger>
+    <scope>
+        source.c++        
+    </scope>
+    <description>
+        std::cout
+    </description>
+
+</snippet>
