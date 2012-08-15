@@ -15,21 +15,24 @@ ZSH_THEME="steeef"
 DISABLE_AUTO_UPDATE="true"
 
 # Plugins to use
-plugins=(brew cpanm fasd git hub history-substring-search rbenv osx sublime zsh-syntax-highlighting)
+plugins=(brew fasd git gem hub history-substring-search rvm osx sublime zsh-syntax-highlighting)
 
 # Load OMZ
 source $ZSH/oh-my-zsh.sh
 
 # Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-eval "$(rbenv init -)"
-export PATH=/usr/local/share/python:$PATH
 export ARCHFLAGS='-arch x86_64'
+export PATH=$PATH:$HOME/.rvm/bin
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/" 
 export LESSHISTSIZE=1000
+export EDITOR="subl"
 
 # Cool aliases personalized to my liking.
+eval "$(hub alias -s)" # Alias git to hub 
+alias firefox="open -a /Applications/FirefoxUX.app"
+alias subl="subl -n"
 alias vim="mvim -v"
 alias vi="mvim -v"
 alias cp="cp -vi"

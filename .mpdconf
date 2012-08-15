@@ -1,10 +1,12 @@
 music_directory         "/Users/watabou/Music/iTunes/iTunes\ Music"
 playlist_directory      "~/.mpd/playlists"
-db_file                 "~/.mpd/db"
+db_file                 "~/.mpd/tag_cache"
 log_file                "~/.mpd/mpd.log"
 pid_file                "~/.mpd/mpd.pid"
-state_file              "/.mpd/mpd.state"
-auto_update             "no"
+state_file              "/.mpd/mpdstate"
+auto_update             "yes"
+gapless_mp3_playback    "yes"
+bind_to_address         "localhost"
 
 audio_output {
         type            "osx"
