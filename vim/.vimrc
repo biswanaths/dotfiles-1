@@ -39,8 +39,8 @@ endif
 "Use vim's title
 set title
 
-"Set text width to be 80 characters long. 
-set textwidth=80
+"Set text width to be 79 characters long. 
+set textwidth=79
 
 "Diff ignores whitespace
 set diffopt+=iwhite
@@ -162,9 +162,9 @@ set undodir=~/.vim/tmp
 augroup line_return
     au!
     au BufReadPost *
-        \ if line ("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+                \ if line ("'\"") > 0 && line("'\"") <= line("$") |
+                \     execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
 
 "Typos
@@ -192,9 +192,9 @@ endif
 "Omni Completion
 if has("autocmd") && exists("+omnifunc")
     autocmd FileType *
-      \ if &omnifunc == "" |
-      \   setlocal omnifunc=syntaxcomplete#Complete |
-      \ endif
+                \ if &omnifunc == "" |
+                \   setlocal omnifunc=syntaxcomplete#Complete |
+                \ endif
 endif
 
 "Mapping Settings
@@ -262,17 +262,13 @@ nmap ,l mQviwu`Q
 "Theme Settings
 
 " Set theme to Solarized
-set background=dark
-call togglebg#map("")
-colorscheme solarized
+"set background=dark
+"call togglebg#map("")
+"colorscheme solarized
 
 " Or set theme to Monokai
-"if has('gui_running')
-"    colorscheme monokai
-"else
-"    colorscheme molokai 
-"    let g:molokai_original=1
-"endif
+colorscheme molokai 
+let g:molokai_original=1
 
 " set the gui font to look nice
 if has("gui_running")
@@ -368,7 +364,7 @@ let g:neocomplcache_force_overwrite_completefunc=1
 let g:neocomplcache_temporary_dir='~/.vim/tmp/neocon'
 
 if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
+    let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -380,7 +376,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
+    let g:neocomplcache_omni_patterns = {}
 endif
 
 "------------ Syntastic Settings -------------------------
