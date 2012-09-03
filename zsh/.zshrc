@@ -1,3 +1,4 @@
+#!/usr/local/bin/zsh
 #######################################
 #     Watabou's .zshrc file           #
 #     Modified: May 13, 2012          #
@@ -22,24 +23,30 @@ source $ZSH/oh-my-zsh.sh
 
 # Zsh Environment Variables
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-export ARCHFLAGS='-arch x86_64'
 export PATH=$PATH:$HOME/.rvm/bin
+export PATH=/usr/local/share/python:$PATH
+export MITSCHEME_LIBRARY_PATH=/usr/local/bin/mit-scheme
+export CLASSPATH=/usr/local/Cellar/rhino/1.7R4/libexec/js.jar:$CLASSPATH
+export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
-export LESSHISTFILE="~/.zsh/lesshist/" 
+export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
 export EDITOR="subl"
+export LANG=en_US.UTF-8
 
 # Cool aliases personalized to my liking.
-eval "$(hub alias -s)" # Alias git to hub 
+eval "$(hub alias -s)" # Alias git to hub
 alias firefox="open -a /Applications/FirefoxUX.app"
-alias subl="subl -n"
 alias vim="mvim -v"
 alias vi="mvim -v"
+alias rhino'java org.mozilla.javascript.tools.shell.Main'
 alias cp="cp -vi"
 alias rm="rm -vi"
-alias mv="mv -vi" 
-alias ll="ls -l" 
-alias la="ls -A"
+alias less="less -iJW"
+alias df="df -h"
+alias mv="mv -vi"
+alias ll="ls -lhSG"
+alias la="ls -AG"
 alias c="clear"
 alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
@@ -53,7 +60,7 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Zsh options
-setopt menucomplete                     # On an ambiguous completion, inserts first match immediately.
+setopt menu_complete                    # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst                     # complete functions in the prompt.
 setopt notify                           # report status of background jobs immediately.
 setopt globdots                         # don't require a leading period in a filename to be matched.
@@ -78,12 +85,29 @@ setopt rcquotes                         # allow multiple quotes to signify a sin
 setopt globcomplete                     # expand globs
 setopt rmstarwait                       # if issuing the "rm *" command, tell zsh to wait 10 seconds.
 setopt completeinword                   # complete inside a word.
+setopt completealiases                  # don't substitute aliases internally before completion.
 setopt sharehistory                     # share history between multiple shells
 setopt noclobber                        # don't overwrite files by default
+setopt markdirs                         # mark directories with / to make them easier to identify
 
 # History settings
 HISTFILE=$HOME/.zhistory
 HISTSIZE=2000
 SAVEHIST=2000
+
+# Watch settings
+WATCH=notme
+WATCHFMT='%n %a %l from %m at %T.'
+
+# set vi-mode
+bindkey -v
+bindkey "^?" backward-delete-char
+bindkey -M vicmd "^R" redo
+bindkey -M vicmd "u" undo
+bindkey -M vicmd "ga" what-cursor-position
+bindkey -M viins '^p' history-beginning-search-backward
+bindkey -M vicmd '^p' history-beginning-search-backward
+bindkey -M viins '^n' history-beginning-search-forward
+bindkey -M vicmd '^n' history-beginning-search-forward
 
 ################################# End of .zshrc ###############################
