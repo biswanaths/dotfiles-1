@@ -1,0 +1,17 @@
+<snippet>
+    <content>
+        <![CDATA[@interface ${1} : ${2:NSObject}
+${3}
+
+@end]]>
+    </content>
+    <tabTrigger>
+        inter
+    </tabTrigger>
+    <scope>
+        source.objc
+    </scope>
+    <description>
+        @interface
+    </description>
+</snippet>

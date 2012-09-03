@@ -1,0 +1,14 @@
+<snippet>
+    <content>
+        <![CDATA[NSLog(@"${1}");]]>
+    </content>
+    <tabTrigger>
+        nslog
+    </tabTrigger>
+    <scope>
+        source.objc
+    </scope>
+    <description>
+        NSLog(@" ");
+    </description>
+</snippet>

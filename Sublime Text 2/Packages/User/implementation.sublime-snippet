@@ -1,0 +1,17 @@
+<snippet>
+    <content>
+        <![CDATA[@implementation ${1}
+${3}
+
+@end]]>
+    </content>
+    <tabTrigger>
+        imple
+    </tabTrigger>
+    <scope>
+        source.objc
+    </scope>
+    <description>
+        @implementation
+    </description>
+</snippet>
