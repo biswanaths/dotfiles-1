@@ -262,13 +262,13 @@ nmap ,l mQviwu`Q
 "Theme Settings
 
 " Set theme to Solarized
-set background=dark
-call togglebg#map("")
-colorscheme solarized
+"set background=dark
+"call togglebg#map("")
+"colorscheme solarized
 
 " Or set theme to Monokai
-"colorscheme molokai 
-"let g:molokai_original=1
+colorscheme molokai 
+let g:molokai_original=1
 
 " set the gui font to look nice
 if has("gui_running")
