@@ -18,8 +18,8 @@ fi
 #
 
 export EDITOR='subl'
-export VISUAL='nano'
-export PAGER='most'
+export VISUAL='vim'
+export PAGER='less'
 
 #
 # Language
