@@ -272,7 +272,7 @@ let g:molokai_original=1
 
 " set the gui font to look nice
 if has("gui_running")
-    set guifont=Inconsolata-dz\ for\ Powerline:h12
+    set guifont=Inconsolata\ LGC:h12
 endif
 
 " Various Plugin Settings {{{
@@ -394,7 +394,8 @@ let g:clang_auto_select=1
 
 "Auto close preview window
 let g:clang_close_preview=1
-"}}}
+
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 "----------- SuperTab Settings ---------------------------
 

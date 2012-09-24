@@ -3,7 +3,7 @@
 #     Watabou's .zshrc file           #
 #     Modified: May 13, 2012          #
 #     Path: $HOME/.zshrc              #
-#     Random Comment: zsh rules!      #
+#     Random Comment: zsh > bash!     #
 #######################################
 
 # Source Prezto.
@@ -15,8 +15,6 @@ fi
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=/usr/local/share/python:$PATH
-export MITSCHEME_LIBRARY_PATH=/usr/local/bin/mit-scheme
-export CLASSPATH=/usr/local/Cellar/rhino/1.7R4/libexec/js.jar:$CLASSPATH
 export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
@@ -24,14 +22,16 @@ export LESSHISTSIZE=1000
 export EDITOR="subl"
 export LANG=en_US.UTF-8
 
+# load fasd
 eval "$(fasd --init auto)"
 
 # Cool aliases personalized to my liking.
 eval "$(hub alias -s)" # Alias git to hub
+alias j="z"        # For fasd
 alias firefox="open -a /Applications/FirefoxUX.app"
-alias vim="mvim -v"
-alias vi="mvim -v"
-alias rhino'java org.mozilla.javascript.tools.shell.Main'
+alias vim="subl"   # mwahahahahaha
+alias vi="mvim -v" # just in case
+alias fortune="fortune -a"
 alias tnotify='terminal-notifier -title "iTerm2" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
 alias rm="rm -vi"
@@ -45,7 +45,6 @@ alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias evi="mvim -v ~/.vimrc"
 alias updateBrew="brew update;brew upgrade;brew cleanup"
-alias j="z" # For fasd
 alias musicmpd="mpd && mpdscribble && ncmpcpp" # start mpd server, scrobbling and client.
 alias top="htop" # Since htop > top. Requires htop to be installed.
 # Toggle show all files in the Finder
