@@ -8,7 +8,7 @@
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Zsh Environment Variables
@@ -30,9 +30,9 @@ eval "$(hub alias -s)" # Alias git to hub
 alias j="z"        # For fasd
 alias firefox="open -a /Applications/FirefoxUX.app"
 alias vim="subl"   # mwahahahahaha
-alias vi="mvim -v" # just in case
+alias vi="mvim -v" # if I really have to use vim
 alias fortune="fortune -a"
-alias tnotify='terminal-notifier -title "iTerm2" -activate com.googlecode.iterm2'
+alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
 alias rm="rm -vi"
 alias less="less -iJW"
@@ -100,59 +100,5 @@ bindkey -M viins '^p' history-beginning-search-backward
 bindkey -M vicmd '^p' history-beginning-search-backward
 bindkey -M viins '^n' history-beginning-search-forward
 bindkey -M vicmd '^n' history-beginning-search-forward
-
-###-begin-npm-completion-###
-#
-# npm command completion script
-#
-# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
-# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
-#
-
-COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
-COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
-export COMP_WORDBREAKS
-
-if type complete &>/dev/null; then
-  _npm_completion () {
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           npm completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -F _npm_completion npm
-elif type compdef &>/dev/null; then
-  _npm_completion() {
-    si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef _npm_completion npm
-elif type compctl &>/dev/null; then
-  _npm_completion () {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       npm completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K _npm_completion npm
-fi
-###-end-npm-completion-###
 
 ################################# End of .zshrc ###############################
