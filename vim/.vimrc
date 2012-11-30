@@ -16,7 +16,7 @@ filetype plugin indent on
 
 " General Settings {{{
 if has ("gui_running")
-    " remove the toolbars and the right scrollbars. 
+    " remove the toolbars and the right scrollbars.
     set guioptions-=T
     set guioptions-=l
     set guioptions-=L
@@ -29,7 +29,7 @@ endif
 set laststatus=2
 
 "Keep status bar height small.
-set cmdheight=2
+set cmdheight=1
 
 " Use 256 colors
 if &term!="xterm"
@@ -39,7 +39,7 @@ endif
 "Use vim's title
 set title
 
-"Set text width to be 79 characters long. 
+"Set text width to be 79 characters long.
 set textwidth=79
 
 "Diff ignores whitespace
@@ -55,7 +55,7 @@ set mouse=a
 "Hide the mouse when typing
 set mousehide
 
-"Manage multiple buffers effectively. 
+"Manage multiple buffers effectively.
 set hidden
 
 " Fast terminal.
@@ -68,7 +68,7 @@ set cpoptions+=$
 "Allow pattern matching with special chars
 set magic
 
-"Show the command 
+"Show the command
 set showcmd
 
 "Set fileformats
@@ -114,8 +114,8 @@ set number
 "Show the ruler
 set ruler
 
-"Sets vim to auto read if the file has been changed externally. 
-set autoread 
+"Sets vim to auto read if the file has been changed externally.
+set autoread
 "}}}
 
 " Indent settings
@@ -225,7 +225,7 @@ let mapleader=","
 nmap ,fef ggVG=
 
 " Ack -- better than grep.
-nmap ,a <Esc>:Ack! 
+nmap ,a <Esc>:Ack!
 
 " Wipe out all buffers
 nmap <silent> ,wa :1,9000bwipeout<cr>
@@ -262,13 +262,13 @@ nmap ,l mQviwu`Q
 "Theme Settings
 
 " Set theme to Solarized
-"set background=dark
-"call togglebg#map("")
-"colorscheme solarized
+set background=dark
+call togglebg#map("")
+colorscheme solarized
 
 " Or set theme to Monokai
-colorscheme molokai 
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
 
 " set the gui font to look nice
 if has("gui_running")
@@ -302,7 +302,7 @@ nmap <F2> :NERDTreeToggle<CR>
 
 "----------- Tagbar Settings ----------------------------
 
-"Tagbar Toggle 
+"Tagbar Toggle
 nnoremap <silent> ,T :TagbarToggle<CR>
 
 "Let tagbar expand the gui window when it opens
