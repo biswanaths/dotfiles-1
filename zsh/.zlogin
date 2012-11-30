@@ -23,6 +23,6 @@
 
 # Print a random, hopefully interesting, adage.
 if (( $+commands[fortune] )); then
-  fortune -a | cowsay -f stegosaurus
+  fortune -a | cowsay -f tux
   print
 fi

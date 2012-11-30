@@ -15,6 +15,7 @@ fi
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
@@ -29,12 +30,13 @@ eval "$(fasd --init auto)"
 eval "$(hub alias -s)" # Alias git to hub
 alias j="z"        # For fasd
 alias firefox="open -a /Applications/FirefoxUX.app"
-alias vim="subl"   # mwahahahahaha
-alias vi="mvim -v" # if I really have to use vim
+alias mutt="cd ~/Desktop/ && mutt"
+alias slime="subl"
 alias fortune="fortune -a"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
 alias rm="rm -vi"
+alias unzip="unzip -d ~/Downloads" # Unzips by default to the downloads folder
 alias less="less -iJW"
 alias df="df -h"
 alias mv="mv -vi"
@@ -84,14 +86,11 @@ setopt markdirs                         # mark directories with / to make them e
 
 # History settings
 HISTFILE=$HOME/.zhistory
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=200000
+SAVEHIST=200000
 
-# Watch settings
-WATCH=notme
 WATCHFMT='%n %a %l from %m at %T.'
 
-# set vi-mode
 bindkey "^?" backward-delete-char
 bindkey -M vicmd "^R" redo
 bindkey -M vicmd "u" undo
