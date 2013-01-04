@@ -22,14 +22,17 @@ export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
 export EDITOR="subl"
 export LANG=en_US.UTF-8
+export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R'
 
 # load fasd
 eval "$(fasd --init auto)"
 
 # Cool aliases personalized to my liking.
 eval "$(hub alias -s)" # Alias git to hub
+alias scrot="screenshot"
 alias j="z"        # For fasd
-alias firefox="open -a /Applications/FirefoxUX.app"
+alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
 alias slime="subl"
 alias fortune="fortune -a"
@@ -84,6 +87,9 @@ setopt sharehistory                     # share history between multiple shells
 setopt noclobber                        # don't overwrite files by default
 setopt markdirs                         # mark directories with / to make them easier to identify
 
+# vi mode
+#bindkey -v 
+
 # History settings
 HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
@@ -100,4 +106,6 @@ bindkey -M vicmd '^p' history-beginning-search-backward
 bindkey -M viins '^n' history-beginning-search-forward
 bindkey -M vicmd '^n' history-beginning-search-forward
 
+__rvm_project_rvmrc
+fpath=(~/.zsh/Completion $fpath)
 ################################# End of .zshrc ###############################
