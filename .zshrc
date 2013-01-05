@@ -25,13 +25,16 @@ export LANG=en_US.UTF-8
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R'
 
-# load fasd
-eval "$(fasd --init auto)"
+# Change some syntax coloring to look nicer
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[double-hypen-option]='fg=yellow'
 
-# Cool aliases personalized to my liking.
-eval "$(hub alias -s)" # Alias git to hub
+## Aliases ## 
+eval "$(fasd --init auto)"
+eval "$(hub alias -s)"
 alias scrot="screenshot"
-alias j="z"        # For fasd
+alias j="z" 
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
 alias slime="subl"
