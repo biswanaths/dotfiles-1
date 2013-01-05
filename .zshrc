@@ -20,10 +20,6 @@ export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
-export EDITOR="subl"
-export LANG=en_US.UTF-8
-export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s"
-export LESS=' -R'
 
 # Change some syntax coloring to look nicer
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
@@ -38,24 +34,17 @@ alias j="z"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
 alias slime="subl"
-alias fortune="fortune -a"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
 alias rm="rm -vi"
-alias unzip="unzip -d ~/Downloads" # Unzips by default to the downloads folder
-alias less="less -iJW"
-alias df="df -h"
+alias unzip="unzip -d ~/Downloads"
 alias mv="mv -vi"
-alias ll="ls -lhSG"
-alias la="ls -AG"
 alias c="clear"
 alias ez="mvim -v ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias evi="mvim -v ~/.vimrc"
 alias updateBrew="brew update;brew upgrade;brew cleanup"
-alias musicmpd="mpd && mpdscribble && ncmpcpp" # start mpd server, scrobbling and client.
-alias top="htop" # Since htop > top. Requires htop to be installed.
-# Toggle show all files in the Finder
+alias musicmpd="mpd && mpdscribble && ncmpcpp"
 alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killall Finder"
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
@@ -90,24 +79,10 @@ setopt sharehistory                     # share history between multiple shells
 setopt noclobber                        # don't overwrite files by default
 setopt markdirs                         # mark directories with / to make them easier to identify
 
-# vi mode
-#bindkey -v 
-
 # History settings
 HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
-
-WATCHFMT='%n %a %l from %m at %T.'
-
-bindkey "^?" backward-delete-char
-bindkey -M vicmd "^R" redo
-bindkey -M vicmd "u" undo
-bindkey -M vicmd "ga" what-cursor-position
-bindkey -M viins '^p' history-beginning-search-backward
-bindkey -M vicmd '^p' history-beginning-search-backward
-bindkey -M viins '^n' history-beginning-search-forward
-bindkey -M vicmd '^n' history-beginning-search-forward
 
 __rvm_project_rvmrc
 fpath=(~/.zsh/Completion $fpath)
