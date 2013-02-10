@@ -12,10 +12,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Zsh Environment Variables
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-export PATH=$PATH:$HOME/.rvm/bin
-export PATH=/usr/local/share/python:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
 export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
@@ -26,13 +22,14 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
-## Aliases ## 
+## Aliases ##
 eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
 alias scrot="screenshot"
-alias j="z" 
+alias j="z"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
+alias vim="mvim -v"
 alias slime="subl"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
@@ -84,6 +81,12 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
 
+# Format watch to look nicer
+WATCH=all
+WATCHFMT='%n %a %l from %m at %T.'
+LOGCHECK=10
+
 __rvm_project_rvmrc
 fpath=(~/.zsh/Completion $fpath)
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 ################################# End of .zshrc ###############################
