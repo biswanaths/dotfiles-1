@@ -11,20 +11,18 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Installed plugins
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'c9s/perlomni.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'Raimondi/delimitMate'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'YankRing.vim'
-Bundle 'a.vim'
+Bundle 'c9s/perlomni.vim'
 Bundle 'ervandew/supertab'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'kien/tabman.vim'
 Bundle 'klen/python-mode'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
@@ -33,14 +31,21 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
-Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-perl/vim-perl'
-Bundle 'wincent/Command-T'
 Bundle 'xolox/vim-easytags'
+
+" Useful Colorschemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+
+" Vim-scripts repo
+Bundle 'YankRing.vim'
+Bundle 'a.vim'
+Bundle 'python.vim'
 
 " Misc settings
 set number
@@ -56,11 +61,18 @@ set fileformats=unix,mac
 set encoding=utf-8
 set history=1000
 set formatoptions-=o          "Doesn't continue the comment after pressing o
+set formatoptions-=c
+set formatoptions-=r
 set visualbell
 set ruler
 set autoread                  "Detect when a file has been changed externally
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
+
+" Let's vim recognize the mouse even inside a tmux session
+if has('mouse')
+  set ttymouse=xterm2
+endif
 
 " Search settings
 set incsearch
@@ -109,50 +121,32 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 set undofile
 set undolevels=1000
-set undodir=~/.vim/tmp
+set undodir=~/.vim/backup
 
 "Better buffer management
 set nohidden
 
-"Recognize filetypes correctly
-augroup filetypedetect
-    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-augroup END
-
-" Return vim to the last position when reopening a file
-augroup line_return
-    au!
-    au BufreadPost *
-                \ if line ("'\'") > 0 && line("'\'") <= line("$") |
-                \   execute 'normal! g`"zvzz' |
-                \ endif
-augroup END
-
-" Strip trailing whitespaces
-au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
-            \ call StripTrailingWhitespace()
-
-"Enable syntax and filetype
-syntax on
+" Colorscheme / Syntax / Filetype
+syntax enable
 filetype on
 filetype plugin on
 filetype indent on
-
-" Colorscheme {{{
+set t_Co=256
 set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
-" }}}
+colorscheme Tomorrow-Night
+"colorscheme solarized
+"colorscheme molokai
+"colorscheme badwolf
 
 " Remove gui nastiness like the scrollbar, toolbar.
 " Set the gui font to look nice
 if has ("gui_running")
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=R
-    set guioptions-=l
-    set guioptions-=L
-    set guifont=Inconsolata\ LGC:h12
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set guifont=Inconsolata\ LGC:h12
 endif
 
 " Disable the arrow keys in command mode.
@@ -189,8 +183,8 @@ map ,tc :tabclose<CR>
 noremap ,tn :tabnext<CR>
 noremap ,tp :tabprevious<CR>
 
-" Reindent entire file
-nmap ,fef ggVG=
+" Reindent entire file and return cursor to the same line
+nmap ,fef ggVG=''
 
 " Toggle hlsearch
 nmap <silent> ,hs :set hlsearch!<CR>
@@ -219,10 +213,8 @@ let g:tagbar_width=30
 nnoremap <silent> ,tb :TagbarToggle<CR>
 
 " -- Gundo Settings --
-let g:gundo_preiew_height=1
-let g:gundo_right=1
-let g:gundo_width=30
-nnoremap <silent> ,gun ::GundoToggle<CR>
+let g:gundo_preview_bottom=1
+nnoremap <silent> ,gun :GundoToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
@@ -243,10 +235,21 @@ let g:easytags_updatetime_autodisable=1
 let g:easytags_file='~/.vim/tags/tags'
 let g:tasytags_include_members=1
 
-" -- Indent Guides
+" -- Indent Guides --
 let g:indent_guides_start_level=2
 let g:indent_guides_auto_colors=1
 let g:indent_guides_guide_size=1
+
+" -- Ctrl-p Settings --
+let g:ctrlp_max_height=10
+let g:ctrlp_persistent_input=0
+let g:ctrlp_map=',t'
+let g:ctrlp_lazy_update=1
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
+nnoremap ,b :CtrlPBuffer<CR>
+nnoremap ,mru :CtrlPMRU<CR>
+nnoremap ,c :CtrlPClearCache<CR>
 
 " Corrections/Typos
 iab teh the
@@ -258,17 +261,63 @@ iab psbng #!/usr/local/bin/perl -w
 
 " Fix Tmux cursor bullcrap
 if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Filetype Settings {{{
+" -- tmux --
+aug filetypedetect
+  au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+aug END
+
+" -- Quickfix --
+augroup ft_quickfix
+  au!
+  au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+augroup END
+
+" -- zsh --
+augroup ft_zsh
+  au!
+  au BufNewFile,BufRead zshecl*,prompt_*_setup setlocal filetype=zsh
+  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+"}}}
+
+" Misc autocommands {{{
+
+"Highlight current line
+"augroup cursorline
+  "au!
+  "au BufEnter * set cursorline
+  "au BufLeave * set nocursorline
+  "au InsertEnter * set nocursorline
+  "au InsertLeave * set cursorline
+"augroup END
+
+
+" Return vim to the last position when reopening a file
+augroup line_return
+  au!
+  au BufreadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   execute "normal! g'\"" |
+        \ endif
+augroup END
+
+" Strip trailing whitespaces
+au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
+      \ call StripTrailingWhitespace()
 
 " Functions
 function StripTrailingWhitespace()
-    %s/\s*$//
-    ''
+  %s/\s*$//
+  ''
 endfunction
+"}}}
 
 " --------------------------------- End .vimrc --------------------------------
