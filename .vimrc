@@ -59,6 +59,8 @@ set ttyfast
 set cpoptions+=$               "Shows a dollar sign when changing text
 set fileformats=unix,mac
 set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf8
 set history=1000
 set formatoptions-=o          "Doesn't continue the comment after pressing o
 set formatoptions-=c
@@ -71,7 +73,7 @@ set spelllang=en_us
 
 " Let's vim recognize the mouse even inside a tmux session
 if has('mouse')
-  set ttymouse=xterm2
+    set ttymouse=xterm2
 endif
 
 " Search settings
@@ -83,19 +85,18 @@ set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
 
 " Tab and indent settings
-set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
+set expandtab
 set autoindent
-set smartindent
+set cindent
 set preserveindent
 set copyindent
 set shiftround
-set wrap
+set nowrap
 set textwidth=80
-"set colorcolumn=80
 
 " Vim Completions
 set wildmenu
@@ -133,20 +134,20 @@ filetype plugin on
 filetype indent on
 set t_Co=256
 set background=dark
-colorscheme Tomorrow-Night
-"colorscheme solarized
+colorscheme solarized
+"colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
 
 " Remove gui nastiness like the scrollbar, toolbar.
 " Set the gui font to look nice
 if has ("gui_running")
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=R
-  set guioptions-=l
-  set guioptions-=L
-  set guifont=Inconsolata\ LGC:h12
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+    set guifont=Inconsolata\ LGC:h12
 endif
 
 " Disable the arrow keys in command mode.
@@ -170,8 +171,8 @@ noremap gk k
 let perl_include_pod=1
 let perl_extended_vars=1
 let perl_sync_dist=250
-vmap ,pt :!perltidy<CR>
-nmap ,pt :%!perltidy<CR>
+vmap ,tid :!perltidy<CR>
+nmap ,tid :%!perltidy<CR>
 " End Perl settings }}}
 
 " Change the map leader to ,
@@ -230,10 +231,9 @@ let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
 
 " -- EasyTags Settings --
-let g:easytags_always_enabled=0
-let g:easytags_updatetime_autodisable=1
+let g:easytags_always_enabled=1
 let g:easytags_file='~/.vim/tags/tags'
-let g:tasytags_include_members=1
+let g:easytags_include_members=1
 
 " -- Indent Guides --
 let g:indent_guides_start_level=2
@@ -261,62 +261,114 @@ iab psbng #!/usr/local/bin/perl -w
 
 " Fix Tmux cursor bullcrap
 if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
 " Filetype Settings {{{
 " -- tmux --
-aug filetypedetect
-  au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+aug ft_tmux
+    au!
+    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setlocal filetype=tmux
+    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
 aug END
 
 " -- Quickfix --
 augroup ft_quickfix
-  au!
-  au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+    au!
+    au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
 augroup END
 
 " -- zsh --
 augroup ft_zsh
-  au!
-  au BufNewFile,BufRead zshecl*,prompt_*_setup setlocal filetype=zsh
-  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    au!
+    au BufNewFile,BufRead zshecl*,prompt_*_setup setlocal filetype=zsh
+    setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
+
+" -- c --
+augroup ft_c
+    au!
+    au FileType c
+                \ setlocal
+                \ tabstop=4
+                \ softtabstop=4
+                \ shiftwidth=4
+                \ textwidth=79
+                \ expandtab
+                \ colorcolumn=80
+                \ comments=sl:/*,mb:\ *,elx:\ */
+augroup END
+
+" -- cpp --
+augroup ft_cpp
+    au!
+    au FileType cpp
+                \ setlocal
+                \ tabstop=4
+                \ softtabstop=4
+                \ shiftwidth=4
+                \ textwidth=79
+                \ expandtab
+                \ colorcolumn=80
+augroup END
+
+" -- ObjectiveC --
+augroup ft_objc
+    au!
+    au FileType objc
+                \ setlocal
+                \ tabstop=4
+                \ softtabstop=4
+                \ shiftwidth=4
+                \ textwidth=79
+                \ expandtab
+                \ colorcolumn=80
+augroup END
+
+"" -- vim --
+augroup ft_vim
+    au!
+    au FileType vim,help setlocal textwidth=78
+    au FileType vim setlocal foldmethod=marker colorcolumn=79 tabstop=4
+                \ expandtab
+                \ softtabstop=4
+                \ shiftwidth=4
+augroup END
+
 "}}}
 
 " Misc autocommands {{{
 
 "Highlight current line
-"augroup cursorline
-  "au!
-  "au BufEnter * set cursorline
-  "au BufLeave * set nocursorline
-  "au InsertEnter * set nocursorline
-  "au InsertLeave * set cursorline
-"augroup END
-
+augroup cursorline
+    au!
+    au BufEnter * set cursorline
+    au BufLeave * set nocursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
 
 " Return vim to the last position when reopening a file
 augroup line_return
-  au!
-  au BufreadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   execute "normal! g'\"" |
-        \ endif
+    au!
+    au BufreadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute "normal! g'\"" |
+                \ endif
 augroup END
 
 " Strip trailing whitespaces
 au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
-      \ call StripTrailingWhitespace()
+            \ call StripTrailingWhitespace()
 
 " Functions
 function StripTrailingWhitespace()
-  %s/\s*$//
-  ''
+    %s/\s*$//
+    ''
 endfunction
 "}}}
 
