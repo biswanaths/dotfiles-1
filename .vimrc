@@ -1,9 +1,16 @@
-"-------------------------------"
-"  File:   .vimrc               "
-"  Author: Akshay Hegde         "
-"  Date:   Jan 3, 2013          "
-"-------------------------------"
+"--------------------------------------------------------"
+"  File:   .vimrc                                        "
+"  Author: Akshay Hegde                                  "
+"  Date:   Jan 3, 2013                                   "
+"                                                        "
+"  Hosted on github.com/akshayhegde                      "
+"  NOTE: Not compatible with Vim <= 7                    "
+"--------------------------------------------------------"
+
+" Turn off vi compatiblity.
 set nocompatible
+
+" Required for Vundle
 filetype off
 
 " Vundle runtime path
@@ -11,10 +18,8 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Installed plugins
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'c9s/perlomni.vim'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/csapprox'
@@ -23,13 +28,17 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'kien/tabman.vim'
 Bundle 'klen/python-mode'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
+Bundle 'mattn/zencoding-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
-Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -38,40 +47,109 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
-" Useful Colorschemes
+" Great Colorschemes
+Bundle 'sjl/badwolf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
+Bundle 'trapd00r/neverland-vim-theme'
 
 " Vim-scripts repo
 Bundle 'YankRing.vim'
 Bundle 'a.vim'
 Bundle 'python.vim'
 
-" Misc settings
+" Colorscheme / Syntax / Filetype
+syntax on
+filetype plugin indent on
+set t_Co=256
+set background=dark
+colorscheme badwolf
+"colorscheme solarized
+"let g:solarized_termtrans=1
+"colorscheme Tomorrow-Night
+"colorscheme molokai
+
+" ----  Misc settings ----
+" Turn on line numbers
 set number
+
+" Always show the last command
 set showcmd
+
+" Show the mode we are in
 set showmode
-set foldmethod=marker
+
+" Folds are based on indent
+set foldmethod=indent
+
+" Comamnds which open folds
+set foldopen=block,insert,jump,mark,quickfix,search,undo
+
+" Turn on mouse for all modes
 set mouse=a
+
+" Hide the mouse while typing
+set mousehide
+
+" Always show the statusbar
 set laststatus=2
+
+" Keeps the cursor 8 lines from the top/bottom of the screen when scrolling
+set scrolloff=8
+
+" Enable backspace over everyting
 set backspace=indent,eol,start
+
+" Ignore whitespace when diffing
+set diffopt+=iwhite
+
+" Set the timeout for the leader key or similar commands
+set timeoutlen=500
+
+" Fast terminal connection
 set ttyfast
-set cpoptions+=$               "Shows a dollar sign when changing text
+
+" Performance option -- don't redraw when executing macros
+set lazyredraw
+
+" Add the unnamed register to the clipboard
+set clipboard+=unnamed
+
+" Shows a dollar sign upto the point where c will change text
+set cpoptions+=$
+
+" Set the fileformats to use
 set fileformats=unix,mac
+
+" Set the encoding to utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf8
-set history=1000
-set formatoptions-=o          "Doesn't continue the comment after pressing o
+
+" Set some formatoptions
+set formatoptions-=o
 set formatoptions-=c
 set formatoptions-=r
+
+" Change the pwd to the current buffer
+set autochdir
+
+" Turn off beeping
 set visualbell
+
+" Turn on the ruler
 set ruler
-set autoread                  "Detect when a file has been changed externally
+
+"Detect when a file has been changed externally
+set autoread
+
+" Set the default shell
 set shell=/usr/local/bin/zsh
+
+" Default spell language
 set spelllang=en_us
 
-" Let's vim recognize the mouse even inside a tmux session
+" Lets vim recognize the mouse even inside a tmux session
 if has('mouse')
     set ttymouse=xterm2
 endif
@@ -84,19 +162,21 @@ set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
 
-" Tab and indent settings
+" Tab
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
-set smarttab
+set softtabstop=4
 set expandtab
+set smarttab
+set textwidth=80
+
+" Indenting
 set autoindent
 set cindent
 set preserveindent
 set copyindent
 set shiftround
 set nowrap
-set textwidth=80
 
 " Vim Completions
 set wildmenu
@@ -116,28 +196,19 @@ set wildignore+=*.DS_Store
 set wildignore+=*~,#*#,*.sw?,%*,*=
 
 "Backup settings
+set history=1000
 set noswapfile
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-set undofile
+set undofile                " Turn on persistent undo
 set undolevels=1000
+set undoreload=10000
 set undodir=~/.vim/backup
 
 "Better buffer management
 set nohidden
 
-" Colorscheme / Syntax / Filetype
-syntax enable
-filetype on
-filetype plugin on
-filetype indent on
-set t_Co=256
-set background=dark
-colorscheme solarized
-"colorscheme Tomorrow-Night
-"colorscheme molokai
-"colorscheme badwolf
 
 " Remove gui nastiness like the scrollbar, toolbar.
 " Set the gui font to look nice
@@ -178,20 +249,35 @@ nmap ,tid :%!perltidy<CR>
 " Change the map leader to ,
 let mapleader=","
 
+" Allow for emacs like editing in the command bar
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+
+" Quickly edit and source the .vimrc file
+nmap <silent> ,ev :e $MYVIMRC<CR>
+nmap <silent> ,sv :so $MYVIMRC<CR>
+
 " Tab management
 map ,tt :tabnew<CR>
 map ,tc :tabclose<CR>
 noremap ,tn :tabnext<CR>
 noremap ,tp :tabprevious<CR>
 
+" ,l toggles the display white space and other list chars
+nmap ,l :set list!<CR>
+set listchars=tab:»\ ,eol:¬
+
 " Reindent entire file and return cursor to the same line
 nmap ,fef ggVG=''
 
-" Toggle hlsearch
+" The search highlighting in vim is annoying and burns my eyes.
 nmap <silent> ,hs :set hlsearch!<CR>
 
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+
+" Set the execute bit for the current file
+nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
 
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
@@ -221,6 +307,9 @@ nnoremap <silent> ,gun :GundoToggle<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_disabled_filetypes=['python']
+let g:syntastic_enable_balloons=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
@@ -250,6 +339,22 @@ let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
+
+" -- Python-Mode Settings --
+let g:pymode_rope=1
+let g:pymode_doc=1
+let g:pymode_doc_key='K'
+let g:pymode_lint=1
+let g:pymode_lint_checker="pyflakes,pep8"
+let g:pymode_lint_write=1
+let g:pymode_virtualenv=1
+let g:pymode_breakpoint=1
+let g:pymode_breakpoint_key='<leader>b'
+let g:pymode_syntax=1
+let g:pymode_syntax_all=1
+let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_folding=0
 
 " Corrections/Typos
 iab teh the
@@ -329,6 +434,22 @@ augroup ft_objc
                 \ colorcolumn=80
 augroup END
 
+" -- Perl --
+augroup ft_perl
+    au!
+    au FileType perl
+                \ setlocal
+                \ tabstop=4
+                \ softtabstop=4
+                \ shiftwidth=4
+                \ textwidth=79
+                \ expandtab
+                \ colorcolumn=80
+                \ makeprg=perl\ -c\ %\ $*
+                \ errorformat=%f:%l:%m
+                \ autowrite
+augroup END
+
 "" -- vim --
 augroup ft_vim
     au!
@@ -344,13 +465,13 @@ augroup END
 " Misc autocommands {{{
 
 "Highlight current line
-augroup cursorline
-    au!
-    au BufEnter * set cursorline
-    au BufLeave * set nocursorline
-    au InsertEnter * set nocursorline
-    au InsertLeave * set cursorline
-augroup END
+"augroup cursorline
+"au!
+"au BufEnter * set cursorline
+"au BufLeave * set nocursorline
+"au InsertEnter * set nocursorline
+"au InsertLeave * set cursorline
+"augroup END
 
 " Return vim to the last position when reopening a file
 augroup line_return
