@@ -1,35 +1,42 @@
-"-------------------------------"
-"  File:   .vimrc               "
-"  Author: Akshay Hegde         "
-"  Date:   Jan 3, 2013          "
-"-------------------------------"
+"-------------------------------------------------------------------"
+"  File:   .vimrc                                                   "
+"  Author: Akshay Hegde                                             "
+"  Date:   Jan 3, 2013                                              "
+"  Version: 1.0                                                     "
+"                                                                   "
+"  Note: Not compatible with Vim < 7, but then again, this is 2013. "
+"-------------------------------------------------------------------"
+
+" Required for Vundle
 set nocompatible
 filetype off
 
 " Vundle runtime path
-set runtimepath+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " Installed plugins
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'c9s/perlomni.vim'
+Bundle 'msanders/cocoa.vim'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
-Bundle 'gmarik/vundle'
 Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'kien/tabman.vim'
 Bundle 'klen/python-mode'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
-Bundle 'sjl/badwolf'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -40,19 +47,28 @@ Bundle 'xolox/vim-easytags'
 
 " Useful Colorschemes
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 
 " Vim-scripts repo
-Bundle 'YankRing.vim'
 Bundle 'a.vim'
 Bundle 'python.vim'
+Bundle 'YankRing.vim'
 
-" Misc settings
+" General settings
 set number
+set ruler
 set showcmd
+set modelines=0
 set showmode
-set foldmethod=marker
+set nofoldenable " Don't fold automatically
+set foldmethod=syntax
+set foldopen=block,insert,jump,mark,quickfix,search,undo
 set mouse=a
+set scrolloff=8
+set lazyredraw
+set magic
+set clipboard+=unnamed
 set laststatus=2
 set backspace=indent,eol,start
 set ttyfast
@@ -60,18 +76,18 @@ set cpoptions+=$               "Shows a dollar sign when changing text
 set fileformats=unix,mac
 set encoding=utf-8
 set fileencoding=utf-8
-set termencoding=utf8
-set history=1000
+set termencoding=utf-8
 set formatoptions-=o          "Doesn't continue the comment after pressing o
 set formatoptions-=c
 set formatoptions-=r
 set visualbell
-set ruler
 set autoread                  "Detect when a file has been changed externally
+set autowrite
+set autochdir
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
 
-" Let's vim recognize the mouse even inside a tmux session
+" Lets vim recognize the mouse inside a tmux session
 if has('mouse')
     set ttymouse=xterm2
 endif
@@ -86,26 +102,28 @@ set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
 
-" Tab and indent settings
+" Tab settings
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+
+" Indent settings
 set autoindent
 set cindent
 set preserveindent
 set copyindent
 set shiftround
-set nowrap
 set textwidth=80
+set nowrap
 
 " Vim Completions
 set wildmenu
+set wildmode=list:longest
 set wildchar=<Tab>
 set completeopt=longest,menu,preview
 set ofu=syntaxcomplete#Complete
-set wildmode=list:longest,list:full
 
 " Ignore these files when completing
 set wildignore+=.hg,.git,.svn
@@ -122,8 +140,9 @@ set noswapfile
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+set history=1000
 set undofile
-set undolevels=1000
+set undoreload=10000
 set undodir=~/.vim/backup
 
 "Better buffer management
@@ -137,6 +156,7 @@ filetype indent on
 set t_Co=256
 set background=dark
 colorscheme solarized
+call togglebg#map("<F5>")
 "colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
@@ -150,6 +170,7 @@ if has ("gui_running")
     set guioptions-=l
     set guioptions-=L
     set guifont=Inconsolata\ LGC:h12
+    colorscheme badwolf
 endif
 
 " Disable the arrow keys in command mode.
@@ -157,6 +178,9 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Wtf is this crap?! No, I don't want ex-mode. Sheesh, vim
+nnoremap Q :q<CR>
 
 " Remap jj to escape from insert mode
 inoremap jj <Esc>
@@ -167,18 +191,16 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-" Language Settings
-
-" Perl settings {{{
-let perl_include_pod=1
-let perl_extended_vars=1
-let perl_sync_dist=250
-vmap ,tid :!perltidy<CR>
-nmap ,tid :%!perltidy<CR>
-" End Perl settings }}}
-
 " Change the map leader to ,
 let mapleader=","
+
+" Allow emacs-like command-line editing
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+
+" Quickly edit and source ~/.vimrc
+nmap <silent> ,ev :e $MYVIMRC<CR>
+nmap <silent> ,sv :so $MYVIMRC<CR>
 
 " Tab management
 map ,tt :tabnew<CR>
@@ -223,6 +245,25 @@ nnoremap <silent> ,gun :GundoToggle<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_disabled_filetypes=['python']
+let g:syntastic_enable_balloons=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
+" -- Python-Mode Settings --
+let g:pymode_rope=1
+let g:pymode_doc=1
+let g:pymode_doc_key='K'
+let g:pymode_lint=1
+let g:pymode_lint_checker="pyflakes,pep8"
+let g:pymode_lint_write=1
+let g:pymode_virtualenv=1
+let g:pymode_breakpoint=1
+let g:pymode_breakpoint_key='<leader>b'
+let g:pymode_syntax=1
+let g:pymode_syntax_all=1
+let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_folding=0
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
@@ -231,6 +272,13 @@ let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
+
+" -- Alternate settings
+autocmd FileType objc let g:alternateExtensions_h="m"
+autocmd FileType objc let g:alternateExtensions_m="h"
+nnoremap <leader><leader>a :A<CR>
+nnoremap ,at :AT<CR>
+nnoremap ,as :AS<CR>
 
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
@@ -254,12 +302,12 @@ nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
 
 " Corrections/Typos
-iab teh the
-iab treu true
-iab flase false
-iab Treu True
-iab Flase False
-iab psbng #!/usr/local/bin/perl -w
+iabbrev teh the
+iabbrev treu true
+iabbrev flase false
+iabbrev Treu True
+iabbrev Flase False
+iabbrev psbng #!/usr/local/bin/perl -w
 
 " Fix Tmux cursor bullcrap
 if exists('$TMUX')
@@ -270,7 +318,7 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" Filetype Settings {{{
+" Quick Filetype Settings {{{
 " -- tmux --
 aug ft_tmux
     au!
@@ -291,68 +339,14 @@ augroup ft_zsh
     setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-" -- c --
-augroup ft_c
-    au!
-    au FileType c
-                \ setlocal
-                \ tabstop=4
-                \ softtabstop=4
-                \ shiftwidth=4
-                \ textwidth=79
-                \ expandtab
-                \ colorcolumn=80
-                \ comments=sl:/*,mb:\ *,elx:\ */
-augroup END
-
-" -- cpp --
-augroup ft_cpp
-    au!
-    au FileType cpp
-                \ setlocal
-                \ tabstop=4
-                \ softtabstop=4
-                \ shiftwidth=4
-                \ textwidth=79
-                \ expandtab
-                \ colorcolumn=80
-augroup END
-
-" -- ObjectiveC --
-augroup ft_objc
-    au!
-    au FileType objc
-                \ setlocal
-                \ tabstop=4
-                \ softtabstop=4
-                \ shiftwidth=4
-                \ textwidth=79
-                \ expandtab
-                \ colorcolumn=80
-augroup END
-
-"" -- vim --
-augroup ft_vim
-    au!
-    au FileType vim,help setlocal textwidth=78
-    au FileType vim setlocal foldmethod=marker colorcolumn=79 tabstop=4
-                \ expandtab
-                \ softtabstop=4
-                \ shiftwidth=4
-augroup END
-
+" Better brace insertion
+autocmd Filetype c,cpp,objc,perl,java inoremap {      {}<Left>
+autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
+autocmd Filetype c,cpp,objc,perl,java inoremap {{     {
+autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
 "}}}
 
 " Misc autocommands {{{
-
-"Highlight current line
-augroup cursorline
-    au!
-    au BufEnter * set cursorline
-    au BufLeave * set nocursorline
-    au InsertEnter * set nocursorline
-    au InsertLeave * set cursorline
-augroup END
 
 " Return vim to the last position when reopening a file
 augroup line_return
@@ -366,12 +360,9 @@ augroup END
 " Strip trailing whitespaces
 au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
             \ call StripTrailingWhitespace()
-
-" Functions
 function StripTrailingWhitespace()
     %s/\s*$//
     ''
 endfunction
 "}}}
-
 " --------------------------------- End .vimrc --------------------------------
