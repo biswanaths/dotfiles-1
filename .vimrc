@@ -183,15 +183,18 @@ endif
 "}}}
 
 " Leader mappings {{{
-
 " Change the map leader to ,
 let mapleader=","
+let localmapleader="\\"
 
 " Disable the arrow keys in command mode.
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+" Much faster saving
+noremap ,w <esc>:wa<CR>
 
 " Wtf is this Ex-mode crap?! Sheesh, vim!
 nnoremap Q :q<CR>
