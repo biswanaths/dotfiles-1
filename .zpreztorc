@@ -17,11 +17,14 @@ zstyle ':prezto:*:*' color 'yes'
 # Auto set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'no'
 
+#Set the command prefix on non-GNU systems.
+zstyle ':prezto:module:gnu-utility' prefix 'g'
+
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv' 'zcalc'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
@@ -41,7 +44,6 @@ zstyle ':prezto:load' pmodule \
   'perl' \
   'python' \
   'ruby' \
-  'node' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
