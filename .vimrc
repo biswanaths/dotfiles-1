@@ -197,11 +197,11 @@ noremap <silent> ,mk <C-W>K
 noremap <silent> ,ml <C-W>L
 " -- Closing windows
 noremap <silent> ,cc :close<CR>
-noremap <silent> ,qw :cclose<CR>
-noremap <silent> ,qh :wincmd h<CR>:close<CR>
-noremap <silent> ,qj :wincmd j<CR>:close<CR>
-noremap <silent> ,qk :wincmd k<CR>:close<CR>
-noremap <silent> ,ql :wincmd l<CR>:close<CR>
+noremap <silent> ,cw :cclose<CR>
+noremap <silent> ,ch :wincmd h<CR>:close<CR>
+noremap <silent> ,cj :wincmd j<CR>:close<CR>
+noremap <silent> ,ck :wincmd k<CR>:close<CR>
+noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
 
 " Settings for Installed Plugins {{{
