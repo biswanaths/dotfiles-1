@@ -7,7 +7,7 @@
 	- The best shell: Zsh + Prezto
 	- The best editor: Vim
 	- The best terminal multiplexer: tmux
-        - The best colorscheme: Solarized
+    - The best colorscheme: Solarized
 
 ## Obligatory Screenshot
 
