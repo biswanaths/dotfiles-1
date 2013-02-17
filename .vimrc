@@ -65,6 +65,7 @@ set ruler
 set showcmd
 set modelines=0
 set showmode
+set timeoutlen=500
 set nofoldenable " Don't fold automatically
 set foldmethod=syntax
 set foldopen=block,insert,jump,mark,quickfix,search,undo
@@ -212,21 +213,42 @@ cnoremap <C-E> <End>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
-" Tab management
-map ,tt :tabnew<CR>
-map ,tc :tabclose<CR>
-noremap ,tn :tabnext<CR>
-noremap ,tp :tabprevious<CR>
-
 " Reindent entire file and return cursor to the same line
 nmap ,fef ggVG=''
 
 " Toggle hlsearch
-nmap <silent> ,hs :set hlsearch!<CR>
+nmap <silent> ,/ :set hlsearch!<CR>
 
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 "}}}
+
+" Tab Management {{{
+map ,tt :tabnew<CR>
+map ,tc :tabclose<CR>
+noremap ,tn :tabnext<CR>
+noremap ,tp :tabprevious<CR>
+"}}}
+
+" Window Management {{{
+" -- Switching between windows
+noremap <silent> ,h <C-W>h
+noremap <silent> ,j <C-W>j
+noremap <silent> ,k <C-W>k
+noremap <silent> ,l <C-W>l
+" -- Moving windows
+noremap <silent> ,mh <C-W>H
+noremap <silent> ,mj <C-W>J
+noremap <silent> ,mk <C-W>K
+noremap <silent> ,ml <C-W>L
+" -- Closing windows
+noremap <silent> ,cc :close<CR>
+noremap <silent> ,qw :cclose<CR>
+noremap <silent> ,qh :wincmd h<CR>:close<CR>
+noremap <silent> ,qj :wincmd j<CR>:close<CR>
+noremap <silent> ,qk :wincmd k<CR>:close<CR>
+noremap <silent> ,ql :wincmd l<CR>:close<CR>
+" }}}
 
 " Settings for Installed Plugins {{{
 
