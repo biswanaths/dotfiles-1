@@ -45,6 +45,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
@@ -182,50 +183,6 @@ if has ("gui_running")
 endif
 "}}}
 
-" Leader mappings {{{
-" Change the map leader to ,
-let mapleader=","
-let localmapleader="\\"
-
-" Disable the arrow keys in command mode.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" Much faster saving
-noremap ,w <esc>:wa<CR>
-
-" Wtf is this Ex-mode crap?! Sheesh, vim!
-nnoremap Q :q<CR>
-
-" Remap jj to escape from insert mode
-inoremap jj <Esc>
-
-" Map jk to move between visual lines
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-
-" Allow emacs-like command-line editing
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-
-" Quickly edit and source ~/.vimrc
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
-
-" Reindent entire file and return cursor to the same line
-nmap ,fef ggVG=''
-
-" Toggle hlsearch
-nmap <silent> ,/ :set hlsearch!<CR>
-
-" Toggle paste mode
-nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
-"}}}
-
 " Tab Management {{{
 map ,tt :tabnew<CR>
 map ,tc :tabclose<CR>
@@ -314,9 +271,17 @@ let g:clang_complete_macros=1
 " -- Alternate settings
 autocmd FileType objc let g:alternateExtensions_h="m"
 autocmd FileType objc let g:alternateExtensions_m="h"
-nnoremap <leader><leader>a :A<CR>
+nnoremap ,,a :A<CR>
 nnoremap ,at :AT<CR>
 nnoremap ,as :AS<CR>
+
+" -- Fugitive settings
+nnoremap ,gd :Gdiff<CR>
+nnoremap ,gs :Gstatus<CR>
+nnoremap ,ga :Gwrite<CR>
+nnoremap ,gb :Gblame<CR>
+nnoremap ,gco :Gcheckout<CR>
+nnoremap ,gci :Gcommit<CR>
 
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
@@ -338,6 +303,50 @@ let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
+"}}}
+
+" Misc. Leader mappings {{{
+
+" Change the map leader to ,
+let mapleader=","
+
+" Disable the arrow keys in command mode.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Much faster saving
+noremap ,w <esc>:wa<CR>
+
+" Wtf is this Ex-mode crap?! Sheesh, vim!
+nnoremap Q :q<CR>
+
+" Remap jj to escape from insert mode
+inoremap jj <Esc>
+
+" Map jk to move between visual lines
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+" Allow emacs-like command-line editing
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+
+" Quickly edit and source ~/.vimrc
+nmap <silent> ,ev :e $MYVIMRC<CR>
+nmap <silent> ,sv :so $MYVIMRC<CR>
+
+" Reindent entire file and return cursor to the same line
+nmap ,fef ggVG=''
+
+" Toggle hlsearch
+nmap <silent> ,/ :set hlsearch!<CR>
+
+" Toggle paste mode
+nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 "}}}
 
 " Corrections/Typos {{{
