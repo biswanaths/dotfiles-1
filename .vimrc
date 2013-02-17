@@ -19,7 +19,6 @@ Bundle 'gmarik/vundle'
 "}}}
 
 " Installed plugins {{{
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
@@ -28,6 +27,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'klen/python-mode'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'nathanaelkane/vim-indent-guides'
