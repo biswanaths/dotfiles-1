@@ -2,6 +2,7 @@
 avatar=open %U&
 urlopen=open %U&
 ssl=1
+curl=/usr/local/bin/curl
 pause=auto
 mentions=0
 ansi=1
