@@ -7,16 +7,18 @@
 "  Note: Not compatible with Vim < 7, but then again, this is 2013. "
 "-------------------------------------------------------------------"
 
-" Required for Vundle
+" Don't be compatible with vi
 set nocompatible
+"Required before vundle
 filetype off
 
-" Vundle runtime path
+" Vundle runtime path {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+"}}}
 
-" Installed plugins
+" Installed plugins {{{
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
@@ -37,6 +39,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
+Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -54,8 +57,9 @@ Bundle 'tomasr/molokai'
 Bundle 'a.vim'
 Bundle 'python.vim'
 Bundle 'YankRing.vim'
+"}}}
 
-" General settings
+" General settings {{{
 set number
 set ruler
 set showcmd
@@ -86,13 +90,13 @@ set autowrite
 set autochdir
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
-
 " Lets vim recognize the mouse inside a tmux session
 if has('mouse')
     set ttymouse=xterm2
 endif
+"}}}
 
-" Search settings
+" Search settings {{{
 nnoremap / /\v
 vnoremap / /\v
 set incsearch
@@ -101,15 +105,17 @@ set showmatch
 set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
+"}}}
 
-" Tab settings
+" Tab settings {{{
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+"}}}
 
-" Indent settings
+" Indent settings {{{
 set autoindent
 set cindent
 set preserveindent
@@ -117,14 +123,14 @@ set copyindent
 set shiftround
 set textwidth=80
 set nowrap
+"}}}
 
-" Vim Completions
+" Vim Completions {{{
 set wildmenu
 set wildmode=list:longest
 set wildchar=<Tab>
 set completeopt=longest,menu,preview
 set ofu=syntaxcomplete#Complete
-
 " Ignore these files when completing
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.out
@@ -134,8 +140,9 @@ set wildignore+=*.pyc
 set wildignore+=*.spl
 set wildignore+=*.DS_Store
 set wildignore+=*~,#*#,*.sw?,%*,*=
+"}}}
 
-"Backup settings
+"Backup settings {{{
 set noswapfile
 set backup
 set backupdir=~/.vim/backup
@@ -144,11 +151,10 @@ set history=1000
 set undofile
 set undoreload=10000
 set undodir=~/.vim/backup
-
-"Better buffer management
 set nohidden
+"}}}
 
-" Colorscheme / Syntax / Filetype
+" Colorscheme / Syntax / Filetype {{{
 syntax enable
 filetype on
 filetype plugin on
@@ -160,9 +166,10 @@ call togglebg#map("<F5>")
 "colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
+"}}}
 
-" Remove gui nastiness like the scrollbar, toolbar.
-" Set the gui font to look nice
+" Macvim Settings {{{
+" Has anyone looked at Macvim and not vomit explosively?
 if has ("gui_running")
     set guioptions-=T
     set guioptions-=r
@@ -172,6 +179,12 @@ if has ("gui_running")
     set guifont=Inconsolata\ LGC:h12
     colorscheme badwolf
 endif
+"}}}
+
+" Leader mappings {{{
+
+" Change the map leader to ,
+let mapleader=","
 
 " Disable the arrow keys in command mode.
 map <up> <nop>
@@ -179,7 +192,7 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" Wtf is this crap?! No, I don't want ex-mode. Sheesh, vim
+" Wtf is this Ex-mode crap?! Sheesh, vim!
 nnoremap Q :q<CR>
 
 " Remap jj to escape from insert mode
@@ -190,9 +203,6 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-
-" Change the map leader to ,
-let mapleader=","
 
 " Allow emacs-like command-line editing
 cnoremap <C-A> <Home>
@@ -216,6 +226,9 @@ nmap <silent> ,hs :set hlsearch!<CR>
 
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+"}}}
+
+" Settings for Installed Plugins {{{
 
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
@@ -300,16 +313,18 @@ let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
+"}}}
 
-" Corrections/Typos
+" Corrections/Typos {{{
 iabbrev teh the
 iabbrev treu true
 iabbrev flase false
 iabbrev Treu True
 iabbrev Flase False
 iabbrev psbng #!/usr/local/bin/perl -w
+"}}}
 
-" Fix Tmux cursor bullcrap
+" Fix Tmux cursor bullcrap {{{
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -317,6 +332,7 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+"}}}
 
 " Quick Filetype Settings {{{
 " -- tmux --
