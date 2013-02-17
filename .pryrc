@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------------------
 # General
 # ------------------------------------------------------------------------------
-Pry.editor = ENV['EDITOR'] || 'subl -w'
+Pry.editor = ENV['EDITOR'] || 'mvim -v'
 
 # Load the Rails configuration if Pry is running as a rails console.
 load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env
@@ -192,3 +192,5 @@ class Hash
   end
 end
 
+# History
+Pry.config.history.file = "~/.cache/.pry_history"
