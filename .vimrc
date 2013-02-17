@@ -24,11 +24,9 @@ Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
-Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'kien/tabman.vim'
 Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
@@ -50,7 +48,6 @@ Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
 " Useful Colorschemes
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 
@@ -67,7 +64,7 @@ set showcmd
 set modelines=0
 set showmode
 set timeoutlen=500
-set nofoldenable " Don't fold automatically
+set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
 set foldopen=block,insert,jump,mark,quickfix,search,undo
 set mouse=a
@@ -157,14 +154,11 @@ set nohidden
 "}}}
 
 " Colorscheme / Syntax / Filetype {{{
-syntax enable
-filetype on
-filetype plugin on
-filetype indent on
+syntax on
+filetype plugin indent on
 set t_Co=256
 set background=dark
 colorscheme solarized
-call togglebg#map("<F5>")
 "colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
@@ -253,7 +247,7 @@ let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_write=1
 let g:pymode_virtualenv=1
 let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
+let g:pymode_breakpoint_key=',b'
 let g:pymode_syntax=1
 let g:pymode_syntax_all=1
 let g:pymode_syntax_indent_errors=g:pymode_syntax_all
@@ -410,9 +404,12 @@ augroup END
 " Strip trailing whitespaces
 au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
             \ call StripTrailingWhitespace()
-function StripTrailingWhitespace()
-    %s/\s*$//
-    ''
-endfunction
+
+if !exists("*StripTrailingWhitespace")
+    function StripTrailingWhitespace()
+        %s/\s*$//
+        ''
+    endfunction
+endif
 "}}}
 " --------------------------------- End .vimrc --------------------------------
