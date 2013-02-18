@@ -48,6 +48,7 @@ Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
 " Useful Colorschemes
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 
@@ -164,6 +165,7 @@ filetype plugin indent on
 set t_Co=256
 set background=dark
 colorscheme solarized
+call togglebg#map("<F5>")
 "colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
