@@ -80,11 +80,6 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
 
-# Format watch to look nicer
-WATCH=all
-WATCHFMT='%n %a %l from %m at %T.'
-LOGCHECK=10
-
 __rvm_project_rvmrc
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 ################################# End of .zshrc ###############################
