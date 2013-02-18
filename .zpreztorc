@@ -57,4 +57,4 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
     'root'
 
 # Set the prompt theme
-zstyle ':prezto:module:prompt' theme 'peepcodeMod'
+zstyle ':prezto:module:prompt' theme 'sorinMod'
