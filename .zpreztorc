@@ -2,8 +2,8 @@
 ## Prezto Settings ##
 ## Zsh Plugin      ##
 
-# Vi-Mode in the shell is infuriating
-zstyle ':prezto:module:editor' keymap 'emacs'
+# I can never settle on one keymap
+zstyle ':prezto:module:editor' keymap 'vi'
 
 # Convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
