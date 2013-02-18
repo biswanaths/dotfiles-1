@@ -89,11 +89,12 @@ set autowrite
 set autochdir
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
+set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Lets vim recognize the mouse inside a tmux session
 if has('mouse')
     set ttymouse=xterm2
 endif
-"}}}
+"}}} 
 
 " Search settings {{{
 nnoremap / /\v
@@ -124,11 +125,11 @@ set textwidth=80
 set nowrap
 "}}}
 
-" Vim Completions {{{
+" Vim Completions and Wildmenu {{{
 set wildmenu
 set wildmode=list:longest
 set wildchar=<Tab>
-set completeopt=longest,menu,preview
+set completeopt=longest,menuone,preview
 set ofu=syntaxcomplete#Complete
 " Ignore these files when completing
 set wildignore+=.hg,.git,.svn
@@ -138,6 +139,11 @@ set wildignore+=*.o,*.obj,*.manifest,*.sublime-project,*.sublime-workspace
 set wildignore+=*.pyc
 set wildignore+=*.spl
 set wildignore+=*.DS_Store
+set wildignore+=*/Library/*
+set wildignore+=*/Pictures/*
+set wildignore+=*/Books/*
+set wildignore+=Public/*
+set wildignore+=*.rvm/*,.gem/*,.cpan/*,.cache/*,.config/*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
 
@@ -205,7 +211,6 @@ noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
 
 " Settings for Installed Plugins {{{
-
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
 
@@ -281,6 +286,8 @@ nnoremap ,gci :Gcommit<CR>
 let g:easytags_always_enabled=1
 let g:easytags_file='~/.vim/tags/tags'
 let g:easytags_include_members=1
+" Freaking stop updating so fast please
+let g:easytags_updatetime_autodisable=1
 
 " -- Indent Guides --
 let g:indent_guides_start_level=2
@@ -288,19 +295,27 @@ let g:indent_guides_auto_colors=1
 let g:indent_guides_guide_size=1
 
 " -- Ctrl-p Settings --
+let g:ctrlp_working_path_mode=2
+let g:ctrlp_root_markers=['.git']
 let g:ctrlp_max_height=10
 let g:ctrlp_persistent_input=0
 let g:ctrlp_map=',t'
 let g:ctrlp_lazy_update=1
 let g:ctrlp_follow_symlinks=1
-let g:ctrlp_custom_ignore='\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_show_hidden=1
+let g:ctrlp_use_caching=1
+let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
+let g:ctrlp_custom_ignore={
+            \ 'dir'  : '\v[\/]\.(git|hg|svn|config|rvm|gem|cache|dropbox|Trash|subversion|task|cpan)$',
+            \ 'file' : '\v\.(exe|so|dll)$',
+            \ }
+let g:ctrlp_max_files=10000
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
 "}}}
 
-" Misc. Leader mappings {{{
-
+" Control and leader mappings {{{
 " Change the map leader to ,
 let mapleader=","
 
@@ -309,12 +324,25 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " Much faster saving
 noremap ,w <esc>:wa<CR>
 
 " Wtf is this Ex-mode crap?! Sheesh, vim!
 nnoremap Q :q<CR>
+
+" Reselect the line that was last pasted
+nnoremap ,V V`]
+
+" select the entire line but ignore the indentation
+nnoremap vv ^vg_
+
+" Splits a line -- oposite of J (join lines)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Remap jj to escape from insert mode
 inoremap jj <Esc>
@@ -333,6 +361,9 @@ cnoremap <C-E> <End>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
+" Quickly edit ~/.tmux.conf
+nmap <silent> ,et :e ~/.tmux.conf
+
 " Reindent entire file and return cursor to the same line
 nmap ,fef ggVG=''
 
@@ -341,6 +372,16 @@ nmap <silent> ,/ :set hlsearch!<CR>
 
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+
+" UpperCase
+inoremap <C-u> <esc>mzgUiw`z
+
+" Send selection to a private gist.
+vnoremap ,GI :w !gist -p -t %:e \| pbcopy<CR>
+nnoremap ,UG :w !gist -p \| pbcopy<CR>
+
+" Remove trailing whitespace
+nnoremap ,W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 "}}}
 
 " Corrections/Typos {{{
@@ -391,7 +432,6 @@ autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
 "}}}
 
 " Misc autocommands {{{
-
 " Return vim to the last position when reopening a file
 augroup line_return
     au!
@@ -400,16 +440,5 @@ augroup line_return
                 \   execute "normal! g'\"" |
                 \ endif
 augroup END
-
-" Strip trailing whitespaces
-au BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
-            \ call StripTrailingWhitespace()
-
-if !exists("*StripTrailingWhitespace")
-    function StripTrailingWhitespace()
-        %s/\s*$//
-        ''
-    endfunction
-endif
 "}}}
 " --------------------------------- End .vimrc --------------------------------
