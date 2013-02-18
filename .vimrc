@@ -299,7 +299,6 @@ let g:ctrlp_working_path_mode=2
 let g:ctrlp_root_markers=['.git']
 let g:ctrlp_max_height=10
 let g:ctrlp_persistent_input=0
-let g:ctrlp_map=',t'
 let g:ctrlp_lazy_update=1
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_show_hidden=1
@@ -310,6 +309,7 @@ let g:ctrlp_custom_ignore={
             \ 'file' : '\v\.(exe|so|dll)$',
             \ }
 let g:ctrlp_max_files=10000
+let g:ctrlp_map=',t'
 nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
@@ -353,6 +353,11 @@ noremap k gk
 noremap gj j
 noremap gk k
 
+" ^ and $ are just hard to type.
+nnoremap H ^
+nnoremap L $
+vnoremap L g_
+
 " Allow emacs-like command-line editing
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
@@ -382,6 +387,13 @@ nnoremap ,UG :w !gist -p \| pbcopy<CR>
 
 " Remove trailing whitespace
 nnoremap ,W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+
+" Use space to toggle folds
+nnoremap <Space> za
+nnoremap <Space> za
+
+" Focus only on fold that is on the cursor position
+nnoremap ,z zMzvzz
 "}}}
 
 " Corrections/Typos {{{
