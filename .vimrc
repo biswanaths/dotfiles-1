@@ -131,19 +131,18 @@ set wildmode=list:longest
 set wildchar=<Tab>
 set completeopt=longest,menuone,preview
 set ofu=syntaxcomplete#Complete
-" Ignore these files when completing
+" }}}
+
+" Wild ignore {{{
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.out
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*.sublime-project,*.sublime-workspace
 set wildignore+=*.pyc
 set wildignore+=*.spl
 set wildignore+=*.DS_Store
-set wildignore+=*/Library/*
-set wildignore+=*/Pictures/*
-set wildignore+=*/Books/*
-set wildignore+=Public/*
-set wildignore+=*.rvm/*,.gem/*,.cpan/*,.cache/*,.config/*
+set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
+set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
 
@@ -295,8 +294,7 @@ let g:indent_guides_auto_colors=1
 let g:indent_guides_guide_size=1
 
 " -- Ctrl-p Settings --
-let g:ctrlp_working_path_mode=2
-let g:ctrlp_root_markers=['.git']
+let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_height=10
 let g:ctrlp_persistent_input=0
 let g:ctrlp_lazy_update=1
@@ -305,7 +303,7 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_use_caching=1
 let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
 let g:ctrlp_custom_ignore={
-            \ 'dir'  : '\v[\/]\.(git|hg|svn|config|rvm|gem|cache|dropbox|Trash|subversion|task|cpan)$',
+            \ 'dir'  : '\v[\/]\.(git|hg|svn|dropbox|Trash|subversion|task)$',
             \ 'file' : '\v\.(exe|so|dll)$',
             \ }
 let g:ctrlp_max_files=10000
@@ -362,12 +360,11 @@ vnoremap L g_
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
-" Quickly edit and source ~/.vimrc
+" Quickly edit stuff
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
-
-" Quickly edit ~/.tmux.conf
-nmap <silent> ,et :e ~/.tmux.conf
+nmap <silent> ,et :e ~/.tmux.conf<CR>
+nmap <silent> ,es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
 nmap ,fef ggVG=''
