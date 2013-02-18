@@ -22,8 +22,16 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
+# Ever since switching from OMZ to zprezto, git+rvm completion made me 
+# feel like I was back in bash! They were poor.
+# For one thing, git completion was slow. For the other, it didn't even give
+# the damn descriptions! I need it to be fucking verbose damnit. 
+# So I'll just have to source it manually. sigh
+fpath=(~/.zsh/Completion $fpath)
+
 ## Aliases ##
 eval "$(fasd --init auto)"
+alias git="hub"
 alias tmux="tmux -u2"
 alias scrot="screenshot"
 alias j="z"
@@ -46,6 +54,7 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Zsh options
+setopt alwaystoend      # move to the end of the line
 setopt menu_complete    # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst     # complete functions in the prompt.
 setopt notify           # report status of background jobs immediately.
@@ -74,6 +83,7 @@ setopt completealiases  # don't substitute aliases internally before completion.
 setopt sharehistory     # share history between multiple shells
 setopt noclobber        # don't overwrite files by default
 setopt markdirs         # mark directories with / to make them easier to identify
+setopt listtypes
 
 # History settings
 HISTFILE=$HOME/.zhistory
