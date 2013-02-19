@@ -17,11 +17,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 "}}}
 " Installed plugins {{{
+Bundle 'a.vim'
 Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'klen/python-mode'
@@ -29,6 +31,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/nerdcommenter'
@@ -44,17 +47,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
+Bundle 'YankRing.vim'
 
 " Useful Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
-
-" Vim-scripts repo
-Bundle 'a.vim'
-Bundle 'javacomplete'
-Bundle 'python.vim'
-Bundle 'YankRing.vim'
+Bundle 'desert256.vim'
 "}}}
 " General settings {{{
 set number
@@ -358,7 +357,7 @@ nmap <silent> ,es :e ~/.slate<CR>
 nmap ,fef ggVG=''
 
 " Toggle hlsearch
-nmap <silent> ,/ :set hlsearch!<CR>
+nmap <silent> <C-L> :set hlsearch!<CR>
 
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
@@ -377,6 +376,9 @@ nnoremap ,W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 nnoremap <Space> za
 nnoremap <Space> za
 
+" Yank to the end of the line
+nnoremap Y y$
+
 " Focus only on fold that is on the cursor position
 nnoremap ,z zMzvzz
 "}}}
@@ -386,7 +388,7 @@ iabbrev treu true
 iabbrev flase false
 iabbrev Treu True
 iabbrev Flase False
-iabbrev psbng #!/usr/local/bin/perl -w
+iabbrev pbng #!/usr/local/bin/perl -w
 "}}}
 " Fix Tmux cursor bullcrap {{{
 if exists('$TMUX')
