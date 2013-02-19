@@ -7,17 +7,15 @@
 "  Note: Not compatible with Vim < 7, but then again, this is 2013. "
 "-------------------------------------------------------------------"
 
-" Don't be compatible with vi
+" No compatible{{{
 set nocompatible
-"Required before vundle
 filetype off
-
+"}}}
 " Vundle runtime path {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "}}}
-
 " Installed plugins {{{
 Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
@@ -54,10 +52,10 @@ Bundle 'tomasr/molokai'
 
 " Vim-scripts repo
 Bundle 'a.vim'
+Bundle 'javacomplete'
 Bundle 'python.vim'
 Bundle 'YankRing.vim'
 "}}}
-
 " General settings {{{
 set number
 set ruler
@@ -96,7 +94,6 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 "}}} 
-
 " Search settings {{{
 nnoremap / /\v
 vnoremap / /\v
@@ -107,7 +104,6 @@ set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
 "}}}
-
 " Tab settings {{{
 set tabstop=4
 set softtabstop=4
@@ -115,7 +111,6 @@ set shiftwidth=4
 set smarttab
 set expandtab
 "}}}
-
 " Indent settings {{{
 set autoindent
 set cindent
@@ -125,7 +120,6 @@ set shiftround
 set textwidth=80
 set nowrap
 "}}}
-
 " Vim Completions and Wildmenu {{{
 set wildmenu
 set wildmode=list:longest
@@ -133,7 +127,6 @@ set wildchar=<Tab>
 set completeopt=longest,menuone,preview
 set ofu=syntaxcomplete#Complete
 " }}}
-
 " Wild ignore {{{
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.out
@@ -146,7 +139,6 @@ set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
 set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
-
 "Backup settings {{{
 set noswapfile
 set backup
@@ -158,7 +150,6 @@ set undoreload=10000
 set undodir=~/.vim/backup
 set nohidden
 "}}}
-
 " Colorscheme / Syntax / Filetype {{{
 syntax on
 filetype plugin indent on
@@ -170,7 +161,6 @@ call togglebg#map("<F5>")
 "colorscheme molokai
 "colorscheme badwolf
 "}}}
-
 " Macvim Settings {{{
 " Has anyone looked at Macvim and not vomit explosively?
 if has ("gui_running")
@@ -183,14 +173,12 @@ if has ("gui_running")
     colorscheme badwolf
 endif
 "}}}
-
 " Tab Management {{{
 map ,tt :tabnew<CR>
 map ,tc :tabclose<CR>
 noremap ,tn :tabnext<CR>
 noremap ,tp :tabprevious<CR>
 "}}}
-
 " Window Management {{{
 " -- Switching between windows
 noremap <silent> ,h <C-W>h
@@ -210,7 +198,6 @@ noremap <silent> ,cj :wincmd j<CR>:close<CR>
 noremap <silent> ,ck :wincmd k<CR>:close<CR>
 noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
-
 " Settings for Installed Plugins {{{
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
@@ -314,7 +301,6 @@ nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
 "}}}
-
 " Control and leader mappings {{{
 " Change the map leader to ,
 let mapleader=","
@@ -394,7 +380,6 @@ nnoremap <Space> za
 " Focus only on fold that is on the cursor position
 nnoremap ,z zMzvzz
 "}}}
-
 " Corrections/Typos {{{
 iabbrev teh the
 iabbrev treu true
@@ -403,7 +388,6 @@ iabbrev Treu True
 iabbrev Flase False
 iabbrev psbng #!/usr/local/bin/perl -w
 "}}}
-
 " Fix Tmux cursor bullcrap {{{
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -413,7 +397,6 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 "}}}
-
 " Quick Filetype Settings {{{
 " -- tmux --
 aug ft_tmux
@@ -441,7 +424,6 @@ autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
 autocmd Filetype c,cpp,objc,perl,java inoremap {{     {
 autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
 "}}}
-
 " Misc autocommands {{{
 " Return vim to the last position when reopening a file
 augroup line_return
