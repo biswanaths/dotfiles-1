@@ -3,7 +3,7 @@
 ## Zsh Plugin      ##
 
 # I can never settle on one keymap
-zstyle ':prezto:module:editor' keymap 'vi'
+zstyle ':prezto:module:editor' keymap 'emacs'
 
 # Convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
