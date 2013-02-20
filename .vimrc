@@ -4,7 +4,7 @@
 "  Date:   Jan 3, 2013                                              "
 "  Version: 1.0                                                     "
 "                                                                   "
-"  Note: Not compatible with Vim < 7, but then again, this is 2013. "
+"  Note: Not compatible with Vim < 7                                "
 "-------------------------------------------------------------------"
 
 " No compatible{{{
@@ -26,11 +26,10 @@ Bundle 'godlygeek/tabular'
 Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
@@ -123,7 +122,7 @@ set nowrap
 set wildmenu
 set wildmode=list:longest
 set wildchar=<Tab>
-set completeopt=longest,menuone,preview
+set completeopt+=menuone,preview
 set ofu=syntaxcomplete#Complete
 " }}}
 " Wild ignore {{{
@@ -230,21 +229,27 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+" -- UltiSnips Settings -- 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " -- Python-Mode Settings --
-let g:pymode_rope=1
-let g:pymode_doc=1
-let g:pymode_doc_key='K'
-let g:pymode_lint=1
-let g:pymode_lint_checker="pyflakes,pep8"
-let g:pymode_lint_write=1
-let g:pymode_virtualenv=1
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key=',b'
-let g:pymode_syntax=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_folding=0
+"  I keep it python-mode disabled until I need it since it slows vim's startup
+"let g:pymode_rope=1
+"let g:pymode_doc=1
+"let g:pymode_doc_key='K'
+"let g:pymode_lint=1
+"let g:pymode_lint_checker="pyflakes,pep8"
+"let g:pymode_lint_write=1
+"let g:pymode_virtualenv=1
+"let g:pymode_breakpoint=1
+"let g:pymode_breakpoint_key=',b'
+"let g:pymode_syntax=1
+"let g:pymode_syntax_all=1
+"let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+"let g:pymode_syntax_space_errors=g:pymode_syntax_all
+"let g:pymode_folding=0
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
