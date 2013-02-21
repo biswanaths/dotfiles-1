@@ -7,17 +7,18 @@
 "  Note: Not compatible with Vim < 7                                "
 "-------------------------------------------------------------------"
 
-" No compatible{{{
+" Pre-Vundle settings {{{
 set nocompatible
 filetype off
 "}}}
-" Vundle runtime path {{{
+" Vundle Runtime Path {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "}}}
-" Installed plugins {{{
+" Installed Plugins {{{
 Bundle 'a.vim'
+Bundle 'bufkill.vim'
 Bundle 'c9s/perlomni.vim'
 Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
@@ -33,6 +34,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'scratch.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -41,20 +43,25 @@ Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-perl/vim-perl'
+Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
 
 " Useful Colorschemes
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'desert256.vim'
+Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
-Bundle 'desert256.vim'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'xoria256.vim'
 "}}}
-" General settings {{{
+" General Settings {{{
 set number
 set ruler
 set showcmd
@@ -80,6 +87,7 @@ set termencoding=utf-8
 set formatoptions-=o          "Doesn't continue the comment after pressing o
 set formatoptions-=c
 set formatoptions-=r
+set virtualedit=block
 set visualbell
 set autoread                  "Detect when a file has been changed externally
 set autowrite
@@ -92,7 +100,7 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 "}}} 
-" Search settings {{{
+" Search Settings {{{
 nnoremap / /\v
 vnoremap / /\v
 set incsearch
@@ -102,14 +110,14 @@ set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
 "}}}
-" Tab settings {{{
+" Tab Settings {{{
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
 "}}}
-" Indent settings {{{
+" Indent Settings {{{
 set autoindent
 set cindent
 set preserveindent
@@ -118,14 +126,14 @@ set shiftround
 set textwidth=80
 set nowrap
 "}}}
-" Vim Completions and Wildmenu {{{
+" Completions {{{
 set wildmenu
 set wildmode=list:longest
 set wildchar=<Tab>
 set completeopt+=menuone,preview
 set ofu=syntaxcomplete#Complete
 " }}}
-" Wild ignore {{{
+" Wildignore {{{
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.out
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
@@ -153,13 +161,13 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
+"colorscheme solarized
+colorscheme hybrid
 "colorscheme Tomorrow-Night
 "colorscheme molokai
 "colorscheme badwolf
 "}}}
-" Macvim Settings {{{
+" GUI Settings {{{
 " Has anyone looked at Macvim and not vomit explosively?
 if has ("gui_running")
     set guioptions-=T
@@ -196,7 +204,7 @@ noremap <silent> ,cj :wincmd j<CR>:close<CR>
 noremap <silent> ,ck :wincmd k<CR>:close<CR>
 noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
-" Settings for Installed Plugins {{{
+" Plugin Preferences {{{
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
 
@@ -209,7 +217,7 @@ let g:NERDTreeBookMarksFile='~/.vim/backup/'
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=30
 let NERDTreeDirArrows=1
-nnoremap <silent> ,ntr :NERDTreeToggle<CR>
+nnoremap <silent> ,n :NERDTreeToggle<CR>
 
 " -- Tagbar Settings --
 let g:tagbar_expand=1
@@ -305,7 +313,7 @@ nnoremap ,b :CtrlPBuffer<CR>
 nnoremap ,mru :CtrlPMRU<CR>
 nnoremap ,c :CtrlPClearCache<CR>
 "}}}
-" Control and leader mappings {{{
+" General Mappings {{{
 " Change the map leader to ,
 let mapleader=","
 
@@ -387,7 +395,7 @@ nnoremap Y y$
 " Focus only on fold that is on the cursor position
 nnoremap ,z zMzvzz
 "}}}
-" Corrections/Typos {{{
+" Typos {{{
 iabbrev teh the
 iabbrev treu true
 iabbrev flase false
@@ -395,7 +403,7 @@ iabbrev Treu True
 iabbrev Flase False
 iabbrev pbng #!/usr/local/bin/perl -w
 "}}}
-" Fix Tmux cursor bullcrap {{{
+" Tmux Cursor Bullcrap {{{
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -431,7 +439,7 @@ autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
 autocmd Filetype c,cpp,objc,perl,java inoremap {{     {
 autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
 "}}}
-" Misc autocommands {{{
+" Misc Autocommands {{{
 " Return vim to the last position when reopening a file
 augroup line_return
     au!
