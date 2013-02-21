@@ -37,6 +37,7 @@ alias scrot="screenshot"
 alias j="z"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
+alias vi="mvim -v"
 alias vim="mvim -v"
 alias slime="subl"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
@@ -54,7 +55,7 @@ alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killal
 alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
 
 # Zsh options
-setopt alwaystoend      # move to the end of the line
+setopt alwaystoend      # move to the end of the line after completing
 setopt menu_complete    # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst     # complete functions in the prompt.
 setopt notify           # report status of background jobs immediately.
@@ -83,7 +84,8 @@ setopt completealiases  # don't substitute aliases internally before completion.
 setopt sharehistory     # share history between multiple shells
 setopt noclobber        # don't overwrite files by default
 setopt markdirs         # mark directories with / to make them easier to identify
-setopt listtypes
+setopt autoparamslash   # Directories have / at the end
+setopt chaselinks       # give the actual path of the symlink
 
 # History settings
 HISTFILE=$HOME/.zhistory
