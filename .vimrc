@@ -24,37 +24,39 @@ Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'haskell.vim'
 Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'klen/python-mode'
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
-Bundle 'python.vim'
+Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-perl/vim-perl'
 Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
 
-" Useful Colorschemes
+" I can't choose a single colorscheme to save my life!
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'desert256.vim'
+Bundle 'Lokaltog/vim-distinguished'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
@@ -66,7 +68,7 @@ set number
 set ruler
 set showcmd
 set modelines=0
-set showmode
+set noshowmode
 set timeoutlen=500
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
@@ -99,7 +101,7 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 if has('mouse')
     set ttymouse=xterm2
 endif
-"}}} 
+"}}}
 " Search Settings {{{
 nnoremap / /\v
 vnoremap / /\v
@@ -145,7 +147,7 @@ set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
 set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
-"Backup settings {{{
+"Backup settings {{{1
 set noswapfile
 set backup
 set backupdir=~/.vim/backup
@@ -179,30 +181,24 @@ if has ("gui_running")
     colorscheme badwolf
 endif
 "}}}
-" Tab Management {{{
-map ,tt :tabnew<CR>
-map ,tc :tabclose<CR>
-noremap ,tn :tabnext<CR>
-noremap ,tp :tabprevious<CR>
-"}}}
 " Window Management {{{
 " -- Switching between windows
-noremap <silent> ,h <C-W>h
-noremap <silent> ,j <C-W>j
-noremap <silent> ,k <C-W>k
-noremap <silent> ,l <C-W>l
+nnoremap <silent> ,h <C-W>h
+nnoremap <silent> ,j <C-W>j
+nnoremap <silent> ,k <C-W>k
+nnoremap <silent> ,l <C-W>l
 " -- Moving windows
-noremap <silent> ,mh <C-W>H
-noremap <silent> ,mj <C-W>J
-noremap <silent> ,mk <C-W>K
-noremap <silent> ,ml <C-W>L
+nnoremap <silent> ,mh <C-W>H
+nnoremap <silent> ,mj <C-W>J
+nnoremap <silent> ,mk <C-W>K
+nnoremap <silent> ,ml <C-W>L
 " -- Closing windows
-noremap <silent> ,cc :close<CR>
-noremap <silent> ,cw :cclose<CR>
-noremap <silent> ,ch :wincmd h<CR>:close<CR>
-noremap <silent> ,cj :wincmd j<CR>:close<CR>
-noremap <silent> ,ck :wincmd k<CR>:close<CR>
-noremap <silent> ,cl :wincmd l<CR>:close<CR>
+nnoremap <silent> ,cc :close<CR>
+nnoremap <silent> ,cw :cclose<CR>
+nnoremap <silent> ,ch :wincmd h<CR>:close<CR>
+nnoremap <silent> ,cj :wincmd j<CR>:close<CR>
+nnoremap <silent> ,ck :wincmd k<CR>:close<CR>
+nnoremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
 " Plugin Preferences {{{
 " -- PowerLine Settings --
@@ -214,9 +210,7 @@ let g:yankring_history_dir='~/.vim/backup/'
 " -- NerdTree Settings --
 let NerdTreeShowBookMarks=1
 let g:NERDTreeBookMarksFile='~/.vim/backup/'
-let NERDTreeMinimalUI=1
 let NERDTreeWinSize=30
-let NERDTreeDirArrows=1
 nnoremap <silent> ,n :NERDTreeToggle<CR>
 
 " -- Tagbar Settings --
@@ -237,7 +231,7 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-" -- UltiSnips Settings -- 
+" -- UltiSnips Settings --
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -270,7 +264,7 @@ let g:clang_complete_macros=1
 " -- Alternate settings
 autocmd FileType objc let g:alternateExtensions_h="m"
 autocmd FileType objc let g:alternateExtensions_m="h"
-nnoremap ,,a :A<CR>
+nnoremap ,A :A<CR>
 nnoremap ,at :AT<CR>
 nnoremap ,as :AS<CR>
 
@@ -286,7 +280,7 @@ nnoremap ,gci :Gcommit<CR>
 let g:easytags_always_enabled=1
 let g:easytags_file='~/.vim/tags/tags'
 let g:easytags_include_members=1
-" Freaking stop updating so fast please
+" ctrlp keeps lowering updatetime which messes with easytags
 let g:easytags_updatetime_autodisable=1
 
 " -- Indent Guides --
@@ -318,17 +312,17 @@ nnoremap ,c :CtrlPClearCache<CR>
 let mapleader=","
 
 " Disable the arrow keys in command mode.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Much faster saving
-noremap ,w <esc>:wa<CR>
+nnoremap ,w <esc>:wa<CR>
 
 " Wtf is this Ex-mode crap?! Sheesh, vim!
 nnoremap Q :q<CR>
@@ -346,10 +340,10 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 inoremap jj <Esc>
 
 " Map jk to move between visual lines
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " ^ and $ are just hard to type.
 nnoremap H ^
@@ -361,19 +355,19 @@ cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
 " Quickly edit stuff
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
-nmap <silent> ,et :e ~/.tmux.conf<CR>
-nmap <silent> ,es :e ~/.slate<CR>
+nnoremap <silent> ,ev :e $MYVIMRC<CR>
+nnoremap <silent> ,sv :so $MYVIMRC<CR>
+nnoremap <silent> ,et :e ~/.tmux.conf<CR>
+nnoremap <silent> ,es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nmap ,fef ggVG=''
+nnoremap ,fef ggVG=''
 
 " Toggle hlsearch
-nmap <silent> <C-L> :set hlsearch!<CR>
+nnoremap <silent> <C-L> :set hlsearch!<CR>
 
 " Toggle paste mode
-nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+nnoremap <silent> ,p :set invpaste<CR>:set paste?<CR>
 
 " UpperCase
 inoremap <C-u> <esc>mzgUiw`z
@@ -401,7 +395,7 @@ iabbrev treu true
 iabbrev flase false
 iabbrev Treu True
 iabbrev Flase False
-iabbrev pbng #!/usr/local/bin/perl -w
+iabbrev pbng #!/usr/local/bin/perl
 "}}}
 " Tmux Cursor Bullcrap {{{
 if exists('$TMUX')
