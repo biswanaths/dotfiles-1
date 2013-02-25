@@ -38,7 +38,6 @@ alias j="z"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
 alias vi="mvim -v"
-alias vim="mvim -v"
 alias slime="subl"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
