@@ -7,7 +7,7 @@
 	- Zsh + Prezto
 	- Vim
 	- tmux
-   - Solarized
+	- Solarized
 
 ## Obligatory Screenshot
 
