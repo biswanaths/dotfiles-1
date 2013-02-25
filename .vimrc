@@ -32,6 +32,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
+Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
@@ -147,7 +148,7 @@ set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
 set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
-"Backup settings {{{1
+"Backup settings {{{
 set noswapfile
 set backup
 set backupdir=~/.vim/backup
@@ -201,6 +202,10 @@ nnoremap <silent> ,ck :wincmd k<CR>:close<CR>
 nnoremap <silent> ,cl :wincmd l<CR>:close<CR>
 " }}}
 " Plugin Preferences {{{
+let python_highlight_all=1
+let python_print_as_function=1
+let python_slow_sync=1
+
 " -- PowerLine Settings --
 let g:Powerline_symbols='fancy'
 
@@ -237,7 +242,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " -- Python-Mode Settings --
-"  I keep it python-mode disabled until I need it since it slows vim's startup
+"  I keep it disabled until I need it since it slows vim's startup
 "let g:pymode_rope=1
 "let g:pymode_doc=1
 "let g:pymode_doc_key='K'
