@@ -2,12 +2,12 @@
 	Various .rc files for my command line experience
 
 ## Stuff I have:
-	- The best OS: OS X
-	- The best package manager: Homebrew 
-	- The best shell: Zsh + Prezto
-	- The best editor: Vim
-	- The best terminal multiplexer: tmux
-    - The best colorscheme: Solarized
+	- OS X
+	- Homebrew 
+	- Zsh + Prezto
+	- Vim
+	- tmux
+   - Solarized
 
 ## Obligatory Screenshot
 
