@@ -70,7 +70,6 @@ set ruler
 set showcmd
 set modelines=0
 set noshowmode
-set timeoutlen=500
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
 set foldopen=block,insert,jump,mark,quickfix,search,undo
@@ -145,7 +144,7 @@ set wildignore+=*.pyc
 set wildignore+=*.spl
 set wildignore+=*.DS_Store
 set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
-set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*
+set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*,*.rbenv/*
 set wildignore+=*~,#*#,*.sw?,%*,*=
 "}}}
 "Backup settings {{{
@@ -273,25 +272,12 @@ nnoremap ,A :A<CR>
 nnoremap ,at :AT<CR>
 nnoremap ,as :AS<CR>
 
-" -- Fugitive settings
-nnoremap ,gd :Gdiff<CR>
-nnoremap ,gs :Gstatus<CR>
-nnoremap ,ga :Gwrite<CR>
-nnoremap ,gb :Gblame<CR>
-nnoremap ,gco :Gcheckout<CR>
-nnoremap ,gci :Gcommit<CR>
-
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
 let g:easytags_file='~/.vim/tags/tags'
 let g:easytags_include_members=1
 " ctrlp keeps lowering updatetime which messes with easytags
 let g:easytags_updatetime_autodisable=1
-
-" -- Indent Guides --
-let g:indent_guides_start_level=2
-let g:indent_guides_auto_colors=1
-let g:indent_guides_guide_size=1
 
 " -- Ctrl-p Settings --
 let g:ctrlp_working_path_mode=0
