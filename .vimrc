@@ -36,12 +36,12 @@ Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -76,6 +76,8 @@ set foldopen=block,insert,jump,mark,quickfix,search,undo
 set mouse=a
 set scrolloff=8
 set lazyredraw
+"This prevents <C-a> & <C-x> from increating a 0 padded number to octal (eg. 007 to 010)
+set nrformats-=octal          
 set magic
 set clipboard+=unnamed
 set laststatus=2
@@ -316,7 +318,7 @@ inoremap <right> <nop>
 nnoremap ,w <esc>:wa<CR>
 
 " Wtf is this Ex-mode crap?! Sheesh, vim!
-nnoremap Q :q<CR>
+nnoremap Q :qa<CR>
 
 " Reselect the line that was last pasted
 nnoremap ,V V`]
