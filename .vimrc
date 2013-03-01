@@ -276,10 +276,10 @@ nnoremap ,as :AS<CR>
 
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
-let g:easytags_file='~/.vim/tags/tags'
 let g:easytags_include_members=1
 " ctrlp keeps lowering updatetime which messes with easytags
 let g:easytags_updatetime_autodisable=1
+let g:easytags_by_filetype='~/.vim/tags/'
 
 " -- Ctrl-p Settings --
 let g:ctrlp_working_path_mode=0
@@ -435,5 +435,15 @@ augroup line_return
                 \   execute "normal! g'\"" |
                 \ endif
 augroup END
+
+"Vim doesn't escape fast enough from visual/insert mode
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FreakingEscapeAlreadyPleaseVim
+        au!
+        au InsertLeave * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 "}}}
 " --------------------------------- End .vimrc --------------------------------
