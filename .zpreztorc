@@ -47,12 +47,12 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt'
 
-# Enable all highlighting!
+# Set highlighting for Zsh commands
 zstyle ':prezto:module:syntax-highlighting' highlighters \
     'main' \
     'brackets' \
     'pattern' \
-    'cursor' \
+    #'cursor' \
     'root'
 
 # Set the prompt theme
