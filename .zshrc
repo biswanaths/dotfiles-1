@@ -16,6 +16,7 @@ export ARCHFLAGS='-arch x86_64'
 export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
 export LESSHISTSIZE=1000
+export PATH=/usr/local/share/python:$PATH
 
 # Change some syntax coloring to look nicer
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
