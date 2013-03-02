@@ -17,21 +17,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
+
+" Bundle 'klen/python-mode'
 Bundle 'a.vim'
 Bundle 'bufkill.vim'
 Bundle 'c9s/perlomni.vim'
-Bundle 'msanders/cocoa.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
+Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'haskell.vim'
 Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
+Bundle 'msanders/cocoa.vim'
 Bundle 'python.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
@@ -53,7 +55,6 @@ Bundle 'vim-perl/vim-perl'
 Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
-
 " I can't choose a single colorscheme to save my life!
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'desert256.vim'
