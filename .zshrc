@@ -23,15 +23,12 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
-# Ever since switching from OMZ to zprezto, git+rvm completion made me 
-# feel like I was back in bash! They were poor.
-# For one thing, git completion was slow. For the other, it didn't even give
-# the damn descriptions! I need it to be fucking verbose damnit. 
-# So I'll just have to source it manually. sigh
+# Source some better completion scripts instead of the defaults.
 fpath=(~/.zsh/Completion $fpath)
 
 ## Aliases ##
 eval "$(fasd --init auto)"
+alias weechat="weechat-curses"
 alias git="hub"
 alias tmux="tmux -u2"
 alias scrot="screenshot"
