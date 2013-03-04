@@ -1,11 +1,15 @@
-"-------------------------------------------------------------------"
-"  File:   .vimrc                                                   "
-"  Author: Akshay Hegde                                             "
-"  Date:   Jan 3, 2013                                              "
-"  Version: 1.0                                                     "
-"                                                                   "
-"  Note: Not compatible with Vim < 7                                "
-"-------------------------------------------------------------------"
+"---------------------------------"
+"        _                        " 
+" __   _(_)_ __ ___  _ __ ___     "
+" \ \ / / | '_ ` _ \| '__/ __|    "
+"  \ V /| | | | | | | | | (__     " 
+" (_)_/ |_|_| |_| |_|_|  \___|    "
+"                                 "
+"---------------------------------"
+" File: ~/.vimrc                  "
+" Author: Akshay                  "
+" Updated: March 2, 2013          "
+"---------------------------------"
 
 " Pre-Vundle settings {{{
 set nocompatible
@@ -17,8 +21,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
-
-" Bundle 'klen/python-mode'
 Bundle 'a.vim'
 Bundle 'bufkill.vim'
 Bundle 'c9s/perlomni.vim'
@@ -29,6 +31,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'haskell.vim'
 Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
+" Bundle 'klen/python-mode'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
@@ -55,6 +58,7 @@ Bundle 'vim-perl/vim-perl'
 Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
+
 " I can't choose a single colorscheme to save my life!
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'desert256.vim'
@@ -167,6 +171,7 @@ filetype plugin indent on
 set t_Co=256
 set background=dark
 "colorscheme solarized
+let g:hybrid_use_Xresources=1
 colorscheme hybrid
 "colorscheme Tomorrow-Night
 "colorscheme molokai
@@ -209,7 +214,7 @@ let python_print_as_function=1
 let python_slow_sync=1
 
 " -- PowerLine Settings --
-let g:Powerline_symbols='fancy'
+"let g:Powerline_symbols='default'
 
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
@@ -314,6 +319,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Auto Semicolon insertion
+inoremap ,; <ESC>maA;<ESC>`aa
+nnoremap ,; maA;<ESC>`a
 
 " Much faster saving
 nnoremap ,w <esc>:wa<CR>
