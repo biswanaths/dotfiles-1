@@ -243,6 +243,9 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+" -- Supertab Settings -- 
+let g:SuperTabCrMapping=0  " Shuts up supertab's annoying messages.
+
 " -- UltiSnips Settings --
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
