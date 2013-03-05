@@ -387,7 +387,6 @@ nnoremap ,W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Use space to toggle folds
 nnoremap <Space> za
-nnoremap <Space> za
 
 " Yank to the end of the line
 nnoremap Y y$
