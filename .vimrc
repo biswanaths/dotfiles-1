@@ -14,14 +14,17 @@
 " Pre-Vundle settings {{{
 set nocompatible
 filetype off
+
 "}}}
 " Vundle Runtime Path {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+
 "}}}
 " Installed Plugins {{{
 Bundle 'a.vim'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'bufkill.vim'
 Bundle 'c9s/perlomni.vim'
 Bundle 'davidhalter/jedi-vim'
@@ -29,7 +32,6 @@ Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'haskell.vim'
-Bundle 'javacomplete'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'klen/python-mode'
 Bundle 'kien/rainbow_parentheses.vim'
