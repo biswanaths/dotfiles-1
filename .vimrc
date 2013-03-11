@@ -70,9 +70,10 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'xoria256.vim'
+
 "}}}
 " General Settings {{{
-set number
+set relativenumber
 set ruler
 set showcmd
 set modelines=0
@@ -86,7 +87,7 @@ set lazyredraw
 "This prevents <C-a> & <C-x> from increating a 0 padded number to octal (eg. 007 to 010)
 set nrformats-=octal          
 set magic
-set clipboard+=unnamed
+set clipboard=unnamed
 set laststatus=2
 set backspace=indent,eol,start
 set ttyfast
@@ -110,6 +111,8 @@ set spellfile=~/.vim/custom-dictionary.utf-8.add
 if has('mouse')
     set ttymouse=xterm2
 endif
+let mapleader=','           " Let leader key be , instead of \
+
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -120,6 +123,7 @@ set showmatch
 set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
+
 "}}}
 " Tab Settings {{{
 set tabstop=4
@@ -127,6 +131,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+
 "}}}
 " Indent Settings {{{
 set autoindent
@@ -136,13 +141,16 @@ set copyindent
 set shiftround
 set textwidth=80
 set nowrap
+
 "}}}
 " Completions {{{
 set wildmenu
-set wildmode=list:longest
+set wildmode=full
 set wildchar=<Tab>
-set completeopt+=menuone,preview
-set ofu=syntaxcomplete#Complete
+set completeopt-=preview
+set completeopt+=longest,menuone
+set omnifunc=syntaxcomplete#Complete
+
 " }}}
 " Wildignore {{{
 set wildignore+=.hg,.git,.svn
@@ -155,6 +163,7 @@ set wildignore+=*.DS_Store
 set wildignore+=*/Library/*,*/Pictures/*,*/Books/*,*/Public/*
 set wildignore+=*.rvm/*,.gem/*,*.cpan/*,.cache/*,.config/*,*.cpan*,*.rbenv/*
 set wildignore+=*~,#*#,*.sw?,%*,*=
+
 "}}}
 "Backup settings {{{
 set noswapfile
@@ -166,18 +175,16 @@ set undofile
 set undoreload=10000
 set undodir=~/.vim/backup
 set nohidden
+
 "}}}
 " Colorscheme / Syntax / Filetype {{{
 syntax on
 filetype plugin indent on
 set t_Co=256
 set background=dark
-"colorscheme solarized
 let g:hybrid_use_Xresources=1
 colorscheme hybrid
-"colorscheme Tomorrow-Night
-"colorscheme molokai
-"colorscheme badwolf
+
 "}}}
 " GUI Settings {{{
 " Has anyone looked at Macvim and not vomit explosively?
@@ -190,25 +197,27 @@ if has ("gui_running")
     set guifont=Inconsolata\ LGC:h12
     colorscheme badwolf
 endif
+
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> ,h <C-W>h
-nnoremap <silent> ,j <C-W>j
-nnoremap <silent> ,k <C-W>k
-nnoremap <silent> ,l <C-W>l
+nnoremap <silent> <leader>h <C-W>h
+nnoremap <silent> <leader>j <C-W>j
+nnoremap <silent> <leader>k <C-W>k
+nnoremap <silent> <leader>l <C-W>l
 " -- Moving windows
-nnoremap <silent> ,mh <C-W>H
-nnoremap <silent> ,mj <C-W>J
-nnoremap <silent> ,mk <C-W>K
-nnoremap <silent> ,ml <C-W>L
+nnoremap <silent> <leader>mh <C-W>H
+nnoremap <silent> <leader>mj <C-W>J
+nnoremap <silent> <leader>mk <C-W>K
+nnoremap <silent> <leader>ml <C-W>L
 " -- Closing windows
-nnoremap <silent> ,cc :close<CR>
-nnoremap <silent> ,cw :cclose<CR>
-nnoremap <silent> ,ch :wincmd h<CR>:close<CR>
-nnoremap <silent> ,cj :wincmd j<CR>:close<CR>
-nnoremap <silent> ,ck :wincmd k<CR>:close<CR>
-nnoremap <silent> ,cl :wincmd l<CR>:close<CR>
+nnoremap <silent> <leader>cc :close<CR>
+nnoremap <silent> <leader>cw :cclose<CR>
+nnoremap <silent> <leader>ch :wincmd h<CR>:close<CR>
+nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
+nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
+nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
+
 " }}}
 " Plugin Preferences {{{
 let python_highlight_all=1
@@ -216,7 +225,7 @@ let python_print_as_function=1
 let python_slow_sync=1
 
 " -- PowerLine Settings --
-"let g:Powerline_symbols='default'
+"let g:Powerline_symbols='fancy'
 
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
@@ -225,17 +234,17 @@ let g:yankring_history_dir='~/.vim/backup/'
 let NerdTreeShowBookMarks=1
 let g:NERDTreeBookMarksFile='~/.vim/backup/'
 let NERDTreeWinSize=30
-nnoremap <silent> ,n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 " -- Tagbar Settings --
 let g:tagbar_expand=1
 let g:tagbar_compact=1
 let g:tagbar_width=30
-nnoremap <silent> ,tb :TagbarToggle<CR>
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
 " -- Gundo Settings --
 let g:gundo_preview_bottom=1
-nnoremap <silent> ,gun :GundoToggle<CR>
+nnoremap <silent> <leader>gun :GundoToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
@@ -263,7 +272,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "let g:pymode_lint_write=1
 "let g:pymode_virtualenv=1
 "let g:pymode_breakpoint=1
-"let g:pymode_breakpoint_key=',b'
+"let g:pymode_breakpoint_key='<leader>b'
 "let g:pymode_syntax=1
 "let g:pymode_syntax_all=1
 "let g:pymode_syntax_indent_errors=g:pymode_syntax_all
@@ -281,9 +290,9 @@ let g:clang_complete_macros=1
 " -- Alternate settings
 autocmd FileType objc let g:alternateExtensions_h="m"
 autocmd FileType objc let g:alternateExtensions_m="h"
-nnoremap ,A :A<CR>
-nnoremap ,at :AT<CR>
-nnoremap ,as :AS<CR>
+nnoremap <leader>A :A<CR>
+nnoremap <leader>at :AT<CR>
+nnoremap <leader>as :AS<CR>
 
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
@@ -306,14 +315,16 @@ let g:ctrlp_custom_ignore={
             \ 'file' : '\v\.(exe|so|dll)$',
             \ }
 let g:ctrlp_max_files=10000
-let g:ctrlp_map=',t'
-nnoremap ,b :CtrlPBuffer<CR>
-nnoremap ,mru :CtrlPMRU<CR>
-nnoremap ,c :CtrlPClearCache<CR>
+let g:ctrlp_map='<leader>t'
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>mru :CtrlPMRU<CR>
+nnoremap <leader>c :CtrlPClearCache<CR>
+
 "}}}
 " General Mappings {{{
-" Change the map leader to ,
-let mapleader=","
+
+" Restore reverse for f/F/t/T searched
+nnoremap \ ,
 
 " Disable the arrow keys in command mode.
 nnoremap <up> <nop>
@@ -326,17 +337,17 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Auto Semicolon insertion
-inoremap ,; <ESC>maA;<ESC>`aa
-nnoremap ,; maA;<ESC>`a
+inoremap <C-;> <ESC>maA;<ESC>`aa
+nnoremap <leader>; maA;<ESC>`a
 
 " Much faster saving
-nnoremap ,w <esc>:wa<CR>
+nnoremap <leader>w <esc>:wa<CR>
 
 " Wtf is this Ex-mode crap?! Sheesh, vim!
 nnoremap Q :qa<CR>
 
 " Reselect the line that was last pasted
-nnoremap ,V V`]
+nnoremap <leader>V V`]
 
 " select the entire line but ignore the indentation
 nnoremap vv ^vg_
@@ -363,29 +374,30 @@ cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
 " Quickly edit stuff
-nnoremap <silent> ,ev :e $MYVIMRC<CR>
-nnoremap <silent> ,sv :so $MYVIMRC<CR>
-nnoremap <silent> ,et :e ~/.tmux.conf<CR>
-nnoremap <silent> ,es :e ~/.slate<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
+nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
+nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap ,fef ggVG=''
+nnoremap <leader>fef ggVG=''
 
 " Toggle hlsearch
 nnoremap <silent> <C-L> :set hlsearch!<CR>
 
 " Toggle paste mode
-nnoremap <silent> ,p :set invpaste<CR>:set paste?<CR>
+nnoremap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 
 " UpperCase
 inoremap <C-u> <esc>mzgUiw`z
 
 " Send selection to a private gist.
-vnoremap ,GI :w !gist -p -t %:e \| pbcopy<CR>
-nnoremap ,UG :w !gist -p \| pbcopy<CR>
+vnoremap <leader>GI :w !gist -p -t %:e \| pbcopy<CR>
+nnoremap <leader>UG :w !gist -p \| pbcopy<CR>
 
 " Remove trailing whitespace
-nnoremap ,W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Use space to toggle folds
 nnoremap <Space> za
@@ -412,6 +424,7 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
 "}}}
 " Quick Filetype Settings {{{
 " -- tmux --
@@ -439,6 +452,7 @@ autocmd Filetype c,cpp,objc,perl,java inoremap {      {}<Left>
 autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
 autocmd Filetype c,cpp,objc,perl,java inoremap {{     {
 autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
+
 "}}}
 " Misc Autocommands {{{
 " Return vim to the last position when reopening a file
@@ -450,14 +464,19 @@ augroup line_return
                 \ endif
 augroup END
 
+" Switch to regular number line when in insert mode.
+autocmd! InsertEnter * set number
+autocmd! InsertLeave * set relativenumber
+
 "Vim doesn't escape fast enough from visual/insert mode
 if ! has('gui_running')
     set ttimeoutlen=10
-    augroup FreakingEscapeAlreadyPleaseVim
+    augroup FreakingEscapeAlreadyPlease
         au!
         au InsertLeave * set timeoutlen=0
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
 "}}}
 " --------------------------------- End .vimrc --------------------------------
