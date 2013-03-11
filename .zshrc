@@ -23,19 +23,18 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
-# Source some better completion scripts instead of the defaults.
+# Source some better completion scripts
 fpath=(~/.zsh/Completion $fpath)
 
 ## Aliases ##
-eval "$(fasd --init auto)"
 alias weechat="weechat-curses"
-alias git="hub"
+alias ex="exec" # I just don't want to enter ex.
+alias got="git"
 alias tmux="tmux -u2"
-alias scrot="screenshot"
-alias j="z"
+alias scrot="screencapture"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias mutt="cd ~/Desktop/ && mutt"
-alias vi="mvim -v"
+alias vi="vim"
 alias slime="subl"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
 alias cp="cp -vi"
@@ -48,8 +47,9 @@ alias sz="source ~/.zshrc"
 alias evi="mvim -v ~/.vimrc"
 alias upd="brew update;brew upgrade;brew cleanup"
 alias musicmpd="mpd && mpdscribble && ncmpcpp"
-alias showfilesY="defaults write com.apple.Finder AppleShowAllFiles YES ; killall Finder"
-alias showfilesN="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
+alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES ; killall Finder"
+alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder"
+alias eclim="/Applications/eclipse/eclimd"
 
 # Zsh options
 setopt alwaystoend      # move to the end of the line after completing
@@ -83,6 +83,7 @@ setopt noclobber        # don't overwrite files by default
 setopt markdirs         # mark directories with / to make them easier to identify
 setopt autoparamslash   # Directories have / at the end
 setopt chaselinks       # give the actual path of the symlink
+setopt combiningchars   # displays some characters correctly
 
 # History settings
 HISTFILE=$HOME/.zhistory
