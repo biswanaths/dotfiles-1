@@ -406,8 +406,28 @@ nnoremap <Space> za
 nnoremap Y y$
 
 " Focus only on fold that is on the cursor position
-nnoremap ,z zMzvzz
+nnoremap <leader>z zMzvzz
+
 "}}}
+" Cscope Settings {{{
+if has('cscope')
+    set cscopetag cscopeverbose
+
+    if has('quickfix')
+        set cscopequickfix=s-,c-,d-,i-,t-,e-
+    endif
+
+    cnoreabbrev csa cs add
+    cnoreabbrev csf cs find
+    cnoreabbrev csk cs kill
+    cnoreabbrev csr cs reset
+    cnoreabbrev css cs show
+    cnoreabbrev csh cs help
+
+    command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
+
+" }}}
 " Typos {{{
 iabbrev teh the
 iabbrev treu true
@@ -415,6 +435,7 @@ iabbrev flase false
 iabbrev Treu True
 iabbrev Flase False
 iabbrev pbng #!/usr/local/bin/perl
+
 "}}}
 " Tmux Cursor Bullcrap {{{
 if exists('$TMUX')
