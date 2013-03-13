@@ -87,3 +87,8 @@ if [[ -d "$TMPDIR" ]]; then
     mkdir -p "$TMPPREFIX"
   fi
 fi
+
+#
+# Misc paths
+#
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home
