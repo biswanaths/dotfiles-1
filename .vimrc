@@ -24,31 +24,27 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'a.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bufkill.vim'
 Bundle 'c9s/perlomni.vim'
-Bundle 'davidhalter/jedi-vim'
+" Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'haskell.vim'
+Bundle 'kana/vim-smartinput'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'klen/python-mode'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
-Bundle 'msanders/cocoa.vim'
 Bundle 'python.vim'
-Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -76,6 +72,7 @@ Bundle 'xoria256.vim'
 set relativenumber
 set ruler
 set showcmd
+set cmdheight=2
 set modelines=0
 set noshowmode
 set nofoldenable                " Don't fold automatically
@@ -84,6 +81,7 @@ set foldopen=block,insert,jump,mark,quickfix,search,undo
 set mouse=a
 set scrolloff=8
 set lazyredraw
+set synmaxcol=2048
 "This prevents <C-a> & <C-x> from increating a 0 padded number to octal (eg. 007 to 010)
 set nrformats-=octal          
 set magic
@@ -112,7 +110,6 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 let mapleader=','           " Let leader key be , instead of \
-
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -123,6 +120,7 @@ set showmatch
 set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
+set gdefault
 
 "}}}
 " Tab Settings {{{
@@ -145,10 +143,10 @@ set nowrap
 "}}}
 " Completions {{{
 set wildmenu
-set wildmode=full
+set wildmode=list:longest
 set wildchar=<Tab>
 set completeopt-=preview
-set completeopt+=longest,menuone
+set completeopt+=longest,menuone,menu
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
@@ -230,12 +228,6 @@ let python_slow_sync=1
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
 
-" -- NerdTree Settings --
-let NerdTreeShowBookMarks=1
-let g:NERDTreeBookMarksFile='~/.vim/backup/'
-let NERDTreeWinSize=30
-nnoremap <silent> <leader>n :NERDTreeToggle<CR>
-
 " -- Tagbar Settings --
 let g:tagbar_expand=1
 let g:tagbar_compact=1
@@ -249,10 +241,12 @@ nnoremap <silent> <leader>gun :GundoToggle<CR>
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
-let g:syntastic_disabled_filetypes=['python']
 let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_mode_map = {'mode': 'active',
+            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'zsh'],
+            \ 'passive_filetypes': ['java'] }
 
 " -- Supertab Settings -- 
 let g:SuperTabCrMapping=0  " Shuts up supertab's annoying messages.
@@ -352,7 +346,7 @@ nnoremap <leader>V V`]
 " select the entire line but ignore the indentation
 nnoremap vv ^vg_
 
-" Splits a line -- oposite of J (join lines)
+" Splits a line -- opposite of J (join lines)
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Remap jj to escape from insert mode
@@ -392,10 +386,6 @@ nnoremap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 " UpperCase
 inoremap <C-u> <esc>mzgUiw`z
 
-" Send selection to a private gist.
-vnoremap <leader>GI :w !gist -p -t %:e \| pbcopy<CR>
-nnoremap <leader>UG :w !gist -p \| pbcopy<CR>
-
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
@@ -424,18 +414,18 @@ if has('cscope')
     cnoreabbrev css cs show
     cnoreabbrev csh cs help
 
-    command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+    command! -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
 endif
 
 " }}}
 " Typos {{{
+iabbrev flase false
+iabbrev Flase False
+iabbrev grammer grammar
+iabbrev pbng #!/usr/local/bin/perl
 iabbrev teh the
 iabbrev treu true
-iabbrev flase false
 iabbrev Treu True
-iabbrev Flase False
-iabbrev pbng #!/usr/local/bin/perl
-
 "}}}
 " Tmux Cursor Bullcrap {{{
 if exists('$TMUX')
@@ -452,7 +442,7 @@ endif
 aug ft_tmux
     au!
     au BufNewFile,BufRead .tmux.conf*,tmux.conf* setlocal filetype=tmux
-    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
+    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab 
 aug END
 
 " -- Quickfix --
