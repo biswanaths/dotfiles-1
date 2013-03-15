@@ -20,30 +20,21 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
 "}}}
 " Installed Plugins {{{
 Bundle 'a.vim'
-Bundle 'c9s/perlomni.vim'
-" Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'haskell.vim'
-Bundle 'kana/vim-smartinput'
 Bundle 'kien/ctrlp.vim'
-" Bundle 'klen/python-mode'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
-Bundle 'mattn/zencoding-vim'
-Bundle 'python.vim'
+Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -52,7 +43,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-perl/vim-perl'
 Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
@@ -143,7 +133,7 @@ set nowrap
 "}}}
 " Completions {{{
 set wildmenu
-set wildmode=list:longest
+set wildmode=full
 set wildchar=<Tab>
 set completeopt-=preview
 set completeopt+=longest,menuone,menu
@@ -222,21 +212,15 @@ let python_highlight_all=1
 let python_print_as_function=1
 let python_slow_sync=1
 
-" -- PowerLine Settings --
-"let g:Powerline_symbols='fancy'
-
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
 
 " -- Tagbar Settings --
 let g:tagbar_expand=1
+let g:tagbar_singleclick=1
 let g:tagbar_compact=1
-let g:tagbar_width=30
+let g:tagbar_width=35
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
-
-" -- Gundo Settings --
-let g:gundo_preview_bottom=1
-nnoremap <silent> <leader>gun :GundoToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
@@ -257,21 +241,20 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " -- Python-Mode Settings --
-"  I keep it disabled until I need it since it slows vim's startup
-"let g:pymode_rope=1
-"let g:pymode_doc=1
-"let g:pymode_doc_key='K'
-"let g:pymode_lint=1
-"let g:pymode_lint_checker="pyflakes,pep8"
-"let g:pymode_lint_write=1
-"let g:pymode_virtualenv=1
-"let g:pymode_breakpoint=1
-"let g:pymode_breakpoint_key='<leader>b'
-"let g:pymode_syntax=1
-"let g:pymode_syntax_all=1
-"let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-"let g:pymode_syntax_space_errors=g:pymode_syntax_all
-"let g:pymode_folding=0
+let g:pymode_rope=1
+let g:pymode_doc=1
+let g:pymode_doc_key='K'
+let g:pymode_lint=1
+let g:pymode_lint_checker="pyflakes,pep8"
+let g:pymode_lint_write=1
+let g:pymode_virtualenv=1
+let g:pymode_breakpoint=1
+let g:pymode_breakpoint_key='<leader>b'
+let g:pymode_syntax=1
+let g:pymode_syntax_all=1
+let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_folding=0
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
@@ -375,7 +358,7 @@ nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
 nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>fef ggVG=''
+nnoremap <leader>fef maggVG=`a
 
 " Toggle hlsearch
 nnoremap <silent> <C-L> :set hlsearch!<CR>
@@ -459,10 +442,7 @@ augroup ft_zsh
 augroup END
 
 " Better brace insertion
-autocmd Filetype c,cpp,objc,perl,java inoremap {      {}<Left>
 autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
-autocmd Filetype c,cpp,objc,perl,java inoremap {{     {
-autocmd Filetype c,cpp,objc,perl,java inoremap {}     {}
 
 "}}}
 " Misc Autocommands {{{
@@ -490,4 +470,4 @@ if ! has('gui_running')
 endif
 
 "}}}
-" --------------------------------- End .vimrc --------------------------------
+" --------------------------------- End .vimrc ------------------------------
