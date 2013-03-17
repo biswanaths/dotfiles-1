@@ -52,8 +52,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:syntax-highlighting' highlighters \
     'main' \
     'brackets' \
-    'pattern' \
-    'root'
+    'pattern'
 
 # Set the prompt theme
 zstyle ':prezto:module:prompt' theme 'sorinMod'
