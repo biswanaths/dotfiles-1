@@ -26,30 +26,8 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 # Source some better completion scripts
 fpath=(~/.zsh/Completion $fpath)
 
-## Aliases ##
-alias c="clear"
-alias cp="cp -vi"
-alias eclim="/Applications/eclipse/eclimd"
-alias evi="mvim -v ~/.vimrc"
-alias ex="exec" # I just don't want to enter ex.
-alias ez="mvim -v ~/.zshrc"
-alias firefox="open -a /Applications/FirefoxNightly.app"
-alias got="git"
-alias musicmpd="mpd && mpdscribble && ncmpcpp"
-alias mutt="cd ~/Desktop/ && mutt"
-alias mv="mv -vi"
-alias scrot="screencapture"
-alias showY="defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder"
-alias showN="defaults write com.apple.Finder AppleShowAllFiles NO; killall Finder"
-alias sz="source ~/.zshrc"
-alias tasks="task long"
-alias tmux="tmux -u2"
-alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2'
-alias unzip="unzip -d ~/Downloads"
-alias upd="brew update;brew upgrade;brew cleanup"
-alias vi="vim"
-alias svim="vim +Scratch"
-alias weechat="weechat-curses"
+# Source aliases
+source ~/.zsh/zsh.aliases
 
 # Zsh options
 setopt alwaystoend      # move to the end of the line after completing
