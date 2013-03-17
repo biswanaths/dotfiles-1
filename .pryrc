@@ -136,6 +136,9 @@ rescue LoadError => err
   puts " gem install awesome_print"
 end
 
+begin
+  require 'interactive_editor'
+end
 
 # ------------------------------------------------------------------------------
 # Commands
