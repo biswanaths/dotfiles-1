@@ -69,6 +69,7 @@ path=(
 /usr/local/{bin,sbin}
 /usr/{bin,sbin}
 /{bin,sbin}
+/$HOME/bin
 $path
 )
 
