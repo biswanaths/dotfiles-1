@@ -215,11 +215,17 @@ au! WinEnter * setlocal winfixheight
 au! WinEnter * wincmd =
 
 " }}}
-" Plugin Preferences {{{
+" Plugin Preferences and Mappings {{{
 
-" Powerline Settings --
+" -- Powerline Settings --
 " let g:Powerline_symbols='fancy'
 let g:Powerline_cache_enabled=1
+
+" -- Gundo Settings -- 
+let g:gundo_width=30
+let g:gundo_preview_height=35
+let g:gundo_help=0
+nnoremap <silent> <F1> :GundoToggle<CR>
 
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
@@ -389,6 +395,10 @@ nnoremap <silent> <leader>/ :set hlsearch!<CR>
 
 " Toggle paste mode
 nnoremap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+
+" Never felt the need to use H or L
+nnoremap H ^
+nnoremap L $
 
 " UpperCase
 inoremap <C-u> <esc>mzgUiw`z
