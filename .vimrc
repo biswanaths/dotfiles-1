@@ -1,8 +1,8 @@
 "---------------------------------"
-"        _                        " 
+"        _                        "
 " __   _(_)_ __ ___  _ __ ___     "
 " \ \ / / | '_ ` _ \| '__/ __|    "
-"  \ V /| | | | | | | | | (__     " 
+"  \ V /| | | | | | | | | (__     "
 " (_)_/ |_|_| |_| |_|_|  \___|    "
 "                                 "
 "---------------------------------"
@@ -36,6 +36,7 @@ Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -72,9 +73,9 @@ set foldopen=block,insert,jump,mark,quickfix,search,undo
 set mouse=a
 set scrolloff=8
 set lazyredraw
-set synmaxcol=2048
+set synmaxcol=700
 "This prevents <C-a> & <C-x> from increating a 0 padded number to octal (eg. 007 to 010)
-set nrformats-=octal          
+set nrformats-=octal
 set magic
 set clipboard=unnamed
 set laststatus=2
@@ -86,14 +87,14 @@ set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
 set formatoptions-=o          "Doesn't continue the comment after pressing o
-set formatoptions-=c
-set formatoptions-=r
+set formatoptions=qrn1
 set virtualedit=block
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set visualbell
 set autoread                  "Detect when a file has been changed externally
 set autowrite
 set autochdir
-set shell=/usr/local/bin/zsh
+set shell=/usr/local/bin/bash\ --login
 set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Lets vim recognize the mouse inside a tmux session
@@ -101,6 +102,8 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 let mapleader=','           " Let leader key be , instead of \
+set splitbelow              " Split below the current buffer.
+set splitright              " Split right of the current buffer (vertical splits)
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -157,12 +160,12 @@ set wildignore+=*~,#*#,*.sw?,%*,*=
 "Backup settings {{{
 set noswapfile
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+set backupdir=~/.vim/backup//
+set undodir=~/.vim/backup/undo//
+set directory=~/.vim/tmp/swap//
 set history=1000
 set undofile
 set undoreload=10000
-set undodir=~/.vim/backup
 set nohidden
 
 "}}}
@@ -190,10 +193,10 @@ endif
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> <leader>h <C-W>h
-nnoremap <silent> <leader>j <C-W>j
-nnoremap <silent> <leader>k <C-W>k
-nnoremap <silent> <leader>l <C-W>l
+nnoremap <silent> <C-h> <C-W>h
+nnoremap <silent> <C-j> <C-W>j
+nnoremap <silent> <C-k> <C-W>k
+nnoremap <silent> <C-l> <C-W>l
 " -- Moving windows
 nnoremap <silent> <leader>mh <C-W>H
 nnoremap <silent> <leader>mj <C-W>J
@@ -207,11 +210,16 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
+" Automatically resize vertical splits
+au! WinEnter * setlocal winfixheight
+au! WinEnter * wincmd =
+
 " }}}
 " Plugin Preferences {{{
-let python_highlight_all=1
-let python_print_as_function=1
-let python_slow_sync=1
+
+" Powerline Settings --
+" let g:Powerline_symbols='fancy'
+let g:Powerline_cache_enabled=1
 
 " -- YankRing Settings --
 let g:yankring_history_dir='~/.vim/backup/'
@@ -233,7 +241,7 @@ let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'zsh'],
             \ 'passive_filetypes': ['java'] }
 
-" -- Supertab Settings -- 
+" -- Supertab Settings --
 let g:SuperTabCrMapping=0  " Shuts up supertab's annoying messages.
 
 " -- UltiSnips Settings --
@@ -299,30 +307,14 @@ nnoremap <leader>mru :CtrlPMRU<CR>
 nnoremap <leader>c :CtrlPClearCache<CR>
 
 "}}}
-" General Mappings {{{
+" Vim Niceties {{{
 
-" Restore reverse for f/F/t/T searched
-nnoremap \ ,
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
-" Disable the arrow keys in command mode.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Auto Semicolon insertion
-inoremap <C-;> <ESC>maA;<ESC>`aa
-nnoremap <leader>; maA;<ESC>`a
-
-" Much faster saving
-nnoremap <leader>w <esc>:wa<CR>
-
-" Wtf is this Ex-mode crap?! Sheesh, vim!
-nnoremap Q :qa<CR>
+" Force save files requiring root permissions
+cmap w!! %!sudo tee > /dev/null %
 
 " Reselect the line that was last pasted
 nnoremap <leader>V V`]
@@ -342,10 +334,41 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" ^ and $ are just hard to type.
-nnoremap H ^
-nnoremap L $
-vnoremap L g_
+" Keep search pattern at the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" }}}
+" General Mappings {{{
+
+" Restore reverse for f/F/t/T searched
+nnoremap \ ,
+
+" Disable the arrow keys in command mode.
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Toggle list chars
+nnoremap <leader>l :set list!<CR>
+
+" Auto Semicolon insertion
+inoremap <C-;> <ESC>maA;<ESC>`aa
+nnoremap <leader>; maA;<ESC>`a
+
+" Much faster saving
+nnoremap <leader>w <esc>:wa<CR>
+
+" Wtf is this Ex-mode crap?! Sheesh, vim!
+nnoremap Q :qa<CR>
 
 " Allow emacs-like command-line editing
 cnoremap <C-A> <Home>
@@ -362,7 +385,7 @@ nnoremap <silent> <leader>es :e ~/.slate<CR>
 nnoremap <leader>fef maggVG=`a
 
 " Toggle hlsearch
-nnoremap <silent> <C-L> :set hlsearch!<CR>
+nnoremap <silent> <leader>/ :set hlsearch!<CR>
 
 " Toggle paste mode
 nnoremap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
@@ -426,7 +449,7 @@ endif
 aug ft_tmux
     au!
     au BufNewFile,BufRead .tmux.conf*,tmux.conf* setlocal filetype=tmux
-    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab 
+    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 aug END
 
 " -- Quickfix --
