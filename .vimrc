@@ -286,12 +286,17 @@ nnoremap <leader>A :A<CR>
 nnoremap <leader>at :AT<CR>
 nnoremap <leader>as :AS<CR>
 
+" -- Tabular Settings --
+vnoremap <leader>t :Tabular<space>/
+
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
 let g:easytags_include_members=1
 " ctrlp keeps lowering updatetime which messes with easytags
 let g:easytags_updatetime_autodisable=1
 let g:easytags_by_filetype='~/.vim/tags/'
+let g:easytags_resolve_links=1
+let g:easy_tags_supress_ctags_warning=1
 
 " -- Ctrl-p Settings --
 let g:ctrlp_working_path_mode=0
@@ -476,7 +481,7 @@ augroup ft_zsh
 augroup END
 
 " Better brace insertion
-autocmd Filetype c,cpp,objc,perl,java inoremap {<CR>  {<CR>}<Esc>O
+autocmd Filetype c,cpp,objc,perl,java,javascript inoremap {<CR>  {<CR>}<Esc>O
 
 "}}}
 " Misc Autocommands {{{
