@@ -352,6 +352,10 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
+" Reformat a C/C++ file in the Stroustrup style. 
+" All other styles are inferior!
+autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
+
 " }}}
 " General Mappings {{{
 
