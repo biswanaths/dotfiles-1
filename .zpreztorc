@@ -24,7 +24,7 @@ zstyle ':prezto:module:gnu-utility' prefix 'g'
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-zstyle ':prezto:load' zfunction 'zargs' 'zmv' 'zcalc'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
@@ -42,7 +42,6 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'osx' \
   'python' \
-  'ruby' \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
