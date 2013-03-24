@@ -9,3 +9,4 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .vim/custom-dictionary.utf-8.add
 .mpd/mpd.log
 .mpd/mpd.error
+.mpd/**
