@@ -23,10 +23,12 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'a.vim'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
