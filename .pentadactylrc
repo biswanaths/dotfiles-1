@@ -1,0 +1,16 @@
+" Faster scrolling
+nmap -builtin j 4j
+nmap -builtin k 4k
+
+" Switch tabs with parentheses
+nmap -builtin ) :tn<CR>
+nmap -builtin ( :tn<CR>
+
+" Show console
+nmap -builtin <c-g> <m-a-k><esc>
+imap -builtin <c-g> <esc><m-a-k><esc>
+
+" Inspect element
+nmap -builtin <c-s> <m-a-i>
+imap -builtin <c-s> <esc><m-a-i>
+
