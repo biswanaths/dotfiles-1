@@ -11,55 +11,61 @@ mpd_music_dir                           = "/Users/watabou/Music/iTunes/iTunes\ M
 mpd_connection_timeout                  = "5"
 mpd_crossfade_time                      = "5"
 
+# Playlist
+song_columns_list_format = "(6f)[blue]{l} (25)[red]{a} (40)[green]{t|f} (30)[yellow]{b}"
+now_playing_prefix = "$b$5»$7»$1» "
+now_playing_suffix = "$/b"
+playlist_display_mode = "columns" (classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "yes"
 playlist_disable_highlight_delay = "1"
 
-song_list_format = "{$2%a$9} $1|$9 {$5%t$9} $R {$6%b$9} $1|$9 {$2%l$9}"
-song_library_format = "{%n - }{%t}|{%f}"
-song_library_format = "{%n - }{%t}|{%f}"
-song_status_format = "$b{$6%a$9 $1|$9} {$7%t$9} $1|$9 {$2%b$9} $1|$9 {$6%y$9} $1|$9"
-media_library_album_format = "{%b} {(%y)}"
-tag_editor_album_format = "{%b} {(%y)}"
-song_window_title_format = "{%a-%t}"
-
-song_columns_list_format = "(6)[magenta]{l} (30)[red]{a} (30)[blue]{b} (53)[magenta]{t}"
-media_library_disable_two_column_mode = "yes"
-
-playlist_display_mode = "classic"
-titles_visibility="no"
-browser_display_mode = "columns"
-incremental_seeking = "yes"
-autocenter_mode = "yes"
-header_visibility = "no"
-statusbar_visibility = "yes"
-fancy_scrolling = "yes"
-cyclic_scrolling = "yes"
-lyrics_database = "1"
-display_screens_numbers_on_start = "no"
-display_bitrate= "yes"
-ignore_leading_the = "yes"
+# Bars
+song_status_format = "$2%a $1• $3%t $1• $4%b {(Disc %d) }$1• $5%y$1"
+progressbar_look = "─╼·"
+titles_visibility = "yes"
 enable_window_title = "yes"
-progressbar_look = ":: "
+statusbar_visibility = "yes"
 
-startup_screen ="5"
+# Browser
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "columns" (classic/columns)
+startup_screen ="2"
 user_interface="alternative"
-alternative_header_first_line_format ="{$b$2%a$9} $1|$9 {$5%t$9}"
-alternative_header_second_line_format ="{$6%b$9} $1|$9 {$2(%y)$9}"
+alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_second_line_format = "{{$4%a$9}{ - $7%b$9}}|{%D}"
 alternative_ui_separator_color ="black"
-playlist_separate_albums = "no"
+playlist_separate_albums = "no" 
 
-colors_enabled = "yes"
-empty_tag_color = "blue"
+# Colors
+discard_colors_if_item_is_selected = "yes"
+header_visibility = "yes"
 header_window_color = "black"
-volume_color = "black"
-display_volume_level="yes"
-state_line_color = "cyan"
-state_flags_color = "red"
-main_window_color = "blue"
-main_window_highlight_color="blue"
-color1 = "white"
-color2 = "blue"
-progressbar_color = "black"
+volume_color = "cyan"
+state_line_color = "black"
+state_flags_color = "yellow"
+main_window_color = "white"
+color1 = "default"
+color2 = "green"
+main_window_highlight_color = "red"
+progressbar_color = "yellow"
 statusbar_color = "black"
 active_column_color = "red"
-window_border_color = "red"
-active_window_border = "red"
+visualizer_color = "yellow"
+
+# Others
+song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+display_screens_numbers_on_start = "no"
+
+##### colors definitions #####
+#
+colors_enabled = "yes"
+#
+
+# Visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer"
+visualizer_sync_interval = "30"
+visualizer_type = "spectrum" (spectrum/wave)
