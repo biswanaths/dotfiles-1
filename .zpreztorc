@@ -41,7 +41,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'archive' \
   'osx' \
-  'python' \
+  'ruby' \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
