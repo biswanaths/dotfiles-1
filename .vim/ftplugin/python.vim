@@ -5,3 +5,4 @@ set softtabstop=4
 set expandtab
 set shiftround
 set autoindent
+set colorcolumn=+1
