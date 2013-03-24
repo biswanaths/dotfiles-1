@@ -7,3 +7,4 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .vim/UltiSnips/*
 .vim/tmp/*
 .vim/custom-dictionary.utf-8.add
+.mpd/mpd.log
