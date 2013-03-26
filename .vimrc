@@ -27,11 +27,13 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
+Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
@@ -51,7 +53,8 @@ Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 Bundle 'YankRing.vim'
 
-" I can't choose a single colorscheme to save my life!
+" }}}
+" Colorscheme plugins {{{
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'desert256.vim'
 Bundle 'Lokaltog/vim-distinguished'
@@ -60,6 +63,7 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'xoria256.vim'
+Bundle 'wombat256.vim'
 
 "}}}
 " General Settings {{{
@@ -178,6 +182,8 @@ set t_Co=256
 set background=dark
 let g:hybrid_use_Xresources=1
 colorscheme hybrid
+" colorscheme badwolf
+" colorscheme molokai
 
 "}}}
 " GUI Settings {{{

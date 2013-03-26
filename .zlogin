@@ -20,3 +20,7 @@
     done
   fi
 } &!
+
+# Print an offensive adage
+fortune -so | cowsay -f tux
+
