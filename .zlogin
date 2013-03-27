@@ -22,5 +22,5 @@
 } &!
 
 # Print an offensive adage
-fortune -so | cowsay -f tux
+fortune -so | cowsay -w | lolcat
 
