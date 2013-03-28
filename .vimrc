@@ -229,7 +229,7 @@ au! WinEnter * wincmd =
 " let g:Powerline_symbols='fancy'
 let g:Powerline_cache_enabled=1
 
-" -- Gundo Settings -- 
+" -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
 let g:gundo_help=0
@@ -360,7 +360,7 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-" Reformat a C/C++ file in the Stroustrup style. 
+" Reformat a C/C++ file in the Stroustrup style.
 " All other styles are inferior!
 autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
 
