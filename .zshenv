@@ -33,8 +33,8 @@ fi
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 # Set the Less input preprocessor.
-if (( $+commands[lesspipe.sh] )); then
-  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
+if (( $+commands[src-hilite-lesspipe.sh] )); then
+  export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 fi
 
 #
