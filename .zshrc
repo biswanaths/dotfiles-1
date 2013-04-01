@@ -27,7 +27,7 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 fpath=(~/.zsh/Completion $fpath)
 
 # Source aliases
-source ~/.zsh/zsh.aliases
+source ~/.zsh/aliases
 
 # Zsh options
 setopt alwaystoend      # move to the end of the line after completing
