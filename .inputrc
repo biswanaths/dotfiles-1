@@ -1,0 +1,8 @@
+set editing-mode vi
+set keymap vi
+
+# Completion settings
+set page-completions on
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set visible-stats on
