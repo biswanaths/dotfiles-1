@@ -50,6 +50,7 @@ zstyle ':prezto:load' pmodule \
 # Set highlighting for Zsh commands
 zstyle ':prezto:module:syntax-highlighting' highlighters \
     'main' \
+    'root' \
     'brackets' \
     'pattern'
 
