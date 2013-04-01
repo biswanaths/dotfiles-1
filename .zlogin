@@ -22,5 +22,5 @@
 } &!
 
 # Print an offensive adage
-fortune -so | cowsay -w | lolcat
+fortune -so | cowsay -f kitty | lolcat
 
