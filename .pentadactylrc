@@ -1,10 +1,19 @@
+" Runtime-path
+set runtimepath=/Users/watabou/.pentadactyl
+
+" Editor
+set editor='/usr/local/bin/mvim -f +<line> <file>'
+
+" Follow hints
+set followhints=1
+
 " Faster scrolling
 nmap -builtin j 4j
 nmap -builtin k 4k
 
 " Switch tabs with parentheses
 nmap -builtin ) :tn<CR>
-nmap -builtin ( :tn<CR>
+nmap -builtin ( :tp<CR>
 
 " Show console
 nmap -builtin <c-g> <m-a-k><esc>
@@ -14,3 +23,23 @@ imap -builtin <c-g> <esc><m-a-k><esc>
 nmap -builtin <c-s> <m-a-i>
 imap -builtin <c-s> <esc><m-a-i>
 
+" Source buftabs plugin
+source ~/.pentadactyl/plugins/buftabs.js
+
+" Disable scrollbar
+set go=ns
+
+" Colorscheme
+colorscheme solarized-light
+
+" Disable that ugly tab bar. Works great with buftabs plugin
+set showtabline=never
+
+" Highlight all matches
+set hlfind
+
+" I always press cmd-T to create a new tab when I can just type t
+nmap -builtin <m-t> <nop>
+
+" Clear the search highlight -- unimpaired style
+nmap -builtin coh <esc>:noh<CR>
