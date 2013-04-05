@@ -28,6 +28,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jpalardy/vim-slime'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
@@ -61,6 +62,7 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
+Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'xoria256.vim'
 Bundle 'wombat256.vim'
@@ -88,7 +90,7 @@ set laststatus=2
 set backspace=indent,eol,start
 set ttyfast
 set cpoptions+=$               "Shows a dollar sign when changing text
-set fileformats=unix,mac
+set fileformats=unix,mac,dos
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -100,7 +102,7 @@ set visualbell
 set autoread                  "Detect when a file has been changed externally
 set autowrite
 set autochdir
-set shell=/usr/local/bin/bash\ --login
+set shell=/usr/local/bin/zsh
 set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 " Lets vim recognize the mouse inside a tmux session
@@ -367,14 +369,15 @@ autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
 " }}}
 " General Mappings {{{
 
-" Restore reverse for f/F/t/T searched
+" Restore , for searching with f/F/t/T
 nnoremap \ ,
 
-" Disable the arrow keys in command mode.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" Use the arrow keys to move around quickfix list keeping the cursor in the
+" middle.
+nnoremap <up> :lprev<CR>zvzz
+nnoremap <down> :lnext<CR>zvzz
+nnoremap <left> :cprev<CR>zvzz
+nnoremap <right> :cnext<CR>zvzz
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -411,7 +414,7 @@ nnoremap <leader>fef maggVG=`a
 nnoremap <silent> <leader>/ :set hlsearch!<CR>
 
 " Toggle paste mode
-nnoremap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+nnoremap <silent> <leader>p :set invpaste<CR>:setlocal paste?<CR>
 
 " Never felt the need to use H or L
 nnoremap H ^
@@ -456,7 +459,7 @@ endif
 iabbrev flase false
 iabbrev Flase False
 iabbrev grammer grammar
-iabbrev pbng #!/usr/local/bin/perl
+iabbrev pbng #!/usr/local/bin/perl<CR>
 iabbrev teh the
 iabbrev treu true
 iabbrev Treu True
@@ -471,12 +474,30 @@ else
 endif
 
 "}}}
+"Fix vim's stupid parens text object {{{
+"Copied from a public gist by AndrewRadev
+onoremap an :<c-u>call <SID>NextTextObject('a')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i')<cr>
+
+function! s:NextTextObject(motion)
+echo
+let c = nr2char(getchar())
+exe "normal! f".c."v".a:motion.c
+endfunction
+"}}}
 " Quick Filetype Settings {{{
 " -- tmux --
 aug ft_tmux
     au!
     au BufNewFile,BufRead .tmux.conf*,tmux.conf* setlocal filetype=tmux
     setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+aug END
+
+augroup ft_pentadactyl
+    au!
+    au BufNewFile,BufRead .pentadactylrc,*.penta setlocal filetype=vim
 aug END
 
 " -- Quickfix --
