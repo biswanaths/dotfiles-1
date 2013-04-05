@@ -2,7 +2,6 @@ set editing-mode vi
 set keymap vi
 
 # Completion settings
-set page-completions on
+tab: complete
 set completion-ignore-case on
-set show-all-if-ambiguous on
-set visible-stats on
+set blink-matching-paren on
