@@ -53,3 +53,12 @@ bind k:shift;ctrl focus up
 bind j:shift;ctrl focus down
 bind k:shift;ctrl;alt focus above
 bind j:shift;ctrl;alt focus behind
+
+# Toggle between Firefox and iTerm
+bind 1:ctrl toggle 'iTerm','Nightly'
+
+# Focus certain applications
+bind f:ctrl;alt;cmd focus 'Nightly'
+
+# Relaunch slate
+bind 2:ctrl relaunch
