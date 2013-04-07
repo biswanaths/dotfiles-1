@@ -71,6 +71,7 @@ path=(
 /{bin,sbin}
 /usr/local/share/npm/bin
 /usr/local/share/python
+/usr/local/share/python3
 $path
 )
 
