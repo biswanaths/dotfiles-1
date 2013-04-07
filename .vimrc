@@ -23,18 +23,21 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'a.vim'
+Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
-Bundle 'Figlet.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'guns/vim-clojure-static'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'jpalardy/vim-slime'
+Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
+Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'paradigm/TextObjectify'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
@@ -42,8 +45,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'the-isz/MinYankRing.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
@@ -52,20 +57,16 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
-Bundle 'YankRing.vim'
 
 " }}}
 " Colorscheme plugins {{{
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'desert256.vim'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
-Bundle 'xoria256.vim'
-Bundle 'wombat256.vim'
 
 "}}}
 " General Settings {{{
@@ -148,7 +149,7 @@ set wildmenu
 set wildmode=full
 set wildchar=<Tab>
 set completeopt-=preview
-set completeopt+=longest,menuone,menu
+set completeopt+=menuone,longest
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
@@ -237,9 +238,6 @@ let g:gundo_preview_height=35
 let g:gundo_help=0
 nnoremap <silent> <F1> :GundoToggle<CR>
 
-" -- YankRing Settings --
-let g:yankring_history_dir='~/.vim/backup/'
-
 " -- Tagbar Settings --
 let g:tagbar_expand=1
 let g:tagbar_singleclick=1
@@ -255,7 +253,7 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'zsh'],
-            \ 'passive_filetypes': ['java'] }
+            \ 'passive_filetypes': ['java', 'python'] }
 
 " -- Supertab Settings --
 let g:SuperTabCrMapping=0  " Shuts up supertab's annoying messages.
@@ -265,6 +263,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" -- Jedi-vim Settings --
+let g:jedi#popup_on_dot=0
+let g:jedi#use_tabs_not_buffers=0
+let g:jedi#popup_select_first=1
+
 " -- Python-Mode Settings --
 let g:pymode_rope=1
 let g:pymode_doc=1
@@ -272,14 +275,21 @@ let g:pymode_doc_key='K'
 let g:pymode_lint=1
 let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_write=1
-let g:pymode_virtualenv=1
 let g:pymode_breakpoint=1
 let g:pymode_breakpoint_key='<leader>b'
 let g:pymode_syntax=1
 let g:pymode_syntax_all=1
 let g:pymode_syntax_indent_errors=g:pymode_syntax_all
 let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_syntax_doctests=g:pymode_syntax_all
 let g:pymode_folding=0
+let g:python_run_key='<leader>r'
+let g:pymode_lint_message=1
+let g:pymode_rope=1
+let g:pymode_rope_enable_autoimport=1
+let g:pymode_rope_autoimport_generate=1
+let g:pymode_motion=1
+let g:pymode_virtualenv=0
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
@@ -474,7 +484,7 @@ else
 endif
 
 "}}}
-"Fix vim's stupid parens text object {{{
+" Next motion text object {{{
 "Copied from a public gist by AndrewRadev
 onoremap an :<c-u>call <SID>NextTextObject('a')<cr>
 xnoremap an :<c-u>call <SID>NextTextObject('a')<cr>
