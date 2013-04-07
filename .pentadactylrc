@@ -23,8 +23,10 @@ imap -builtin <c-g> <esc><m-a-k><esc>
 nmap -builtin <c-s> <m-a-i>
 imap -builtin <c-s> <esc><m-a-i>
 
-" Source buftabs plugin
+" Load plugins
 source ~/.pentadactyl/plugins/buftabs.js
+source ~/.pentadactyl/plugins/tab-options-dev.js
+source ~/.pentadactyl/plugins/noscript-dev.js
 
 " Disable scrollbar
 set go=ns
@@ -43,3 +45,7 @@ nmap -builtin <m-t> <nop>
 
 " Clear the search highlight -- unimpaired style
 nmap -builtin coh <esc>:noh<CR>
+
+" Don't clobber TMP's excellent handling of closed tabs.
+set tabclose=previous,opener,left
+nmap -builtin d <esc>:tabclose<CR>
