@@ -49,3 +49,6 @@ nmap -builtin coh <esc>:noh<CR>
 " Don't clobber TMP's excellent handling of closed tabs.
 set tabclose=previous,opener,left
 nmap -builtin d <esc>:tabclose<CR>
+
+" Configure tab opening behavior
+set tabopen=link:right,orphan:end,external:end
