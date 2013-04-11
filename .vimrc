@@ -32,7 +32,6 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
@@ -45,7 +44,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-Bundle 'the-isz/MinYankRing.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fireplace'
@@ -75,7 +73,7 @@ set ruler
 set showcmd
 set cmdheight=2
 set modelines=0
-set noshowmode
+set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
 set foldopen=block,insert,jump,mark,quickfix,search,undo
@@ -83,7 +81,7 @@ set mouse=a
 set scrolloff=8
 set lazyredraw
 set synmaxcol=700
-"This prevents <C-a> & <C-x> from increating a 0 padded number to octal (eg. 007 to 010)
+"This prevents <C-a> & <C-x> from incrementing a 0 padded number to octal (eg. 007 to 010)
 set nrformats-=octal
 set magic
 set clipboard=unnamed
@@ -113,6 +111,15 @@ endif
 let mapleader=','           " Let leader key be , instead of \
 set splitbelow              " Split below the current buffer.
 set splitright              " Split right of the current buffer (vertical splits)
+"}}}
+"Status Line {{{
+set statusline=
+set statusline+=\ ff\:%{&ff}
+set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n\ ft\:\%#StatusFTP#\%Y
+set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
+set statusline+=\ \%#StatusModFlag#\%M
+set statusline+=\ file\:\%#StatusLine#\%f
+set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -290,6 +297,7 @@ let g:pymode_rope_enable_autoimport=1
 let g:pymode_rope_autoimport_generate=1
 let g:pymode_motion=1
 let g:pymode_virtualenv=0
+let python_highlight_all=1
 
 " -- ClangComplete Settings --
 let g:clang_auto_select=1
@@ -376,6 +384,19 @@ nnoremap <silent> g* g*zz
 " All other styles are inferior!
 autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
 
+" An excellent search pattern mapping. 
+" Credit: romainl
+"
+" ,S to define the search pattern
+nnoremap <leader>S :let @/ = expand('<cword>') <bar> echo @/<cr>
+vnoremap <leader>S "*y<Esc>:let @/ = substitute(escape(@*, '\/.*$^~[]'), "\n", '\\n', "g") <bar> echo @/<cr>
+" ,r to replace
+nnoremap <leader>r :'{,'}s/<c-r>=expand(@/)<cr>/
+vnoremap <leader>r :s/<c-r>=expand(@/)<cr>/
+" ,o to replace once and . to repeat
+nnoremap <leader>0 :let @/ = expand('<cword>')<cr>
+nmap <leader>o ,0cgn
+
 " }}}
 " General Mappings {{{
 
@@ -403,8 +424,8 @@ nnoremap <leader>; maA;<ESC>`a
 " Much faster saving
 nnoremap <leader>w <esc>:wa<CR>
 
-" Wtf is this Ex-mode crap?! Sheesh, vim!
-nnoremap Q :qa<CR>
+" Screw Ex-mode
+nnoremap Q gq
 
 " Allow emacs-like command-line editing
 cnoremap <C-A> <Home>
@@ -492,9 +513,9 @@ onoremap in :<c-u>call <SID>NextTextObject('i')<cr>
 xnoremap in :<c-u>call <SID>NextTextObject('i')<cr>
 
 function! s:NextTextObject(motion)
-echo
-let c = nr2char(getchar())
-exe "normal! f".c."v".a:motion.c
+    echo
+    let c = nr2char(getchar())
+    exe "normal! f".c."v".a:motion.c
 endfunction
 "}}}
 " Quick Filetype Settings {{{
@@ -552,4 +573,5 @@ if ! has('gui_running')
 endif
 
 "}}}
+
 " --------------------------------- End .vimrc ------------------------------
