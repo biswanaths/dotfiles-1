@@ -4,7 +4,6 @@ setlocal softtabstop=3
 setlocal shiftwidth=3
 setlocal expandtab
 setlocal textwidth=80
-setlocal colorcolumn=+1
 setlocal formatoptions=crq
 setlocal autoindent
 setlocal foldmethod=marker
