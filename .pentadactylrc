@@ -15,6 +15,10 @@ nmap -builtin k 4k
 nmap -builtin ) :tn<CR>
 nmap -builtin ( :tp<CR>
 
+" I always line opening searches in a new tab
+nmap -builtin s S
+nmap -builtin S s
+
 " Show console
 nmap -builtin <c-g> <m-a-k><esc>
 imap -builtin <c-g> <esc><m-a-k><esc>
@@ -37,9 +41,6 @@ colorscheme solarized-light
 " Disable that ugly tab bar. Works great with buftabs plugin
 set showtabline=never
 
-" Highlight all matches
-set hlfind
-
 " I always press cmd-T to create a new tab when I can just type t
 nmap -builtin <m-t> <nop>
 
@@ -52,3 +53,7 @@ nmap -builtin d <esc>:tabclose<CR>
 
 " Configure tab opening behavior
 set tabopen=link:right,orphan:end,external:end
+
+" Ah, finally. I found something that can turn this damnable, asinine,
+" annoying bell off.
+javascript dactyl.beep = function() { return false; }
