@@ -58,9 +58,6 @@ Bundle 'xolox/vim-easytags'
 
 " }}}
 " Colorscheme plugins {{{
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
@@ -186,10 +183,10 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 set background=dark
-let g:hybrid_use_Xresources=1
-colorscheme hybrid
+" let g:hybrid_use_Xresources=1
+" colorscheme hybrid
 " colorscheme badwolf
-" colorscheme molokai
+colorscheme neverland
 
 "}}}
 " GUI Settings {{{
