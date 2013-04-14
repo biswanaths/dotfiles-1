@@ -1,5 +1,6 @@
 ## Aliases ##
 alias c="clear"
+alias cim="vim"
 alias cp="cp -vi"
 alias eclim="/Applications/eclipse/eclimd"
 alias evi="vim ~/.vimrc"
