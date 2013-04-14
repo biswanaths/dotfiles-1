@@ -72,6 +72,7 @@ path=(
 /usr/local/share/npm/bin
 /usr/local/share/python
 /usr/local/share/python3
+/usr/local/Cellar/perl/5.14.4/bin
 $path
 )
 
