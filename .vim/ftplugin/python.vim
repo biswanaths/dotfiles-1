@@ -5,5 +5,4 @@ set softtabstop=4
 set expandtab
 set shiftround
 set autoindent
-set colorcolumn=+1
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"

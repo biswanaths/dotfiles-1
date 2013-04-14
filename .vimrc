@@ -62,6 +62,7 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'BusyBee'
 
 "}}}
 " General Settings {{{
@@ -113,6 +114,7 @@ set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ file\:\%#StatusLine#\%f
 set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
+
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -185,12 +187,10 @@ set t_Co=256
 set background=dark
 " let g:hybrid_use_Xresources=1
 " colorscheme hybrid
-" colorscheme badwolf
-colorscheme neverland
+colorscheme badwolf
 
 "}}}
 " GUI Settings {{{
-" Has anyone looked at Macvim and not vomit explosively?
 if has ("gui_running")
     set guioptions-=T
     set guioptions-=r
@@ -345,7 +345,7 @@ nnoremap <leader>V V`]
 nnoremap vv ^vg_
 
 " Splits a line -- opposite of J (join lines)
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap ,sp i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Remap jj to escape from insert mode
 inoremap jj <Esc>
@@ -519,7 +519,7 @@ aug END
 " -- Quickfix --
 augroup ft_quickfix
     au!
-    au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+    au Filetype qf nolist nocursorline nowrap
 augroup END
 
 " -- zsh --
