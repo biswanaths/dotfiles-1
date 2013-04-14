@@ -20,20 +20,22 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+
 "}}}
 " Installed Plugins {{{
-Bundle 'a.vim'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'paradigm/TextObjectify'
@@ -41,7 +43,6 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-commentary'
@@ -53,7 +54,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'VisIncr'
 Bundle 'xolox/vim-easytags'
 
 " }}}
@@ -68,8 +68,7 @@ Bundle 'w0ng/vim-hybrid'
 
 "}}}
 " General Settings {{{
-set relativenumber
-set ruler
+set relativenumber              " 'Tis the age of relative numbering
 set showcmd
 set cmdheight=2
 set modelines=0
@@ -81,9 +80,7 @@ set mouse=a
 set scrolloff=8
 set lazyredraw
 set synmaxcol=700
-"This prevents <C-a> & <C-x> from incrementing a 0 padded number to octal (eg. 007 to 010)
-set nrformats-=octal
-set magic
+set nrformats-=octal          " Prevents (in|de)crementing a 0 padded to octal
 set clipboard=unnamed
 set laststatus=2
 set backspace=indent,eol,start
@@ -99,7 +96,6 @@ set virtualedit=block
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set visualbell
 set autoread                  "Detect when a file has been changed externally
-set autowrite
 set autochdir
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
@@ -235,10 +231,6 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
-" -- Powerline Settings --
-" let g:Powerline_symbols='fancy'
-let g:Powerline_cache_enabled=1
-
 " -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
@@ -259,11 +251,12 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'zsh'],
+            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl'],
             \ 'passive_filetypes': ['java', 'python'] }
 
 " -- Supertab Settings --
-let g:SuperTabCrMapping=0  " Shuts up supertab's annoying messages.
+" Shuts up supertab's annoying messages.
+let g:SuperTabCrMapping=0
 
 " -- UltiSnips Settings --
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -306,13 +299,6 @@ let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
-
-" -- Alternate settings
-autocmd FileType objc let g:alternateExtensions_h="m"
-autocmd FileType objc let g:alternateExtensions_m="h"
-nnoremap <leader>A :A<CR>
-nnoremap <leader>at :AT<CR>
-nnoremap <leader>as :AS<CR>
 
 " -- Tabular Settings --
 vnoremap <leader>t :Tabular<space>/
@@ -494,6 +480,7 @@ iabbrev pbng #!/usr/local/bin/perl<CR>
 iabbrev teh the
 iabbrev treu true
 iabbrev Treu True
+
 "}}}
 " Tmux Cursor Bullcrap {{{
 if exists('$TMUX')
@@ -506,7 +493,7 @@ endif
 
 "}}}
 " Next motion text object {{{
-"Copied from a public gist by AndrewRadev
+" Copied from a public gist by AndrewRadev
 onoremap an :<c-u>call <SID>NextTextObject('a')<cr>
 xnoremap an :<c-u>call <SID>NextTextObject('a')<cr>
 onoremap in :<c-u>call <SID>NextTextObject('i')<cr>
@@ -517,6 +504,7 @@ function! s:NextTextObject(motion)
     let c = nr2char(getchar())
     exe "normal! f".c."v".a:motion.c
 endfunction
+
 "}}}
 " Quick Filetype Settings {{{
 " -- tmux --
