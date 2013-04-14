@@ -11,5 +11,5 @@
 
 ## Obligatory Screenshot
 
-![command_line_awesome](https://dl.dropbox.com/u/34865/Screenshots/command_line_awesome.png)
+![dotfiles-screenshot](https://dl.dropboxusercontent.com/u/34865/Screenshots/dotfiles%20screenshot.png)
 
