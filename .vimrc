@@ -245,6 +245,10 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
+" -- Yankstack Settings --
+nmap <c-p> <Plug>yankstack_substitute_older_paste
+nmap <C-P> <Plug>yankstack_substitute_newer_paste
+
 " -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
@@ -384,7 +388,7 @@ nnoremap <silent> g* g*zz
 " All other styles are inferior!
 autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
 
-" An excellent search pattern mapping. 
+" An excellent search pattern mapping.
 " Credit: romainl
 "
 " ,S to define the search pattern
