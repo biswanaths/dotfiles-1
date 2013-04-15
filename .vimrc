@@ -106,7 +106,8 @@ let mapleader=','           " Let leader key be , instead of \
 set splitbelow              " Split below the current buffer.
 set splitright              " Split right of the current buffer (vertical splits)
 "}}}
-"Status Line {{{
+" Status Line {{{
+
 set statusline=
 set statusline+=\ ff\:%{&ff}
 set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n\ ft\:\%#StatusFTP#\%Y
@@ -186,12 +187,28 @@ filetype plugin indent on
 set t_Co=256
 set background=dark
 let g:hybrid_use_Xresources=1
-colorscheme hybrid2
+colorscheme hybrid
 " colorscheme badwolf
+
+" Hybrid Colorscheme better settings {{{2
+if g:colors_name == "hybrid"
+    " Better popup menu
+    hi Pmenu           ctermfg=137 ctermbg=233 cterm=none
+    hi PmenuSel        ctermfg=196 ctermbg=234 cterm=bold
+    hi PmenuSbar       ctermfg=000 ctermbg=233 cterm=none
+    hi PmenuThumb      ctermfg=137 ctermbg=235 cterm=none
+    " Better status bar
+    hi! StatusLine ctermfg=234 ctermbg=136
+    hi! StatusLineNC ctermfg=234 ctermbg=100
+    " Better matching stuff
+    hi! MatchParen    ctermfg=196 ctermbg=234   cterm=bold
+endif
+
+""}}}2
 
 "}}}
 " GUI Settings {{{
-if has ("gui_running")
+if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=R
