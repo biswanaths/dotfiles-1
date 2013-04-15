@@ -1,10 +1,146 @@
 " Vim syntax file
 " Language:     Standard C (C89, C94, and C99)
-" Maintainer:   Mike Williams
-" Modified By:  Akshay Hegde
+" Maintainer:   Mike Williams <mrw@eandem.co.uk>
 " Filenames:    *.c,*.h
-" Last Change:  21 March 2013
-" URL: http://www.eandem.co.uk/mrw/vim/syntax/index.html#ansic
+" Last Change:  24th June 2006
+" URL:          http://www.eandem.co.uk/~mrw/vim/syntax
+"
+" Notes:
+" See supplied help file on configuring and using this syntax highlight file. 
+"
+" THIS FILE CANNOT BE INCLUDED BY OTHER SYNTAX FILES SUPPLIED WITH VIM!
+"
+" History:
+" 1.1 Better handling of conditional operator, plus choice of highlighting for it.
+" 1.2 Allow multibyte character and string constants (i.e. start with L) apart from #include.
+" 1.3 Rework character constants to allow for character sequences.
+" 1.4 Add functions - catches macros, including defines like #define myconst (0).
+" 1.5 Add macro functions and correct #define to use Define, not Macro.
+" 1.6 Add missing hi link for cComment2String.
+" 1.7 Add cComment[2]String to exclude cluster for parens.
+"
+" 2.1 Remove cPPOperator(defined) from parens exclusion, but does add it to normal code.
+" 2.2 Start adding patterns for pointer dereference '*', and address of '&'.
+" 2.3 Tidy up character constant handling.
+" 2.4 Add cCommentSkip to exclusion list for paren group.
+"
+" 3.1 Removed code to pull in extensions, can now be done with au Syntax ...
+" 3.2 Add cCharacterNoError to exclusion list for paren group.
+" 3.3 Allow trailing dots on fp number to be part of fp number.
+" 3.4 Allow u and/or l suffixes for octal numbers.
+" 3.5 Move erroneous octal numbers to highlight only if allowed octals.
+" 3.6 Add printf and scanf format string highlighting.
+" 3.7 Add Notes and Acknowledgements.
+" 3.8 Macros starting with SIG followed by upper or _ claimed by implementation.
+" 3.9 ... as are all macros starting with and _ and followed by _ or upper case.
+" 3.10 Moved Standard typedefs and constants to end to override all else.
+" 3.11 Rework option flags to be closer to current distribution.
+" 3.12 Fix cCharacter to use smallest string upto next '.
+" 3.13 Improve working of cConditionalOperator.
+" 3.14 Replaced ALLBUTs with explicit groups - fewer surprises in store.
+" 3.15 Split types of space error as trailing ws in pp lines already handled.
+" 3.16 Add common C extensions a la c.vim (asm, #warn(ing)).
+" 3.17 Add flag to allow switching to c.vim level of highlighting.
+" 3.18 Add bracket content error highlighting a la c.vim
+"
+" 4.1 Highlight arg to goto as label, not identifier.
+" 4.2 Add support to optionally flag trigraphs as errors.
+" 4.3 Additions for C94 - types, constants, macros, and format specifiers.
+" 4.4 Allow highlighting of character constants as integers.
+" 4.5 Fix #define highlighting when line start with whitespace.
+"
+" 5.1 Highlight integer literal constant 0 as octal, since it is.
+" 5.2 Simplify string and comment highlighting a bit.
+" 5.3 Fix two or more cCharacter's on a line, where '\\' is not the last one
+"
+" 6.1 Fix octal zeroes with more than one 0!
+" 6.2 Hex numbers ending with 'e' and followed by [-+] is invalid!
+" 6.3 Correct C99 hex float constants - were horribly wrong.
+" 6.4 Add C99 reserved namespaces.
+" 6.5 Rework C99 integer types and constants.
+" 6.6 Add C94 feature warning.
+" 6.7 Rework handling of C94 and C99 warnings.
+" 6.8 Update to ViM 6 standard.
+" 6.9 Change trigraph pattern for ?? following change to regexp syntax.
+" 6.10 Remove digraph warnings from comments and strings.
+"
+" 7.1 Highlight floats of the form 10f as errors - invalid Standard C!
+" 7.2 Sort out C99 reserved function name warnings.
+" 7.3 Add C99 printf/scanf intger format specifiers.
+" 7.4 Change references from ANSI to Standard.
+" 7.5 Fix C94 & C99 error highlighting.
+" 7.6 Add support for c_gnu in VIM compatible mode, else warnings!
+" 7.7 Correct highlighting of contained C94, C99, and GNU language features.
+" 7.8 Use cCommentGroup as per distribution.
+" 7.9 Fix highlighting of Octal numbers.
+" 7.10 Add Posix and Maths constants from distribution as options.
+" 7.11 Flag hex/octal char constants in strings as non-portable.
+" 7.12 Missed __STDC_HOSTED__ from list of C99 constants.
+" 7.13 Add C99 #pragma STDC commands.
+" 7.14 Add handling for ... in function arg lists.
+" 7.15 Make numbers and types in comments switchable.
+" 7.16 Optionally highlight C++ keywords as errors.
+" 7.17 Highlight common date/time formats in comments. 
+"
+" 8.1 Fix matching of months in date patterns - just alphabetics!
+" 8.2 Correct matching exact width C99 integer typedefs.
+" 8.3 Correct highlighting of C99 min/max width constant macros.
+" 8.4 Add more C99 library types and macro constants I missed. 
+" 8.5 Oops, I is a constant in C99, not a type.
+" 8.6 Allow {} within paren with GCC macros - controlled by c_gnu.
+" 8.7 Correct handling of C99 universal characters. 
+" 8.8 Optionally warn multi char integer constants.
+" 8.9 Add C99 specific printf/scanf highlighting.
+" 8.10 Rework scanlist highlighting including if '-' appears in wrong place.
+" 8.11 Warn on chars not in basic source char set. 
+" 8.12 WS warnings were not working - shows I don't normally use them. 
+" 8.13 Start using display to speed up highlighting.
+" 8.14 C99 8 digit universal character introduced by U not u. 
+" 8.15 Allow use of %: digraph in PP statements with c_C94 defined. 
+" 8.16 Implement support for c_no_utf in VIM c.vim compatible mode. 
+" 8.17 Correct logic for when to display spacing errors.
+" 8.18 Correct logic for when to display ANSI constants.
+" 8.19 Correct logic handling mixes of C94/99 highlighting and warning.
+" 8.20 Use Boolean highlight group for C99 true and false. 
+"
+" 9.0 Added supporting help file. 
+" 9.1 Many clarifications to the documentation.
+" 9.2 Simplify effect of setting VIM C compatible mode. 
+" 9.3 Warn on nesting of start of /* comments.
+" 9.4 Fix flagging reserved C99 library function names, use me not he. 
+" 9.5 Redo space error highlighting as per VIM. 
+" 9.6 When syntax is other than C, use standard c.vim.
+" 9.7 Use unlet! instead of unlet.
+" 9.8 Add fortran keyword for K&R code when c_c_vim_compatible is defined.
+"
+" 10.0 Can't use display with cCharacter since could contain '"' 
+" 10.1 Add support for $ in VMS C identifiers controlled by c_vms.
+" 10.2 Zero followed by a type suffix is still an octal value. 
+" 10.3 Highlight digraphs in syntax based on C94 and warning settings. 
+" 10.4 Allow \ to continue C++ style one line comments! 
+" 10.4a Fix bug in highlighting [...[...]...]
+" 10.5 Oops. no such token as ~= - now an error to help the unsuspecting.
+" 10.6 Scanlist can have a terminating '-'.
+" 10.7 Fix bugs in 10.6 changes for C94 scanlists (wide char strings)
+" 10.8 Fix highlighting of pre-C99 #pragma statements.
+"
+" 11.0 Allow #include to specify PP names as well as "" and <> strings. 
+" 11.1 Fix highlighting nested C comments.
+" 11.2 Fix highlighting of system include file names.
+" 11.3 Argh! - fix highlighting of comments et al in #include statements
+" 11.4 Error highlight character constants in hex/octal with top bit set.
+"
+" 12.0 Add missing C99 F printf float format specifier.
+" 12.1 Add VIM 7 spelling group to comments and strings.
+" 12.2 Allow braces for C99 compound literals within parens.
+" 12.3 Add comment folding controllable by c_no_comment_fold.
+" 12.4 Make highlighting of braces in parens as errors controllable.
+" 12.5 Add syntax based folding of statement blocks as per Bram's.
+
+" TODO
+" 1. Add #if 0/1 comment highlighting
+" 2. Fix macro continuation \ highlighting within parens
+"
 
 " Catch sourcing of c.vim by other syntax files and redirect to default file.
 if &syntax != 'c'
@@ -33,9 +169,9 @@ if exists("c_c_vim_compatible")
   let c_math = 1
   let c_no_names = 1
   " Clear items not in default C syntax file
-  unlet! c_vms
-  unlet! c_char_is_integer
-  unlet! c_no_octal
+  unlet! c_vms 
+  unlet! c_char_is_integer 
+  unlet! c_no_octal 
   unlet! c_impl_defined
   unlet! c_comment_numbers
   unlet! c_comment_types
@@ -135,6 +271,8 @@ endif
 syn keyword       cSizeofOperator   sizeof
 syn cluster       cOperator         contains=cSizeofOperator
 if !exists("c_c_vim_compatible")
+  " C math operators
+  syn match       cMathOperator     display "[-+\*/%=]"
   " C pointer operators - address of and dereference are context sensitive
   syn match       cPointerOperator  display "->\|\."
   " C logical   operators - boolean results
@@ -148,7 +286,7 @@ if !exists("c_c_vim_compatible")
   syn match       cLogicalOperator  display "&&\|||"
   syn match       cLogicalOperatorError display "\(&&\|||\)="
 
-  syn cluster     cOperator         add=cPointerOperator,cLogicalOperator,cBinaryOperator,cLogicalOperatorError,cBinaryOperatorError
+  syn cluster     cOperator         add=cMathOperator,cPointerOperator,cLogicalOperator,cBinaryOperator,cLogicalOperatorError,cBinaryOperatorError
 endif
 if !exists("c_c_vim_compatible") || exists("c_gnu")
   syn keyword     cGNUOperator      typeof __real__ __imag__
@@ -357,7 +495,7 @@ syn case match
 
 
 " Highlight trailing and/or mixed space errors
-if exists("c_space_errors")
+if exists("c_space_errors") 
   if !exists("c_no_trail_space_error")
     syn match     cTrailSpaceError  "\s\+$"
   endif
@@ -421,7 +559,7 @@ if exists("c_cpp_comments") || (exists("c_C99") && !exists("c_C99_warn"))
     syn region    cComment          start="//" skip="\\$" end="$" contains=cComment2String,cCharacterNoError,@cCommentGroup,cPPLineJoin,cPPLineJoinError,@Spell fold
   endif
 else
-  syn region      cCommentError     start="//" skip="\\$" end="$"
+  syn region      cComment     start="//" skip="\\$" end="$"
 endif
 syn sync ccomment cComment
 
@@ -453,7 +591,7 @@ syn match         cPPLineJoinError  contained "\\\s\+$"
 syn match         cPPTokenOperator  contained "\(%:\|#\)\{1,2}" contains=cDigraph
 
 " Empty cpp lines which are not join or paste operations
-syn match         cPPLineStart      transparent contained "^\s*\(%:\|#\)" contains=cDigraph
+syn match         cPPLineStart      transparent contained "^\s*\(%:\|#\)" contains=cDigraph 
 syn match         cPPEmptyLine      "^\s*\(%:\|#\).*$" contains=cComment,cPPWhiteSpace,cPPSpaceError,cPPLineStart
 
 " Almost all pre-processor lines (not include) contain the following
@@ -470,7 +608,7 @@ syn match         cPPIf             transparent contained "^\s*\(%:\|#\)\s*\(if\
 syn region        cPPIfParen        transparent start='(' end=')' contains=@cPPIfInteger,cPPIfParen
 syn keyword       cPPOperator       contained defined
 syn cluster       cPPIfInteger      contains=@cInteger,cOctalError,cCharacter,cMultiCharacter,cCharacterError,@cConstant,@cMacro,@cIdentifier
-syn cluster       cPPIfInteger      add=cLogicalOperator,cBinaryOperator,cPPOperator
+syn cluster       cPPIfInteger      add=cMathOperator,cLogicalOperator,cBinaryOperator,cPPOperator
 syn region        cPreCondit        start="^\s*\(%:\|#\)\s*\(if\|elif\)\>" skip="\\$" end="$" contains=cPPIf,@cPPIfInteger,cPPIfParen,@cPPCommon
 syn cluster       cPPIfIdentifer    contains=@cIdentifier,@cMacro
 syn region        cPreCondit        start="^\s*\(%:\|#\)\s*\(ifdef\|ifndef\)\>" skip="\\$" end="$" contains=cPPIf,@cPPIfIdentifier,@cPPCommon
@@ -585,7 +723,7 @@ syn match         cParenError       ")"
 syn region        cBlock            start="{" end="}" transparent fold
 
 " C typedefs
-syn cluster       cTypedef          contains=cEmpty
+syn cluster       cTypedef          contains=cEmpty 
 if !exists("c_no_ansi") || exists("c_ansi_typedefs")
   syn keyword     c89Typedef        size_t wchar_t ptrdiff_t sig_atomic_t fpos_t div_t ldiv_t
   syn keyword     c89Typedef        clock_t time_t va_list jmp_buf FILE
@@ -615,7 +753,7 @@ endif
 
 
 " C constants
-syn cluster       cConstant         contains=cEmpty
+syn cluster       cConstant         contains=cEmpty 
 if !exists("c_no_ansi") || exists("c_ansi_constants")
   syn keyword     c89Constant       __LINE__ __FILE__ __DATE__ __TIME__ __STDC__
   syn keyword     c89Constant       CHAR_BIT MB_LEN_MAX MB_CUR_MAX
@@ -807,6 +945,7 @@ hi def link cRepeat                Repeat
 
 hi def link cOperator              Operator
 hi def link cSizeofOperator        cOperator
+hi def link cMathOperator          cOperator
 hi def link cPointerOperator       cOperator
 hi def link cLogicalOperator       cOperator
 hi def link cBinaryOperator        cOperator
