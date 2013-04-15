@@ -1,13 +1,14 @@
 # Dotfiles
 	Various .rc files for my command line experience
 
-## Stuff I have:
-	- OS X
-	- Homebrew 
+## Stuff I use:
+	- OS X + iTerm 2
 	- Zsh + Prezto
 	- Vim
 	- tmux
-	- Solarized
+	- Weechat
+	- mutt
+	- Hybrid / Modified Tomorrow-Night Colorscheme
 
 ## Obligatory Screenshot
 
