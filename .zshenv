@@ -69,6 +69,7 @@ path=(
 /usr/local/{bin,sbin}
 /usr/{bin,sbin}
 /{bin,sbin}
+~/bin
 /usr/local/share/npm/bin
 /usr/local/share/python
 /usr/local/share/python3
