@@ -185,9 +185,9 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 set background=dark
-" let g:hybrid_use_Xresources=1
-" colorscheme hybrid
-colorscheme badwolf
+let g:hybrid_use_Xresources=1
+colorscheme hybrid2
+" colorscheme badwolf
 
 "}}}
 " GUI Settings {{{
