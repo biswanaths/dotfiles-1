@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 
 "}}}
 " Installed Plugins {{{
+Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
@@ -45,7 +46,9 @@ Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
@@ -54,6 +57,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
 " }}}
@@ -62,7 +66,6 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
-Bundle 'BusyBee'
 
 "}}}
 " General Settings {{{
@@ -115,6 +118,7 @@ set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ file\:\%#StatusLine#\%f
 set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
+set statusline+=\ \ 
 
 "}}}
 " Search Settings {{{
@@ -126,7 +130,6 @@ set showmatch
 set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
-set gdefault
 
 "}}}
 " Tab Settings {{{
@@ -193,15 +196,15 @@ colorscheme hybrid
 " Hybrid Colorscheme better settings {{{2
 if g:colors_name == "hybrid"
     " Better popup menu
-    hi Pmenu           ctermfg=137 ctermbg=233 cterm=none
-    hi PmenuSel        ctermfg=196 ctermbg=234 cterm=bold
-    hi PmenuSbar       ctermfg=000 ctermbg=233 cterm=none
-    hi PmenuThumb      ctermfg=137 ctermbg=235 cterm=none
+    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
+    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
+    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
+    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
     " Better status bar
     hi! StatusLine ctermfg=234 ctermbg=136
     hi! StatusLineNC ctermfg=234 ctermbg=100
     " Better matching stuff
-    hi! MatchParen    ctermfg=196 ctermbg=234   cterm=bold
+    hi! MatchParen ctermfg=196 ctermbg=234   cterm=bold
 endif
 
 ""}}}2
@@ -384,9 +387,16 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-" Reformat a C/C++ file in the Stroustrup style.
-" All other styles are inferior!
-autocmd! BufNewFile,BufRead *.cpp,*.c set formatprg=astyle\ -A4\ -s4Uek3p
+" Reformat a C/C++ file in the One True Brace Style
+" All other styles are inferior and lack wisdom.
+command! -nargs=0 Format call AStyleFormat()
+function! AStyleFormat()
+    if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'objc' || &filetype == 'javascript'
+        :%!astyle
+    elseif &filetype == 'java'
+        :%!astyle --mode=java
+    endif
+endfunction
 
 " An excellent search pattern mapping.
 " Credit: romainl
@@ -406,6 +416,9 @@ nmap <leader>o ,0cgn
 
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
+
+" Open help in a vertical split
+nnoremap <leader>h :vert h 
 
 " Use the arrow keys to move around quickfix list keeping the cursor in the
 " middle.
@@ -532,16 +545,13 @@ aug ft_tmux
     setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 aug END
 
+" Cpan's Devel::REPL
+autocmd BufRead repl.rc setlocal filetype=perl
+
 augroup ft_pentadactyl
     au!
     au BufNewFile,BufRead .pentadactylrc,*.penta setlocal filetype=vim
 aug END
-
-" -- Quickfix --
-augroup ft_quickfix
-    au!
-    au Filetype qf nolist nocursorline nowrap
-augroup END
 
 " -- zsh --
 augroup ft_zsh
