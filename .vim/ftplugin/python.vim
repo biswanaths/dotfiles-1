@@ -6,3 +6,5 @@ set expandtab
 set shiftround
 set autoindent
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
+
+let python_highlight_all=1
