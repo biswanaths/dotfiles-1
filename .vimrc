@@ -59,31 +59,6 @@ Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
 "}}}
-" Colorscheme / Syntax / Filetype {{{
-syntax on
-filetype plugin indent on
-set t_Co=256
-set background=dark
-let g:hybrid_use_Xresources=1
-colorscheme hybrid
-
-" Hybrid Colorscheme better settings {{{2
-if g:colors_name == "hybrid"
-    " Better popup menu
-    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
-    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
-    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
-    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
-    " Better status bar
-    hi! StatusLine ctermfg=234 ctermbg=136
-    hi! StatusLineNC ctermfg=234 ctermbg=100
-    " Orgasmic matching color
-    hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
-endif
-
-""}}}2
-
-"}}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
@@ -121,6 +96,31 @@ endif
 let mapleader=','           " Let leader key be , instead of \
 set splitbelow              " Split below the current buffer.
 set splitright              " Split right of the current buffer (vertical splits)
+"}}}
+" Colorscheme / Syntax / Filetype {{{
+syntax on
+filetype plugin indent on
+set t_Co=256
+set background=dark
+let g:hybrid_use_Xresources=1
+colorscheme hybrid
+
+" Hybrid Colorscheme better settings {{{2
+if g:colors_name == "hybrid"
+    " Better popup menu
+    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
+    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
+    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
+    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
+    " Better status bar
+    hi! StatusLine ctermfg=234 ctermbg=136
+    hi! StatusLineNC ctermfg=234 ctermbg=100
+    " Orgasmic matching color
+    hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
+endif
+
+""}}}2
+
 "}}}
 " Status Line {{{
 set statusline=
@@ -342,8 +342,8 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = '3hjr'
 let g:ctrlp_root_markers = ['tags']
 let g:ctrlp_buftag_types = {
-    \ 'javascript' : '--lanaguage-force=javascript --javascript-types=fv'
-    \ }
+            \ 'javascript' : '--lanaguage-force=javascript --javascript-types=fv'
+            \ }
 
 " -- Netrw Settings -- 
 let g:netrw_winsize='999'
