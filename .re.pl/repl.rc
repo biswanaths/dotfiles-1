@@ -1,15 +1,37 @@
 use 5.012;
 use warnings;
+use Term::ANSIColor;
+use Modern::Perl;
 
-load_plugin qw(
-    Colors
-    Completion
-    CompletionDriver::INC
-    CompletionDriver::LexEnv
-    CompletionDriver::Keywords
-    CompletionDriver::Methods
-    DumpHistory
-    History
-    LexEnv
-    ReadLineHistory
+# Plugin list
+my @plugins = qw(
+  Colors
+  Completion
+  CompletionDriver::INC
+  CompletionDriver::Keywords
+  CompletionDriver::LexEnv
+  CompletionDriver::Methods
+  DataPrinter
+  DDS
+  DumpHistory
+  FancyPrompt
+  History
+  LexEnv
+  MultiLine::PPI
+  PPI
+  ReadLineHistory
 );
+
+# Subroutine that 
+sub myprompt {
+    # Shift or if nothing is defined, use the given defaults
+    my $color  = shift // 'black';
+    my $string = shift // '> ';
+    sub { color('reset') . color($color) . $string . color('reset') };
+}
+
+$_REPL->load_plugins($_) for @plugins;
+$_REPL->fancy_prompt( myprompt( 'green', 'perl5> ' ) );
+$_REPL->fancy_continuation_prompt( myprompt( 'blue', 'perl5* ' ) );
+
+END { say ''; }
