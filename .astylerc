@@ -1,0 +1,14 @@
+# Use One True Brace Style
+style=1tbs
+
+indent-preprocessor
+
+indent-col1-comments
+
+pad-oper
+
+pad-header
+
+unpad-paren
+
+align-pointer=name
