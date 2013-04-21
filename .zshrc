@@ -12,11 +12,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Zsh Environment Variables
-export ARCHFLAGS='-arch x86_64'
-export LESSCHARSET=utf-8
 export LESSHISTFILE="~/.zsh/lesshist/"
-export LESSHISTSIZE=1000
-export CSCOPE_DB=~/.vim/src/cscope.out
+export CSCOPE_DB='~/.vim/src/cscope.out'
+export GREP_COLOR='1;33'
 
 # Change some syntax coloring to look nicer
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
