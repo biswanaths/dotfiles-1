@@ -10,13 +10,9 @@
 " Author: Akshay                  "
 " Updated: March 2, 2013          "
 "---------------------------------"
-
-" Pre-Vundle settings {{{
+" Vundle Settings {{{
 set nocompatible
 filetype off
-
-"}}}
-" Vundle Runtime Path {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -25,10 +21,10 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'dahu/MarkMyWords'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'guns/vim-clojure-static'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
@@ -46,18 +42,14 @@ Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 
 " }}}
@@ -66,43 +58,64 @@ Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
 Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
+"}}}
+" Colorscheme / Syntax / Filetype {{{
+syntax on
+filetype plugin indent on
+set t_Co=256
+set background=dark
+let g:hybrid_use_Xresources=1
+colorscheme hybrid
+
+" Hybrid Colorscheme better settings {{{2
+if g:colors_name == "hybrid"
+    " Better popup menu
+    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
+    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
+    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
+    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
+    " Better status bar
+    hi! StatusLine ctermfg=234 ctermbg=136
+    hi! StatusLineNC ctermfg=234 ctermbg=100
+    " Orgasmic matching color
+    hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
+endif
+
+""}}}2
 
 "}}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
 set cmdheight=2
-set modelines=0
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
-set foldopen=block,insert,jump,mark,quickfix,search,undo
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set mouse=a
 set scrolloff=8
-set lazyredraw
 set synmaxcol=700
-set nrformats-=octal          " Prevents (in|de)crementing a 0 padded to octal
+set nrformats-=octal          " Prevents (in|de)crementing a 0 padded number to octal
 set clipboard=unnamed
 set laststatus=2
 set backspace=indent,eol,start
-set ttyfast
-set cpoptions+=$               "Shows a dollar sign when changing text
+set ttyfast                    " Fast terminal connection
+set cpoptions+=$               " Shows a dollar sign when changing text
 set fileformats=unix,mac,dos
 set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
 set formatoptions-=o          "Doesn't continue the comment after pressing o
 set formatoptions=qrn1
 set virtualedit=block
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set visualbell
 set autoread                  "Detect when a file has been changed externally
 set autochdir
+set switchbuf=useopen,usetab
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
-" Lets vim recognize the mouse inside a tmux session
 if has('mouse')
+    " recognize the mouse inside a tmux session
     set ttymouse=xterm2
 endif
 let mapleader=','           " Let leader key be , instead of \
@@ -110,7 +123,6 @@ set splitbelow              " Split below the current buffer.
 set splitright              " Split right of the current buffer (vertical splits)
 "}}}
 " Status Line {{{
-
 set statusline=
 set statusline+=\ ff\:%{&ff}
 set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n\ ft\:\%#StatusFTP#\%Y
@@ -123,7 +135,7 @@ set statusline+=\ \
 "}}}
 " Search Settings {{{
 nnoremap / /\v
-vnoremap / /\v
+xnoremap / /\v
 set incsearch
 set ignorecase
 set showmatch
@@ -141,7 +153,6 @@ set expandtab
 
 "}}}
 " Indent Settings {{{
-set autoindent
 set cindent
 set preserveindent
 set copyindent
@@ -155,7 +166,7 @@ set wildmenu
 set wildmode=full
 set wildchar=<Tab>
 set completeopt-=preview
-set completeopt+=menuone,longest
+set completeopt+=longest
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
@@ -184,40 +195,19 @@ set undoreload=10000
 set nohidden
 
 "}}}
-" Colorscheme / Syntax / Filetype {{{
-syntax on
-filetype plugin indent on
-set t_Co=256
-set background=dark
-let g:hybrid_use_Xresources=1
-colorscheme hybrid
-" colorscheme badwolf
-
-" Hybrid Colorscheme better settings {{{2
-if g:colors_name == "hybrid"
-    " Better popup menu
-    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
-    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
-    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
-    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
-    " Better status bar
-    hi! StatusLine ctermfg=234 ctermbg=136
-    hi! StatusLineNC ctermfg=234 ctermbg=100
-    " Better matching stuff
-    hi! MatchParen ctermfg=196 ctermbg=234   cterm=bold
-endif
-
-""}}}2
-
-"}}}
 " GUI Settings {{{
 if has("gui_running")
+    autocmd! FocusLost * :wa
+    autocmd! GUIEnter set vb t_vb=
+    set lines=40
+    set columns=140
+    set fuoptions=maxvert,maxhorz
     set guioptions-=T
     set guioptions-=r
     set guioptions-=R
     set guioptions-=l
     set guioptions-=L
-    set guifont=Inconsolata\ LGC:h12
+    set guifont=Inconsolata-g:h12
     colorscheme badwolf
 endif
 
@@ -229,10 +219,10 @@ nnoremap <silent> <C-j> <C-W>j
 nnoremap <silent> <C-k> <C-W>k
 nnoremap <silent> <C-l> <C-W>l
 " -- Moving windows
-nnoremap <silent> <leader>mh <C-W>H
-nnoremap <silent> <leader>mj <C-W>J
-nnoremap <silent> <leader>mk <C-W>K
-nnoremap <silent> <leader>ml <C-W>L
+nnoremap <silent> <leader>sh <C-W>H
+nnoremap <silent> <leader>sj <C-W>J
+nnoremap <silent> <leader>sk <C-W>K
+nnoremap <silent> <leader>sl <C-W>L
 " -- Closing windows
 nnoremap <silent> <leader>cc :close<CR>
 nnoremap <silent> <leader>cw :cclose<CR>
@@ -252,6 +242,9 @@ au! WinEnter * wincmd =
 nmap <c-p> <Plug>yankstack_substitute_older_paste
 nmap <C-P> <Plug>yankstack_substitute_newer_paste
 
+" -- Commentary Settings -- 
+autocmd FileType tmux set commentstring=#\ %s
+
 " -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
@@ -263,7 +256,7 @@ let g:tagbar_expand=1
 let g:tagbar_singleclick=1
 let g:tagbar_compact=1
 let g:tagbar_width=35
-nnoremap <silent> <leader>tb :TagbarToggle<CR>
+nnoremap <silent> <leader>gt :TagbarToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
@@ -322,7 +315,7 @@ let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
 
 " -- Tabular Settings --
-vnoremap <leader>t :Tabular<space>/
+xnoremap <leader>t :Tabular<space>/
 
 " -- EasyTags Settings --
 let g:easytags_always_enabled=1
@@ -334,30 +327,41 @@ let g:easytags_resolve_links=1
 let g:easy_tags_supress_ctags_warning=1
 
 " -- Ctrl-p Settings --
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_max_height=10
-let g:ctrlp_persistent_input=0
-let g:ctrlp_lazy_update=1
-let g:ctrlp_follow_symlinks=1
-let g:ctrlp_show_hidden=1
-let g:ctrlp_use_caching=1
-let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
-let g:ctrlp_custom_ignore={
-            \ 'dir'  : '\v[\/]\.(git|hg|svn|dropbox|Trash|subversion|task)$',
-            \ 'file' : '\v\.(exe|so|dll)$',
-            \ }
-let g:ctrlp_max_files=10000
-let g:ctrlp_map='<leader>t'
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>mru :CtrlPMRU<CR>
-nnoremap <leader>c :CtrlPClearCache<CR>
+nnoremap <leader>m :CtrlPMixed<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <leader>T :CtrlPBufTag<CR>
+nnoremap <leader>w :CtrlPLine<CR>
+let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_mruf_max = 25
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_open_multiple_files = '3hjr'
+let g:ctrlp_root_markers = ['tags']
+let g:ctrlp_buftag_types = {
+    \ 'javascript' : '--lanaguage-force=javascript --javascript-types=fv'
+    \ }
+
+" -- Netrw Settings -- 
+let g:netrw_winsize='999'
+let g:netrw_banner=0
+let g:netrw_keepdir=0
+let g:netrw_liststyle=3
 
 "}}}
 " Vim Niceties {{{
 
 " Reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
+xnoremap < <gv
+xnoremap > >gv
+
+" Vim refuses to open folds when searching even when I freaking told it to.
+" For fuck's sake.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Force save files requiring root permissions
 cmap w!! %!sudo tee > /dev/null %
@@ -381,8 +385,6 @@ nnoremap gj j
 nnoremap gk k
 
 " Keep search pattern at the center of the screen
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
@@ -398,19 +400,6 @@ function! AStyleFormat()
     endif
 endfunction
 
-" An excellent search pattern mapping.
-" Credit: romainl
-"
-" ,S to define the search pattern
-nnoremap <leader>S :let @/ = expand('<cword>') <bar> echo @/<cr>
-vnoremap <leader>S "*y<Esc>:let @/ = substitute(escape(@*, '\/.*$^~[]'), "\n", '\\n', "g") <bar> echo @/<cr>
-" ,r to replace
-nnoremap <leader>r :'{,'}s/<c-r>=expand(@/)<cr>/
-vnoremap <leader>r :s/<c-r>=expand(@/)<cr>/
-" ,o to replace once and . to repeat
-nnoremap <leader>0 :let @/ = expand('<cword>')<cr>
-nmap <leader>o ,0cgn
-
 " }}}
 " General Mappings {{{
 
@@ -418,7 +407,7 @@ nmap <leader>o ,0cgn
 nnoremap \ ,
 
 " Open help in a vertical split
-nnoremap <leader>h :vert h 
+nnoremap <leader>h :vert h
 
 " Use the arrow keys to move around quickfix list keeping the cursor in the
 " middle.
@@ -438,13 +427,10 @@ nnoremap <leader>l :set list!<CR>
 inoremap <C-;> <ESC>maA;<ESC>`aa
 nnoremap <leader>; maA;<ESC>`a
 
-" Much faster saving
-nnoremap <leader>w <esc>:wa<CR>
-
 " Screw Ex-mode
 nnoremap Q gq
 
-" Allow emacs-like command-line editing
+" Readline-line editing for command mode
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
@@ -456,7 +442,7 @@ nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
 nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>fef maggVG=`a
+nnoremap <leader>ef maggVG=`a
 
 " Toggle hlsearch
 nnoremap <silent> <leader>/ :set hlsearch!<CR>
@@ -472,7 +458,11 @@ nnoremap L $
 inoremap <C-u> <esc>mzgUiw`z
 
 " Remove trailing whitespace
-nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+" I don't want this for .vimrc since some trailing spaces may be possible
+" in statuslines and such
+if (&ft!=?'vim')
+    nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+endif
 
 " Use space to toggle folds
 nnoremap <Space> za
@@ -538,27 +528,9 @@ endfunction
 
 "}}}
 " Quick Filetype Settings {{{
-" -- tmux --
-aug ft_tmux
-    au!
-    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setlocal filetype=tmux
-    setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-aug END
 
-" Cpan's Devel::REPL
+" Perl's Devel::REPL
 autocmd BufRead repl.rc setlocal filetype=perl
-
-augroup ft_pentadactyl
-    au!
-    au BufNewFile,BufRead .pentadactylrc,*.penta setlocal filetype=vim
-aug END
-
-" -- zsh --
-augroup ft_zsh
-    au!
-    au BufNewFile,BufRead zshecl*,prompt_*_setup setlocal filetype=zsh
-    setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
 
 " Better brace insertion
 autocmd Filetype c,cpp,objc,perl,java,javascript inoremap {<CR>  {<CR>}<Esc>O
@@ -589,5 +561,4 @@ if ! has('gui_running')
 endif
 
 "}}}
-
 " --------------------------------- End .vimrc ------------------------------
