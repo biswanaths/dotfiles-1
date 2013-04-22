@@ -21,9 +21,7 @@ let java_highlight_all=1
 let java_minlines=150
 
 "Tags 
-setlocal tags+=~/.vim/tags/java_io
-setlocal tags+=~/.vim/tags/java_util
-setlocal tags+=~/.vim/tags/java_lang
+setlocal tags+=~/.vim/tags/java
 
 " Tagbar Settings
 let g:tagbar_width=45

@@ -27,3 +27,5 @@ alias unzip="unzip -d ~/Downloads"
 alias upd="brew update;brew upgrade;brew cleanup"
 alias vi="vim"
 alias weechat="weechat-curses"
+
+unalias sl
