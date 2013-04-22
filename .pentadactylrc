@@ -1,6 +1,3 @@
-" Runtime-path
-set runtimepath=/Users/watabou/.pentadactyl
-
 " Editor
 set editor='/usr/local/bin/mvim -f +<line> <file>'
 
@@ -54,6 +51,7 @@ nmap -builtin d <esc>:tabclose<CR>
 " Configure tab opening behavior
 set tabopen=link:right,orphan:end,external:end
 
-" Ah, finally. I found something that can turn this damnable, asinine,
-" annoying bell off.
+" I finally found a way to turn off that damnable annoying bell
 javascript dactyl.beep = function() { return false; }
+
+" vim: ft=vim

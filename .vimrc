@@ -67,7 +67,7 @@ set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set mouse=a
-set scrolloff=8
+set scrolloff=4
 set synmaxcol=700
 set nrformats-=octal          " Prevents (in|de)crementing a 0 padded number to octal
 set clipboard=unnamed
@@ -105,7 +105,7 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid
 
 " Hybrid Colorscheme better settings {{{2
-if g:colors_name == "hybrid"
+if (g:colors_name == "hybrid")
     " Better popup menu
     hi Pmenu ctermfg=137 ctermbg=233 cterm=none
     hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
@@ -117,7 +117,6 @@ if g:colors_name == "hybrid"
     " Orgasmic matching color
     hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
 endif
-
 ""}}}2
 
 "}}}
@@ -153,7 +152,6 @@ set expandtab
 "}}}
 " Indent Settings {{{
 set cindent
-set preserveindent
 set copyindent
 set shiftround
 set textwidth=80
@@ -248,14 +246,14 @@ autocmd FileType tmux set commentstring=#\ %s
 let g:gundo_width=30
 let g:gundo_preview_height=35
 let g:gundo_help=0
-nnoremap <silent> <F1> :GundoToggle<CR>
+nnoremap <silent> <F2> :GundoToggle<CR>
 
 " -- Tagbar Settings --
 let g:tagbar_expand=1
 let g:tagbar_singleclick=1
 let g:tagbar_compact=1
 let g:tagbar_width=35
-nnoremap <silent> <leader>gt :TagbarToggle<CR>
+nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
@@ -395,7 +393,8 @@ function! AStyleFormat()
     if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'objc' || &filetype == 'javascript'
         :%!astyle
     elseif &filetype == 'java'
-        :%!astyle --mode=java
+        " Stupid coding guidelines for school
+        :%!astyle --mode=java --style=allman -s3
     endif
 endfunction
 
