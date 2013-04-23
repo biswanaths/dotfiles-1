@@ -332,6 +332,7 @@ nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_map='<F3>'
 let g:ctrlp_mruf_max = 25
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_by_filename = 1
@@ -346,7 +347,7 @@ let g:ctrlp_buftag_types = {
 let g:netrw_winsize='999'
 let g:netrw_banner=0
 let g:netrw_keepdir=0
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 
 "}}}
 " Vim Niceties {{{
