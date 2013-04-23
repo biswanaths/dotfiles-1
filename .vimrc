@@ -258,7 +258,9 @@ nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " -- Syntastic Settings --
 let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=0
 let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -334,9 +336,14 @@ nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_map='<F3>'
-let g:ctrlp_mruf_max = 25
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_by_filename = 1
+let g:ctrlp_mruf_max=25
+let g:ctrlp_max_files=10000
+let g:ctrlp_use_caching=1
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_cache_dir=$HOME.'/cache/ctrlp'
+let g:ctrlp_by_filename=1
+let g:ctrlp_show_hidden=1
+let g:ctrlp_follow_symlinks=1
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = '3hjr'
 let g:ctrlp_root_markers = ['tags']
