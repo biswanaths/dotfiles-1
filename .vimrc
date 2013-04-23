@@ -50,6 +50,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-notes'
 
 " }}}
 " Colorscheme plugins {{{
