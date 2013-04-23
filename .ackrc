@@ -1,0 +1,15 @@
+--type-add=css=.sass,.less,.scss
+--type-add=ruby=.rake,.rsel,.builder,.thor
+--type-add=html=.haml,.html.erb,.htm.haml
+--type-add=js=.coffee
+--type-set=c=.c,.cpp,.h,.m
+--ignore-dir=docs
+--ignore-dir=doc
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=vendor
+--smart-case
+--sort-files
+--color
+--follow
+--group
