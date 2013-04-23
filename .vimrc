@@ -355,7 +355,12 @@ let g:ctrlp_buftag_types = {
 let g:netrw_winsize='999'
 let g:netrw_banner=0
 let g:netrw_keepdir=0
-" let g:netrw_liststyle=3
+
+" -- Notes Settings --
+let g:notes_directory = '~/Dropbox/Notes'
+let g:notes_suffix = '.md'
+let g:notes_indexscript = '~/.vim/bundle/vim-notes/misc/notes/search-notes.py'
+let g:notes_indexfile = '~/.cache/vim_notes.db'
 
 "}}}
 " Vim Niceties {{{
