@@ -89,6 +89,7 @@ set switchbuf=useopen,usetab
 set shell=/usr/local/bin/zsh
 set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
+set sessionoptions=blank,curdir,folds,help,tabpages,winpos
 if has('mouse')
     " recognize the mouse inside a tmux session
     set ttymouse=xterm2
@@ -257,6 +258,8 @@ let g:tagbar_width=35
 nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " -- Syntastic Settings --
+let g:syntastic_c_compiler_options='-std=c11 -pedantic -Wall -Wextra'
+let g:syntastic_cpp_compiler_options='-std=c++11 -pedantic -Wall -Wextra -Weffc++'
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=0
 let g:syntastic_auto_jump=0
@@ -340,7 +343,7 @@ let g:ctrlp_mruf_max=25
 let g:ctrlp_max_files=10000
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
+let g:ctrlp_cache_dir='~/.cache/ctrlp'
 let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden=1
 let g:ctrlp_follow_symlinks=1
@@ -454,7 +457,7 @@ nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
 nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef maggVG=`a
+nnoremap <leader>ef maggVG=`azz
 
 " Toggle hlsearch
 nnoremap <silent> <leader>/ :set hlsearch!<CR>
