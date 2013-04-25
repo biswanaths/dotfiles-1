@@ -13,7 +13,7 @@ setlocal cinoptions+=j1      " For java inner classes.
 
 " Turn on some syntax highlighting
 let java_allow_cpp_keywords=1
-let java_highlight_functions="style"
+let java_highlight_functions='style'
 let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
 let java_highlight_debug=1
