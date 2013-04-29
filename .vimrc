@@ -37,7 +37,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
@@ -244,6 +243,12 @@ nmap <C-P> <Plug>yankstack_substitute_newer_paste
 " -- Commentary Settings -- 
 autocmd FileType tmux set commentstring=#\ %s
 
+" -- Gist Settings --
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+
 " -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
@@ -372,8 +377,7 @@ let g:notes_indexfile = '~/.cache/vim_notes.db'
 xnoremap < <gv
 xnoremap > >gv
 
-" Vim refuses to open folds when searching even when I freaking told it to.
-" For fuck's sake.
+" Open folds when searching, always centering the cursor.
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -421,9 +425,6 @@ endfunction
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
 
-" Open help in a vertical split
-nnoremap <leader>h :vert h
-
 " Use the arrow keys to move around quickfix list keeping the cursor in the
 " middle.
 nnoremap <up> :lprev<CR>zvzz
@@ -437,10 +438,6 @@ inoremap <right> <nop>
 
 " Toggle list chars
 nnoremap <leader>l :set list!<CR>
-
-" Auto Semicolon insertion
-inoremap <C-;> <ESC>maA;<ESC>`aa
-nnoremap <leader>; maA;<ESC>`a
 
 " Screw Ex-mode
 nnoremap Q gq
@@ -458,9 +455,6 @@ nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef maggVG=`azz
-
-" Toggle hlsearch
-nnoremap <silent> <leader>/ :set hlsearch!<CR>
 
 " Toggle paste mode
 nnoremap <silent> <leader>p :set invpaste<CR>:setlocal paste?<CR>
@@ -547,8 +541,9 @@ endfunction
 " Perl's Devel::REPL
 autocmd BufRead repl.rc setlocal filetype=perl
 
-" Better brace insertion
-autocmd Filetype c,cpp,objc,perl,java,javascript inoremap {<CR>  {<CR>}<Esc>O
+" Better CR expansion
+autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR>  {<CR>}<Esc>O}
+autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O)
 
 "}}}
 " Misc Autocommands {{{
