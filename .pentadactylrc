@@ -30,7 +30,10 @@ source ~/.pentadactyl/plugins/tab-options-dev.js
 source ~/.pentadactyl/plugins/noscript-dev.js
 
 " Disable scrollbar
-set go=ns
+set go=s
+
+" Enable navigation bar
+set go+=T
 
 " Colorscheme
 colorscheme solarized-light
@@ -40,6 +43,10 @@ set showtabline=never
 
 " I always press cmd-T to create a new tab when I can just type t
 nmap -builtin <m-t> <nop>
+
+" Close previous and next tabs without switching from the current tab
+nmap -builtin ,d <C-p>d
+nmap -builtin ,D <C-n>d
 
 " Clear the search highlight -- unimpaired style
 nmap -builtin coh <esc>:noh<CR>
