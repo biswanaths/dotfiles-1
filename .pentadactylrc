@@ -30,10 +30,11 @@ source ~/.pentadactyl/plugins/tab-options-dev.js
 source ~/.pentadactyl/plugins/noscript-dev.js
 
 " Disable scrollbar
-set go=s
+set go=ns
 
-" Enable navigation bar
-set go+=T
+" Show links in the command line instead to get around buftabs being at the
+" status bar
+set showstatuslinks=command
 
 " Colorscheme
 colorscheme solarized-light
