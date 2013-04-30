@@ -8,6 +8,7 @@ alias ex="exec" # I just don't want to enter ex.
 alias ez="mvim -v ~/.zshrc"
 alias firefox="open -a /Applications/FirefoxNightly.app"
 alias rm="rm -v"
+alias lctl="launchctl"
 alias ls="ls -A -G"
 alias musicmpd="mpd && mpdscribble && ncmpcpp"
 alias mutt="cd ~/Downloads && mutt"
