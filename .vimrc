@@ -129,8 +129,7 @@ set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ file\:\%#StatusLine#\%f
 set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
-set statusline+=\ \ 
-
+set statusline+=\ \%{fugitive#statusline()}
 "}}}
 " Search Settings {{{
 nnoremap / /\v
