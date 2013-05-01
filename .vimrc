@@ -242,12 +242,6 @@ nmap <C-P> <Plug>yankstack_substitute_newer_paste
 " -- Commentary Settings -- 
 autocmd FileType tmux set commentstring=#\ %s
 
-" -- Gist Settings --
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_show_privates = 1
-
 " -- Gundo Settings --
 let g:gundo_width=30
 let g:gundo_preview_height=35
