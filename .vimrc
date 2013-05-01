@@ -128,8 +128,8 @@ set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n\ ft\:\%#StatusFTP#\%Y
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ file\:\%#StatusLine#\%f
+set statusline+=\ \ \%{fugitive#statusline()}
 set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
-set statusline+=\ \%{fugitive#statusline()}
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -535,8 +535,8 @@ endfunction
 autocmd BufRead repl.rc setlocal filetype=perl
 
 " Better CR expansion
-autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR>  {<CR>}<Esc>O}
-autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O)
+autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR> {<CR>}<Esc>O
+autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O
 
 "}}}
 " Misc Autocommands {{{
