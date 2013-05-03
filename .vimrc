@@ -48,6 +48,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-notes'
 
@@ -65,7 +66,6 @@ set cmdheight=2
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
-set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set mouse=a
 set scrolloff=4
 set synmaxcol=700
@@ -75,6 +75,7 @@ set laststatus=2
 set backspace=indent,eol,start
 set ttyfast                    " Fast terminal connection
 set cpoptions+=$               " Shows a dollar sign when changing text
+set lazyredraw                 " Don't redraw while executing macros
 set fileformats=unix,mac,dos
 set encoding=utf-8
 set formatoptions-=o          "Doesn't continue the comment after pressing o
