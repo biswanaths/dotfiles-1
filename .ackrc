@@ -1,8 +1,10 @@
+# Ack -- better than grep
 --type-add=css=.sass,.less,.scss
 --type-add=ruby=.rake,.rsel,.builder,.thor
 --type-add=html=.haml,.html.erb,.htm.haml
 --type-add=js=.coffee
 --type-set=c=.c,.cpp,.h,.m
+--type-set=py=.py
 --ignore-dir=docs
 --ignore-dir=doc
 --ignore-dir=log
@@ -10,6 +12,9 @@
 --ignore-dir=vendor
 --smart-case
 --sort-files
---color
+--color-filename=bold red
+--color-match=bold yellow
+--color 
+--flush
 --follow
 --group
