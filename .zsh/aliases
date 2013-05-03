@@ -1,4 +1,7 @@
 ## Aliases ##
+alias :w="echo You\'re not in vim, dummy"
+alias :wq="echo You\'re not in vim, dummy"
+alias :q="echo You\'re not in vim, dummy"
 alias c="clear"
 alias cim="vim"
 alias cp="cp -vi"
