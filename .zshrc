@@ -66,4 +66,7 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
 
+# Faster, zsh! Escape faster from insert mode, at the speed of light!
+KEYTIMEOUT=1
+
 ################################# End of .zshrc ###############################
