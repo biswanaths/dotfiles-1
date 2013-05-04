@@ -30,6 +30,7 @@ Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
+Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
@@ -162,6 +163,7 @@ set nowrap
 " Completions {{{
 set wildmenu
 set wildmode=full
+set wildignorecase
 set wildchar=<Tab>
 set completeopt-=preview
 set completeopt+=longest
@@ -267,8 +269,8 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl'],
-            \ 'passive_filetypes': ['java', 'python'] }
+            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl'],
+            \ 'passive_filetypes': ['python'] }
 
 " -- Supertab Settings --
 " Shuts up supertab's annoying messages.
@@ -332,7 +334,7 @@ let g:easy_tags_supress_ctags_warning=1
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMixed<CR>
+nnoremap <leader>r :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
@@ -500,10 +502,13 @@ endif
 iabbrev flase false
 iabbrev Flase False
 iabbrev grammer grammar
-iabbrev pbng #!/usr/local/bin/perl<CR>
+iabbrev pbng #!/usr/local/bin/perl
 iabbrev teh the
+iabbrev Teh The
 iabbrev treu true
 iabbrev Treu True
+iabbrev interger integer
+iabbrev Interger Integer
 
 "}}}
 " Tmux Cursor Bullcrap {{{
