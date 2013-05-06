@@ -305,13 +305,10 @@ endif
 syn cluster       cIdentifier       contains=cEmpty
 syn cluster       cFunction         contains=cEmpty
 if !exists("c_no_names")
-  syn match       c89Identifier     display "\<\h\w*\>"
-  syn cluster     cIdentifier       add=c89Identifier
   syn match       c89Function       display "\<\h\w*\>\s*("me=e-1
   syn cluster     cFunction         add=c89Function
   if exists("c_vms")
     syn match     cVMSIdentifier    display "\<\h\(\w*\$\)\+\w*\>"
-    syn cluster   cIdentifier       add=cVMSIdentifier
     syn match     cVMSFunction      display "\<\h\(\w*\$\)\+\w*\>\s*("me=e-1
     syn cluster   cFunction         add=cVMSFunction
   endif
@@ -967,8 +964,6 @@ hi def link cStructureType         cStructure
 hi def link cStorageClass          StorageClass
 hi def link c89StorageClass        cStorageClass
 hi def link cIdentifier            Identifier
-hi def link c89Identifier          cIdentifier
-hi def link cEllipses              c89Identifier
 hi def link cFunction              Function
 hi def link c89Function            cFunction
 

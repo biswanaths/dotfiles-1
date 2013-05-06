@@ -10,7 +10,7 @@ setlocal foldnestmax=1
 let perl_include_pod=1
 let perl_extended_vars=1
 let perl_sync_dist=250
-vnoremap ,tid :!perltidy<CR>
-nnoremap ,tid :%!perltidy<CR>
+vnoremap ,tid my:!perltidy<CR>`y
+nnoremap ,tid mt:%!perltidy<CR>`t
 
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
