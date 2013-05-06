@@ -56,13 +56,12 @@ Bundle 'xolox/vim-notes'
 " Colorscheme plugins {{{
 Bundle 'sjl/badwolf'
 Bundle 'tomasr/molokai'
-Bundle 'trapd00r/neverland-vim-theme'
 Bundle 'w0ng/vim-hybrid'
 "}}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
-set cmdheight=2
+set cmdheight=1
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
@@ -206,8 +205,7 @@ if has("gui_running")
     set guioptions-=R
     set guioptions-=l
     set guioptions-=L
-    set guifont=Inconsolata-g:h12
-    colorscheme badwolf
+    set guifont=Anonymous\ Pro:h14
 endif
 
 "}}}
@@ -258,12 +256,11 @@ let g:tagbar_width=35
 nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " -- Syntastic Settings --
-let g:syntastic_c_compiler_options='-std=c11 -pedantic -Wall -Wextra'
-let g:syntastic_cpp_compiler_options='-std=c++11 -pedantic -Wall -Wextra -Weffc++'
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=0
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -292,21 +289,15 @@ let g:pymode_doc_key='K'
 let g:pymode_lint=1
 let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_write=1
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
 let g:pymode_syntax=1
 let g:pymode_syntax_all=1
 let g:pymode_syntax_indent_errors=g:pymode_syntax_all
 let g:pymode_syntax_space_errors=g:pymode_syntax_all
 let g:pymode_syntax_doctests=g:pymode_syntax_all
 let g:pymode_folding=0
-let g:python_run_key='<leader>r'
+let g:python_run_key='<leader>R'
 let g:pymode_lint_message=1
-let g:pymode_rope=1
-let g:pymode_rope_enable_autoimport=1
-let g:pymode_rope_autoimport_generate=1
 let g:pymode_motion=1
-let g:pymode_virtualenv=0
 let python_highlight_all=1
 
 " -- ClangComplete Settings --
@@ -449,7 +440,7 @@ nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
 nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef maggVG=`azz
+nnoremap <leader>ef maggVG=`a
 
 " Toggle paste mode
 nnoremap <silent> <leader>p :set invpaste<CR>:setlocal paste?<CR>
