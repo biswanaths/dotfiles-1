@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'dag/vim2hs'
 Bundle 'dahu/MarkMyWords'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
@@ -124,12 +125,12 @@ endif
 " Status Line {{{
 set statusline=
 set statusline+=\ ff\:%{&ff}
-set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n\ ft\:\%#StatusFTP#\%Y
+set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
-set statusline+=\ file\:\%#StatusLine#\%f
 set statusline+=\ \ \%{fugitive#statusline()}
-set statusline+=\%=col\:\%1.7c\ line\:\%1.7l\ of\ %L\ rel\:\%p%%
+set statusline+=\%=\ \%#StatusLine#\%f\ \|\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
+set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
 "}}}
 " Search Settings {{{
 nnoremap / /\v
@@ -192,6 +193,7 @@ set undofile
 set undoreload=10000
 set nohidden
 
+
 "}}}
 " GUI Settings {{{
 if has("gui_running")
@@ -235,6 +237,9 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
+" -- Ultisnips Settings --
+let g:UltiSnipsListSnippets="<leader>L"
+
 " -- Yankstack Settings --
 nmap <c-p> <Plug>yankstack_substitute_older_paste
 nmap <C-P> <Plug>yankstack_substitute_newer_paste
@@ -266,7 +271,7 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl'],
-            \ 'passive_filetypes': ['python'] }
+            \ 'passive_filetypes': ['haskell', 'python'] }
 
 " -- Supertab Settings --
 " Shuts up supertab's annoying messages.
