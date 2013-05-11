@@ -33,7 +33,7 @@ set go=ns
 set showstatuslinks=command
 
 " Colorscheme
-colorscheme solarized-light
+colorscheme molokai
 
 " Disable that ugly tab bar. Works great with buftabs plugin
 set showtabline=never
