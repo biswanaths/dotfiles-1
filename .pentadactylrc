@@ -12,10 +12,6 @@ nmap -builtin k 4k
 nmap -builtin ) :tn<CR>
 nmap -builtin ( :tp<CR>
 
-" I always line opening searches in a new tab
-nmap -builtin s S
-nmap -builtin S s
-
 " Show console
 nmap -builtin <c-g> <m-a-k><esc>
 imap -builtin <c-g> <esc><m-a-k><esc>
