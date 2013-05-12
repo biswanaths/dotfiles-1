@@ -20,9 +20,6 @@ zstyle ':prezto:module:terminal' auto-title 'no'
 #Set the command prefix on non-GNU systems.
 zstyle ':prezto:module:gnu-utility' prefix 'g'
 
-# Set the Zsh modules to load (man zshmodules).
-# zstyle ':prezto:load' zmodule 'attr' 'stat'
-
 # Set the Zsh functions to load (man zshcontrib).
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
@@ -51,9 +48,7 @@ zstyle ':prezto:load' pmodule \
 # Set highlighting for Zsh commands
 zstyle ':prezto:module:syntax-highlighting' highlighters \
     'main' \
-    'root' \
-    'brackets' \
-    'pattern'
+    'brackets'
 
 # Set the prompt theme
 zstyle ':prezto:module:prompt' theme 'sorinMod'
