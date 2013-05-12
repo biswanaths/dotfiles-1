@@ -21,7 +21,6 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'dag/vim2hs'
 Bundle 'dahu/MarkMyWords'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
