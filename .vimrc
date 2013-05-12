@@ -409,6 +409,27 @@ function! AStyleFormat()
     endif
 endfunction
 
+" Haskell syntax
+let hs_highlight_boolean=1
+let hs_highlight_types=1
+let hs_highlight_more_types=1
+let hs_highlight_debug=1
+let hs_allow_hash_operator=1
+
+" Java syntax 
+let java_highlight_java_lang_ids=1
+let java_highlight_java_io=1
+let java_highlight_util=1
+let java_highlight_java=1
+let java_highlight_debug=1
+let java_allow_cpp_keywords=0
+
+" Python sytax
+let python_highlight_all=1
+
+" Perl folding
+let perl_fold=1
+
 " }}}
 " General Mappings {{{
 
@@ -547,7 +568,9 @@ augroup line_return
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \   execute "normal! g'\"" |
                 \ endif
-augroup END
+augroup EN
+    
+let hs_highlight_boolean=1
 
 " Switch to regular number line when in insert mode.
 autocmd! InsertEnter * set number
