@@ -21,7 +21,7 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'dahu/MarkMyWords'
+Bundle 'dag/vim2hs'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -140,10 +140,10 @@ set showmatch
 set matchtime=3
 set hlsearch     " highlight matches
 set wrapscan     " wrap search to top
+set gdefault     " replace globally by default
 
 "}}}
 " Tab Settings {{{
-set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
@@ -238,6 +238,17 @@ au! WinEnter * wincmd =
 
 " -- Ultisnips Settings --
 let g:UltiSnipsListSnippets="<leader>L"
+
+" -- vim2hs Settings --
+let g:haskell_conceal_enumerations = 0
+let g:haskell_quasi = 0
+let g:haskell_interpolation = 0
+let g:haskell_regex = 0
+let g:haskell_jmacro = 0
+let g:haskell_shqq = 0
+let g:haskell_sql = 0
+let g:haskell_json = 0
+let g:haskell_xml = 0
 
 " -- Yankstack Settings --
 nmap <c-p> <Plug>yankstack_substitute_older_paste
@@ -355,7 +366,7 @@ let g:netrw_banner=0
 let g:netrw_keepdir=0
 
 " -- Notes Settings --
-let g:notes_directory = '~/Dropbox/Notes'
+let g:notes_directories = ['~/Dropbox/Notes']
 let g:notes_suffix = '.md'
 let g:notes_indexscript = '~/.vim/bundle/vim-notes/misc/notes/search-notes.py'
 let g:notes_indexfile = '~/.cache/vim_notes.db'
@@ -398,14 +409,11 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 " Reformat a C/C++ file in the One True Brace Style
-" All other styles are inferior and lack wisdom.
+" All other styles are clearly inferior and not suitable for human use.
 command! -nargs=0 Format call AStyleFormat()
 function! AStyleFormat()
     if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'objc' || &filetype == 'javascript'
         :%!astyle
-    elseif &filetype == 'java'
-        " Stupid coding guidelines for school
-        :%!astyle --mode=java --style=allman -s3
     endif
 endfunction
 
@@ -422,7 +430,7 @@ let java_highlight_java_io=1
 let java_highlight_util=1
 let java_highlight_java=1
 let java_highlight_debug=1
-let java_allow_cpp_keywords=0
+let java_allow_cpp_keywords=1
 
 " Python sytax
 let python_highlight_all=1
