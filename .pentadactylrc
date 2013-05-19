@@ -25,8 +25,8 @@ source ~/.pentadactyl/plugins/buftabs.js
 source ~/.pentadactyl/plugins/tab-options-dev.js
 source ~/.pentadactyl/plugins/noscript-dev.js
 
-" Disable scrollbar
-set go=ns
+" Some gui options
+set go=nsr
 
 " Show links in the command line instead to get around buftabs being at the
 " status bar
