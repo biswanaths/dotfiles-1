@@ -19,7 +19,6 @@ Bundle 'gmarik/vundle'
 
 "}}}
 " Installed Plugins {{{
-Bundle 'c9s/perlomni.vim'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'dag/vim2hs'
 Bundle 'davidhalter/jedi-vim'
@@ -123,8 +122,8 @@ endif
 "}}}
 " Status Line {{{
 set statusline=
-set statusline+=\ ff\:%{&ff}
-set statusline+=\ fenc\:\%{&fenc}\ buf\:\%1.3n
+set statusline+=\ \%{&ff}
+set statusline+=\ \|\ \%{&fenc}\ \|\ buf\:\%1.3n
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ \ \%{fugitive#statusline()}
@@ -151,7 +150,7 @@ set expandtab
 
 "}}}
 " Indent Settings {{{
-set cindent
+set autoindent
 set copyindent
 set shiftround
 set textwidth=80
@@ -364,6 +363,9 @@ let g:ctrlp_buftag_types = {
 let g:netrw_winsize='999'
 let g:netrw_banner=0
 let g:netrw_keepdir=0
+
+" -- delimitMate Settings --
+let delimitMate_expand_cr = 1
 
 " -- Notes Settings --
 let g:notes_directories = ['~/Dropbox/Notes']
