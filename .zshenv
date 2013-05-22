@@ -39,7 +39,7 @@ fi
 
 #
 # Paths
-#
+
 
 typeset -gU cdpath fpath mailpath manpath path
 typeset -gxU MANPATH

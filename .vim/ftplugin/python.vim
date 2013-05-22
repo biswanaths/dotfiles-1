@@ -4,7 +4,7 @@ setlocal tabstop=4
 setlocal softtabstop=4
 setlocal expandtab
 setlocal shiftround
-setlocal autoindent
+setlocal cindent
 setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
 setlocal formatoptions=croql
 

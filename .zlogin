@@ -21,6 +21,6 @@
   fi
 } &!
 
-# Print an offensive adage
+# Print an offensive adage and color it for kicks
 fortune -so | cowsay -f kitty | lolcat
 

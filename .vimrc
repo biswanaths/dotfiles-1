@@ -40,7 +40,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
@@ -60,7 +59,7 @@ Bundle 'w0ng/vim-hybrid'
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
-set cmdheight=1
+set cmdheight=2
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
@@ -160,14 +159,14 @@ set nowrap
 " Completions {{{
 set wildmenu
 set wildmode=full
-set wildignorecase
 set wildchar=<Tab>
-set completeopt-=preview
 set completeopt+=longest
+set previewheight=4
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
 " Wildignore {{{
+set wildignorecase
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.out
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
@@ -274,7 +273,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=0
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
+let g:syntastic_loc_list_height=4
 let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -366,6 +365,7 @@ let g:netrw_keepdir=0
 
 " -- delimitMate Settings --
 let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 
 " -- Notes Settings --
 let g:notes_directories = ['~/Dropbox/Notes']
@@ -564,6 +564,9 @@ endfunction
 
 " Perl's Devel::REPL
 autocmd BufRead repl.rc setlocal filetype=perl
+
+" Fish
+autocmd BufRead,BufNewFile *.fish setlocal filetype=fish
 
 " Better CR expansion
 autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR> {<CR>}<Esc>O
