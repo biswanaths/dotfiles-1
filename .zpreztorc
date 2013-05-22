@@ -32,11 +32,9 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-  'gnu-utility' \
   'utility' \
   'completion' \
   'git' \
-  'archive' \
   'osx' \
   'ruby' \
   'haskell' \
