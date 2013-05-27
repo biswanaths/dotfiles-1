@@ -21,7 +21,6 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'dag/vim2hs'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
@@ -122,7 +121,7 @@ endif
 " Status Line {{{
 set statusline=
 set statusline+=\ \%{&ff}
-set statusline+=\ \|\ \%{&fenc}\ \|\ buf\:\%1.3n
+set statusline+=\ \%{&fenc}\ buf\:\%1.3n
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ \ \%{fugitive#statusline()}
@@ -210,10 +209,10 @@ endif
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> <C-h> <C-W>h
-nnoremap <silent> <C-j> <C-W>j
-nnoremap <silent> <C-k> <C-W>k
-nnoremap <silent> <C-l> <C-W>l
+nnoremap <silent> <C-h> ,mh
+nnoremap <silent> <C-j> ,mj
+nnoremap <silent> <C-k> ,mk
+nnoremap <silent> <C-l> ,ml
 " -- Moving windows
 nnoremap <silent> <leader>sh <C-W>H
 nnoremap <silent> <leader>sj <C-W>J
