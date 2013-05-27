@@ -20,7 +20,6 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'dag/vim2hs'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
@@ -28,6 +27,7 @@ Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
+Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
@@ -46,8 +46,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-perl/vim-perl'
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-notes'
 
 " }}}
 " Colorscheme plugins {{{
@@ -58,7 +56,7 @@ Bundle 'w0ng/vim-hybrid'
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
-set cmdheight=2
+set cmdheight=1
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
@@ -160,7 +158,7 @@ set wildmenu
 set wildmode=full
 set wildchar=<Tab>
 set completeopt+=longest
-set previewheight=4
+set previewheight=5
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
@@ -283,6 +281,7 @@ let g:syntastic_mode_map = {'mode': 'active',
 " -- Supertab Settings --
 " Shuts up supertab's annoying messages.
 let g:SuperTabCrMapping=0
+let g:SuperTabClosePreviewOnPopupClose=1
 
 " -- UltiSnips Settings --
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -323,15 +322,6 @@ let g:clang_complete_macros=1
 " -- Tabular Settings --
 xnoremap <leader>t :Tabular<space>/
 
-" -- EasyTags Settings --
-let g:easytags_always_enabled=1
-let g:easytags_include_members=1
-" ctrlp keeps lowering updatetime which messes with easytags
-let g:easytags_updatetime_autodisable=1
-let g:easytags_by_filetype='~/.vim/tags/'
-let g:easytags_resolve_links=1
-let g:easy_tags_supress_ctags_warning=1
-
 " -- Ctrl-p Settings --
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
@@ -365,13 +355,6 @@ let g:netrw_keepdir=0
 " -- delimitMate Settings --
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-
-" -- Notes Settings --
-let g:notes_directories = ['~/Dropbox/Notes']
-let g:notes_suffix = '.md'
-let g:notes_indexscript = '~/.vim/bundle/vim-notes/misc/notes/search-notes.py'
-let g:notes_indexfile = '~/.cache/vim_notes.db'
-
 "}}}
 " Vim Niceties {{{
 
