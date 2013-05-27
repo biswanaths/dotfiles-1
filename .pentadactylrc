@@ -45,6 +45,9 @@ nmap -builtin <m-t> <nop>
 nmap -builtin ,d <C-p>d
 nmap -builtin ,D <C-n>d
 
+" highlight the damn searches
+set hlfind
+
 " Clear the search highlight -- unimpaired style
 nmap -builtin coh <esc>:noh<CR>
 
