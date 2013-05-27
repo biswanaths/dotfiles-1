@@ -238,6 +238,13 @@ let g:UltiSnipsListSnippets="<leader>L"
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
+" -- vim2hs Settings --
+let g:haskell_conceal_enumerations = 0
+let g:haskell_interpolation = 0
+let g:haskell_regex = 0
+let g:haskell_xml = 0
+let g:haskell_json = 0
+
 " -- Commentary Settings -- 
 autocmd FileType tmux set commentstring=#\ %s
 
