@@ -20,6 +20,7 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'dag/vim2hs'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
@@ -30,7 +31,6 @@ Bundle 'klen/python-mode'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
-Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Raimondi/delimitMate'
@@ -234,20 +234,9 @@ au! WinEnter * wincmd =
 " -- Ultisnips Settings --
 let g:UltiSnipsListSnippets="<leader>L"
 
-" -- vim2hs Settings --
-let g:haskell_conceal_enumerations = 0
-let g:haskell_quasi = 0
-let g:haskell_interpolation = 0
-let g:haskell_regex = 0
-let g:haskell_jmacro = 0
-let g:haskell_shqq = 0
-let g:haskell_sql = 0
-let g:haskell_json = 0
-let g:haskell_xml = 0
-
-" -- Yankstack Settings --
-nmap <c-p> <Plug>yankstack_substitute_older_paste
-nmap <C-P> <Plug>yankstack_substitute_newer_paste
+" -- haskellmode Settings --
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 
 " -- Commentary Settings -- 
 autocmd FileType tmux set commentstring=#\ %s
@@ -275,8 +264,8 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl'],
-            \ 'passive_filetypes': ['haskell', 'python'] }
+            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell'],
+            \ 'passive_filetypes': ['python'] }
 
 " -- Supertab Settings --
 " Shuts up supertab's annoying messages.
@@ -549,6 +538,13 @@ autocmd BufRead repl.rc setlocal filetype=perl
 
 " Fish
 autocmd BufRead,BufNewFile *.fish setlocal filetype=fish
+
+" Haskell compiler
+augroup haskell
+    au!
+    au BufEnter *.hs compiler ghc
+    au BufEnter *.hs setlocal cmdheight=1
+augroup END
 
 " Better CR expansion
 autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR> {<CR>}<Esc>O
