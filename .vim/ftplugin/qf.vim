@@ -1,3 +1,4 @@
-setlocal winheight=8
-setlocal nowrap
+setlocal winheight=6
+setlocal wrap
 setlocal number
+setlocal linebreak
