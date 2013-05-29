@@ -1,7 +1,10 @@
-setlocal tabstop=4
+setlocal tabstop=8
 setlocal expandtab
 setlocal softtabstop=4
 setlocal shiftwidth=4
 setlocal smarttab
 setlocal shiftround
 setlocal nojoinspaces
+setlocal include=^import\\s*\\(qualified\\)\\?\\s*
+setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
+setlocal suffixesadd=hs,lhs,hsc
