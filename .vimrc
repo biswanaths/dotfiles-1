@@ -33,7 +33,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
@@ -56,7 +55,7 @@ Bundle 'w0ng/vim-hybrid'
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd
-set cmdheight=1
+set cmdheight=2
 set showmode
 set nofoldenable                " Don't fold automatically
 set foldmethod=syntax
@@ -87,6 +86,9 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winpos
 if has('mouse')
     " recognize the mouse inside a tmux session
     set ttymouse=xterm2
+endif
+if &term =~ '^screen-.*-bce$'
+    set t_ut=y
 endif
 let mapleader=','           " Let leader key be , instead of \
 set splitbelow              " Split below the current buffer.
@@ -120,6 +122,7 @@ endif
 set statusline=
 set statusline+=\ \%{&ff}
 set statusline+=\ \%{&fenc}\ buf\:\%1.3n
+set statusline+=\ \%{tagbar#currenttag('[%s]','')}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M
 set statusline+=\ \ \%{fugitive#statusline()}
@@ -207,10 +210,10 @@ endif
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> <C-h> ,mh
-nnoremap <silent> <C-j> ,mj
-nnoremap <silent> <C-k> ,mk
-nnoremap <silent> <C-l> ,ml
+nnoremap <silent> <leader>mh <C-w><C-h>
+nnoremap <silent> <leader>mj <C-w><C-j>
+nnoremap <silent> <leader>mk <C-w><C-k>
+nnoremap <silent> <leader>ml <C-w><C-l>
 " -- Moving windows
 nnoremap <silent> <leader>sh <C-W>H
 nnoremap <silent> <leader>sj <C-W>J
@@ -233,6 +236,8 @@ au! WinEnter * wincmd =
 
 " -- Ultisnips Settings --
 let g:UltiSnipsListSnippets="<leader>L"
+" shut the fuck up ultisnips
+let g:UltiSnipsNoPythonWarning = 1
 
 " -- haskellmode Settings --
 let g:haddock_browser = "open"
@@ -404,6 +409,11 @@ let hs_highlight_more_types=1
 let hs_highlight_debug=1
 let hs_allow_hash_operator=1
 
+" C Syntas
+let c_space_errors = 1
+let c_comment_strings = 1
+let c_no_if0_fold = 1
+
 " Java syntax 
 let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
@@ -413,9 +423,13 @@ let java_highlight_debug=1
 let java_allow_cpp_keywords=1
 
 " Python sytax
-let python_highlight_all=1
+let python_highlight_builtins=1
+let python_highlight_exceptions=1
+let python_highlight_space_errors=1
 
 " Perl folding
+let perl_extended_vars=1
+let perl_include_pod=1
 let perl_fold=1
 
 " }}}
