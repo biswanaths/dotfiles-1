@@ -36,6 +36,7 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -86,9 +87,11 @@ if has('mouse')
     " recognize the mouse inside a tmux session
     set ttymouse=xterm2
 endif
+" Background color erase!
 if &term =~ '^screen-.*-bce$'
     set t_ut=y
 endif
+set key=                    " Disable :X (encryption)
 let mapleader=','           " Let leader key be , instead of \
 set splitbelow              " Split below the current buffer.
 set splitright              " Split right of the current buffer (vertical splits)
