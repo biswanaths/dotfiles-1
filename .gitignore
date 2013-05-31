@@ -12,3 +12,5 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .mpd/**
 .vim/src/*
 .vim/haskellmode.config
+.vim/bundle.remote/
+.vim/pandemic-bundles
