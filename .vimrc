@@ -23,7 +23,6 @@ Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
@@ -35,22 +34,16 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-perl/vim-perl'
+Bundle 'w0ng/vim-hybrid'
 
 " }}}
-" Colorscheme plugins {{{
-Bundle 'tomasr/molokai'
-Bundle 'w0ng/vim-hybrid'
-"}}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
 set showcmd                     " Show the current command below the status
