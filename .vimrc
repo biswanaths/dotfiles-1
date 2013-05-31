@@ -53,7 +53,7 @@ set nohidden                    " Allow hidden buffers
 set mouse=a                     " Turn on mouse for everything
 set scrolloff=4                 " Scroll when cursor is 4 off the top or bottom
 set nrformats-=octal            " Prevents (in|de)crementing a 0 padded number to octal
-set clipboard=unnamed           " System clipboard support!
+set clipboard^=unnamed          " System clipboard support!
 set virtualedit=block           " Allow editing in visual block mode
 set laststatus=2                " Always show the statusline
 set backspace=indent,eol,start  " Vim likes to think this is the 1970s sometimes and won't backspace
@@ -63,15 +63,12 @@ set lazyredraw                  " Don't redraw while executing macros
 set fileformats=unix
 set encoding=utf-8
 set termencoding=utf-8
-scriptencoding utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
 set spellfile=~/.vim/custom-dictionary.utf-8.add
-if has('mouse')                 " Recognize the mouse in a tmux session
-    set ttymouse=xterm2
-endif
+set ttymouse=xterm2             " Recognize the mouse inside tmux
 if &term =~ '^screen-.*-bce$'   " Background color erase support!
     set t_ut=y
 endif
@@ -90,10 +87,10 @@ colorscheme hybrid
 
 " Hybrid Colorscheme better settings {{{2
 if (g:colors_name == "hybrid")
-    hi Pmenu ctermfg=137 ctermbg=233 cterm=none
-    hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
-    hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
-    hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
+    hi! Pmenu ctermfg=137 ctermbg=233 cterm=none
+    hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold
+    hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none
+    hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none
     hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
     hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
     hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
@@ -283,14 +280,6 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_root_markers = ['tags']
-let g:ctrlp_buftag_types = {
-            \ 'javascript' : '--lanaguage-force=javascript --javascript-types=fv'
-            \ }
-
-" -- Netrw Settings -- 
-let g:netrw_winsize='999'
-let g:netrw_banner=0
-let g:netrw_keepdir=0
 
 "}}}
 " Vim Niceties {{{
@@ -326,12 +315,10 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-" Reformat a C/C++ file in the One True Brace Style
-" All other styles are clearly inferior and not suitable for human use.
+" Reformat a C/C++/Obj-C file with astyle (Uses .astylerc for 1TBS)
 command! -nargs=0 Format call AStyleFormat()
 function! AStyleFormat()
     if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'objc'
-        " Uses .astylerc so I don't have to give it any options here
         :%!astyle
     endif
 endfunction
@@ -405,11 +392,7 @@ nnoremap L $
 inoremap <C-u> <esc>mzgUiw`z
 
 " Remove trailing whitespace
-" I don't want this for .vimrc since some trailing spaces may be possible
-" in statuslines and such
-if (&ft!=?'vim')
-    nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
-endif
+nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Use space to toggle folds
 nnoremap <Space> za
@@ -446,8 +429,7 @@ autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O
 
 "}}}
 " Misc Autocommands {{{
-" Return vim to the last position when reopening a file
-augroup line_return
+augroup line_return  " Return vim to the last known position
     au!
     au BufreadPost *
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -455,8 +437,5 @@ augroup line_return
                 \ endif
 augroup END
     
-" Switch to regular number line when in insert mode.
-autocmd! InsertEnter * set number
-autocmd! InsertLeave * set relativenumber
 "}}}
 " --------------------------------- End .vimrc ------------------------------
