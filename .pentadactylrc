@@ -61,4 +61,7 @@ set tabopen=link:right,orphan:end,external:end
 " I finally found a way to turn off that damnable annoying bell
 javascript dactyl.beep = function() { return false; }
 
+" Well it seems like the no-script plugin doesn't work. This should suffice:
+map -count -modes=n ,n <C-S-S>
+
 " vim: ft=vim
