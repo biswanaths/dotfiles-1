@@ -66,11 +66,8 @@ set termencoding=utf-8
 scriptencoding utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
-set noerrorbells
 set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
-set shell=/usr/local/bin/zsh
-set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 if has('mouse')                 " Recognize the mouse in a tmux session
     set ttymouse=xterm2
@@ -79,8 +76,7 @@ if &term =~ '^screen-.*-bce$'   " Background color erase support!
     set t_ut=y
 endif
 let mapleader=','               " Let leader key be , instead of \
-set splitbelow                  " Split below the current buffer.
-set splitright                  " Split right of the current buffer (vertical splits)
+set splitbelow splitright       " Split below or right to the current buffer for sp and vsp respectively
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 "}}}
@@ -94,28 +90,21 @@ colorscheme hybrid
 
 " Hybrid Colorscheme better settings {{{2
 if (g:colors_name == "hybrid")
-    " Better popup menu -- yes this is a hacky way of doing this
     hi Pmenu ctermfg=137 ctermbg=233 cterm=none
     hi PmenuSel ctermfg=196 ctermbg=234 cterm=bold
     hi PmenuSbar ctermfg=000 ctermbg=233 cterm=none
     hi PmenuThumb ctermfg=137 ctermbg=235 cterm=none
-    " Better status bar
     hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
     hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
-    " Orgasmic matching color
     hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
 endif
 ""}}}2
 
 "}}}
 " Status Line {{{
-set statusline=
-set statusline+=\ \%{&ff}
-set statusline+=\ \%{&fenc}\ buf\:\%1.3n
-set statusline+=\ \%{tagbar#currenttag('[%s]','')}
+set statusline=\ \%{&ff}\ \%{&fenc}\ buf\:\%1.3n\ \%{tagbar#currenttag('[%s]','')}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
-set statusline+=\ \%#StatusModFlag#\%M
-set statusline+=\ \ \%{fugitive#statusline()}
+set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
 set statusline+=\%=\ \%#StatusLine#\%f\ \|\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
 set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
 
@@ -139,7 +128,6 @@ set expandtab
 set autoindent
 set shiftround
 set textwidth=80
-set nowrap
 set nofoldenable                " Don't fold automatically
 set foldmethod=indent           " Folds are based on indent
 
@@ -157,8 +145,7 @@ set omnifunc=syntaxcomplete#Complete
 set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
-set wildignore+=*.o,*.obj,*.manifest,*.sublime-project,*.sublime-workspace
-set wildignore+=*~,#*#,*.sw?,%*,*=
+set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
 "}}}
 "Backup settings {{{
@@ -196,7 +183,7 @@ nnoremap <silent> <leader>mk <C-W>K
 nnoremap <silent> <leader>ml <C-W>L
 " -- Closing windows
 nnoremap <silent> <leader>cc :close<CR>
-nnoremap <silent> <leader>cw :cclose<CR>
+nnoremap <silent> <leader>cq :cclose<CR>
 nnoremap <silent> <leader>ch :wincmd h<CR>:close<CR>
 nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
@@ -328,9 +315,6 @@ nnoremap vv ^vg_
 " Splits a line -- opposite of J (join lines)
 nnoremap ,sp i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Remap jj to escape from insert mode
-inoremap jj <Esc>
-
 " Map jk to move between visual lines
 nnoremap j gj
 nnoremap k gk
@@ -392,10 +376,10 @@ nnoremap <up> :lprev<CR>zvzz
 nnoremap <down> :lnext<CR>zvzz
 nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+inoremap <up> <Esc>
+inoremap <down> <Esc>
+inoremap <left> <Esc>
+inoremap <right> <Esc>
 
 " Screw Ex-mode
 nnoremap Q gq
@@ -409,7 +393,6 @@ nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
 nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
-nnoremap <silent> <leader>es :e ~/.slate<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef maggVG=`a
@@ -436,17 +419,6 @@ nnoremap Y y$
 
 " Focus only on fold that is on the cursor position
 nnoremap <leader>z zMzvzz
-
-"}}}
-" Typos {{{
-iabbrev flase false
-iabbrev Flase False
-iabbrev teh the
-iabbrev Teh The
-iabbrev treu true
-iabbrev Treu True
-iabbrev interger integer
-iabbrev Interger Integer
 
 "}}}
 " Tmux Cursor Bullcrap {{{
