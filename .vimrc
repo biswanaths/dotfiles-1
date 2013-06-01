@@ -163,21 +163,23 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
-" -- Ultisnips Settings --
+" Ultisnips
 let g:UltiSnipsListSnippets="<leader>L"
 let g:UltiSnipsNoPythonWarning = 1 " Shut up ultisnips!
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" -- haskellmode Settings --
+" Haskellmode
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-" -- Tagbar Settings --
+" Tagbar
 let g:tagbar_expand=1
 let g:tagbar_compact=1
 let g:tagbar_width=35
 nnoremap <silent> <F1> :TagbarToggle<CR>
 
-" -- Syntastic Settings --
+" Syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=4
 let g:syntastic_error_symbol='✗'
@@ -186,16 +188,11 @@ let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell'],
             \ 'passive_filetypes': ['python'] }
 
-" -- Supertab Settings --
+" Supertab
 let g:SuperTabCrMapping=0
 let g:SuperTabClosePreviewOnPopupClose=1
 
-" -- UltiSnips Settings --
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" -- Python-Mode Settings --
+" Python-mode
 let g:pymode_doc=1
 let g:pymode_doc_key='K'
 let g:pymode_lint=1
@@ -210,17 +207,17 @@ let g:pymode_folding=0
 let g:python_run_key='<leader>R'
 let g:pymode_lint_message=1
 
-" -- ClangComplete Settings --
+" Clang_Complete
 let g:clang_auto_select=1
 let g:clang_complete_auto=1
 let g:clang_close_preview=1
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
 
-" -- Tabular Settings --
+" Tabular
 xnoremap <leader>t :Tabular<space>/
 
-" -- Ctrl-p Settings --
+" Ctrlp
 nnoremap <leader>F :CtrlP<CR>
 nnoremap <leader>f :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -395,6 +392,4 @@ augroup line_return  " Return vim to the last known position
                 \   execute "normal! g'\"" |
                 \ endif
 augroup END
-    
 "}}}
-" --------------------------------- End .vimrc ------------------------------
