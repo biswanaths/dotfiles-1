@@ -11,8 +11,7 @@
 " Updated: March 2, 2013          "
 "---------------------------------"
 " Pathogen Settings {{{
-silent! call pathogen#infect()
-silent! execute pathogen#infect('bundle.remote/{}')
+silent! call pathogen#infect('bundle.remote/{}')
 silent! call pathogen#helptags()
 " }}}
 " General Settings {{{
