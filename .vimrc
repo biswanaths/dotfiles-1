@@ -171,12 +171,6 @@ let g:UltiSnipsNoPythonWarning = 1 " Shut up ultisnips!
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-" -- Gundo Settings --
-let g:gundo_width=30
-let g:gundo_preview_height=35
-let g:gundo_help=0
-nnoremap <silent> <F2> :GundoToggle<CR>
-
 " -- Tagbar Settings --
 let g:tagbar_expand=1
 let g:tagbar_singleclick=1
