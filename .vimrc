@@ -139,15 +139,15 @@ endif
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> <leader>h <C-w><C-h>
-nnoremap <silent> <leader>j <C-w><C-j>
-nnoremap <silent> <leader>k <C-w><C-k>
-nnoremap <silent> <leader>l <C-w><C-l>
+nnoremap <silent> <leader>mh <C-w><C-h>
+nnoremap <silent> <leader>mj <C-w><C-j>
+nnoremap <silent> <leader>mk <C-w><C-k>
+nnoremap <silent> <leader>ml <C-w><C-l>
 " -- Moving windows
-nnoremap <silent> <leader>mh <C-W>H
-nnoremap <silent> <leader>mj <C-W>J
-nnoremap <silent> <leader>mk <C-W>K
-nnoremap <silent> <leader>ml <C-W>L
+nnoremap <silent> <leader>sh <C-W>H
+nnoremap <silent> <leader>sj <C-W>J
+nnoremap <silent> <leader>sk <C-W>K
+nnoremap <silent> <leader>sl <C-W>L
 " -- Closing windows
 nnoremap <silent> <leader>cc :close<CR>
 nnoremap <silent> <leader>cq :cclose<CR>
@@ -173,18 +173,13 @@ let g:haddock_browser_callformat = "%s %s"
 
 " -- Tagbar Settings --
 let g:tagbar_expand=1
-let g:tagbar_singleclick=1
 let g:tagbar_compact=1
 let g:tagbar_width=35
 nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " -- Syntastic Settings --
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=0
-let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=4
-let g:syntastic_enable_balloons=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
