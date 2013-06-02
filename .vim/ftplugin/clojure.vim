@@ -1,1 +1,1 @@
-setlocal complete+=~/dotfiles/.clj_completions
+set complete+=~/dotfiles/.clj_completions
