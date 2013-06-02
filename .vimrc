@@ -1,8 +1,6 @@
 " Pathogen Settings {{{
-runtime! bundle.remote/pathogen/autoload/pathogen.vim
-silent! call pathogen#infect('bundle.remote/{}')
+silent! call pathogen#infect()
 filetype plugin indent on
-set nocompatible
 " }}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
