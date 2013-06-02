@@ -31,7 +31,7 @@ set backspace=indent,eol,start  " Vim likes to think this is the 1970s sometimes
 set ttyfast                     " Fast terminal connection
 set cpoptions+=$                " Shows a dollar sign when changing text
 set lazyredraw                  " Don't redraw while executing macros
-set fileformats=unix
+set fileformats=unix,dos,mac
 set encoding=utf-8
 set termencoding=utf-8
 set formatoptions+=1

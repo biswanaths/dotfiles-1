@@ -9,8 +9,3 @@
 	- Weechat
 	- mutt
 	- Hybrid / Modified Tomorrow-Night Colorscheme
-
-## Obligatory Screenshot
-
-![dotfiles-screenshot](https://dl.dropboxusercontent.com/u/34865/Screenshots/dotfiles%20screenshot.png)
-
