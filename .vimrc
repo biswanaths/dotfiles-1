@@ -67,6 +67,7 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 "}}}
 " Colorscheme / Syntax {{{
 set synmaxcol=800
+filetype plugin indent on
 syntax on
 set t_Co=256
 set background=dark
@@ -113,9 +114,8 @@ set expandtab
 set autoindent
 set shiftround
 set textwidth=80
-set nofoldenable                " Don't fold automatically
-set foldmethod=indent           " Folds are based on indent
-
+set nofoldenable
+set foldmethod=indent
 "}}}
 " Completions {{{
 set wildmenu
@@ -323,7 +323,6 @@ let python_highlight_space_errors=1
 
 " Perl folding
 let perl_extended_vars=1
-let perl_fold=1
 
 " }}}
 " General Mappings {{{
