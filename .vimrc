@@ -1,3 +1,7 @@
+"----------------------------
+"| ~/.vimrc                 |
+"| Last update: Jun 1, 2013 |
+"----------------------------
 " Vundle Settings {{{
 set nocompatible
 filetype off
@@ -321,7 +325,7 @@ let python_highlight_builtins=1
 let python_highlight_exceptions=1
 let python_highlight_space_errors=1
 
-" Perl folding
+" Perl syntax
 let perl_extended_vars=1
 
 " }}}
