@@ -1,6 +1,36 @@
-" Pathogen Settings {{{
-silent! call pathogen#infect()
-filetype plugin indent on
+" Vundle Settings {{{
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+"}}}
+" Installed Plugins {{{
+Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'mattn/zencoding-vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'scrooloose/syntastic'
+Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'w0ng/vim-hybrid'
+
 " }}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
@@ -25,7 +55,6 @@ set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
-set dictionary=/usr/share/dict/words
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set ttymouse=xterm2             " Recognize the mouse inside tmux
 if &term =~ '^screen-.*-bce$'   " Background color erase support!
