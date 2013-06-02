@@ -1,4 +1,5 @@
 " Pathogen Settings {{{
+runtime! bundle.remote/pathogen/autoload/pathogen.vim
 silent! call pathogen#infect('bundle.remote/{}')
 filetype plugin indent on
 set nocompatible
