@@ -1,7 +1,7 @@
-set foldenable
-set foldmethod=marker
-set tabstop=4
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set textwidth=78
+setlocal foldenable
+setlocal foldmethod=marker
+setlocal tabstop=4
+setlocal expandtab
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal textwidth=78
