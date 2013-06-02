@@ -12,7 +12,8 @@
 "---------------------------------"
 " Pathogen Settings {{{
 silent! call pathogen#infect('bundle.remote/{}')
-silent! call pathogen#helptags()
+filetype plugin indent on
+set nocompatible
 " }}}
 " General Settings {{{
 set relativenumber              " 'Tis the age of relative numbering
@@ -37,6 +38,7 @@ set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
+set dictionary=/usr/share/dict/words
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set ttymouse=xterm2             " Recognize the mouse inside tmux
 if &term =~ '^screen-.*-bce$'   " Background color erase support!
@@ -47,9 +49,9 @@ set splitbelow splitright       " Split below or right to the current buffer for
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 "}}}
-" Colorscheme / Syntax / Filetype {{{
+" Colorscheme / Syntax {{{
+set synmaxcol=800
 syntax on
-filetype plugin indent on
 set t_Co=256
 set background=dark
 let g:hybrid_use_Xresources=1
@@ -156,7 +158,7 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
-" Automatically resize vertical splits
+" Automatically resize splits
 au! WinEnter * setlocal winfixheight
 au! WinEnter * wincmd =
 
