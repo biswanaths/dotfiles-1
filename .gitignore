@@ -1,6 +1,5 @@
 Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .DS_Store
-.vim/bundle/*
 .vim/backup/*
 .vim/custom-dictionary.utf-8.add
 .vim/tags/*
