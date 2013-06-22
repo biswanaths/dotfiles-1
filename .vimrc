@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'eraserhd/vim-ios'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
@@ -22,6 +23,7 @@ Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'msanders/cocoa.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
@@ -66,6 +68,7 @@ if &term =~ '^screen-.*-bce$'   " Background color erase support!
 endif
 let mapleader=','               " Let leader key be , instead of \
 set splitbelow splitright       " Split below or right to the current buffer for sp and vsp respectively
+" Vim doesn't escape from insert mode fast enough.
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 "}}}
@@ -208,7 +211,7 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell'],
-            \ 'passive_filetypes': ['python'] }
+            \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
 
 " Supertab
 let g:SuperTabCrMapping=0

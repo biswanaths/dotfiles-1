@@ -48,7 +48,7 @@ bind y:shift;cmd ${topleft}
 bind l:shift;cmd ${righthalf}
 bind l:shift;alt;cmd ${rightthird}
 bind .:shift;cmd ${bottomright}
-bind p:shift;cmd ${topright}
+bind ]:shift;cmd ${topright}
 
 # Nudge Bindings
 bind l:shift;alt nudge +1% +0
@@ -64,11 +64,14 @@ bind j:shift;ctrl focus down
 bind k:shift;ctrl;alt focus above
 bind j:shift;ctrl;alt focus behind
 
-# Toggle between Firefox and iTerm
-bind 1:ctrl toggle 'iTerm','Nightly'
+# Save snaphot
+bind 1:ctrl snapshot snapshot-screen save-to-disk;stack
+
+# Activate snapshot
+bind 2:ctrl activate-snapshot snapshot-screen delete
 
 # Focus certain applications
 bind f:ctrl;alt;cmd focus 'Nightly'
 
 # Relaunch slate
-bind 2:ctrl relaunch
+bind 3:ctrl relaunch

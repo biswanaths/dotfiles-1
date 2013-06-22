@@ -23,23 +23,18 @@ imap -builtin <c-s> <esc><m-a-i>
 " Load plugins
 source ~/.pentadactyl/plugins/buftabs.js
 source ~/.pentadactyl/plugins/tab-options-dev.js
-source ~/.pentadactyl/plugins/noscript-dev.js
 
-" Some gui options
-set go=nsr
+" Some better gui options
+set go=nrsTC
 
-" Show links in the command line instead to get around buftabs being at the
-" status bar
-set showstatuslinks=command
+" Show links in the status
+set showstatuslinks=status
 
 " Colorscheme
 colorscheme molokai
 
 " Disable that ugly tab bar. Works great with buftabs plugin
 set showtabline=never
-
-" I always press cmd-T to create a new tab when I can just type t
-nmap -builtin <m-t> <nop>
 
 " Close previous and next tabs without switching from the current tab
 nmap -builtin ,d <C-p>d
