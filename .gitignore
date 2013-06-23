@@ -5,6 +5,7 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .vim/tags/*
 .vim/UltiSnips/*
 .vim/tmp/*
+.vim/bundle
 *.spl
 .mpd/mpd.log
 .mpd/mpd.error
