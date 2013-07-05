@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'eraserhd/vim-ios'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
@@ -23,7 +22,6 @@ Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'msanders/cocoa.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
@@ -76,8 +74,6 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set synmaxcol=800
 filetype plugin indent on
 syntax on
-set t_Co=256
-set background=dark
 let g:hybrid_use_Xresources=1
 colorscheme hybrid
 
@@ -134,7 +130,9 @@ set omnifunc=syntaxcomplete#Complete
 
 " }}}
 " Wildignore {{{
-set wildignorecase
+if has('wildignorecase')
+    set wildignorecase
+endif
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
