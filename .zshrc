@@ -63,6 +63,7 @@ setopt markdirs         # mark directories with / to make them easier to identif
 setopt autoparamslash   # Directories have / at the end
 setopt chaselinks       # give the actual path of the symlink
 setopt combiningchars   # displays some characters correctly
+setopt multios          # Multiple I/O redirection
 
 # History settings
 HISTFILE=$HOME/.zhistory
