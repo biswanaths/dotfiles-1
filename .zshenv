@@ -70,10 +70,6 @@ path=(
 /usr/{bin,sbin}
 /{bin,sbin}
 ~/bin
-/usr/local/share/npm/bin
-/usr/local/share/python
-/usr/local/share/python3
-/usr/local/Cellar/perl/5.14.4/bin
 $path
 )
 
@@ -100,11 +96,4 @@ fi
 # Misc paths
 #
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home"
-export NODE_PATH="/usr/local/share/npm/lib"
-
-#
-# Tmuxinator
-#
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 
