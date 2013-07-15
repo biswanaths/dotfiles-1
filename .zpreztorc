@@ -42,7 +42,6 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'history-substring-search' \
   'osx' \
-  'haskell' \
   'fasd'
 
 # Set highlighting for Zsh commands
