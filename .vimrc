@@ -402,7 +402,7 @@ augroup haskell
 augroup END
 
 " Better CR expansion
-autocmd FileType c,cpp,objc,perl,java,javascript inoremap {<CR> {<CR>}<Esc>O
+autocmd FileType c,cpp,objc,perl,java,javascript,html inoremap {<CR> {<CR>}<Esc>O
 autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O
 
 "}}}
