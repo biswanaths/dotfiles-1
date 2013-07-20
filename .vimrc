@@ -23,9 +23,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'sjl/splice.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -37,11 +38,11 @@ Bundle 'w0ng/vim-hybrid'
 
 " }}}
 " General Settings {{{
-set relativenumber              " 'Tis the age of relative numbering
+set number relativenumber       " Use relative numbering but show the actual line number instead of 0 (vim 7.4)
 set showcmd                     " Show the current command below the status
 set cmdheight=2                 " Statusline height
 set showmode                    " Show the mode we are in
-set nohidden                    " Allow hidden buffers
+set hidden                      " Allow hidden buffers
 set mouse=a                     " Turn on mouse for everything
 set scrolloff=4                 " Scroll when cursor is 4 off the top or bottom
 set nrformats-=octal            " Prevents (in|de)crementing a 0 padded number to octal
@@ -92,6 +93,7 @@ endif
 "}}}
 " Status Line {{{
 set statusline=\ \%{&ff}\ \%{&fenc}\ buf\:\%1.3n\ \%{tagbar#currenttag('[%s]','')}
+set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
 set statusline+=\%=\ \%#StatusLine#\%f\ \|\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
@@ -115,6 +117,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set autoindent
+set cindent
 set shiftround
 set textwidth=80
 set nofoldenable
@@ -186,11 +189,28 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
-" Ultisnips
-let g:UltiSnipsListSnippets="<leader>L"
-let g:UltiSnipsNoPythonWarning = 1 " Shut up ultisnips!
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" Neosnippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " Haskellmode
 let g:haddock_browser = "open"
@@ -203,12 +223,13 @@ let g:tagbar_width=35
 nnoremap <silent> <F1> :TagbarToggle<CR>
 
 " Syntastic
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=4
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell'],
+            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell', 'javascript'],
             \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
 
 " Supertab
@@ -229,6 +250,8 @@ let g:pymode_syntax_doctests=g:pymode_syntax_all
 let g:pymode_folding=0
 let g:python_run_key='<leader>R'
 let g:pymode_lint_message=1
+let g:pymode_lint_cwindow = 0
+let g:pymode_rope = 1
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -244,7 +267,7 @@ xnoremap <leader>t :Tabular<space>/
 nnoremap <leader>F :CtrlP<CR>
 nnoremap <leader>f :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>r :CtrlPMRUFiles<CR>
+nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
@@ -253,6 +276,7 @@ let g:ctrlp_map='<F3>'
 let g:ctrlp_mruf_max=25
 let g:ctrlp_max_files=10000
 let g:ctrlp_use_caching=1
+let g:ctrlp_max_depth=40
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_cache_dir='~/.cache/ctrlp'
 let g:ctrlp_show_hidden=1
@@ -368,6 +392,8 @@ nnoremap L $
 
 " UpperCase in insert mode
 inoremap <C-u> <esc>mzgUiw`z
+
+nnoremap <leader>p :set paste!<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
