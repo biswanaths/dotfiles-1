@@ -97,3 +97,9 @@ fi
 #
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home"
 
+# Zsh Environment Variables
+export LESSHISTFILE="~/.zsh/lesshist/"
+export CSCOPE_DB='~/.vim/src/cscope.out'
+export GREP_COLOR='1;33'
+export GOPATH='/Users/watabou/Developer/Go'
+export PATH=$PATH:$GOPATH/bin
