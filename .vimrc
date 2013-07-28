@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'ervandew/supertab'
+Bundle 'fsouza/go.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
@@ -26,7 +27,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'Shougo/neosnippet.vim'
-Bundle 'sjl/splice.vim'
+Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -165,10 +166,10 @@ endif
 "}}}
 " Window Management {{{
 " -- Switching between windows
-nnoremap <silent> <leader>mh <C-w><C-h>
-nnoremap <silent> <leader>mj <C-w><C-j>
-nnoremap <silent> <leader>mk <C-w><C-k>
-nnoremap <silent> <leader>ml <C-w><C-l>
+nnoremap <silent> <C-h> <C-w><C-h>
+nnoremap <silent> <C-j> <C-w><C-j>
+nnoremap <silent> <C-k> <C-w><C-k>
+nnoremap <silent> <C-l> <C-w><C-l>
 " -- Moving windows
 nnoremap <silent> <leader>sh <C-W>H
 nnoremap <silent> <leader>sj <C-W>J
@@ -190,15 +191,9 @@ au! WinEnter * wincmd =
 " Plugin Preferences and Mappings {{{
 
 " Neosnippet
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+inoremap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xnoremap <C-k>     <Plug>(neosnippet_expand_target)
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -235,6 +230,8 @@ let g:syntastic_mode_map = {'mode': 'active',
 " Supertab
 let g:SuperTabCrMapping=0
 let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabMappingForward='<S-Tab>'
+let g:SuperTabMappingBackward='<Tab>'
 
 " Python-mode
 let g:pymode_doc=1
@@ -393,7 +390,7 @@ nnoremap L $
 " UpperCase in insert mode
 inoremap <C-u> <esc>mzgUiw`z
 
-nnoremap <leader>p :set paste!<CR>
+nnoremap <sile> <leader>p :set invpaste<CR>:setlocal paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
@@ -428,7 +425,7 @@ augroup haskell
 augroup END
 
 " Better CR expansion
-autocmd FileType c,cpp,objc,perl,java,javascript,html inoremap {<CR> {<CR>}<Esc>O
+autocmd FileType * inoremap {<CR> {<CR>}<Esc>O
 autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O
 
 "}}}

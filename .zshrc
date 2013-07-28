@@ -11,13 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Zsh Environment Variables
-export LESSHISTFILE="~/.zsh/lesshist/"
-export CSCOPE_DB='~/.vim/src/cscope.out'
-export GREP_COLOR='1;33'
-
 # Change some syntax coloring to look nicer
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+# ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
