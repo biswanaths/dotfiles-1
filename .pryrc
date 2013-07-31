@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------------------
 # General
 # ------------------------------------------------------------------------------
-Pry.editor = ENV['EDITOR'] || 'mvim -v'
+Pry.editor = ENV['EDITOR'] || 'vim'
 
 # Load the Rails configuration if Pry is running as a rails console.
 load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env
@@ -138,6 +138,9 @@ end
 
 begin
   require 'interactive_editor'
+rescue LoadError => err
+  puts "interactive_editor is missing, please install it:"
+  puts " gem install interactive_editor"
 end
 
 # ------------------------------------------------------------------------------
