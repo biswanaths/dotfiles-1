@@ -96,6 +96,8 @@ fi
 # Misc paths
 #
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home"
+export GEM_HOME="$HOME/Library/Ruby/Gems/1.8"
+path=("$GEM_HOME/bin" $path)
 
 # Zsh Environment Variables
 export GOPATH='/Users/watabou/Developer/Go'
