@@ -30,11 +30,13 @@ Bundle 'Shougo/neosnippet.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'w0ng/vim-hybrid'
 
 " }}}
