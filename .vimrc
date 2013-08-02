@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'ervandew/supertab'
+Bundle 'fsouza/go.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
@@ -24,18 +25,16 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'w0ng/vim-hybrid'
 
 " }}}
@@ -191,15 +190,22 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_confirm_extra_conf = 0
+" Neosnippet
+inoremap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xnoremap <C-k>     <Plug>(neosnippet_expand_target)
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" UltiSnips
-let g:UltiSnipsListSnippets="<leader>L"
-let g:UltiSnipsNoPythonWarning = 1
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " Haskellmode
 let g:haddock_browser = "open"
@@ -224,6 +230,8 @@ let g:syntastic_mode_map = {'mode': 'active',
 " Supertab
 let g:SuperTabCrMapping=0
 let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabMappingForward='<S-Tab>'
+let g:SuperTabMappingBackward='<Tab>'
 
 " Python-mode
 let g:pymode_doc=1
@@ -241,6 +249,13 @@ let g:python_run_key='<leader>R'
 let g:pymode_lint_message=1
 let g:pymode_lint_cwindow = 0
 let g:pymode_rope = 1
+
+" Clang_Complete
+let g:clang_auto_select=1
+let g:clang_complete_auto=1
+let g:clang_close_preview=1
+let g:clang_complete_patterns=1
+let g:clang_complete_macros=1
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/
