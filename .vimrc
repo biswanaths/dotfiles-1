@@ -12,9 +12,9 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'ervandew/supertab'
 Bundle 'fsouza/go.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'honza/vim-snippets'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
@@ -24,14 +24,18 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet.vim'
+Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -192,17 +196,11 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 
-" Neosnippet
-inoremap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xnoremap <C-k>     <Plug>(neosnippet_expand_target)
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_refresh_always = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#sources#syntax#min_keyword_length = 4
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
   endif
@@ -228,12 +226,6 @@ let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell', 'javascript'],
             \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
-
-" Supertab
-let g:SuperTabCrMapping=0
-let g:SuperTabClosePreviewOnPopupClose=1
-let g:SuperTabMappingForward='<S-Tab>'
-let g:SuperTabMappingBackward='<Tab>'
 
 " Python-mode
 let g:pymode_doc=1
@@ -263,8 +255,8 @@ let g:clang_complete_macros=1
 xnoremap <leader>t :Tabular<space>/
 
 " Ctrlp
-nnoremap <leader>F :CtrlP<CR>
-nnoremap <leader>f :CtrlPCurWD<CR>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
