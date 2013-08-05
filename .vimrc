@@ -24,6 +24,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
@@ -195,6 +196,10 @@ au! WinEnter * wincmd =
 
 " }}}
 " Plugin Preferences and Mappings {{{
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -206,6 +211,11 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   endif
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " Haskellmode
 let g:haddock_browser = "open"
@@ -328,6 +338,9 @@ let hs_allow_hash_operator=1
 let c_space_errors = 1
 let c_comment_strings = 1
 
+" HTML indenting
+let g:html_indent_inctags = "html,body,p,head,tbody"
+
 " Java syntax 
 let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
@@ -363,6 +376,9 @@ inoremap <right> <Esc>
 
 " Screw Ex-mode
 nnoremap Q gq
+
+" Turn on listchars
+nnoremap <leader>l :set list!<CR>
 
 " Readline-line movement for command mode
 cnoremap <C-A> <Home>
@@ -417,10 +433,6 @@ augroup haskell
     au BufEnter *.hs compiler ghc
     au BufEnter *.hs setlocal cmdheight=2
 augroup END
-
-" Better CR expansion
-autocmd FileType * inoremap {<CR> {<CR>}<Esc>O
-autocmd FileType * inoremap (<CR>  (<CR>)<ESC>O
 
 "}}}
 " Misc Autocommands {{{
