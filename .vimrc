@@ -14,7 +14,6 @@ Bundle 'gmarik/vundle'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'fsouza/go.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'honza/vim-snippets'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
@@ -30,12 +29,11 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -100,11 +98,11 @@ endif
 
 "}}}
 " Status Line {{{
-set statusline=\ \%{&ff}\ \%{&fenc}\ buf\:\%1.3n\ \%{tagbar#currenttag('[%s]','')}
+set statusline+=\%t\ \|\ \%{&ff}
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
-set statusline+=\%=\ \%#StatusLine#\%f\ \|\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
+set statusline+=\%=\ \%#StatusLine#\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
 set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
 
 "}}}
@@ -276,9 +274,9 @@ let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_map='<F3>'
 let g:ctrlp_mruf_max=25
 let g:ctrlp_max_files=10000
-let g:ctrlp_use_caching=1
+let g:ctrlp_use_caching=0
 let g:ctrlp_max_depth=40
-let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_cache_dir='~/.cache/ctrlp'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_follow_symlinks=1
@@ -339,7 +337,7 @@ let c_space_errors = 1
 let c_comment_strings = 1
 
 " HTML indenting
-let g:html_indent_inctags = "html,body,p,head,tbody"
+let g:html_indent_inctags = "html,body,p,head,tbody,div"
 
 " Java syntax 
 let java_highlight_java_lang_ids=1
@@ -362,17 +360,6 @@ let perl_extended_vars=1
 
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
-
-" Use the arrow keys to move around quickfix list keeping the cursor in the
-" middle.
-nnoremap <up> :lprev<CR>zvzz
-nnoremap <down> :lnext<CR>zvzz
-nnoremap <left> :cprev<CR>zvzz
-nnoremap <right> :cnext<CR>zvzz
-inoremap <up> <Esc>
-inoremap <down> <Esc>
-inoremap <left> <Esc>
-inoremap <right> <Esc>
 
 " Screw Ex-mode
 nnoremap Q gq
