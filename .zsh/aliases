@@ -1,6 +1,5 @@
 ## Aliases ##
 alias c="clear"
-alias cim="vim"
 alias cp="cp -vi"
 alias ev="vim ~/.vimrc"
 alias ez="mvim -v ~/.zshrc"
@@ -17,3 +16,7 @@ alias unzip="unzip -d ~/Downloads"
 alias upd="brew update;brew upgrade;brew cleanup"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
+
+# geez fingers
+alias heroky="heroku"
+alias cim="vim"

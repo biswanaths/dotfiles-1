@@ -37,13 +37,13 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
-  'syntax-highlighting' \
   'git' \
   'ruby' \
+  'fasd' \
+  'syntax-highlighting' \
   'history-substring-search' \
   'osx' \
-  'fasd'
+  'prompt'
 
 # Set highlighting for Zsh commands
 zstyle ':prezto:module:syntax-highlighting' highlighters \
