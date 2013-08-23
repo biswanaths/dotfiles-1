@@ -12,7 +12,7 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'fsouza/go.vim'
+Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
@@ -23,12 +23,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -41,10 +38,12 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
 
 " }}}
 " General Settings {{{
-set number relativenumber       " Use relative numbering but show the actual line number instead of 0 (vim 7.4)
+set number relativenumber       " Use relative numbering (for vim7.4)
 set showcmd                     " Show the current command below the status
 set cmdheight=2                 " Statusline height
 set showmode                    " Show the mode we are in
@@ -57,8 +56,9 @@ set virtualedit=block           " Allow editing in visual block mode
 set laststatus=2                " Always show the statusline
 set backspace=indent,eol,start  " Vim likes to think this is the 1970s sometimes and won't backspace
 set ttyfast                     " Fast terminal connection
-set cpoptions+=$                " Shows a dollar sign when changing text
 set lazyredraw                  " Don't redraw while executing macros
+set switchbuf=useopen,usetab    " Better quickfix window behavior
+set tags=./tags;/,tags;/        " search for tags efficiently
 set fileformats=unix,dos,mac
 set encoding=utf-8
 set termencoding=utf-8
@@ -68,12 +68,11 @@ set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set ttymouse=xterm2             " Recognize the mouse inside tmux
-if &term =~ '^screen-.*-bce$'   " Background color erase support!
+if &term =~ '^screen-.*-bce$'
     set t_ut=y
 endif
-let mapleader=','               " Let leader key be , instead of \
-set splitbelow splitright       " Split below or right to the current buffer for sp and vsp respectively
-" Vim doesn't escape from insert mode fast enough.
+let mapleader=','
+set splitbelow splitright
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 "}}}
@@ -98,11 +97,12 @@ endif
 
 "}}}
 " Status Line {{{
-set statusline+=\%t\ \|\ \%{&ff}
+set statusline=
+set statusline+=%t\ \%{tagbar#currenttag('[%s]','')}
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
-set statusline+=\%=\ \%#StatusLine#\ \%#StatusFTP#\%Y\ \|\ \%p%%\ \|
+set statusline+=\%=\ \%#StatusFTP#\%Y\ \|\ \%{&ff}\ \|
 set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
 
 "}}}
@@ -114,7 +114,7 @@ set smartcase
 set ignorecase
 set showmatch
 set matchtime=2  " 2 tenths of a second to show the matching paren (instead of 5)
-set hlsearch     " highlight matches
+set nohlsearch  " hlsearch is so annoying!
 
 "}}}
 " Tab, Indent and Folds {{{
@@ -127,7 +127,8 @@ set cindent
 set shiftround
 set textwidth=80
 set nofoldenable
-set foldmethod=indent
+set foldmethod=syntax
+
 "}}}
 " Completions {{{
 set wildmenu
@@ -176,10 +177,10 @@ nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
 " -- Moving windows
-nnoremap <silent> <leader>sh <C-W>H
-nnoremap <silent> <leader>sj <C-W>J
-nnoremap <silent> <leader>sk <C-W>K
-nnoremap <silent> <leader>sl <C-W>L
+nnoremap <silent> <leader>mh <C-W>H
+nnoremap <silent> <leader>mj <C-W>J
+nnoremap <silent> <leader>mk <C-W>K
+nnoremap <silent> <leader>ml <C-W>L
 " -- Closing windows
 nnoremap <silent> <leader>cc :close<CR>
 nnoremap <silent> <leader>cq :cclose<CR>
@@ -195,25 +196,12 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 0
-let g:neocomplete#sources#syntax#min_keyword_length = 4
-if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
-  endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Notes
+let g:notes_directories = ['~/Dropbox/Notes']
 
 " Haskellmode
 let g:haddock_browser = "open"
@@ -236,9 +224,6 @@ let g:syntastic_mode_map = {'mode': 'active',
             \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
 
 " Python-mode
-let g:pymode_doc=1
-let g:pymode_doc_key='K'
-let g:pymode_lint=1
 let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_write=1
 let g:pymode_syntax=1
@@ -246,11 +231,9 @@ let g:pymode_syntax_all=1
 let g:pymode_syntax_indent_errors=g:pymode_syntax_all
 let g:pymode_syntax_space_errors=g:pymode_syntax_all
 let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:pymode_folding=0
-let g:python_run_key='<leader>R'
+let g:python_run_key='<F5>'
 let g:pymode_lint_message=1
 let g:pymode_lint_cwindow = 0
-let g:pymode_rope = 1
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -266,7 +249,7 @@ xnoremap <leader>t :Tabular<space>/
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>k :CtrlPMRUFiles<CR>
+nnoremap <leader>r :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
@@ -274,7 +257,7 @@ let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_map='<F3>'
 let g:ctrlp_mruf_max=25
 let g:ctrlp_max_files=10000
-let g:ctrlp_use_caching=0
+let g:ctrlp_use_caching=1
 let g:ctrlp_max_depth=40
 let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_cache_dir='~/.cache/ctrlp'
@@ -289,6 +272,9 @@ let g:ctrlp_root_markers = ['tags']
 " Reselect visual block after indent/outdent
 xnoremap < <gv
 xnoremap > >gv
+
+" Quicker buffer navigation
+nnoremap gb :buffers<CR>:sb<Space>
 
 " Open folds when searching, always centering the cursor.
 nnoremap n nzzzv
@@ -421,9 +407,24 @@ augroup haskell
     au BufEnter *.hs setlocal cmdheight=2
 augroup END
 
+" Better <CR> expansion
+autocmd FileType * inoremap {<CR> {<CR>}<ESC>O
+autocmd FileType * inoremap (<CR> (<CR>)<ESC>O
+
+"}}}
+" Typos {{{
+iabbrev shoudl should
+iabbrev Shoudl Should
+iabbrev treu true
+iabbrev Treu True
+iabbrev teh the
+iabbrev flase false
+iabbrev Flase False
+
 "}}}
 " Misc Autocommands {{{
-augroup line_return  " Return vim to the last known position
+" Return vim to the last known position
+augroup line_return
     au!
     au BufreadPost *
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
