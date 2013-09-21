@@ -20,7 +20,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rip-Rip/clang_complete'
@@ -196,9 +196,9 @@ au! WinEnter * wincmd =
 " }}}
 " Plugin Preferences and Mappings {{{
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
