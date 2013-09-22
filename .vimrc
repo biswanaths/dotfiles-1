@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 
 "}}}
 " Installed Plugins {{{
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -361,6 +362,10 @@ let perl_extended_vars=1
 
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
+
+" Don't show help
+nnoremap <F1> <ESC>
+inoremap <F1> <ESC>
 
 " Screw Ex-mode
 nnoremap Q gq
