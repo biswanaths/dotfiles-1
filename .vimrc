@@ -25,6 +25,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
@@ -200,6 +201,18 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
@@ -290,7 +303,7 @@ nnoremap <leader>V V`]
 nnoremap vv ^vg_
 
 " Splits a line -- opposite of J (join lines)
-nnoremap ,sp i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Map jk to move between visual lines
 nnoremap j gj
@@ -324,6 +337,8 @@ let c_comment_strings = 1
 
 " HTML indenting
 let g:html_indent_inctags = "html,body,p,head,tbody,div"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 
 " Java syntax 
 let java_highlight_java_lang_ids=1
