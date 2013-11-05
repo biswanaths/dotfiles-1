@@ -1,22 +1,25 @@
 ## Aliases ##
+
+# General aliases
 alias c="clear"
 alias cp="cp -vi"
-alias ev="vim ~/.vimrc"
-alias ez="mvim -v ~/.zshrc"
 alias rm="rm -v"
-alias lctl="launchctl"
-alias ls="ls -A -G"
 alias mv="mv -vi"
+alias ls="ls -A -G"
 alias sl="ls"
-alias sz="source ~/.zshrc"
-alias tasks="task long"
 alias tmux="tmux -u2"
-alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
-alias unzip="unzip -d ~/Downloads"
-alias upd="brew update;brew upgrade;brew cleanup"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
+alias chpwn="chown"
+
+# Useful aliases
+alias ql="qlmanage -p 2>/dev/null"
+alias ping="ping -c 5"
+alias flush="dscacheutil -flushcache"
+alias unzip="unzip -d ~/Downloads"
+alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
 
 # geez fingers
 alias heroky="heroku"
 alias cim="vim"
+# vim: ft=zsh

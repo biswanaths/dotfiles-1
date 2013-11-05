@@ -12,12 +12,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # ZSH environment variables
-export LESSHISTFILE="~/.zsh/lesshist/"
-export CSCOPE_DB='~/.vim/src/cscope.out'
 export GREP_COLOR='1;33'
 
 # Change some syntax coloring to look nicer
-# ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 
@@ -69,10 +66,4 @@ setopt multios          # Multiple I/O redirection
 HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
-
-# Faster, zsh! Escape faster from insert mode, at the speed of light!
-KEYTIMEOUT=1
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 ################################# End of .zshrc ###############################
-
