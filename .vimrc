@@ -24,12 +24,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'pangloss/vim-javascript'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
@@ -53,7 +53,7 @@ set hidden                      " Allow hidden buffers
 set mouse=a                     " Turn on mouse for everything
 set scrolloff=4                 " Scroll when cursor is 4 off the top or bottom
 set nrformats-=octal            " Prevents (in|de)crementing a 0 padded number to octal
-set clipboard^=unnamed          " System clipboard support!
+set clipboard+=unnamed          " System clipboard support!
 set virtualedit=block           " Allow editing in visual block mode
 set laststatus=2                " Always show the statusline
 set backspace=indent,eol,start  " Vim likes to think this is the 1970s sometimes and won't backspace
@@ -104,7 +104,7 @@ set statusline+=%t\ \%{tagbar#currenttag('[%s]','')}
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
-set statusline+=\%=\ \%#StatusFTP#\%Y\ \|\ \%{&ff}\ \|
+set statusline+=\%=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|
 set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
 
 "}}}
@@ -206,8 +206,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_refresh_always = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#sources#syntax#min_keyword_length = 4
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
   endif
@@ -337,9 +337,9 @@ let c_space_errors = 1
 let c_comment_strings = 1
 
 " HTML indenting
-let g:html_indent_inctags = "html,body,p,head,tbody,div"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+let g:html_indent_inctags="head,html,body,p,head,tbody,div"
+let g:html_indent_script1="inc"
+let g:html_indent_style1="inc"
 
 " Java syntax 
 let java_highlight_java_lang_ids=1
@@ -384,7 +384,7 @@ nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
 nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef maggVG=`a
+nnoremap <leader>ef maggVG=`azz
 
 " Never felt the need to use H or L
 nnoremap H ^

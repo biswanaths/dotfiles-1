@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'git' \
   'ruby' \
+  'haskell' \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
@@ -48,4 +49,4 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
     'brackets'
 
 # Set the prompt theme
-zstyle ':prezto:module:prompt' theme 'sorinMod'
+zstyle ':prezto:module:prompt' theme 'steeef'
