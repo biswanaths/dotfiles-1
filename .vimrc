@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'itspriddle/vim-jquery'
@@ -24,7 +25,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
@@ -201,6 +201,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " DelimitMate
 let delimitMate_expand_cr = 1
+
+" Supertab
+" WHYYYY
+let g:SuperTabContextDefaultCompletionType=0
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
