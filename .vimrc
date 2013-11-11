@@ -11,20 +11,20 @@ Bundle 'gmarik/vundle'
 
 "}}}
 " Installed Plugins {{{
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'itspriddle/vim-jquery'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'Raimondi/delimitMate'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
@@ -32,13 +32,10 @@ Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
@@ -62,7 +59,7 @@ set lazyredraw                  " Don't redraw while executing macros
 set switchbuf=useopen,usetab    " Better quickfix window behavior
 set tags=./tags;/,tags;/        " search for tags efficiently
 set fileformats=unix,dos,mac
-set encoding=utf-8
+set fileencoding=utf-8
 set termencoding=utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
@@ -116,7 +113,7 @@ set smartcase
 set ignorecase
 set showmatch
 set matchtime=2  " 2 tenths of a second to show the matching paren (instead of 5)
-set nohlsearch  " hlsearch is so annoying!
+set hlsearch
 
 "}}}
 " Tab, Indent and Folds {{{
@@ -202,6 +199,9 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" DelimitMate
+let delimitMate_expand_cr = 1
+
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -236,18 +236,6 @@ let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell', 'javascript'],
             \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
-
-" Python-mode
-let g:pymode_lint_checker="pyflakes,pep8"
-let g:pymode_lint_write=1
-let g:pymode_syntax=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:python_run_key='<F5>'
-let g:pymode_lint_message=1
-let g:pymode_lint_cwindow = 0
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -337,7 +325,7 @@ let c_space_errors = 1
 let c_comment_strings = 1
 
 " HTML indenting
-let g:html_indent_inctags="head,html,body,p,head,tbody,div"
+let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
@@ -426,11 +414,6 @@ augroup haskell
     au BufEnter *.hs compiler ghc
     au BufEnter *.hs setlocal cmdheight=2
 augroup END
-
-" Better <CR> expansion
-autocmd FileType * inoremap {<CR> {<CR>}<ESC>O
-autocmd FileType * inoremap (<CR> (<CR>)<ESC>O
-
 "}}}
 " Typos {{{
 iabbrev shoudl should
