@@ -1,0 +1,131 @@
+2013-11-04 21:03:15		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-04 21:09:53		Option changed: irc.server.freenode.autoconnect = on  (default: (undefined))
+2013-11-04 21:10:20	+	Error: option "irc.server.oftc.command" not found
+2013-11-04 21:10:47		Option changed: irc.server.freenode.command = "/msg nickserv identify t3hdown"  (default: (undefined))
+2013-11-04 21:12:43	+	Error: option "irc.server.oftc.autojoin" not found
+2013-11-04 21:13:36		Option changed: irc.server.freenode.autojoin = "#vim,#MacOsX,#programming,#python,#git,#perl,#c++,#c"  (default: (undefined))
+2013-11-04 21:14:38		Plugins loaded:
+2013-11-04 21:14:38		  alias: Alias commands
+2013-11-04 21:14:38		  aspell: Spell checker for input (with Aspell)
+2013-11-04 21:14:38		  charset: Charset conversions
+2013-11-04 21:14:38		  fifo: FIFO pipe for remote control
+2013-11-04 21:14:38		  irc: IRC (Internet Relay Chat) protocol
+2013-11-04 21:14:38		  logger: Log buffers to files
+2013-11-04 21:14:38		  lua: Support of lua scripts
+2013-11-04 21:14:38		  perl: Support of perl scripts
+2013-11-04 21:14:38		  python: Support of python scripts
+2013-11-04 21:14:38		  relay: Relay WeeChat data to remote application (irc/weechat protocols)
+2013-11-04 21:14:38		  rmodifier: String modifier with regular expressions
+2013-11-04 21:14:38		  ruby: Support of ruby scripts
+2013-11-04 21:14:38		  script: Scripts manager
+2013-11-04 21:14:38		  tcl: Support of tcl scripts
+2013-11-04 21:14:38		  xfer: DCC file transfer and direct chat
+2013-11-04 21:14:57		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-04 21:17:27		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-04 21:17:50		Option changed: irc.server.freenode.autojoin = ""  (default: (undefined))
+2013-11-04 21:17:55		Option changed: irc.server.freenode.autoconnect = off  (default: (undefined))
+2013-11-04 21:18:17		script: downloading list of scripts...
+2013-11-04 21:18:20		script: 260 scripts for WeeChat 0.4.2
+2013-11-04 21:18:20		script: script "buffers" not found
+2013-11-04 21:18:25		perl: loading script "/Users/ajh/dotfiles/weechat/perl/buffers.pl"
+2013-11-04 21:18:25		perl: registered script "buffers", version 4.1 (Sidebar with list of buffers)
+2013-11-04 21:18:56		perl: loading script "/Users/ajh/dotfiles/weechat/perl/beep.pl"
+2013-11-04 21:18:56		perl: registered script "beep", version 1.1 (Beep (terminal bell) and/or run command on highlight/private message or new DCC)
+2013-11-04 21:19:02		perl: loading script "/Users/ajh/dotfiles/weechat/perl/iset.pl"
+2013-11-04 21:19:02		perl: registered script "iset", version 3.2 (Interactive Set for configuration options)
+2013-11-04 21:19:50		Option changed: irc.server.freenode.command = ""  (default: (undefined))
+2013-11-04 21:21:02		Option changed: irc.server.freenode.autojoin = "#vim,#Macosx"  (default: (undefined))
+2013-11-04 21:45:57		Scripts loaded:
+2013-11-04 21:45:57		 * ia   beep.pl 1.1 (Beep (terminal bell) and/or run command on highlight/private message or new DCC)
+2013-11-04 21:45:57		 * ia   buffers.pl 4.1 (Sidebar with list of buffers)
+2013-11-04 21:45:57		 * ia   iset.pl 3.2 (Interactive Set for configuration options)
+2013-11-04 21:46:02	+	Error: unknown command "plugins" (type /help for help)
+2013-11-04 21:46:05		Plugins loaded:
+2013-11-04 21:46:05		  alias: Alias commands
+2013-11-04 21:46:05		  aspell: Spell checker for input (with Aspell)
+2013-11-04 21:46:05		  charset: Charset conversions
+2013-11-04 21:46:05		  fifo: FIFO pipe for remote control
+2013-11-04 21:46:05		  irc: IRC (Internet Relay Chat) protocol
+2013-11-04 21:46:05		  logger: Log buffers to files
+2013-11-04 21:46:05		  lua: Support of lua scripts
+2013-11-04 21:46:05		  perl: Support of perl scripts
+2013-11-04 21:46:05		  python: Support of python scripts
+2013-11-04 21:46:05		  relay: Relay WeeChat data to remote application (irc/weechat protocols)
+2013-11-04 21:46:05		  rmodifier: String modifier with regular expressions
+2013-11-04 21:46:05		  ruby: Support of ruby scripts
+2013-11-04 21:46:05		  script: Scripts manager
+2013-11-04 21:46:05		  tcl: Support of tcl scripts
+2013-11-04 21:46:05		  xfer: DCC file transfer and direct chat
+2013-11-04 21:46:12		script: script "url.py" not found
+2013-11-04 21:46:15		script: script "url" not found
+2013-11-04 21:46:21		python: loading script "/Users/ajh/dotfiles/weechat/python/urlserver.py"
+2013-11-04 21:46:21		python: registered script "urlserver", version 1.2 (Shorten URLs with own HTTP server)
+2013-11-04 21:46:21		URL server listening on ('192.168.1.127', 58582)
+2013-11-05 22:57:25		script: downloading list of scripts...
+2013-11-05 22:57:26		script: 260 scripts for WeeChat 0.4.2
+2013-11-05 22:57:27		python: loading script "/Users/ajh/dotfiles/weechat/python/notification_center.py"
+2013-11-05 22:57:29		python: registered script "notification_center", version 0.1 (Pass highlights and private messages to the OS X 10.8+ Notification Center)
+2013-11-05 22:57:38		URL server stopped
+2013-11-05 22:57:38		python: scripts unloaded
+2013-11-05 22:57:38		perl: scripts unloaded
+2013-11-05 23:01:51		perl scripts loaded: beep, buffers, iset
+2013-11-05 23:01:51		URL server listening on ('192.168.1.127', 49581)
+2013-11-05 23:01:51		python scripts loaded: notification_center, urlserver
+2013-11-05 23:01:52		script: 260 scripts for WeeChat 0.4.2
+2013-11-05 23:01:52		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-05 23:02:59		Option changed: irc.server.freenode.autojoin = ""  (default: (undefined))
+2013-11-06 20:13:41	+	Error: unknown command "clear" (type /help for help)
+2013-11-06 20:13:44	+	Error: unknown option for "window" command
+2013-11-06 20:13:49	+	Error: unknown option for "window" command
+2013-11-07 18:03:10		URL server stopped
+2013-11-07 18:03:10		python: scripts unloaded
+2013-11-07 18:03:10		perl: scripts unloaded
+2013-11-07 20:25:52		perl scripts loaded: beep, buffers, iset
+2013-11-07 20:25:53		URL server listening on ('192.168.1.127', 52740)
+2013-11-07 20:25:53		python scripts loaded: notification_center, urlserver
+2013-11-07 20:25:54		script: downloading list of scripts...
+2013-11-07 20:25:54		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-07 20:25:57		script: 261 scripts for WeeChat 0.4.2
+2013-11-09 19:08:18		Option changed: irc.server_default.nicks = "Watabou"  (default: "")
+2013-11-09 19:12:08		Option changed: irc.server.freenode.nicks = "Watabou"  (default: (undefined))
+2013-11-09 19:12:38		URL server stopped
+2013-11-09 19:12:38		python: scripts unloaded
+2013-11-09 19:12:38		perl: scripts unloaded
+2013-11-09 19:20:36		perl scripts loaded: beep, buffers, iset
+2013-11-09 19:20:36		URL server listening on ('192.168.1.127', 53376)
+2013-11-09 19:20:36		python scripts loaded: notification_center, urlserver
+2013-11-09 19:20:36		script: downloading list of scripts...
+2013-11-09 19:20:36		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-09 19:20:38		script: 261 scripts for WeeChat 0.4.2
+2013-11-09 19:21:26		Option changed: irc.server.freenode.password = "t3hdown"  (default: (undefined))
+2013-11-09 19:21:50		Option changed: irc.server.freenode.username = "Watabou"  (default: (undefined))
+2013-11-09 19:23:39		Option changed: irc.server.freenode.autojoin = "#vim,#macosx,#python,#git,#haskell"  (default: (undefined))
+2013-11-09 20:04:58	+	irc: unknown option for "ignore" command
+2013-11-09 20:05:02		URL server stopped
+2013-11-09 20:05:02		python: scripts unloaded
+2013-11-09 20:05:02		perl: scripts unloaded
+2013-11-09 20:05:04		perl scripts loaded: beep, buffers, iset
+2013-11-09 20:05:05		URL server listening on ('192.168.1.127', 54830)
+2013-11-09 20:05:05		python scripts loaded: notification_center, urlserver
+2013-11-09 20:05:05		script: 261 scripts for WeeChat 0.4.2
+2013-11-09 20:05:05		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-09 20:06:01	+	irc: unknown option for "ignore" command
+2013-11-09 20:06:06	+	irc: unknown option for "ignore" command
+2013-11-10 11:56:58		URL server stopped
+2013-11-10 11:56:58		python: scripts unloaded
+2013-11-10 11:56:58		perl: scripts unloaded
+2013-11-10 11:57:13		perl scripts loaded: beep, buffers, iset
+2013-11-10 11:57:13		URL server listening on ('192.168.1.127', 61677)
+2013-11-10 11:57:13		python scripts loaded: notification_center, urlserver
+2013-11-10 11:57:13		script: downloading list of scripts...
+2013-11-10 11:57:13		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-11-10 11:57:17		script: 261 scripts for WeeChat 0.4.2
+2013-11-10 11:57:49		Option changed: irc.server.freenode.autoconnect = on  (default: (undefined))
+2013-11-10 11:57:56		URL server stopped
+2013-11-10 11:57:56		python: scripts unloaded
+2013-11-10 11:57:56		perl: scripts unloaded
+2013-11-10 11:57:58		perl scripts loaded: beep, buffers, iset
+2013-11-10 11:57:58		URL server listening on ('192.168.1.127', 61680)
+2013-11-10 11:57:58		python scripts loaded: notification_center, urlserver
+2013-11-10 11:57:58		script: 261 scripts for WeeChat 0.4.2
+2013-11-10 11:57:58		Plugins loaded: alias, aspell, charset, fifo, irc, logger, lua, perl, python, relay, rmodifier, ruby, script, tcl, xfer

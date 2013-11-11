@@ -1,0 +1,1736 @@
+2013-11-04 21:14:01	>	ajh (~ajh@2601:9:a80:120:bd2d:d687:cb5:27e1) has joined ##programming
+2013-11-04 21:14:01	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-04 21:14:01	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-04 21:14:01	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie ajh alamar alexdoom Alina-malina alrt amcsi_work amigojapan amizraa and0 anderson Andrevan angstrom anon antoks Anton_ Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek avtolstoy Axord b1101 bacon1989 Belxjander benzap besuto bhldev bigbadben Bigcheese Billiard BillTheButcher BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww circuit clone1018 codebrainz coeus corelax Corey cornjuliox cruxeternus ctype_real Cupe[a] cuqa Cyberpew Cybertinus cysm damselfly dan64 DarkGhost DarkLinkXXXX_ darwin dasilvj Defaultti definity dewdrop digdilem diminoten Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dsirrine dslpuck dtkatch DURgod dzeko egghead EldritchVetch Elfix ender Engen ESphynx EViLSLuT ewong execute Exio4 Fabianius farn felipe_ fling Freyr FriskyKat gde33 genius_matrix GeorgeTorwell gimpyds gimpygoo go|dfish gsvolt Guest40184 Guest97484 h0ho HandheldPenguin hatseflats Hawkerz heavystorm hexhaxtr1n highasdick HoloPed hoot_ imp ips|malc Isolol itunessucks ivan` JamesNZ jan1337z JanC jason____ JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Jordanlw jorj jrslepak JStoker JTF195 Jupelius jyhc_ K3|Chris kahrl kakazza karstensrage kastang kcj kcm1700 Kelet klyed2 KnightHawk3 koollman Lady_Aleena laen lahwran legov LiamM lietu LiquidOxygen Lloir-away M-ou-se m4rcu5 machina madara mahomet malcolmva maroloccio maslen MathAddict max_weller maxorator mintmoney MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mrwizrd mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nisstyre nitrix nupogodi o0afk0o obruT oleo oso96_2000 Pagan paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo phantomcircuit pheas PherricOxide photon Plastefuchs Plazma Plornt Plummer pr0ggie Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox R0b0t1 r3negade R3zk0n r[_] ra4king Raccoon raineys raunicolae Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram Rix rizzuh ronnyTheWhale Rounin Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux Shammah Shockk ShortWave SirCmpwn sirdancealot3 SJr SlimTim10 slobber sluggr Solid-State SomeDamnBody Sornaensis spacepixels spjt SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner sth0R Stryyker sujeet SuperNoeMan Svetlana syntaxe t_p TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw tommycannady toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse vlt wang Watcher7 wbill weie Wil_Bur winny Winslow woggle worfox ws2k3 wting Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas yudi z1m4 ZadYree zampano zarul ZeDestructor Zetro zkxs Znoosey zump Zuu zymurgy |DM|]
+2013-11-04 21:14:01	⇄	Channel ##programming: 364 nicks (1 ops, 0 voices, 363 normals)
+2013-11-04 21:14:02	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-04 21:14:08	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-04 21:14:09	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-04 21:14:18	⇄	irc: disconnected from server
+2013-11-04 21:15:12	>	ajh (~ajh@2601:9:a80:120:bd2d:d687:cb5:27e1) has joined ##programming
+2013-11-04 21:15:12	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-04 21:15:12	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-04 21:15:12	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie ajh alamar alexdoom Alina-malina alrt amcsi_work amigojapan amizraa and0 anderson Andrevan angstrom anon antoks Anton_ Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek avtolstoy Axord b1101 bacon1989 Belxjander benzap besuto bhldev bigbadben Bigcheese Billiard BillTheButcher BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww circuit clone1018 codebrainz coeus corelax Corey cornjuliox cruxeternus ctype_real Cupe[a] cuqa Cyberpew Cybertinus cysm damselfly dan64 DarkGhost DarkLinkXXXX_ darwin dasilvj Defaultti definity dewdrop digdilem diminoten Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dsirrine dslpuck dtkatch DURgod dzeko egghead EldritchVetch Elfix ender Engen ESphynx EViLSLuT ewong execute Exio4 Fabianius farn felipe_ fling Freyr FriskyKat gde33 genius_matrix GeorgeTorwell gimpyds gimpygoo go|dfish gsvolt Guest40184 Guest97484 h0ho HandheldPenguin hatseflats Hawkerz heavystorm hexhaxtr1n highasdick HoloPed hoot_ imp ips|malc Isolol itunessucks ivan` JamesNZ jan1337z JanC jason____ JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Jordanlw jorj jrslepak JStoker JTF195 Jupelius jyhc_ K3|Chris kahrl kakazza karstensrage kastang kcj kcm1700 Kelet klyed2 KnightHawk3 koollman Lady_Aleena laen lahwran legov LiamM lietu LiquidOxygen Lloir-away M-ou-se m4rcu5 machina madara mahomet malcolmva maroloccio maslen MathAddict max_weller maxorator mintmoney MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mrwizrd mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nisstyre nitrix nupogodi o0afk0o obruT oleo oso96_2000 Pagan paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo phantomcircuit pheas PherricOxide photon Plastefuchs Plazma Plornt Plummer pr0ggie Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox R0b0t1 r3negade R3zk0n r[_] ra4king Raccoon raineys raunicolae Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram Rix rizzuh ronnyTheWhale Rounin Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux Shammah Shockk ShortWave SirCmpwn sirdancealot3 SJr SlimTim10 slobber sluggr Solid-State SomeDamnBody Sornaensis spacepixels spjt SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner sth0R Stryyker sujeet SuperNoeMan Svetlana syntaxe t_p TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw tommycannady toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse vlt wang Watcher7 wbill weie Wil_Bur winny Winslow woggle worfox ws2k3 wting Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas yudi z1m4 ZadYree zampano zarul ZeDestructor Zetro zkxs Znoosey zump Zuu zymurgy |DM|]
+2013-11-04 21:15:12	⇄	Channel ##programming: 364 nicks (1 ops, 0 voices, 363 normals)
+2013-11-04 21:15:12	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-04 21:15:15	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-04 21:15:15	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-04 21:16:54	⇄	irc: disconnected from server
+2013-11-04 21:21:16	>	Watabou (~ajh@unaffiliated/watabou) has joined ##programming
+2013-11-04 21:21:16	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-04 21:21:16	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-04 21:21:16	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina alrt amcsi_work amigojapan amizraa and0 anderson Andrevan angstrom anon antoks Anton_ Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek avtolstoy Axord b1101 bacon1989 Belxjander benzap besuto bhldev bigbadben Bigcheese Billiard BillTheButcher BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww circuit clone1018 codebrainz coeus corelax Corey cornjuliox cruxeternus ctype_real Cupe[a] cuqa Cyberpew Cybertinus cysm damselfly dan64 DarkGhost DarkLinkXXXX_ darwin dasilvj Defaultti definity dewdrop digdilem diminoten Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dsirrine dslpuck dtkatch DURgod dzeko egghead EldritchVetch Elfix ender Engen ESphynx EViLSLuT ewong execute Exio4 Fabianius farn felipe_ fling Freyr FriskyKat gde33 genius_matrix GeorgeTorwell gimpyds gimpygoo go|dfish gsvolt Guest40184 Guest97484 h0ho HandheldPenguin hatseflats Hawkerz heavystorm hexhaxtr1n highasdick HoloPed hoot_ imp ips|malc Isolol itunessucks ivan` JamesNZ jan1337z JanC jason____ JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Jordanlw jorj jrslepak JStoker JTF195 Jupelius jyhc_ K3|Chris kahrl kakazza karstensrage kastang kcj kcm1700 Kelet klyed2 KnightHawk3 koollman Lady_Aleena laen lahwran legov LiamM lietu LiquidOxygen Lloir-away M-ou-se m4rcu5 machina madara mahomet malcolmva maroloccio maslen MathAddict max_weller maxorator merica mintmoney MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mrwizrd mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nisstyre nitrix nupogodi o0afk0o obruT oleo oso96_2000 Pagan pankaj_sharma paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo phantomcircuit pheas PherricOxide photon Plastefuchs Plazma Plornt Plummer pr0ggie Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox R0b0t1 r3negade r[_] ra4king Raccoon raineys raunicolae Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram Rix rizzuh ronnyTheWhale Rounin Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux Shammah Shockk ShortWave SirCmpwn sirdancealot3 SJr SlimTim10 slobber sluggr Solid-State SomeDamnBody Sornaensis spacepixels spjt SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner sth0R Stryyker sujeet SuperNoeMan Svetlana syntaxe t_p TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw tommycannady toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse vlt wang Watabou Watcher7 wbill weie Wil_Bur winny Winslow woggle worfox ws2k3 wting Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas yudi z1m4 ZadYree zampano zarul ZeDestructor Zetro zkxs Znoosey zump Zuu zymurgy |DM|]
+2013-11-04 21:21:16	⇄	Channel ##programming: 365 nicks (1 ops, 0 voices, 364 normals)
+2013-11-04 21:21:16	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-04 21:21:18	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-04 21:21:18	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-04 21:21:44	<	pankaj_sharma (~pankaj.sh@106.76.186.252) has quit (Ping timeout: 240 seconds)
+2013-11-04 21:22:18	<	Wil_Bur (HydraIRC@wcb38pc.STUDENT.CWRU.Edu) has quit (Ping timeout: 246 seconds)
+2013-11-04 21:22:26	<	St0rmSh4dow (~St0rmSh4d@122.172.161.153) has quit (Read error: Connection reset by peer)
+2013-11-04 21:23:53	<	MathAddict (MathAddict@14.97.221.197) has quit (Ping timeout: 268 seconds)
+2013-11-04 21:24:29	<	bigbadben (~bigbadben@24-176-0-114.dhcp.klmz.mi.charter.com) has quit (Remote host closed the connection)
+2013-11-04 21:27:35	<	bacon1989 (~user@S0106c8fb26436866.tb.shawcable.net) has quit (Ping timeout: 268 seconds)
+2013-11-04 21:29:41	<	oleo (~oleo@xdsl-84-44-152-118.netcologne.de) has quit (Remote host closed the connection)
+2013-11-04 21:32:30	<	merica (~merica@46.246.49.5) has quit
+2013-11-04 21:35:12	<	benzap (~user@S010600222d6b9c98.tb.shawcable.net) has quit (Ping timeout: 252 seconds)
+2013-11-04 21:37:46	>	Rodjustice (~Rodjustic@cpe-174-101-90-89.columbus.res.rr.com) has joined ##programming
+2013-11-04 21:38:25	>	bacon1989 (~user@S0106c8fb26436866.tb.shawcable.net) has joined ##programming
+2013-11-04 21:39:51	>	fritzthecat (~fritzthec@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has joined ##programming
+2013-11-04 21:44:56	<	sirdancealot3 (~sirdancea@98.82.broadband5.iol.cz) has quit (Remote host closed the connection)
+2013-11-04 21:51:14	>	Ge (~Ge@unaffiliated/ge) has joined ##programming
+2013-11-04 21:57:13	>	hashcat (~hashcat@39.14.62.33) has joined ##programming
+2013-11-04 21:57:56	<	DarkLinkXXXX_ (1871e905@gateway/web/freenode/ip.24.113.233.5) has quit (Ping timeout: 250 seconds)
+2013-11-04 21:59:27	<	drostie (~14kthings@50-27-213-193.stjo.sta.suddenlink.net) has quit (Read error: Operation timed out)
+2013-11-04 22:01:53	>	chris_ (~chris@c-174-54-115-236.hsd1.pa.comcast.net) has joined ##programming
+2013-11-04 22:02:11	⇄	chris_ is now known as anunnak
+2013-11-04 22:03:26	>	thatguy001 (~integral@75.102.129.54) has joined ##programming
+2013-11-04 22:04:27	<	Mr_Sheesh (~mr_s@unaffiliated/mr-sheesh/x-0757054) has quit (Disconnected by services)
+2013-11-04 22:04:34	>	Mr_Sheesh_AFK (~mr_s@unaffiliated/mr-sheesh/x-0757054) has joined ##programming
+2013-11-04 22:04:41	⇄	Mr_Sheesh_AFK is now known as Mr_Sheesh
+2013-11-04 22:05:00	<	circuit (~daniel@bas1-newmarket85-3096615673.dsl.bell.ca) has quit (Quit: leaving)
+2013-11-04 22:07:21	>	corvolino (c932064d@gateway/web/freenode/ip.201.50.6.77) has joined ##programming
+2013-11-04 22:07:39	<	fritzthecat (~fritzthec@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has quit (Quit: Colloquy for iPad - http://colloquy.mobi)
+2013-11-04 22:11:03	<	thatguy001 (~integral@75.102.129.54) has quit (Quit: Leaving)
+2013-11-04 22:12:53	>	sireesht (~sireesh.t@203.247.149.152) has joined ##programming
+2013-11-04 22:15:30	>	tneva82 (tneva82@syi-ogw1-1299.syi.inet.fi) has joined ##programming
+2013-11-04 22:15:32	moop	they still make those?
+2013-11-04 22:16:47	>	fishduck (~douglas_@gateway/tor-sasl/douglas/x-75997517) has joined ##programming
+2013-11-04 22:16:48	fishduck	instead of coding (C++) the backup procedure of my cat-databse application, I can just host the application on a linux machine and let a cron job do the daily backup. Now, does that not make my application less independent (and dependent on linux)?
+2013-11-04 22:19:07	GeorgeTorwell	Clearly it does.
+2013-11-04 22:19:26	GeorgeTorwell	But between depending on Linux, or your hack, I would probably prefer to depend on Linux.
+2013-11-04 22:20:30	>	bite (~bite@173-230-189-28.cable.teksavvy.com) has joined ##programming
+2013-11-04 22:21:32	tneva82	fun fun fun. try to get testers to send the debug file if something odd happens along with time when it happened. After month best you can get is they send you time of event but no file. what am I supposed to do with just the time :D
+2013-11-04 22:23:34	>	arvind_khadri (~arvind@unaffiliated/arvind-khadri/x-2237230) has joined ##programming
+2013-11-04 22:24:06	>	plombo (~plombo__@ip-129-15-159-226.fencfwsm.ou.edu) has joined ##programming
+2013-11-04 22:24:10	>	SandCat (~chatzilla@CPE-70-92-254-151.wi.res.rr.com) has joined ##programming
+2013-11-04 22:24:55	>	deffo-not-rude (~user@unaffiliated/dijkstragroupie) has joined ##programming
+2013-11-04 22:29:20	>	falcou (~falcou@gov91-4-83-152-215-118.fbx.proxad.net) has joined ##programming
+2013-11-04 22:30:34	bubchi89	if you dev for a service then you retrieve the logs for that time
+2013-11-04 22:31:51	>	brainmachine (~alpha@130.185.155.170) has joined ##programming
+2013-11-04 22:31:56	<	falcou (~falcou@gov91-4-83-152-215-118.fbx.proxad.net) has quit (Client Quit)
+2013-11-04 22:33:23	>	Snowfreak (~Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-04 22:35:22	<	damselfly (~me@host-239.180-235-182.cable.dynamic.kbtelecom.net) has quit (Ping timeout: 245 seconds)
+2013-11-04 22:39:47	>	chrisdotcode (~quassel@pool-71-183-255-43.nycmny.fios.verizon.net) has joined ##programming
+2013-11-04 22:39:53	<	chrisdotcode (~quassel@pool-71-183-255-43.nycmny.fios.verizon.net) has quit (Remote host closed the connection)
+2013-11-04 22:40:12	>	chrisdotcode (~quassel@pool-71-183-255-43.nycmny.fios.verizon.net) has joined ##programming
+2013-11-04 22:40:20	<	chrisblake (~quassel@pool-71-183-255-43.nycmny.fios.verizon.net) has quit (Ping timeout: 246 seconds)
+2013-11-04 22:40:43	>	damselfly (~me@host-239.180-235-182.cable.dynamic.kbtelecom.net) has joined ##programming
+2013-11-04 22:41:59	⇄	chrisdotcode is now known as chrisblake
+2013-11-04 22:43:10	<	SandCat (~chatzilla@CPE-70-92-254-151.wi.res.rr.com) has quit (Quit: ChatZilla 0.9.90.1 [SeaMonkey 2.22/20131028182244])
+2013-11-04 22:46:04	<	aspire (~aspire@unaffiliated/aspire) has quit (Read error: Connection reset by peer)
+2013-11-04 22:46:22	<	plombo (~plombo__@ip-129-15-159-226.fencfwsm.ou.edu) has quit (Ping timeout: 264 seconds)
+2013-11-04 22:48:57	Engen	With the current algorithm and data structure content that we are doing, I feel that a lot of it is simply wrote learning rather than anything to do with creativity or creating efficient solutions to problems. I mean yeah we have to learn these algorith/data structures to make those useful things but could anyone suggest anything to make the study of algos a little less boring?
+2013-11-04 22:49:08	>	gertptr (~gert@hopper.cs.ttu.ee) has joined ##programming
+2013-11-04 22:57:03	<	bite (~bite@173-230-189-28.cable.teksavvy.com) has quit (Ping timeout: 240 seconds)
+2013-11-04 23:01:24	>	Chatty1 (~ChatPhobi@62.220.107.227) has joined ##programming
+2013-11-04 23:01:35	<	wbill (~textual@71-80-64-105.dhcp.kgpt.tn.charter.com) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2013-11-04 23:02:18	>	gert_ (~gert@hopper.cs.ttu.ee) has joined ##programming
+2013-11-04 23:03:25	<	Rav3n (~Rav3n@TouchLay/Member/Rav3n) has quit (Ping timeout: 246 seconds)
+2013-11-04 23:03:26	<	Chatty1 (~ChatPhobi@62.220.107.227) has quit (Client Quit)
+2013-11-04 23:05:19	<	gertptr (~gert@hopper.cs.ttu.ee) has quit (Ping timeout: 260 seconds)
+2013-11-04 23:05:37	>	SnowFreak|2 (~Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-04 23:06:09	<	SnowFreak|2 (~Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has quit (Client Quit)
+2013-11-04 23:06:15	<	Snowfreak (~Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has quit (Ping timeout: 260 seconds)
+2013-11-04 23:06:33	moop	hah
+2013-11-04 23:06:35	moop	no
+2013-11-04 23:06:37	TacitBlue	Engen: try implimenting them into some project.
+2013-11-04 23:07:13	yudi	apart from fgets, is there any other function that can seek until it hits a new line character?
+2013-11-04 23:08:34	moop	yudi: well those functions are usually just loops that go over each letter until you hit a newline symbol
+2013-11-04 23:08:43	moop	so you can write one yourself i guess?
+2013-11-04 23:09:20	yudi	moop: yes I can but why reinvent the wheel
+2013-11-04 23:10:45	moop	i can ask you the same question
+2013-11-04 23:10:52	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-04 23:10:54	moop	what's wrong with the fgets
+2013-11-04 23:11:46	yudi	moop: nothing, I was asking if there was any other available
+2013-11-04 23:11:57	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Max SendQ exceeded)
+2013-11-04 23:12:24	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-04 23:12:59	moop	well c++ has their own implementation
+2013-11-04 23:14:02	>	R3zk0n (~R3zk0n@120.148.57.239) has joined ##programming
+2013-11-04 23:14:15	>	pankaj_sharma (~pankaj.sh@122.160.169.18) has joined ##programming
+2013-11-04 23:14:33	R3zk0n	Hey all can anyone  expect this.. 2^3=8?
+2013-11-04 23:15:17	>	Snowfreak (Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-04 23:15:36	⇄	anunnak is now known as anunnaki
+2013-11-04 23:16:49	<	jason____ (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2013-11-04 23:17:15	<	Rodjustice (~Rodjustic@cpe-174-101-90-89.columbus.res.rr.com) has quit (Read error: Connection reset by peer)
+2013-11-04 23:19:31	TacitBlue	R3zk0n: expect it ?
+2013-11-04 23:22:38	Lady_Aleena	Hello.
+2013-11-04 23:22:43	<	Alina-malina (Alina-mali@46.162.229.168) has quit (Ping timeout: 240 seconds)
+2013-11-04 23:22:48	arathald	mmm
+2013-11-04 23:22:56	>	gertptr (~gert@hopper.cs.ttu.ee) has joined ##programming
+2013-11-04 23:22:56	arathald	arberlour 12 year
+2013-11-04 23:23:03	R3zk0n	sorry explain :P
+2013-11-04 23:23:28	R3zk0n	i understand its called the Caret Symbol but HOW DOES 2^3=8...
+2013-11-04 23:24:32	Lady_Aleena	R3zk0n, 2 * 2 = 4; 4 * 2 = 8.
+2013-11-04 23:25:44	<	gert_ (~gert@hopper.cs.ttu.ee) has quit (Ping timeout: 240 seconds)
+2013-11-04 23:25:46	>	Alina-malina (Alina-mali@46.162.229.168) has joined ##programming
+2013-11-04 23:28:13	yudi	why do some function prototypes include "restrict" in them, mostly in the ones since c99  -eg. see http://en.cppreference.com/w/c/io/fscanf
+2013-11-04 23:28:13	TacitBlue	R3zk0n: more to the point, it represents 2 raised to the 3rd power in the example you cite which expands to 2*2*2 = 8
+2013-11-04 23:28:57	>	trusktr (~trusktr@130.86.73.152) has joined ##programming
+2013-11-04 23:30:29	R3zk0n	OHHHHH I get it now thankyou
+2013-11-04 23:30:40	moop	yudi: speed, mostly
+2013-11-04 23:31:35	yudi	moop: I am trying to look up some explanation on that, you know of any reference?
+2013-11-04 23:32:39	moop	yudi: sec
+2013-11-04 23:33:20	moop	yudi: http://cellperformance.beyond3d.com/articles/2006/05/demystifying-the-restrict-keyword.html
+2013-11-04 23:34:32	Engen	this is searching method is backwards right? http://codepad.org/R2oIhy4j
+2013-11-04 23:35:38	yudi	moop: thank you, much appreciated
+2013-11-04 23:36:00	Engen	ie. if the initial key in the array is less than our e, we should look at a[N/2+1] to a[N-1] and not a[0] to a[N/2 -1]
+2013-11-04 23:38:41	<	amigojapan (~chatzilla@p4186-ipngn201souka.saitama.ocn.ne.jp) has quit (Quit: ChatZilla 0.9.90.1-rdmsoft [XULRunner 22.0/20130619132145])
+2013-11-04 23:38:44	>	Jackneill (~Jackneill@unaffiliated/jackneill) has joined ##programming
+2013-11-04 23:38:59	>	future28 (~chatzilla@unaffiliated/future28) has joined ##programming
+2013-11-04 23:40:09	moop	Engen: no, it's a sorted list
+2013-11-04 23:40:27	moop	so if the value in the middle is less than e
+2013-11-04 23:40:48	moop	you need to go over the list from the smallest number
+2013-11-04 23:41:06	future28	Someone please help with this recursion: http://mathbin.net/415717
+2013-11-04 23:42:51	Engen	moop: say we had [2,3,4,5,6,7,8,9,10,11,12] and we're looking for 11. we jump to N/2 = 7. now 7 is less than 11. we know it's sorted. so why would we start looking from the beginning of the array?
+2013-11-04 23:42:53	<	fishduck (~douglas_@gateway/tor-sasl/douglas/x-75997517) has left ##programming
+2013-11-04 23:43:00	>	Wehk (~Wehk@81.191.254.92) has joined ##programming
+2013-11-04 23:43:07	>	fishduck (~douglas_@gateway/tor-sasl/douglas/x-75997517) has joined ##programming
+2013-11-04 23:43:51	moop	Engen: i think you have your < > symbols mixed up
+2013-11-04 23:44:03	moop	x < y -> x less than y
+2013-11-04 23:44:14	moop	x > y -> x bigger than y
+2013-11-04 23:44:15	Engen	moop: in the example that is pasted in codepad?
+2013-11-04 23:44:36	moop	no
+2013-11-04 23:44:38	moop	you
+2013-11-04 23:44:44	moop	examle is file
+2013-11-04 23:44:48	moop	example is fine
+2013-11-04 23:45:02	moop	oh
+2013-11-04 23:45:04	moop	wait
+2013-11-04 23:45:06	moop	i am a retard
+2013-11-04 23:45:17	moop	:D
+2013-11-04 23:45:20	<	jeaye (~Jeaye@unaffiliated/jeaye) has quit (Quit: zzz)
+2013-11-04 23:45:25	moop	Engen: disregard everythin i said so far
+2013-11-04 23:45:36	moop	Engen: yes you're right
+2013-11-04 23:45:54	moop	i am not a clever man
+2013-11-04 23:45:54	Engen	moop: making me think me heads broken for a sec :<
+2013-11-04 23:46:00	moop	lol no it's me
+2013-11-04 23:46:40	moop	sorry about that
+2013-11-04 23:48:34	Engen	so, the example is broken? right?
+2013-11-04 23:49:19	moop	yes
+2013-11-04 23:49:40	bubchi89	just disprove it by counterexample
+2013-11-04 23:49:41	Engen	okay, not going loony
+2013-11-04 23:50:09	Engen	bubchi89: nah thing is, those are the lecturers notes so I was going o.O am I missing something
+2013-11-04 23:50:39	>	bacon198` (~user@S0106c8fb26436866.tb.shawcable.net) has joined ##programming
+2013-11-04 23:51:19	bubchi89	i'm just suggesting that when you are confused about something
+2013-11-04 23:51:23	bubchi89	either try to prove it, or try to disprove it
+2013-11-04 23:51:27	bubchi89	whichever seems more likely to you
+2013-11-04 23:51:50	<	bacon1989 (~user@S0106c8fb26436866.tb.shawcable.net) has quit (Ping timeout: 268 seconds)
+2013-11-04 23:51:58	>	aynik (~aynik@unaffiliated/aynik) has joined ##programming
+2013-11-04 23:52:03	<	pankaj_sharma (~pankaj.sh@122.160.169.18) has quit (Ping timeout: 240 seconds)
+2013-11-04 23:53:00	Engen	yep yep, just after 6 coffees and a few all nighters, starting to feel the logic disappear
+2013-11-04 23:53:14	moop	i'mma go and weep silently in the corner of shame now
+2013-11-04 23:53:21	<	brainmachine (~alpha@130.185.155.170) has quit (Ping timeout: 240 seconds)
+2013-11-04 23:53:28	 *	moop mopes around
+2013-11-04 23:57:35	>	none (vinse@69.196.155.106) has joined ##programming
+2013-11-04 23:57:36	<	vinse (MacDaddy@69-165-157-129.dsl.teksavvy.com) has quit (Read error: Connection reset by peer)
+2013-11-04 23:57:59	⇄	none is now known as Guest15899
+2013-11-04 23:57:59	>	tesuji (~tesuji@unaffiliated/tesuji) has joined ##programming
+2013-11-04 23:58:05	<	yudi (cab1da3b@gateway/web/freenode/ip.202.177.218.59) has left ##programming
+2013-11-04 23:58:09	>	Ozch (~Ozch@unaffiliated/ozch) has joined ##programming
+2013-11-04 23:58:21	arathald	http://i.imgur.com/yBX5qKl.jpg
+2013-11-04 23:58:40	>	kyle1320 (~kyle1320@c-69-255-98-123.hsd1.md.comcast.net) has joined ##programming
+2013-11-05 00:00:30	>	Gluesticky (~IceChat9@unaffiliated/gluesticky) has joined ##programming
+2013-11-05 00:01:22	>	gert_ (~gert@hopper.cs.ttu.ee) has joined ##programming
+2013-11-05 00:02:25	<	R3zk0n (~R3zk0n@120.148.57.239) has quit
+2013-11-05 00:03:15	<	gertptr (~gert@hopper.cs.ttu.ee) has quit (Ping timeout: 246 seconds)
+2013-11-05 00:05:30	>	claymore (~claymore_@unaffiliated/claymore) has joined ##programming
+2013-11-05 00:08:19	<	kyle1320 (~kyle1320@c-69-255-98-123.hsd1.md.comcast.net) has quit
+2013-11-05 00:08:35	<	fishduck (~douglas_@gateway/tor-sasl/douglas/x-75997517) has quit (Quit: fishduck)
+2013-11-05 00:10:36	>	noname001 (~santaclau@62-50-207-40.client.stsn.net) has joined ##programming
+2013-11-05 00:12:40	>	gabriel9|work (~quassel@9-133-241-92-ptp-stat.customer.blic.net) has joined ##programming
+2013-11-05 00:13:13	>	benzap (~user@S010600222d6b9c98.tb.shawcable.net) has joined ##programming
+2013-11-05 00:20:35	>	Rav3n (~Rav3n@TouchLay/Member/Rav3n) has joined ##programming
+2013-11-05 00:25:01	>	bcvery1 (~ben@62.232.46.196) has joined ##programming
+2013-11-05 00:26:30	>	TonnyNerd (~TonnyNerd@unaffiliated/tonnynerd) has joined ##programming
+2013-11-05 00:28:19	>	idlecode (~idlecode@109.231.39.109) has joined ##programming
+2013-11-05 00:28:20	<	t_p (~textual@115.238.89.37) has quit (Ping timeout: 264 seconds)
+2013-11-05 08:55:33	⇄	irc: disconnected from server
+2013-11-05 08:55:57	>	Watabou (~ajh@sjs-mh-wifi-1-1-lc-int.sjsu.edu) has joined ##programming
+2013-11-05 08:55:57	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-05 08:55:57	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-05 08:55:57	⇄	Nicks ##programming: [@Archer [Aura]MaelStrom _W_ Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina alrt amigojapan amizraa and0 anderson Andrevan angstrom anon antoks Anton_ anunnaki apathor Aperion Aph3x-WL arathald architekt ari` ario_ Artpicre asmodlol aspire auscompgeek avtolstoy Axord b1101 Baluse bcvery1 Beg Belxjander benzap besuto bhldev Bigcheese Billiard BillTheButcher blablaa BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 boxmein Brando753 brentofrohan brx_ bstrie bubbajones BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisdotcode cian1500ww cjz claymore clone1018 codebrainz coeus corelax Corey cornjuliox corvolino cruxeternus ctype_real cuqa Cyb3r-Assassin Cyberpew Cybertinus cysm dan64 DarkGhost darwin dasilvj Defaultti definity Denommus` devos50 dewdrop digdilem diminoten Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dsirrine dslpuck dtkatch DURgod dzeko egghead EldritchVetch elephanter Elfix ender Engen EViLSLuT ewong execute Exio4 Fabianius family-values fantastic001 farn felipe_ FernandoBasso fling forthelulz fortmac Freyr FriskyKat galaris GamesOnAToaster gde33 GeDaMo genius_matrix gertptr ghanhass gimpyds gimpygoo go|dfish gsvolt Guest40184 Guest97484 h0ho HandheldPenguin hashcat hatseflats Hawkerz heavystorm HertzWinIP hexhaxtr1n hid highasdick HoloPed idlecode imp intothev01d ips|malc Isolol itunessucks ivan` Jackneill jak2000 jan1337z JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jimmt jkbbwr Jordanlw jorj jrslepak JSharpe JStoker JTF195 junaidnaseer2 Jupelius jyhc_ K3|Chris kahrl kakazza karstensrage Kasai kastang kcm1700 keepguessing Kelet kermit klyed2 koollman Kutagh Lady_Aleena laen lahwran Lefeni legov LiamM lietu LiquidOxygen Lloir lolcathost Lyn M-ou-se m4rcu5 macabre machina Macuser madara mahomet malcolmva mangekyo maroloccio MatRoo Matthijs max_weller maxorator milky minty MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mshaw mtf NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ Neuroticar NightKhaos nitrix Noldorin nupogodi nverba o0afk0o obruT oleo oniichaNj oso96_2000 Oxyd Pagan paracyst passiveobserver pazuzu pdimitrov PearFish pecorade per2 pfifo ph88 phantomcircuit pheas PherricOxide Plastefuchs Plazma Plornt Plummer pr0ggie Programmer_ pulchy Pullphinger Purlox pushp0p Pwnna pythonsnake QuantumParadox Quetuo R0b0t1 r0sh r3negade ra4king Raccoon raineys raunicolae Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram rindolf Rix rizzuh ronnyTheWhale Rounin RRR2 Rubennn RustyShackleford rwg RyanGuill sam113101 Sauvin sayo- Scala SecretFire seventwo SeySayux ShadeTornado Shammah Shockk ShortWave SirCmpwn sirdancealot3 sireesht SJr SlimTim10 slobber Snake2k Snowfreak snql Solid-State SomeDamnBody Sornaensis spacepixels spjt spobat SporkWitch Squid_Tamer squidly srcspider_ St0rmSh4dow staafl stardiviner stepdad Stryyker sujeet SuperNoeMan Svetlana syntaxe tac TacitBlue Takumo TDJACR tdn Th0mas theblackbox theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw tommycannady TonnyNerd toothe ToothlessGear Tribal Twey Typherix ujan ulkesh_work unic0rn unreal Vbitz vechnyj vendu vhuboe victorbjelkholm vlt volk_ W0rmDr1nk wand_ wang Watabou Watcher7 Wehk winny Winslow woggle worfox ws2k3 wting xaxisx Xgc Xionaba Xiti xlinkz0 XMPPwocky|roamin yalue yano yazdmich YJLTGatWORK ymas yorick z1m4 ZadYree zampano zarul ZeDestructor Zetro zkxs Znoosey Zuu zymurgy |DM|]
+2013-11-05 08:55:57	⇄	Channel ##programming: 417 nicks (1 ops, 0 voices, 416 normals)
+2013-11-05 08:55:57	⇄	Notice(sendak.freenode.net) -> ##programming: [freenode-info] if you're at a conference and other people are having trouble connecting, please mention it to staff: http://freenode.net/faq.shtml#gettinghelp
+2013-11-05 08:55:57	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-05 08:56:00	pecorade	Hi.
+2013-11-05 08:56:06	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-05 08:56:06	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-05 08:56:06	rindolf	pecorade: hi.
+2013-11-05 08:56:07	moop	rindolf: i thought the fc-solver was complete
+2013-11-05 08:56:12	amigojapan	hi pecorade
+2013-11-05 08:56:15	rindolf	moop: no, it is not.
+2013-11-05 08:56:19	tommycannady	yeah , fc :3
+2013-11-05 08:56:26	tommycannady	fcmini :3
+2013-11-05 08:56:43	rindolf	moop: what made you think that?
+2013-11-05 08:56:47	moop	rindolf: but it solves, no?
+2013-11-05 08:56:47	<	junaidnaseer2 (~JNaseer@pD9F8586C.dip0.t-ipconnect.de) has quit (Quit: Leaving.)
+2013-11-05 08:56:51	>	vortex (~vortex@chello213047048214.4.sc-graz.chello.at) has joined ##programming
+2013-11-05 08:56:57	tommycannady	vendu ? pm me ?
+2013-11-05 08:57:01	moop	last time you showed results
+2013-11-05 08:57:07	rindolf	moop: well, it solves most boards, but some boards still give it a hard time.
+2013-11-05 08:57:16	pecorade	rindolf, amigojapan: hi
+2013-11-05 08:57:20	pecorade	what's up? :P
+2013-11-05 08:57:24	moop	rindolf: ah
+2013-11-05 08:57:56	rindolf	pecorade: I'm a little worried about the new Israeli website accessibility directive.
+2013-11-05 08:58:36	moop	rindolf: is it literally nazi?
+2013-11-05 08:58:48	rindolf	moop: literally?
+2013-11-05 08:58:53	moop	literally
+2013-11-05 08:59:06	apathor	Baluse: all of those devices have firmware. some might run an OS on top of it.
+2013-11-05 08:59:24	rindolf	moop: the literal "nazis" were the German/etc. supports of Hitler before and during WWII.
+2013-11-05 08:59:38	moop	rindolf: well, yeah, figuratively
+2013-11-05 08:59:42	moop	what you think i said
+2013-11-05 08:59:57	>	katyusha (~quassel@pool-173-59-59-128.phlapa.fios.verizon.net) has joined ##programming
+2013-11-05 09:00:05	rindolf	moop: http://xkcd.com/725/
+2013-11-05 09:00:18	pecorade	lol
+2013-11-05 09:00:39	<	katyusha (~quassel@pool-173-59-59-128.phlapa.fios.verizon.net) has quit (Changing host)
+2013-11-05 09:00:40	>	katyusha (~quassel@unaffiliated/katyusha) has joined ##programming
+2013-11-05 09:00:47	pecorade	moop: you said "nazi" to a jew.
+2013-11-05 09:00:50	<	spobat (~spobat@unaffiliated/spobat) has quit (Remote host closed the connection)
+2013-11-05 09:01:09	rindolf	pecorade: I'm fine with people saying "nazi" to mean "pedantic" or "overly strict".
+2013-11-05 09:01:12	moop	pecorade: is ok
+2013-11-05 09:01:13	moop	my best friends are nazis
+2013-11-05 09:01:13	moop	i mean jews
+2013-11-05 09:01:27	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 09:01:28	rindolf	pecorade: see http://shlomif.livejournal.com/53966.html
+2013-11-05 09:02:26	katyusha	I'm a bit confused as to what situations I would use certain data types in C
+2013-11-05 09:02:27	katyusha	Like when would I use char as opposed to int
+2013-11-05 09:02:28	katyusha	or long as opposed to int?
+2013-11-05 09:02:37	⇄	Denommus` is now known as Denommus
+2013-11-05 09:02:45	<	Denommus (~user@179.222.37.239) has quit (Changing host)
+2013-11-05 09:02:45	>	Denommus (~user@unaffiliated/denommus) has joined ##programming
+2013-11-05 09:02:51	pecorade	rindolf: lol.
+2013-11-05 09:03:04	apathor	katyusha: when you want to store a character instead of an integer value
+2013-11-05 09:03:35	<	BustyLoli-Chan (~BustyLoli@wads-5-232-202.resnet.mtu.edu) has quit (Quit: ~ Trillian Astra - www.trillian.im ~)
+2013-11-05 09:03:52	Denommus	katyusha: use char when you want to store an ASCII character, or a single byte. You use long when you want bigger numbers
+2013-11-05 09:03:53	<	vortex (~vortex@chello213047048214.4.sc-graz.chello.at) has quit (Ping timeout: 245 seconds)
+2013-11-05 09:03:53	<	theblackbox (~theblackb@unaffiliated/theblackbox) has quit (Ping timeout: 245 seconds)
+2013-11-05 09:04:05	family-values	katyusha: "like when would I use char as opposed to it" --> ikr, just use long long int for everything!
+2013-11-05 09:04:08	 *	family-values ducks.
+2013-11-05 09:04:22	family-values	as opposed to int*
+2013-11-05 09:04:36	>	ninnno (c890bc86@gateway/web/freenode/ip.200.144.188.134) has joined ##programming
+2013-11-05 09:04:42	katyusha	family-values, I am just beginning to learn and that already sounds like a bad idea to me lol
+2013-11-05 09:04:45	moop	rindolf: ty, learned about linmagazine
+2013-11-05 09:04:50	family-values	katyusha: I was just joking.
+2013-11-05 09:04:51	moop	not the best representation with that blog post
+2013-11-05 09:04:56	moop	but i hope the  rest is nice
+2013-11-05 09:04:57	>	JanC (~janc@lugwv/member/JanC) has joined ##programming
+2013-11-05 09:04:57	katyusha	ah :p
+2013-11-05 09:04:59	<	blablaa (~z@unaffiliated/blablaa) has quit (Quit: Ping timeout: 260 seconds)
+2013-11-05 09:05:13	rindolf	moop: linmagazine is only of interest to Hebrew speakers.
+2013-11-05 09:05:14	ninnno	when I use function to dynamically allocate memory and forget to free the memory used, is it freed when the program is closed?
+2013-11-05 09:05:46	>	BustyLoli-Chan (~BustyLoli@wads-5-232-202.resnet.mtu.edu) has joined ##programming
+2013-11-05 09:05:53	rindolf	ninnno: yes, assuming your OS is sane.
+2013-11-05 09:06:02	rindolf	ninnno: but please -free all memory.
+2013-11-05 09:06:06	family-values	katyusha: As a general rule, you use the smallest type that does what you want to do. If you want to store a single ASCII character, then there is no need to use int, a char will do.
+2013-11-05 09:06:14	<	spobat (~spobat@unaffiliated/spobat) has quit (Ping timeout: 264 seconds)
+2013-11-05 09:06:16	katyusha	How does a program like bc manage extremely large numbers without creating problems?
+2013-11-05 09:06:16	katyusha	BustyLoli-Chan, that's a sexy name huehue
+2013-11-05 09:06:19	rindolf	ninnno: there are some memory debuggers like valgrind.
+2013-11-05 09:06:25	moop	ah
+2013-11-05 09:06:26	moop	well
+2013-11-05 09:06:26	moop	rindolf: remember that israeli kid who liked to change nicknames a lot?
+2013-11-05 09:06:34	rindolf	katyusha: there are libraries like GNU Multiple Precision (GMP)
+2013-11-05 09:06:38	family-values	katyusha: If you want to use arbitrarily large numbers, then you use a bigint library, such as GMP.
+2013-11-05 09:06:38	Denommus	katyusha: it uses a big number library or language
+2013-11-05 09:06:41	rindolf	moop: no, who?
+2013-11-05 09:06:54	moop	rindolf: shit i dont even remember
+2013-11-05 09:06:58	moop	the last nick i think was robots
+2013-11-05 09:07:03	ninnno	ok
+2013-11-05 09:07:06	rindolf	moop: ah, OK.
+2013-11-05 09:07:14	katyusha	This is probably getting complex but how does one make a big number library like GMP then?
+2013-11-05 09:07:14	rindolf	moop: I think he was above 20.
+2013-11-05 09:07:15	<	ninnno (c890bc86@gateway/web/freenode/ip.200.144.188.134) has quit (Client Quit)
+2013-11-05 09:07:25	moop	rindolf: well, yeah, that's me
+2013-11-05 09:07:27	rindolf	moop: and he didn't change nicknames that often.
+2013-11-05 09:07:36	rindolf	moop: ah.
+2013-11-05 09:07:39	moop	though i still feel like a kid :/
+2013-11-05 09:07:43	Denommus	katyusha: you can check the source and documentation to know how it works
+2013-11-05 09:07:50	katyusha	Ok
+2013-11-05 09:07:51	family-values	katyusha: Well, there is not a single possible design.
+2013-11-05 09:07:52	apathor	katyusha: representing large numbers with simpler data types
+2013-11-05 09:08:05	family-values	katyusha: Most likely it internally uses a list of fixed-size integers.
+2013-11-05 09:08:18	moop	rindolf: it's a sickness
+2013-11-05 09:08:24	moop	have to change nicks :/
+2013-11-05 09:08:26	moop	:D
+2013-11-05 09:08:37	lolcathost	Did anyone say "change nicks"?
+2013-11-05 09:08:44	moop	lolcathost: no
+2013-11-05 09:08:44	⇄	lolcathost is now known as inf-groupoid
+2013-11-05 09:08:50	moop	no
+2013-11-05 09:08:55	moop	no no  no no
+2013-11-05 09:08:57	inf-groupoid	No what?
+2013-11-05 09:09:16	pecorade	inf-groupoid: :D
+2013-11-05 09:09:21	>	Roonin (~david@88.87.54.14) has joined ##programming
+2013-11-05 09:09:22	moop	no idea
+2013-11-05 09:09:24	inf-groupoid	pecorade: Hey.
+2013-11-05 09:09:26	katyusha	These may be different bits but how can a data type be 64 bits in size when a processor is 32 bit?
+2013-11-05 09:09:45	family-values	katyusha: You could use two 32-bit ints.
+2013-11-05 09:09:47	katyusha	I'm unsure if these two things are related
+2013-11-05 09:09:54	pecorade	inf-groupoid: having fun with Bellman theorem
+2013-11-05 09:10:02	inf-groupoid	pecorade: Ah!
+2013-11-05 09:10:08	PearFish	katyusha, because you can treat two smaller 32 bit ints as a larger type
+2013-11-05 09:10:31	<	srcspider_ (~srcspider@pixelgrademedia.iasi.rdsnet.ro) has quit (Read error: Connection reset by peer)
+2013-11-05 09:10:41	PearFish	This works fine for the fixed point numbers, although floating point is much trickier to represent with arbitrary precision.
+2013-11-05 09:10:41	katyusha	makes sense
+2013-11-05 09:10:41	katyusha	thanks
+2013-11-05 09:10:42	rindolf	katyusha: BTW, is your name Katyusha? Or are you using the name of the type of the missile? Or is it a reference to the song? Or what?
+2013-11-05 09:10:49	inf-groupoid	pecorade: Haskell has retaken its spot as my favorite language, previously taken by Standard ML. :-)
+2013-11-05 09:11:04	katyusha	My name is a reference to the song.  I'm actually male lol
+2013-11-05 09:11:06	>	bubchi89 (~bubchi89@c-24-18-84-185.hsd1.wa.comcast.net) has joined ##programming
+2013-11-05 09:11:11	inf-groupoid	Mainly because of the pipes library, which is extremely amazing.
+2013-11-05 09:11:11	rindolf	katyusha: ah.
+2013-11-05 09:11:16	rindolf	katyusha: are you Russian?
+2013-11-05 09:11:35	katyusha	No, but my name is a joke because of my left wing views
+2013-11-05 09:11:37	pecorade	also inf-groupoid for exercise i proved Dijkstra Algorithm complexity.
+2013-11-05 09:11:56	Denommus	inf-groupoid: Haskell still isn't my favorite language, but it gets really near. Probably the only non-Lisp that I still feel really good programming in
+2013-11-05 09:12:01	rindolf	katyusha: ah.
+2013-11-05 09:12:10	katyusha	:p
+2013-11-05 09:12:18	inf-groupoid	pecorade: :-O
+2013-11-05 09:12:21	Denommus	s/really near/really close/
+2013-11-05 09:12:22	inf-groupoid	Denommus: :-O
+2013-11-05 09:12:47	Denommus	if only there was a Lispy Haskell...
+2013-11-05 09:12:47	pecorade	inf-groupoid: yep. Have to study for my Algorithms & Data Structures exam.
+2013-11-05 09:13:00	inf-groupoid	Haskell is just the least annoying of the annoying languages.
+2013-11-05 09:13:05	katyusha	also sorry for all the noobish questions but what are things such as %f %d called?  I was going to research more into those but I forgot what they're called
+2013-11-05 09:13:10	inf-groupoid	pecorade: :-O
+2013-11-05 09:13:14	Denommus	although I don't know how to make sane auto-currying with prefix operators
+2013-11-05 09:13:16	pecorade	And i come back home late from university due to lessons schedule. :(
+2013-11-05 09:13:19	<	Macuser (~textual@unaffiliated/macuser) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2013-11-05 09:13:20	rindolf	katyusha: man printf
+2013-11-05 09:13:23	rindolf	katyusha: format conversions.
+2013-11-05 09:13:29	katyusha	thanks rindolf
+2013-11-05 09:13:34	rindolf	katyusha: you're welcome .
+2013-11-05 09:13:34	pecorade	Like studying this stuff at night it's like being a cocaine addict.
+2013-11-05 09:13:37	inf-groupoid	Denommus: (3 -) = (-) 3
+2013-11-05 09:13:40	rindolf	katyusha: BTW, are you starting with C?
+2013-11-05 09:13:45	inf-groupoid	Denommus: (- 3) = \x -> x - 3
+2013-11-05 09:13:58	inf-groupoid	Denommus: Dang, sorry, prefix.
+2013-11-05 09:14:01	katyusha	I have some experience with programming but I'm starting with C
+2013-11-05 09:14:15	katyusha	minimal experience though, I mostly understand things like bash and cli
+2013-11-05 09:14:28	inf-groupoid	pecorade: Why? :-O
+2013-11-05 09:14:54	pecorade	inf-groupoid: because i like that stuff, but i'm exausted from moring lessons :P
+2013-11-05 09:14:59	Denommus	inf-groupoid: the problem about making #'+ a function that accepts only two parameters is how readable that would be with prefix operations. (+ (+ 3 2) 5) is a lot uglier than (+ 3 2 5)
+2013-11-05 09:15:00	pecorade	*morning
+2013-11-05 09:15:04	Denommus	inf-groupoid: and it only gets worse
+2013-11-05 09:15:19	PearFish	katyusha, if you don't mind questions, might I ask why you're trying to learn C by perhaps its most subtly dangerous topic?
+2013-11-05 09:15:40	pecorade	by the way inf-groupoid Haskell helped me a lot for theorem proving :P
+2013-11-05 09:15:48	Denommus	maybe I could follow readable's example and create a reader macro for infix operations, so I could avoid variadic functions
+2013-11-05 09:15:51	inf-groupoid	pecorade: :-O
+2013-11-05 09:16:15	katyusha	Since I'm interested in making cli applications as opposed to graphical I decided to learn C
+2013-11-05 09:16:23	inf-groupoid	katyusha: lolwat
+2013-11-05 09:16:37	Denommus	like, {3+5+2} translating to (+ (+ 3 5) 2)
+2013-11-05 09:16:38	pecorade	katyusha: real men use cli.
+2013-11-05 09:17:06	Denommus	katyusha: you can create cli applications in most languages. Even in Javascript, using nodejs
+2013-11-05 09:17:29	katyusha	uhh.. I don
+2013-11-05 09:17:33	katyusha	I don't understand the problem here lol
+2013-11-05 09:17:34	inf-groupoid	Denommus: But katyusha wants the full segfault experience!
+2013-11-05 09:17:42	katyusha	dangerous topic?  How is this dangerous
+2013-11-05 09:17:58	>	Macuser (~textual@unaffiliated/macuser) has joined ##programming
+2013-11-05 09:17:59	PearFish	katyusha, that's a good reason. GMP is just a complicated library to use, though :)
+2013-11-05 09:18:15	Denommus	katyusha: C is a dangerous language
+2013-11-05 09:18:24	inf-groupoid	Most importantly, using GMP directly is ugleeeeeeeee.
+2013-11-05 09:19:03	Denommus	there are lots of languages with big number support out of the box
+2013-11-05 09:19:07	>	Lean_ (~Leandro@181.167.62.131) has joined ##programming
+2013-11-05 09:19:20	katyusha	Denommus most applications on GNU/Linux are programmed in C though.. I don't understand the problem lol
+2013-11-05 09:19:22	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 09:19:23	PearFish	Like Python
+2013-11-05 09:19:29	amigojapan	pecorade: I am recovering from a cold
+2013-11-05 09:19:51	<	spobat (~spobat@unaffiliated/spobat) has quit (Read error: Connection reset by peer)
+2013-11-05 09:20:03	Denommus	katyusha: they are programmed in C only because C was the most popular language back in the time GNU started being created
+2013-11-05 09:20:03	inf-groupoid	katyusha: Python is a much better language than C for most application development. :-)
+2013-11-05 09:20:13	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 09:20:32	pecorade	amigojapan: oh, i see.
+2013-11-05 09:20:34	inf-groupoid	If there are any bits you want to microoptimize, then you can write those bits in C.
+2013-11-05 09:20:34	Denommus	katyusha: if RMS had more resources, Lisp would be a lot more important
+2013-11-05 09:20:52	PearFish	Denommus, and because C/C++ are still basically the only languages portable enough that compile to native code.
+2013-11-05 09:21:00	katyusha	This channel is weird.. not in an offensive way but every other place recommends me C yet when I come here I get told to try other languages
+2013-11-05 09:21:11	katyusha	I don't get it lol
+2013-11-05 09:21:27	PearFish	katyusha, this channel tends to be annoyingly "rah rah functional programming"
+2013-11-05 09:21:31	amigojapan	katyusha: it is always good to knwo many languages
+2013-11-05 09:21:34	Denommus	PearFish: nope, there are languages that can be compiled to C, and so be portable, like Common Lisp (using the ECL implementation)
+2013-11-05 09:22:00	moop	katyusha: ignore them, c is a pretty boss language to start with
+2013-11-05 09:22:02	Denommus	PearFish: there are also languages with really portables runtime environments, like Mono's CLR
+2013-11-05 09:22:03	PearFish	Denommus, which supports my case ;)
+2013-11-05 09:22:14	PearFish	Mono is definitely not as portable as C.
+2013-11-05 09:22:20	amigojapan	katyusha: there are some tasks that C cannot accomplish, like browser side scripting, for that use JS
+2013-11-05 09:22:27	pecorade	inf-groupoid: http://twitpic.com/9geygm "Mankows XP"
+2013-11-05 09:22:30	Denommus	PearFish: for command line tools? Hell it is
+2013-11-05 09:22:33	inf-groupoid	pecorade: Let's see!
+2013-11-05 09:22:45	PearFish	Denommus, not for that. For why C is the default.
+2013-11-05 09:22:52	inf-groupoid	pecorade: :-O
+2013-11-05 09:23:07	PearFish	Mono 1) didn't exist and 2) isn't portable across nearly the same range of systems.
+2013-11-05 09:23:09	>	degantyll (~randres@189.251.198.4) has joined ##programming
+2013-11-05 09:23:19	inf-groupoid	pecorade: Is that a character from a specific show?
+2013-11-05 09:23:32	Denommus	katyusha: it's not that C is a bad language, it's just that it is a niche language. People often think that C is somehow the most powerful language around, but it just fits its niche really well
+2013-11-05 09:23:48	Denommus	katyusha: but it is a difficult language to work with
+2013-11-05 09:24:37	inf-groupoid	PearFish: Not to overly defend Mono, but Mono is portable enough for most programmers.
+2013-11-05 09:24:42	amigojapan	Denommus: I agree that using highly abstracted languages is often easier to acomplish more abstract tasks, like game programming in unity
+2013-11-05 09:24:49	katyusha	Compared to other languages isn't it faster though?  Most others don't seem to support compiling to a binary
+2013-11-05 09:24:53	Denommus	PearFish: I'm talking about nowadays. But then, if you want to keep talking about GNU, it was idealized as a Lisp Machine OS, and... well, Unix got a lot more popular
+2013-11-05 09:25:16	pecorade	inf-groupoid: a friend gave me that link. I think it's from some anime.
+2013-11-05 09:25:24	inf-groupoid	katyusha: Lots of languages compile to native binaries: Rust, Haskell, OCaml, Standard ML...
+2013-11-05 09:25:35	inf-groupoid	pecorade: Ah!
+2013-11-05 09:25:38	PearFish	Denommus, well, stallman is still voting for hurd, so I'm not terribly concerned about what he originally envisioned.
+2013-11-05 09:25:39	amigojapan	katyusha: you are talking of scripting languages, many languages compile to binary
+2013-11-05 09:25:41	Denommus	katyusha: Common Lisp, Scheme...
+2013-11-05 09:25:48	Denommus	PearFish: Hurd is awesome
+2013-11-05 09:26:02	PearFish	Denommus, awesome and 20 years late.
+2013-11-05 09:26:09	rindolf	Denommus: Hurd is awesome? WTF?
+2013-11-05 09:26:14	rindolf	Denommus: Hurd is not functional.
+2013-11-05 09:26:21	PearFish	it runs.
+2013-11-05 09:26:22	rindolf	And it's under-developed.
+2013-11-05 09:26:23	PearFish	Mostly
+2013-11-05 09:26:35	Denommus	PearFish: there are still features in Hurd that you won't find in modern OSs, sadly. Unix is a bitch, it hindered OS research for years
+2013-11-05 09:26:35	inf-groupoid	lol, mostly
+2013-11-05 09:26:40	rindolf	Things crash a lot on it.
+2013-11-05 09:26:55	Denommus	I'm talking about its concept, I'm aware that Hurd still needs a lot of resources to be usable
+2013-11-05 09:27:02	katyusha	I've asked this question before a while ago but I forget the answer
+2013-11-05 09:27:06	katyusha	Why does it seem most game devs use C++ as opposed to C
+2013-11-05 09:27:20	PearFish	katyusha, C makes object orientation very painful.
+2013-11-05 09:27:26	rindolf	katyusha: because games need a lot of objects and classes.
+2013-11-05 09:27:28	inf-groupoid	katyusha: Because it offers a balance between predictable performance and resource management and reasonably high-level abstractions.
+2013-11-05 09:27:29	Denommus	katyusha: anyway, yes, C is one of the languages with the fastest implementations around. I think only Fortran surpasses C. But, for most use cases, you don't NEED all this speed
+2013-11-05 09:27:47	PearFish	C++ is a lot more convenient while allowing you to remove almost all the abstractions you don't want.
+2013-11-05 09:27:53	inf-groupoid	katyusha: C gives you predictable performance and resource management as well, but it is severely lacking in the abstraction department.
+2013-11-05 09:28:35	inf-groupoid	Denommus: Fortran surpasses C, but only at the cost of being heavily biased towards a specific niche.
+2013-11-05 09:28:36	<	Macuser (~textual@unaffiliated/macuser) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2013-11-05 09:29:01	Denommus	inf-groupoid: C is also heavily biased towards its own niche, otherwise it would have more general abstractions
+2013-11-05 09:29:03	PearFish	In general purpose code, C has actually surpassed fortran simply due to having better compilers.
+2013-11-05 09:29:03	inf-groupoid	Denommus: Stuff like assuming no aliasing is perfect for numerical computing, and awful for everything else.
+2013-11-05 09:29:15	<	bcvery1 (~ben@62.232.46.196) has quit (Quit: Leaving)
+2013-11-05 09:29:29	inf-groupoid	Denommus: Sure, C is still a niche language, but its niche is considerably larger than Fortran's.
+2013-11-05 09:29:45	<	forthelulz (~gunslinge@46.217.80.245) has quit (Ping timeout: 268 seconds)
+2013-11-05 09:30:01	Denommus	inf-groupoid: we agree on that. But my point is just that having C performance is less important than most beginners think
+2013-11-05 09:30:26	PearFish	Hopefully we can all agree on that :)
+2013-11-05 09:30:59	diminoten	some dude at my work just asked me if I knew what 'the site' was
+2013-11-05 09:31:35	>	ph88_ (5597cc14@gateway/web/freenode/ip.85.151.204.20) has joined ##programming
+2013-11-05 09:32:31	<	XMPPwocky|roamin (cfa3a525@gateway/web/freenode/ip.207.163.165.37) has quit (Quit: Page closed)
+2013-11-05 09:34:41	inf-groupoid	Denommus: Sure, raw performance as a design consideration is often overrated by newbies. But I think the case for deterministic resource management is not just a matter of performance. It is also a matter of elegance: garbage collection is only nice when you truly do not need to care how it works, but when you start having to do stuff like manually tuning GC parameters, things quickly become ugly.
+2013-11-05 09:35:43	⇄	tac is now known as lunch-tac-lunch
+2013-11-05 09:35:47	Denommus	inf-groupoid: well, I think a newbie that only wants to make command line tools doesn't need to worry about manual resource management
+2013-11-05 09:35:49	vendu	inf-groupoid, real men don't need GC :)
+2013-11-05 09:36:11	vendu	re denommus :)
+2013-11-05 09:36:15	PearFish	inf-groupoid, to be fair there are still better ways for deterministic memory management than C. Rust comes to mind.
+2013-11-05 09:36:23	inf-groupoid	PearFish: Yeah. Indeed.
+2013-11-05 09:36:30	Belxjander	vendu: real men can make the GC part of the standard operation so it doesn't behave stupidly ;)
+2013-11-05 09:36:43	vendu	belxjander, =)
+2013-11-05 09:36:50	inf-groupoid	Rust is precisely what comes to my mind when I think "deterministic resource management done right".
+2013-11-05 09:36:52	diminoten	I think it's kind of unfair to compare C to rust
+2013-11-05 09:37:03	diminoten	because rust was built specifically to replace C, wasn't it?
+2013-11-05 09:37:05	katyusha	So.. does this mean everybody over at cat-v.org and suckless are insane
+2013-11-05 09:37:13	Denommus	diminoten: C++, AFAIK
+2013-11-05 09:37:16	>	quantum_bit (~FDH@unaffiliated/fdh) has joined ##programming
+2013-11-05 09:37:17	PearFish	C is kind of like a car kit, to my mind. You can use the defaults, but you can also change absolutely anything and everything you wish in it.
+2013-11-05 09:37:18	diminoten	still tho
+2013-11-05 09:37:36	>	primitive (~primitive@50-193-100-138-static.hfc.comcastbusiness.net) has joined ##programming
+2013-11-05 09:37:42	PearFish	Actually, not quite true, but true enough.
+2013-11-05 09:37:50	inf-groupoid	diminoten: It is meant to be more of a C++ killer. Rust's several pointer types are not going to convince any C programmers to switch languages.
+2013-11-05 09:37:55	<	spobat (~spobat@unaffiliated/spobat) has quit (Remote host closed the connection)
+2013-11-05 09:37:59	<	volk_ (~nickk@74.113.162.218) has quit (Quit: volk_)
+2013-11-05 09:38:17	Denommus	PearFish: the problem with C is its overly specific abstractions. They're great for system development, but you have to reinvent the wheel more often than not when doing anything else
+2013-11-05 09:38:28	<	Lady_Aleena (~Lady-Alee@unaffiliated/lady-aleena) has left ##programming ("I'll be back when I feel constructive or need to vent. ;)")
+2013-11-05 09:38:30	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 09:39:04	PearFish	Denommus, I personally have a library of just "stuff" I can pull into whatever project I'm working on. A lot of C programmers do the same thing.
+2013-11-05 09:39:06	inf-groupoid	diminoten: It is familiar enough for C++ programmers that they might consider it, but for pretty much everyone else, it is completely alien. And the learning curve is rather steep, especially for hacker types.
+2013-11-05 09:39:12	>	zhost (~quassel@host-178.215.199.137-internet.zabrze.debacom.pl) has joined ##programming
+2013-11-05 09:39:29	inf-groupoid	PearFish: Your own personal standard library! :-)
+2013-11-05 09:39:38	Denommus	PearFish: yes, but then it's just stuff not really abstracted. For instance, doing closures in C is a pain
+2013-11-05 09:39:43	PearFish	yeah
+2013-11-05 09:40:21	inf-groupoid	Denommus: You simply don't do them. If you think in terms of polymorphic higher-order functions, well, pretend you are the compiler and manually monomorphize and inline them.
+2013-11-05 09:40:28	diminoten	ice skating on asphalt is a pain too
+2013-11-05 09:40:42	bstrie	inf-groupoid: I disagree that the learning curve is super steep for hacker types. more like the learning curve of systems programming in general is a vertical cliff for anyone raised on java and python
+2013-11-05 09:40:51	Denommus	PearFish: for a language that priviledges creating new and modular abstractions, Lisp is a better example. You don't have a feature, you create it
+2013-11-05 09:41:37	PearFish	Denommus, I'm not trying to argue the superiority of lisp's approach for stuff, but it's also much harder to optimize lisp.
+2013-11-05 09:41:40	>	bite (~bite@pat-199-212-66-228.airyork.yorku.ca) has joined ##programming
+2013-11-05 09:41:45	inf-groupoid	bstrie: Conversely, the learning curve of having to remember to wrap everything in a try...finally block was immensely steep for me. :-)
+2013-11-05 09:41:48	>	Rodjustice (~Rodjustic@cpe-174-101-90-89.columbus.res.rr.com) has joined ##programming
+2013-11-05 09:41:55	PearFish	Declarative styles tend to have that issue.
+2013-11-05 09:42:06	Denommus	inf-groupoid: exactly, that was my point. C can do anything in the sense that you can write as a compiler would write your code, not that you can really create nice abstractions
+2013-11-05 09:42:20	Denommus	PearFish: yes, because that's the niche of C :)
+2013-11-05 09:42:40	inf-groupoid	Denommus: mendokusai
+2013-11-05 09:42:50	<	spobat (~spobat@unaffiliated/spobat) has quit (Ping timeout: 264 seconds)
+2013-11-05 09:43:16	Denommus	inf-groupoid: I have never heard that expression. Glad Google exists
+2013-11-05 09:43:27	inf-groupoid	Denommus: annoying/PITA
+2013-11-05 09:43:41	bstrie	inf-groupoid: fwiw, we find that lots of people who are interested in rust *do* have some measure of C background, because very often people who know C also bother to learn C++
+2013-11-05 09:43:43	Denommus	inf-groupoid: yes, I checked Google
+2013-11-05 09:44:47	>	Ge (~Ge@unaffiliated/ge) has joined ##programming
+2013-11-05 09:44:47	bstrie	there's also a contingent of dynamic-language-loving lightweights in the rust community, myself included, who really just want to learn any systems language at all, and rust is the least scary :P
+2013-11-05 09:45:00	inf-groupoid	bstrie: I was thinking more of the kind of people who know C, meet C++, and decide that either 1. they will use it as if it were C, 2. they will not use it at all.
+2013-11-05 09:45:34	>	tneva82 (tneva82@syi-ogw1-1299.syi.inet.fi) has joined ##programming
+2013-11-05 09:45:39	bstrie	that's fair, but I think unless you have *very* specific use cases, i.e. you *only* do embedded programming, nobody chooses to use C exclusively
+2013-11-05 09:45:42	PearFish	Systems languages aren't nearly as scary as they're reputed to be.
+2013-11-05 09:45:48	PearFish	Kind of like bikers
+2013-11-05 09:45:56	doomlord_	i was always a heavy macro user in C; templates in C++ were very welcome
+2013-11-05 09:45:56	PearFish	They're really cuddly cacti
+2013-11-05 09:46:07	bstrie	even if you don't want to use C++, C pairs nicely with nearly any other language
+2013-11-05 09:46:41	bstrie	except for maybe super-functional stuff :)
+2013-11-05 09:47:28	inf-groupoid	Heh, Haskell's C FFI is pretty good. (OTOH, Standard ML does not even have a standardized FFI, and all the implementation-specific FFIs are a real PITA to use.)
+2013-11-05 09:47:29	Denommus	even Haskell has a CFFI
+2013-11-05 09:48:43	<	Znoosey (~kristian@unaffiliated/znoosey) has quit (Ping timeout: 272 seconds)
+2013-11-05 09:48:59	>	Lady_Aleena (~Lady-Alee@c-76-106-30-106.hsd1.md.comcast.net) has joined ##programming
+2013-11-05 09:48:59	<	Lady_Aleena (~Lady-Alee@c-76-106-30-106.hsd1.md.comcast.net) has quit (Changing host)
+2013-11-05 09:48:59	>	Lady_Aleena (~Lady-Alee@unaffiliated/lady-aleena) has joined ##programming
+2013-11-05 09:49:00	diminoten	lol
+2013-11-05 09:49:05	diminoten	"TI ain't talking me off the edge!"
+2013-11-05 09:49:26	Denommus	I think CL doesn't have a standardized FFI, either, but there is a library that makes it somewhat easy. ECL also makes it easier
+2013-11-05 09:50:07	<	Wehk (~Wehk@81.191.254.92) has quit (Quit: Forlater kanalen)
+2013-11-05 09:50:36	<	stepdad (~megatron@unaffiliated/cowabunga) has quit (Ping timeout: 252 seconds)
+2013-11-05 09:51:02	>	stepdad (~megatron@unaffiliated/cowabunga) has joined ##programming
+2013-11-05 09:51:34	Denommus	PearFish: C is easy to learn, but difficult to use. More or less like Javascript
+2013-11-05 09:51:48	<	avtolstoy (~Andrey@79.104.192.20) has quit (Quit: Sleep)
+2013-11-05 09:52:13	<	Beg (~Beg@c-0744e155.012-52-6762673.cust.bredbandsbolaget.se) has quit (Ping timeout: 245 seconds)
+2013-11-05 09:52:31	<	devos50 (~Adium@cable-119-9.zeelandnet.nl) has quit (Quit: Leaving.)
+2013-11-05 09:52:38	inf-groupoid	Denommus: What would the C equivalent of jQuery or Node.js would be? (I mean, not for exactly the same tasks, but for tasks that are common in C.) :-P
+2013-11-05 09:52:58	>	forthelulz (~gunslinge@46.217.80.245) has joined ##programming
+2013-11-05 09:53:21	Denommus	inf-groupoid: node.js is more like a runtime than a library...
+2013-11-05 09:53:28	<	seventwo (~Adium@199.59.107.237) has quit (Quit: Leaving.)
+2013-11-05 09:53:51	>	Mehrzad (~mehrzad@151.239.114.157) has joined ##programming
+2013-11-05 09:54:12	inf-groupoid	Denommus: Yeah. I guess I meant the libraries it comes with by default.
+2013-11-05 09:54:32	Denommus	inf-groupoid: but I understand your doubt. I really don't know, Javascript is used for DOM manipulation, and jQuery makes it easier. C is used for system development. What would make system development easier in C?
+2013-11-05 09:54:48	inf-groupoid	Denommus: Compile-time checked pointer lifetimes!
+2013-11-05 09:55:09	Denommus	inf-groupoid: I don't know any library for that. Do you?
+2013-11-05 09:55:29	inf-groupoid	Denommus: Requires language support, sadly.
+2013-11-05 09:56:04	Denommus	inf-groupoid: unless someone makes a Lisp for system development. I bet a library for that would be possible
+2013-11-05 09:56:20	Denommus	inf-groupoid: ok, I'm getting distracted XD
+2013-11-05 09:56:38	inf-groupoid	Me too!
+2013-11-05 09:57:11	<	Snowfreak (Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has quit
+2013-11-05 09:57:59	>	Cropp (~Cropp@82.68.190.90.dyn.estpak.ee) has joined ##programming
+2013-11-05 09:59:18	<	Lady_Aleena (~Lady-Alee@unaffiliated/lady-aleena) has quit (Read error: Connection timed out)
+2013-11-05 09:59:40	>	Lady_Aleena (~Lady-Alee@unaffiliated/lady-aleena) has joined ##programming
+2013-11-05 10:01:55	>	Znoosey (~kristian@215.199.251.212.customer.cdi.no) has joined ##programming
+2013-11-05 10:15:18	⇄	irc: disconnected from server
+2013-11-05 10:27:03	>	Watabou (~ajh@sjs-mh-wifi-1-1-lc-int.sjsu.edu) has joined ##programming
+2013-11-05 10:27:03	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-05 10:27:03	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-05 10:27:03	⇄	Nicks ##programming: [@Archer [Aura]MaelStrom _W_ acmfan Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina alrt amigojapan amizraa and0 anderson Andrevan angstrom anon antoks Anton_ apathor Aperion Aph3x-WL arathald architekt ari` ario_ Artpicre asmodlol aspire auscompgeek Axord b1101 Baluse Beg belak Belxjander benzap besuto bhldev Bigcheese Billiard BillTheButcher BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 boxmein Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisdotcode cian1500ww cjz claymore clone1018 codebrainz coeus corelax Corey cornjuliox corvolino Cropp cruxeternus ctype_real cuqa Cyb3r-Assassin Cyberpew Cybertinus dan64 DarkGhost darwin dasilvj Defaultti definity degantyll Denommus devos50 dewdrop digdilem diminoten Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dsirrine dslpuck dtkatch DURgod dzeko egghead EldritchVetch elephanter Elfix ender Engen EViLSLuT ewong execute Exio4 Fabianius family-values fantastic001 farn felipe_ FernandoBasso fling forthelulz fortmac Freyr FriskyKat GamesOnAToaster gde33 Ge GeDaMo genius_matrix gertptr ghanhass gimpyds gimpygoo go|dfish gsvolt guampa Guest40184 Guest97484 h0ho HandheldPenguin hashcat hatseflats Hawkerz heavystorm HertzWinIP hexhaxtr1n hid highasdick HoloPed idlecode imp inf-groupoid intothev01d ips|malc Isolol itunessucks ivan` Jackneill jak2000 jan1337z JanC JarJarBingDotCom JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jimmt jkbbwr Jordanlw jorj jrslepak JSharpe JStoker JTF195 Jupelius jyhc_ K3|Chris kahrl kakazza karstensrage kastang katyusha kcm1700 keepguessing Kelet kermit klyed2 koollman Kutagh Lady_Aleena laen lahwran Lean_ Lefeni legov LiamM lietu LiquidOxygen Lloir Lyn M-ou-se m4rcu5 macabre machina madara mahomet malcolmva mangekyo maroloccio MatRoo Matthijs max_weller maxorator milky minty MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mshaw mtf NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ Neuroticar NightKhaos nitrix Noldorin nupogodi nverba o0afk0o obruT oleo oniichaNj oso96_2000 Oxyd Pagan passiveobserver pazuzu pdimitrov PearFish pecorade per2 pfifo ph88 ph88_ phantomcircuit pheas PherricOxide Plastefuchs Plazma plombo Plornt Plummer pr0ggie primitive Programmer_ pulchy Pullphinger Purlox pushp0p Pwnna pythonsnake quantum_bit QuantumParadox Quetuo R0b0t1 r0sh r3negade ra4king Raccoon raineys raunicolae Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram rindolf rivarun Rix rizzuh Rodjustice ronnyTheWhale Roonin Rounin RRR2 Rubennn RustyShackleford rwg RyanGuill sam113101 Sauvin sayo- Scala SecretFire SeySayux ShadeTornado Shammah Shockk ShortWave SirCmpwn sirdancealot3 sireesht SJr SlimTim10 slobber Snake2k snql Solid-State SomeDamnBody Sornaensis spacepixels spjt SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner stepdad Stryyker sujeet SuperNoeMan Svetlana syntaxe tac TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw tommycannady TonnyNerd toothe ToothlessGear Tribal Twey Typherix ujan ulkesh_work unic0rn unreal Vbitz vechnyj vendu vhuboe victorbjelkholm vlt W0rmDr1nk wand_ wang Watabou Watcher7 winny Winslow woggle worfox ws2k3 wting xaxisx Xgc Xionaba Xiti xlinkz0 yalue yano yazdmich YJLTGatWORK ymas yorick z1m4 ZadYree zampano zarul ZeDestructor Zetro zhost zkxs Znoosey Zuu zymurgy |DM|]
+2013-11-05 10:27:03	⇄	Channel ##programming: 418 nicks (1 ops, 0 voices, 417 normals)
+2013-11-05 10:27:03	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-05 10:27:06	<	benzap (~user@S010600222d6b9c98.tb.shawcable.net) has quit (Ping timeout: 268 seconds)
+2013-11-05 10:27:11	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-05 10:27:11	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-05 10:27:45	<	W0rmDr1nk (~wormdrink@unaffiliated/wormdrink) has quit (Remote host closed the connection)
+2013-11-05 10:28:15	>	W0rmDr1nk (~wormdrink@unaffiliated/wormdrink) has joined ##programming
+2013-11-05 10:31:42	<	mtf (~mtf@host86-145-248-91.range86-145.btcentralplus.com) has quit (Quit: Leaving)
+2013-11-05 10:31:44	jrslepak	(finalization does the padding)
+2013-11-05 10:32:10	belak	Got it
+2013-11-05 10:32:28	belak	That's a bit easier than using the raw blowfish functions
+2013-11-05 10:32:39	>	Stefan26 (Stefan26@h111n3-s-oe-a15.ias.bredband.telia.com) has joined ##programming
+2013-11-05 10:33:41	>	wisey (~Wisey@host31-52-203-183.range31-52.btcentralplus.com) has joined ##programming
+2013-11-05 10:34:39	<	family-values (bede8f2c@gateway/web/freenode/ip.190.222.143.44) has quit (Quit: The Idiot monad is similar to the Identity monad. The Kleisli arrow type "a -> Idiot b" is naturally isomorphic to the regular function type "a -> b". The only difference is that, well, we use the type system to explicitly acknowledge that you are an idi)
+2013-11-05 10:35:15	belak	jrslepak: what is the unsigned char *iv for?
+2013-11-05 10:35:26	tommycannady	:)
+2013-11-05 10:35:29	Denommus	I'm yet to understand why people hate parenthesis so much
+2013-11-05 10:36:33	Denommus	parentheses
+2013-11-05 10:36:41	Denommus	damn, I always use i instead of e
+2013-11-05 10:36:43	jrslepak	belak: initialization vector -- are you using CBC or something?
+2013-11-05 10:36:56	>	chris_ (~chris@c-174-54-115-236.hsd1.pa.comcast.net) has joined ##programming
+2013-11-05 10:37:04	belak	EVP_DecryptInit(&ctx, EVP_bf_cbc(), key, iv); is what I've found...
+2013-11-05 10:37:07	jrslepak	(I hope you're not using ECB :-P)
+2013-11-05 10:37:21	⇄	chris_ is now known as anunnaki
+2013-11-05 10:37:26	>	falcou (~falcou@gov91-4-83-152-215-118.fbx.proxad.net) has joined ##programming
+2013-11-05 10:37:29	belak	I know what all the params are apart from iv
+2013-11-05 10:37:39	jrslepak	some cipher modes reuse the result of encrypting one block to encrypt the next block
+2013-11-05 10:37:40	>	Mehrzad (~mehrzad@151.239.114.47) has joined ##programming
+2013-11-05 10:38:06	jrslepak	but when you encrypt the first block, you don't have any previous blocks' ciphertext to use, so you use an initialization vector instead
+2013-11-05 10:38:27	belak	Ah, so I should just always use the same vector
+2013-11-05 10:39:08	jrslepak	or at least make sure you decrypt a message with the same IV you used to encrypt it
+2013-11-05 10:39:18	jrslepak	I'm not sure what proper practice is for selecting IVs
+2013-11-05 10:40:28	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 10:42:25	jrslepak	(NUXI might know though)
+2013-11-05 10:42:31	<	staafl (~staafl@95-42-27-15.btc-net.bg) has quit (Ping timeout: 245 seconds)
+2013-11-05 10:42:37	belak	Oh god.
+2013-11-05 10:42:42	belak	NUXI...
+2013-11-05 10:43:29	belak	Yeah, I'll ask him
+2013-11-05 10:43:32	<	katyusha (~quassel@unaffiliated/katyusha) has quit (Remote host closed the connection)
+2013-11-05 10:44:00	>	galaris (~galaris@212.96.58.18) has joined ##programming
+2013-11-05 10:44:26	>	sluggr (sluggr@bissa.eu) has joined ##programming
+2013-11-05 10:44:39	>	paracyst (~floor@unaffiliated/paracyst) has joined ##programming
+2013-11-05 10:44:46	>	cysm (~cysm@unaffiliated/paracyst) has joined ##programming
+2013-11-05 10:45:08	definity	What are some good uses for tmux?
+2013-11-05 10:45:52	timemage	definity, for that matter what are the evil uses. =)
+2013-11-05 10:46:17	definity	many
+2013-11-05 10:46:18	inf-groupoid	definity: Being able to restore your working session from a different machine.
+2013-11-05 10:46:49	timemage	definity, broadly, it lets you detach from interactive programs.  it let you share the connection with a different terminal.  lets you split the screen.
+2013-11-05 10:46:53	<	amigojapan (~chatzilla@p4186-ipngn201souka.saitama.ocn.ne.jp) has quit (Quit: ChatZilla 0.9.90.1-rdmsoft [XULRunner 22.0/20130619132145])
+2013-11-05 10:47:00	>	justjealouse (~temp3@192.12.88.228) has joined ##programming
+2013-11-05 10:47:33	<	apathor (~apathor@c-50-138-132-212.hsd1.ma.comcast.net) has quit (Quit: :|)
+2013-11-05 10:47:36	definity	thanks
+2013-11-05 10:49:44	inf-groupoid	tmux is a step forward in terms of productivity and convenience with respect to outdated UIs such as GNOME or KDE.
+2013-11-05 10:50:06	<	cuqa (cuqa@btcserv.net) has quit (Changing host)
+2013-11-05 10:50:06	>	cuqa (cuqa@unaffiliated/cuqa) has joined ##programming
+2013-11-05 10:51:19	<	vendu (~vendu@85-76-52-105-nat.elisa-mobile.fi) has quit (Read error: Connection reset by peer)
+2013-11-05 10:51:34	GamesOnAToaster	Make me a sandwhich.
+2013-11-05 10:52:10	jrslepak	no
+2013-11-05 10:52:26	<	mangekyo (~tengentop@c211-30-60-1.frank3.vic.optusnet.com.au) has quit
+2013-11-05 10:52:28	oniichaNj	Sudo make me a sandwhich.
+2013-11-05 10:52:30	>	kmels (~kmels@168.234.70.78) has joined ##programming
+2013-11-05 10:52:33	oniichaNj	lelelele so nerrrd humor XD
+2013-11-05 10:52:37	oniichaNj	Sigh.
+2013-11-05 10:52:39	jrslepak	oniichaNj is not in the sudoers file. This incident will be reported.
+2013-11-05 10:52:45	<	hashcat (~hashcat@39.14.62.33) has quit (Ping timeout: 252 seconds)
+2013-11-05 10:52:45	belak	oniichaNj: bash: command not found Sudo
+2013-11-05 10:52:53	oniichaNj	I use zsh
+2013-11-05 10:53:01	belak	So do I, but bash is more common
+2013-11-05 10:53:02	oniichaNj	zsh: correct 'Sudo' to 'sudo' [nyae]?
+2013-11-05 10:53:23	inf-groupoid	s/nyae/nyaaaaaa/
+2013-11-05 10:53:37	>	lepel101 (~lepel101@ip110-161-58-81.adsl.versatel.nl) has joined ##programming
+2013-11-05 10:54:13	oniichaNj	kitty-shell
+2013-11-05 10:54:14	oniichaNj	:>
+2013-11-05 10:56:28	>	maxmahem (~maxmahem@pdpc/supporter/active/maxtmahem) has joined ##programming
+2013-11-05 10:57:19	maxmahem	Hey some structural questions.
+2013-11-05 10:57:28	<	plombo (~plombo@ip-129-15-159-236.fencfwsm.ou.edu) has quit (Ping timeout: 264 seconds)
+2013-11-05 10:57:28	>	Freyr_ (~Freyr@ip72-199-165-160.sd.sd.cox.net) has joined ##programming
+2013-11-05 10:57:45	maxmahem	So I'm creating a program that parses a file (x937 file if you care) and extracts usefull information from it.
+2013-11-05 10:58:23	maxmahem	This file contains multiple record types, so my plan was to have a genric record type class and inherit from it for all the various record types.
+2013-11-05 10:58:39	jrslepak	(bash or zsh, the problem is easily "solved" with a case-insensitive filesystem :-P)
+2013-11-05 10:58:59	<	Freyr (~Freyr@ip72-199-165-160.sd.sd.cox.net) has quit (Read error: Connection reset by peer)
+2013-11-05 11:00:06	maxmahem	Within a record type, a record can have multiple different kinds of data like. Should I just make these member variables of the inherited record class, or would it make or more sense to put it in like a array in the parent type.
+2013-11-05 11:00:42	diminoten	sounds like overengineering
+2013-11-05 11:01:18	maxmahem	since every record does have multipe 'fields' within it. But exactly what the fields represent differs.
+2013-11-05 11:01:22	maxmahem	probably :)
+2013-11-05 11:02:03	jrslepak	how many kinds of data can a record be?
+2013-11-05 11:02:06	Plornt	Aww yeahhhh that moment when something you coded finally works as its supposed to :)
+2013-11-05 11:02:11	<	galaris (~galaris@212.96.58.18) has quit (Remote host closed the connection)
+2013-11-05 11:02:27	Plornt	Tis the first time I coded something for 5 days without testing it
+2013-11-05 11:02:34	Plornt	was amazed that it actually worked >.>
+2013-11-05 11:03:19	jrslepak	nicely done
+2013-11-05 11:03:59	>	nvteighen (~nvteighen@89.131.112.116) has joined ##programming
+2013-11-05 11:04:03	Plornt	Its an absolute mess of code though >.>
+2013-11-05 11:04:13	Plornt	And has no comments!
+2013-11-05 11:04:28	jrslepak	well... have fun with it
+2013-11-05 11:04:36	Plornt	I shall
+2013-11-05 11:04:50	drostie	Plornt: happens to me more often with Haskell but I don't do much with Haskell.
+2013-11-05 11:05:14	<	rindolf (~Shlomi@bzq-79-183-224-143.red.bezeqint.net) has quit (Quit: Leaving)
+2013-11-05 11:05:33	Plornt	Lol, it almost never happens for me. I end up recoding entire sections because some function didnt work as I expected it to etc
+2013-11-05 11:07:27	maxmahem	jrslepak: record types? 25 or so. Field's within the record type? Hundreads, but some repetition.
+2013-11-05 11:07:28	>	guideX (~guidex@office-mail.ciestudios.com) has joined ##programming
+2013-11-05 11:07:39	guideX	 in robots.txt, will something like this work? /*/*/my.html
+2013-11-05 11:07:42	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Remote host closed the connection)
+2013-11-05 11:08:10	<	victorbjelkholm (~victorbje@110.Red-81-38-218.dynamicIP.rima-tde.net) has quit (Quit: victorbjelkholm)
+2013-11-05 11:08:29	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 11:09:40	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Max SendQ exceeded)
+2013-11-05 11:09:59	>	jhgaylor (~jhgaylor@d-24-233-219-163.cpe.metrocast.net) has joined ##programming
+2013-11-05 11:10:10	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 11:10:28	diminoten	guideX: I think so
+2013-11-05 11:11:09	<	guampa (~guampa@gateway/tor-sasl/guampa) has quit (Ping timeout: 240 seconds)
+2013-11-05 11:11:10	guideX	cool
+2013-11-05 11:11:21	diminoten	can always test it with a validator
+2013-11-05 11:11:31	guideX	oh true, i'll try
+2013-11-05 11:11:52	<	kmels (~kmels@168.234.70.78) has quit (Ping timeout: 240 seconds)
+2013-11-05 11:12:46	>	jorick (~kciroj@unaffiliated/jorick) has joined ##programming
+2013-11-05 11:14:40	<	Noldorin (~noldorin@unaffiliated/noldorin) has quit (Write error: Broken pipe)
+2013-11-05 11:16:10	>	Macuser (~textual@unaffiliated/macuser) has joined ##programming
+2013-11-05 11:16:33	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Quit: Leaving)
+2013-11-05 11:17:05	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 11:17:42	>	guampa (~guampa@gateway/tor-sasl/guampa) has joined ##programming
+2013-11-05 11:17:50	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Max SendQ exceeded)
+2013-11-05 11:18:24	nvteighen	hi
+2013-11-05 11:18:44	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 11:18:54	<	forthelulz (~gunslinge@46.217.80.245) has quit (Ping timeout: 268 seconds)
+2013-11-05 11:19:24	>	RedXVII (~Red@87-231-97-107.rev.numericable.fr) has joined ##programming
+2013-11-05 11:19:27	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Max SendQ exceeded)
+2013-11-05 11:19:55	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 11:20:19	<	ulkesh_work (~ulkesh_wo@65.83.231.100) has quit (Quit: Buh-bye.)
+2013-11-05 11:20:26	gertptr	hello
+2013-11-05 11:20:46	<	Shammah (~Wilson@ip565b8f0f.direct-adsl.nl) has quit (Read error: Connection reset by peer)
+2013-11-05 11:20:59	>	Guest15899 (vinse@69-196-155-106.dsl.teksavvy.com) has joined ##programming
+2013-11-05 11:21:37	⇄	Guest15899 is now known as MacDaddy
+2013-11-05 11:21:39	MacDaddy	Hi
+2013-11-05 11:21:48	⇄	MacDaddy is now known as vinse
+2013-11-05 11:22:04	<	raunicolae (~raunicola@95.76.171.140) has quit (Quit: KVIrc 4.0.4 Insomnia http://www.kvirc.net/)
+2013-11-05 11:22:08	>	Snowfreak (Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-05 11:22:28	>	Shammah (~Shammah@ip565b8f0f.direct-adsl.nl) has joined ##programming
+2013-11-05 11:22:58	>	Tuxmascot (~Thunderbi@cpe-174-098-023-078.triad.res.rr.com) has joined ##programming
+2013-11-05 11:25:31	>	Truebattleaxe (~impaleZNH@76.14.26.252) has joined ##programming
+2013-11-05 11:26:23	>	galaris (~galaris@catv-80-99-58-135.catv.broadband.hu) has joined ##programming
+2013-11-05 11:26:47	<	Macuser (~textual@unaffiliated/macuser) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2013-11-05 11:27:34	<	Snowfreak (Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has quit
+2013-11-05 11:27:44	>	Snowfreak (Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-05 11:28:58	>	theblackbox (~theblackb@unaffiliated/theblackbox) has joined ##programming
+2013-11-05 11:29:20	<	theblackbox (~theblackb@unaffiliated/theblackbox) has quit (Client Quit)
+2013-11-05 11:30:08	<	stardiviner (~stardivin@112.10.116.52) has quit (Ping timeout: 245 seconds)
+2013-11-05 11:31:44	<	galaris (~galaris@catv-80-99-58-135.catv.broadband.hu) has quit (Read error: No route to host)
+2013-11-05 11:31:51	>	krixxkraxx (~galaris@catv-80-99-58-135.catv.broadband.hu) has joined ##programming
+2013-11-05 11:32:15	>	javaguy29840 (29852d21@gateway/web/freenode/ip.41.133.45.33) has joined ##programming
+2013-11-05 11:32:27	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Remote host closed the connection)
+2013-11-05 11:32:29	<	minty (~minty@pool-173-49-245-231.phlapa.fios.verizon.net) has quit (Quit: Leaving)
+2013-11-05 11:32:53	>	w0rm_x (~w0rm@client-86-31-185-43.oxfd.adsl.virginm.net) has joined ##programming
+2013-11-05 11:33:12	javaguy29840	Hi guys - Can I do Java queries here?
+2013-11-05 11:33:37	<	keepguessing (48346013@gateway/web/freenode/ip.72.52.96.19) has quit (Quit: Page closed)
+2013-11-05 11:33:53	>	forthelulz (~gunslinge@46.217.80.245) has joined ##programming
+2013-11-05 11:34:10	<	Truebattleaxe (~impaleZNH@76.14.26.252) has left ##programming ("Silentium est aureum")
+2013-11-05 11:34:20	jrslepak	don't ask to ask, just ask
+2013-11-05 11:35:57	vinse	yup java is good
+2013-11-05 11:35:58	<	r0sh (~rohit@unaffiliated/roansh) has quit (Ping timeout: 245 seconds)
+2013-11-05 11:36:16	<	hid (~hid@unaffiliated/hid) has quit (Ping timeout: 245 seconds)
+2013-11-05 11:36:42	_W_	Even Java 8 questions!
+2013-11-05 11:37:16	<	K3|Chris (~ChrisK3@unaffiliated/krill3) has quit (Ping timeout: 245 seconds)
+2013-11-05 11:37:31	PearFish	We don't support Java 9 though
+2013-11-05 11:37:42	javaguy29840	Yeaa!
+2013-11-05 11:38:54	javaguy29840	OK I'm coding in netbeans. I'm currently in a JFrame, binding databases and shit. I had a column in the table called "Image" but then I recreated the table without that column. Now it's still somewhere though, because when I run it, it tells me there is some sort of reference to "Image", which it can't find.
+2013-11-05 11:38:57	javaguy29840	Will send code now
+2013-11-05 11:39:19	javaguy29840	Internal Exception: java.sql.SQLSyntaxErrorException: Column 'IMAGE' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'IMAGE' is not a column in the target table. Error Code: -1
+2013-11-05 11:40:07	_W_	Is this some netbeans-specific tool you are using?
+2013-11-05 11:40:43	<	dom96 (dom96@unaffiliated/dom96) has quit (Quit: Bye.)
+2013-11-05 11:41:17	javaguy29840	I'm really not good in Java lingo, but all I can say is that I'm using the netbeans GUI builder (in a JFrame)
+2013-11-05 11:41:24	_W_	I see
+2013-11-05 11:41:45	_W_	sounds like something specific to netbeans, which I haven't used in half a decade
+2013-11-05 11:41:46	>	blablaa (~z@unaffiliated/blablaa) has joined ##programming
+2013-11-05 11:42:09	_W_	#netbeans might have people that use it, otherwise you can hang around in case someone using it pops up
+2013-11-05 11:42:16	>	dom96 (dom96@unaffiliated/dom96) has joined ##programming
+2013-11-05 11:42:24	>	K3|Chris (~ChrisK3@unaffiliated/krill3) has joined ##programming
+2013-11-05 11:43:17	>	stardiviner (~stardivin@112.10.117.233) has joined ##programming
+2013-11-05 11:43:37	javaguy29840	Thanks man! We use it for school. On a side note, what do you think about our government deciding that Delphi should be used in our IT school syllabus from 2015 onwards, replacing Java?
+2013-11-05 11:44:20	woggle	What country?
+2013-11-05 11:44:30	<	JanC (~janc@lugwv/member/JanC) has quit (Quit: Leaving)
+2013-11-05 11:44:40	>	JanC (~janc@lugwv/member/JanC) has joined ##programming
+2013-11-05 11:44:45	<	xlinkz0 (~xlinkz0@5-12-36-99.residential.rdsnet.ro) has quit (Ping timeout: 246 seconds)
+2013-11-05 11:44:49	javaguy29840	South Africa
+2013-11-05 11:44:54	_W_	I don't know the state of Delphi, but last time I used it it was quite inferior to Java, and Java has improved a lot since then
+2013-11-05 11:45:10	jrslepak	I think that gets a good, hearty "lolwat"
+2013-11-05 11:45:16	<	quantum_bit (~FDH@unaffiliated/fdh) has quit (Quit: .)
+2013-11-05 11:45:24	<	FernandoBasso (~Fernando_@189.7.197.229) has quit (Quit: Leaving.)
+2013-11-05 11:45:25	jrslepak	_W_: how long ago was that?
+2013-11-05 11:45:27	javaguy29840	Haha I agree jrslepak!
+2013-11-05 11:45:50	_W_	jrslepak: 2001 or thereabouts I think!?
+2013-11-05 15:36:32	⇄	irc: disconnected from server
+2013-11-05 15:36:56	>	Watabou (~ajh@sjs-mh-wifi-1-1-lc-int.sjsu.edu) has joined ##programming
+2013-11-05 15:36:56	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-05 15:36:56	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-05 15:36:56	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina alrt amizraa and0 anderson Andrevan angstrom anon antoks Anton_ anunnaki Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek Axord b1101 Baluse belak Belxjander benzap besuto Betal bhldev Bigcheese Billiard BillTheButcher blablaa BlastHardcheese blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww cjz clone1018 codebrainz coeus corelax Corey cornjuliox corvolino cruxeternus crystalmath ctype_real cuqa Cyb3r-Assassin Cyberpew Cybertinus cysm dan64 DarkGhost darwin dasilvj debris` Defaultti definity degantyll Denommus dewdrop digdilem diminoten diphtherial Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel dsirrine dslolz dslpuck dtkatch DURgod dzeko egghead EldritchVetch elephanter Elfix ender Engen entiat_blues ewong execute Exio4 Fabianius fantastic001 farn felipe_ fling forthelulz fortmac_ Freyr_ FriskyKat gde33 Ge genius_matrix gertptr gimpyds gimpygoo go|dfish gsvolt guampa Guest40184 Guest97484 gugah guideX h0ho HandheldPenguin Haswell hatseflats Hawkerz heavystorm highasdick HoloPed imp inf-groupoid ips|malc Isolol itunessucks ivan` jackhammer2022 jak2000 JamesNZ jan1337z JanC JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Joefish Jordanlw jorick jrslepak JSharpe JStoker Jupelius jyhc_ K3|Chris kahrl kakazza Kanada karstensrage kastang katyusha kcj kcm1700 Kelet kermit klyed2 koollman krixxkraxx Lady_Aleena laen lahwran Lefeni legov lepel202 LiamM lietu LiquidOxygen Lloir localh0st Lyn M-ou-se m4rcu5 madara mahomet malcolmva marcidy maroloccio MatRoo max_weller maxmahem maxorator meoblast001 milky MissionCritical mizuti mmattice moguchiy mooky moop mp19uy Mr_Sheesh MrClaw mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nitrix Noldorin nupogodi nverba o0afk0o obruT ogrady oleo oso96_2000 Oxyd Pagan paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo ph88 phantomcircuit pheas PherricOxide Plastefuchs Plazma plombo Plornt Plummer pr0ggie primitive Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox Quetuo_ R0b0t1 r3negade ra4king Raccoon raineys Rav3n rblackwe rdevilla realeyes redblue redeemed redj RedXVII Remram Rix rizzuh Rodjustice Rounin RRR2 Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux ShadeTornado Shockk ShortWave SirCmpwn sirdancealot3 sireesht SJr SlimTim10 slobber sluggr Snake2k Solid-State SomeDamnBody Sornaensis spacepixels spjt spobat_ SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner stepdad Stryyker sujeet SuperNoeMan Svetlana syntaxe TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw TonnyNerd toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse visceral vlt w0rm_x wand_ wang Watabou Watcher7 winny Winslow wisey woggle worfox ws2k3 wting xaxisx Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas yorick z1m4 ZadYree zampano zarul ZeDestructor Zetro zhost zkxs Znoosey Zuu zymurgy zz_EViLSLuT]
+2013-11-05 15:36:56	⇄	Channel ##programming: 395 nicks (1 ops, 0 voices, 394 normals)
+2013-11-05 15:36:56	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-05 15:37:03	<	ph88 (2e2c9618@gateway/web/freenode/ip.46.44.150.24) has quit (Ping timeout: 250 seconds)
+2013-11-05 15:37:06	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-05 15:37:06	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-05 15:37:56	Denommus	平仮名
+2013-11-05 15:38:03	Denommus	(only testing utf-8 in Emacs)
+2013-11-05 15:38:29	inf-groupoid	UTF-8 works just fine in Emacs. :-)
+2013-11-05 15:38:49	<	ogrady (~Thunderbi@HSI-KBW-134-3-224-118.hsi14.kabel-badenwuerttemberg.de) has quit (Quit: ogrady)
+2013-11-05 15:38:51	Denommus	inf-groupoid: under Linux, yes. But I always had problems with it on Windows
+2013-11-05 15:39:13	<	fortmac_ (~kevin@ool-457643be.dyn.optonline.net) has quit (Ping timeout: 272 seconds)
+2013-11-05 15:39:28	<	Rodjustice (~Rodjustic@cpe-174-101-90-89.columbus.res.rr.com) has quit (Read error: Connection reset by peer)
+2013-11-05 15:40:50	Denommus	finally made it work. Gosh
+2013-11-05 15:41:21	<	RRR2 (~chatzilla@190.156.177.251) has quit (Ping timeout: 240 seconds)
+2013-11-05 15:41:24	inf-groupoid	:-)
+2013-11-05 15:44:45	Denommus	I found out why I had problems. Because Windows' clipboard is UTF-16LE
+2013-11-05 15:44:55	Denommus	so, if I'm on Windows, I need to take that into account
+2013-11-05 15:46:00	<	sirdancealot3 (~sirdancea@98.82.broadband5.iol.cz) has quit (Remote host closed the connection)
+2013-11-05 15:46:15	<	RedXVII (~Red@87-231-97-107.rev.numericable.fr) has quit (Quit: Every time we start talking about her as my mom things start snowballing down our dumb conversational ski slope and suddenly Sigmund Freud and King Oedipus start banging each others hot mom at some kind of depraved sexy momswap party)
+2013-11-05 15:46:31	<	darwin (d@c-98-225-14-98.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2013-11-05 15:46:37	>	deadpool (~deadpool@64.247.89.26) has joined ##programming
+2013-11-05 15:46:57	>	maslen (~maslen@unaffiliated/maslen) has joined ##programming
+2013-11-05 15:49:00	<	dsirrine (~dsirrine@96.228.61.25) has quit (Read error: Connection reset by peer)
+2013-11-05 15:49:16	<	Quetuo_ (~quassel@2.123.159.23) has quit (Ping timeout: 246 seconds)
+2013-11-05 15:49:57	>	darwin (~d@2601:8:aa00:12e:5246:5dff:fe75:2c06) has joined ##programming
+2013-11-05 15:50:33	<	fantastic001 (~IceChatUs@unaffiliated/fantastic001) has quit (Ping timeout: 245 seconds)
+2013-11-05 15:52:18	deadpool	Hey guys, I am working on a group project in C++ and I am getting an error trying to compile my road.cc and it is saying that there is no member function set_location on class Location http://pastebin.com/pXetGJrB
+2013-11-05 15:53:52	>	nisstyre (~yours@oftn/member/Nisstyre) has joined ##programming
+2013-11-05 15:53:59	Denommus	deadpool: have you read what the error says?
+2013-11-05 15:56:18	jimmt	I could tell you a UDP joke, but you might not get it
+2013-11-05 15:56:32	Denommus	deadpool: ah, I understand why you didn't get it. Location's definition must be BEFORE wherever set_location is called
+2013-11-05 15:56:44	BustyLoli-Chan	anyone know anything about socket programming in C?
+2013-11-05 15:57:07	BustyLoli-Chan	I want to know what a nightmare this is going to be before I decide to embark on this endeavor
+2013-11-05 15:57:23	deadpool	road.cc:35:13: error: class Location has no member named set_location
+2013-11-05 15:57:24	Denommus	anything in C is a nightmare
+2013-11-05 15:57:27	deadpool	that is the error
+2013-11-05 15:57:32	BustyLoli-Chan	Q.Q
+2013-11-05 15:57:35	Denommus	deadpool: see my answer
+2013-11-05 15:57:36	<	guideX (~guidex@office-mail.ciestudios.com) has quit (Quit: nexIRC)
+2013-11-05 15:57:59	deadpool	Yes, I included it though
+2013-11-05 15:58:27	deadpool	therefore it is being called
+2013-11-05 15:58:47	<	yorick (~yorick@oftn/member/yorick) has quit (Remote host closed the connection)
+2013-11-05 15:59:27	>	zer0x (~kvirc@162.219.22.136) has joined ##programming
+2013-11-05 15:59:37	crystalmath	what's the command to connect to a server
+2013-11-05 15:59:40	crystalmath	is it /CONNECT ?
+2013-11-05 15:59:59	crystalmath	cos that command is not found
+2013-11-05 16:00:35	Denommus	deadpool: isn't "location" a private field?
+2013-11-05 16:00:39	maslen	BustyLoli-Chan: You should probably ask a programming question if you want an answer.
+2013-11-05 16:00:46	deadpool	yes, but i am using friends
+2013-11-05 16:01:32	Denommus	hm, indeed
+2013-11-05 16:01:34	nisstyre	http://youtu.be/jKg2xwLhLJE
+2013-11-05 16:01:42	crystalmath	guys plz
+2013-11-05 16:01:44	crystalmath	what is it
+2013-11-05 16:01:45	crystalmath	:<
+2013-11-05 16:01:46	crystalmath	:(
+2013-11-05 16:02:07	nisstyre	crystalmath: stop smoking meth
+2013-11-05 16:02:12	nisstyre	then you might be able to figure it out
+2013-11-05 16:02:34	<	TonnyNerd (~TonnyNerd@unaffiliated/tonnynerd) has quit (Ping timeout: 268 seconds)
+2013-11-05 16:02:38	crystalmath	................. but it's so addictive
+2013-11-05 16:02:38	>	hoot_ (~hoot@178.47.88.152) has joined ##programming
+2013-11-05 16:03:42	<	spobat_ (~spobat@unaffiliated/spobat) has quit (Remote host closed the connection)
+2013-11-05 16:04:21	crystalmath	srsly the /help does not tell me
+2013-11-05 16:04:22	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 16:04:47	<	wand_ (~chatzilla@219-84-243-135-adsl-tao.dynamic.so-net.net.tw) has quit (Quit: ChatZilla 0.9.90.1 [Firefox 25.0/20131028113308])
+2013-11-05 16:04:47	diphtherial	*math
+2013-11-05 16:04:50	Denommus	crystalmath: http://en.wikipedia.org/wiki/List_of_Internet_Relay_Chat_commands#CONNECT
+2013-11-05 16:05:19	>	gufter (29dd647e@gateway/web/freenode/ip.41.221.100.126) has joined ##programming
+2013-11-05 16:06:04	Denommus	crystalmath: CONNECT isn't what you think it is
+2013-11-05 16:06:04	crystalmath	oh
+2013-11-05 16:06:04	crystalmath	its for OPs.
+2013-11-05 16:06:04	crystalmath	I just want to connect to another server (quakenet) via a command
+2013-11-05 16:06:13	crystalmath	cos this stupid irc app does not have a connect button lol
+2013-11-05 16:06:22	<	aspire (~aspire@unaffiliated/aspire) has quit (Ping timeout: 245 seconds)
+2013-11-05 16:06:34	inf-groupoid	crystalmath: Out of curiosity, what client do you use?
+2013-11-05 16:06:36	>	jasonjmcghee (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has joined ##programming
+2013-11-05 16:06:54	>	aspire (~aspire@unaffiliated/aspire) has joined ##programming
+2013-11-05 16:07:01	<	katyusha (~quassel@unaffiliated/katyusha) has quit (Remote host closed the connection)
+2013-11-05 16:07:34	>	cog (6dc99ad0@gateway/web/freenode/ip.109.201.154.208) has joined ##programming
+2013-11-05 16:07:45	crystalmath	floe
+2013-11-05 16:08:20	>	b00ger_daddy (~realundea@pool-71-170-15-36.dllstx.fios.verizon.net) has joined ##programming
+2013-11-05 16:08:24	inf-groupoid	Ah.
+2013-11-05 16:08:51	vendu	hey inf-groupoid, crystal, all of you :)
+2013-11-05 16:09:00	vendu	what's up guys?
+2013-11-05 16:09:14	<	spobat (~spobat@unaffiliated/spobat) has quit (Ping timeout: 264 seconds)
+2013-11-05 16:09:24	>	drostie (~14kthings@50-27-213-193.stjo.sta.suddenlink.net) has joined ##programming
+2013-11-05 16:09:34	<	mizuti (8189a5fb@gateway/web/freenode/ip.129.137.165.251) has quit (Quit: Page closed)
+2013-11-05 16:09:45	inf-groupoid	vendu: Getting ready to go back home.
+2013-11-05 16:10:15	cog	hey I'm trying to get some ideas on how to solve a problem I'm having with populating a treeView from a SQL DB. I've posted about it on http://stackoverflow.com/questions/19791584/c-sharp-treeview-of-sql-data but didn't really get as much interest as I was hoping to get.
+2013-11-05 16:10:55	cog	I'm concerned that the solution presented there is not very scalable and might have some performance issues because I'm saving all of it in memory
+2013-11-05 16:11:10	cog	was wondering if someone could have a quick look and tell me if they can think of any other way do get that done
+2013-11-05 16:11:19	<	inf-groupoid (~user@unaffiliated/dijkstragroupie) has quit (Quit: The Idiot monad is similar to the Identity monad. The Kleisli arrow type "a -> Idiot b" is naturally isomorphic to the function type "a -> b". The only difference is that we use the type system to acknowledge that you are an idiot.)
+2013-11-05 16:11:54	nisstyre	cog: if something is too large to store in memory then you can use mmap to map other storage into memory addresses
+2013-11-05 16:12:04	nisstyre	https://en.wikipedia.org/wiki/Mmap
+2013-11-05 16:12:41	<	Oxyd (~Oxyd@pdpc/supporter/student/oxyd) has quit (Quit: Leaving)
+2013-11-05 16:12:46	cog	I was thinking more along the lines of loading node per node, ie... only loading the top tier first and on expand event load the next tier just for the TreeNode that was expanded
+2013-11-05 16:13:00	cog	but I'm not sure how feasible that is or how complicated it is likely to be to program
+2013-11-05 17:24:33	⇄	irc: disconnected from server
+2013-11-05 17:24:58	>	Watabou (~ajh@2601:9:a80:120:847c:3fc3:e2c8:dce) has joined ##programming
+2013-11-05 17:24:58	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-05 17:24:58	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-05 17:24:58	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina Alipha alrt amizraa and0 anderson Andrevan andrewSC angstrom anon antoks Anton_ anunnaki Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek Axord b1101 Baluse banneduser belak Belxjander benzap besuto Betal bhldev Bigcheese Billiard BillTheButcher BlastHardcheese blockeduser blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww clone1018 codebrainz coeus corelax Corey cornjuliox corvolino cruxeternus ctype_real cuqa Cyb3r-Assassin Cyberpew Cybertinus cysm damselfly dan64 DarkGhost darwin dasilvj debris` Defaultti definity degantyll dewdrop digdilem diminoten diphtherial Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dslolz dslpuck dtkatch DURgod dzeko egghead EldritchVetch elephanter Elfix ender Engen entiat_blues ewong execute Exio4 Fabianius farn felipe_ fling forthelulz Freyr_ FriskyKat gde33 genius_matrix gertptr ghanhass gimpyds gimpygoo go|dfish gsvolt guampa Guegs Guest40184 Guest97484 gugah h0ho HandheldPenguin Haswell hatseflats Hawkerz heavystorm highasdick HoloPed hoot_ imp ips|malc Isolol itunessucks ivan` jak2000 JamesNZ jan1337z JanC jasonjmcghee JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Joefish joelroa Jordanlw jrslepak JSharpe JStoker Jupelius jyhc_ K3|Chris kahrl kakazza Kanada karstensrage kastang kcm1700 Kelet kermit kg21 klyed2 kmels koollman kreiGT krixxkraxx Lady_Aleena laen lahwran Lefeni legov LiamM lietu LiquidOxygen Lloir-away localh0st Lyn M-ou-se m4rcu5 Macuser madara mahomet malcolmva marcidy maroloccio maslen max_weller maxmahem maxorator meoblast001 milky MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nisstyre nitrix Noldorin nupogodi nverba o0afk0o obruT oleo oso96_2000 Pagan paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo phantomcircuit pheas PherricOxide Plastefuchs Plazma plombo Plornt Plummer pr0ggie Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox R0b0t1 r3negade ra4king Raccoon raineys Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram Rix rizzuh Rounin Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux ShadeTornado Shockk ShortWave SirCmpwn sireesht SJr SlimTim10 slobber sluggr Snake2k Solid-State SomeDamnBody Sornaensis spacepixels spjt spobat SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner stepdad Stryyker sujeet SuperNoeMan Svetlana syntaxe TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse visceral vlt vortex w0rm_x wang Watabou Watcher7 winny Winslow wisey woggle worfox ws2k3 wting Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas z1m4 ZadYree zampano zarul ZeDestructor zer0x Zetro zhost zkxs Znoosey Zuu zymurgy zz_EViLSLuT]
+2013-11-05 17:24:58	⇄	Channel ##programming: 383 nicks (1 ops, 0 voices, 382 normals)
+2013-11-05 17:24:58	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-05 17:25:08	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-05 17:25:08	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-05 17:25:23	<	corvolino (c932064d@gateway/web/freenode/ip.201.50.6.77) has quit (Ping timeout: 250 seconds)
+2013-11-05 17:25:33	⇄	Mode ##programming [-bbbb *!*@*h-60-140.a163.priv.bahnhof.se$##fix_your_connection andreligne*!*@*$##fix_your_connection *!?Gavilan*@*$##fix_your_connection *!*@*unaffiliated/pip$##fix_your_identification] by Archer
+2013-11-05 17:25:33	⇄	Mode ##programming [-bbb Pip*!*@*$##fix_your_identification *!*@*144.35.88.68$##fix_your_connection xk_id*!*@*$##fix_your_id] by Archer
+2013-11-05 17:26:00	>	Shade_Tornado (~ShadeTorn@f124242.upc-f.chello.nl) has joined ##programming
+2013-11-05 17:35:58	⇄	irc: disconnected from server
+2013-11-05 17:36:25	>	Watabou (~ajh@2601:9:a80:120:c18a:68ff:4423:814e) has joined ##programming
+2013-11-05 17:36:25	⇄	Topic for ##programming is "General Programming/Computer Science Community & Discussion | If you have a question, don't ask to ask, just ask! | Paste > 3 lines to a pastebin such as http://ideone.com | Trollish behaviour is out. | It is important to read the entry message sent by ChanServ as you join!"
+2013-11-05 17:36:25	⇄	Topic set by unreal on Mon, 01 Apr 2013 16:28:06
+2013-11-05 17:36:25	⇄	Nicks ##programming: [@Archer _W_ Adam01 agorecki ahungry aidanie alamar alexdoom Alina-malina Alipha alrt amizraa and0 anderson Andrevan andrewSC angstrom anon antoks Anton_ anunnaki Aperion Aph3x-WL arathald architekt ari` ario_ asmodlol aspire auscompgeek Axord b1101 Baluse belak Belxjander benzap besuto Betal bhldev Bigcheese Billiard BillTheButcher BlastHardcheese blockeduser blueminder BlueShark bobey6 BohemianHacks Booleans Bosox20051 Brando753 brentofrohan brx_ bstrie bubbajones bubchi89 BustyLoli-Chan butchlugrod BZaidan Caelum cam cantstanya cathan Cheery chrisblake cian1500ww clone1018 codebrainz coeus corelax Corey cornjuliox cruxeternus ctype_real cuqa Cyb3r-Assassin Cyberpew Cybertinus cysm damselfly dan64 DarkGhost darwin dasilvj debris` Defaultti definity degantyll dewdrop digdilem diminoten diphtherial Dirkson dk0r DolphinDream dom96 DonVitoC- DonVitoCorleone doomlord_ dougwt drbrule-away drdanick drmarvel drostie dslolz dslpuck dtkatch DURgod dzeko egghead EldritchVetch elephanter Elfix ender Engen entiat_blues ewong execute Exio4 Fabianius farn felipe_ fling forthelulz Freyr_ FriskyKat gde33 genius_matrix gertptr ghanhass gimpyds gimpygoo go|dfish gsvolt guampa Guegs Guest40184 Guest97484 gugah h0ho HandheldPenguin Haswell hatseflats Hawkerz heavystorm highasdick HoloPed hoot_ imp ips|malc Isolol itunessucks ivan` jak2000 JamesNZ jan1337z JanC jasonjmcghee JaTochNietDan jayne jburkhart Jck_True_ jdiez jeaye jercos jhgaylor jimmt jkbbwr Joefish joelroa Jordanlw jrslepak JSharpe JStoker Jupelius jyhc_ K3|Chris kahrl kakazza Kanada karstensrage kastang kcj kcm1700 Kelet kermit kg21 klyed2 kmels koollman kreiGT krixxkraxx Lady_Aleena laen lahwran Lefeni legov LiamM lietu LiquidOxygen Lloir-away localh0st Lyn M-ou-se m4rcu5 Macuser madara mahomet malcolmva marcidy maroloccio maslen max_weller maxmahem maxorator meoblast001 milky MissionCritical mmattice moguchiy mooky moop Mr_Sheesh MrClaw mshaw NanoArrow naquad nb-ben ndngvr` neal__ nephilim_ NightKhaos nisstyre nitrix Noldorin nupogodi nverba o0afk0o obruT oleo oso96_2000 Pagan paracyst passiveobserver pazuzu pdimitrov PearFish per2 pfifo phantomcircuit pheas PherricOxide Plastefuchs Plazma plombo Plornt Plummer pr0ggie Programmer_ pulchy Purlox pushp0p Pwnna pythonsnake QuantumParadox R0b0t1 r3negade ra4king Raccoon raineys Rav3n rblackwe rdevilla realeyes redblue redeemed redj Remram Rix rizzuh Rounin Rubennn RustyShackleford rwg sam113101 sayo- Scala SecretFire SeySayux Shockk ShortWave SirCmpwn sireesht SJr SlimTim10 slobber sluggr Snake2k Solid-State SomeDamnBody Sornaensis spacepixels spjt spobat SporkWitch Squid_Tamer squidly St0rmSh4dow staafl stardiviner stepdad Stryyker sujeet SuperNoeMan Svetlana syntaxe TacitBlue Takumo TDJACR tdn Th0mas theblazehen_ thegladiator_ TheMoonMaster Thomas42 thomassgn Thracky timemage tjbenator0 tkmedia tlvb tnishant Tobarja tomaw toothe ToothlessGear Tribal Twey Typherix ujan unic0rn unreal Vbitz vechnyj vendu vhuboe vinse visceral vlt vortex wang Watabou Watcher7 Wil_Bur winny Winslow wisey woggle worfox ws2k3 wting Xgc Xionaba Xiti yano yazdmich YJLTGatWORK ymas z1m4 ZadYree zampano zarul ZeDestructor zer0x Zetro zkxs Znoosey Zuu zymurgy zz_EViLSLuT |DM|]
+2013-11-05 17:36:25	⇄	Channel ##programming: 381 nicks (1 ops, 0 voices, 380 normals)
+2013-11-05 17:36:25	⇄	Notice(ChanServ): The following extend the guidelines listed in the topic. Mindless comments such as "Don't reinvent the wheel!" or "<language> is crap!" are unwelcome if they have no merit. All discussion of moderation issues is done through ##programming-ops (or privately with a channel operator), not in the main channel. To join, send a KNOCK request (/quote KNOCK ##programming-ops or similar) to be invited automatically.
+2013-11-05 17:36:34	⇄	Mode ##programming [+Ccntzf ##overflow]
+2013-11-05 17:36:35	⇄	Channel created on Sat, 03 Feb 2007 21:23:51
+2013-11-05 17:38:57	<	jasonjmcghee (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2013-11-05 17:39:13	>	jasonjmcghee (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has joined ##programming
+2013-11-05 17:40:45	<	kmels (~kmels@200.9.74.167) has quit (Ping timeout: 240 seconds)
+2013-11-05 17:41:42	>	nivyaj (~chatzilla@c-68-82-29-35.hsd1.pa.comcast.net) has joined ##programming
+2013-11-05 17:42:02	>	hoot__ (~hoot@37.79.8.43) has joined ##programming
+2013-11-05 17:44:16	<	jasonjmcghee (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has quit (Ping timeout: 264 seconds)
+2013-11-05 17:44:29	<	ewong (~chatzilla@177.122.103.218.static.netvigator.com) has quit (Read error: Connection reset by peer)
+2013-11-05 17:44:48	<	hoot_ (~hoot@178.47.88.152) has quit (Ping timeout: 240 seconds)
+2013-11-05 17:44:51	>	sirdancealot (~sirdancea@194.228.11.188) has joined ##programming
+2013-11-05 17:47:18	>	ewong (~chatzilla@177.122.103.218.static.netvigator.com) has joined ##programming
+2013-11-05 17:47:57	<	dslolz (~dslolz@host18417.nfk.elte.hu) has quit (Quit: Leaving)
+2013-11-05 17:48:32	<	blockeduser (~blockedus@unaffiliated/blockeduser) has quit (Quit: gtg)
+2013-11-05 17:50:11	<	ghanhass (~ghanhass@197.0.169.80) has quit (Quit: Leaving)
+2013-11-05 17:50:44	<	damselfly (~me@host-239.180-235-182.cable.dynamic.kbtelecom.net) has quit (Ping timeout: 246 seconds)
+2013-11-05 17:52:12	>	snuffeluffegus (~drdoom@ps95204.dreamhost.com) has joined ##programming
+2013-11-05 17:52:23	<	Wil_Bur (~WilBur@192.5.110.4) has quit (Ping timeout: 260 seconds)
+2013-11-05 17:57:52	>	damselfly (~me@host-239.180-235-182.cable.dynamic.kbtelecom.net) has joined ##programming
+2013-11-05 17:58:08	>	cvlvxi (~cvlvxi@chris.mel.kesoftware.com) has joined ##programming
+2013-11-05 17:59:46	<	nverba (~nverba@client-86-29-122-205.glfd.adsl.virginm.net) has quit (Remote host closed the connection)
+2013-11-05 18:01:03	<	Belxjander (~Belxjande@sourcemage/Mage/Abh-Elementalist) has quit (Read error: No route to host)
+2013-11-05 18:03:57	<	kg21 (4e850d8e@gateway/web/freenode/ip.78.133.13.142) has quit (Ping timeout: 250 seconds)
+2013-11-05 18:07:21	>	boxfish (~jmickos@wireless1x-155-41-76-219.bu.edu) has joined ##programming
+2013-11-05 18:07:56	>	Belxjander (~Belxjande@sourcemage/Mage/Abh-Elementalist) has joined ##programming
+2013-11-05 18:07:59	boxfish	Hey peeps.  How can I compare two lists' values? I have to compare each element to its corresponding one in the other one
+2013-11-05 18:08:26	boxfish	example: if a[0] < b[0] and a[1] < b[1] .... :
+2013-11-05 18:08:33	boxfish	(This is in Python)
+2013-11-05 18:10:24	<	boxfish (~jmickos@wireless1x-155-41-76-219.bu.edu) has quit (Client Quit)
+2013-11-05 18:10:56	cvlvxi	lol
+2013-11-05 18:11:01	cvlvxi	i was about ot answer him
+2013-11-05 18:11:52	<	Noldorin (~noldorin@unaffiliated/noldorin) has quit (Ping timeout: 264 seconds)
+2013-11-05 18:12:59	<	vortex (~vortex@chello213047048214.4.sc-graz.chello.at) has quit (Ping timeout: 260 seconds)
+2013-11-05 18:13:01	<	wisey (~Wisey@host31-52-203-183.range31-52.btcentralplus.com) has quit (Quit: Leaving)
+2013-11-05 18:13:29	>	benzrf (~benzrf@cpe-184-153-153-175.maine.res.rr.com) has joined ##programming
+2013-11-05 18:13:33	>	weie (~weie@softbank221078042071.bbtec.net) has joined ##programming
+2013-11-05 18:13:36	benzrf	anybody know why smalltalk likes -ect so much?
+2013-11-05 18:13:39	benzrf	is it because of object
+2013-11-05 18:14:12	>	SandCat (~chatzilla@cpe-70-92-254-151.wi.res.rr.com) has joined ##programming
+2013-11-05 18:14:28	<	SandCat (~chatzilla@cpe-70-92-254-151.wi.res.rr.com) has left ##programming
+2013-11-05 18:14:30	>	amigojapan (~chatzilla@p4186-ipngn201souka.saitama.ocn.ne.jp) has joined ##programming
+2013-11-05 18:15:42	<	forthelulz (~gunslinge@46.217.80.245) has quit (Ping timeout: 246 seconds)
+2013-11-05 18:16:38	<	jak2000 (~jak2000@189.155.86.113) has quit (Read error: No route to host)
+2013-11-05 18:16:59	>	trusktr (~trusktr@130.86.73.178) has joined ##programming
+2013-11-05 18:17:08	>	jasonobject (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has joined ##programming
+2013-11-05 18:18:12	RustyShackleford	I'm so glad I took this class. We have a project where we need to exploit a buffer overflow
+2013-11-05 18:18:57	RustyShackleford	He gives us an executable, and we need to pass certain exploit strings to "hijack" the program to run specific functions
+2013-11-05 18:19:04	RustyShackleford	this is the coolest shit ever
+2013-11-05 18:19:21	<	St0rmSh4dow (~St0rmSh4d@122.172.21.14) has quit (Ping timeout: 252 seconds)
+2013-11-05 18:19:36	>	macabre (~macabre@23-114-58-24.lightspeed.austtx.sbcglobal.net) has joined ##programming
+2013-11-05 18:21:33	<	jasonobject (~textual@c-50-148-162-73.hsd1.ca.comcast.net) has quit (Client Quit)
+2013-11-05 18:24:14	>	St0rmSh4dow (~St0rmSh4d@122.172.46.117) has joined ##programming
+2013-11-05 18:24:20	>	kmels (~kmels@186.151.53.56) has joined ##programming
+2013-11-05 18:25:24	>	nivyaj_ (~chatzilla@c-68-82-29-35.hsd1.pa.comcast.net) has joined ##programming
+2013-11-05 18:25:28	<	Macuser (~textual@unaffiliated/macuser) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2013-11-05 18:25:36	<	nivyaj (~chatzilla@c-68-82-29-35.hsd1.pa.comcast.net) has quit (Ping timeout: 260 seconds)
+2013-11-05 18:25:40	⇄	nivyaj_ is now known as nivyaj
+2013-11-05 18:28:29	>	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has joined ##programming
+2013-11-05 18:28:47	>	deadpool (~deadpool@cpe-184-57-95-89.columbus.res.rr.com) has joined ##programming
+2013-11-05 18:29:51	<	benzrf (~benzrf@cpe-184-153-153-175.maine.res.rr.com) has left ##programming
+2013-11-05 18:34:56	<	Joefish (~Joefish@p4FDA9E15.dip0.t-ipconnect.de) has quit (Ping timeout: 260 seconds)
+2013-11-05 18:36:40	>	avtolstoy (~Andrey@79.104.192.20) has joined ##programming
+2013-11-05 18:37:04	>	mribeirodantas (~mrd@fedora/mribeirodantas) has joined ##programming
+2013-11-05 18:37:46	<	|DM| (~Wewt|Mang@unaffiliated/cocomango) has quit (Ping timeout: 240 seconds)
+2013-11-05 18:38:36	<	Guegs (~Guegs___@207-47-246-154.sktn.hsdb.sasknet.sk.ca) has quit (Read error: Connection reset by peer)
+2013-11-05 18:39:08	>	Wil_Bur (~WilBur@192.5.110.4) has joined ##programming
+2013-11-05 18:39:29	>	ghanhass (~ghanhass@197.0.169.80) has joined ##programming
+2013-11-05 18:40:52	<	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has quit (Quit:  HydraIRC -> http://www.hydrairc.com <- Chicks dig it)
+2013-11-05 18:43:02	>	wbill (~textual@71-80-64-105.dhcp.kgpt.tn.charter.com) has joined ##programming
+2013-11-05 18:44:24	<	Wil_Bur (~WilBur@192.5.110.4) has quit (Ping timeout: 246 seconds)
+2013-11-05 18:48:47	<	stepdad (~megatron@unaffiliated/cowabunga) has quit (Quit: SERIOUSLY IF YOU WANT TO MARRY ME THAT WOULD BE JUST FINE I CAN INTRODUCE YOU TO MY PARENTS (THIS BONG AND THAT DONG) ALSO IF YOU COULD PLEASE BLOCK ME FROM YOUR SITE I CANNOT STOP JERKING OFF AND I'M STARTING TO GET REALLY DIZZY (AND THAT CAN'T BE GOOD )
+2013-11-05 18:48:50	<	z1m4 (~tata@c75.152.27-202.clta.globetrotter.net) has quit (Quit: Quit message)
+2013-11-05 18:50:08	Engen	What is a DFS on graphs generally used for? I mean I've found an article on stackoverflow in talking about theoretical postulations but nothing practical. BFS being similar to Djikstras finds the shortest path between two vertices.
+2013-11-05 18:50:37	drostie	Engen: it's the easiest way to search with a recursive algorithm.
+2013-11-05 18:50:38	>	stepdad (~megatron@unaffiliated/cowabunga) has joined ##programming
+2013-11-05 18:50:56	drostie	or to process a tree.
+2013-11-05 18:53:42	Engen	Ah okay. DFS has recursive property to process an entire tree. Or it can be implemented with a stack.
+2013-11-05 18:54:08	Engen	I like the example on stackoverflow a lot.
+2013-11-05 18:54:11	Engen	If you had an infinite sized graph then DFS would never find an element if it exists outside of the first path it chooses. It would essentially keep going down the first path and would never find the element. The BFS would eventually find the element.
+2013-11-05 18:54:46	drostie	well, as long as the nodes don't have an infinite number of vertices coming off of them as well...
+2013-11-05 18:54:47	>	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has joined ##programming
+2013-11-05 18:54:55	drostie	er, edges.
+2013-11-05 18:55:10	<	Alipha (~Alipha@2600:1014:b014:6e73:84f6:ffa0:d22f:7577) has quit (Quit: Bye)
+2013-11-05 18:55:26	Engen	by infinite I suppose he means that it's a complete graph that's constantly expanding
+2013-11-05 18:58:09	>	jamie88 (~jamie88@109.76.3.20) has joined ##programming
+2013-11-05 18:58:34	>	mp19uy (~mp19uy@r186-52-137-140.dialup.adsl.anteldata.net.uy) has joined ##programming
+2013-11-05 18:59:02	jamie88	dose any one program android?
+2013-11-05 18:59:36	⇄	cvlvxi is now known as babethebabe
+2013-11-05 18:59:44	<	kmels (~kmels@186.151.53.56) has quit (Ping timeout: 272 seconds)
+2013-11-05 19:00:09	<	K3|Chris (~ChrisK3@unaffiliated/krill3) has quit (Ping timeout: 246 seconds)
+2013-11-05 19:00:41	>	K3|Chris_ (~ChrisK3@unaffiliated/krill3) has joined ##programming
+2013-11-05 19:00:51	⇄	K3|Chris_ is now known as K3|Chris
+2013-11-05 19:01:07	<	jamie88 (~jamie88@109.76.3.20) has left ##programming
+2013-11-05 19:01:33	<	spobat (~spobat@unaffiliated/spobat) has quit (Remote host closed the connection)
+2013-11-05 19:02:03	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 19:02:54	<	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has quit (Quit:  HydraIRC -> http://www.hydrairc.com <-)
+2013-11-05 19:03:11	>	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has joined ##programming
+2013-11-05 19:04:39	>	arubin (~textual@99-114-192-172.lightspeed.cicril.sbcglobal.net) has joined ##programming
+2013-11-05 19:06:34	⇄	babethebabe is now known as crystalmeth
+2013-11-05 19:06:50	<	spobat (~spobat@unaffiliated/spobat) has quit (Ping timeout: 264 seconds)
+2013-11-05 19:07:22	⇄	crystalmeth is now known as crystalgrystal
+2013-11-05 19:09:05	<	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has quit (Quit:  HydraIRC -> http://www.hydrairc.com <- The alternative IRC client)
+2013-11-05 19:09:25	>	Rou (~Rou@pool-108-34-228-117.prvdri.fios.verizon.net) has joined ##programming
+2013-11-05 19:12:17	<	deadpool (~deadpool@cpe-184-57-95-89.columbus.res.rr.com) has quit (Ping timeout: 246 seconds)
+2013-11-05 19:14:35	<	andrewSC (~Andrew@unaffiliated/andrewsc) has quit (Quit: †・．・☆†【βｙёβｙё】ヾ(´∀｀)ノ~~†★・．・†)
+2013-11-05 19:15:08	<	Haswell (~Haswell@unaffiliated/haswell) has quit (Quit: Haswell)
+2013-11-05 19:15:28	>	FailDrain (~rose@host86-129-68-162.range86-129.btcentralplus.com) has joined ##programming
+2013-11-05 19:15:38	>	NerdKelly (~NerdKelly@pa49-181-54-106.pa.nsw.optusnet.com.au) has joined ##programming
+2013-11-05 19:15:43	FailDrain	What's the best gui toolkit to use for a window frame and opengl context in linux?
+2013-11-05 19:17:45	spjt	can't you just do it with opengl
+2013-11-05 19:17:56	>	Atrumx (~5d6@unaffiliated/fivedeltasix) has joined ##programming
+2013-11-05 19:18:53	FailDrain	spjt: how do you I get a context wave my magic wand lol?
+2013-11-05 19:19:15	FailDrain	abra cadbra open my context gl!
+2013-11-05 19:19:27	RustyShackleford	FailDrain: well do you need menus, buttons etc?
+2013-11-05 19:19:47	RustyShackleford	if you just need an opengl context, I found glfw to be the easiest
+2013-11-05 19:19:48	>	w0rm_x (~w0rm@client-86-31-185-43.oxfd.adsl.virginm.net) has joined ##programming
+2013-11-05 19:19:52	FailDrain	RustyShackleFord: well I was going to make the rest of gui accept the window it self and context in OpenGL all the widgets that is
+2013-11-05 19:19:53	RustyShackleford	theres also SDL
+2013-11-05 19:20:06	FailDrain	OH yea could use SDL On linux durh ofc
+2013-11-05 19:20:15	>	level15 (~quassel@190.158.183.110) has joined ##programming
+2013-11-05 19:20:18	spjt	http://www.cs.utah.edu/~jstratto/opengl/
+2013-11-05 19:22:03	<	entiat_blues (~entiat_bl@static-50-43-74-47.bvtn.or.frontiernet.net) has quit (Disconnected by services)
+2013-11-05 19:22:22	>	entiat_blues_ (~entiat_bl@static-50-43-74-47.bvtn.or.frontiernet.net) has joined ##programming
+2013-11-05 19:23:08	<	avtolstoy (~Andrey@79.104.192.20) has quit (Ping timeout: 246 seconds)
+2013-11-05 19:25:43	<	pdimitrov (~p@sd440528e.adsl.online.nl) has quit (Read error: Operation timed out)
+2013-11-05 19:26:53	>	avtolstoy (~Andrey@79.104.192.20) has joined ##programming
+2013-11-05 19:27:29	>	pdimitrov (~p@sd440528e.adsl.online.nl) has joined ##programming
+2013-11-05 19:28:09	<	pr0ggie (~p@sd440528e.adsl.online.nl) has quit (Ping timeout: 246 seconds)
+2013-11-05 19:29:51	<	amigojapan (~chatzilla@p4186-ipngn201souka.saitama.ocn.ne.jp) has quit (Quit: ChatZilla 0.9.90.1-rdmsoft [XULRunner 22.0/20130619132145])
+2013-11-05 19:34:49	Engen	Porque no los dos?
+2013-11-05 19:36:33	>	dsirrine (~dsirrine@216.2.60.98) has joined ##programming
+2013-11-05 19:37:35	<	FailDrain (~rose@host86-129-68-162.range86-129.btcentralplus.com) has quit (Quit: Lost terminal)
+2013-11-05 19:37:59	>	GeorgeTorwell (~GeorgeTor@gateway/tor-sasl/georgetorwell) has joined ##programming
+2013-11-05 19:42:25	>	pr0ggie (~p@sd440528e.adsl.online.nl) has joined ##programming
+2013-11-05 19:42:40	>	Wil_Bur (~WilBur@192.5.110.4) has joined ##programming
+2013-11-05 19:43:18	<	Betal (~Betal@unaffiliated/betal) has quit (Remote host closed the connection)
+2013-11-05 19:44:06	<	zer0x (~kvirc@162.219.22.136) has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+2013-11-05 19:52:08	>	jackhammer2022 (~textual@c-76-24-11-66.hsd1.ma.comcast.net) has joined ##programming
+2013-11-05 19:52:21	<	ghanhass (~ghanhass@197.0.169.80) has quit (Quit: Leaving)
+2013-11-05 19:52:31	<	mp19uy (~mp19uy@r186-52-137-140.dialup.adsl.anteldata.net.uy) has quit (Quit: Leaving)
+2013-11-05 19:54:21	<	guampa (~guampa@gateway/tor-sasl/guampa) has quit (Quit: quit)
+2013-11-05 19:58:05	>	xk_id (~xk_id@unaffiliated/xk-id/x-0573425) has joined ##programming
+2013-11-05 19:58:19	<	level15 (~quassel@190.158.183.110) has quit (Remote host closed the connection)
+2013-11-05 19:58:31	<	trusktr (~trusktr@130.86.73.178) has quit (Quit: Leaving)
+2013-11-05 19:58:48	>	sth0R (~shawn@203.192.156.9) has joined ##programming
+2013-11-05 19:59:15	>	trusktr (~trusktr@130.86.73.178) has joined ##programming
+2013-11-05 20:00:26	>	[1]WilBur (HydraIRC@wcb38pc.STUDENT.CWRU.Edu) has joined ##programming
+2013-11-05 20:00:31	<	Wil_Bur (~WilBur@192.5.110.4) has quit (Ping timeout: 272 seconds)
+2013-11-05 20:01:26	<	trusktr (~trusktr@130.86.73.178) has quit (Read error: Connection reset by peer)
+2013-11-05 20:02:06	<	meoblast001 (~meoblast@dynamic-acs-24-112-252-251.zoominternet.net) has quit (Quit: Leaving)
+2013-11-05 20:06:25	<	dsirrine (~dsirrine@216.2.60.98) has quit (Quit: Leaving)
+2013-11-05 20:08:49	>	trusktr (~trusktr@130.86.73.178) has joined ##programming
+2013-11-05 20:09:00	>	horny-sama (~mr-fool@161.184.231.98) has joined ##programming
+2013-11-05 20:09:07	horny-sama	https://paste.fedoraproject.org/51981/83710795/  inputMistmatch ? :<  need some help with java
+2013-11-05 20:12:27	<	nivyaj (~chatzilla@c-68-82-29-35.hsd1.pa.comcast.net) has quit (Ping timeout: 260 seconds)
+2013-11-05 20:12:38	>	spobat (~spobat@unaffiliated/spobat) has joined ##programming
+2013-11-05 20:13:05	spjt	data is not an iterator
+2013-11-05 20:13:24	>	Snowfreak (~Snowfreak@CPE7cb21bcd2696-CM7cb21bcd2693.cpe.net.cable.rogers.com) has joined ##programming
+2013-11-05 20:14:30	>	Trenif (~Lefeni@c-fc47e555.143-16-64736c10.cust.bredbandsbolaget.se) has joined ##programming
+2013-11-05 20:16:17	>	gde33|2 (~gde33@546A1A51.cm-12-3a.dynamic.ziggo.nl) has joined ##programming
+2013-11-05 20:16:58	>	Sveta (noone@freenode/staff/gry) has joined ##programming
+2013-11-05 20:17:03	>	klyed21 (~justin@12.226.162.162) has joined ##programming
+2013-11-05 20:17:07	<	pdimitrov (~p@sd440528e.adsl.online.nl) has quit (Read error: Operation timed out)
+2013-11-05 20:17:38	<	spobat (~spobat@unaffiliated/spobat) has quit (Ping timeout: 264 seconds)
+2013-11-05 20:18:28	>	M-ou-se_ (~m-ou.se@m-ou.se) has joined ##programming
+2013-11-05 20:18:28	>	TacitBlu1 (~xubuntu@147.157-62-69.ftth.swbr.surewest.net) has joined ##programming
+2013-11-05 20:18:33	>	maroloccio2 (~marolocci@151.Red-83-55-160.dynamicIP.rima-tde.net) has joined ##programming
+2013-11-05 20:18:39	>	ips|malc_ (~phil0324@lvps178-77-99-210.dedicated.hosteurope.de) has joined ##programming
+2013-11-05 20:19:03	>	pdimitrov (~p@sd440528e.adsl.online.nl) has joined ##programming
+2013-11-05 20:19:32	>	ahungry_ (~null@99-40-10-216.lightspeed.livnmi.sbcglobal.net) has joined ##programming
+2013-11-05 20:19:33	>	Winslow_ (~grant@ip68-5-134-215.oc.oc.cox.net) has joined ##programming
+2013-11-05 20:19:37	>	localh0s1 (~s9575@msh.pjwstk.edu.pl) has joined ##programming
+2013-11-05 20:20:09	<	pr0ggie (~p@sd440528e.adsl.online.nl) has quit (Ping timeout: 272 seconds)
+2013-11-05 20:22:49	>	SirCmpwn_ (~SirCmpwn@unaffiliated/sircmpwn) has joined ##programming
+2013-11-05 20:23:10	<	macabre (~macabre@23-114-58-24.lightspeed.austtx.sbcglobal.net) has quit (Remote host closed the connection)
+2013-11-05 20:23:28	<	Winslow (~grant@ip68-5-134-215.oc.oc.cox.net) has quit (*.net *.split)
+2013-11-05 20:23:28	<	dk0r (~dk0r@unaffiliated/dk0r) has quit (*.net *.split)
+2013-11-05 20:23:28	<	localh0st (~s9575@msh.pjwstk.edu.pl) has quit (*.net *.split)
+2013-11-05 20:23:29	<	ips|malc (~phil0324@lvps178-77-99-210.dedicated.hosteurope.de) has quit (*.net *.split)
+2013-11-05 20:23:29	<	Lefeni (~Lefeni@c-fc47e555.143-16-64736c10.cust.bredbandsbolaget.se) has quit (*.net *.split)
+2013-11-05 20:23:29	<	Baluse (~Baluse@178.128.97.108.dsl.dyn.forthnet.gr) has quit (*.net *.split)
+2013-11-05 20:23:29	<	ctype_real (~ctype@ec2-23-22-199-114.compute-1.amazonaws.com) has quit (*.net *.split)
+2013-11-05 20:23:29	<	gde33 (~gde33@546A1A51.cm-12-3a.dynamic.ziggo.nl) has quit (*.net *.split)
+2013-11-05 20:23:29	<	Svetlana (quasselcor@freenode/staff/gry) has quit (*.net *.split)
+2013-11-05 20:23:29	<	maroloccio (~marolocci@151.Red-83-55-160.dynamicIP.rima-tde.net) has quit (*.net *.split)
+2013-11-05 20:23:29	<	redblue (buenasnoch@24-230-226-60.tr.cgocable.ca) has quit (*.net *.split)
+2013-11-05 20:23:29	<	itunessucks (~itunessuc@178.18.19.107) has quit (*.net *.split)
+2013-11-05 20:23:29	<	antoks (~antoks@unaffiliated/antoks) has quit (*.net *.split)
+2013-11-05 20:23:29	<	TacitBlue (~xubuntu@c-71-193-26-248.hsd1.ca.comcast.net) has quit (*.net *.split)
+2013-11-05 20:23:30	<	M-ou-se (~m-ou.se@m-ou.se) has quit (*.net *.split)
+2013-11-05 20:23:30	<	Fabianius (~Fabianius@dhclient-212-35-3-200.flashcable.ch) has quit (*.net *.split)
+2013-11-05 20:23:30	<	ahungry (~null@99-40-10-216.lightspeed.livnmi.sbcglobal.net) has quit (*.net *.split)
+2013-11-05 20:23:30	<	klyed2 (~justin@12.226.162.162) has quit (*.net *.split)
+2013-11-05 20:23:30	<	SirCmpwn (~SirCmpwn@unaffiliated/sircmpwn) has quit (*.net *.split)
+2013-11-05 20:23:50	>	Baluse (~Baluse@178.128.97.108.dsl.dyn.forthnet.gr) has joined ##programming
+2013-11-05 20:24:31	⇄	SirCmpwn_ is now known as SirCmpwn
+2013-11-05 20:25:23	>	ctype_real (~ctype@ec2-23-22-199-114.compute-1.amazonaws.com) has joined ##programming
+2013-11-05 20:27:37	>	leaper (~leaper@50.99.7.116) has joined ##programming
+2013-11-05 20:27:39	<	xk_id (~xk_id@unaffiliated/xk-id/x-0573425) has quit (Quit: 🚣)
+2013-11-05 20:28:00	leaper	Hello
+2013-11-05 20:28:10	leaper	Bye
+2013-11-05 20:28:11	<	leaper (~leaper@50.99.7.116) has quit (Client Quit)
+2013-11-05 20:30:37	>	dk0r (~dk0r@unaffiliated/dk0r) has joined ##programming
+2013-11-05 20:30:39	>	antoks (~antoks@unaffiliated/antoks) has joined ##programming
+2013-11-05 20:32:03	<	Snake2k (~snake2k@119.155.12.124) has quit (Quit: Lost terminal)
+2013-11-05 20:32:16	horny-sama	 for java a 2d array matrix = new Ration[width][height] ? is this the right concept?
+2013-11-05 20:33:27	>	pr0ggie (~p@sd440528e.adsl.online.nl) has joined ##programming
+2013-11-05 20:34:58	>	delicado (~delicado@121.54.44.128) has joined ##programming
+2013-11-05 20:40:04	>	gavilan2 (~Gavilan2@199.21.149.246) has joined ##programming
+2013-11-05 20:41:19	<	aspire (~aspire@unaffiliated/aspire) has quit (Quit: Leaving)
+2013-11-05 20:42:09	>	blargo (~anon@184.46.87.107) has joined ##programming
+2013-11-05 20:42:16	blargo	good morning
+2013-11-05 20:42:23	blargo	anyone here have a job and are self taught in C?
+2013-11-05 20:42:40	blargo	or anyother programming lang
+2013-11-05 20:43:19	horny-sama	blargo: not me
+2013-11-05 20:43:23	spjt	blargo: sort of
+2013-11-05 20:43:28	Kelet	blargo: not me
+2013-11-05 20:43:38	w0rm_x	blargo, sort of
+2013-11-05 20:43:57	spjt	blargo: Long story, I did end up getting a CS degree but only to buy time
+2013-11-05 20:43:59	nisstyre	blargo: I had one (Sort of still do)
+2013-11-05 20:44:06	nisstyre	I'm not currently doing any work though
+2013-11-05 20:44:15	nisstyre	all of my programming knowledge is "self taught"
+2013-11-05 20:44:27	nisstyre	I'm sort of in the same boat as spjt
+2013-11-05 20:44:29	blargo	ahh but is it possible?
+2013-11-05 20:44:32	nisstyre	blargo: yes
+2013-11-05 20:44:34	spjt	blargo: sure
+2013-11-05 20:44:36	nisstyre	I'm livingp proof
+2013-11-05 20:44:41	nisstyre	*living
+2013-11-05 20:44:46	spjt	blargo: you probably need to "know people" though
+2013-11-05 20:44:47	blargo	cool!
+2013-11-05 20:45:05	blargo	what about have example projects ive done to show
+2013-11-05 20:45:10	nisstyre	blargo: yes
+2013-11-05 20:45:14	nisstyre	that will help
+2013-11-05 20:45:31	spjt	blargo: probably more important than a degree
+2013-11-05 20:45:32	nisstyre	blargo: what really helps is if you have similar preferences to the people already working there
+2013-11-05 20:45:40	nisstyre	and you fit in with their "culture"
+2013-11-05 20:46:28	spjt	fortunately I got a job where the "culture" involves drinking at work and not showing up the next day
+2013-11-05 20:46:41	blargo	lol
+2013-11-05 20:46:52	blargo	what can someone whos trying to do it that way expect to make?
+2013-11-05 20:46:57	blargo	starting out
+2013-11-05 20:46:59	>	veek (~veek@unaffiliated/veek) has joined ##programming
+2013-11-05 20:47:03	spjt	blargo: $10/hour
+2013-11-05 20:47:24	veek	is there a man option or command to give you just the function prototype
+2013-11-05 20:47:33	veek	by hunting through the man pages
+2013-11-05 20:47:49	blargo	spjt: but with a degree your looking at way more than that i assume? Can the guy whos starts that way build up?
+2013-11-05 20:48:28	>	ManAmongHippos (~ManAmongH@71-82-6-201.dhcp.leds.al.charter.com) has joined ##programming
+2013-11-05 20:48:42	spjt	blargo: It has nothing to do with a degree, you just need to prove yourself in a working environment
+2013-11-05 20:48:58	bubchi89	veek: sounds more like you want an ide?
+2013-11-05 20:49:03	⇄	ManAmongHippos is now known as manamonghippos
+2013-11-05 20:49:24	veek	bubchi89, any IDE that does that?
+2013-11-05 20:49:55	spjt	veek: all of them? maybe. Eclipse will do it.
+2013-11-05 20:50:11	spjt	if you just stop typing a window comes up
+2013-11-05 20:51:04	<	NerdKelly (~NerdKelly@pa49-181-54-106.pa.nsw.optusnet.com.au) has quit (Read error: No route to host)
+2013-11-05 20:51:12	spjt	blargo: I started last year doing phone support for $10/hour, got a job writing PHP crap for $10/hour again, then got a job writing JavaEE stuff for $60K/year.
+2013-11-05 20:53:19	bubchi89	one of the main reasons you get an ide is so it tells you things like 'what function signatures do i have access to in the code i'm writing right now'
+2013-11-05 20:53:19	<	kreiGT (~kreig@190.149.60.162) has quit (Remote host closed the connection)
+2013-11-05 20:53:19	manamonghippos	spjt: Nice!
+2013-11-05 20:53:19	spjt	ide's are pretty much useless if you're using javascript or something without strong typing
+2013-11-05 20:53:19	<	weie (~weie@softbank221078042071.bbtec.net) has quit (Quit: Leaving...)
+2013-11-05 20:53:19	bubchi89	i don't really know enough about the definition of ides to talk about them accurately
+2013-11-05 20:53:19	bubchi89	but some functionaltiy you might want with javascript
+2013-11-05 20:53:19	bubchi89	is like... navigating to function declaration
+2013-11-05 20:53:19	spjt	$60K/year doesn't sound great but I'm in a place where a house costs $100K
+2013-11-05 20:53:46	horny-sama	spjt: California
+2013-11-05 20:53:51	blargo	spjt: wow thats awesome man
+2013-11-05 20:53:53	<	arubin (~textual@99-114-192-172.lightspeed.cicril.sbcglobal.net) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2013-11-05 20:54:06	blargo	spjt: what language should i target to learn to start at $10 an hour
+2013-11-05 20:54:20	<	GeorgeTorwell (~GeorgeTor@gateway/tor-sasl/georgetorwell) has quit (Remote host closed the connection)
+2013-11-05 20:54:24	spjt	bubchi89: I guess you can, but it only works in-file, if you're using something like ExtJS it's useless
+2013-11-05 20:54:29	spjt	blargo: php
+2013-11-05 20:54:50	manamonghippos	blargo: I'd learn a practical language that appeals to you. There's a market for many different languages.
+2013-11-05 20:55:22	bubchi89	why can it only work in file?
+2013-11-05 20:55:23	<	benzap (~user@S010600222d6b9c98.tb.shawcable.net) has quit (Ping timeout: 260 seconds)
+2013-11-05 20:55:34	horny-sama	learn assembly
+2013-11-05 20:55:36	<	veek (~veek@unaffiliated/veek) has left ##programming
+2013-11-05 20:55:53	>	GeorgeTorwell (~GeorgeTor@gateway/tor-sasl/georgetorwell) has joined ##programming
+2013-11-05 20:56:04	spjt	if you know PHP and jquery you can get a job pretty easily
+2013-11-05 20:56:07	blargo	C?
+2013-11-05 20:56:22	nisstyre	spjt: I made 2.5k a month at my first job
+2013-11-05 20:56:25	<	GeorgeTorwell (~GeorgeTor@gateway/tor-sasl/georgetorwell) has quit (Remote host closed the connection)
+2013-11-05 20:56:30	nisstyre	roughly 35 hours a week
+2013-11-05 20:56:38	nisstyre	although in practice a lot of that time was spent on hacker news
+2013-11-05 20:56:46	spjt	blargo: C will be harder, especially without a degree.
+2013-11-05 20:56:48	Engen	ahah
+2013-11-05 20:56:58	blargo	lol
+2013-11-05 20:57:22	Engen	blargo: I think that the more online oriented languages will get you a job easier based on the general consensus I would say
+2013-11-05 20:57:33	blargo	oh i see
+2013-11-05 20:57:43	spjt	I could be wrong, but most C jobs I see are either legacy maintenance or embedded stuff
+2013-11-05 20:58:08	blargo	what about java?
+2013-11-05 20:58:10	nisstyre	spjt: you can get a job writing device drivers
+2013-11-05 20:58:11	manamonghippos	Not that embedded stuff can't be interesting
+2013-11-05 20:58:12	nisstyre	those are mostly in C
+2013-11-05 20:58:20	spjt	PHP/Jquery, you get a lot of "We need a webpage" people
+2013-11-05 20:58:21	nisstyre	also kernel development can sometimes make you money
+2013-11-05 20:58:26	nisstyre	(Redhat, Intel, etc)
+2013-11-05 20:58:31	blargo	i wana do embedded but would it be harder without degree
+2013-11-05 20:58:32	bubchi89	nisstyre: what kind of kernel development team would hire someone with 0 experience?
+2013-11-05 20:58:37	nisstyre	bubchi89: none
+2013-11-05 20:58:42	nisstyre	that would be dumb
+2013-11-05 20:58:56	nisstyre	bubchi89: the great thing is that you can contribute with no experience though
+2013-11-05 20:59:04	manamonghippos	Well I'm doing embedded research at a university, but I'm studying Computer Science where none of the stuff I'm doing has been taught to me
+2013-11-05 20:59:05	nisstyre	if your code is good it will get pulled
+2013-11-05 20:59:18	spjt	Context, folks. Dude wants a job with no experience. I say PHP/jQuery.
+2013-11-05 20:59:26	>	GeorgeTorwell (~GeorgeTor@gateway/tor-sasl/georgetorwell) has joined ##programming
+2013-11-05 20:59:31	<	snuffeluffegus (~drdoom@ps95204.dreamhost.com) has quit (Quit: Leaving)
+2013-11-05 20:59:33	nisstyre	spjt: it's not that hard to start doing kernel development tbh
+2013-11-05 20:59:36	nisstyre	it just takes will
+2013-11-05 20:59:37	bubchi89	he can learn a bit of that and try and do freelance work or something
+2013-11-05 20:59:41	manamonghippos	spjt: But why PHP?
+2013-11-05 20:59:42	blargo	spjt: who would hire me? web dev firms?
+2013-11-05 20:59:54	spjt	blargo: If you put up a linkedin profile and write PHP and jQuery on it, some recruiter will contact you within a week
+2013-11-05 21:00:07	nisstyre	linkedin are cocksuckers, though
+2013-11-05 21:00:07	bubchi89	nisstyre: the conceptual difficulty for webdev vs. kernel hacking is very large
+2013-11-05 21:00:12	bubchi89	you can make a basic website and be an idiot
+2013-11-05 21:00:18	blargo	ive been learing C for a few years but never got past the first "teach ourself books" and Ive progammed a "database" app. but i want a job
+2013-11-05 21:00:19	bubchi89	you can't really be an idiot and contribute anything meaningful to a kernel
+2013-11-05 21:00:27	nisstyre	also most recruiters are just trawling for keywords like you said
+2013-11-05 21:00:39	bubchi89	sounds like you need to fix your attitude first where you're trying to avoid doing work and get a job... lol
+2013-11-05 21:00:45	spjt	blargo: if you want a job, learn php and jquery and put up a linkedin profile saying that
+2013-11-05 21:00:46	nisstyre	I guess if you don't care about being treated like shit
+2013-11-05 21:01:00	blargo	spjt: sounds good!
+2013-11-05 21:01:00	spjt	nisstyre: But then, you have work experience
+2013-11-05 21:01:17	nisstyre	spjt: it's possible to get a first job that isn't shit
+2013-11-05 21:01:35	spjt	nisstyre: But it's a lot easier to get a first job that is shit, then get a better one
+2013-11-05 21:01:45	manamonghippos	blargo: I agree with the web development approach to getting a job, Bootstrap, JS, JQuery, all that jazz. I can't comment much about PHP though, I've written <= 50 lines of it.
+2013-11-05 21:02:03	spjt	oh yeah, bootstrap.
+2013-11-05 21:02:06	spjt	learn that
+2013-11-05 21:02:36	nisstyre	spjt: he should still try to get a good one
+2013-11-05 21:02:45	nisstyre	*trying* isn't going to hurt him
+2013-11-05 21:02:49	nisstyre	if anything it will help
+2013-11-05 21:02:59	spjt	nisstyre: if I tried to get a good first job I'd still be unemployed.
+2013-11-05 21:03:10	nisstyre	spjt: you apply for multiple job positions
+2013-11-05 21:03:20	nisstyre	it's not like you're going to be flooded with interviews
+2013-11-05 21:03:37	>	blargo_ (~anon@184.46.89.11) has joined ##programming
+2013-11-05 21:03:41	nisstyre	and it's not hard to write a good cover letter for each one
+2013-11-05 21:03:43	manamonghippos	blargo what kind of position are you in? Are you broke?
+2013-11-05 21:03:56	blargo_	not broke but not employed
+2013-11-05 21:03:56	nisstyre	I mean if your writing skills aren't shit
+2013-11-05 21:04:01	blargo_	trying to save
+2013-11-05 21:04:20	manamonghippos	So you need a job fairly quickly?
+2013-11-05 21:04:23	blargo_	exactly
+2013-11-05 21:04:30	bubchi89	did you actually manage to get a programming job with no degree, while you weren't in college, with no projects?
+2013-11-05 21:04:34	bubchi89	nisstyre:
+2013-11-05 21:04:36	nisstyre	bubchi89: yes
+2013-11-05 21:04:39	GeorgeTorwell	you could always move to India or Pakistan and drive a cab there.
+2013-11-05 21:04:42	bubchi89	how many interviews did you send out
+2013-11-05 21:04:45	spjt	It doesn't matter. What you're looking for is industry work experience. It doesn't matter if the job sucks, the first job is just something to put on your resume while you look for the next one.
+2013-11-05 21:04:46	bubchi89	also 25k sounds like an internship
+2013-11-05 21:04:46	nisstyre	bubchi89: well I am in university
+2013-11-05 21:04:51	bubchi89	okay that's a difference
+2013-11-05 21:04:52	bubchi89	a large one
+2013-11-05 21:04:53	nisstyre	bubchi89: but I had never taken a single programming course
+2013-11-05 21:04:55	blargo_	i have over 10 hours in college but not in programming classes yet
+2013-11-05 21:05:17	nisstyre	bubchi89: it was sort of like a paid internship I guess
+2013-11-05 21:05:20	blargo_	25k is more than i make working now
+2013-11-05 21:05:21	spjt	"I'm working at X as a programmer and haven't been fired yet" is a huge resume booster
+2013-11-05 21:05:21	blargo_	lol
+2013-11-05 21:05:21	nisstyre	but officially it was a job
+2013-11-05 21:05:26	bubchi89	did you get the interview via a job conference?
+2013-11-05 21:05:27	>	raunicolae (~raunicola@95.76.171.140) has joined ##programming
+2013-11-05 21:05:33	bubchi89	or was it a random application online
+2013-11-05 21:05:41	nisstyre	bubchi89: random application online
+2013-11-05 21:05:51	<	BustyLoli-Chan (~BustyLoli@wads-5-232-202.resnet.mtu.edu) has quit (Read error: Connection reset by peer)
+2013-11-05 21:05:55	bubchi89	interesting
+2013-11-05 21:06:02	bubchi89	that's pretty surprising. i guess the industry is even easier than i thought
+2013-11-05 21:06:03	nisstyre	bubchi89: my stackoverflow and github probably helped
+2013-11-05 21:06:04	blargo_	so i missed the answer, what one should i focous on first? PHP and Jquery, javascript
+2013-11-05 21:06:06	w0rm_x	That is shocking
+2013-11-05 21:06:07	blargo_	bootstrap?
+2013-11-05 21:06:08	nisstyre	well, pretty sure they got me the job
+2013-11-05 21:06:08	bubchi89	oh
+2013-11-05 21:06:12	bubchi89	you said you didn't have any projects
+2013-11-05 21:06:22	nisstyre	bubchi89: well, no projects that people use
+2013-11-05 21:06:24	>	BustyLoli-Chan (~BustyLoli@wads-5-232-202.resnet.mtu.edu) has joined ##programming
+2013-11-05 21:06:24	nisstyre	other than me
+2013-11-05 21:06:29	spjt	blargo_: Kind of all at the same time. PHP is the server side, jQuery is the client side
+2013-11-05 21:06:40	bubchi89	hm i dunno
+2013-11-05 21:06:49	>	NerdKelly (~NerdKelly@101.165.68.155) has joined ##programming
+2013-11-05 21:06:53	nisstyre	bubchi89: I never said I didn't have any experience
+2013-11-05 21:07:01	nisstyre	just no formal experience or formal education
+2013-11-05 21:07:01	<	blargo (~anon@184.46.87.107) has quit (Ping timeout: 272 seconds)
+2013-11-05 21:07:14	nisstyre	just shit I learned on my own hacking
+2013-11-05 21:07:20	bubchi89	i dunno
+2013-11-05 21:07:29	bubchi89	i think in most industries with that sort of resume/application you wouldn't ahve gotten a second glance
+2013-11-05 21:07:40	w0rm_x	blargo, there are plenty of projects to contribute to if you're good enough with C.
+2013-11-05 21:07:41	bubchi89	it depends though
+2013-11-05 21:07:46	bubchi89	if your github has demoable software then maybe
+2013-11-05 21:07:48	spjt	blargo_: Set up a server and write a PHP app that says "Hello World". Then, make a static HTML button with a div that loads a string from the server using jQuery.
+2013-11-05 21:07:50	nisstyre	bubchi89: programming is pretty unique in that respect
+2013-11-05 21:08:02	bubchi89	well i knew software was easy to get a job in
+2013-11-05 21:08:07	bubchi89	if you have adegree you won't be unemployed
+2013-11-05 21:08:09	bubchi89	it's like impossible
+2013-11-05 21:08:18	bubchi89	but i didn't think a random joe could get a job as a dev
+2013-11-05 21:08:20	nisstyre	bubchi89: and there have been lots of very successful people with no degree
+2013-11-05 21:08:21	blargo_	w0rm_x: that was what i was thinking, do some open souece projects. i have some ideas for an android app that may sell too
+2013-11-05 21:08:28	bubchi89	i was thinking freelancing might be the easiest avenue
+2013-11-05 21:08:29	nisstyre	bubchi89: they can
+2013-11-05 21:08:38	bubchi89	nisstyre: their story is different because they were friends at a startup
+2013-11-05 21:08:39	nisstyre	bubchi89: it was VERY common in the late 90s/early 2000s
+2013-11-05 21:08:40	w0rm_x	blargo_, gcc is one.
+2013-11-05 21:08:41	bubchi89	or like met people through irc
+2013-11-05 21:08:42	spjt	bubchi89: I've seen a lot of people in school that couldn't code their way out of a wet paper bag
+2013-11-05 21:08:42	nisstyre	because of the tech bubble
+2013-11-05 21:08:51	bubchi89	spjt: irrelevant to my point
+2013-11-05 21:09:18	nisstyre	bubchi89: it's not that uncommon
+2013-11-05 21:09:23	bubchi89	i think contributing to a project is a good in
+2013-11-05 21:09:25	bubchi89	sure
+2013-11-05 21:09:26	nisstyre	bubchi89: I know someone who is an engineer at RedHat and has no degree
+2013-11-05 21:09:48	bubchi89	you guys are conflating too many points together
+2013-11-05 21:09:51	spjt	There are a lot of really terrible programmers out there. All you have to do is be better than them, and it's not that hard
+2013-11-05 21:09:59	nisstyre	yeah, exactly
+2013-11-05 21:10:01	manamonghippos	I also know an addict with no degree, but not everyone with a degree is an addict.
+2013-11-05 21:10:03	bubchi89	that's not true
+2013-11-05 21:10:07	bubchi89	in any other industry
+2013-11-05 21:10:08	manamonghippos	with no degree*
+2013-11-05 21:10:12	nisstyre	bubchi89: so?
+2013-11-05 21:10:25	nisstyre	bubchi89: I'm not saying you can be a medical doctor with no degree
+2013-11-05 21:10:35	spjt	A lot of people are claiming to be programmers now because that's where the jobs are
+2013-11-05 21:10:37	bubchi89	my point is that making blanket statements
+2013-11-05 21:10:43	bubchi89	like you just need to be good, are garbage
+2013-11-05 21:10:46	w0rm_x	try apply for the big ones without a degree ;)
+2013-11-05 21:10:47	bubchi89	you need to do very specific things
+2013-11-05 21:10:52	nisstyre	bubchi89: you need to be productive and good
+2013-11-05 21:10:58	bubchi89	that's equally generic
+2013-11-05 21:10:59	nisstyre	productivity is hard for both groups
+2013-11-05 21:11:06	TacitBlu1	many companies don't care about the full degree but prefer to see the specific courses and credits
+2013-11-05 21:11:28	nisstyre	bubchi89: you need to learn more about the history of computing
+2013-11-05 21:11:41	nisstyre	there've been lots of very influential/talented people with no formal education
+2013-11-05 21:11:45	nisstyre	some of them went on to get it
+2013-11-05 21:11:45	bubchi89	wow
+2013-11-05 21:11:49	bubchi89	when did i claim that that's not true
+2013-11-05 21:11:51	bubchi89	what the fuck
+2013-11-05 21:12:00	TacitBlu1	the self-taught is often suspect to have deficiencies in fundamental areas
+2013-11-05 21:12:02	bubchi89	let me reiterate
+2013-11-05 21:12:07	bubchi89	you guys are conflating too many things together
+2013-11-05 21:12:14	bubchi89	i said, software is unique in the sense that
+2013-11-05 21:12:15	nisstyre	bubchi89: okay, clarify then
+2013-11-05 21:12:18	bubchi89	if you have a degree, then you'll get a job
+2013-11-05 21:12:20	bubchi89	where in that statement
+2013-11-05 21:12:24	bubchi89	did i say it was a requirement to get a job?
+2013-11-05 21:12:25	bubchi89	i didn't
+2013-11-05 21:12:29	nisstyre	okay fair enough
+2013-11-05 21:12:30	bubchi89	great. glad we agree on that
+2013-11-05 21:12:44	bubchi89	my second statement is that, you can't just be "good" you have to do specific things
+2013-11-05 21:12:57	bubchi89	you need to know people, or you need to go along some specific route to find employment
+2013-11-05 21:13:08	bubchi89	like contributing _consistently_ to a project or perhaps freelance
+2013-11-05 21:13:17	bubchi89	or perhaps doing side projects and then applying
+2013-11-05 21:13:35	bubchi89	i was surprised to hear that your github and SO were sufficient to get a job somewhere
+2013-11-05 21:13:41	bubchi89	but it's hard to tell because i haven't looked at either closely
+2013-11-05 21:14:01	nisstyre	bubchi89: I fit in with the programmers already working there
+2013-11-05 21:14:20	bubchi89	nisstyre: yeah but why would they give you an interview over the other applicants?
+2013-11-05 21:14:35	nisstyre	bubchi89: probably because the other applicants sucked
+2013-11-05 21:14:35	<	St0rmSh4dow (~St0rmSh4d@122.172.46.117) has quit (Ping timeout: 245 seconds)
+2013-11-05 21:14:47	nisstyre	bubchi89: which they told me (after I was hired)
+2013-11-05 21:14:58	spjt	self-taught usually does have deficiencies
+2013-11-05 21:15:05	nisstyre	also I don't think they got many applicants or something
+2013-11-05 21:15:19	nisstyre	spjt: usually != always though
+2013-11-05 21:15:25	nisstyre	and sometimes the reverse is true
+2013-11-05 21:15:42	nisstyre	like some of the engineering students we interviewed were awful
+2013-11-05 21:15:58	nisstyre	although they were the bottom of the barrel as it was late to look for people
+2013-11-05 21:16:11	crystalgrystal	how do i find out previous irc usernames for a user
+2013-11-05 21:16:13	nisstyre	one guy mixed C style declarations into PHP code
+2013-11-05 21:16:13	crystalgrystal	via a command
+2013-11-05 21:16:15	nisstyre	wtf
+2013-11-05 21:16:21	crystalgrystal	anyone knoe
+2013-11-05 21:16:22	crystalgrystal	:|
+2013-11-05 21:16:29	nisstyre	crystalgrystal: /whowas
+2013-11-05 21:16:48	nisstyre	at least I think that's it
+2013-11-05 21:17:05	nisstyre	that might just give you whois info on a nick that no longer exists
+2013-11-05 21:17:14	crystalgrystal	doesn't work :|||||
+2013-11-05 21:17:38	bubchi89	i just spent 6 seconds trying to close a bottle by rotating it ccw
+2013-11-05 21:17:47	spjt	nisstyre: Well, I work with some developers that don't have formal education. They can complete tasks, but sometimes it's in a less than optimal way. Does it really matter? Maybe not.
+2013-11-05 21:18:12	bubchi89	i would stop at any attempt to generalize people based on their education. it's not really thinking about
+2013-11-05 21:18:12	nisstyre	spjt: I don't believe I do things in a suboptimal way personally
+2013-11-05 21:18:16	bubchi89	other in some abstract, statistical way
+2013-11-05 21:18:30	nisstyre	if anything the guy with lots of experience (and a degree I think) did things in a terrible way
+2013-11-05 21:19:09	nisstyre	(they got rid of him gladly)
+2013-11-05 21:19:20	<	gugah (~gustavo@190.190.186.54) has quit (Quit: Saliendo)
+2013-11-05 21:19:34	>	thinker2342 (~elumguir@ppp-46-244-200-224.dynamic.mnet-online.de) has joined ##programming
+2013-11-05 21:19:36	spjt	nisstyre: How old are you?
+2013-11-05 21:19:42	nisstyre	spjt: 22
+2013-11-05 21:20:31	spjt	nisstyre: Interesting. I've noticed that self-taught programmers that are younger tend to have less of a concept of what is and isn't expensive.
+2013-11-05 21:20:34	crystalgrystal	a comp sci degree in uni isn't essential to work in the industry
+2013-11-05 21:20:49	blargo_	crystalgrystal: thats what ive always read
+2013-11-05 21:20:51	nisstyre	spjt: well I have a pretty good idea of what is and isn't
+2013-11-05 21:20:53	crystalgrystal	but it catalyses you, esp if you were interested in comp sci before uni
+2013-11-05 21:21:00	crystalgrystal	in specific "techniques"
+2013-11-05 21:21:22	<	thinker2342 (~elumguir@ppp-46-244-200-224.dynamic.mnet-online.de) has left ##programming
+2013-11-05 21:21:40	nisstyre	spjt: the shit this guy did before me was using exponential memory
+2013-11-05 21:21:45	spjt	nisstyre: but, in any case I think you could see how someone with formal training might be able to figure out the time complexity of some function and have been exposed to a more efficient algorithm
+2013-11-05 21:21:47	nisstyre	or at least quadratic amounts of memory
+2013-11-05 21:22:05	<	krixxkraxx (~galaris@catv-80-99-58-135.catv.broadband.hu) has quit (Ping timeout: 245 seconds)
+2013-11-05 21:22:05	horny-sama	nisstyre: agree
+2013-11-05 21:22:11	spjt	nisstyre: The question is whether they can actually code the more efficient solution, which is more about experience than training
+2013-11-05 21:22:35	nisstyre	spjt: it's not that useless to prove something is in a certain complexity class if you can figure it out with a less rigorous way
+2013-11-05 21:22:43	nisstyre	really, although I suppose I could do that
+2013-11-05 21:22:45	horny-sama	spjt: combination of both
+2013-11-05 21:22:46	spjt	nisstyre: Or moreso, to realize when a more efficient algorithm is actually necessary
+2013-11-05 21:22:57	nisstyre	I know about recurrence relations, and so on
+2013-11-05 21:23:07	nisstyre	spjt: that should be obvious
+2013-11-05 21:23:09	>	jjb123 (~Jimmy@c-98-209-215-53.hsd1.mi.comcast.net) has joined ##programming
+2013-11-05 21:23:55	spjt	nisstyre: A lot of things should be obvious. I've seen otherwise pretty good self-taught programmers who didn't realize a function could call itself
+2013-11-05 21:24:01	nisstyre	spjt: also sometimes things that look less efficient are actually faster in practice
+2013-11-05 21:24:05	nisstyre	see: fibonnaci trees
+2013-11-05 21:24:13	nisstyre	also it depends on the average input size
+2013-11-05 21:24:37	nisstyre	if your average input size is small enough, than for example, linear search performs better than binary search
+2013-11-05 21:24:38	spjt	A bubble sort is the fastest sort when the input is already sorted :)
+2013-11-05 21:24:41	nisstyre	s/than/then/
+2013-11-05 21:24:52	nisstyre	spjt: yeah exactly
+2013-11-05 21:24:59	nisstyre	many people don't get that
+2013-11-05 21:25:08	bubchi89	nah it isn't. my sort is faster
+2013-11-05 21:25:11	nisstyre	even, and maybe especially CS undergrads
+2013-11-05 21:25:13	bubchi89	it takes the input and just returns it
+2013-11-05 21:25:15	bubchi89	it doesn't always work though
+2013-11-05 21:25:29	spjt	bubchi89: That's pretty much what bubble sort does when the list is already sorted
+2013-11-05 21:25:30	nisstyre	sleepsort is pretty awesome
+2013-11-05 21:25:48	spjt	a bubble sort on an already sorted list will traverse the list once
+2013-11-05 21:25:49	bubchi89	i think randsort is equivalent to my algorithm... but it always works
+2013-11-05 21:25:56	nisstyre	quantum bogosort as well
+2013-11-05 21:26:01	bubchi89	actually no
+2013-11-05 21:26:04	bubchi89	randsort has to iterate over the array
+2013-11-05 21:26:09	bubchi89	hmmm
+2013-11-05 21:26:20	bubchi89	oh is it called bogosort
+2013-11-05 21:26:21	nisstyre	spjt: anyway, I'll admit I have little experience with some formal mathematical arguments
+2013-11-05 21:26:22	bubchi89	yeah it is lol
+2013-11-05 21:26:31	nisstyre	but it's quite rare to employ them in practice
+2013-11-05 21:26:36	spjt	any sort has a minimum O(n) because it has to at least traverse the list once to determine if it is sorted or not
+2013-11-05 21:26:42	bubchi89	i actually really appreciate my math background
+2013-11-05 21:26:42	nisstyre	although I see the value in understanding them
+2013-11-05 21:26:46	bubchi89	it means that i can argue things precisely
+2013-11-05 21:26:50	bubchi89	whereas my coworkers are really bad at that
+2013-11-05 21:26:53	nisstyre	I do like and do math
+2013-11-05 21:26:57	nisstyre	just not complexity theory
+2013-11-05 21:27:05	nisstyre	but I get the basics, more or less
+2013-11-05 21:27:07	bubchi89	if you haven't struggled with logic then you're probably not so great at it
+2013-11-05 21:27:25	nisstyre	bubchi89: I'm pretty sure I get logic
+2013-11-05 21:27:47	bubchi89	when you say you don't like compleixty theory
+2013-11-05 21:27:47	bubchi89	do you mean you don't like doing runtime analysis
+2013-11-05 21:27:47	bubchi89	or you don't like complexity theory
+2013-11-05 21:27:47	spjt	nisstyre: that's a bit different, I'm thinking of "I made some web pages in PHP" self-taught programmers
+2013-11-05 21:27:48	nisstyre	bubchi89: I mean I don't spend my spare time proving bounds of algorithms
+2013-11-05 21:28:02	nisstyre	spjt: sure I guess
+2013-11-05 21:28:19	bubchi89	i actually like analyzing algorithms in my spare time lol
+2013-11-05 21:28:20	bubchi89	well sort of
+2013-11-05 21:28:25	bubchi89	i think i like sitting around doing nothing even more
+2013-11-05 21:28:36	<	SecretFire (~nomercy12@c-24-21-47-171.hsd1.wa.comcast.net) has quit (Quit: SecretFire)
+2013-11-05 21:28:41	nisstyre	bubchi89: I'm more interested in type theory
+2013-11-05 21:28:45	>	ztirf (~ztirf@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has joined ##programming
+2013-11-05 21:28:50	spjt	of course anything taught in CS school can be self-taught, it's not some sort of magical spell cast on CS students by professors, it's just stuff in book
+2013-11-05 21:28:52	bubchi89	yeah you and deffo
+2013-11-05 21:29:53	<	vendu (~vendu@85-76-109-94-nat.elisa-mobile.fi) has quit (Read error: Connection reset by peer)
+2013-11-05 21:29:53	spjt	if you actually read through Cormen and retain 10% of it you'll be ahead of 90% of CS grads as far as theory is concerned
+2013-11-05 21:29:59	nisstyre	spjt: I agree wrt "Programming for Dummies" type people though
+2013-11-05 21:30:04	>	jjb1231 (~jimmy@c-98-209-215-53.hsd1.mi.comcast.net) has joined ##programming
+2013-11-05 21:30:22	nisstyre	spjt: I haven't, though I've read through some of Knuth
+2013-11-05 21:30:27	nisstyre	mainly Concrete Mathematics
+2013-11-05 21:30:44	spjt	knuth counts as well, I can't even read it
+2013-11-05 21:30:46	bubchi89	if only i was as cool as knuth
+2013-11-05 21:30:53	bubchi89	i'd be a robot and not give any fucks
+2013-11-05 21:30:58	nisstyre	spjt: his christmas tree lectures are interesting
+2013-11-05 21:31:17	nisstyre	spjt: CM is deceptively easy
+2013-11-05 21:31:26	nisstyre	the writing style is very clear, but the actual problems are very tricky
+2013-11-05 21:31:31	<	[1]WilBur (HydraIRC@wcb38pc.STUDENT.CWRU.Edu) has quit (Ping timeout: 240 seconds)
+2013-11-05 21:31:39	nisstyre	and some of the stuff you need to understand is only stated implicitly
+2013-11-05 21:32:14	spjt	I only understood enough of that stuff to pass the classes :)
+2013-11-05 21:32:26	nisstyre	spjt: did you ever touch generating functions?
+2013-11-05 21:32:36	nisstyre	(deceptive name, they aren't functions)
+2013-11-05 21:32:38	<	drostie (~14kthings@50-27-213-193.stjo.sta.suddenlink.net) has quit (Read error: Connection reset by peer)
+2013-11-05 21:32:53	>	Wil_Bur (HydraIRC@wcb38pc.STUDENT.CWRU.Edu) has joined ##programming
+2013-11-05 21:32:53	nisstyre	https://en.wikipedia.org/wiki/Generating_function
+2013-11-05 21:33:04	spjt	nisstyre: not that I know if
+2013-11-05 21:33:17	nisstyre	spjt: it's a very general method of solving different types of recurrence relations
+2013-11-05 21:33:21	nisstyre	solving = finding a closed form
+2013-11-05 21:33:26	nisstyre	(if one exists)
+2013-11-05 21:33:30	spjt	nisstyre: nope
+2013-11-05 21:33:46	jjb1231	Hey everyone, I was hoping someone could critique my code. I'm using doxygen for this project and I'm afraid I might have too many comments and wanted to get a second opinion. Here are a few typical methods from a class: http://ideone.com/tXIywr
+2013-11-05 21:33:58	nisstyre	you did do stuff like f(0) = 1, f(n) = 2 * f(n-1) though right?
+2013-11-05 21:34:06	nisstyre	and learn how to find a closed form?
+2013-11-05 21:34:07	bubchi89	generating functions aren't a method
+2013-11-05 21:34:15	bubchi89	they're used in other places in math
+2013-11-05 21:34:16	spjt	nisstyre: well, maybe I did, some of that stuff looks familiar, finding closed forms of summations
+2013-11-05 21:34:24	nisstyre	bubchi89: they aren't called generating functions though
+2013-11-05 21:34:34	bubchi89	they were in my math courses...
+2013-11-05 21:34:48	nisstyre	weird, I've only seen them called generating functions in the context of recurrences
+2013-11-05 21:34:52	nisstyre	whatever
+2013-11-05 21:34:56	bubchi89	also i'm confused why you don't think they are a function
+2013-11-05 21:35:04	bubchi89	they can be represented as a power series but they're still a function
+2013-11-05 21:35:06	nisstyre	bubchi89: because it's a series
+2013-11-05 21:35:09	<	crystalgrystal (~cvlvxi@chris.mel.kesoftware.com) has quit (Quit: Leaving)
+2013-11-05 21:35:19	bubchi89	it's a summation of a series
+2013-11-05 21:35:21	bubchi89	not a series
+2013-11-05 21:35:21	nisstyre	bubchi89: well Knuth/Graham says the name is a misnomer
+2013-11-05 21:35:24	<	jjb123 (~Jimmy@c-98-209-215-53.hsd1.mi.comcast.net) has quit (Quit: Leaving.)
+2013-11-05 21:35:32	bubchi89	hm
+2013-11-05 21:35:36	nisstyre	bubchi89: a series implies some kind of accumulation
+2013-11-05 21:35:37	bubchi89	maybe let me look at it again
+2013-11-05 21:35:42	nisstyre	a sequence is a bunch of numbers
+2013-11-05 21:35:46	spjt	jjb1231: Well, nobody will ever accuse you of not commenting enough. They could probably be more concise.
+2013-11-05 21:36:59	bubchi89	he already left
+2013-11-05 21:37:21	spjt	I'm always amused by people saying untyped languages are more concise, then putting the types of the arguments in the comments
+2013-11-05 21:37:44	bubchi89	hm
+2013-11-05 21:38:04	bubchi89	i've had the floating notion that perhaps documentation in the code hsould be brief but there should also be some place with the full documentation
+2013-11-05 21:38:12	bubchi89	where the coder can feel free to be as detailed as they want
+2013-11-05 21:38:28	bubchi89	and provide examples if it's library or framework or such
+2013-11-05 21:38:44	spjt	bubchi89: I dunno about other IDE's but eclipse will just fold doc comments
+2013-11-05 21:38:53	bubchi89	for example... any functions that are part of a language's standard usually have that sort of documentation
+2013-11-05 21:38:59	bubchi89	sure
+2013-11-05 21:39:03	bubchi89	but i don't think it's the appropriate place
+2013-11-05 21:39:13	bubchi89	consider msft's msdn documentation for a lot of .NET
+2013-11-05 21:39:19	bubchi89	it wouldn't make sense to dump that in your code
+2013-11-05 21:39:29	spjt	bubchi89: It is, just because programmers will never update documentation if it's not right there
+2013-11-05 21:39:42	pheas	...
+2013-11-05 21:40:00	nisstyre	bubchi89: anyway, a lot of this stuff is beyond me, though I'd like to spend the time to fully understand it all
+2013-11-05 21:40:17	>	rosh (~rohit@unaffiliated/roansh) has joined ##programming
+2013-11-05 21:40:31	>	joelrobichaud (~Joel@modemcable209.137-81-70.mc.videotron.ca) has joined ##programming
+2013-11-05 21:40:31	<	ztirf (~ztirf@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has quit (Remote host closed the connection)
+2013-11-05 21:41:02	>	ztirf (~ztirf@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has joined ##programming
+2013-11-05 21:41:03	bubchi89	nisstyre: i don't even remember the other time i used generating functions in math. i think it was in a combinatorics proof
+2013-11-05 21:41:06	spjt	the only documentation most things need, or should need is what the arguments are and what ti returns
+2013-11-05 21:41:16	bubchi89	nisstyre: i imagine it's used in analysis a lot actually which i never took
+2013-11-05 21:41:24	nisstyre	bubchi89: yeah, they get used there
+2013-11-05 21:41:39	nisstyre	bubchi89: the guy who co-wrote CM with Knuth, Ronald Graham, is a famous combinatorics guy
+2013-11-05 21:41:42	bubchi89	nisstyre: i think maybe the reason why knuth said that is because you never use generating functions as functions really. you manipulate the summation itself
+2013-11-05 21:41:52	nisstyre	bubchi89: yes
+2013-11-05 21:41:52	jjb1231	spjt: True, I tried to just describe the parameters and maybe what classes they should be.
+2013-11-05 21:42:06	spjt	then again most of the code I work with has no comments at all
+2013-11-05 21:42:08	nisstyre	bubchi89: and they aren't functions
+2013-11-05 21:42:13	bubchi89	spjt: you don't know how crazy my project's code base is then
+2013-11-05 21:42:15	nisstyre	they don't have a domain and co-domain
+2013-11-05 21:42:18	bubchi89	i have insane comments in there like
+2013-11-05 21:42:35	nisstyre	I guess you can sort of call N the domain
+2013-11-05 21:42:36	nisstyre	but meh
+2013-11-05 21:42:39	jjb1231	bubchi89: I'm planning on using Doxygen to auto-generate a code reference website based on the docstring comments and write some high level docs to go with it
+2013-11-05 21:42:45	bubchi89	'well we had to do this because of [x, y, z]. as a result it will blow up and wreak havoc if [a,b,c] occur. but at least [d,e,f,g,h,i] don't blow up'
+2013-11-05 21:42:56	bubchi89	lmao
+2013-11-05 21:43:01	bubchi89	our code actually makes me laugh
+2013-11-05 21:43:04	bubchi89	no one else even writes comments
+2013-11-05 21:43:07	bubchi89	it's just a mystery when things blow up
+2013-11-05 21:43:13	bubchi89	because who looks at code to debug incidences anyways
+2013-11-05 21:43:17	nisstyre	bubchi89: I'm more into things like set theory and logic
+2013-11-05 21:43:22	nisstyre	I bought a book on the axiom of choice
+2013-11-05 21:43:30	nisstyre	pretty interesting shit
+2013-11-05 21:43:46	spjt	bubchi89: Nobody, but sometimes you need to add functionality
+2013-11-05 21:43:55	nisstyre	it lets you prove the banach-tarski theorem
+2013-11-05 21:44:19	>	hashcat (~hashcat@114-47-118-95.dynamic.hinet.net) has joined ##programming
+2013-11-05 21:44:19	bubchi89	nisstyre: huh? generating functions are usually like literally normal functions that map from the real numbers to the real numbers
+2013-11-05 21:44:36	bubchi89	nisstyre: but they need to be representable by some power series
+2013-11-05 21:44:49	nisstyre	bubchi89: not sure what you mean
+2013-11-05 21:44:51	bubchi89	nisstyre: yeah i like set theory a lot too. i thinkwe already talked about it
+2013-11-05 21:45:10	nisstyre	what do you mean "normal functions" ?
+2013-11-05 21:45:39	bubchi89	i mean ther'es nothing weird about it. it just takes a real number and maps it to another real number
+2013-11-05 21:46:02	>	Unicykle (~kvirc@gw2.elmira.edu) has joined ##programming
+2013-11-05 21:46:12	bubchi89	for instance G(x) = 1/(1-x) is a generating function which happens to be equal to 1 + x + x^2 + x^3 + ...
+2013-11-05 21:46:22	bubchi89	although maybe some people define the generating function to be the sequence of coefficients
+2013-11-05 21:46:26	bubchi89	1 1 1 1 1. dunno
+2013-11-05 21:46:31	spjt	jjb1231: It's not bad, maybe it just seems weird because python puts the doc comments after the function definition
+2013-11-05 21:46:41	bubchi89	in which case you're right i guess and it maps the naturals to the set of coefficients
+2013-11-05 21:47:09	nisstyre	bubchi89: they aren't defined as functions though
+2013-11-05 21:47:31	<	nisstyre (~yours@oftn/member/Nisstyre) has quit (Quit: Leaving)
+2013-11-05 21:47:57	>	nisstyre (~yours@oftn/member/Nisstyre) has joined ##programming
+2013-11-05 21:48:28	<	Wil_Bur (HydraIRC@wcb38pc.STUDENT.CWRU.Edu) has quit (Ping timeout: 264 seconds)
+2013-11-05 21:48:46	nisstyre	sorry lost wifi connection
+2013-11-05 21:48:48	nisstyre	bubbajones: anyway, it would have to take a sequence of numbers as an input
+2013-11-05 21:49:04	bubchi89	hm
+2013-11-05 21:49:24	>	lolcathost (~user@unaffiliated/dijkstragroupie) has joined ##programming
+2013-11-05 21:49:30	nisstyre	I don't think it's useful to define them as functions
+2013-11-05 21:50:05	<	Unicykle (~kvirc@gw2.elmira.edu) has quit
+2013-11-05 21:50:26	bubchi89	i guess generating functions don't technically have a domain
+2013-11-05 21:50:30	bubchi89	not really sure
+2013-11-05 21:51:18	nisstyre	bubchi89: even wikipedia says "Generating functions are not functions in the formal sense of a mapping from a domain to a codomain; the name is merely traditional, and they are sometimes more correctly called generating series.[2]"
+2013-11-05 21:51:21	nisstyre	https://en.wikipedia.org/wiki/Generating_function
+2013-11-05 21:51:31	<	oleo (~oleo@xdsl-78-35-149-161.netcologne.de) has quit (Remote host closed the connection)
+2013-11-05 21:52:30	bubchi89	i saw that but i didn't understand it
+2013-11-05 21:52:37	bubchi89	my best guess is that generating functions as defined don't have an actual domain
+2013-11-05 21:52:52	nisstyre	well, like I said they're not formally defined as functions
+2013-11-05 21:52:55	bubchi89	it's irrelevant what x is
+2013-11-05 21:52:59	bubchi89	that's great nisstyre
+2013-11-05 21:53:08	nisstyre	in order for something to be a function it must have a clearly defined domain which is (usually) a set
+2013-11-05 21:53:25	nisstyre	and a co-domain, and some mapping between them
+2013-11-05 21:54:46	nisstyre	it could be bijective, surjective, injective, etc...
+2013-11-05 21:54:47	<	manamonghippos (~ManAmongH@71-82-6-201.dhcp.leds.al.charter.com) has quit (Quit: manamonghippos)
+2013-11-05 21:54:47	bubchi89	i mean the point is if you simply let the domain be the real numbers, generating functions would satisfy the definition of a function
+2013-11-05 21:54:47	bubchi89	i guess the point is that they don't actually define the domain
+2013-11-05 21:54:47	bubchi89	because it's irrelevant
+2013-11-05 21:54:47	nisstyre	bijections are interesting because you can use them to do interesting stuff with infinite sets
+2013-11-05 21:54:47	bubchi89	although it's interesting to think of closed forms if you don't have a domain
+2013-11-05 21:54:54	nisstyre	if you can show a bijection between the natural numbers and some set, then it's "countable"
+2013-11-05 21:55:03	bubchi89	yep
+2013-11-05 21:55:11	bubchi89	i struggled with set theory at cmu for a semester
+2013-11-05 21:55:29	bubchi89	probably my favorite non-programming course
+2013-11-05 21:55:39	nisstyre	bubchi89: did you have to prove there is a bijection between Q and N?
+2013-11-05 21:55:47	bubchi89	no it was one of the examples done in class
+2013-11-05 21:55:56	nisstyre	still cool though
+2013-11-05 21:55:58	bubchi89	we proved other similar things that were a bit more contrived
+2013-11-05 21:56:15	nisstyre	there are ways to enumerate Q too
+2013-11-05 21:56:24	nisstyre	(which you could use to prove the bijection I think)
+2013-11-05 21:56:41	nisstyre	https://en.wikipedia.org/wiki/Farey_sequence
+2013-11-05 21:57:13	bubchi89	an injection from Q to N is trivial
+2013-11-05 21:57:28	nisstyre	yeah good point
+2013-11-05 21:57:38	bubchi89	you also know it's infinite
+2013-11-05 21:57:51	bubchi89	and finally there's an axiom that omega is the least infinite ordinal
+2013-11-05 21:57:56	nisstyre	you have to prove *every* element of both sets maps to only *one* element in the other
+2013-11-05 21:57:58	bubchi89	so you could use that to prove its cardinality i think
+2013-11-05 21:58:15	bubchi89	not with the outline i just suggested
+2013-11-05 21:58:35	bubchi89	but that proof assumes that you have the lemma
+2013-11-05 21:58:39	>	rindolf (~Shlomi@bzq-79-183-224-143.red.bezeqint.net) has joined ##programming
+2013-11-05 21:58:40	nisstyre	bubchi89: is that an axiom of ZFC?
+2013-11-05 21:58:46	bubchi89	where injectivity tells you something about their cardinalities
+2013-11-05 21:59:21	bubchi89	well i know the axiom of infinity declares omega to exist
+2013-11-05 21:59:25	bubchi89	i guess it doesn't say it's the least such ordinal
+2013-11-05 21:59:28	bubchi89	that must have been some other lemma
+2013-11-05 21:59:30	bubchi89	lol
+2013-11-05 21:59:34	bubchi89	that was the most ridiculous part of set theory
+2013-11-05 21:59:38	bubchi89	where there were hundreds of little lemmas
+2013-11-05 21:59:41	nisstyre	I would have to check a book to be sure
+2013-11-05 21:59:51	nisstyre	and I don't have them with me atm
+2013-11-05 21:59:56	bubchi89	and you could prove any claim 20 different ways if you proved the lemmas. but often there was an elegant way that avoided any of those lemmas
+2013-11-05 22:00:01	bubchi89	and so you'd struggle to prove it exactly that way
+2013-11-05 22:00:24	<	avtolstoy (~Andrey@79.104.192.20) has quit (Quit: Sleep)
+2013-11-05 22:00:44	nisstyre	bubchi89: at my uni we have the entire personal archives of Bertrand Russell which is pretty cool
+2013-11-05 22:00:52	nisstyre	(if you're into logic and set theory at least)
+2013-11-05 22:01:09	nisstyre	there's a course that covers Principles of Mathematics which I wanna take
+2013-11-05 22:01:21	>	ocfx (~ocfx@unaffiliated/omegacfx) has joined ##programming
+2013-11-05 22:01:24	nisstyre	but it's only every other year and I couldn't get in this year ;_;
+2013-11-05 22:01:28	bubchi89	yeah you told me you liked bertrand russell's work
+2013-11-05 22:01:28	ocfx	darkf
+2013-11-05 22:01:38	nisstyre	ocfx: you have to use the # I think
+2013-11-05 22:01:49	ocfx	no
+2013-11-05 22:02:02	ocfx	i just heard that a bot autobanned on mention of his name so i wanted to try
+2013-11-05 22:02:04	nisstyre	I guess Archer stopped banning people for that
+2013-11-05 22:02:22	ocfx	cause it sounded silly
+2013-11-05 22:02:26	bubchi89	you know aleph nought has the least cardinality by definition of the well ordering on ordinals
+2013-11-05 22:02:29	bubchi89	i'm like 99% sure of that
+2013-11-05 22:03:31	>	refcell (bede8f2c@gateway/web/freenode/ip.190.222.143.44) has joined ##programming
+2013-11-05 22:03:53	<	rindolf (~Shlomi@bzq-79-183-224-143.red.bezeqint.net) has quit (Quit: Leaving)
+2013-11-05 22:05:08	bubchi89	i think you can use an argument like 'well, remove an element for the set. map 0 to that. now remove another element. map 1 to that.' except i can't remember why you know that that will never terminate
+2013-11-05 22:05:15	>	falcou (~falcou@gov91-4-83-152-215-118.fbx.proxad.net) has joined ##programming
+2013-11-05 22:05:26	bubchi89	for Q and N you don't even need that though because you can just prove the injection in the other direction
+2013-11-05 22:05:27	>	Beg (~Beg@c-0744e155.012-52-6762673.cust.bredbandsbolaget.se) has joined ##programming
+2013-11-05 22:05:29	bubchi89	duh
+2013-11-05 22:06:08	<	ztirf (~ztirf@HSI-KBW-078-042-224-095.hsi3.kabel-badenwuerttemberg.de) has quit (Quit: Colloquy for iPad - http://colloquy.mobi)
+2013-11-05 22:06:39	nisstyre	bubchi89: yeah
+2013-11-05 22:06:45	nisstyre	that seems really simple
+2013-11-05 22:06:48	bubchi89	A = ω − {p}.
+2013-11-05 22:06:51	bubchi89	lol that actually renders
+2013-11-05 22:06:52	<	jackhammer2022 (~textual@c-76-24-11-66.hsd1.ma.comcast.net) has quit (Quit: Textual IRC Client: http://www.textualapp.com/)
+2013-11-05 22:07:02	bubchi89	A ∩ {p} = ∅ ∈ G
+2013-11-05 22:07:12	bubchi89	ah it did \in instead of \not\in
+2013-11-05 22:07:32	nisstyre	are you using latex for that?
+2013-11-05 22:07:51	bubchi89	yeah i'm looking at my old homework and i was just curious what it'd look like if i literally just copied it into the terminal
+2013-11-05 22:07:58	nisstyre	oh ok
+2013-11-05 22:08:10	nisstyre	well if your term supports unicode properly it works
+2013-11-05 22:08:12	<	mribeirodantas (~mrd@fedora/mribeirodantas) has quit (Quit: leaving)
+2013-11-05 22:08:19	bubchi89	yeah i guess latex just outputs unicode characters
+2013-11-05 22:08:42	nisstyre	latex can do stuff unicode can't
+2013-11-05 22:08:45	bubchi89	except /not is like a latex hack
+2013-11-05 22:08:47	bubchi89	yeah exactly
+2013-11-05 22:08:55	bubchi89	latex does magic to figure out where it puts the slash for a /not
+2013-11-05 22:09:01	bubchi89	hence why the /not/in was just rendered as /in
+2013-11-05 22:09:07	bubchi89	"rendered"
+2013-11-05 22:09:10	nisstyre	yeah
+2013-11-05 22:09:18	nisstyre	it wouldn't work for unicode I guess
+2013-11-05 22:09:52	nisstyre	be back in a few minutes
+2013-11-05 22:09:54	<	nisstyre (~yours@oftn/member/Nisstyre) has quit (Quit: Leaving)
+2013-11-05 22:10:55	>	SirJoe (~Joseph@48.216.70.115.static.exetel.com.au) has joined ##programming
+2013-11-05 22:11:45	<	SirJoe (~Joseph@48.216.70.115.static.exetel.com.au) has quit (Read error: Connection reset by peer)
+2013-11-05 22:13:25	ocfx	unicode 7.0 with more characters
+2013-11-05 22:15:49	blargo_	whats the best resource to learn javascript, should I start with codeacadmey?
+2013-11-05 22:15:49	ocfx	eloquent javascript
+2013-11-05 22:16:03	ocfx	http://eloquentjavascript.net/
+2013-11-05 22:16:07	lolcathost	blargo_: w3schools
+2013-11-05 22:16:08	bubchi89	pfft learn javascript? you just write it
+2013-11-05 22:16:14	lolcathost	bubchi89: lol
+2013-11-05 22:16:20	bubchi89	it's just UI
+2013-11-05 22:16:24	bubchi89	who cares if your code is totally broken
+2013-11-05 22:16:37	bubchi89	i should put that on my resume
+2013-11-05 22:16:42	ocfx	after that i recommend javascript allonge https://leanpub.com/javascript-allonge/read
+2013-11-05 22:16:44	lolcathost	bubchi89: In all fairness, he said JavaScript, not necessarily for client-side scripting.
+2013-11-05 22:16:49	ocfx	exactly
+2013-11-05 22:16:53	bubchi89	yeah that's true
+2013-11-05 22:17:14	ocfx	also client side apps can get pretty big sometimes and they require a bit more structure if you plan on maintaining it and your sanity
+2013-11-05 22:17:15	lolcathost	(Though anyone who would use JavaScript for anything else deserves to be stoned to death.
+2013-11-05 22:17:16	lolcathost	)
+2013-11-05 22:17:30	ocfx	angular is nice
+2013-11-05 22:17:32	<	cornjuliox (~cornjulio@112.198.142.69) has quit (Ping timeout: 240 seconds)
+2013-11-05 22:17:39	ocfx	javascript is $$$ right now
+2013-11-05 22:19:59	<	kcj (~casey@unaffiliated/kcj) has quit (Quit: kcj)
+2013-11-05 22:21:16	lolcathost	ocfx: Selling drugs and pimping trafficked women and children is $$$ right now. Even much more so than JavaScript.
+2013-11-05 22:22:24	lolcathost	Plus it does not involve learning any badly-designed languages, so it is more consistent with my personal sense of morality.
+2013-11-05 22:22:34	blargo_	so start with that book
+2013-11-05 22:22:36	blargo_	thanks
+2013-11-05 22:22:57	ocfx	yeah
+2013-11-05 22:23:24	Rou	Well you're gonna need a programmer to create code to manage all of your trafficking transactions
+2013-11-05 22:23:30	Rou	It's 2014 almost for gods sake
+2013-11-05 22:23:52	Rou	Prostituting children isn't some primitive game anymore
+2013-11-05 22:24:06	ocfx	yeah and like node would be a good backend for a real time map of your trafficking
+2013-11-05 22:24:14	ocfx	so we're back to javascript
+2013-11-05 22:24:27	blargo_	arent most iphone apps javasctipt?
+2013-11-05 22:25:03	ocfx	yeah i mean people use things that let them write html/css/js instead of native code
+2013-11-05 22:25:22	ocfx	its easier but people say it doesnt feel like a native app
+2013-11-05 22:26:53	<	diphtherial (~diphtheri@unaffiliated/escherial) has quit (Ping timeout: 240 seconds)
+2013-11-05 22:31:31	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 22:32:29	<	Sauvin (~sauvin@about/linux/staff/sauvin) has quit (Max SendQ exceeded)
+2013-11-05 22:33:33	>	Sauvin (~sauvin@about/linux/staff/sauvin) has joined ##programming
+2013-11-05 22:33:47	>	nisstyre (~yours@oftn/member/Nisstyre) has joined ##programming
+2013-11-05 22:35:25	>	t_p (~textual@115.238.89.37) has joined ##programming
+2013-11-05 22:35:41	<	jjb1231 (~jimmy@c-98-209-215-53.hsd1.mi.comcast.net) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:36:32	>	ameoba (~ameoba@c-24-20-234-51.hsd1.wa.comcast.net) has joined ##programming
+2013-11-05 22:36:39	>	ameoba_ (~ameoba@c-24-20-234-51.hsd1.wa.comcast.net) has joined ##programming
+2013-11-05 22:37:24	>	machina (~laite@h82142.koas.jyu.fi) has joined ##programming
+2013-11-05 22:40:01	gavilan2	<lolcathost> ocfx: Selling drugs and pimping trafficked women and children is $$$ right now. Even much more so than JavaScript. ---> Why not mix both? Create your own online service to sell drugs and pimp women and children... Imagine a Two-day home delivery for drugs + slaves!!!!
+2013-11-05 22:40:40	ocfx	we're thinking smart now
+2013-11-05 22:41:01	ocfx	#thirdworldstartups
+2013-11-05 22:41:12	nisstyre	gavilan2: someone already did that, sort of
+2013-11-05 22:41:24	<	rosh (~rohit@unaffiliated/roansh) has quit (Read error: Connection reset by peer)
+2013-11-05 22:41:25	nisstyre	he's in FBI custody now
+2013-11-05 22:42:45	<	joelroa (~textual@c-50-149-123-185.hsd1.wa.comcast.net) has quit (Quit: Computer has gone to sleep.)
+2013-11-05 22:43:06	ocfx	the fbi is trying to keep us down
+2013-11-05 22:45:41	>	boxfish (~jmickos@c-24-62-63-243.hsd1.ma.comcast.net) has joined ##programming
+2013-11-05 22:46:52	boxfish	Hey peeps. In Python, I've got two lists: one with derived values, and one with constant thresholds. Is there an easier way to do the following? if a[0] < thresh[0] and a[1] < thresh[1] and a[2] < thresh[2]: doSomething()
+2013-11-05 22:47:34	nisstyre	boxfish: all(map(lambda a,b: a<b, values))
+2013-11-05 22:47:39	nisstyre	where values is a list of tuples
+2013-11-05 22:47:45	nisstyre	er actually
+2013-11-05 22:47:57	nisstyre	all(map(lambda a,b: a<b, thresh, a)
+2013-11-05 22:47:58	nisstyre	)
+2013-11-05 22:48:38	boxfish	Thanks, nisstyre!
+2013-11-05 22:48:51	nisstyre	boxfish: no problem
+2013-11-05 22:49:06	>	synju (~synju@41.193.80.217) has joined ##programming
+2013-11-05 22:49:18	nisstyre	boxfish: all is basically and generalized to lists
+2013-11-05 22:49:41	nisstyre	and map applies that function to both lists where each value of the lists are the arguments
+2013-11-05 22:49:47	boxfish	Right
+2013-11-05 22:49:53	nisstyre	a = value of thresh, b = value of a
+2013-11-05 22:49:55	nisstyre	yeah you get it
+2013-11-05 22:50:09	boxfish	Got any specific tips for someone who's coded exclusively in C and C++ and is learning Python?
+2013-11-05 22:50:25	<	falcou (~falcou@gov91-4-83-152-215-118.fbx.proxad.net) has quit (Ping timeout: 245 seconds)
+2013-11-05 22:50:27	nisstyre	try to program in a more declaritive style
+2013-11-05 22:50:37	nisstyre	learn about higher order functions
+2013-11-05 22:51:36	synju	http://en.wikipedia.org/wiki/Higher-order_function#Example
+2013-11-05 22:51:39	synju	so nice.
+2013-11-05 22:51:42	synju	thanks
+2013-11-05 22:51:44	synju	:)
+2013-11-05 22:52:52	boxfish	Thanks, guys. It's tough breaking my habits from C ;)
+2013-11-05 22:53:04	<	horny-sama (~mr-fool@161.184.231.98) has quit (Quit: Leaving)
+2013-11-05 22:53:06	synju	I wish to learn c++ now
+2013-11-05 22:53:21	synju	to make games.
+2013-11-05 22:53:27	>	Rounin_ (17572@rubin.ifi.uio.no) has joined ##programming
+2013-11-05 22:53:40	>	t1vb (~Leo@c80-217-10-134.bredband.comhem.se) has joined ##programming
+2013-11-05 22:53:58	>	kakazza_ (~anon@unaffiliated/kakazza) has joined ##programming
+2013-11-05 22:53:58	>	mruczus (unic0rn@basil.tomaw.net) has joined ##programming
+2013-11-05 22:54:06	>	Jordanw (~Jordan@ppp118-210-123-230.lns20.adl2.internode.on.net) has joined ##programming
+2013-11-05 22:54:51	>	fling_ (~fling@fsf/member/fling) has joined ##programming
+2013-11-05 22:55:13	<	unic0rn (unic0rn@unaffiliated/unic0rn) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:13	<	fling (~fling@fsf/member/fling) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:13	<	Jordanlw (~Jordan@ppp118-210-123-230.lns20.adl2.internode.on.net) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:13	<	Rounin (17572@rubin.ifi.uio.no) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:13	<	tlvb (~Leo@c80-217-10-134.bredband.comhem.se) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:13	<	kakazza (~anon@unaffiliated/kakazza) has quit (Ping timeout: 272 seconds)
+2013-11-05 22:55:14	⇄	mruczus is now known as unic0rn
+2013-11-05 22:55:20	<	hashcat (~hashcat@114-47-118-95.dynamic.hinet.net) has quit (Ping timeout: 260 seconds)
+2013-11-05 22:55:26	delicado	make it happen
+2013-11-05 22:55:44	⇄	unic0rn is now known as Guest29945
+2013-11-05 22:55:47	>	kcj (~casey@unaffiliated/kcj) has joined ##programming
