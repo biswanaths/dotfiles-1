@@ -15,3 +15,4 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 .vim/.netrwhist
 **doc/tags
 weechat/logs/*
+weechat/*.conf
