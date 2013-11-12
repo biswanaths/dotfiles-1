@@ -27,7 +27,6 @@ Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -139,9 +138,7 @@ set omnifunc=syntaxcomplete#Complete
 
 " }}}
 " Wildignore {{{
-if has('wildignorecase')
-    set wildignorecase
-endif
+set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
@@ -202,22 +199,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 " DelimitMate
 let delimitMate_expand_cr = 1
 
-" Supertab
-" WHYYYY
-let g:SuperTabContextDefaultCompletionType=0
-
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_refresh_always = 1
-let g:neocomplete#enable_auto_select = 0
-let g:neocomplete#sources#syntax#min_keyword_length = 4
-if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
-  endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
@@ -238,8 +219,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
+            \ 'active_filetypes': ['c', 'cpp', 'java', 'python', 'ruby', 'perl', 'haskell', 'javascript'],
+            \ 'passive_filetypes': ['objc', 'objcpp'] }
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -274,7 +255,6 @@ let g:ctrlp_root_markers = ['tags']
 
 "}}}
 " Vim Niceties {{{
-
 " Reselect visual block after indent/outdent
 xnoremap < <gv
 xnoremap > >gv
@@ -346,18 +326,10 @@ let python_highlight_builtins=1
 let python_highlight_exceptions=1
 let python_highlight_space_errors=1
 
-" Perl syntax
-let perl_extended_vars=1
-
 " }}}
 " General Mappings {{{
-
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
-
-" Don't show help
-nnoremap <F1> <ESC>
-inoremap <F1> <ESC>
 
 " Screw Ex-mode
 nnoremap Q gq
@@ -384,8 +356,6 @@ nnoremap L $
 
 " UpperCase in insert mode
 inoremap <C-u> <esc>mzgUiw`z
-
-nnoremap <sile> <leader>p :set invpaste<CR>:setlocal paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z

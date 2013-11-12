@@ -16,3 +16,4 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 **doc/tags
 weechat/logs/*
 weechat/*.conf
+weechat/weechat.log
