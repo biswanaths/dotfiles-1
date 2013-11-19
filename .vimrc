@@ -12,10 +12,8 @@ Bundle 'gmarik/vundle'
 "}}}
 " Installed Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'itspriddle/vim-jquery'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lukerandall/haskellmode-vim'
@@ -25,7 +23,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'Rip-Rip/clang_complete'
+Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
@@ -35,6 +33,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
@@ -132,7 +131,7 @@ set foldmethod=syntax
 set wildmenu
 set wildmode=full
 set wildchar=<Tab>
-set completeopt+=longest
+set completeopt+=longest,preview
 set previewheight=4
 set omnifunc=syntaxcomplete#Complete
 
@@ -162,7 +161,7 @@ if has("gui_running")
     set guioptions-=R
     set guioptions-=l
     set guioptions-=L
-    set guifont=Anonymous\ Pro:h14
+    set guifont=Inconsolata-g:h13
 endif
 
 "}}}
@@ -195,6 +194,9 @@ au! WinEnter * wincmd =
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+
+" YCM
+let g:ycm_min_num_of_chars_for_completion=4
 
 " DelimitMate
 let delimitMate_expand_cr = 1
