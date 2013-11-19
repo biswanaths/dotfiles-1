@@ -19,3 +19,4 @@ weechat/*.conf
 weechat/weechat.log
 weechat/script/*.gz
 weechat/urlserver_list.txt
+.pentadactyl/info/*
