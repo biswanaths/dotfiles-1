@@ -17,3 +17,5 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 weechat/logs/*
 weechat/*.conf
 weechat/weechat.log
+weechat/script/*.gz
+weechat/urlserver_list.txt
