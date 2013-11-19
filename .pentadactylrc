@@ -23,6 +23,9 @@ imap -builtin <c-g> <esc><m-a-k><esc>
 nmap -builtin <c-s> <m-a-i>
 imap -builtin <c-s> <esc><m-a-i>
 
+"GuiOptions
+set go=nsr
+
 " Load plugins
 source ~/.pentadactyl/plugins/buftabs.js
 source ~/.pentadactyl/plugins/tab-options-dev.js
