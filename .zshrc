@@ -12,6 +12,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # ZSH environment variables
+eval "$(rbenv init - --no-rehash)"
 export GREP_COLOR='1;33'
 
 # Change some syntax coloring to look nicer
