@@ -1,3 +1,6 @@
+" runtimepath
+set runtimepath=/Users/ajh/.pentadactyl
+
 " Editor
 set editor='/usr/local/bin/mvim -f +<line> <file>'
 
@@ -24,11 +27,8 @@ imap -builtin <c-s> <esc><m-a-i>
 source ~/.pentadactyl/plugins/buftabs.js
 source ~/.pentadactyl/plugins/tab-options-dev.js
 
-" Some better gui options
-set go=nrsTC
-
-" Show links in the status
-set showstatuslinks=status
+" Show links
+set showstatuslinks=command
 
 " Colorscheme
 colorscheme molokai
