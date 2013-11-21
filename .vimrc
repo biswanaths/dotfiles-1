@@ -15,7 +15,7 @@ Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'itspriddle/vim-jquery'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lukerandall/haskellmode-vim'
@@ -347,18 +347,10 @@ let python_highlight_builtins=1
 let python_highlight_exceptions=1
 let python_highlight_space_errors=1
 
-" Perl syntax
-let perl_extended_vars=1
-
 " }}}
 " General Mappings {{{
-
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
-
-" Don't show help
-nnoremap <F1> <ESC>
-inoremap <F1> <ESC>
 
 " Screw Ex-mode
 nnoremap Q gq
@@ -386,7 +378,7 @@ nnoremap L $
 " UpperCase in insert mode
 inoremap <C-u> <esc>mzgUiw`z
 
-nnoremap <sile> <leader>p :set invpaste<CR>:setlocal paste?<CR>
+nnoremap <silent> <leader>p :set invpaste<CR>:setlocal paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
