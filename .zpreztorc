@@ -49,4 +49,4 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
     'brackets'
 
 # Set the prompt theme
-zstyle ':prezto:module:prompt' theme 'sorinMod'
+zstyle ':prezto:module:prompt' theme 'watabou'
