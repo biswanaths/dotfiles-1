@@ -51,10 +51,10 @@ bind .:shift;cmd ${bottomright}
 bind ]:shift;cmd ${topright}
 
 # Nudge Bindings
-bind l:shift;alt nudge +1% +0
-bind h:shift;alt nudge -1% +0
-bind k:shift;alt nudge +0 -1%
-bind j:shift;alt nudge +0 +1%
+bind l:shift;alt nudge +2% +0
+bind h:shift;alt nudge -2% +0
+bind k:shift;alt nudge +0 -2%
+bind j:shift;alt nudge +0 +2%
 
 # Focus Bindings
 bind l:shift;ctrl focus right
@@ -72,6 +72,7 @@ bind 2:ctrl activate-snapshot snapshot-screen delete
 
 # Focus certain applications
 bind f:ctrl;alt;cmd focus 'Nightly'
+bind t:ctrl;alt;cmd focus 'iTerm'
 
 # Relaunch slate
 bind 3:ctrl relaunch
