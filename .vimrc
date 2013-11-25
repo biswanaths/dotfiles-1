@@ -21,11 +21,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
-Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'Rip-Rip/clang_complete'
+Bundle 'RipRip/clang_complete'
+Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'sjl/gundo.vim'
@@ -203,16 +203,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 " DelimitMate
 let delimitMate_expand_cr = 1
 
-" Supertab
-" WHYYYY
-let g:SuperTabContextDefaultCompletionType=0
-
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_refresh_always = 1
-let g:neocomplete#enable_auto_select = 0
-let g:neocomplete#sources#syntax#min_keyword_length = 4
+let g:neocomplete#sources#syntax#min_keyword_length = 5
+let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
   endif
@@ -239,8 +235,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['python', 'objc', 'objcpp'] }
+            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
+            \ 'passive_filetypes': ['objc', 'objcpp'] }
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -248,6 +244,7 @@ let g:clang_complete_auto=1
 let g:clang_close_preview=1
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/
@@ -354,6 +351,9 @@ nnoremap \ ,
 
 " Screw Ex-mode
 nnoremap Q gq
+
+" Tab is easier to type than %
+nnoremap <tab> %
 
 " Turn on listchars
 nnoremap <leader>l :set list!<CR>
