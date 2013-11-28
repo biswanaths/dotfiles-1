@@ -11,6 +11,8 @@ alias tmux="tmux -u2"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
 alias chpwn="chown"
+alias python="python3"
+alias ipython="ipython3"
 
 # Useful aliases
 alias ql="qlmanage -p 2>/dev/null"

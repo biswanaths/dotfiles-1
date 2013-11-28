@@ -214,6 +214,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   endif
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
