@@ -16,14 +16,15 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'itspriddle/vim-jquery'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
+Bundle 'lucapette/vim-jquery-doc'
 Bundle 'lukerandall/haskellmode-vim'
-Bundle 'majutsushi/tagbar'
 Bundle 'mattn/emmet-vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
+Bundle 'PeterRincker/vim-argumentative'
 Bundle 'RipRip/clang_complete'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
@@ -59,6 +60,7 @@ set ttyfast                     " Fast terminal connection
 set lazyredraw                  " Don't redraw while executing macros
 set switchbuf=useopen,usetab    " Better quickfix window behavior
 set tags=./tags;/,tags;/        " search for tags efficiently
+set visualbell                  " Turn off the damn bell
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -69,6 +71,7 @@ set autochdir                   " Automatically change the cwd when editing a fi
 set spellfile=~/.vim/custom-dictionary.utf-8.add
 set ttymouse=xterm2             " Recognize the mouse inside tmux
 if &term =~ '^screen-.*-bce$'
+    " background color erase support!
     set t_ut=y
 endif
 let mapleader=','
@@ -98,8 +101,7 @@ endif
 "}}}
 " Status Line {{{
 set statusline=
-set statusline+=%t\ \%{tagbar#currenttag('[%s]','')}
-set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%t\ \%{SyntasticStatuslineFlag()}
 set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
 set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
 set statusline+=\%=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|
@@ -166,7 +168,9 @@ if has("gui_running")
     set guioptions-=R
     set guioptions-=l
     set guioptions-=L
-    set guifont=Anonymous\ Pro:h14
+    set guifont=Inconsolata-g:h14
+    set lines=40
+    set columns=140
 endif
 
 "}}}
@@ -214,7 +218,6 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   endif
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
@@ -271,6 +274,11 @@ let g:ctrlp_follow_symlinks=1
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_root_markers = ['tags']
 
+" jQuery-doc
+let g:jquery_doc_command='open'
+let g:jquery_doc_mapping='KK'
+nnoremap <leader>j :JQueryDoc 
+
 "}}}
 " Vim Niceties {{{
 
@@ -284,9 +292,6 @@ nnoremap gb :buffers<CR>:sb<Space>
 " Open folds when searching, always centering the cursor.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Force save files requiring root permissions
-cmap w!! %!sudo tee > /dev/null %
 
 " Select the line that was last pasted
 nnoremap <leader>V V`]
@@ -304,9 +309,14 @@ nnoremap gj j
 nnoremap gk k
 
 " Keep search pattern at the center of the screen
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
+" Also prevents going to the next match automatically
+nnoremap <silent> * *Nzz
+nnoremap <silent> # #Nzz
+nnoremap <silent> g* g*Nzz
+
+" Center screen when jumping around the changelist
+nnoremap g; g;zz
+nnoremap g, g,zz
 
 " Reformat a C/C++/Obj-C file with astyle (Uses .astylerc for 1TBS)
 command! -nargs=0 Format call AStyleFormat()
@@ -328,7 +338,7 @@ let c_space_errors = 1
 let c_comment_strings = 1
 
 " HTML indenting
-let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
+let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
