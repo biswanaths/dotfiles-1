@@ -210,6 +210,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 " DelimitMate
 let delimitMate_expand_cr = 1
 
+" Supertab
+" Who in the right mind wants to go backwards?!
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
