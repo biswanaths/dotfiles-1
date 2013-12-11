@@ -28,6 +28,12 @@ fpath=(~/.zsh/Completion $fpath)
 # Source aliases
 source ~/.zsh/aliases
 
+# Getting tired of emacs keybindings
+bindkey -v
+
+# DAMNIT ZSH, WHAT ARE YOU WAITING FOR?!
+KEYTIMEOUT=1
+
 # Zsh options
 setopt alwaystoend      # move to the end of the line after completing
 setopt menu_complete    # On an ambiguous completion, inserts first match immediately.
