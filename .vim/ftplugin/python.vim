@@ -12,4 +12,3 @@ setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
 setlocal formatoptions=croql
 
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
-let python_highlight_all=1
