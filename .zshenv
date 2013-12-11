@@ -40,6 +40,12 @@ typeset -gU cdpath fpath mailpath manpath path
 typeset -gxU MANPATH
 typeset -gxUT INFOPATH infopath
 
+# Completion scripts
+fpath=(
+/usr/local/share/zsh-completions
+$fpath
+)
+
 # Set the list of directories that info searches for manuals.
 infopath=(
 /usr/local/share/info
