@@ -68,6 +68,7 @@ set fileencoding=utf-8
 set termencoding=utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
+set showbreak=↪
 set autoread                    " Detect when a file has been changed externally
 set autochdir                   " Automatically change the cwd when editing a file, switching, etc
 set spellfile=~/.vim/custom-dictionary.utf-8.add
@@ -353,14 +354,25 @@ let java_highlight_debug=1
 let java_allow_cpp_keywords=1
 
 " Python sytax
-let python_highlight_builtins=1
-let python_highlight_exceptions=1
-let python_highlight_space_errors=1
+let python_highlight_all = 1
 
 " }}}
 " General Mappings {{{
 " Restore , for searching with f/F/t/T
 nnoremap \ ,
+
+" Don't need arrow keys
+nnoremap <up> :lprev<CR>zvzz
+nnoremap <down> :lnext<CR>zvzz
+nnoremap <left> :cprev<CR>zvzz
+nnoremap <right> :cnext<CR>zvzz
+inoremap <up> <esc>
+inoremap <down> <esc>
+inoremap <left> <esc>
+inoremap <right> <esc>
+
+" Easier way to escape
+inoremap jk <Esc>
 
 " Screw Ex-mode
 nnoremap Q gq
@@ -376,10 +388,10 @@ cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
 " Quickly edit stuff
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
-nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
-nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
+nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :vsp $MYVIMRC<CR>
+nnoremap <silent> <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <silent> <leader>et :vsp ~/.tmux.conf<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef maggVG=`azz
