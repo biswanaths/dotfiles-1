@@ -33,7 +33,7 @@ def notify(data, buffer, date, tags, displayed, highlight, prefix, message):
                 if weechat.config_get_plugin('show_message_text') == 'on':
                         Notifier.notify(message, title='%s %s' % (prefix, channel), sound="Ping")
                 else:
-                        Notifier.notify('In %s by %s' % (channel, prefix), title='Highlighted Message' sound="Ping")
+                        Notifier.notify('In %s by %s' % (channel, prefix), title='Highlighted Message', sound="Ping")
         elif weechat.config_get_plugin('show_private_message') == 'on' and 'notify_private' in tags:
                 if weechat.config_get_plugin('show_message_text') == 'on':
                         Notifier.notify(message, title='%s [private]' % prefix, sound="Ping")
