@@ -46,35 +46,33 @@ Bundle 'xolox/vim-notes'
 
 " }}}
 " General Settings {{{
-set number relativenumber       " Use relative numbering (for vim7.4)
-set showcmd                     " Show the current command below the status
-set cmdheight=2                 " Statusline height
-set showmode                    " Show the mode we are in
-set hidden                      " Allow hidden buffers
-set mouse=a                     " Turn on mouse for everything
-set scrolloff=4                 " Scroll when cursor is 4 off the top or bottom
-set nrformats-=octal            " Prevents (in|de)crementing a 0 padded number to octal
-set clipboard+=unnamed          " System clipboard support!
-set virtualedit=block           " Allow editing in visual block mode
-set laststatus=2                " Always show the statusline
-set backspace=indent,eol,start  " Vim likes to think this is the 1970s sometimes and won't backspace
-set ttyfast                     " Fast terminal connection
-set lazyredraw                  " Don't redraw while executing macros
-set switchbuf=useopen,usetab    " Better quickfix window behavior
-set tags=./tags;/,tags;/        " search for tags efficiently
-set visualbell                  " Turn off the damn bell
+set number relativenumber
+set showcmd
+set cmdheight=2
+set showmode
+set hidden
+set mouse=a
+set scrolloff=4
+set nrformats-=octal
+set clipboard+=unnamed
+set virtualedit=block
+set laststatus=2
+set backspace=indent,eol,start
+set ttyfast
+set lazyredraw
+set switchbuf=useopen,usetab
+set tags=./tags;/,tags;/
+set visualbell
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set termencoding=utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set showbreak=↪
-set autoread                    " Detect when a file has been changed externally
-set autochdir                   " Automatically change the cwd when editing a file, switching, etc
-set spellfile=~/.vim/custom-dictionary.utf-8.add
-set ttymouse=xterm2             " Recognize the mouse inside tmux
+set autoread
+set autochdir
+set ttymouse=xterm2
 if &term =~ '^screen-.*-bce$'
-    " background color erase support!
     set t_ut=y
 endif
 let mapleader=','
@@ -118,7 +116,7 @@ set incsearch
 set smartcase
 set ignorecase
 set showmatch
-set matchtime=2  " 2 tenths of a second to show the matching paren (instead of 5)
+set matchtime=2
 set hlsearch
 
 "}}}
@@ -247,8 +245,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['objc', 'objcpp', 'go'] }
+            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
+            \ 'passive_filetypes': ['objc', 'objcpp', 'go', 'java'] }
 
 " Clang_Complete
 let g:clang_auto_select=1
