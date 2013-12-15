@@ -151,6 +151,7 @@ endif
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
+set wildignore+=*.class
 
 "}}}
 "Backup settings {{{
@@ -247,7 +248,7 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'java', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['objc', 'objcpp'] }
+            \ 'passive_filetypes': ['objc', 'objcpp', 'go'] }
 
 " Clang_Complete
 let g:clang_auto_select=1
