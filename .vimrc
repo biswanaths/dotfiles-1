@@ -290,6 +290,9 @@ nnoremap <leader>j :JQueryDoc
 "}}}
 " Vim Niceties {{{
 
+" Add a color column but only highlight over 80 columns"
+call matchadd('ColorColumn', '\%81v', 100)
+
 " Reselect visual block after indent/outdent
 xnoremap < <gv
 xnoremap > >gv
@@ -461,4 +464,7 @@ augroup line_return
                 \   execute "normal! g'\"" |
                 \ endif
 augroup END
+
 "}}}
+" Functions {{{
+" }}}
