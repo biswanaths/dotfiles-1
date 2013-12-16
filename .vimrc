@@ -96,6 +96,7 @@ if (g:colors_name == "hybrid")
     hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
     hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
     hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
+    hi! Comment cterm=italic
 endif
 ""}}}2
 

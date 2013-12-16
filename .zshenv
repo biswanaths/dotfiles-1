@@ -94,3 +94,6 @@ fi
 
 export ARCHFLAGS="-arch x86_64"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
+
+# Italic fonts in iTerm!
+export TERM=xterm-256color-italic
