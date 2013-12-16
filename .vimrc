@@ -74,13 +74,13 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 
 "}}}
 " Colorscheme / Syntax {{{
-set synmaxcol=800
 filetype plugin indent on
 syntax on
+set synmaxcol=800
 let g:hybrid_use_Xresources=1
 colorscheme hybrid
 
-" Hybrid Colorscheme better settings {{{2
+" Modificatins to Hybid colorscheme {{{2
 if (g:colors_name == "hybrid")
     hi! Pmenu ctermfg=137 ctermbg=233 cterm=none
     hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold
@@ -132,18 +132,17 @@ set omnifunc=syntaxcomplete#Complete
 " }}}
 " Wildignore {{{
 set wildignorecase
-set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
+set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
-set wildignore+=*.class
 
 "}}}
 "Backup settings {{{
 set noswapfile
 set history=1000
 set backup
-set backupdir=~/.vim/backup/
 set undofile
+set backupdir=~/.vim/backup/
 set undodir=~/.vim/backup/undo/
 
 "}}}
@@ -336,15 +335,15 @@ nnoremap <up> :lprev<CR>zvzz
 nnoremap <down> :lnext<CR>zvzz
 nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
-inoremap <up> <esc>
-inoremap <down> <esc>
-inoremap <left> <esc>
-inoremap <right> <esc>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Easier way to escape
 inoremap jk <Esc>
 
-" Screw Ex-mode
+" Format paragraph
 nnoremap Q gq
 
 " Tab is easier to type than %
@@ -357,23 +356,21 @@ nnoremap <leader>l :set list!<CR>
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
-" Quickly edit stuff
+" Quickly edit files
 nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <silent> <leader>et :vsp ~/.tmux.conf<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef maggVG=`azz
+nnoremap <leader>ef mfggVG=`fzz
 
 " Never felt the need to use H or L
 nnoremap H ^
 nnoremap L $
 
-" UpperCase in insert mode
-inoremap <C-u> <esc>mzgUiw`z
-
-nnoremap <silent> <leader>p :set invpaste<CR>:setlocal paste?<CR>
+" Toggle paste mode
+nnoremap <silent> <leader>p :set paste!<CR>:setl paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
@@ -388,7 +385,7 @@ nnoremap Y y$
 nnoremap <leader>z zMzvzz
 
 "}}}
-" Tmux Cursor Bullcrap {{{
+" Cursor shapes in Tmux {{{
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
