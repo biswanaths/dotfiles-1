@@ -18,7 +18,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lucapette/vim-jquery-doc'
@@ -26,12 +25,10 @@ Bundle 'lukerandall/haskellmode-vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'othree/html5.vim'
 Bundle 'PeterRincker/vim-argumentative'
 Bundle 'RipRip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'sjl/gundo.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -47,9 +44,6 @@ Bundle 'xolox/vim-notes'
 " }}}
 " General Settings {{{
 set number relativenumber
-set showcmd
-set cmdheight=2
-set showmode
 set hidden
 set mouse=a
 set scrolloff=4
@@ -58,7 +52,6 @@ set clipboard+=unnamed
 set virtualedit=block
 set laststatus=2
 set backspace=indent,eol,start
-set ttyfast
 set lazyredraw
 set switchbuf=useopen,usetab
 set tags=./tags;/,tags;/
@@ -128,25 +121,17 @@ set smarttab
 set expandtab
 set autoindent
 set cindent
-set shiftround
 set textwidth=80
-set nofoldenable
-set foldmethod=syntax
 
 "}}}
 " Completions {{{
 set wildmenu
-set wildmode=full
-set wildchar=<Tab>
-set completeopt+=longest
-set previewheight=4
+set completeopt=menu,longest
 set omnifunc=syntaxcomplete#Complete
 
 " }}}
 " Wildignore {{{
-if has('wildignorecase')
-    set wildignorecase
-endif
+set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
@@ -160,7 +145,6 @@ set backup
 set backupdir=~/.vim/backup/
 set undofile
 set undodir=~/.vim/backup/undo/
-set undolevels=1000
 
 "}}}
 " GUI Settings {{{
@@ -196,10 +180,6 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
-" Automatically resize splits
-au! WinEnter * setlocal winfixheight
-au! WinEnter * wincmd =
-
 " }}}
 " Plugin Preferences and Mappings {{{
 " UltiSnips
@@ -210,15 +190,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 " DelimitMate
 let delimitMate_expand_cr = 1
 
-" Supertab
-" Who in the right mind wants to go backwards?!
+" Supertab (Why would you go backwards?!)
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_refresh_always = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 5
+let g:neocomplete#sources#syntax#min_keyword_length = 4
 let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
@@ -233,17 +212,8 @@ let g:notes_directories = ['~/Dropbox/Notes']
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-" Tagbar
-let g:tagbar_expand=1
-let g:tagbar_compact=1
-let g:tagbar_width=35
-nnoremap <silent> <F1> :TagbarToggle<CR>
-
 " Syntastic
-let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=4
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
             \ 'active_filetypes': ['c', 'cpp', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
@@ -251,7 +221,6 @@ let g:syntastic_mode_map = {'mode': 'active',
 
 " Clang_Complete
 let g:clang_auto_select=1
-let g:clang_complete_auto=1
 let g:clang_close_preview=1
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
@@ -270,15 +239,10 @@ nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_map='<F3>'
-let g:ctrlp_mruf_max=25
-let g:ctrlp_max_files=10000
-let g:ctrlp_use_caching=1
-let g:ctrlp_max_depth=40
-let g:ctrlp_clear_cache_on_exit=1
+let g:ctrlp_mruf_max=50
 let g:ctrlp_cache_dir='~/.cache/ctrlp'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_follow_symlinks=1
-let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_root_markers = ['tags']
 
 " jQuery-doc
@@ -288,8 +252,7 @@ nnoremap <leader>j :JQueryDoc
 
 "}}}
 " Vim Niceties {{{
-
-" Add a color column but only highlight over 80 columns"
+" Add a color column but only highlight over 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
 
 " Reselect visual block after indent/outdent
@@ -435,15 +398,6 @@ else
 endif
 
 "}}}
-" Quick Filetype Settings {{{
-
-" Haskell compiler
-augroup haskell
-    au!
-    au BufEnter *.hs compiler ghc
-    au BufEnter *.hs setlocal cmdheight=2
-augroup END
-"}}}
 " Typos {{{
 iabbrev shoudl should
 iabbrev Shoudl Should
@@ -463,7 +417,4 @@ augroup line_return
                 \   execute "normal! g'\"" |
                 \ endif
 augroup END
-
 "}}}
-" Functions {{{
-" }}}
