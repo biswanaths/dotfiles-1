@@ -27,4 +27,10 @@ alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iter
 # geez fingers
 alias heroky="heroku"
 alias cim="vim"
+
+# Homebrew
+alias upd="brew update; brew outdated; brew upgrade"
+alias doct="brew doctor"
+alias desc="brew desc"
+
 # vim: ft=zsh
