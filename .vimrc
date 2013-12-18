@@ -1,7 +1,7 @@
-"----------------------------
-"| ~/.vimrc                 |
-"| Last update: Jun 1, 2013 |
-"----------------------------
+"------------------------------
+"| ~/.vimrc                   |
+"| Last update: Dec 17, 2013  |
+"------------------------------
 " Vundle Settings {{{
 set nocompatible
 filetype off
@@ -10,12 +10,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "}}}
-" Installed Plugins {{{
+" Plugins {{{
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
