@@ -19,11 +19,14 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
 Bundle 'lucapette/vim-jquery-doc'
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'pangloss/vim-javascript'
 Bundle 'PeterRincker/vim-argumentative'
 Bundle 'RipRip/clang_complete'
 Bundle 'scrooloose/syntastic'
@@ -36,7 +39,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'w0ng/vim-hybrid'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 
@@ -60,10 +62,7 @@ set fileencoding=utf-8
 set termencoding=utf-8
 set formatoptions+=1
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
-set showbreak=↪
 set autoread
-set autochdir
-set ttymouse=xterm2
 if &term =~ '^screen-.*-bce$'
     set t_ut=y
 endif
@@ -121,6 +120,7 @@ set expandtab
 set autoindent
 set cindent
 set textwidth=80
+set nofoldenable
 
 "}}}
 " Completions {{{
@@ -148,11 +148,7 @@ set undodir=~/.vim/backup/undo/
 " GUI Settings {{{
 if has("gui_running")
     autocmd! FocusLost * :wa
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=R
-    set guioptions-=l
-    set guioptions-=L
+    set guioptions=ac
     set guifont=Inconsolata-g:h14
     set lines=40
     set columns=140
@@ -171,8 +167,6 @@ nnoremap <silent> <leader>mj <C-W>J
 nnoremap <silent> <leader>mk <C-W>K
 nnoremap <silent> <leader>ml <C-W>L
 " -- Closing windows
-nnoremap <silent> <leader>cc :close<CR>
-nnoremap <silent> <leader>cq :cclose<CR>
 nnoremap <silent> <leader>ch :wincmd h<CR>:close<CR>
 nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
@@ -184,6 +178,11 @@ nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+
+" Python-mode
+let g:pymode_rope_completion=0
+let g:pymode_lint_on_fly=0
+let g:pymode_lint_cwindow=0
 
 " DelimitMate
 let delimitMate_expand_cr = 1
@@ -214,8 +213,8 @@ let g:haddock_browser_callformat = "%s %s"
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'python', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['objc', 'objcpp', 'go', 'java'] }
+            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'haskell', 'javascript'],
+            \ 'passive_filetypes': ['objc', 'python', 'objcpp', 'go', 'java'] }
 
 " Clang_Complete
 let g:clang_auto_select=1
@@ -231,7 +230,7 @@ xnoremap <leader>t :Tabular<space>/
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>r :CtrlPMRUFiles<CR>
+nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
@@ -326,7 +325,7 @@ let python_highlight_all = 1
 
 " }}}
 " General Mappings {{{
-" Restore , for searching with f/F/t/T
+" Use backslash to backwards search with f/F/t/T
 nnoremap \ ,
 
 " Don't need arrow keys
