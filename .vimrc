@@ -303,7 +303,7 @@ let hs_highlight_more_types=1
 let hs_highlight_debug=1
 let hs_allow_hash_operator=1
 
-" C Syntas
+" C Syntax
 let c_space_errors = 1
 let c_comment_strings = 1
 
@@ -312,7 +312,7 @@ let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
-" Java syntax 
+" Java syntax
 let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
 let java_highlight_util=1
@@ -356,7 +356,6 @@ cnoremap <C-E> <End>
 
 " Quickly edit files
 nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <silent> <leader>et :vsp ~/.tmux.conf<CR>
 
@@ -368,7 +367,7 @@ nnoremap H ^
 nnoremap L $
 
 " Toggle paste mode
-nnoremap <silent> <leader>p :set paste!<CR>:setl paste?<CR>
+nnoremap <silent> <leader>p :setl paste!<CR>:setl paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
