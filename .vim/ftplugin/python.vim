@@ -11,4 +11,4 @@ setlocal formatoptions=croql
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 
 " Easier way to enter docstrings
-inoremap """ """<cr>"""<esc>O
+nnoremap ,d cc"""<cr>"""<esc>O
