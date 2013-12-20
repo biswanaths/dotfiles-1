@@ -179,6 +179,9 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" Emmet
+let g:user_emmet_expandabbr_key="<c-o>"
+
 " Python-mode
 let g:pymode_rope_completion=0
 let g:pymode_lint_on_fly=0
@@ -296,6 +299,8 @@ function! AStyleFormat()
     endif
 endfunction
 
+"}}}
+" Filetype settings {{{
 " Haskell syntax
 let hs_highlight_boolean=1
 let hs_highlight_types=1
@@ -317,7 +322,6 @@ let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
 let java_highlight_util=1
 let java_highlight_java=1
-let java_highlight_debug=1
 let java_allow_cpp_keywords=1
 
 " Python sytax
