@@ -1,11 +1,9 @@
 # Dotfiles
-	Various .rc files for my command line experience
+Various .rc files for my command line experience
 
-## Stuff I use:
-	- OS X + iTerm 2
-	- Zsh + Prezto
-	- Vim
-	- tmux
-	- Weechat
-	- mutt
-	- Hybrid / Modified Tomorrow-Night Colorscheme
+## Environment:
+- OS X + iTerm 2
+- Zsh + Prezto + modified tomorrow-night colors
+- Vim (Hybrid colorscheme)
+- tmux
+- Weechat (IRC)
