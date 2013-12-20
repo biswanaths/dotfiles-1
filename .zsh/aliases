@@ -23,6 +23,7 @@ alias ping="ping -c 5"
 alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
+alias mou="open -a Mou"
 
 # geez fingers
 alias heroky="heroku"
