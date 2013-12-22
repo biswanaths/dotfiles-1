@@ -22,6 +22,9 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 # History substring search uses magenta. Solution: don't use magenta
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 
+# Better git completion script
+fpath=(~/.zsh/Completions $fpath)
+
 # Source aliases
 source ~/.zsh/aliases
 
