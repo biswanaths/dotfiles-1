@@ -220,7 +220,6 @@ let g:syntastic_mode_map = {'mode': 'active',
             \ 'passive_filetypes': ['objc', 'python', 'objcpp', 'go', 'java'] }
 
 " Clang_Complete
-let g:clang_auto_select=1
 let g:clang_close_preview=1
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
@@ -230,6 +229,7 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 xnoremap <leader>t :Tabular<space>/
 
 " Ctrlp
+set grepprg=ag\ --nogroup\ --nocolor
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -238,16 +238,12 @@ nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_map='<F3>'
-let g:ctrlp_mruf_max=50
-let g:ctrlp_cache_dir='~/.cache/ctrlp'
-let g:ctrlp_show_hidden=1
-let g:ctrlp_follow_symlinks=1
-let g:ctrlp_root_markers = ['tags']
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 
 " jQuery-doc
 let g:jquery_doc_command='open'
-let g:jquery_doc_mapping='KK'
+let g:jquery_doc_mapping='M'
 nnoremap <leader>j :JQueryDoc 
 
 "}}}

@@ -6,3 +6,4 @@ setlocal expandtab
 setlocal comments=sl:/*,mb:\ *,elx:\ */
 setlocal tags+=~/.vim/tags/systagsC
 setlocal ofu=syntaxcomplete#Complete
+let g:neocomplete#enable_at_startup=0
