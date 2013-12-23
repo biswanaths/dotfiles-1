@@ -133,7 +133,7 @@ set omnifunc=syntaxcomplete#Complete
 set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
-set wildignore+=*.o,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
+set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
 "}}}
 "Backup settings {{{
@@ -202,8 +202,9 @@ let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
   endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:necomplete#force_overwrite_completefunc = 1
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " Notes
 let g:notes_directories = ['~/Dropbox/Notes']
@@ -221,6 +222,7 @@ let g:syntastic_mode_map = {'mode': 'active',
 
 " Clang_Complete
 let g:clang_close_preview=1
+let g:clang_complete_auto = 0
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
@@ -337,6 +339,9 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Geez fingers!
+command -bang -nargs=* -range=% -complete=file W <line1>,<line2>w<bang> <args>
 
 " Easier way to escape
 inoremap jk <Esc>
