@@ -298,10 +298,6 @@ nnoremap Q gq
 " Tab is easier to type than %
 nnoremap <tab> %
 
-" Readline-line movement for command mode
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-
 " Quickly edit files
 nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>ez :vsp ~/.zshrc<CR>
