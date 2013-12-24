@@ -26,7 +26,7 @@ set visualbell
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set termencoding=utf-8
-set formatoptions+=1
+set formatoptions+=1j
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set autoread
 if &term =~ '^screen-.*-bce$'
