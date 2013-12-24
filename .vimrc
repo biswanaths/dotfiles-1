@@ -4,45 +4,11 @@
 "------------------------------
 " Vundle Settings {{{
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+if filereadable(expand("~/.vim/vimrc.bundles"))
+    source ~/.vim/vimrc.bundles
+endif
 
 "}}}
-" Plugins {{{
-Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'lucapette/vim-jquery-doc'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'pangloss/vim-javascript'
-Bundle 'PeterRincker/vim-argumentative'
-Bundle 'RipRip/clang_complete'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
-
-" }}}
 " General Settings {{{
 set number relativenumber
 set hidden
@@ -202,7 +168,6 @@ let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
   endif
-let g:necomplete#force_overwrite_completefunc = 1
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
@@ -222,7 +187,6 @@ let g:syntastic_mode_map = {'mode': 'active',
 
 " Clang_Complete
 let g:clang_close_preview=1
-let g:clang_complete_auto = 0
 let g:clang_complete_patterns=1
 let g:clang_complete_macros=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
@@ -257,15 +221,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 xnoremap < <gv
 xnoremap > >gv
 
-" Quicker buffer navigation
-nnoremap gb :buffers<CR>:sb<Space>
-
 " Open folds when searching, always centering the cursor.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Select the line that was last pasted
-nnoremap <leader>V V`]
 
 " select the entire line but ignore the indentation
 nnoremap vv ^vg_
@@ -335,13 +293,9 @@ nnoremap <up> :lprev<CR>zvzz
 nnoremap <down> :lnext<CR>zvzz
 nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " Geez fingers!
-command -bang -nargs=* -range=% -complete=file W <line1>,<line2>w<bang> <args>
+command -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 
 " Easier way to escape
 inoremap jk <Esc>
