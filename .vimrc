@@ -139,7 +139,7 @@ nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
 " }}}
-" Plugin Preferences and Mappings {{{
+" Plugin Settings and Mappings {{{
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
@@ -149,7 +149,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 let g:user_emmet_expandabbr_key="<c-o>"
 
 " Python-mode
-let g:pymode_rope_completion=0
 let g:pymode_lint_on_fly=0
 let g:pymode_lint_cwindow=0
 
@@ -171,7 +170,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
-" Notes
+" vim-notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
 " Haskellmode
@@ -221,7 +220,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 xnoremap < <gv
 xnoremap > >gv
 
-" Open folds when searching, always centering the cursor.
+" Open folds when searching, always centering the screen
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -231,14 +230,7 @@ nnoremap vv ^vg_
 " Splits a line -- opposite of J (join lines)
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Map jk to move between visual lines
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-
-" Keep search pattern at the center of the screen
-" Also prevents going to the next match automatically
+" Centet screen when searching. Don't jump to the next match automatically
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
@@ -285,7 +277,7 @@ let python_highlight_all = 1
 
 " }}}
 " General Mappings {{{
-" Use backslash to backwards search with f/F/t/T
+" Restore \ to search character wise
 nnoremap \ ,
 
 " Don't need arrow keys
@@ -300,14 +292,11 @@ command -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 " Easier way to escape
 inoremap jk <Esc>
 
-" Format paragraph
+" Format paragraph (also I hate ex mode)
 nnoremap Q gq
 
 " Tab is easier to type than %
 nnoremap <tab> %
-
-" Turn on listchars
-nnoremap <leader>l :set list!<CR>
 
 " Readline-line movement for command mode
 cnoremap <C-A> <Home>
@@ -324,9 +313,6 @@ nnoremap <leader>ef mfggVG=`fzz
 " Never felt the need to use H or L
 nnoremap H ^
 nnoremap L $
-
-" Toggle paste mode
-nnoremap <silent> <leader>p :setl paste!<CR>:setl paste?<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
