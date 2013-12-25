@@ -3,7 +3,7 @@ Various .rc files for my command line experience
 
 ## Environment:
 - OS X + iTerm 2
-- Zsh + Prezto + tomorrow night mod
+- Zsh + Prezto + awesome.itermcolors
 - Vim (Hybrid-mod colorscheme)
 - tmux
 - Weechat (IRC)
@@ -13,3 +13,4 @@ Various .rc files for my command line experience
 Vim: [Screenshot](http://d.pr/i/aW6t)
 
 Weechat: [Screenshot](http://d.pr/i/77tT)
+
