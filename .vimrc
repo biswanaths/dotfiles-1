@@ -36,16 +36,14 @@ set virtualedit=block
 filetype plugin indent on
 syntax on
 let g:hybrid_use_Xresources=1
-colorscheme hybrid
+colorscheme hybrid "Uses my mods to hybrid found in .vim/colors/hybrid.vim
 
 "}}}
 " Status Line {{{
-set statusline=
-set statusline+=%t\ \%{SyntasticStatuslineFlag()}
-set statusline+=\ \%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W
-set statusline+=\ \%#StatusModFlag#\%M\ \ \%{fugitive#statusline()}
-set statusline+=\%=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|
-set statusline+=\ LN\ \%1.7l\:\%1.7c\ 
+set statusline=%t\ \%{SyntasticStatuslineFlag()}\ \%#StatusRO#\%R
+set statusline+=\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m
+set statusline+=\ \%{fugitive#statusline()}\%=\ \%#StatusFTP#\%Y
+set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 "}}}
 " Search Settings {{{
@@ -146,8 +144,8 @@ let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 4
 let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
-  endif
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
@@ -161,9 +159,7 @@ let g:haddock_browser_callformat = "%s %s"
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {'mode': 'active',
-            \ 'active_filetypes': ['c', 'cpp', 'ruby', 'perl', 'haskell', 'javascript'],
-            \ 'passive_filetypes': ['objc', 'python', 'objcpp', 'go', 'java'] }
+let g:syntastic_mode_map = {'mode': 'active','active_filetypes':['haskell', 'javascript'],'passive_filetypes':['python', 'objcpp']}
 
 " Clang_Complete
 let g:clang_close_preview=1
@@ -187,15 +183,13 @@ let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
-" jQuery-doc
-let g:jquery_doc_command='open'
-let g:jquery_doc_mapping='M'
-nnoremap <leader>j :JQueryDoc 
-
 "}}}
 " Vim Niceties {{{
 " Add a color column but only highlight over 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
+
+" When opening a file, return to the last known position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
 
 " Reselect visual block after indent/outdent
 xnoremap < <gv
@@ -220,40 +214,28 @@ nnoremap <silent> g* g*Nzz
 nnoremap g; g;zz
 nnoremap g, g,zz
 
-" Reformat a C/C++/Obj-C file with astyle (Uses .astylerc for 1TBS)
-command! -nargs=0 Format call AStyleFormat()
-function! AStyleFormat()
-    if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'objc'
-        :%!astyle
-    endif
-endfunction
-
 "}}}
 " Filetype settings {{{
-" Haskell syntax
+" Haskell
 let hs_highlight_boolean=1
 let hs_highlight_types=1
 let hs_highlight_more_types=1
 let hs_highlight_debug=1
 let hs_allow_hash_operator=1
-
-" C Syntax
+" C 
 let c_space_errors = 1
 let c_comment_strings = 1
-
-" HTML indenting
+" HTML
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-
-" Java syntax
+" Java
 let java_highlight_java_lang_ids=1
 let java_highlight_java_io=1
 let java_highlight_util=1
 let java_highlight_java=1
 let java_allow_cpp_keywords=1
-
-" Python sytax
+" Python
 let python_highlight_all = 1
 
 " }}}
@@ -268,7 +250,7 @@ nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
 
 " Geez fingers!
-command -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
+command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 
 " Easier way to escape
 inoremap jk <Esc>
@@ -323,15 +305,4 @@ iabbrev Treu True
 iabbrev teh the
 iabbrev flase false
 iabbrev Flase False
-
-"}}}
-" Misc Autocommands {{{
-" Return vim to the last known position
-augroup line_return
-    au!
-    au BufreadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \   execute "normal! g'\"" |
-                \ endif
-augroup END
 "}}}
