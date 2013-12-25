@@ -9,49 +9,34 @@ endif
 
 "}}}
 " General Settings {{{
-set number relativenumber
-set hidden
-set mouse=a
-set scrolloff=4
-set nrformats-=octal
-set clipboard+=unnamed
-set virtualedit=block
-set laststatus=2
-set backspace=indent,eol,start
-set lazyredraw
-set switchbuf=useopen,usetab
-set tags=./tags;/,tags;/
-set visualbell
-set fileformats=unix,dos,mac
-set fileencoding=utf-8
-set termencoding=utf-8
-set formatoptions+=1j
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
-set autoread
 let mapleader=','
+set autoread
+set backspace=indent,eol,start
+set clipboard+=unnamed
+set fileencoding=utf-8
+set fileformats=unix,dos,mac
+set formatoptions+=1j
+set hidden
+set laststatus=2
+set lazyredraw
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
+set mouse=a
+set nrformats-=octal
+set number relativenumber
+set scrolloff=4
 set splitbelow splitright
+set switchbuf=useopen,usetab
+set synmaxcol=800
+set termencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
+set virtualedit=block
 
 "}}}
 " Colorscheme / Syntax {{{
 filetype plugin indent on
 syntax on
-set synmaxcol=800
 let g:hybrid_use_Xresources=1
 colorscheme hybrid
-
-" Modificatins to Hybid colorscheme {{{2
-if (g:colors_name == "hybrid")
-    hi! Pmenu ctermfg=137 ctermbg=233 cterm=none
-    hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold
-    hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none
-    hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none
-    hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
-    hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
-    hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
-    hi! Comment cterm=italic
-endif
-""}}}2
 
 "}}}
 " Status Line {{{
