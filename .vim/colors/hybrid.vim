@@ -1,44 +1,9 @@
 " File:       hybrid.vim
 " Maintainer: Andrew Wong (w0ng)
 " URL:        https://github.com/w0ng/vim-hybrid
-" Modified:   27 Jan 2013 07:33 AM AEST
+" Modified:   24 Dec, 2013 by ajh17
 " License:    MIT
 
-" Description:"{{{
-" ----------------------------------------------------------------------------
-" The RGB colour palette is taken from Tomorrow-Night.vim:
-" https://github.com/chriskempson/vim-tomorrow-theme
-"
-" The syntax highlighting scheme is taken from jellybeans.vim:
-" https://github.com/nanotech/jellybeans.vim
-"
-" The code taken from solarized.vim
-" https://github.com/altercation/vim-colors-solarized
-
-"}}}
-" Requirements And Recommendations:"{{{
-" ----------------------------------------------------------------------------
-" This colourscheme is intended for use on:
-"   - gVim 7.3 for Linux, Mac and Windows.
-"   - Vim 7.3 for Linux, using a 256 colour enabled terminal.
-"
-" By default, Vim will use the closest matching cterm equivalent of the RGB
-" colours.
-"
-" However, Due to the limited 256 palette, colours in Vim and gVim will still
-" be noticeably different. In order to get a uniform appearance and the way
-" that this colourscheme was intended, it is HIGHLY recommended that you:
-"
-" 1.  Add these colours to ~/.Xresources:
-"
-"       https://gist.github.com/3278077
-"
-" 2.  Use Xresources colours by setting in ~/.vimrc:
-"
-"       let g:hybrid_use_Xresources = 1
-"       colorscheme hybrid
-
-"}}}
 " Initialisation:"{{{
 " ----------------------------------------------------------------------------
 if !has("gui_running") && &t_Co < 256
@@ -357,33 +322,15 @@ hi! link diffAdded Special
 "		diffComment
 
 "}}}
-" Legal:"{{{
-" ----------------------------------------------------------------------------
-" Copyright (c) 2011 Ethan Schoonover
-" Copyright (c) 2009-2012 NanoTech
-" Copyright (c) 2012 w0ng
-"
-" Permission is hereby granted, free of charge, to any per‐
-" son obtaining a copy of this software and associated doc‐
-" umentation files (the “Software”), to deal in the Soft‐
-" ware without restriction, including without limitation
-" the rights to use, copy, modify, merge, publish, distrib‐
-" ute, sublicense, and/or sell copies of the Software, and
-" to permit persons to whom the Software is furnished to do
-" so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice
-" shall be included in all copies or substantial portions
-" of the Software.
-"
-" THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY
-" KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-" THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICU‐
-" LAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-" DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON‐
-" TRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON‐
-" NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
 
-" }}}
+" My Modificatins to colorscheme {{{2
+hi! Pmenu ctermfg=137 ctermbg=233 cterm=none
+hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold
+hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none
+hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none
+hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
+hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
+hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
+hi! Comment cterm=italic
+""}}}2
+
