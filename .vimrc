@@ -245,7 +245,7 @@ nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>eb :vsp ~/.vim/vimrc.bundles<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef mfggVG=`fzz
+nnoremap <leader>ef mfgg=G`fzz
 
 " Never felt the need to use H or L
 nnoremap H ^
