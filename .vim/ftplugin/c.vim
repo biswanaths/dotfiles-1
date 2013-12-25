@@ -1,9 +1,5 @@
-set cindent
+setlocal cindent
 setlocal softtabstop=4
 setlocal shiftwidth=4
-setlocal textwidth=79
-setlocal expandtab
+setlocal textwidth=80
 setlocal comments=sl:/*,mb:\ *,elx:\ */
-setlocal tags+=~/.vim/tags/systagsC
-setlocal ofu=syntaxcomplete#Complete
-let g:neocomplete#enable_at_startup=0
