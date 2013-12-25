@@ -2,7 +2,7 @@
 "| ~/.vimrc                   |
 "| Last update: Dec 17, 2013  |
 "------------------------------
-" Vundle Settings {{{
+" Vundle {{{
 if filereadable(expand("~/.vim/vimrc.bundles"))
     source ~/.vim/vimrc.bundles
 endif
@@ -13,6 +13,7 @@ let mapleader=','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
+set completeopt=menu,longest
 set fileencoding=utf-8
 set fileformats=unix,dos,mac
 set formatoptions+=1j
@@ -23,6 +24,7 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
 set nrformats-=octal
 set number relativenumber
+set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
 set splitbelow splitright
 set switchbuf=useopen,usetab
@@ -30,13 +32,14 @@ set synmaxcol=800
 set termencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
+set wildmenu
 
 "}}}
 " Colorscheme / Syntax {{{
 filetype plugin indent on
 syntax on
 let g:hybrid_use_Xresources=1
-colorscheme hybrid "Uses my mods to hybrid found in .vim/colors/hybrid.vim
+colorscheme hybrid-mod
 
 "}}}
 " Status Line {{{
@@ -63,17 +66,9 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set autoindent
-set cindent
-set textwidth=80
 set nofoldenable
 
 "}}}
-" Completions {{{
-set wildmenu
-set completeopt=menu,longest
-set omnifunc=syntaxcomplete#Complete
-
-" }}}
 " Wildignore {{{
 set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
