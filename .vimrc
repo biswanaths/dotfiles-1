@@ -161,7 +161,7 @@ xnoremap <leader>t :Tabular<space>/
 set grepprg=ag\ --nogroup\ --nocolor
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>B :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
@@ -211,7 +211,7 @@ let hs_highlight_debug=1
 " C 
 let c_comment_strings = 1
 " HTML
-let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
+let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 " Python
@@ -229,7 +229,7 @@ nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
 
 " Geez fingers!
-command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
+com! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 
 " Easier way to escape
 inoremap jk <Esc>
@@ -264,7 +264,7 @@ nnoremap Y y$
 nnoremap <leader>z zMzvzz
 
 "}}}
-" Cursor shapes in Tmux {{{
+" Tmux settings  {{{
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
