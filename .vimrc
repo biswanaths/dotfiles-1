@@ -1,7 +1,4 @@
-"------------------------------
-"| ~/.vimrc                   |
-"| Last update: Dec 17, 2013  |
-"------------------------------
+" ------------ ajh's .vimrc ------------
 " Vundle {{{
 if filereadable(expand("~/.vim/vimrc.bundles"))
     source ~/.vim/vimrc.bundles
@@ -15,7 +12,6 @@ set backspace=indent,eol,start
 set clipboard+=unnamed
 set completeopt=menu,longest
 set fileencoding=utf-8
-set fileformats=unix,dos,mac
 set formatoptions+=1j
 set hidden
 set laststatus=2
@@ -77,21 +73,17 @@ set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
 "}}}
 "Backup settings {{{
-set noswapfile
-set history=1000
 set backup
-set undofile
 set backupdir=~/.vim/backup/
+set history=1000
+set noswapfile
 set undodir=~/.vim/backup/undo/
+set undofile
 
 "}}}
 " GUI Settings {{{
 if has("gui_running")
-    autocmd! FocusLost * :wa
-    set guioptions=ac
-    set guifont=Inconsolata-g:h14
-    set lines=40
-    set columns=140
+    set guioptions=ac lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
 "}}}
@@ -210,26 +202,18 @@ nnoremap g; g;zz
 nnoremap g, g,zz
 
 "}}}
-" Filetype settings {{{
+" Filetype syntax and indent {{{
 " Haskell
 let hs_highlight_boolean=1
 let hs_highlight_types=1
 let hs_highlight_more_types=1
 let hs_highlight_debug=1
-let hs_allow_hash_operator=1
 " C 
-let c_space_errors = 1
 let c_comment_strings = 1
 " HTML
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-" Java
-let java_highlight_java_lang_ids=1
-let java_highlight_java_io=1
-let java_highlight_util=1
-let java_highlight_java=1
-let java_allow_cpp_keywords=1
 " Python
 let python_highlight_all = 1
 
@@ -256,10 +240,9 @@ nnoremap Q gq
 " Tab is easier to type than %
 nnoremap <tab> %
 
-" Quickly edit files
+" Quickly edit vimrc or plugins
 nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <silent> <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <silent> <leader>et :vsp ~/.tmux.conf<CR>
+nnoremap <silent> <leader>eb :vsp ~/.vim/vimrc.bundles<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfggVG=`fzz
