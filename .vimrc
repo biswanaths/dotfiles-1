@@ -3,7 +3,6 @@
 "| Last update: Dec 17, 2013  |
 "------------------------------
 " Vundle Settings {{{
-set nocompatible
 if filereadable(expand("~/.vim/vimrc.bundles"))
     source ~/.vim/vimrc.bundles
 endif
@@ -29,9 +28,6 @@ set termencoding=utf-8
 set formatoptions+=1j
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set autoread
-if &term =~ '^screen-.*-bce$'
-    set t_ut=y
-endif
 let mapleader=','
 set splitbelow splitright
 set timeout timeoutlen=1000 ttimeoutlen=100
@@ -327,6 +323,7 @@ nnoremap <leader>z zMzvzz
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    set t_ut=y
 else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
