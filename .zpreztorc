@@ -20,9 +20,6 @@ zstyle ':prezto:module:gnu-utility' prefix 'g'
 # Set the Zsh functions to load (man zshcontrib).
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
-# Magenta looks so ugly with tomorrow night
-zstyle 'prezto:module:history-substring-search:color' found 'fg=yellow,bold'
-
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
@@ -39,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'haskell' \
   'fasd' \
   'syntax-highlighting' \
-  'history-substring-search' \
   'osx' \
   'prompt'
 
