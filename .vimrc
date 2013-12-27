@@ -1,11 +1,10 @@
 " ------------ ajh's .vimrc ------------
-" Vundle {{{
+" Vundle {{{1
 if filereadable(expand("~/.vim/vimrc.bundles"))
     source ~/.vim/vimrc.bundles
 endif
 
-"}}}
-" General Settings {{{
+" General Settings {{{1
 let mapleader=','
 set autoread
 set backspace=indent,eol,start
@@ -30,22 +29,19 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set wildmenu
 
-"}}}
-" Colorscheme / Syntax {{{
+" Colorscheme / Syntax {{{1
 filetype plugin indent on
 syntax on
 let g:hybrid_use_Xresources=1
 colorscheme hybrid-mod
 
-"}}}
-" Status Line {{{
+" Status Line {{{1
 set statusline=%t\ \%{SyntasticStatuslineFlag()}\ \%#StatusRO#\%R
 set statusline+=\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m
 set statusline+=\ \%{fugitive#statusline()}\%=\ \%#StatusFTP#\%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
-"}}}
-" Search Settings {{{
+" Search Settings {{{1
 nnoremap / /\v
 xnoremap / /\v
 set incsearch
@@ -55,8 +51,7 @@ set showmatch
 set matchtime=2
 set hlsearch
 
-"}}}
-" Tab, Indent and Folds {{{
+" Tab, Indent and Folds {{{1
 set softtabstop=4
 set shiftwidth=4
 set smarttab
@@ -64,15 +59,13 @@ set expandtab
 set autoindent
 set nofoldenable
 
-"}}}
-" Wildignore {{{
+" Wildignore {{{1
 set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
-"}}}
-"Backup settings {{{
+"Backup settings {{{1
 set backup
 set backupdir=~/.vim/backup/
 set history=1000
@@ -80,14 +73,12 @@ set noswapfile
 set undodir=~/.vim/backup/undo/
 set undofile
 
-"}}}
-" GUI Settings {{{
+" GUI Settings {{{1
 if has("gui_running")
     set guioptions=ac lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
-"}}}
-" Window Management {{{
+" Window Management {{{1
 " -- Switching between windows
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -104,15 +95,14 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
-" }}}
-" Plugin Settings and Mappings {{{
+" Plugin Settings and Mappings {{{1
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " Emmet
-let g:user_emmet_expandabbr_key="<c-o>"
+let g:user_emmet_expandabbr_key="<c-m>"
 
 " Python-mode
 let g:pymode_lint_on_fly=0
@@ -170,8 +160,7 @@ let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
-"}}}
-" Vim Niceties {{{
+" Vim Niceties {{{1
 " Add a color column but only highlight over 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -201,8 +190,7 @@ nnoremap <silent> g* g*Nzz
 nnoremap g; g;zz
 nnoremap g, g,zz
 
-"}}}
-" Filetype syntax and indent {{{
+" Filetype syntax and indent {{{1
 " Haskell
 let hs_highlight_boolean=1
 let hs_highlight_types=1
@@ -217,8 +205,7 @@ let g:html_indent_style1="inc"
 " Python
 let python_highlight_all = 1
 
-" }}}
-" General Mappings {{{
+" General Mappings {{{1
 " Restore \ to search character wise
 nnoremap \ ,
 
@@ -263,8 +250,7 @@ nnoremap Y y$
 " Focus only on fold that is on the cursor position
 nnoremap <leader>z zMzvzz
 
-"}}}
-" Tmux settings  {{{
+" Tmux settings  {{{1
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -274,8 +260,7 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-"}}}
-" Typos {{{
+" Typos {{{1
 iabbrev shoudl should
 iabbrev Shoudl Should
 iabbrev treu true
@@ -283,4 +268,3 @@ iabbrev Treu True
 iabbrev teh the
 iabbrev flase false
 iabbrev Flase False
-"}}}
