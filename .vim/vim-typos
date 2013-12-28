@@ -1,0 +1,8 @@
+iabbrev shoudl should
+iabbrev Shoudl Should
+iabbrev treu true
+iabbrev Treu True
+iabbrev teh the
+iabbrev flase false
+iabbrev Flase False
+" vim: ft=vim

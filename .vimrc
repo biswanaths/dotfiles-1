@@ -44,18 +44,14 @@ set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\
 " Search Settings {{{1
 nnoremap / /\v
 xnoremap / /\v
-set incsearch
-set smartcase
-set ignorecase
+set incsearch hlsearch
+set smartcase ignorecase
 set showmatch
 set matchtime=2
-set hlsearch
 
 " Tab, Indent and Folds {{{1
-set softtabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
+set softtabstop=4 shiftwidth=4
+set smarttab expandtab
 set autoindent
 set nofoldenable
 
@@ -224,9 +220,6 @@ inoremap jk <Esc>
 " Format paragraph (also I hate ex mode)
 nnoremap Q gq
 
-" Tab is easier to type than %
-nnoremap <tab> %
-
 " Quickly edit vimrc or plugins
 nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <silent> <leader>eb :vsp ~/.vim/vimrc.bundles<CR>
@@ -261,10 +254,6 @@ else
 endif
 
 " Typos {{{1
-iabbrev shoudl should
-iabbrev Shoudl Should
-iabbrev treu true
-iabbrev Treu True
-iabbrev teh the
-iabbrev flase false
-iabbrev Flase False
+if filereadable(expand("~/.vim/vim-typos"))
+    source ~/.vim/vim-typos
+endif
