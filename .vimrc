@@ -10,7 +10,6 @@ set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
 set completeopt=menu,longest
-set fileencoding=utf-8
 set formatoptions+=1j
 set hidden
 set laststatus=2
@@ -21,10 +20,11 @@ set nrformats-=octal
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
+set showcmd
 set splitbelow splitright
 set switchbuf=useopen,usetab
 set synmaxcol=800
-set termencoding=utf-8
+set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set wildmenu
