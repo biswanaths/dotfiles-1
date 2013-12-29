@@ -163,29 +163,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 " When opening a file, return to the last known position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
 
-" Reselect visual block after indent/outdent
-xnoremap < <gv
-xnoremap > >gv
-
-" Open folds when searching, always centering the screen
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" select the entire line but ignore the indentation
-nnoremap vv ^vg_
-
-" Splits a line -- opposite of J (join lines)
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
-
-" Centet screen when searching. Don't jump to the next match automatically
-nnoremap <silent> * *Nzz
-nnoremap <silent> # #Nzz
-nnoremap <silent> g* g*Nzz
-
-" Center screen when jumping around the changelist
-nnoremap g; g;zz
-nnoremap g, g,zz
-
 " Filetype syntax and indent {{{1
 " Haskell
 let hs_highlight_boolean=1
@@ -204,6 +181,9 @@ let python_highlight_all = 1
 " General Mappings {{{1
 " Restore \ to search character wise
 nnoremap \ ,
+
+" Easily send text to the black hole
+nnoremap <leader>d "_d
 
 " Don't need arrow keys
 nnoremap <up> :lprev<CR>zvzz
@@ -242,6 +222,29 @@ nnoremap Y y$
 
 " Focus only on fold that is on the cursor position
 nnoremap <leader>z zMzvzz
+
+" Reselect visual block after indent/outdent
+xnoremap < <gv
+xnoremap > >gv
+
+" Open folds when searching, always centering the screen
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" select the entire line but ignore the indentation
+nnoremap vv ^vg_
+
+" Splits a line -- opposite of J (join lines)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+" Centet screen when searching. Don't jump to the next match automatically
+nnoremap <silent> * *Nzz
+nnoremap <silent> # #Nzz
+nnoremap <silent> g* g*Nzz
+
+" Center screen when jumping around the changelist
+nnoremap g; g;zz
+nnoremap g, g,zz
 
 " Tmux settings  {{{1
 if exists('$TMUX')
