@@ -11,6 +11,8 @@ alias tmux="tmux -u2"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
 alias chpwn="chown"
+alias evi="vim ~/.vimrc"
+alias evb="vim ~/.vim/vimrc.bundles"
 
 # Use Python3 always
 alias python="python3"

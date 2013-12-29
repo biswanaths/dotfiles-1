@@ -120,7 +120,7 @@ let g:haddock_browser_callformat = "%s %s"
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {'mode': 'active','active_filetypes':['haskell', 'javascript'],'passive_filetypes':['python', 'objcpp']}
+let g:syntastic_mode_map = {'mode': 'active','passive_filetypes':['python', 'objcpp']}
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/

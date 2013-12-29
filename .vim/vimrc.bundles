@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kien/ctrlp.vim'
@@ -16,6 +15,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'pangloss/vim-javascript'
 Bundle 'PeterRincker/vim-argumentative'
+Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
