@@ -1,25 +1,25 @@
+" Vundle Settings {{{1
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
 Bundle 'gmarik/vundle'
+
+" Text objects {{{1
+Bundle 'kana/vim-textobj-function'
+Bundle 'kana/vim-textobj-user/' 
+
+" General plugins {{{1
 Bundle 'godlygeek/tabular'
-Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kien/ctrlp.vim'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'pangloss/vim-javascript'
 Bundle 'PeterRincker/vim-argumentative'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -27,3 +27,11 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
+
+" Filetype plugins {{{1
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
