@@ -106,10 +106,6 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
-" Python-mode
-let g:pymode_lint_on_fly=0
-let g:pymode_lint_cwindow=0
-
 " DelimitMate
 let delimitMate_expand_cr = 1
 
@@ -123,7 +119,6 @@ let g:haddock_browser_callformat = "%s %s"
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {'mode': 'active','passive_filetypes':['python', 'objcpp']}
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/
