@@ -97,8 +97,11 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 " YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 4
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
@@ -166,6 +169,9 @@ nnoremap \ ,
 
 " Easily send text to the black hole
 nnoremap <leader>d "_d
+
+" Tab is easier to type than %
+nnoremap <tab> %
 
 " Don't need arrow keys
 nnoremap <up> :lprev<CR>zvzz
