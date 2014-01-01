@@ -136,6 +136,12 @@ let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" Gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_post_private = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_detect_filetype = 1
+
 " Vim Niceties {{{1
 " Add a color column but only highlight over 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
@@ -184,8 +190,8 @@ inoremap jk <Esc>
 nnoremap Q gq
 
 " Quickly edit vimrc or plugins
-nnoremap <silent> <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <silent> <leader>eb :vsp ~/.vim/vimrc.bundles<CR>
+nnoremap <silent> <leader>ev :sp $MYVIMRC<CR>
+nnoremap <silent> <leader>eb :sp ~/.vim/vimrc.bundles<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfgg=G`fzz

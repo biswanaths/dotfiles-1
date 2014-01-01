@@ -1,37 +1,41 @@
 " Vundle Settings {{{1
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+if (isdirectory(expand('~/.vim/bundle/vundle')))
+    filetype off
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
 
-" Text objects {{{1
-Bundle 'kana/vim-textobj-function'
-Bundle 'kana/vim-textobj-user/' 
+    " Text objects {{{1
+    Bundle 'kana/vim-textobj-function'
+    Bundle 'kana/vim-textobj-user' 
 
-" General plugins {{{1
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'PeterRincker/vim-argumentative'
-Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
+    " General plugins {{{1
+    Bundle 'godlygeek/tabular'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'mattn/webapi-vim'
+    Bundle 'mattn/gist-vim'
+    Bundle 'mileszs/ack.vim'
+    Bundle 'nelstrom/vim-visual-star-search'
+    Bundle 'PeterRincker/vim-argumentative'
+    Bundle 'Raimondi/delimitMate'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'SirVer/ultisnips'
+    Bundle 'tpope/vim-commentary'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-surround'
+    Bundle 'tpope/vim-unimpaired'
+    Bundle 'tsaleh/vim-matchit'
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'xolox/vim-misc'
+    Bundle 'xolox/vim-notes'
 
-" Filetype plugins {{{1
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
+    " Filetype plugins {{{1
+    Bundle 'jelera/vim-javascript-syntax'
+    Bundle 'lukerandall/haskellmode-vim'
+    Bundle 'marijnh/tern_for_vim'
+    Bundle 'mattn/emmet-vim'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'tpope/vim-markdown'
+endif
