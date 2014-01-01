@@ -13,8 +13,8 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     " General plugins {{{1
     Bundle 'godlygeek/tabular'
     Bundle 'kien/ctrlp.vim'
-    Bundle 'mattn/webapi-vim'
     Bundle 'mattn/gist-vim'
+    Bundle 'mattn/webapi-vim'
     Bundle 'mileszs/ack.vim'
     Bundle 'nelstrom/vim-visual-star-search'
     Bundle 'PeterRincker/vim-argumentative'

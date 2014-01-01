@@ -55,19 +55,19 @@ set smarttab expandtab
 set autoindent
 set nofoldenable
 
-" Wildignore {{{1
+" Wildignore Settings {{{1
 set wildignorecase
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
 "Backup settings {{{1
-set backup
-set backupdir=~/.vim/backup/
-set history=1000
+set history=2000
 set noswapfile
-set undodir=~/.vim/backup/undo/
+set backup
 set undofile
+set backupdir=~/.vim/backup/
+set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
@@ -127,7 +127,7 @@ xnoremap <leader>t :Tabular<space>/
 set grepprg=ag\ --nogroup\ --nocolor
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
-nnoremap <leader>B :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
@@ -140,7 +140,6 @@ let g:ctrlp_use_caching = 0
 let g:gist_clip_command = 'pbcopy'
 let g:gist_post_private = 1
 let g:gist_open_browser_after_post = 1
-let g:gist_detect_filetype = 1
 
 " Vim Niceties {{{1
 " Add a color column but only highlight over 80 columns
