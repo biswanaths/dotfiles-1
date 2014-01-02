@@ -101,10 +101,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
-" YouCompleteMe
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" Clang_Complete
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
+let g:clang_close_preview=1
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " DelimitMate
 let delimitMate_expand_cr = 1
@@ -119,6 +120,22 @@ let g:haddock_browser_callformat = "%s %s"
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
+
+" Supertab (Why would you go backwards?!)
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 4
+let g:neocomplete#data_directory = '~/.cache/neocomplete'
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/

@@ -20,6 +20,7 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'PeterRincker/vim-argumentative'
     Bundle 'Raimondi/delimitMate'
     Bundle 'scrooloose/syntastic'
+    Bundle 'Shougo/vimproc'
     Bundle 'SirVer/ultisnips'
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-fugitive'
@@ -27,13 +28,16 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'tsaleh/vim-matchit'
-    Bundle 'Valloric/YouCompleteMe'
     Bundle 'xolox/vim-misc'
     Bundle 'xolox/vim-notes'
 
+    " Completion Plugins {{{1
+    Bundle 'ervandew/supertab'
+    Bundle 'Rip-Rip/clang_complete'
+    Bundle 'Shougo/neocomplete'
+
     " Filetype plugins {{{1
     Bundle 'jelera/vim-javascript-syntax'
-    Bundle 'lukerandall/haskellmode-vim'
     Bundle 'marijnh/tern_for_vim'
     Bundle 'mattn/emmet-vim'
     Bundle 'pangloss/vim-javascript'
