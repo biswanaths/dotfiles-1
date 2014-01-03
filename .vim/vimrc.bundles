@@ -37,6 +37,8 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'Shougo/neocomplete'
 
     " Filetype plugins {{{1
+    Bundle 'davidhalter/jedi-vim'
+    Bundle 'eagletmt/ghcmod-vim'
     Bundle 'jelera/vim-javascript-syntax'
     Bundle 'marijnh/tern_for_vim'
     Bundle 'mattn/emmet-vim'

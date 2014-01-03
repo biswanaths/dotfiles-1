@@ -1,10 +1,5 @@
 #!/usr/local/bin/zsh
-#######################################
-#     Watabou's .zshrc file           #
-#     Modified: May 13, 2012          #
-#     Path: $HOME/.zshrc              #
-#     Random Comment: zsh > bash!     #
-#######################################
+# ajh17's ~/.zshrc
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -27,6 +22,10 @@ source ~/.zsh/aliases
 
 # Getting tired of emacs keybindings
 bindkey -v
+
+# ? and / in vicmd mode are nice but sometimes I want the arrow keys back
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' up-line-or-search
 
 # DAMNIT ZSH, WHAT ARE YOU WAITING FOR?!
 KEYTIMEOUT=1

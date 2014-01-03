@@ -137,8 +137,8 @@ xnoremap <leader>t :Tabular<space>/
 
 " Ctrlp
 set grepprg=ag\ --nogroup\ --nocolor
-nnoremap <c-p><c-p> :CtrlP<CR>
-nnoremap <c-p><c-w> :CtrlPCurWD<CR>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
