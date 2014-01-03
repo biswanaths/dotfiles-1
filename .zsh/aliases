@@ -24,6 +24,7 @@ alias ipython="ipython3"
 alias pip="pip3"
 
 # Useful aliases
+alias clang="clang -Wall -Wextra"
 alias ql="qlmanage -p 2>/dev/null"
 alias ping="ping -c 5"
 alias flush="dscacheutil -flushcache"
