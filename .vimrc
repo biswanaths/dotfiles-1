@@ -9,7 +9,7 @@ let mapleader=','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
-set completeopt=menu,longest
+set completeopt=menu,longest,preview
 set formatoptions+=1j
 set hidden
 set laststatus=2
@@ -80,11 +80,6 @@ nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
-" -- Moving windows
-nnoremap <silent> <leader>mh <C-W>H
-nnoremap <silent> <leader>mj <C-W>J
-nnoremap <silent> <leader>mk <C-W>K
-nnoremap <silent> <leader>ml <C-W>L
 " -- Closing windows
 nnoremap <silent> <leader>ch :wincmd h<CR>:close<CR>
 nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
@@ -142,8 +137,8 @@ xnoremap <leader>t :Tabular<space>/
 
 " Ctrlp
 set grepprg=ag\ --nogroup\ --nocolor
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>F :CtrlPCurWD<CR>
+nnoremap <c-p><c-p> :CtrlP<CR>
+nnoremap <c-p><c-w> :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
@@ -246,10 +241,6 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
-
-" Center screen when jumping around the changelist
-nnoremap g; g;zz
-nnoremap g, g,zz
 
 " Tmux settings  {{{1
 if exists('$TMUX')
