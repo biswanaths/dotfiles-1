@@ -16,6 +16,7 @@ Sublime\ Text\ 2/Packages/User/*.tmTheme*
 **doc/tags
 weechat/logs/*
 weechat/*.conf
+weechat/python/sysinfo.py
 weechat/weechat.log
 weechat/script/*.gz
 weechat/urlserver_list.txt
