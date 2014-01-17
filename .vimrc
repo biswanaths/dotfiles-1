@@ -5,7 +5,7 @@ if filereadable(expand("~/.vim/vimrc.bundles"))
 endif
 
 " General Settings {{{1
-let mapleader=','
+let mapleader=' '
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -135,6 +135,9 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " Tabular
 xnoremap <leader>t :Tabular<space>/
 
+" Jedi-vim
+let g:jedi#popup_select_first = 0
+
 " Ctrlp
 set grepprg=ag\ --nogroup\ --nocolor
 nnoremap <leader>f :CtrlP<CR>
@@ -182,9 +185,6 @@ nnoremap \ ,
 " Easily send text to the black hole
 nnoremap <leader>d "_d
 
-" Tab is easier to type than %
-nnoremap <tab> %
-
 " Don't need arrow keys
 nnoremap <up> :lprev<CR>zvzz
 nnoremap <down> :lnext<CR>zvzz
@@ -215,7 +215,7 @@ nnoremap L $
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Use space to toggle folds
-nnoremap <Space> za
+nnoremap <CR> za
 
 " Yank to the end of the line
 nnoremap Y y$
