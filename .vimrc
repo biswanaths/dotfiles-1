@@ -115,6 +115,9 @@ let g:notes_directories = ['~/Dropbox/Notes']
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
+let g:syntastic_mode_map = {
+        \ 'mode' : 'active', 'active_filetypes': ['javascript', 'c', 'cpp', 'perl', 'haskell'],
+        \ 'passive_filetypes': ['python', 'objc', 'objcpp', 'java'] }
 
 " Supertab (Why would you go backwards?!)
 let g:SuperTabDefaultCompletionType = "<c-n>"
