@@ -193,9 +193,6 @@ nnoremap <down> :lnext<CR>zvzz
 nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
 
-" Geez fingers!
-com! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
-
 " Easier way to escape
 inoremap jk <Esc>
 
@@ -249,6 +246,14 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Commands {{{1
+com! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
+com! LCD lcd %:p:h
+com! CD cd %:p:h
+com! SY echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+com! Todo tselect TODO
+com! Fix tselect FIXME
 
 " Typos {{{1
 if filereadable(expand("~/.vim/vim-typos"))
