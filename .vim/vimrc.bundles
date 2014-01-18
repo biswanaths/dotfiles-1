@@ -6,42 +6,35 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     call vundle#rc()
     Bundle 'gmarik/vundle'
 
-    " Text objects {{{1
+    Bundle 'Raimondi/delimitMate'
+    Bundle 'eagletmt/ghcmod-vim'
+    Bundle 'ervandew/supertab'
+    Bundle 'godlygeek/tabular'
+    Bundle 'jelera/vim-javascript-syntax'
     Bundle 'kana/vim-textobj-function'
     Bundle 'kana/vim-textobj-user' 
-
-    " General plugins {{{1
-    Bundle 'godlygeek/tabular'
     Bundle 'kien/ctrlp.vim'
+    Bundle 'klen/python-mode'
+    Bundle 'marijnh/tern_for_vim'
+    Bundle 'mattn/emmet-vim'
     Bundle 'mattn/gist-vim'
     Bundle 'mattn/webapi-vim'
     Bundle 'mileszs/ack.vim'
     Bundle 'nelstrom/vim-visual-star-search'
+    Bundle 'pangloss/vim-javascript'
     Bundle 'PeterRincker/vim-argumentative'
-    Bundle 'Raimondi/delimitMate'
+    Bundle 'Rip-Rip/clang_complete'
     Bundle 'scrooloose/syntastic'
+    Bundle 'Shougo/neocomplete'
     Bundle 'Shougo/vimproc'
     Bundle 'SirVer/ultisnips'
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-fugitive'
+    Bundle 'tpope/vim-markdown'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'tsaleh/vim-matchit'
     Bundle 'xolox/vim-misc'
     Bundle 'xolox/vim-notes'
-
-    " Completion Plugins {{{1
-    Bundle 'ervandew/supertab'
-    Bundle 'Rip-Rip/clang_complete'
-    Bundle 'Shougo/neocomplete'
-
-    " Filetype plugins {{{1
-    Bundle 'davidhalter/jedi-vim'
-    Bundle 'eagletmt/ghcmod-vim'
-    Bundle 'jelera/vim-javascript-syntax'
-    Bundle 'marijnh/tern_for_vim'
-    Bundle 'mattn/emmet-vim'
-    Bundle 'pangloss/vim-javascript'
-    Bundle 'tpope/vim-markdown'
 endif

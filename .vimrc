@@ -92,6 +92,10 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" Python-mode
+let g:pymode_lint_on_fly=0
+let g:pymode_lint_cwindow=0
+
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
