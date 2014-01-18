@@ -108,10 +108,6 @@ let delimitMate_expand_cr = 1
 " vim-notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
-" Haskellmode
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
-
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
@@ -139,7 +135,6 @@ xnoremap <leader>t :Tabular<space>/
 let g:jedi#popup_select_first = 0
 
 " Ctrlp
-set grepprg=ag\ --nogroup\ --nocolor
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -206,10 +201,6 @@ nnoremap <silent> <leader>eb :sp ~/.vim/vimrc.bundles<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfgg=G`fzz
-
-" Never felt the need to use H or L
-nnoremap H ^
-nnoremap L $
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
