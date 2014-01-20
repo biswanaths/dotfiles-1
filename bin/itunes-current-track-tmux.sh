@@ -20,7 +20,17 @@ on appIsRunning(appName)
 end appIsRunning
 EOF)
 
+ITUNES_ALBUM=$(osascript <<EOF
+if appIsRunning("iTunes") then
+    tell app "iTunes" to get the album of the current track
+end if
+
+on appIsRunning(appName)
+    tell app "System Events" to (name of processes) contains appName
+end appIsRunning
+EOF)
+
 # Musical Symbols: ☊ ♫ ♪. Use anyone you like.
 
-    echo ' | ☊' $ITUNES_TRACK '-' $ITUNES_ARTIST
+echo ' | ♪' $ITUNES_TRACK '-' $ITUNES_ARTIST '('$ITUNES_ALBUM')'
 fi
