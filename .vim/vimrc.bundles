@@ -8,6 +8,7 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'gmarik/vundle'
 
     Bundle 'Raimondi/delimitMate'
+    Bundle 'dahu/vim-fanfingtastic'
     Bundle 'ervandew/supertab'
     Bundle 'godlygeek/tabular'
     Bundle 'jelera/vim-javascript-syntax'
@@ -15,7 +16,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'kana/vim-textobj-user' 
     Bundle 'kien/ctrlp.vim'
     Bundle 'klen/python-mode'
-    Bundle 'marijnh/tern_for_vim'
     Bundle 'mattn/emmet-vim'
     Bundle 'mileszs/ack.vim'
     Bundle 'nelstrom/vim-visual-star-search'
