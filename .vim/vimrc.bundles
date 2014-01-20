@@ -1,5 +1,6 @@
-" Vundle Settings {{{1
 set nocompatible
+
+" Set up Vundle but only if vundle is cloned
 if (isdirectory(expand('~/.vim/bundle/vundle')))
     filetype off
     set rtp+=~/.vim/bundle/vundle/
@@ -7,7 +8,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'gmarik/vundle'
 
     Bundle 'Raimondi/delimitMate'
-    Bundle 'eagletmt/ghcmod-vim'
     Bundle 'ervandew/supertab'
     Bundle 'godlygeek/tabular'
     Bundle 'jelera/vim-javascript-syntax'
@@ -17,8 +17,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'klen/python-mode'
     Bundle 'marijnh/tern_for_vim'
     Bundle 'mattn/emmet-vim'
-    Bundle 'mattn/gist-vim'
-    Bundle 'mattn/webapi-vim'
     Bundle 'mileszs/ack.vim'
     Bundle 'nelstrom/vim-visual-star-search'
     Bundle 'pangloss/vim-javascript'
@@ -26,7 +24,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'Rip-Rip/clang_complete'
     Bundle 'scrooloose/syntastic'
     Bundle 'Shougo/neocomplete'
-    Bundle 'Shougo/vimproc'
     Bundle 'SirVer/ultisnips'
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-fugitive'
@@ -34,7 +31,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'tsaleh/vim-matchit'
     Bundle 'xolox/vim-misc'
     Bundle 'xolox/vim-notes'
 endif

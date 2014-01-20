@@ -5,7 +5,7 @@ if filereadable(expand("~/.vim/vimrc.bundles"))
 endif
 
 " General Settings {{{1
-let mapleader=' '
+let mapleader=','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -24,6 +24,7 @@ set showcmd
 set splitbelow splitright
 set switchbuf=useopen,usetab
 set synmaxcol=800
+set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
@@ -50,7 +51,7 @@ set showmatch
 set matchtime=2
 
 " Tab, Indent and Folds {{{1
-set softtabstop=4 shiftwidth=4
+set shiftround softtabstop=4 shiftwidth=4
 set smarttab expandtab
 set autoindent
 set nofoldenable
@@ -64,7 +65,6 @@ set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 "Backup settings {{{1
 set history=2000
 set noswapfile
-set backup
 set undofile
 set backupdir=~/.vim/backup/
 set undodir=~/.vim/backup/undo/
@@ -87,6 +87,9 @@ nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
 " Plugin Settings and Mappings {{{1
+" Matchit
+runtime macros/matchit.vim
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
@@ -138,9 +141,6 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " Tabular
 xnoremap <leader>t :Tabular<space>/
 
-" Jedi-vim
-let g:jedi#popup_select_first = 0
-
 " Ctrlp
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>F :CtrlPCurWD<CR>
@@ -167,12 +167,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 
 " Filetype syntax and indent {{{1
 " Haskell
-let hs_highlight_boolean=1
-let hs_highlight_types=1
-let hs_highlight_more_types=1
-let hs_highlight_debug=1
+let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 " C 
-let c_comment_strings = 1
+let [c_space_errors, c_comment_strings] = [1, 1]
 " HTML
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
@@ -181,7 +178,7 @@ let g:html_indent_style1="inc"
 let python_highlight_all = 1
 
 " General Mappings {{{1
-" Restore \ to search character wise
+" Restore , for searching character-wise
 nnoremap \ ,
 
 " Easily send text to the black hole
@@ -210,7 +207,7 @@ nnoremap <leader>ef mfgg=G`fzz
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Use space to toggle folds
-nnoremap <CR> za
+nnoremap <Space> za
 
 " Yank to the end of the line
 nnoremap Y y$
@@ -251,7 +248,7 @@ endif
 com! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 com! LCD lcd %:p:h
 com! CD cd %:p:h
-com! SY echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+com! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 com! Todo tselect TODO
 com! Fix tselect FIXME
 
