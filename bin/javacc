@@ -1,4 +1,0 @@
-#!/bin/sh
-JAR="/usr/local/lib/javacc.jar"
-
-java -classpath "$JAR" javacc "$@"
