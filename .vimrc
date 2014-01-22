@@ -1,60 +1,55 @@
 " ------------ ajh's .vimrc ------------
 " Vundle {{{1
-if filereadable(expand("~/.vim/vimrc.bundles"))
-    source ~/.vim/vimrc.bundles
+if filereadable(expand("~/.vim/vimrc.bundles")) 
+    source ~/.vim/vimrc.bundles 
 endif
+
+" Colorscheme / Syntax {{{1
+filetype plugin indent on
+syntax on
+let g:hybrid_use_Xresources=1
+colorscheme hybrid-mod
 
 " General Settings {{{1
 let mapleader=','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
-set completeopt=menu,longest,preview
 set formatoptions+=1j
 set hidden
 set laststatus=2
-set lazyredraw
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
-set nrformats-=octal
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
 set showcmd
 set splitbelow splitright
 set switchbuf=useopen,usetab
-set synmaxcol=800
 set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set wildmenu
+runtime macros/matchit.vim
 
-" Colorscheme / Syntax {{{1
-filetype plugin indent on
-syntax enable
-let g:hybrid_use_Xresources=1
-colorscheme hybrid-mod
+" Search Settings {{{1
+nnoremap / /\v
+xnoremap / /\v
+set incsearch hlsearch smartcase ignorecase
+set showmatch matchtime=2
+
+" Indent and Fold Settings {{{1
+set shiftround softtabstop=4 shiftwidth=4
+set smarttab expandtab
+set autoindent
+set nofoldenable
 
 " Status Line {{{1
 set statusline=%t\ \%{SyntasticStatuslineFlag()}\ \%#StatusRO#\%R
 set statusline+=\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m
 set statusline+=\ \%{fugitive#statusline()}\%=\ \%#StatusFTP#\%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
-
-" Search Settings {{{1
-nnoremap / /\v
-xnoremap / /\v
-set incsearch hlsearch
-set smartcase ignorecase
-set showmatch
-set matchtime=2
-
-" Tab, Indent and Folds {{{1
-set shiftround softtabstop=4 shiftwidth=4
-set smarttab expandtab
-set autoindent
-set nofoldenable
 
 " Wildignore Settings {{{1
 set wildignorecase
@@ -63,7 +58,7 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
 "Backup settings {{{1
-set history=2000
+set history=10000
 set noswapfile
 set undofile
 set backupdir=~/.vim/backup/
@@ -74,29 +69,18 @@ if has("gui_running")
     set guioptions=ac lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
-" Window Management {{{1
-" -- Switching between windows
+" Window Management (Moving and Closing) {{{1
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
-" -- Closing windows
 nnoremap <silent> <leader>ch :wincmd h<CR>:close<CR>
 nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
 " Plugin Settings and Mappings {{{1
-" Matchit
-runtime macros/matchit.vim
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-
 " Gist
-let g:gist_clip_command = 'pbcopy'
 let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
 
@@ -109,8 +93,6 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 " Clang_Complete
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
@@ -131,9 +113,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 4
 let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
@@ -155,16 +135,8 @@ nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-" Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_post_private = 1
-let g:gist_open_browser_after_post = 1
-
 " Vim Niceties {{{1
-" Add a color column but only highlight over 80 columns
 call matchadd('ColorColumn', '\%81v', 100)
-
-" When opening a file, return to the last known position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
 
 " Filetype syntax and indent {{{1
@@ -180,10 +152,6 @@ let g:html_indent_style1="inc"
 let python_highlight_all = 1
 
 " General Mappings {{{1
-nnoremap <up> :lprev<CR>zvzz
-nnoremap <down> :lnext<CR>zvzz
-nnoremap <left> :cprev<CR>zvzz
-nnoremap <right> :cnext<CR>zvzz
 nnoremap \ ,
 nnoremap Q gq
 
@@ -223,7 +191,7 @@ nnoremap vv ^vg_
 " Splits a line -- opposite of J (join lines)
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Centet screen when searching. Don't jump to the next match automatically
+" Center screen when searching. Don't jump to the next match automatically
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
