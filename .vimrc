@@ -79,62 +79,6 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
-" Plugin Settings and Mappings {{{1
-" Gist
-let g:gist_open_browser_after_post = 1
-let g:gist_detect_filetype = 1
-
-" Python-mode
-let g:pymode_lint_on_fly=0
-let g:pymode_lint_cwindow=0
-
-" Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-
-" Clang_Complete
-let g:clang_close_preview=1
-let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-" DelimitMate
-let delimitMate_expand_cr = 1
-
-" vim-notes
-let g:notes_directories = ['~/Dropbox/Notes']
-
-" Syntastic
-let g:syntastic_loc_list_height=4
-let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {'mode': 'active','active_filetypes':['javascript', 'haskell'], 'passive_filetypes': ['python', 'objc']}
-
-" Supertab (Why would you go backwards?!)
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#data_directory = '~/.cache/neocomplete'
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
-" Tabular
-xnoremap <leader>t :Tabular<space>/
-
-" Ctrlp
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>F :CtrlPCurWD<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>k :CtrlPMRUFiles<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <leader>T :CtrlPBufTag<CR>
-nnoremap <leader>w :CtrlPLine<CR>
-let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
 " Vim Niceties {{{1
 call matchadd('ColorColumn', '\%81v', 100)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
