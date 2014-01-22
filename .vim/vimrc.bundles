@@ -1,6 +1,5 @@
 set nocompatible
 
-" Set up Vundle but only if vundle is cloned
 if (isdirectory(expand('~/.vim/bundle/vundle')))
     filetype off
     set rtp+=~/.vim/bundle/vundle/
@@ -9,6 +8,7 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
 
     Bundle 'Raimondi/delimitMate'
     Bundle 'dahu/vim-fanfingtastic'
+    Bundle 'dahu/MarkMyWords'
     Bundle 'ervandew/supertab'
     Bundle 'godlygeek/tabular'
     Bundle 'jelera/vim-javascript-syntax'
@@ -17,6 +17,8 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'kien/ctrlp.vim'
     Bundle 'klen/python-mode'
     Bundle 'mattn/emmet-vim'
+    Bundle 'mattn/gist-vim'
+    Bundle 'mattn/webapi-vim'
     Bundle 'mileszs/ack.vim'
     Bundle 'nelstrom/vim-visual-star-search'
     Bundle 'pangloss/vim-javascript'

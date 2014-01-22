@@ -32,7 +32,7 @@ set wildmenu
 
 " Colorscheme / Syntax {{{1
 filetype plugin indent on
-syntax on
+syntax enable
 let g:hybrid_use_Xresources=1
 colorscheme hybrid-mod
 
@@ -95,6 +95,11 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
+" Gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_open_browser_after_post = 1
+let g:gist_detect_filetype = 1
+
 " Python-mode
 let g:pymode_lint_on_fly=0
 let g:pymode_lint_cwindow=0
@@ -118,9 +123,7 @@ let g:notes_directories = ['~/Dropbox/Notes']
 " Syntastic
 let g:syntastic_loc_list_height=4
 let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {
-        \ 'mode' : 'active', 'active_filetypes': ['javascript', 'c', 'cpp', 'perl', 'haskell'],
-        \ 'passive_filetypes': ['python', 'objc', 'objcpp', 'java'] }
+let g:syntastic_mode_map = {'mode': 'active','active_filetypes':['javascript', 'haskell'], 'passive_filetypes': ['python', 'objc']}
 
 " Supertab (Why would you go backwards?!)
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -151,7 +154,6 @@ nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
 
 " Gist
 let g:gist_clip_command = 'pbcopy'
@@ -178,27 +180,22 @@ let g:html_indent_style1="inc"
 let python_highlight_all = 1
 
 " General Mappings {{{1
-" Restore , for searching character-wise
-nnoremap \ ,
-
-" Easily send text to the black hole
-nnoremap <leader>d "_d
-
-" Don't need arrow keys
 nnoremap <up> :lprev<CR>zvzz
 nnoremap <down> :lnext<CR>zvzz
 nnoremap <left> :cprev<CR>zvzz
 nnoremap <right> :cnext<CR>zvzz
-
-" Easier way to escape
-inoremap jk <Esc>
-
-" Format paragraph (also I hate ex mode)
+nnoremap \ ,
 nnoremap Q gq
 
-" Quickly edit vimrc or plugins
-nnoremap <silent> <leader>ev :sp $MYVIMRC<CR>
-nnoremap <silent> <leader>eb :sp ~/.vim/vimrc.bundles<CR>
+" Make Y behave like C, D, etc.
+nnoremap Y y$
+
+" Quickly Edit vimrc
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>eb :e ~/.vim/vimrc.bundles<CR>
+
+" Easily send text to the black hole
+nnoremap <leader>d "_d
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfgg=G`fzz
@@ -206,11 +203,8 @@ nnoremap <leader>ef mfgg=G`fzz
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
-" Use space to toggle folds
+" Toggle folds
 nnoremap <Space> za
-
-" Yank to the end of the line
-nnoremap Y y$
 
 " Focus only on fold that is on the cursor position
 nnoremap <leader>z zMzvzz
@@ -245,14 +239,8 @@ else
 endif
 
 " Commands {{{1
-com! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
-com! LCD lcd %:p:h
-com! CD cd %:p:h
-com! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-com! Todo tselect TODO
-com! Fix tselect FIXME
-
-" Typos {{{1
-if filereadable(expand("~/.vim/vim-typos"))
-    source ~/.vim/vim-typos
-endif
+command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
+command! CD lcd %:p:h
+command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+command! Todo tselect TODO
+command! Fix tselect FIXME
