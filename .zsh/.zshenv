@@ -88,6 +88,6 @@ fi
 
 export ARCHFLAGS="-arch x86_64"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
-
-# Italic fonts in iTerm!
+eval "$(rbenv init - --no-rehash)"
+export GREP_COLOR='1;33'
 export TERM=xterm-256color-italic
