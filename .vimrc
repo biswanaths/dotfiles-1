@@ -1,10 +1,10 @@
 " ------------ ajh's .vimrc ------------
-" Vundle {{{1
+" Source Vundle {{{1
 if filereadable(expand("~/.vim/vimrc.bundles")) 
     source ~/.vim/vimrc.bundles 
 endif
 
-" Colorscheme / Syntax {{{1
+" Colorscheme and Syntax {{{1
 filetype plugin indent on
 syntax on
 let g:hybrid_use_Xresources=1
@@ -36,7 +36,7 @@ runtime macros/matchit.vim
 " Search Settings {{{1
 nnoremap / /\v
 xnoremap / /\v
-set incsearch hlsearch smartcase ignorecase
+set incsearch hlsearch smartcase ignorecase gdefault
 set showmatch matchtime=2
 
 " Indent and Fold Settings {{{1
@@ -57,7 +57,7 @@ set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
 set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
 
-"Backup settings {{{1
+" History, Backup and Undo settings {{{1
 set history=10000
 set noswapfile
 set undofile
@@ -79,21 +79,17 @@ nnoremap <silent> <leader>cj :wincmd j<CR>:close<CR>
 nnoremap <silent> <leader>ck :wincmd k<CR>:close<CR>
 nnoremap <silent> <leader>cl :wincmd l<CR>:close<CR>
 
-" Vim Niceties {{{1
+" Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
 
-" Filetype syntax and indent {{{1
-" Haskell
-let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
-" C 
-let [c_space_errors, c_comment_strings] = [1, 1]
-" HTML
+" Filetype Settings {{{1
+let python_highlight_all = 1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-" Python
-let python_highlight_all = 1
+let [c_space_errors, c_comment_strings] = [1, 1]
+let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
 nnoremap \ ,
@@ -106,11 +102,11 @@ nnoremap Y y$
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 nnoremap <silent> <leader>eb :e ~/.vim/vimrc.bundles<CR>
 
-" Easily send text to the black hole
+" Send text to the black hole register
 nnoremap <leader>d "_d
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef mfgg=G`fzz
+nnoremap <leader>ef mfgg=G`f
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
@@ -118,29 +114,24 @@ nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 " Toggle folds
 nnoremap <Space> za
 
-" Focus only on fold that is on the cursor position
-nnoremap <leader>z zMzvzz
-
 " Reselect visual block after indent/outdent
 xnoremap < <gv
 xnoremap > >gv
 
-" Open folds when searching, always centering the screen
+" Nicer searching behavior
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" select the entire line but ignore the indentation
-nnoremap vv ^vg_
-
-" Splits a line -- opposite of J (join lines)
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
-
-" Center screen when searching. Don't jump to the next match automatically
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
 
-" Tmux settings  {{{1
+" Select a line without the indentation
+nnoremap vv ^vg_
+
+" Splits a line -- opposite of J
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+" Tmux settings (Cursor and background erase) {{{1
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -150,7 +141,7 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" Commands {{{1
+" Custom Commands {{{1
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! CD lcd %:p:h
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
