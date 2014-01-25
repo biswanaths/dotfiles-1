@@ -85,6 +85,6 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     nnoremap <leader>T :CtrlPBufTag<CR>
     nnoremap <leader>w :CtrlPLine<CR>
     let g:ctrlp_extensions = ['tag', 'line']
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     "}}}
 endif

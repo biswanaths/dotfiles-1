@@ -92,7 +92,13 @@ let [c_space_errors, c_comment_strings] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
+nnoremap H ^
+nnoremap L g_
+
+" Use \ to search backward characterwise
 nnoremap \ ,
+
+" No ex mode for me, thanks.
 nnoremap Q gq
 
 " Make Y behave like C, D, etc.
@@ -131,11 +137,10 @@ nnoremap vv ^vg_
 " Splits a line -- opposite of J
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Tmux settings (Cursor and background erase) {{{1
+" Tmux settings (Cursor and bce) {{{1
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    set t_ut=y
 else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
