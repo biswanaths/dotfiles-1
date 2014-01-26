@@ -2,3 +2,17 @@ log*
 tmp
 tags
 *.out
+*.pyc
+*.out
+*.DS_Store
+*.class
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.zip
+*.so
+*.o
+*.manifest
+*.spl
