@@ -1,6 +1,7 @@
 " ------------ ajh's .vimrc ------------
 " Source Vundle {{{1
 if filereadable(expand("~/.vim/vimrc.bundles")) 
+    let mapleader=','
     source ~/.vim/vimrc.bundles 
 endif
 
