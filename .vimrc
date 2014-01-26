@@ -53,9 +53,9 @@ set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\
 
 " Wildignore Settings {{{1
 set wildignorecase
-set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.out,*.DS_Store,*.class
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*.so,*.swp,*/tmp/*
-set wildignore+=*.o,*.out,*.obj,*.manifest,*~,#*#,*.sw?,%*,*=
+set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.zip,*/tmp/*,*.obj
+set wildignore+=*.manifest,*~,#*#,%*,*=
 
 " History, Backup and Undo settings {{{1
 set history=10000
