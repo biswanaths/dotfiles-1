@@ -12,7 +12,6 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid-mod
 
 " General Settings {{{1
-let mapleader=','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -89,6 +88,7 @@ let python_highlight_all = 1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
+let g:java_highlight_all = 1
 let [c_space_errors, c_comment_strings] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
@@ -131,9 +131,6 @@ nnoremap N Nzzzv
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
-
-" Select a line without the indentation
-nnoremap vv ^vg_
 
 " Splits a line -- opposite of J
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
