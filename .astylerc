@@ -5,6 +5,8 @@ indent-preprocessor
 
 indent-col1-comments
 
+indent=spaces=4
+
 pad-oper
 
 pad-header
@@ -12,3 +14,5 @@ pad-header
 unpad-paren
 
 align-pointer=name
+
+convert-tabs

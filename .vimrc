@@ -148,5 +148,6 @@ endif
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! CD lcd %:p:h
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+command! -nargs=0 Format call functions#AStyleFormat()
 command! Todo tselect TODO
 command! Fix tselect FIXME
