@@ -6,7 +6,7 @@
 zstyle ':prezto:module:editor' keymap 'vi'
 
 # Convert .... to ../..
-zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'no'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
