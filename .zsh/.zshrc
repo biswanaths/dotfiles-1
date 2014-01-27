@@ -9,6 +9,9 @@ fi
 # Better git completion script
 fpath=(~/.zsh/Completions $fpath)
 
+# Better substring search color
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
+
 # Source aliases
 source ~/.zsh/aliases
 
