@@ -6,10 +6,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Change some syntax coloring to look nicer
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
-
 # Better git completion script
 fpath=(~/.zsh/Completions $fpath)
 
@@ -20,8 +16,8 @@ source ~/.zsh/aliases
 bindkey -v
 
 # ? and / in vicmd mode are nice but sometimes I want the arrow keys back
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # DAMNIT ZSH, WHAT ARE YOU WAITING FOR?!
 KEYTIMEOUT=1

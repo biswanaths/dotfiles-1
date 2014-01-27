@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'haskell' \
   'fasd' \
   'syntax-highlighting' \
+  'history-substring-search'\
   'osx' \
   'prompt'
 
@@ -43,6 +44,11 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:syntax-highlighting' highlighters \
     'main' \
     'brackets'
+
+zstyle ':prezto:module:syntax-highlighting' styles \
+    'single-hyphen-option' 'fg=magenta,bold' \
+    'double-hyphen-option' 'fg=magenta,bold' \
+    'function' 'bg=blue' \
 
 # Set the prompt theme
 zstyle ':prezto:module:prompt' theme 'watabou'
