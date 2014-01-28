@@ -29,13 +29,11 @@ KEYTIMEOUT=1
 setopt alwaystoend      # move to the end of the line after completing
 setopt menu_complete    # On an ambiguous completion, inserts first match immediately.
 setopt prompt_subst     # complete functions in the prompt.
-setopt notify           # report status of background jobs immediately.
 setopt globdots         # don't require a leading period in a filename to be matched.
 setopt correct          # correct the spelling of commands.
 setopt pushdtohome      # just entering pushd will cd to home folder.
 setopt cdablevars       # try expand a "cd" argument if.
 setopt autolist         # automatically list choices when zsh doesn't understand a command.
-setopt autocd           # imply "cd" when I only type a path.
 setopt recexact         # when completing, recognize exact matches.
 setopt longlistjobs     # list jobs in the long format.
 setopt autoresume       # use single word simple commands for resumption of a existing job.
