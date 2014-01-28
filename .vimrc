@@ -12,6 +12,7 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid-mod
 
 " General Settings {{{1
+set autochdir
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
