@@ -23,6 +23,7 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     Bundle 'Shougo/neocomplete'
     Bundle 'SirVer/ultisnips'
     Bundle 'tpope/vim-commentary'
+    Bundle 'tpope/vim-dispatch'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-markdown'
     Bundle 'tpope/vim-repeat'
@@ -35,6 +36,9 @@ if (isdirectory(expand('~/.vim/bundle/vundle')))
     " Gist
     let g:gist_open_browser_after_post = 1
     let g:gist_detect_filetype = 1
+
+    " Dispatch
+    nnoremap <leader>D :Dispatch<CR>
 
     " Python-mode
     let g:pymode_lint_on_fly=0
