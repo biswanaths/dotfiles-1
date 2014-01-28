@@ -10,12 +10,12 @@ dirdiff() {
     # don't set readonly on those buffers in order to keep modifications.
     right_files=( right/**/*(.ND) )
     if (( $#right_files )); then
-per_tab_ro_cmds='windo setlocal readonly | wincmd h'
+        per_tab_ro_cmds='windo setlocal readonly | wincmd h'
     else
-per_tab_ro_cmds='wincmd h | setlocal readonly'
+        per_tab_ro_cmds='wincmd h | setlocal readonly'
     fi
 
-all_files=( left/**/*(-.ND) right/**/*(-.ND) )
+    all_files=( left/**/*(-.ND) right/**/*(-.ND) )
     all_files=( ${(u)all_files[@]#*/} )
 
     {
@@ -26,12 +26,12 @@ all_files=( left/**/*(-.ND) right/**/*(-.ND) )
     print 'augroup END'
 
     for f in $all_files[@]; do
-printf 'tabnew %s | vsplit %s\n' left/$f right/$f
+        printf 'tabnew %s | vsplit %s\n' left/$f right/$f
         print 'windo diffthis'
         print $per_tab_ro_cmds
     done
 
-print 'autocmd! vdwrap'
+    print 'autocmd! vdwrap'
 
     print 'tabfirst | tabclose'
     } \
@@ -49,14 +49,14 @@ regulardiff() {
     export PATH=$gitexecpath:$PATH
     export LOCAL=$1
     export REMOTE=$2
-    sh -c '. git-mergetool--lib; run_merge_tool vimdiff'
+    sh -c '. git-mergetool--lib;  run_merge_tool vimdiff'
 }
 
 # If there are only two arguments and both are directories then --dir-diff has
 # been given to 'git difftool'. Otherwise we use vimdiff us usual.
 if [[ -d $1 && -d $2 && -z $3 ]]
 then
-dirdiff "$@"
+    dirdiff "$@"
 else
-regulardiff "$@"
+    regulardiff "$@"
 fi
