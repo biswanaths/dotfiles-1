@@ -9,21 +9,23 @@ fi
 # Better git completion script
 fpath=(~/.zsh/Completions $fpath)
 
-# Better substring search color
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
-
 # Source aliases
 source ~/.zsh/aliases
 
-# Getting tired of emacs keybindings
+# Use vi keybindings for prompt
 bindkey -v
+# In vi mode, zsh takes ages to escape unless I have this setting
+KEYTIMEOUT=1
 
 # ? and / in vicmd mode are nice but sometimes I want the arrow keys back
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# DAMNIT ZSH, WHAT ARE YOU WAITING FOR?!
-KEYTIMEOUT=1
+# Bind Ctrl-L to clear the screen
+bindkey '^l' clear-screen
+
+# Better substring search color
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 
 # Zsh options
 setopt alwaystoend      # move to the end of the line after completing
