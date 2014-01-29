@@ -31,6 +31,7 @@ set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
+set visualbell
 set wildmenu
 runtime macros/matchit.vim
 
@@ -136,7 +137,7 @@ nnoremap <silent> g* g*Nzz
 " Splits a line -- opposite of J
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Tmux settings (Cursor and bce) {{{1
+" Tmux settings (Cursor) {{{1
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
