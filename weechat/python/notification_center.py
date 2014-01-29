@@ -16,27 +16,27 @@ SCRIPT_DESC = 'Pass highlights and private messages to the OS X 10.8+ Notificati
 weechat.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE, SCRIPT_DESC, '', '')
 
 DEFAULT_OPTIONS = {
-        'show_highlights': 'on',
-        'show_private_message': 'on',
-        'show_message_text': 'on',
+	'show_highlights': 'on',
+	'show_private_message': 'on',
+	'show_message_text': 'on',
 }
 
 for key, val in DEFAULT_OPTIONS.items():
-        if not weechat.config_is_set_plugin(key):
-                weechat.config_set_plugin(key, val)
+	if not weechat.config_is_set_plugin(key):
+		weechat.config_set_plugin(key, val)
 
 weechat.hook_print('', 'irc_privmsg', '', 1, 'notify', '')
 
 def notify(data, buffer, date, tags, displayed, highlight, prefix, message):
-        if weechat.config_get_plugin('show_highlights') == 'on' and highlight == '1':
-                channel = weechat.buffer_get_string(buffer, 'localvar_channel')
-                if weechat.config_get_plugin('show_message_text') == 'on':
-                        Notifier.notify(message, title='%s %s' % (prefix, channel), sound="Ping")
-                else:
-                        Notifier.notify('In %s by %s' % (channel, prefix), title='Highlighted Message', sound="Ping")
-        elif weechat.config_get_plugin('show_private_message') == 'on' and 'notify_private' in tags:
-                if weechat.config_get_plugin('show_message_text') == 'on':
-                        Notifier.notify(message, title='%s [private]' % prefix, sound="Ping")
-                else:
-                        Notifier.notify('From %s' % prefix, title='Private Message', sound="Ping")
-        return weechat.WEECHAT_RC_OK
+	if weechat.config_get_plugin('show_highlights') == 'on' and highlight == '1':
+		channel = weechat.buffer_get_string(buffer, 'localvar_channel')
+		if weechat.config_get_plugin('show_message_text') == 'on':
+			Notifier.notify(message, title='%s %s' % (prefix, channel), sound="Pop")
+		else:
+			Notifier.notify('In %s by %s' % (channel, prefix), title='Highlighted Message', sound="Pop")
+	elif weechat.config_get_plugin('show_private_message') == 'on' and 'notify_private' in tags:
+		if weechat.config_get_plugin('show_message_text') == 'on':
+			Notifier.notify(message, title='%s [private]' % prefix, sound="Pop")
+		else:
+			Notifier.notify('From %s' % prefix, title='Private Message', sound="Ping")
+	return weechat.WEECHAT_RC_OK
