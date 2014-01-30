@@ -3,6 +3,7 @@
 # General aliases
 alias c="clear"
 alias cp="cp -vi"
+alias em="emacsclient"
 alias rm="rm -v"
 alias mv="mv -vi"
 alias ls="ls -A -G"
