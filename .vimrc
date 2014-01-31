@@ -92,7 +92,7 @@ if has("gui_running")
     set guioptions=ac lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
-" Window Management (Moving and Closing) {{{1
+" Moving windows {{{1
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
