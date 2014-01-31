@@ -3,6 +3,7 @@
 # General aliases
 alias c="clear"
 alias cp="cp -vi"
+alias curl="/usr/local/Cellar/curl/7.35.0/bin/curl"
 alias em="emacsclient"
 alias rm="rm -v"
 alias mv="mv -vi"
