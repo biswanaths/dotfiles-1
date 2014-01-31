@@ -4,8 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'Raimondi/delimitMate'
-Bundle 'dahu/vim-fanfingtastic'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
@@ -22,8 +20,10 @@ Bundle 'Shougo/neocomplete'
 Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -37,7 +37,7 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid-mod
 
 " General Settings {{{1
-set autoread autowrite autochdir
+set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
 set formatoptions+=1j
@@ -104,11 +104,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 
 " Filetype Settings {{{1
 let python_highlight_all = 1
+let g:java_highlight_all = 1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-let g:java_highlight_all = 1
-let [c_space_errors, c_comment_strings] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
@@ -120,6 +119,10 @@ nnoremap \ ,
 
 " No ex mode for me, thanks.
 nnoremap Q gq
+
+" Autoclose 
+inoremap {<CR> {<CR>}<ESC>O
+inoremap (<CR> (<CR>)<ESC>O
 
 " Make Y behave like C, D, etc.
 nnoremap Y y$
@@ -173,9 +176,6 @@ let g:netrw_liststyle = 3
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-" DelimitMate
-let delimitMate_expand_cr = 1
-
 " vim-notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
@@ -226,5 +226,3 @@ command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! CD lcd %:p:h
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 command! -nargs=0 Format call functions#AStyleFormat()
-command! Todo tselect TODO
-command! Fix tselect FIXME
