@@ -7,12 +7,16 @@ alias curl="/usr/local/Cellar/curl/7.35.0/bin/curl"
 alias em="emacsclient"
 alias rm="rm -v"
 alias mv="mv -vi"
-alias ls="ls -A -G"
-alias sl="ls"
 alias tmux="tmux -u2"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
 alias chpwn="chown"
+
+# ls Aliases
+alias ls="ls -A -G"
+alias sl="ls"
+alias ll="ls -lh"
+alias lt="ls -lth"
 
 # Edit stuff
 alias evi="vim ~/.vimrc"

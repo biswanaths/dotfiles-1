@@ -48,7 +48,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 zstyle ':prezto:module:syntax-highlighting' styles \
     'single-hyphen-option' 'fg=magenta,bold' \
     'double-hyphen-option' 'fg=magenta,bold' \
-    'function' 'bg=blue' \
+    'function' 'fg=cyan,underline'
 
 # Set the prompt theme
 zstyle ':prezto:module:prompt' theme 'watabou'
