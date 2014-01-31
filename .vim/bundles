@@ -19,6 +19,7 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete'
 Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-eunuch'
@@ -30,5 +31,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
+
+" Source runtime plugins
+runtime macros/matchit.vim
 
 " vim: ft=vim

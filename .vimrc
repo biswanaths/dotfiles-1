@@ -22,7 +22,6 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set visualbell
 set wildmenu
-runtime macros/matchit.vim
 
 " Colorscheme and Syntax {{{1
 filetype plugin indent on
