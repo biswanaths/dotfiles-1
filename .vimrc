@@ -1,42 +1,6 @@
 " ------------ ajh's .vimrc ------------
-" Vundle {{{1
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'mattn/emmet-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'PeterRincker/vim-argumentative'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete'
-Bundle 'SirVer/ultisnips'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
-
-" Colorscheme and Syntax {{{1
-filetype plugin indent on
-syntax on
-let g:hybrid_use_Xresources=1
-colorscheme hybrid-mod
-
 " General Settings {{{1
+source ~/.vim/bundles
 let mapleader = ','
 set autoread
 set backspace=indent,eol,start
@@ -59,6 +23,12 @@ set virtualedit=block
 set visualbell
 set wildmenu
 runtime macros/matchit.vim
+
+" Colorscheme and Syntax {{{1
+filetype plugin indent on
+syntax on
+let g:hybrid_use_Xresources=1
+colorscheme hybrid-mod
 
 " Search Settings {{{1
 nnoremap / /\v
