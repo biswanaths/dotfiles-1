@@ -31,7 +31,7 @@ weechat.register("lastfm", "Adam Saponara", "0.4", "GPL3", "Sends your latest La
 
 defaults = {
         "lastfm_username" : "nobody",
-        "command" : "/me is listening to %s"
+        "command" : "/me is listening to %s (last.fm)"
 }
 
 cmd_hook_process = ""
@@ -61,7 +61,7 @@ def lastfm_cmd(data, buffer, args):
                 "	print >>sys.stderr, 'Could not fetch Last.fm RSS feed.',\n"
                 "elif not 'items' in feed or len(feed['items']) < 1:\n"
                 "	print >>sys.stderr, 'No tracks found in Last.fm RSS feed.',\n"
-                "else:\n" 
+                "else:\n"
                 "	print feed['items'][0]['title'].replace(u'\u2013', '-').encode('utf-8', 'replace'),\n"
                 "\"" % {"username" : weechat.config_get_plugin('lastfm_username')},
                 10000, "lastfm_cb", "")
