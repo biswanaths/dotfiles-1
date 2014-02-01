@@ -11,6 +11,7 @@ alias tmux="tmux -u2"
 alias vi="/usr/local/bin/vim"
 alias weechat="weechat-curses"
 alias chpwn="chown"
+alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 
 # ls Aliases
 alias ls="ls -A -G"
@@ -20,7 +21,7 @@ alias lt="ls -lth"
 
 # Edit stuff
 alias evi="vim ~/.vimrc"
-alias evb="vim ~/.vim/vimrc.bundles"
+alias evb="vim ~/.vim/bundles"
 alias evt="vim ~/.tmux.conf"
 alias evz="vim ~/.zshrc"
 
