@@ -8,11 +8,12 @@ set clipboard+=unnamed
 set formatoptions+=1j
 set hidden
 set laststatus=2
+set lazyredraw
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
-set scrolloff=4
+set scrolloff=3
 set showcmd
 set splitbelow splitright
 set switchbuf=useopen,usetab
@@ -20,7 +21,7 @@ set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
-set visualbell
+set visualbell t_vb=
 set wildmenu
 
 " Colorscheme and Syntax {{{1
@@ -42,7 +43,7 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%{SyntasticStatuslineFlag()}\ \%#StatusRO#\%R\ \%#StatusHLP#\%H
+set statusline=%t\ \%#StatusRO#\%R\ \%#StatusHLP#\%H
 set statusline+=\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m\ \%{fugitive#statusline()}\%=
 set statusline+=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
@@ -82,6 +83,7 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 nnoremap H ^
 nnoremap L g_
+nnoremap <tab> %
 
 " Use \ to search backward characterwise
 nnoremap \ ,
@@ -127,19 +129,16 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Plugin Settings {{{1
 " Gist
-let g:gist_open_browser_after_post = 1
-let g:gist_detect_filetype = 1
+let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
 " Dispatch
 nnoremap <leader>D :Dispatch<CR>
 
 " Python-mode
-let g:pymode_lint_on_fly=0
-let g:pymode_lint_cwindow=0
+let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
 
 " Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let [netrw_banner, netrw_liststyle] = [0, 3]
 
 " Clang_Complete
 let g:clang_close_preview=1
@@ -148,18 +147,11 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 " vim-notes
 let g:notes_directories = ['~/Dropbox/Notes']
 
-" Syntastic
-let g:syntastic_loc_list_height=4
-let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_mode_map = {'mode': 'active','active_filetypes':['javascript', 'haskell'], 'passive_filetypes': ['python', 'objc']}
-
 " Supertab (Why would you go backwards?!)
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#force_overwrite_completefunc = 1
+let [neocomplete#enable_at_startup, neocomplete#enable_smart_case, neocomplete#force_overwrite_completefunc] = [1, 1, 1]
 let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
@@ -179,6 +171,7 @@ nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Tmux settings (Cursor) {{{1
@@ -191,7 +184,6 @@ else
 endif
 
 " Custom Commands {{{1
-command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! CD lcd %:p:h
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 command! -nargs=0 Format call functions#AStyleFormat()
