@@ -19,6 +19,12 @@ alias sl="ls"
 alias ll="ls -lh"
 alias lt="ls -lth"
 
+# Git aliases
+alias g="git"
+alias gst="git stat"
+alias gC="git commit --verbose"
+alias gcm="git commit -m"
+
 # Edit stuff
 alias evi="vim ~/.vimrc"
 alias evb="vim ~/.vim/bundles"
