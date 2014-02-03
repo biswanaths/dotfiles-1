@@ -5,6 +5,7 @@
 .vim/UltiSnips/*
 .vim/tmp/*
 .vim/bundle
+.vim/session/*
 .vim/haskellmode.config
 .vim/.netrwhist
 **doc/tags
