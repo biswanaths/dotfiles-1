@@ -84,6 +84,7 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 nnoremap H ^
 nnoremap L g_
 nnoremap <tab> %
+nnoremap vv ^vg_
 
 " Use \ to search backward characterwise
 nnoremap \ ,
@@ -102,7 +103,7 @@ nnoremap Y y$
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
 " Send text to the black hole register
-nnoremap <leader>d "_d
+nnoremap <leader>h "_d
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfgg=G`f
@@ -132,7 +133,8 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
 " Dispatch
-nnoremap <leader>D :Dispatch<CR>
+nnoremap <leader>D :Dispatch<cr>
+nnoremap <leader>d :Dispatch<space>
 
 " Python-mode
 let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
