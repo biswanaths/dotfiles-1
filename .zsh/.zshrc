@@ -68,9 +68,4 @@ setopt multios          # Multiple I/O redirection
 HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
-precmd() {
-	if [[ "$TERM" == xterm* ]] || [[ $TERM == rxvt* ]] || [[ $TERM == ansi ]] || [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
-		printf "\33]2;$USER@$HOST: ${PWD/#$HOME/~}\007" $1
-	fi
-    }
 ################################# End of .zshrc ###############################
