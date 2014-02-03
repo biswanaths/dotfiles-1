@@ -1,4 +1,3 @@
-" Source Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -17,7 +16,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'PeterRincker/vim-argumentative'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'Shougo/neocomplete'
-Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
@@ -30,8 +28,5 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
-
-" Source runtime plugins
 runtime macros/matchit.vim
-
 " vim: ft=vim
