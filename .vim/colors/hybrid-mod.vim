@@ -243,7 +243,7 @@ exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 "		PmenuSbar"
 "		PmenuThumb"
 exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
+exe "hi! Search"        .s:fg_none        .s:bg_none           .s:fmt_undr
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
@@ -344,17 +344,16 @@ hi! link diffAdded Special
 "		diffComment
 
 "}}}
-" My Modifications to colorscheme {{{
+" My Modifications to colorscheme {{{1
 " I could go and change the above colors but I can't be bothered.
-hi! Pmenu ctermfg=137 ctermbg=233 cterm=none
-hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold
-hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none
-hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none
+hi! Pmenu ctermfg=137 guifg=#e8a973 guibg=#171717 ctermbg=233 cterm=none
+hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold guifg=#ff2a1f guibg=#252525 gui=bold
+hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none guifg=#000000 guibg=#333233 gui=none
+hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none guifg=#171717 gui=none
 hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
 hi! StatusLineNC ctermfg=234 ctermbg=100 guifg=#1c1c1c guibg=#878700
-hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold
-hi! Comment cterm=italic
+hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold guifg=#ff2a1f guibg=#252525 gui=none
+hi! Comment cterm=italic gui=italic
 hi! CppClassNamespace ctermfg=139
 hi! CppStlNamespace ctermfg=109
 hi! CppStlContainer ctermfg=109
-"}}}
