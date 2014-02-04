@@ -1,7 +1,6 @@
-" File:       hybrid.vim
-" Maintainer: Andrew Wong (w0ng)
-" URL:        https://github.com/w0ng/vim-hybrid
-" Modified:   27 Jan 2013 07:33 AM AEST
+" File:       hybrid-mod.vim
+" Original Author: Andrew Wong (w0ng)
+" Modified By: ajh17
 " License:    MIT
 
 " Initialisation:"{{{
