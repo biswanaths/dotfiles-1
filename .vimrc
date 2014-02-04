@@ -9,7 +9,7 @@ set formatoptions+=1j
 set hidden
 set laststatus=2
 set lazyredraw
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
+set list listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
