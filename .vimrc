@@ -154,7 +154,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Neocomplete
 let [neocomplete#enable_at_startup, neocomplete#enable_smart_case, neocomplete#force_overwrite_completefunc] = [1, 1, 1]
-let g:neocomplete#data_directory = '~/.cache/neocomplete'
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
