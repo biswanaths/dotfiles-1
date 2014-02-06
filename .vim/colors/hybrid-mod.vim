@@ -366,6 +366,7 @@ hi! link diffAdded Special
 
 "}}}
 " My Modifications here because I can't be bothered to change the above {{{1
+hi! CursorLineNr ctermfg=007 ctermbg=233 guifg=#aaaaaa guibg=#171717
 hi! Pmenu ctermfg=137 guifg=#e8a973 guibg=#171717 ctermbg=233 cterm=none
 hi! PmenuSel ctermfg=196 ctermbg=234 cterm=bold guifg=#ff2a1f guibg=#252525 gui=bold
 hi! PmenuSbar ctermfg=000 ctermbg=233 cterm=none guifg=#000000 guibg=#333233 gui=none
