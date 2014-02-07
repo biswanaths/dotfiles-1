@@ -16,3 +16,4 @@ tags
 *.o
 *.manifest
 *.spl
+.git/*
