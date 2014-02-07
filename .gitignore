@@ -13,6 +13,7 @@ weechat/logs/*
 weechat/*.conf
 !weechat/weechat.conf
 weechat/python/sysinfo.py
+weechat/python/autoload/sysinfo.py
 weechat/python/.ropeproject/**
 weechat/weechat.log
 weechat/urlserver_list.txt
