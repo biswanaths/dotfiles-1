@@ -1,6 +1,6 @@
 " ------------ ajh's .vimrc ------------
 " General Settings {{{1
-source ~/.vim/bundles
+source ~/.vim/vimrc.bundles
 let mapleader = ','
 set autoread
 set backspace=indent,eol,start
@@ -70,7 +70,7 @@ nnoremap <silent> <C-l> <C-w><C-l>
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"zz" | endif
 
 " Filetype Settings {{{1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
@@ -123,7 +123,7 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
 " Emmet
-let [user_emmet_expandword_key] = ["<c-j>"]
+let [user_emmet_expandabbr_key] = ["<c-j>"]
 
 " Dispatch
 nnoremap <leader>D :Dispatch<cr>
