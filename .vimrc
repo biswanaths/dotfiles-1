@@ -13,7 +13,6 @@ set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
-set scrolloff=3
 set showcmd
 set splitbelow splitright
 set switchbuf=useopen,usetab
@@ -64,10 +63,10 @@ if has("gui_running")
 endif
 
 " Moving windows {{{1
-nnoremap <silent> <C-h> <C-w><C-h><C-w>_
-nnoremap <silent> <C-j> <C-w><C-j><C-w>_
-nnoremap <silent> <C-k> <C-w><C-k><C-w>_
-nnoremap <silent> <C-l> <C-w><C-l><C-w>_
+nnoremap <silent> <C-h> <C-w><C-h>
+nnoremap <silent> <C-j> <C-w><C-j>
+nnoremap <silent> <C-k> <C-w><C-k>
+nnoremap <silent> <C-l> <C-w><C-l>
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
@@ -77,30 +76,21 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
+let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1, 1]
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
-nnoremap H ^
-nnoremap L g_
-nnoremap <tab> %
 nnoremap vv ^vg_
-
-" Use \ to search backward characterwise
+nmap <tab> %
+nnoremap ' `
 nnoremap \ ,
-
-" No ex mode for me, thanks.
 nnoremap Q gq
+nnoremap Y y$
 
 " Autoclose 
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
-
-" Make Y behave like C, D, etc.
-nnoremap Y y$
-
-" Quickly Edit vimrc
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
 " Send text to the black hole register
 nnoremap <leader>h "_d
@@ -132,6 +122,9 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 " Gist
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
+" Emmet
+let [user_emmet_expandword_key] = ["<c-j>"]
+
 " Dispatch
 nnoremap <leader>D :Dispatch<cr>
 nnoremap <leader>d :Dispatch<space>
@@ -153,6 +146,7 @@ let g:notes_directories = ['~/Dropbox/Notes']
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Neocomplete
+let g:neocomplete#auto_completion_start_length = 4
 let [neocomplete#enable_at_startup, neocomplete#enable_smart_case, neocomplete#force_overwrite_completefunc] = [1, 1, 1]
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
@@ -165,14 +159,13 @@ xnoremap <leader>t :Tabular<space>/
 
 " Ctrlp
 nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>F :CtrlPCurWD<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 1
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Tmux settings (Cursor) {{{1
