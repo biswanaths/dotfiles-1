@@ -6,9 +6,6 @@ Bundle 'gmarik/vundle'
 " Plugin List
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-entire'
-Bundle 'kana/vim-textobj-line'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'mattn/emmet-vim'
@@ -28,7 +25,4 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
 runtime macros/matchit.vim
-" vim: ft=vim

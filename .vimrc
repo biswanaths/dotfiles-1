@@ -81,14 +81,22 @@ let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
-nnoremap vv ^vg_
-nmap <tab> %
 nnoremap ' `
 nnoremap \ ,
 nnoremap Q gq
 nnoremap Y y$
 
-" Autoclose 
+" Use tab key instead of % for matchit.vim
+nmap <tab> %
+
+" Quickly delete a buffer
+nnoremap <leader>l :ls<CR>:bd<space>
+
+" Quickly edit files
+nnoremap <leader>ev :e ~/.vimrc<CR>
+nnoremap <leader>eb :e ~/.vim/vimrc.bundles<CR>
+
+" Autoclose
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 
@@ -116,9 +124,15 @@ nnoremap <silent> # #Nzz
 nnoremap <silent> g* g*Nzz
 
 " Splits a line -- opposite of J
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap S i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Plugin Settings {{{1
+" Plugin Settings and Mappings {{{1
+" Python-mode
+let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
+
+" Netrw
+let [netrw_banner, netrw_liststyle] = [0, 3]
+
 " Gist
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
@@ -126,21 +140,29 @@ let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 let [user_emmet_expandabbr_key] = ["<c-j>"]
 
 " Dispatch
-nnoremap <leader>D :Dispatch<cr>
+nnoremap <leader>D :Dispatch<CR>
 nnoremap <leader>d :Dispatch<space>
 
-" Python-mode
-let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
+" Fugitive
+nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
+nnoremap <leader>gb :Git co -b<space>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
 
-" Netrw
-let [netrw_banner, netrw_liststyle] = [0, 3]
+" Ctrlp
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>k :CtrlPMRUFiles<CR>
+nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <leader>T :CtrlPBufTag<CR>
+nnoremap <leader>w :CtrlPLine<CR>
+let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_use_caching = 1
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Clang_Complete
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-" vim-notes
-let g:notes_directories = ['~/Dropbox/Notes']
 
 " Supertab (Why would you go backwards?!)
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -157,27 +179,8 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " Tabular
 xnoremap <leader>t :Tabular<space>/
 
-" Ctrlp
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>k :CtrlPMRUFiles<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <leader>T :CtrlPBufTag<CR>
-nnoremap <leader>w :CtrlPLine<CR>
-let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_use_caching = 1
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-" Tmux settings (Cursor) {{{1
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-" Custom Commands {{{1
+" Functions and Commands {{{1
+call functions#CursorShapeMode()
+command! -nargs=0 Format call functions#AStyleFormat()
 command! CD lcd %:p:h
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-command! -nargs=0 Format call functions#AStyleFormat()
