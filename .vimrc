@@ -1,6 +1,35 @@
 " ------------ ajh's .vimrc ------------
+" Source Vundle {{{1
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
+Bundle 'mattn/emmet-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'PeterRincker/vim-argumentative'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'Shougo/neocomplete'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
+runtime macros/matchit.vim
+
 " General Settings {{{1
-source ~/.vim/vimrc.bundles
 let mapleader = ','
 set autoread
 set backspace=indent,eol,start
@@ -96,7 +125,6 @@ nnoremap <leader>l :ls<CR>:bd<space>
 
 " Quickly edit files
 nnoremap <leader>ev :e ~/.vimrc<CR>
-nnoremap <leader>eb :e ~/.vim/vimrc.bundles<CR>
 
 " Autoclose
 inoremap {<CR> {<CR>}<ESC>O
