@@ -13,20 +13,17 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'PeterRincker/vim-argumentative'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'Shougo/neocomplete'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
 runtime macros/matchit.vim
 
 " General Settings {{{1
@@ -44,8 +41,7 @@ set number relativenumber
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=2
 set showcmd
-set splitbelow splitright
-set switchbuf=useopen,usetab
+set splitbelow splitright switchbuf=useopen,usetab
 set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8
 set timeout timeoutlen=1000 ttimeoutlen=100
@@ -74,7 +70,7 @@ set nofoldenable
 " Status Line {{{1
 set statusline=%t\ \%#StatusRO#\%R\ \%#StatusHLP#\%H
 set statusline+=\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m\ \%{fugitive#statusline()}\%=
-set statusline+=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
+set statusline+=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c
 
 " Wildignore Settings {{{1
 set wildignorecase
@@ -106,7 +102,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-let g:ruby_indent_access_modifier_style = "indent"
 let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1, 1]
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
@@ -187,7 +182,6 @@ nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
 nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_use_caching = 1
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Clang_Complete
@@ -212,5 +206,5 @@ xnoremap <leader>t :Tabular<space>/
 " Functions and Commands {{{1
 call functions#CursorShapeMode()
 command! -nargs=0 Format call functions#AStyleFormat()
+command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! CD lcd %:p:h
-command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
