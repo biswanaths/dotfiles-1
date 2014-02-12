@@ -53,7 +53,7 @@ set wildmenu
 filetype plugin indent on
 syntax on
 let g:hybrid_use_Xresources=1
-colorscheme hybrid-mod
+colorscheme hybrid_mod
 
 " Search Settings {{{1
 nnoremap / /\v

@@ -1,4 +1,4 @@
-" File:       hybrid-mod.vim
+" File:       hybrid_mod.vim
 " Original Author: Andrew Wong (w0ng)
 " Modified By: ajh17
 " License:    MIT
@@ -24,7 +24,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "hybrid-mod"
+let colors_name = "hybrid_mod"
 
 "}}}
 " GUI And Cterm Palettes:"{{{
