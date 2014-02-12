@@ -69,4 +69,10 @@ setopt multios          # Multiple I/O redirection
 HISTFILE=$HOME/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
+
+# Functions
+function :h-helper () {
+    vim + "h" +"h $1" +only +'nnoremap q :q!<CR>';
+}
+
 ################################# End of .zshrc ###############################
