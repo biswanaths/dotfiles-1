@@ -12,14 +12,11 @@ Bundle 'mattn/emmet-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'pangloss/vim-javascript'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'Shougo/neocomplete'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -27,7 +24,6 @@ Bundle 'tpope/vim-unimpaired'
 runtime macros/matchit.vim
 
 " General Settings {{{1
-let mapleader = ','
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -43,7 +39,7 @@ set scrolloff=2
 set showcmd
 set splitbelow splitright switchbuf=useopen,usetab
 set tags=./tags;,tags;
-set termencoding=utf-8 fileencoding=utf-8
+set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set visualbell t_vb=
@@ -107,23 +103,37 @@ let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
+let mapleader = ','
+
+" Remap some keys to be more useful
+nmap <tab> %
 nnoremap ' `
 nnoremap \ ,
 nnoremap Q gq
 nnoremap Y y$
+xnoremap < <gv
+xnoremap > >gv
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap <silent> * *Nzz
+nnoremap <silent> # #Nzz
+nnoremap <silent> g* g*Nzz
+nnoremap <space> za
+nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Use tab key instead of % for matchit.vim
-nmap <tab> %
+" Searching/Replace the word under the cursor
+nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
+
+" Autoclose
+inoremap {<CR> {<CR>}<ESC>O
+inoremap (<CR> (<CR>)<ESC>O
 
 " Quickly delete a buffer
 nnoremap <leader>l :ls<CR>:bd<space>
 
 " Quickly edit files
 nnoremap <leader>ev :e ~/.vimrc<CR>
-
-" Autoclose
-inoremap {<CR> {<CR>}<ESC>O
-inoremap (<CR> (<CR>)<ESC>O
 
 " Send text to the black hole register
 nnoremap <leader>h "_d
@@ -133,23 +143,6 @@ nnoremap <leader>ef mfgg=G`f
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
-
-" Toggle folds
-nnoremap <Space> za
-
-" Reselect visual block after indent/outdent
-xnoremap < <gv
-xnoremap > >gv
-
-" Nicer searching behavior
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap <silent> * *Nzz
-nnoremap <silent> # #Nzz
-nnoremap <silent> g* g*Nzz
-
-" Splits a line -- opposite of J
-nnoremap S i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " Plugin Settings and Mappings {{{1
 " Python-mode
