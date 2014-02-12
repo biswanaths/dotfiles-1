@@ -85,7 +85,7 @@ set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
-    set guioptions=ac lines=40 columns=140 guifont=Inconsolata-g:h14
+    set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
 " Moving windows {{{1
@@ -165,8 +165,8 @@ let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 let [user_emmet_expandabbr_key] = ["<c-j>"]
 
 " Dispatch
-nnoremap <leader>D :Dispatch<CR>
-nnoremap <leader>d :Dispatch<space>
+nnoremap <leader>d :Dispatch<CR>
+nnoremap <leader>D :Dispatch<space>
 
 " Fugitive
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
