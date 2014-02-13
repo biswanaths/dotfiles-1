@@ -117,7 +117,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <silent> * *Nzz
 nnoremap <silent> # #Nzz
-nnoremap <silent> g* g*Nzz
 nnoremap <space> za
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
@@ -135,11 +134,8 @@ nnoremap <leader>l :ls<CR>:bd<space>
 " Quickly edit files
 nnoremap <leader>ev :e ~/.vimrc<CR>
 
-" Send text to the black hole register
-nnoremap <leader>h "_d
-
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef mfgg=G`f
+nnoremap <leader>ef mfgg=G`fzz
 
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
