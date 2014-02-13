@@ -85,10 +85,10 @@ if has("gui_running")
 endif
 
 " Moving windows {{{1
-nnoremap <silent> <C-h> <C-w><C-h>
-nnoremap <silent> <C-j> <C-w><C-j>
-nnoremap <silent> <C-k> <C-w><C-k>
-nnoremap <silent> <C-l> <C-w><C-l>
+nnoremap <silent> <C-h> <C-w><C-h><C-w>_
+nnoremap <silent> <C-j> <C-w><C-j><C-w>_
+nnoremap <silent> <C-k> <C-w><C-k><C-w>_
+nnoremap <silent> <C-l> <C-w><C-l><C-w>_
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
