@@ -35,7 +35,7 @@ set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=a
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
-set scrolloff=2
+set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen,usetab
 set tags=./tags;,tags;
@@ -64,9 +64,8 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%#StatusRO#\%R\ \%#StatusHLP#\%H
-set statusline+=\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%m\ \%{fugitive#statusline()}\%=
-set statusline+=\ \%#StatusFTP#\%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c
+set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=
+set statusline+=\ \%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
 set wildignorecase
