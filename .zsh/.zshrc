@@ -13,7 +13,6 @@ fpath=(~/.zsh/Completions $fpath)
 source ~/.zsh/aliases
 
 # Env. variables
-export TERM=xterm-256color-italic
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_COLOR='1;33'
 PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
