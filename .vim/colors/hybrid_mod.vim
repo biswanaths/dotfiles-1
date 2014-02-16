@@ -374,7 +374,7 @@ hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none guifg=#171717 gui=none
 hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
 hi! StatusLineNC ctermfg=234 ctermbg=007 guifg=#1c1c1c guibg=#aaaaaa
 hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold guifg=#ff2a1f guibg=#252525 gui=none
-hi! Comment cterm=italic gui=italic
+" hi! Comment cterm=italic gui=italic
 hi! CppClassNamespace ctermfg=139
 hi! CppStlNamespace ctermfg=109
 hi! CppStlContainer ctermfg=109
