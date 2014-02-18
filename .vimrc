@@ -195,3 +195,4 @@ xnoremap <leader>t :Tabular<space>/
 call functions#CursorShapeMode()
 command! -nargs=0 Format call functions#AStyleFormat()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
+command! BD silent e# | bd#
