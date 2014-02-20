@@ -4,18 +4,23 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+Bundle 'dahu/vim-fanfingtastic'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kana/vim-textobj-user'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'mattn/emmet-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'peterhoeg/vim-qml'
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'Shougo/neocomplete'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
@@ -27,6 +32,7 @@ runtime macros/matchit.vim
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
+set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
 set laststatus=2
@@ -42,7 +48,6 @@ set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
-set visualbell t_vb=
 set wildmenu
 
 " Colorscheme and Syntax {{{1
@@ -52,13 +57,12 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid_mod
 
 " Search Settings {{{1
-nnoremap / /\v
-xnoremap / /\v
-set incsearch hlsearch smartcase ignorecase gdefault
+set incsearch hlsearch
+set smartcase ignorecase
 set showmatch matchtime=2
 
 " Indent and Fold Settings {{{1
-set shiftround softtabstop=4 shiftwidth=4
+set softtabstop=4 shiftwidth=4 shiftround
 set smarttab expandtab
 set autoindent
 set nofoldenable
@@ -108,6 +112,8 @@ let mapleader = ','
 nmap <tab> %
 nnoremap ' `
 nnoremap \ ,
+nnoremap / /\v
+xnoremap / /\v
 nnoremap Q gq
 nnoremap Y y$
 xnoremap < <gv
@@ -129,6 +135,9 @@ inoremap (<CR> (<CR>)<ESC>O
 
 " Quickly delete a buffer
 nnoremap <leader>l :ls<CR>:bd<space>
+
+" Close the quickfix list
+nnoremap <leader>q :cclose<CR>
 
 " Quickly edit files
 nnoremap <leader>ev :e ~/.vimrc<CR>
@@ -175,18 +184,6 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Clang_Complete
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-" Supertab (Why would you go backwards?!)
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" Neocomplete
-let g:neocomplete#auto_completion_start_length = 4
-let [neocomplete#enable_at_startup, neocomplete#enable_smart_case, neocomplete#force_overwrite_completefunc] = [1, 1, 1]
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " Tabular
 xnoremap <leader>t :Tabular<space>/
