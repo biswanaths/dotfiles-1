@@ -11,6 +11,7 @@ end
 function c; clear; end
 function ef; vim ~/.config/fish/config.fish; end
 function gst; git status; end
+function j; z $argv; end
 alias ls "ls -AG"
 
 # Prompt (slightly modified from sjl's fish prompt)
@@ -38,6 +39,7 @@ end
 
 function fish_prompt
     set last_status $status
+    z --add "$PWD"
     echo
     set_color magenta
     printf '%s' (whoami)
