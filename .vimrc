@@ -185,6 +185,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
+" Supertab (Why would you go backwards?!)
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Tabular
 xnoremap <leader>t :Tabular<space>/
 

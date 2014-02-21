@@ -4,4 +4,4 @@ setlocal expandtab
 setlocal textwidth=80
 
 let b:dispatch = 'rspec %'
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-u>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
