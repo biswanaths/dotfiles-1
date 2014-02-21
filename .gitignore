@@ -2,6 +2,7 @@
 fish/fish_history
 fish/fishd.b8e856383f1c
 .vim/backup/*
+.vim/bundle/*/doc/**
 .vim/custom-dictionary.utf-8.add
 .vim/tags/*
 .vim/UltiSnips/*

@@ -1,5 +1,5 @@
 # ajh's config.fish
-set -x PATH /usr/local/bin /usr/local/sbin $PATH
+set -x PATH ~/.bin /usr/local/bin /usr/local/sbin $PATH
 set BROWSER open
 set -g -x fish_greeting ''
 set -g -x EDITOR vim
