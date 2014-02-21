@@ -1,32 +1,6 @@
 " ------------ ajh's .vimrc ------------
-" Source Vundle {{{1
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'dahu/vim-fanfingtastic'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'mattn/emmet-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'peterhoeg/vim-qml'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-runtime macros/matchit.vim
+" Source Pathogen {{{1
+execute pathogen#infect()
 
 " General Settings {{{1
 set autoread
@@ -43,7 +17,7 @@ set number relativenumber
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
 set showcmd
-set splitbelow splitright switchbuf=useopen,usetab
+set splitbelow splitright switchbuf=useopen
 set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
@@ -51,8 +25,8 @@ set virtualedit=block
 set wildmenu
 
 " Colorscheme and Syntax {{{1
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 let g:hybrid_use_Xresources=1
 colorscheme hybrid_mod
 
@@ -62,7 +36,7 @@ set smartcase ignorecase
 set showmatch matchtime=2
 
 " Indent and Fold Settings {{{1
-set softtabstop=4 shiftwidth=4 shiftround
+set softtabstop=4 shiftwidth=4
 set smarttab expandtab
 set autoindent
 set nofoldenable
@@ -101,7 +75,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1, 1]
+let [rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1]
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
