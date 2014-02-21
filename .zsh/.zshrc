@@ -50,7 +50,8 @@ KEYTIMEOUT=1
 bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^l' clear-screen
+bindkey '^N' insert-last-word
+bindkey '^L' clear-screen
 
 # History {{{1
 HISTFILE=$HOME/.zhistory
