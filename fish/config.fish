@@ -1,6 +1,6 @@
 # ajh's config.fish
 # Environment Variables {{{1
-set -x PATH ~/.bin /usr/local/bin /usr/local/sbin $PATH
+set -x PATH ~/.rvm/gems/ruby-2.1.0/bin ~/.bin /usr/local/bin /usr/local/sbin $PATH
 set BROWSER open
 set -g -x fish_greeting ''
 set -g -x EDITOR vim
@@ -21,6 +21,7 @@ function sf; exec fish; end
 function gst; git status; end
 function j; z $argv; end
 function upd; brew update; brew upgrade; brew cleanup; end
+alias rm "rm -iv"
 alias ls "ls -AG"
 
 # Prompt {{{1
