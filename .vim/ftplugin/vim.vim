@@ -3,5 +3,3 @@ setlocal foldmethod=marker
 setlocal softtabstop=4
 setlocal shiftwidth=4
 setlocal textwidth=80
-setlocal formatoptions-=o
-setlocal formatoptions-=r
