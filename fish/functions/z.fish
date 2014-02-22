@@ -1,6 +1,6 @@
 # Z.fish by sjl
 function z -d "Jump to a recent directory."
-    set -l datafile "$HOME/.z"
+    set -l datafile "$HOME/.cache/z"
 
     # add entries
     if [ "$argv[1]" = "--add" ]
@@ -63,7 +63,7 @@ test -f $tempfile; or return
             set -l list 0
             set -l typ ''
             set -l fnd ''
-            
+
             while [ (count $argv) -gt 0 ]
                 switch "$argv[1]"
                     case -- '-h'
@@ -169,11 +169,12 @@ test -f $tempfile; or return
 end
 
 function __z_init -d 'Set up automatic population of the directory list for z'
-functions fish_prompt | grep -q 'z --add'
-if [ $status -gt 0 ]
-functions fish_prompt | sed -e '$ i\\
-z --add "$PWD"' | .
-end
+    functions fish_prompt | grep -q 'z --add'
+    if [ $status -gt 0 ]
+        functions fish_prompt | sed -e '$ i\\
+        z --add "$PWD"' | .
+    end
 end
 
 __z_init
+#vim: ft=fish
