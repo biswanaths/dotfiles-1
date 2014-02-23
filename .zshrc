@@ -5,7 +5,6 @@ source ~/.zsh/aliases
 source ~/.zsh/steeef.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/zsh-autosugesstions/autosuggestions.zsh
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # Variables {{{1
@@ -35,9 +34,3 @@ SAVEHIST=200000
 bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-# Functions {{{1
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
