@@ -39,12 +39,12 @@ alias pip="pip3"
 # Useful aliases
 alias clang="clang -std=c99 -Wall -Wextra"
 alias ql="qlmanage -p 2>/dev/null"
+alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias ping="ping -c 5"
 alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
 alias mou="open -a Mou"
-alias :h='noglob :h-helper'
 
 # geez fingers
 alias heroky="heroku"
