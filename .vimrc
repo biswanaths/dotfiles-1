@@ -1,6 +1,7 @@
 " ------------ ajh's .vimrc ------------
-" Source Pathogen {{{1
+" Load Plugins {{{1
 execute pathogen#infect()
+runtime! macros/matchit.vim
 
 " General Settings {{{1
 set autoread

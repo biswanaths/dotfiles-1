@@ -6,6 +6,9 @@ set -g -x fish_greeting ''
 set -g -x EDITOR vim
 set -g -x ARCHFLAGS "-arch x86_64"
 
+# Source rvm {{{1
+. ~/.config/fish/functions/rvm.load
+
 # Key mappings {{{1
 function fish_user_key_bindings
     bind \cn 'accept-autosuggestion'
@@ -21,9 +24,9 @@ function sf; exec fish; end
 function gst; git status; end
 function j; z $argv; end
 function upd; brew update; brew upgrade; brew cleanup; end
-alias rm "rm -iv"
-alias ls "ls -AG"
-
+#alias rm "rm -v"
+#alias cp "cp -v"
+#alias ls "ls -AG"
 # Prompt {{{1
 function prompt_pwd --description 'Prints the full directory path instead of the half assed one'
     if test "$PWD" != "$HOME"
