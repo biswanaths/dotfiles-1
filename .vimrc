@@ -20,7 +20,7 @@ set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set tags=./tags;,tags;
-set shell=bash termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
+set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
 set virtualedit=block
 set wildmenu
