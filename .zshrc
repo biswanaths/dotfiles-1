@@ -13,7 +13,7 @@ export GREP_COLOR='1;33'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 
 # Settings {{{1
-setopt alwaystoend completeinword completealiases pathdirs automenu autolist
+setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete
 setopt prompt_subst extendedglob globdots globcomplete correct recexact
 setopt sharehistory histignoredups histreduceblanks histignorespace
 setopt banghist incappendhistory histexpiredupsfirst histignorealldups
