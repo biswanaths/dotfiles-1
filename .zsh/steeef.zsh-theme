@@ -17,7 +17,7 @@ hotpink="%F{161}"
 limegreen="%F{118}"
 
 # enable VCS systems you use
-zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' enable git hg
 
 # check-for-changes can be really slow.
 # you should disable it, if you work with large repositories

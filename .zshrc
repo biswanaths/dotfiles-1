@@ -1,10 +1,11 @@
 # ajh17's ~/.zshrc
 # Source externals {{{1
 source ~/.zsh/styles.zsh
+source ~/.zsh/aliases
+source ~/.zsh/steeef.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/steeef.zsh-theme
-source ~/.zsh/aliases
+source ~/.zsh/zsh-autosugesstions/autosuggestions.zsh
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # Variables {{{1
@@ -20,7 +21,7 @@ setopt banghist incappendhistory histexpiredupsfirst histignorealldups
 setopt histfindnodups histsavenodups histverify
 setopt pushdtohome pushdsilent autopushd pushdminus
 setopt longlistjobs autoresume multios
-setopt cdablevars multios rmstarwait
+setopt autocd cdablevars multios rmstarwait
 setopt rcquotes autoparamslash markdirs
 setopt chaselinks combiningchars
 unsetopt flowcontrol caseglob clobber extendedhistory
@@ -31,5 +32,12 @@ HISTSIZE=200000
 SAVEHIST=200000
 
 # Key remappings {{{1
+bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Functions {{{1
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
