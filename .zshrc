@@ -2,7 +2,7 @@
 # Source externals {{{1
 source ~/.zsh/styles.zsh
 source ~/.zsh/aliases
-source ~/.zsh/steeef.zsh-theme
+source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
@@ -30,8 +30,13 @@ HISTFILE=$HOME/.cache/.zhistory
 HISTSIZE=200000
 SAVEHIST=200000
 
-# Key remappings {{{1
-bindkey -e
+# Key Remappings (Vi-mode) {{{1
+KEYTIMEOUT=1
+bindkey -v
+bindkey -M vicmd "?" history-incremental-pattern-search-backward
+bindkey -M vicmd "/" history-incremental-pattern-search-forward
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^L' clear-screen
+bindkey '^?' backward-delete-char
