@@ -10,6 +10,21 @@ colors
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
+vim_insert_mode=""
+vim_cmd_mode="%{$fg[green]%}[λ]%{$reset_color%}"
+vim_mode=$vim_ins_mode
+
+function zle-keymap-select {
+  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-finish {
+  vim_mode=$vim_ins_mode
+}
+zle -N zle-line-finish
+
 turquoise="%F{81}"
 orange="%F{166}"
 purple="%F{135}"
@@ -72,4 +87,5 @@ add-zsh-hook precmd steeef_precmd
 PROMPT=$'
 %{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_
 $(virtualenv_info)$ '
+RPROMPT='${vim_mode}'
 # vim: ft=zsh
