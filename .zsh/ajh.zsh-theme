@@ -1,3 +1,9 @@
+#
+#
+### Adapted from steeef zsh prompt theme.
+### Modified anough behaviors to rename it
+#
+#
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
@@ -50,7 +56,7 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats ""
 
-function steeef_preexec {
+function ajh_preexec {
     case "$(history $HISTCMD)" in
         *git*)
             PR_GIT_UPDATE=1
@@ -60,14 +66,14 @@ function steeef_preexec {
             ;;
     esac
 }
-add-zsh-hook preexec steeef_preexec
+add-zsh-hook preexec ajh_preexec
 
-function steeef_chpwd {
+function ajh_chpwd {
     PR_GIT_UPDATE=1
 }
-add-zsh-hook chpwd steeef_chpwd
+add-zsh-hook chpwd ajh_chpwd
 
-function steeef_precmd {
+function ajh_precmd {
     if [[ -n "$PR_GIT_UPDATE" ]] ; then
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
@@ -82,7 +88,7 @@ function steeef_precmd {
         PR_GIT_UPDATE=
     fi
 }
-add-zsh-hook precmd steeef_precmd
+add-zsh-hook precmd ajh_precmd
 
 PROMPT=$'
 %{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_
