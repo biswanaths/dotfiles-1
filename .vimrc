@@ -85,6 +85,7 @@ let mapleader = ','
 
 " Remap some keys to be more useful
 nmap <tab> %
+vmap <tab> %
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
