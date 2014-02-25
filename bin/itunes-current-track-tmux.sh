@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+# ajh's iTunes now playing script for tmux
+# Modified from a now playing script I got online.
+# Date Modified: February 23, 2013
 ITUNES_TRACK=$(osascript <<EOF
 if appIsRunning("iTunes") then
     tell app "iTunes" to get the name of the current track
@@ -29,8 +32,6 @@ on appIsRunning(appName)
     tell app "System Events" to (name of processes) contains appName
 end appIsRunning
 EOF)
-
-# Musical Symbols: ☊ ♫ ♪. Use anyone you like.
 
 echo ' | ♪' $ITUNES_TRACK '-' $ITUNES_ARTIST '('$ITUNES_ALBUM')'
 fi
