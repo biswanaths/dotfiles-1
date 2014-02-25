@@ -52,5 +52,3 @@ fpath=(
 ~/.zsh/Completion
 $fpath
 )
-
-if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
