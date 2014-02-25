@@ -10,7 +10,7 @@ eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-export GREP_OPTIONS='--color=always'
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 
