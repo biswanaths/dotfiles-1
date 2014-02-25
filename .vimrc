@@ -129,7 +129,7 @@ nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
 
 " Netrw
-let [netrw_banner, netrw_liststyle] = [0, 3]
+let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
 " Gist
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
