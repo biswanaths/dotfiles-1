@@ -6,6 +6,7 @@ source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source `brew --prefix`/etc/autojump.sh
+eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
