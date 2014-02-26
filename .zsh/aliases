@@ -21,6 +21,7 @@ alias lt="ls -lth"
 # Git aliases
 alias g="git"
 alias gst="git stat"
+alias gcl="git clone"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
 

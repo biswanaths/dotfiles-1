@@ -13,7 +13,7 @@ set hidden
 set laststatus=2
 set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
-set mouse=a
+set mouse=nv
 set number relativenumber
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
@@ -43,7 +43,7 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%R\ \%H\ \%W\ \%m\ [\%{fugitive#head()}]\%=\ \%Y
+set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#head()}\%=\ \%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
