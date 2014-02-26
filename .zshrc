@@ -13,6 +13,7 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
+fpath=(~/.zsh/Completion /usr/local/share/zsh-completions $fpath)
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete

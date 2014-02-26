@@ -48,7 +48,6 @@ done
 unset path_file
 
 fpath=(
-/usr/local/Cellar/zsh-completions/0.10.0/share/zsh-completions
 ~/.zsh/Completion
 $fpath
 )
