@@ -11,7 +11,6 @@ set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
 set laststatus=2
-set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
@@ -19,10 +18,8 @@ set omnifunc=syntaxcomplete#Complete
 set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen
-set tags=./tags;,tags;
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
-set virtualedit=block
 set wildmenu
 
 " Colorscheme and Syntax {{{1
@@ -125,46 +122,42 @@ nnoremap <leader>ef mfgg=G`fzz
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Plugin Settings and Mappings {{{1
-" Python-mode
+" Python-mode {{{2
 let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
 
-" Netrw
+" Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
-" Gist
+" Gist {{{2
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
-" Emmet
+" Emmet {{{2
 let [user_emmet_expandabbr_key] = ["<c-j>"]
 
-" Dispatch
+" Dispatch {{{2
 nnoremap <leader>d :Dispatch<CR>
 nnoremap <leader>D :Dispatch<space>
 
-" Fugitive
+" Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Git co -b<space>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 
-" Ctrlp
+" Ctrlp {{{2
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>k :CtrlPMRUFiles<CR>
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>T :CtrlPBufTag<CR>
-nnoremap <leader>w :CtrlPLine<CR>
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" Clang_Complete
+" Clang_Complete {{{2
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-" Supertab (Why would you go backwards?!)
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" Tabular
+" Tabular {{{{2
 xnoremap <leader>t :Tabular<space>/
 
 " Functions and Commands {{{1
