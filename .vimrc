@@ -43,8 +43,8 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=
-set statusline+=\ \%Y\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
+set statusline=%t\ \%R\ \%H\ \%W\ \%m\ [\%{fugitive#head()}]\%=\ \%Y
+set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
 set wildignorecase
@@ -85,7 +85,7 @@ let mapleader = ','
 
 " Remap some keys to be more useful
 nmap <tab> %
-vmap <tab> %
+xmap <tab> %
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
@@ -101,7 +101,7 @@ nnoremap <silent> # #Nzz
 nnoremap <space> za
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
-" Searching/Replace the word under the cursor
+" Search/Replace the word under the cursor
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
 
