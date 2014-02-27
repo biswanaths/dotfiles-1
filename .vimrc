@@ -20,7 +20,7 @@ set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set timeout timeoutlen=1000 ttimeoutlen=100
-set wildmenu
+set wildmenu wildcharm=<C-z>
 
 " Colorscheme and Syntax {{{1
 syntax on
@@ -106,9 +106,6 @@ nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 
-" Quickly delete a buffer
-nnoremap <leader>l :ls<CR>:bd<space>
-
 " Close the quickfix list
 nnoremap <leader>q :cclose<CR>
 
@@ -143,15 +140,6 @@ nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Git co -b<space>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-
-" Ctrlp {{{2
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>k :CtrlPMRUFiles<CR>
-nnoremap <leader>t :CtrlPTag<CR>
-nnoremap <leader>T :CtrlPBufTag<CR>
-let g:ctrlp_extensions = ['tag', 'line']
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Clang_Complete {{{2
 let g:clang_close_preview=1
