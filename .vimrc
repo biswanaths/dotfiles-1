@@ -118,6 +118,20 @@ nnoremap <leader>ef mfgg=G`fzz
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
+" Finding files
+nnoremap <leader>t :find<space>
+nnoremap <leader>T :vertical sfind<space>
+nnoremap <leader>f :find *
+nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>x :sfind *
+nnoremap <leader>X :sfind <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>v :vertical sfind *
+nnoremap <leader>V :vertical sfind <C-r>=expand('%:h').'/*'<CR>
+
+" Buffers
+nnoremap <leader>b :buffer <C-z><S-Tab>
+nnoremap <leader>B :sbuffer <C-z><S-Tab>
+
 " Plugin Settings and Mappings {{{1
 " Python-mode {{{2
 let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
