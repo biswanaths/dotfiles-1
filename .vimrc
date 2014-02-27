@@ -137,12 +137,6 @@ nnoremap <leader>ef m`gg=G``
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
-" Files
-nnoremap <leader>f :find **
-nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*<CR>
-nnoremap <leader>s :sfind **
-nnoremap <leader>S :sfind <C-r>=expand('%:p:h').'/**/*<CR>
-
 " Buffers
 nnoremap <expr> <leader>b functions#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#bufNav("vertical")
@@ -158,12 +152,20 @@ nnoremap <down> :resize -2<cr>
 xnoremap * :<C-u>call functions#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 
+" Finding files
+nnoremap <leader>f :find<space>
+nnoremap <leader>F :vertical sfind<space>
+nnoremap <leader>x :find **
+nnoremap <leader>X :find <C-r>=expand('%:h').'/**'<CR>
+nnoremap <leader>s :vertical sfind **
+nnoremap <leader>S :vertical sfind <C-r>=expand('%:h').'/**'<CR>
+
 " Literal word search
 nnoremap g/ /\<
 
 " Black-hole register
-nnoremap <leader>x "_
-xnoremap <leader>x "_
+nnoremap <leader>h "_
+xnoremap <leader>h "_
 
 " Gist support for vim. No 1000 line vim plugin required.
 nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
@@ -194,6 +196,7 @@ nnoremap <leader>t :Tabularize<space>/
 
 " Clang-complete {{{2
 let g:clang_library_path = "/usr/lib/llvm-3.3/lib/"
+
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
 
