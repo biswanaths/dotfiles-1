@@ -25,7 +25,6 @@ set wildmenu wildcharm=<C-z>
 " Colorscheme and Syntax {{{1
 syntax on
 filetype plugin indent on
-let g:hybrid_use_Xresources=1
 colorscheme hybrid_mod
 
 " Search Settings {{{1
