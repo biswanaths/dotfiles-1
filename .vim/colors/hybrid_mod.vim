@@ -3,14 +3,6 @@
 " Modified By: ajh17
 " License:    MIT
 
-" Initialisation:"{{{
-" ----------------------------------------------------------------------------
-if !has("gui_running") && &t_Co < 256
-    finish
-endif
-
-let g:hybrid_use_Xresources=1
-
 set background=dark
 hi clear
 
@@ -112,7 +104,6 @@ exe "let s:bg_darkblue   = ' ".s:vmode."bg=".s:darkblue  ."'"
 exe "let s:bg_darkcyan   = ' ".s:vmode."bg=".s:darkcyan  ."'"
 exe "let s:bg_darkred    = ' ".s:vmode."bg=".s:darkred   ."'"
 exe "let s:bg_darkpurple = ' ".s:vmode."bg=".s:darkpurple."'"
-
 exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
 exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
 exe "let s:fg_background = ' ".s:vmode."fg=".s:background."'"
@@ -136,7 +127,6 @@ exe "let s:fg_darkblue   = ' ".s:vmode."fg=".s:darkblue  ."'"
 exe "let s:fg_darkcyan   = ' ".s:vmode."fg=".s:darkcyan  ."'"
 exe "let s:fg_darkred    = ' ".s:vmode."fg=".s:darkred   ."'"
 exe "let s:fg_darkpurple = ' ".s:vmode."fg=".s:darkpurple."'"
-
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
 exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
