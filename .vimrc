@@ -11,6 +11,7 @@ set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
 set laststatus=2
+set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
@@ -58,15 +59,9 @@ if has("gui_running")
     set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h14
 endif
 
-" Moving windows {{{1
-nnoremap <silent> <C-h> <C-w><C-h>
-nnoremap <silent> <C-j> <C-w><C-j>
-nnoremap <silent> <C-k> <C-w><C-k>
-nnoremap <silent> <C-l> <C-w><C-l>
-
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"zz" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "silent! norm! g'\"zzzv" | endif
 
 " Filetype Settings {{{1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
@@ -90,12 +85,12 @@ nnoremap Q gq
 nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap <silent> * *Nzz
-nnoremap <silent> # #Nzz
 nnoremap <space> za
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap <silent> <C-h> <C-w><C-h>
+nnoremap <silent> <C-j> <C-w><C-j>
+nnoremap <silent> <C-k> <C-w><C-k>
+nnoremap <silent> <C-l> <C-w><C-l>
 
 " Search/Replace the word under the cursor
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
@@ -158,11 +153,11 @@ nnoremap <leader>gc :Gcommit<CR>
 let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-" Tabular {{{{2
+" Tabular {{{2
 xnoremap <leader>t :Tabular<space>/
 
 " Functions and Commands {{{1
-call functions#CursorShapeMode()
-command! -nargs=0 Format call functions#AStyleFormat()
+call self#CursorShapeMode()
+command! -nargs=0 Format call self#AStyleFormat()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! BD silent e# | bd#
