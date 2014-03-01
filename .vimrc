@@ -86,6 +86,7 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 nnoremap <space> za
+nnoremap <CR> g<C-]>
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -104,7 +105,7 @@ inoremap (<CR> (<CR>)<ESC>O
 nnoremap <leader>q :cclose<CR>
 
 " Quickly edit files
-nnoremap <leader>ev :e ~/.vimrc<CR>
+nnoremap <leader>ev :e ~/dotfiles/.vimrc<CR>
 
 " Reindent entire file and return cursor to the same line
 nnoremap <leader>ef mfgg=G`fzz
@@ -124,7 +125,7 @@ nnoremap <leader>V :vertical sfind <C-r>=expand('%:h').'/*'<CR>
 
 " Buffers
 nnoremap <leader>b :buffer <C-z><S-Tab>
-nnoremap <leader>B :sbuffer <C-z><S-Tab>
+nnoremap <leader>B :vertical sbuffer <C-z><S-Tab>
 
 " Plugin Settings and Mappings {{{1
 " Python-mode {{{2
