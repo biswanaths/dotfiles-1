@@ -45,3 +45,12 @@ function! self#simpleTabComplete()
         return "\<c-x>\C-o>"
     endif
 endfunction
+
+" Smart shift-tab behavior
+function! self#shiftTabEval()
+    if pumvisible()
+        return "\<c-p>"
+    else
+        return "\<c-o><<"
+    endif
+endfunction

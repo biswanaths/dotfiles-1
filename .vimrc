@@ -78,6 +78,7 @@ let mapleader = ','
 nmap <tab> %
 xmap <tab> %
 inoremap <expr> <tab> self#simpleTabComplete()
+inoremap <expr> <s-tab> self#shiftTabEval()
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
