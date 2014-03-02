@@ -7,15 +7,11 @@ Various .rc files for my command line experience
     chmod +x ~/dotfiles/bootstrap.zsh && ~/dotfiles/bootstrap.zsh
 
 ### Environment:
-- OS X + iTerm 2
-- Tmux
-- Zsh + awesome.itermcolors
-- Vim (Hybrid-mod colorscheme)
-- Weechat (IRC)
+- OS       : OS X 10.9.2
+- Terminal : zsh + tmux
+- Editor   : Vim
+- IRC      : Weechat
 
 ### Screenshots:
 
-Vim: [Screenshot](http://d.pr/i/aW6t)
-
-Weechat: [Screenshot](http://d.pr/i/77tT)
-
+![Vim](http://cl.ly/UC4T/vim.png "Vim, tmux demo")
