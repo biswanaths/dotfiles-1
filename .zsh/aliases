@@ -26,7 +26,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 
 # Edit stuff
-alias evi="vim ~/.vimrc"
+alias evi="vim ~/dotfiles/.vimrc"
 alias evb="vim ~/.vim/vimrc.bundles"
 alias evt="vim ~/.tmux.conf"
 alias evz="vim ~/.zshrc"
