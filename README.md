@@ -3,9 +3,9 @@ Various .rc files for my command line experience
 
 ## Environment:
 - OS X + iTerm 2
-- Zsh + Prezto + awesome.itermcolors
+- Tmux
+- Zsh + awesome.itermcolors
 - Vim (Hybrid-mod colorscheme)
-- tmux
 - Weechat (IRC)
 
 ### Screenshots:
