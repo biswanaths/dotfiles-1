@@ -155,7 +155,8 @@ let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " Tabular {{{2
-xnoremap <leader>t :Tabular<space>/
+xnoremap <leader>a :Tabularize<space>/
+nnoremap <leader>a :Tabularize<space>/
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
