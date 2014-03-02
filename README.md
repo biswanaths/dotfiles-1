@@ -1,5 +1,4 @@
 # Dotfiles
-============
 Various .rc files for my command line experience
 
 
