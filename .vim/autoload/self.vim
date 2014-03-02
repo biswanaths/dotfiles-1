@@ -17,3 +17,26 @@ function! self#CursorShapeMode()
         let &t_EI = "\<Esc>]50;CursorShape=0\x7"
     endif
 endfunction
+
+" Because supertab is 800 sloc too long for me
+function! self#simpleTabComplete()
+    let line = getline('.')
+    let substr = strpart(line, -1, col('.') + 1)
+    let substr = matchstr(substr, "[^ \t]*$")
+
+    " Nothing to do, just insert a regular tab.
+    if (strlen(substr) == 0)
+        return "\<tab>"
+    endif
+
+    let period = match(substr, '\.') != -1
+    let file_pattern = match(substr, '\/') != -1
+
+    if (!period && !file_pattern)
+        return "\<C-x>\<C-p>"
+    elseif
+        return "\<C-x>\<C-f>"
+    else
+        return "\<c-x>\C-o>"
+    endif
+endfunction

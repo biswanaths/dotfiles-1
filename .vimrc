@@ -77,6 +77,7 @@ let mapleader = ','
 " Remap some keys to be more useful
 nmap <tab> %
 xmap <tab> %
+inoremap <expr> <tab> self#simpleTabComplete()
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
