@@ -1,7 +1,13 @@
 # Dotfiles
+============
 Various .rc files for my command line experience
 
-## Environment:
+
+## Installation
+    git clone https://github.com/ajh17/dotfiles.git
+    chmod +x ~/dotfiles/bootstrap.zsh && ~/dotfiles/bootstrap.zsh
+
+### Environment:
 - OS X + iTerm 2
 - Tmux
 - Zsh + awesome.itermcolors
