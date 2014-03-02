@@ -20,6 +20,11 @@ endfunction
 
 " Because supertab is 800 sloc too long for me
 function! self#simpleTabComplete()
+    " If popup menu is visible, just go through the list.
+    if pumvisible()
+        return "\<c-n>"
+    endif
+
     let line = getline('.')
     let substr = strpart(line, -1, col('.') + 1)
     let substr = matchstr(substr, "[^ \t]*$")
