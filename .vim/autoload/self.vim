@@ -39,10 +39,10 @@ function! self#simpleTabComplete()
 
     if (!period && !file_pattern)
         return "\<C-x>\<C-p>"
-    elseif
+    elseif (file_pattern)
         return "\<C-x>\<C-f>"
     else
-        return "\<c-x>\C-o>"
+        return "\<c-x>\<C-o>"
     endif
 endfunction
 
