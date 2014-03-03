@@ -116,8 +116,6 @@ nnoremap <leader>ef mfgg=G`fzz
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Finding files
-nnoremap <leader>t :find<space>
-nnoremap <leader>T :vertical sfind<space>
 nnoremap <leader>f :find *
 nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
 nnoremap <leader>x :sfind *
@@ -143,12 +141,12 @@ let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 let [user_emmet_expandabbr_key] = ["<c-j>"]
 
 " Dispatch {{{2
-nnoremap <leader>d :Dispatch<CR>
-nnoremap <leader>D :Dispatch<space>
+nnoremap <leader>d :Dispatch<space>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Git co -b<space>
+nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 
@@ -157,8 +155,8 @@ let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " Tabular {{{2
-xnoremap <leader>a :Tabularize<space>/
-nnoremap <leader>a :Tabularize<space>/
+xnoremap <leader>t :Tabularize<space>/
+nnoremap <leader>T :Tabularize<space>/
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
