@@ -116,11 +116,11 @@ nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " Finding files
 nnoremap <leader>f :find *
-nnoremap <leader>F :find <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*'<CR>
 nnoremap <leader>x :sfind *
-nnoremap <leader>X :sfind <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>X :sfind <C-r>=expand('%:p:h').'/**/*'<CR>
 nnoremap <leader>v :vertical sfind *
-nnoremap <leader>V :vertical sfind <C-r>=expand('%:h').'/*'<CR>
+nnoremap <leader>V :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
 
 " Buffers
 nnoremap <leader>b :buffer <C-z><S-Tab>
