@@ -88,7 +88,6 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 nnoremap <space> za
-nnoremap <CR> g<C-]>
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -156,7 +155,7 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 
 " Tabular {{{2
 xnoremap <leader>t :Tabularize<space>/
-nnoremap <leader>T :Tabularize<space>/
+nnoremap <leader>t :Tabularize<space>/
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
