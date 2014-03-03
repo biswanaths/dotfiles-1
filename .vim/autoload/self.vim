@@ -19,12 +19,13 @@ function! self#CursorShapeMode()
 endfunction
 
 " Because supertab is 800 sloc too long for me
-function! self#simpleTabComplete()
+function! self#simpleTabComplete(mapping)
     " If popup menu is visible, just go through the list.
     if pumvisible()
         return "\<c-n>"
     endif
 
+    let type = a:mapping
     let line = getline('.')
     let substr = strpart(line, -1, col('.') + 1)
     let substr = matchstr(substr, "[^ \t]*$")
@@ -42,7 +43,11 @@ function! self#simpleTabComplete()
     elseif (file_pattern)
         return "\<C-x>\<C-f>"
     else
-        return "\<c-x>\<C-o>"
+        if type ==? "complete"
+            return "\<C-x>\<C-u>"
+        else
+            return "\<C-x>\<C-o>"
+        endif
     endif
 endfunction
 
