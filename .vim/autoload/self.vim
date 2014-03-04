@@ -20,14 +20,11 @@ endfunction
 
 " Because supertab is 800 sloc too long for me
 function! self#simpleTabComplete(mapping)
-    " If popup menu is visible, just go through the list.
     if pumvisible()
         return "\<c-n>"
     endif
 
     let substr = matchstr(strpart(getline('.'), -1, col('.') + 1), "[^ \t]*$")
-
-    " Nothing to do, just insert a regular tab.
     if (strlen(substr) == 0)
         return "\<tab>"
     endif
@@ -48,7 +45,7 @@ function! self#simpleTabComplete(mapping)
             return "\<C-x>\<C-u>"
         elseif a:mapping ==? "tags"
             return "\<C-x>\<C-]>"
-        elseif a:mapping ==? "omni"
+        else
             return "\<C-x>\<C-o>"
         endif
     endif
