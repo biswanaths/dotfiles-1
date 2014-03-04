@@ -13,6 +13,12 @@ ln -s ~/dotfiles/.zsh ~/.zsh
 # Tmux
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
+# Tig
+ln -s ~/dotfiles/.tigrc ~/.tigrc
+
+# Slate
+ln -s ~/dotfiles/.slate ~/.slate
+
 # Weechat
 ln -s ~/dotfiles/.weechat ~/.weechat
 
