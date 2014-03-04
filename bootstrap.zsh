@@ -1,9 +1,10 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 # NOTE: Not tested enough.
 
 # Symlink vim stuff
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
+mkdir -p ~/.vim/backup/undo
 
 # Zsh
 ln -s ~/dotfiles/.zshrc ~/.zshrc
