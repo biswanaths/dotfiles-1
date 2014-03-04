@@ -25,7 +25,6 @@ function! self#simpleTabComplete(mapping)
         return "\<c-n>"
     endif
 
-    let type = a:mapping
     let line = getline('.')
     let substr = strpart(line, -1, col('.') + 1)
     let substr = matchstr(substr, "[^ \t]*$")
@@ -33,6 +32,9 @@ function! self#simpleTabComplete(mapping)
     " Nothing to do, just insert a regular tab.
     if (strlen(substr) == 0)
         return "\<tab>"
+    endif
+    if a:mapping ==? "dict"
+        return "\<C-x>\<C-k>"
     endif
 
     let period = match(substr, '\.') != -1
@@ -43,9 +45,11 @@ function! self#simpleTabComplete(mapping)
     elseif (file_pattern)
         return "\<C-x>\<C-f>"
     else
-        if type ==? "complete"
+        if a:mapping ==? "complete"
             return "\<C-x>\<C-u>"
-        else
+        elseif a:mapping ==? "tags"
+            return "\<C-x>\<C-]>"
+        elseif a:mapping ==? "omni"
             return "\<C-x>\<C-o>"
         endif
     endif
