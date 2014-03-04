@@ -15,7 +15,7 @@ set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
-set omnifunc=syntaxcomplete#Complete
+set completeopt-=preview omnifunc=syntaxcomplete#Complete
 set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen
@@ -40,7 +40,7 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#head()}\%=\ \%Y
+set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
@@ -150,7 +150,6 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 
 " Clang_Complete {{{2
-let g:clang_close_preview=1
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " Tabular {{{2
