@@ -25,14 +25,13 @@ function! self#simpleTabComplete(mapping)
         return "\<c-n>"
     endif
 
-    let line = getline('.')
-    let substr = strpart(line, -1, col('.') + 1)
-    let substr = matchstr(substr, "[^ \t]*$")
+    let substr = matchstr(strpart(getline('.'), -1, col('.') + 1), "[^ \t]*$")
 
     " Nothing to do, just insert a regular tab.
     if (strlen(substr) == 0)
         return "\<tab>"
     endif
+
     if a:mapping ==? "dict"
         return "\<C-x>\<C-k>"
     endif
