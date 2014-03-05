@@ -32,6 +32,7 @@ colorscheme hybrid_mod
 set incsearch hlsearch
 set smartcase ignorecase
 set showmatch matchtime=2
+set grepprg=ack\ -H\ --nocolor\ --nogroup\ --column
 
 " Indent and Fold Settings {{{1
 set softtabstop=4 shiftwidth=4
