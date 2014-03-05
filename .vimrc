@@ -130,9 +130,6 @@ nnoremap <leader>b :buffer <C-z><S-Tab>
 nnoremap <leader>B :vertical sbuffer <C-z><S-Tab>
 
 " Plugin Settings and Mappings {{{1
-" Python-mode {{{2
-let [pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0]
-
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
