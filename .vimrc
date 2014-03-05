@@ -80,6 +80,8 @@ nmap <tab> %
 xmap <tab> %
 inoremap <expr> <tab> self#simpleTabComplete("omni")
 inoremap <expr> <s-tab> self#shiftTabEval()
+xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
