@@ -158,6 +158,9 @@ let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
+" Syntastic {{{2
+let [syntastic_auto_loc_list, syntastic_loc_list_height] = [1, 3]
+
 " Functions and Commands {{{1
 call self#CursorShapeMode()
 command! -nargs=0 Format call self#AStyleFormat()
