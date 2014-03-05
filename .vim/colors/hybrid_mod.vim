@@ -5,16 +5,10 @@
 
 set background=dark
 hi clear
-
-if exists("syntax_on")
-    syntax reset
-endif
-
+syntax reset
 let colors_name = "hybrid_mod"
 
-"}}}
 " GUI And Cterm Palettes:"{{{
-" ----------------------------------------------------------------------------
 if has("gui_running")
     let s:vmode      = "gui"
     let s:background = "#1d1f21"
@@ -67,7 +61,6 @@ endif
 
 "}}}
 " Formatting Options:"{{{
-" ----------------------------------------------------------------------------
 let s:none   = "NONE"
 let s:t_none = "NONE"
 let s:n      = "NONE"
@@ -80,7 +73,6 @@ let s:i      = ",italic"
 
 "}}}
 " Highlighting Primitives:"{{{
-" ----------------------------------------------------------------------------
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
@@ -189,7 +181,6 @@ endif
 
 "}}}
 " Vim Highlighting: (see :help highlight-groups)"{{{
-" ----------------------------------------------------------------------------
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
@@ -233,7 +224,6 @@ endif
 
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{
-" ----------------------------------------------------------------------------
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
@@ -253,7 +243,6 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 "}}}
 " Diff Syntax Highlighting:"{{{
-" ----------------------------------------------------------------------------
 hi! link diffRemoved Constant
 hi! link diffAdded Special
 
@@ -267,7 +256,6 @@ hi! PmenuThumb ctermfg=137 ctermbg=235 cterm=none guifg=#171717 gui=none
 hi! StatusLine ctermfg=234 ctermbg=136 guifg=#1c1c1c guibg=#af8700
 hi! StatusLineNC ctermfg=234 ctermbg=007 guifg=#1c1c1c guibg=#aaaaaa
 hi! MatchParen ctermfg=196 ctermbg=234 cterm=bold guifg=#ff2a1f guibg=#252525 gui=none
-" hi! Comment cterm=italic gui=italic
 hi! CppClassNamespace ctermfg=139
 hi! CppStlNamespace ctermfg=109
 hi! CppStlContainer ctermfg=109
