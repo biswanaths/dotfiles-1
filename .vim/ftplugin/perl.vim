@@ -1,6 +1,3 @@
-setlocal softtabstop=4
-setlocal shiftwidth=4
-setlocal textwidth=80
 setlocal makeprg=perl\ -c\ %\ $*
 setlocal errorformat=%f:%l:%m
 setlocal foldmethod=indent
