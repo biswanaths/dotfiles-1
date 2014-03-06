@@ -159,6 +159,7 @@ nnoremap <leader>t :Tabularize<space>/
 
 " Syntastic {{{2
 let [syntastic_auto_loc_list, syntastic_loc_list_height] = [1, 3]
+let g:syntastic_python_checkers = ['python', 'flake8', 'pep8']
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
