@@ -1,10 +1,12 @@
 " Format a c/cpp/java file with AStyle
 function! self#AStyleFormat()
+    norm! mf
     if &filetype == 'c' || &filetype == 'cpp'
         :%!astyle --mode=c
     elseif &filetype == 'java'
         :%!astyle --mode=java
     endif
+    norm! `f
 endfunction
 
 " Change cursor shape when in insert and normal modes
