@@ -163,6 +163,5 @@ let g:syntastic_python_checkers = ['python', 'flake8', 'pep8']
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
-command! -nargs=0 Format call self#AStyleFormat()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! BD silent e# | bd#
