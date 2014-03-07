@@ -24,7 +24,7 @@ function! self#simpleTabComplete(mapping)
         return "\<c-n>"
     endif
 
-    let substr = matchstr(strpart(getline('.'), -1, col('.') + 1), "[^ \t]*$")
+    let substr = matchstr(strpart(getline('.'), 0, col('.') - 1), "[^ \t]*$")
     if (strlen(substr) == 0)
         return "\<tab>"
     endif
