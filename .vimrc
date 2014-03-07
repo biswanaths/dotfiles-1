@@ -15,7 +15,7 @@ set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
-set completeopt-=preview omnifunc=syntaxcomplete#Complete
+set completeopt-=preview
 set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen
