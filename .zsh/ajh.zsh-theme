@@ -40,7 +40,7 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 
 function zle-line-finish {
-  vim_mode=$vim_ins_mode
+  vim_mode=$vim_insert_mode
 }
 zle -N zle-line-finish
 PROMPT=$'
