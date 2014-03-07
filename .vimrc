@@ -46,8 +46,8 @@ set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\
 
 " Wildignore Settings {{{1
 set wildignorecase
-set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,*.obj,*.manifest,*~,#*#,%*
+set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class,*.manifest,*~,#*#,%*
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,**/temp/***.obj
 
 " History, Backup and Undo settings {{{1
 set history=10000
@@ -68,7 +68,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
-let [rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1]
+let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1, 1]
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
@@ -137,7 +137,7 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
 " Emmet {{{2
-let [user_emmet_expandabbr_key] = ["<c-j>"]
+let g:user_emmet_expandabbr_key = "<c-j>"
 
 " Dispatch {{{2
 nnoremap <leader>d :Dispatch<space>
