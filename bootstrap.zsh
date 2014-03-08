@@ -26,4 +26,9 @@ ln -s ~/dotfiles/.weechat ~/.weechat
 ln -s ~/dotfiles/bin ~/.bin
 
 # Install required apps
-brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+if [[ -x /usr/local/bin/brew ]]; then
+    brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+else
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+fi
