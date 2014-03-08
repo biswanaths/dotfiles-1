@@ -82,6 +82,8 @@ inoremap <expr> <tab> self#simpleTabComplete("omni")
 inoremap <expr> <s-tab> self#shiftTabEval()
 xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap ' `
 nnoremap \ ,
 nnoremap / /\v
@@ -126,8 +128,8 @@ nnoremap <leader>v :vertical sfind **/*
 nnoremap <leader>V :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
 
 " Buffers
-nnoremap <leader>b :buffer <C-z><S-Tab>
-nnoremap <leader>B :vertical sbuffer <C-z><S-Tab>
+nnoremap <expr> <leader>b self#bufNav("horizontal")
+nnoremap <expr> <leader>B self#bufNav("vertical")
 
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
@@ -137,7 +139,7 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
 
 " Emmet {{{2
-let g:user_emmet_expandabbr_key = "<c-j>"
+let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
 
 " Dispatch {{{2
 nnoremap <leader>d :Dispatch<space>

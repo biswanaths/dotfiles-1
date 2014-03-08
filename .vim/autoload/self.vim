@@ -69,3 +69,20 @@ function! self#VSetSearch(cmdtype)
     let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
     let @s = temp
 endfunction
+
+" A simple buffer navigation function.
+function! self#bufNav(arrangement)
+    if a:arrangement ==? "horizontal"
+        if len(filter(map(range(bufnr('$')), 'buflisted(v:val)'), 'v:val == 1')) > 1
+            return ":buffer \<C-z>\<S-Tab>"
+        else
+            return ":buffer "
+        endif
+    elseif a:arrangement ==? "vertical"
+        if len(filter(map(range(bufnr('$')), 'buflisted(v:val)'), 'v:val == 1')) > 1
+            return ":vertical sbuffer \<C-z>\<S-Tab>"
+        else
+            return ":vertical sbuffer "
+        endif
+    endif
+endfunction
