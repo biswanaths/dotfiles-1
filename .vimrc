@@ -153,8 +153,7 @@ nnoremap <leader>t :Tabularize<space>/
 
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>j :CtrlPTag<CR>
-let [ctrlp_extensions, ctrlp_user_command] = [['tag'], 'ag %s -l --nocolor --hidden -g ""']
+let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
