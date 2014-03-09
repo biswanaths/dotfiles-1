@@ -119,14 +119,6 @@ nnoremap <leader>ef mfgg=G`fzz
 " Remove trailing whitespace
 nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
-" Finding files
-nnoremap <leader>f :find **/*
-nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>x :sfind **/*
-nnoremap <leader>X :sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>v :vertical sfind **/*
-nnoremap <leader>V :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-
 " Buffers
 nnoremap <expr> <leader>b self#bufNav("horizontal")
 nnoremap <expr> <leader>B self#bufNav("vertical")
@@ -159,9 +151,10 @@ let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
-" Syntastic {{{2
-let [syntastic_auto_loc_list, syntastic_loc_list_height] = [1, 3]
-let g:syntastic_python_checkers = ['python', 'flake8', 'pep8']
+" CtrlP {{{2
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>j :CtrlPTag<CR>
+let [ctrlp_extensions, ctrlp_user_command] = [['tag'], 'ag %s -l --nocolor --hidden -g ""']
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
