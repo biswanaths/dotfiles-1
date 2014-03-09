@@ -1,8 +1,8 @@
 #!/usr/local/bin/zsh
 
 export BROWSER='open'
-export EDITOR='vim'
 export VISUAL='vim'
+export EDITOR=$VISUAL
 export PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 export LANG='en_US.UTF-8'

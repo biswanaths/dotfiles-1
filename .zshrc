@@ -41,5 +41,10 @@ bindkey -M vicmd "/" history-incremental-pattern-search-forward
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 bindkey '^L' clear-screen
+bindkey '^R' history-incremental-search-backward
+bindkey '^P' history-search-backward
+bindkey '^N' insert-last-word
 bindkey '^?' backward-delete-char
