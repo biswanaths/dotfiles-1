@@ -6,7 +6,7 @@ function! self#AStyleFormat()
     elseif &filetype == 'java'
         :%!astyle --mode=java
     endif
-    norm! `f
+    norm! `fzz
 endfunction
 
 " Change cursor shape when in insert and normal modes
