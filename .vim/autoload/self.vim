@@ -31,10 +31,6 @@ function! self#simpleTabComplete(mapping)
         return "\<tab>"
     endif
 
-    if a:mapping ==? "dict"
-        return "\<C-x>\<C-k>"
-    endif
-
     let period = match(substr, '\.') != -1
     let file_pattern = match(substr, '\/') != -1
 
@@ -47,6 +43,8 @@ function! self#simpleTabComplete(mapping)
             return "\<C-x>\<C-u>"
         elseif a:mapping ==? "tags"
             return "\<C-x>\<C-]>"
+        elseif a:mapping ==? "dict"
+            return "\<C-x>\<C-k>"
         else
             return "\<C-x>\<C-o>"
         endif
