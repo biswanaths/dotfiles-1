@@ -103,6 +103,9 @@ nnoremap <silent> <C-l> <C-w><C-l>
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
 
+" Select line without indentation
+nnoremap <leader>v ^vg_
+
 " Autoclose
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
