@@ -46,6 +46,7 @@ alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
 alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
 alias mou="open -a Mou"
+alias powerlog="/Applications/Intel\ Power\ Gadget/PowerLog -verbose -resolution 3000"
 
 # geez fingers
 alias heroky="heroku"
