@@ -48,3 +48,8 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^P' history-search-backward
 bindkey '^N' insert-last-word
 bindkey '^?' backward-delete-char
+
+# Functions {{{1
+function mkcd {
+    [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
+}
