@@ -7,12 +7,20 @@ indent-col1-comments
 
 indent=spaces=4
 
+convert-tabs
+
 pad-oper
 
 pad-header
 
 unpad-paren
 
+add-brackets
+
+break-closing-brackets
+
 align-pointer=name
 
-convert-tabs
+max-code-length=80
+
+break-after-logical
