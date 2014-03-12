@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # ajh17's ~/.zshrc
 # Source externals {{{1
 source ~/.zsh/styles.zsh
