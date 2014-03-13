@@ -78,10 +78,10 @@ let mapleader = ','
 " Remap some keys to be more useful
 nmap <tab> %
 xmap <tab> %
-inoremap <expr> <tab> self#simpleTabComplete("omni")
-inoremap <expr> <s-tab> self#shiftTabEval()
-xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
-xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap ' `
@@ -93,6 +93,10 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 nnoremap <space> za
+inoremap <expr> <tab> self#simpleTabComplete("omni")
+inoremap <expr> <s-tab> self#shiftTabEval()
+xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -103,8 +107,9 @@ nnoremap <silent> <C-l> <C-w><C-l>
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
 
-" Select line without indentation
+" Selection mappings
 nnoremap <leader>v ^vg_
+nnoremap <leader>V `[V`]
 
 " Autoclose
 inoremap {<CR> {<CR>}<ESC>O
