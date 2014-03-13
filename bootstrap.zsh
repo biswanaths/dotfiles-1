@@ -1,6 +1,9 @@
 #!/bin/zsh
 # NOTE: Not tested enough.
 
+# Set up Quicklook stuff
+defaults write com.apple.Finder QLEnableTextSelection -bool true
+
 # Symlink vim stuff
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
