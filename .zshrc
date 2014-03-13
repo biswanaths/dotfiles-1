@@ -54,3 +54,7 @@ bindkey '^?' backward-delete-char
 function mkcd {
     [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
+
+function cdls {
+    builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
+}
