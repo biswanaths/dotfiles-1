@@ -78,30 +78,30 @@ let mapleader = ','
 " Remap some keys to be more useful
 nmap <tab> %
 xmap <tab> %
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap ' `
-nnoremap \ ,
-nnoremap / /\v
-xnoremap / /\v
-nnoremap Q gq
-nnoremap Y y$
-xnoremap < <gv
-xnoremap > >gv
-nnoremap <space> za
-inoremap <expr> <tab> self#simpleTabComplete("omni")
 inoremap <expr> <s-tab> self#shiftTabEval()
-xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
-xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
-nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+inoremap <expr> <tab> self#simpleTabComplete("omni")
+nnoremap ' `
+nnoremap / /\v
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
+nnoremap <space> za
+nnoremap \ ,
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap Q gq
+nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap Y y$
+xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
+xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap / /\v
+xnoremap < <gv
+xnoremap > >gv
 
 " Search/Replace the word under the cursor
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
