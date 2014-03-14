@@ -135,9 +135,6 @@ nnoremap <expr> <leader>B self#bufNav("vertical")
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
-" Gist {{{2
-let [gist_open_browser_after_post, gist_detect_filetype] = [1, 1]
-
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
 
