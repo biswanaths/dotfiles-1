@@ -32,7 +32,6 @@ alias evt="vim ~/.tmux.conf"
 alias evz="vim ~/.zshrc"
 
 # Use Python3 always
-alias python="python3"
 alias ipython="ipython3"
 alias pip="pip3"
 
