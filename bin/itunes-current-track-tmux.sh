@@ -33,5 +33,5 @@ on appIsRunning(appName)
 end appIsRunning
 EOF)
 
-echo ' | ♪' $ITUNES_TRACK '-' $ITUNES_ARTIST '('$ITUNES_ALBUM')'
+echo ' ♪' $ITUNES_TRACK '-' $ITUNES_ARTIST '('$ITUNES_ALBUM')'
 fi
