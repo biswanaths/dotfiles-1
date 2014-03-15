@@ -160,6 +160,9 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
+" Pymode {{{2
+let [pymode_lint_signs, pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0, 0]
+
 " Functions and Commands {{{1
 call self#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
