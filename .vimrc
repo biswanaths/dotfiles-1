@@ -139,7 +139,8 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
 
 " Dispatch {{{2
-nnoremap <leader>d :Dispatch<space>
+nnoremap <leader>d :Dispatch<CR>
+nnoremap <leader>m :Make<CR>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
