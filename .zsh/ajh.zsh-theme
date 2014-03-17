@@ -45,6 +45,6 @@ function zle-line-finish {
 zle -N zle-line-finish
 PROMPT=$'
 %{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}${vcs_info_msg_0_}%F{blue}
-%(?/%F{blue}/%F{red})$ %{$reset_color%}'
-RPROMPT='%F{blue}⚙ %j %F{red}::%{$reset_color%} ${vim_mode}'
+%(?/%F{blue}/%F{red})${vim_mode} %{$reset_color%}'
+RPROMPT='%F{blue}⚙ %j %{$reset_color%}'
 # vim: ft=zsh
