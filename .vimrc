@@ -76,8 +76,8 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 let mapleader = ','
 
 " Remap some keys to be more useful
-nmap <tab> %
-xmap <tab> %
+nmap <cr> %
+xmap <cr> %
 inoremap <expr> <s-tab> self#shiftTabEval()
 inoremap <expr> <tab> self#simpleTabComplete("omni")
 nnoremap ' `
@@ -92,8 +92,8 @@ nnoremap gj j
 nnoremap gk k
 nnoremap j gj
 nnoremap k gk
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap Q gq
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
