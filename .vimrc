@@ -16,7 +16,6 @@ set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
 set completeopt-=preview
-set scrolloff=4
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
@@ -98,9 +97,6 @@ nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
 
-" Open folds
-nnoremap <space> za
-
 " Move by display lines by default
 nnoremap gj j
 nnoremap gk k
@@ -114,6 +110,7 @@ nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
+nnoremap <space> za
 
 " Search/Replace the word under the cursor
 nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
