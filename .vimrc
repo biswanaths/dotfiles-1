@@ -75,31 +75,43 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ','
 
-" Remap some keys to be more useful
+" Use Enter key for matchit
 nmap <cr> %
 xmap <cr> %
+
+" Tab complete
 inoremap <expr> <s-tab> self#shiftTabEval()
 inoremap <expr> <tab> self#simpleTabComplete("omni")
-nnoremap ' `
+
+" Searching improvements
+nnoremap \ ,
 nnoremap / /\v
+xnoremap / /\v
+nnoremap n nzzzv
+nnoremap N Nzzzv
+xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
+xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+
+" Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
+
+" Open folds
 nnoremap <space> za
-nnoremap \ ,
+
+" Move by display lines by default
 nnoremap gj j
 nnoremap gk k
 nnoremap j gj
 nnoremap k gk
-nnoremap n nzzzv
-nnoremap N Nzzzv
+
+" Remap some keys to be more useful
+nnoremap ' `
 nnoremap Q gq
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
-xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
-xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
-xnoremap / /\v
 xnoremap < <gv
 xnoremap > >gv
 
