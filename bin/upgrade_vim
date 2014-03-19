@@ -1,2 +1,2 @@
 #!/bin/sh
-brew rm vim; brew install vim --HEAD --with-perl --with-lua --override-system-vi
+brew rm vim; brew install vim --HEAD --with-perl --with-lua --override-system-vi --disable-nls
