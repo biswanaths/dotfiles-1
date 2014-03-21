@@ -1,1 +1,1 @@
-let b:tab_complete = "dict"
+let b:vcm_tab_complete = "dict"
