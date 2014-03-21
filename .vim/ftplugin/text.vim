@@ -1,1 +1,1 @@
-inoremap <expr> <buffer> <tab> self#simpleTabComplete("dict")
+let b:tab_complete = "dict"

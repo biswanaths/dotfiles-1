@@ -21,12 +21,19 @@ function! self#CursorShapeMode()
 endfunction
 
 " Because supertab is 800 sloc too long for me
-function! self#simpleTabComplete(mapping)
+function! self#simpleTabComplete(direction, mapping)
+    " From: https://gist.github.com/dahu/9679489
+    " "n"ext or "f"orward vs, say "p"rev or "b"ackward
+    let dirs = ["\<c-p>", "\<c-n>"]
+    let dir = a:direction =~? '[nf]'
+    let map = a:mapping
+
     if pumvisible()
-        return "\<c-n>"
+        return dirs[dir]
     endif
 
-    let substr = matchstr(strpart(getline('.'), 0, col('.') - 1), "[^ \t]*$")
+    let pos = getpos('.')
+    let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
     if (strlen(substr) == 0)
         return "\<tab>"
     endif
@@ -34,29 +41,26 @@ function! self#simpleTabComplete(mapping)
     let period = match(substr, '\.') != -1
     let file_pattern = match(substr, '\/') != -1
 
-    if (!period && !file_pattern)
-        return "\<C-x>\<C-p>"
-    elseif (file_pattern)
+    if file_pattern
         return "\<C-x>\<C-f>"
-    else
-        if a:mapping ==? "complete"
-            return "\<C-x>\<C-u>"
-        elseif a:mapping ==? "tags"
-            return "\<C-x>\<C-]>"
-        elseif a:mapping ==? "dict"
-            return "\<C-x>\<C-k>"
+    elseif period && (&omnifunc != '')
+        if get(b:, 'tab_complete_pos', []) == pos
+            let exp = "\<C-x>" . dirs[!dir]
         else
-            return "\<C-x>\<C-o>"
+            let exp = "\<C-x>\<C-o>"
         endif
+        let b:tab_complete_pos = pos
+        return exp
     endif
-endfunction
 
-" Smart shift-tab behavior
-function! self#shiftTabEval()
-    if pumvisible()
-        return "\<c-p>"
+    if map ==? "user"
+        return "\<C-x>\<C-u>"
+    elseif map ==? "tags"
+        return "\<C-x>\<C-]>"
+    elseif map ==? "dict"
+        return "\<C-x>\<C-k>"
     else
-        return "\<c-o><<"
+        return "\<C-x>" . dirs[!dir]
     endif
 endfunction
 
