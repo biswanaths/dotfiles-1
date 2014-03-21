@@ -78,10 +78,6 @@ let mapleader = ','
 nmap <cr> %
 xmap <cr> %
 
-" Tab complete
-inoremap <expr> <tab>   self#simpleTabComplete('n', get(b:, 'tab_complete', ''))
-inoremap <expr> <s-tab> self#simpleTabComplete('p', get(b:, 'tab_complete', ''))
-
 " Searching improvements
 nnoremap \ ,
 nnoremap / /\v
