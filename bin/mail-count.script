@@ -1,0 +1,11 @@
+#!/usr/bin/env osascript
+# Get the number of unread mail.
+tell application "System Events"
+    set process_list to (name of every process)
+end tell
+
+if process_list contains "Mail" then
+    tell application "Mail"
+        set a to unread count of inbox
+    end tell
+end if
