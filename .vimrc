@@ -84,8 +84,6 @@ nnoremap / /\v
 xnoremap / /\v
 nnoremap n nzzzv
 nnoremap N Nzzzv
-xnoremap # :<C-u> call self#VSetSeatch('?')<CR>?<C-r>=@/<CR><CR>
-xnoremap * :<C-u> call self#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
@@ -140,6 +138,8 @@ nnoremap <expr> <leader>B self#bufNav("vertical")
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
+" SearchParty {{{2
+nnoremap <leader>x <Plug>SearchPartyHighlightClear
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
 

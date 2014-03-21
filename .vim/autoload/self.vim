@@ -20,14 +20,6 @@ function! self#CursorShapeMode()
     endif
 endfunction
 
-" From nelstrom/visual-star-search
-function! self#VSetSearch(cmdtype)
-    let temp = @s
-    normal! gv"sy
-    let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-    let @s = temp
-endfunction
-
 " A simple buffer navigation function.
 function! self#bufNav(arrangement)
     if a:arrangement ==? "horizontal"
