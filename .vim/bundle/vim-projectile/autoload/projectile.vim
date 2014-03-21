@@ -90,6 +90,10 @@ function! g:projectile_transformations.hyphenate(input, o) abort
   return tr(a:input, '_', '-')
 endfunction
 
+function! g:projectile_transformations.uppercase(input, o) abort
+  return toupper(a:input)
+endfunction
+
 function! g:projectile_transformations.camelcase(input, o) abort
   return substitute(a:input, '_\(.\)', '\u\1', 'g')
 endfunction
@@ -99,11 +103,11 @@ function! g:projectile_transformations.capitalize(input, o) abort
 endfunction
 
 function! g:projectile_transformations.head(input, o) abort
-  return substitute(a:input, '/[^/]*$', '', '')
+  return substitute(a:input, '[\\/][^\\/]*$', '', '')
 endfunction
 
 function! g:projectile_transformations.tail(input, o) abort
-  return substitute(a:input, '.*/', '', '')
+  return substitute(a:input, '.*[\\/]', '', '')
 endfunction
 
 function! g:projectile_transformations.open(input, o) abort
@@ -114,44 +118,51 @@ function! g:projectile_transformations.close(input, o) abort
   return '}'
 endfunction
 
-function! s:expand_placeholder(placeholder, match) abort
-  let value = a:match
-  for transform in split(a:placeholder[1:-2], '|')
+function! s:expand_placeholder(placeholder, expansions) abort
+  let transforms = split(a:placeholder[1:-2], '|')
+  if has_key(a:expansions, get(transforms, 0, '}'))
+    let value = a:expansions[remove(transforms, 0)]
+  elseif has_key(a:expansions, 'match')
+    let value = a:expansions.match
+  else
+    return "\001"
+  endif
+  for transform in transforms
     if !has_key(g:projectile_transformations, transform)
       return "\001"
     endif
-    let value = g:projectile_transformations[transform](value, {})
+    let value = g:projectile_transformations[transform](value, a:expansions)
   endfor
   return value
 endfunction
 
-function! s:expand_placeholders(value, match) abort
+function! s:expand_placeholders(value, expansions) abort
   if type(a:value) ==# type([]) || type(a:value) ==# type({})
-    return map(copy(a:value), 's:expand_placeholders(v:val, a:match)')
+    return map(copy(a:value), 's:expand_placeholders(v:val, a:expansions)')
   endif
   let legacy = {
-        \ '%s': '{}',
-        \ '%d': '{dot}',
-        \ '%u': '{underscore}',
-        \ '%%': '%'}
-  let value = substitute(a:value, '%[^: ]', '\=get(legacy, submatch(0), "\001")', 'g')
-  let value = substitute(value, '{[^{}]*}', '\=s:expand_placeholder(submatch(0), a:match)', 'g')
+        \ '%s': 'replace %s with {}',
+        \ '%d': 'replace %d with {dot}',
+        \ '%u': 'replace %u with {underscore}'}
+  let value = substitute(a:value, '{[^{}]*}', '\=s:expand_placeholder(submatch(0), a:expansions)', 'g')
+  let value = substitute(value, '%[sdu]', '\=get(legacy, submatch(0), "\001")', 'g')
   return value =~# "\001" ? '' : value
 endfunction
 
-function! projectile#query(key) abort
+function! projectile#query(key, ...) abort
   let candidates = []
   for [path, projections] in s:projectiles()
     let pre = path . projectile#slash()
+    let expansions = extend({'project': path, 'file': expand('%:p')}, a:0 ? a:1 : {})
     let name = expand('%:p')[strlen(path)+1:-1]
     if has_key(projections, name) && has_key(projections[name], a:key)
       call add(candidates, [pre, projections[name][a:key]])
     endif
-    for pattern in reverse(sort(filter(keys(projections), 'v:val =~# "^[^*]*\\*[^*]*$"'), function('projectile#lencmp')))
+    for pattern in reverse(sort(filter(keys(projections), 'v:val =~# "^[^*{}]*\\*[^*{}]*$"'), function('projectile#lencmp')))
       let [prefix, suffix; _] = split(pattern, '\*', 1)
       if s:startswith(name, prefix) && s:endswith(name, suffix) && has_key(projections[pattern], a:key)
-        let root = tr(name[strlen(prefix) : -strlen(suffix)-1], projectile#slash(), '/')
-        call add(candidates, [pre, s:expand_placeholders(projections[pattern][a:key], root)])
+        let expansions.match = tr(name[strlen(prefix) : -strlen(suffix)-1], projectile#slash(), '/')
+        call add(candidates, [pre, s:expand_placeholders(projections[pattern][a:key], expansions)])
       endif
     endfor
   endfor
@@ -178,11 +189,19 @@ endfunction
 
 " Section: Activation
 
-function! projectile#append(root, value) abort
+function! projectile#append(root, ...) abort
   if !has_key(b:projectiles, a:root)
     let b:projectiles[a:root] = []
   endif
-  call add(b:projectiles[a:root], a:value)
+  call add(b:projectiles[a:root], get(a:000, -1, {}))
+endfunction
+
+function! projectile#define_navigation_command(command, patterns)
+  for [prefix, excmd] in items(s:prefixes)
+    execute 'command! -buffer -bar -bang -nargs=* -complete=customlist,s:projection_complete'
+          \ prefix . substitute(a:command, '\A', '', 'g')
+          \ ':execute s:open_projection("'.excmd.'<bang>",'.string(a:patterns).',<f-args>)'
+  endfor
 endfunction
 
 function! projectile#activate() abort
@@ -191,16 +210,13 @@ function! projectile#activate() abort
   endif
   command! -buffer -bar -bang -nargs=? -complete=customlist,s:dir_complete Cd   :cd<bang>  `=projectile#path(<q-args>)`
   command! -buffer -bar -bang -nargs=? -complete=customlist,s:dir_complete Lcd  :lcd<bang> `=projectile#path(<q-args>)`
-  let commands = items(projectile#commands())
-  for [prefix, excmd] in items(s:commands)
+  for [command, patterns] in items(projectile#navigation_commands())
+    call projectile#define_navigation_command(command, patterns)
+  endfor
+  for [prefix, excmd] in items(s:prefixes)
     execute 'command! -buffer -bar -bang -nargs=* -complete=customlist,s:edit_complete'
           \ 'A'.prefix
           \ ':execute s:edit_command("'.excmd.'<bang>",<f-args>)'
-    for [command, patterns] in commands
-      execute 'command! -buffer -bar -bang -nargs=* -complete=customlist,s:projection_complete'
-            \ prefix . substitute(command, '\s', '', 'g')
-            \ ':execute s:open_projection("'.excmd.'<bang>",'.string(patterns).',<f-args>)'
-    endfor
   endfor
   command! -buffer -bar -bang -nargs=* -complete=customlist,s:edit_complete A AE<bang> <args>
   for compiler in projectile#query_scalar('compiler')
@@ -246,24 +262,24 @@ endfunction
 
 " Section: Navigation commands
 
-let s:commands = {
+let s:prefixes = {
       \ 'E': 'edit',
       \ 'S': 'split',
       \ 'V': 'vsplit',
       \ 'T': 'tabedit',
       \ 'D': 'read'}
 
-function! projectile#commands() abort
+function! projectile#navigation_commands() abort
   let commands = {}
   for [path, projections] in s:projectiles()
     for [pattern, projection] in items(projections)
-      if has_key(projection, 'command')
+      if has_key(projection, 'command') && pattern =~# '^[^*{}]*\*\=[^*{}]*$'
         let name = projection.command
         if !has_key(commands, name)
           let commands[name] = []
         endif
-        let command = {'root': path, 'pattern': pattern}
-        call extend(commands[name], [command])
+        let command = [path, pattern]
+        call add(commands[name], command)
       endif
     endfor
   endfor
@@ -274,7 +290,7 @@ endfunction
 function! s:open_projection(cmd, variants, ...) abort
   let formats = []
   for variant in a:variants
-    call add(formats, variant.root . projectile#slash() . substitute(variant.pattern, '\*', '%s', ''))
+    call add(formats, variant[0] . projectile#slash() . substitute(variant[1], '\*', '%s', ''))
   endfor
   if a:0 && a:1 ==# '&'
     let s:last_formats = formats
@@ -302,7 +318,7 @@ function! s:open_projection(cmd, variants, ...) abort
 endfunction
 
 function! s:projection_complete(lead, cmdline, _) abort
-  execute matchstr(a:cmdline, '[' . join(keys(s:commands), '') . ']\w\+') . ' &'
+  execute matchstr(a:cmdline, '[' . join(keys(s:prefixes), '') . ']\w\+') . ' &'
   let results = []
   for format in s:last_formats
     if format !~# '%s'
@@ -325,10 +341,14 @@ function! s:edit_command(cmd, ...) abort
     let file = a:1
   else
     let alternates = projectile#query_file('alternate')
-    if empty(alternates)
+    let warning = get(filter(copy(alternates), 'v:val =~# "replace %.*}"'), 0, '')
+    if !empty(warning)
+      return 'echoerr '.string(matchstr(warning, 'replace %.*}').' in alternate projection')
+    endif
+    let file = get(filter(copy(alternates), '!empty(getftype(v:val))'), 0, '')
+    if empty(file)
       return 'echoerr "No alternate file"'
     endif
-    let file = get(filter(copy(alternates), '!empty(getftype(v:val))'), 0, alternates[0])
   endif
   if !isdirectory(fnamemodify(file, ':h'))
     call mkdir(fnamemodify(file, ':h'), 'p')
