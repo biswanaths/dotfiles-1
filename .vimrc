@@ -135,7 +135,7 @@ nnoremap <expr> <leader>B self#bufNav("vertical")
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
 " SearchParty {{{2
-nnoremap <leader>x <Plug>SearchPartyHighlightClear
+nmap <leader>x <Plug>SearchPartyHighlightClear
 
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
