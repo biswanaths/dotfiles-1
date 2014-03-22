@@ -74,10 +74,6 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ','
 
-" Use Enter key for matchit
-nmap <cr> %
-xmap <cr> %
-
 " Searching improvements
 nnoremap \ ,
 nnoremap / /\v
@@ -140,6 +136,7 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
 " SearchParty {{{2
 nnoremap <leader>x <Plug>SearchPartyHighlightClear
+
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
 
