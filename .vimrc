@@ -19,7 +19,7 @@ set completeopt-=preview
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
-set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout ttimeoutlen=50
 set wildmenu wildcharm=<C-z>
 
 " Colorscheme and Syntax {{{1
@@ -74,6 +74,10 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ','
 
+" Use backspace key for matchit.vim
+nmap <BS> %
+xmap <BS> %
+
 " Searching improvements
 nnoremap \ ,
 nnoremap / /\v
@@ -101,10 +105,6 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 nnoremap <space> za
-
-" Search/Replace the word under the cursor
-nnoremap <leader>s :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
-nnoremap <leader>S :%s/\<<C-r>=expand('<cword>')<CR>\>/
 
 " Selection mappings
 nnoremap <leader>v ^vg_
@@ -163,8 +163,6 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
-" Pymode {{{2
-let [pymode_lint_signs, pymode_lint_on_fly, pymode_lint_cwindow] = [0, 0, 0]
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
