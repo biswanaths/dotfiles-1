@@ -61,7 +61,7 @@ endif
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
-au! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g'\"zz" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g`\"zz" | endif
 
 " Filetype Settings {{{1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
