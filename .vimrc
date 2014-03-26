@@ -138,7 +138,7 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 nmap <leader>x <Plug>SearchPartyHighlightClear
 
 " Emmet {{{2
-let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-j>", 1, 'i']
+let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
 " Dispatch {{{2
 nnoremap <leader>d :Dispatch<CR>
@@ -162,7 +162,6 @@ nnoremap <leader>t :Tabularize<space>/
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
-
 
 " Functions and Commands {{{1
 call self#CursorShapeMode()
