@@ -102,13 +102,17 @@ function! g:projectile_transformations.capitalize(input, o) abort
   return substitute(a:input, '\%(^\|/\)\zs\(.\)', '\u\1', 'g')
 endfunction
 
-function! g:projectile_transformations.head(input, o) abort
-  return substitute(a:input, '[\\/][^\\/]*$', '', '')
+function! g:projectile_transformations.dirname(input, o) abort
+  return substitute(a:input, '.[^'.projectile#slash().'/]*$', '', '')
 endfunction
 
-function! g:projectile_transformations.tail(input, o) abort
-  return substitute(a:input, '.*[\\/]', '', '')
+let g:projectile_transformations.head = g:projectile_transformations.dirname
+
+function! g:projectile_transformations.basename(input, o) abort
+  return substitute(a:input, '.*['.projectile#slash().'/]', '', '')
 endfunction
+
+let g:projectile_transformations.tail = g:projectile_transformations.basename
 
 function! g:projectile_transformations.open(input, o) abort
   return '{'
@@ -151,10 +155,14 @@ endfunction
 
 function! projectile#query(key, ...) abort
   let candidates = []
+  let file = a:0 > 1 ? a:2 : expand('%:p')
   for [path, projections] in s:projectiles()
     let pre = path . projectile#slash()
-    let expansions = extend({'project': path, 'file': expand('%:p')}, a:0 ? a:1 : {})
-    let name = expand('%:p')[strlen(path)+1:-1]
+    let expansions = extend({'project': path, 'file': file}, a:0 ? a:1 : {})
+    if strpart(file, 0, len(path)) !=# path
+      continue
+    endif
+    let name = file[strlen(path)+1:-1]
     if has_key(projections, name) && has_key(projections[name], a:key)
       call add(candidates, [pre, projections[name][a:key]])
     endif
@@ -179,12 +187,16 @@ function! projectile#query_file(key) abort
 endfunction
 
 function! projectile#query_scalar(key) abort
-  let files = []
-  let _ = {}
-  for [root, _.match] in projectile#query(a:key)
-    call extend(files, type(_.match) == type([]) ? _.match : [_.match])
+  let values = []
+  for [root, match] in projectile#query(a:key)
+    if type(match) == type([])
+      call extend(values, match)
+    elseif type(match) !=# type({})
+      call add(values, match)
+    endif
+    unlet match
   endfor
-  return files
+  return values
 endfunction
 
 " Section: Activation
@@ -204,6 +216,27 @@ function! projectile#define_navigation_command(command, patterns)
   endfor
 endfunction
 
+function! projectile#query_with_alternate(key) abort
+  let values = projectile#query(a:key)
+  for file in projectile#query_file('alternate')
+    for [root, match] in projectile#query('dispatch', {}, file)
+      if filereadable(file)
+        call add(values, [root, match])
+      endif
+      unlet match
+    endfor
+  endfor
+  return values
+endfunction
+
+function! s:shellcmd(arg) abort
+  if type(a:arg) == type([])
+    return join(map(copy(a:arg), 'v:val =~# "^[[:alnum:]_/.:=-]\\+$" ? v:val : shellescape(v:val)'), ' ')
+  elseif type(a:arg) == type('')
+    return a:arg
+  endif
+endfunction
+
 function! projectile#activate() abort
   if empty(b:projectiles)
     finish
@@ -219,14 +252,27 @@ function! projectile#activate() abort
           \ ':execute s:edit_command("'.excmd.'<bang>",<f-args>)'
   endfor
   command! -buffer -bar -bang -nargs=* -complete=customlist,s:edit_complete A AE<bang> <args>
-  for compiler in projectile#query_scalar('compiler')
-    if !empty(findfile('compiler/'.compiler.'.vim', &rtp))
-      execute 'compiler '.compiler
+  for [root, make] in projectile#query('make')
+    let makeprg = s:shellcmd(make)
+    if empty(makeprg)
+      unlet make
+      continue
+    endif
+    unlet! b:current_compiler
+    setlocal errorformat<
+    let executable = fnamemodify(matchstr(makeprg, '\S\+'), ':t:r')
+    if !empty(findfile('compiler/'.executable.'.vim', escape(&rtp, ' ')))
+      execute 'compiler '.executable
+    endif
+    let &l:makeprg = makeprg
+    break
+  endfor
+  for [root, dispatch] in projectile#query_with_alternate('dispatch')
+    let b:dispatch = s:shellcmd(dispatch)
+    if !empty(b:dispatch)
       break
     endif
-  endfor
-  for b:dispatch in projectile#query_scalar('dispatch')
-    break
+    unlet dispatch b:dispatch
   endfor
   for &l:shiftwidth in projectile#query_scalar('indent')
     break
