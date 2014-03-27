@@ -167,7 +167,3 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 call self#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! BD silent e# | bd#
-
-autocmd FileType javascript set efm=%-P%f,
-                    \%E%>\ #%n\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
-                    \%-G%f\ is\ OK.,%-Q
