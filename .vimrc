@@ -79,7 +79,6 @@ nmap <BS> %
 xmap <BS> %
 
 " Searching improvements
-nnoremap \ ,
 nnoremap / /\v
 xnoremap / /\v
 nnoremap n nzzzv
