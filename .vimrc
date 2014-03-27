@@ -72,7 +72,7 @@ let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
 " General Mappings {{{1
-let mapleader = ','
+let mapleader = ' '
 
 " Use backspace key for matchit.vim
 nmap <BS> %
@@ -104,7 +104,7 @@ nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
-nnoremap <space> za
+nnoremap <CR> za
 
 " Selection mappings
 nnoremap <leader>v ^vg_
@@ -141,15 +141,16 @@ nmap <leader>x <Plug>SearchPartyHighlightClear
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
 " Dispatch {{{2
-nnoremap <leader>d :Dispatch<CR>
-nnoremap <leader>m :Make<CR>
+nnoremap <leader>d :Dispatch<space>
+nnoremap <leader>D :Dispatch<CR>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
-nnoremap <leader>gb :Git co -b<space>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gC :Git co -b<space>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
 
 " Clang_Complete {{{2
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
@@ -167,3 +168,7 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 call self#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! BD silent e# | bd#
+
+autocmd FileType javascript set efm=%-P%f,
+                    \%E%>\ #%n\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
+                    \%-G%f\ is\ OK.,%-Q
