@@ -12,6 +12,7 @@ alias weechat="weechat-curses"
 alias chpwn="chown"
 alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
+alias tat="tmux att"
 
 # ls Aliases
 alias ls="ls -A -G"
