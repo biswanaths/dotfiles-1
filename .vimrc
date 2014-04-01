@@ -40,7 +40,7 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
+set statusline=%1*%t\ \%*%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
