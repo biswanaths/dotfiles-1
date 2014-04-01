@@ -90,12 +90,16 @@ function! g:projectile_transformations.hyphenate(input, o) abort
   return tr(a:input, '_', '-')
 endfunction
 
+function! g:projectile_transformations.blank(input, o) abort
+  return tr(a:input, '_-', '  ')
+endfunction
+
 function! g:projectile_transformations.uppercase(input, o) abort
   return toupper(a:input)
 endfunction
 
 function! g:projectile_transformations.camelcase(input, o) abort
-  return substitute(a:input, '_\(.\)', '\u\1', 'g')
+  return substitute(a:input, '[_-]\(.\)', '\u\1', 'g')
 endfunction
 
 function! g:projectile_transformations.capitalize(input, o) abort
@@ -164,7 +168,7 @@ function! projectile#query(key, ...) abort
     endif
     let name = file[strlen(path)+1:-1]
     if has_key(projections, name) && has_key(projections[name], a:key)
-      call add(candidates, [pre, projections[name][a:key]])
+      call add(candidates, [pre, s:expand_placeholders(projections[name][a:key], expansions)])
     endif
     for pattern in reverse(sort(filter(keys(projections), 'v:val =~# "^[^*{}]*\\*[^*{}]*$"'), function('projectile#lencmp')))
       let [prefix, suffix; _] = split(pattern, '\*', 1)
@@ -186,6 +190,10 @@ function! projectile#query_file(key) abort
   return files
 endfunction
 
+function! projectile#query_exec(key) abort
+  return filter(map(projectile#query(a:key), '[v:val[0], s:shellcmd(v:val[1])]'), '!empty(v:val[1])')
+endfunction
+
 function! projectile#query_scalar(key) abort
   let values = []
   for [root, match] in projectile#query(a:key)
@@ -195,6 +203,19 @@ function! projectile#query_scalar(key) abort
       call add(values, match)
     endif
     unlet match
+  endfor
+  return values
+endfunction
+
+function! projectile#query_with_alternate(key) abort
+  let values = projectile#query(a:key)
+  for file in projectile#query_file('alternate')
+    for [root, match] in projectile#query('dispatch', {}, file)
+      if filereadable(file)
+        call add(values, [root, match])
+      endif
+      unlet match
+    endfor
   endfor
   return values
 endfunction
@@ -214,19 +235,6 @@ function! projectile#define_navigation_command(command, patterns)
           \ prefix . substitute(a:command, '\A', '', 'g')
           \ ':execute s:open_projection("'.excmd.'<bang>",'.string(a:patterns).',<f-args>)'
   endfor
-endfunction
-
-function! projectile#query_with_alternate(key) abort
-  let values = projectile#query(a:key)
-  for file in projectile#query_file('alternate')
-    for [root, match] in projectile#query('dispatch', {}, file)
-      if filereadable(file)
-        call add(values, [root, match])
-      endif
-      unlet match
-    endfor
-  endfor
-  return values
 endfunction
 
 function! s:shellcmd(arg) abort
@@ -252,12 +260,7 @@ function! projectile#activate() abort
           \ ':execute s:edit_command("'.excmd.'<bang>",<f-args>)'
   endfor
   command! -buffer -bar -bang -nargs=* -complete=customlist,s:edit_complete A AE<bang> <args>
-  for [root, make] in projectile#query('make')
-    let makeprg = s:shellcmd(make)
-    if empty(makeprg)
-      unlet make
-      continue
-    endif
+  for [root, makeprg] in projectile#query_exec('make')
     unlet! b:current_compiler
     setlocal errorformat<
     let executable = fnamemodify(matchstr(makeprg, '\S\+'), ':t:r')
@@ -265,6 +268,9 @@ function! projectile#activate() abort
       execute 'compiler '.executable
     endif
     let &l:makeprg = makeprg
+    break
+  endfor
+  for [root, b:start] in projectile#query_exec('start')
     break
   endfor
   for [root, dispatch] in projectile#query_with_alternate('dispatch')
@@ -319,8 +325,8 @@ function! projectile#navigation_commands() abort
   let commands = {}
   for [path, projections] in s:projectiles()
     for [pattern, projection] in items(projections)
-      if has_key(projection, 'command') && pattern =~# '^[^*{}]*\*\=[^*{}]*$'
-        let name = projection.command
+      let name = s:gsub(get(projection, 'command', get(projection, 'type', get(projection, 'name', ''))), '\A', '')
+      if !empty(name) && pattern =~# '^[^*{}]*\*\=[^*{}]*$'
         if !has_key(commands, name)
           let commands[name] = []
         endif
