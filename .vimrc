@@ -84,6 +84,10 @@ xnoremap / /\v
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Diff mappings
+xnoremap dp :diffput<CR>
+xnoremap do :diffget<CR>
+
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
