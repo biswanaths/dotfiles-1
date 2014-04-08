@@ -168,5 +168,5 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 " Functions and Commands {{{1
 autocmd! BufRead * call functions#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
-command! -narg=1 -complete=help H h <args> <bar> only
+command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
