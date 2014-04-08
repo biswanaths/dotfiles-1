@@ -1,5 +1,5 @@
 " Format a c/cpp/java file with AStyle
-function! self#AStyleFormat()
+function! functions#AStyleFormat()
     norm! mf
     if &filetype == 'c' || &filetype == 'cpp'
         :%!astyle --mode=c
@@ -10,7 +10,7 @@ function! self#AStyleFormat()
 endfunction
 
 " Change cursor shape when in insert and normal modes
-function! self#CursorShapeMode()
+function! functions#CursorShapeMode()
     if exists('$TMUX')
         let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
         let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -21,7 +21,7 @@ function! self#CursorShapeMode()
 endfunction
 
 " A simple buffer navigation function.
-function! self#bufNav(arrangement)
+function! functions#bufNav(arrangement)
     if a:arrangement ==? "horizontal"
         if len(filter(map(range(bufnr('$')), 'buflisted(v:val)'), 'v:val == 1')) > 1
             return ":buffer \<C-z>\<S-Tab>"
