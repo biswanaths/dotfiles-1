@@ -40,7 +40,7 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%1*%t\ \%*%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
+set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
 set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
 
 " Wildignore Settings {{{1
@@ -79,14 +79,8 @@ nmap <BS> %
 xmap <BS> %
 
 " Searching improvements
-nnoremap / /\v
-xnoremap / /\v
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Diff mappings
-xnoremap dp :diffput<CR>
-xnoremap do :diffget<CR>
 
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
@@ -105,9 +99,12 @@ nnoremap ' `
 nnoremap Q gq
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
+nnoremap <CR> za
+nnoremap g<C-]> g<C-]>zz
+nnoremap g; g;zz
+nnoremap g, g,zz
 xnoremap < <gv
 xnoremap > >gv
-nnoremap <CR> za
 
 " Selection mappings
 nnoremap <leader>v ^vg_
@@ -117,7 +114,8 @@ nnoremap <leader>V `[V`]
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 
-" Close the quickfix list
+" Mappings for opening and closing the qf list
+nnoremap <leader>c :copen<CR>
 nnoremap <leader>q :cclose<CR>
 
 " Quickly edit files
