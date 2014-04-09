@@ -78,10 +78,6 @@ let mapleader = ' '
 nmap <BS> %
 xmap <BS> %
 
-" Searching improvements
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -100,11 +96,16 @@ nnoremap Q gq
 nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 nnoremap Y y$
 nnoremap <CR> za
-nnoremap g<C-]> g<C-]>zz
-nnoremap g; g;zz
-nnoremap g, g,zz
 xnoremap < <gv
 xnoremap > >gv
+
+" Center the screen and open folds when moving/searching/jumping
+nnoremap '' ``zzzv
+nnoremap g; g;zzzv
+nnoremap g, g,zzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap g<C-]> g<C-]>zz
 
 " Selection mappings
 nnoremap <leader>v ^vg_
@@ -122,10 +123,10 @@ nnoremap <leader>q :cclose<CR>
 nnoremap <leader>ev :e ~/dotfiles/.vimrc<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef mfgg=G`fzz
+nnoremap <leader>ef m`gg=G``zz
 
 " Remove trailing whitespace
-nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
 " Buffers
 nnoremap <expr> <leader>b functions#bufNav("horizontal")
