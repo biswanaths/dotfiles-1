@@ -130,6 +130,8 @@ nnoremap <leader>W mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 " Buffers
 nnoremap <expr> <leader>b functions#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#bufNav("vertical")
+nnoremap <leader>l :b#<CR>
+nnoremap <leader>L :vertical sb#<CR>
 
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
@@ -166,7 +168,7 @@ nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Functions and Commands {{{1
-autocmd! BufRead * call functions#CursorShapeMode()
+call functions#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
