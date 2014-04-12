@@ -232,7 +232,7 @@ endfunction
 function! projectile#query_with_alternate(key) abort
   let values = projectile#query(a:key)
   for file in projectile#query_file('alternate')
-    for [root, match] in projectile#query('dispatch', {}, file)
+    for [root, match] in projectile#query(a:key, {}, file)
       if filereadable(file)
         call add(values, [root, match])
       endif
@@ -284,29 +284,47 @@ function! projectile#activate() abort
           \ ':execute s:edit_command("'.excmd.'<bang>", <line2>, <f-args>)'
   endfor
   command! -buffer -bar -bang -nargs=* -complete=customlist,s:edit_complete A AE<bang> <args>
-  for [root, makeprg] in projectile#query_exec('make')
+  command! -buffer -bang -nargs=1 -range=0 -complete=command ProjectDo execute s:do('<bang>', <count>==<line1>?<count>:-1, <q-args>)
+
+  for [root, makeopt] in projectile#query('make')
+    let makeprg = s:shellcmd(makeopt)
+    if empty(makeprg)
+      continue
+    endif
     unlet! b:current_compiler
     setlocal errorformat<
-    let executable = fnamemodify(matchstr(makeprg, '\S\+'), ':t:r')
-    if !empty(findfile('compiler/'.executable.'.vim', escape(&rtp, ' ')))
-      execute 'compiler '.executable
+    let compiler = fnamemodify(matchstr(makeprg, '\S\+'), ':t:r')
+    if exists(':Dispatch')
+      silent! let compiler = dispatch#compiler_for_program(makeprg)
+    endif
+    if !empty(findfile('compiler/'.compiler.'.vim', escape(&rtp, ' ')))
+      execute 'compiler' compiler
     endif
     let &l:makeprg = makeprg
+    if type(makeopt) ==# type([]) && empty(filter(copy(makeopt), 'stridx(v:val, root) >= 0'))
+      let &l:errorformat .= ',projectile.vim@'.escape(root, ',')
+    endif
     break
   endfor
-  for [root, b:start] in projectile#query_exec('start')
+
+  for [root, command] in projectile#query_exec('start')
+    let offset = index(s:paths(), root[0:-2]) + 1
+    let b:start = ':ProjectDo' . (offset == 1 ? '' : offset) . ' ' .
+          \ substitute('Start '.command, 'Start :', '', '')
     break
   endfor
+
   for [root, dispatch] in projectile#query_with_alternate('dispatch')
-    let b:dispatch = s:shellcmd(dispatch)
-    if !empty(b:dispatch)
+    let command = s:shellcmd(dispatch)
+    let offset = index(s:paths(), root[0:-2]) + 1
+    if !empty(command)
+      let b:dispatch = ':ProjectDo' . (offset == 1 ? '' : offset) . ' ' .
+            \ substitute('Dispatch '.command, 'Dispatch :', '', '')
       break
     endif
     unlet dispatch b:dispatch
   endfor
-  for &l:shiftwidth in projectile#query_scalar('indent')
-    break
-  endfor
+
   silent doautocmd User ProjectileActivate
 endfunction
 
@@ -395,7 +413,7 @@ function! s:open_projection(cmd, variants, ...) abort
 endfunction
 
 function! s:projection_complete(lead, cmdline, _) abort
-  execute matchstr(a:cmdline, '[' . join(keys(s:prefixes), '') . ']\w\+') . ' &'
+  execute matchstr(a:cmdline, '\a\@<![' . join(keys(s:prefixes), '') . ']\w\+') . ' &'
   let results = []
   for format in s:last_formats
     if format !~# '%s'
@@ -443,6 +461,43 @@ function! s:edit_complete(lead, cmdline, _) abort
   call map(matches, 'matchstr(a:lead, "^[\\/]") . v:val[ strlen(projectile#path())+1 : -1 ] . (isdirectory(v:val) ? projectile#slash() : "")')
   return matches
 endfunction
+
+" Section: :ProjectDo
+
+function! s:do(bang, count, cmd) abort
+  let cd = exists('*haslocaldir') && haslocaldir() ? 'lcd' : 'cd'
+  let cwd = getcwd()
+  let cmd = substitute(a:cmd, '^\d\+ ', '', '')
+  let offset = cmd ==# a:cmd ? 1 : matchstr(a:cmd, '^\d\+')
+  try
+    execute cd fnameescape(projectile#path('', offset))
+    execute (a:count >= 0 ? a:count : '').substitute(cmd, '\>', a:bang, '')
+  catch
+    return 'echoerr '.string(v:exception)
+  finally
+    execute cd fnameescape(cwd)
+  endtry
+  return ''
+endfunction
+
+" Section: Make
+
+function! s:qf_pre() abort
+  let dir = substitute(matchstr(&l:errorformat, 'projectile\.vim@\zs\%(\\.\|[^,]\)*'), '\\,' ,',', 'g')
+  if !empty(dir)
+    let cwd = getcwd()
+    let cd = exists('*haslocaldir') && haslocaldir() ? 'lcd' : 'cd'
+    execute cd fnameescape(dir)
+    let s:qf_post = cd . ' ' . fnameescape(cwd)
+  endif
+endfunction
+
+augroup projectile_make
+  autocmd!
+  autocmd QuickFixCmdPre  dispatch,make,lmake call s:qf_pre()
+  autocmd QuickFixCmdPost dispatch,make,lmake
+        \ if exists('s:qf_post') | execute remove(s:, 'qf_post') | endif
+augroup END
 
 " Section: Templates
 
