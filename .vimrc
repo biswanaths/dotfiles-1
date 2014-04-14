@@ -93,7 +93,7 @@ nnoremap k gk
 " Remap some keys to be more useful
 nnoremap ' `
 nnoremap Q gq
-nnoremap S i<CR><ESC>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap S i<CR><ESC>^m`gk:silent! s/\v +$//<CR>:noh<CR>``
 nnoremap Y y$
 nnoremap <CR> za
 xnoremap < <gv
