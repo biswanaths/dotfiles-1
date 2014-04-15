@@ -36,3 +36,14 @@ function! functions#bufNav(arrangement)
         endif
     endif
 endfunction
+
+" Get the buffer list
+function! functions#bufferList()
+    let buflist = []
+    for i in range(1, bufnr('$'))
+        if bufexists(i)
+            let buflist += [bufname(i)]
+        endif
+    endfor
+    return join(map(buflist, 'escape(v:val, " ")'), ' ')
+endfunction
