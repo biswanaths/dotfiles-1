@@ -19,7 +19,7 @@ set completeopt-=preview
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
-set ttimeoutlen=50
+set timeout ttimeoutlen=50
 set wildmenu wildcharm=<C-z>
 
 " Colorscheme and Syntax {{{1
@@ -172,7 +172,7 @@ nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Functions and Commands {{{1
-autocmd! VimEnter * call functions#CursorShapeMode()
+call functions#CursorShapeMode()
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
