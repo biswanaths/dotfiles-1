@@ -15,7 +15,7 @@ alias gist="gist -s -P"
 alias tat="tmux att"
 
 # ls Aliases
-alias ls="ls -A -G"
+alias ls="gls --color -A"
 alias sl="ls"
 alias ll="ls -lh"
 alias lt="ls -lth"
