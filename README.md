@@ -14,7 +14,7 @@ Various .rc files for my command line experience
 
 ### Screenshots:
 
-![Vim](http://cl.ly/V4yH "Vim, tmux demo")
+![Vim](http://cl.ly/V5dA/shell.png "Vim, tmux demo")
 
 ## Caveats:
 Although I try to make this work on Linux too, there are some things that are
