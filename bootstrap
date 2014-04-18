@@ -9,6 +9,7 @@ echo "Cloning Vundle..."
 rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 mkdir -p ~/.vim/backup/undo
 vim +BundleInstall +qa
+echo "Vim plugins installed!"
 
 # Zsh
 echo "Linking zsh"
@@ -45,6 +46,7 @@ if [ `uname` == "Darwin" ]; then
     if [[ -x /usr/local/bin/brew ]]; then
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     else
+        echo "Homebrew not installed. Installing it now..."
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     fi
