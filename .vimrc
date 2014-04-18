@@ -3,6 +3,7 @@
 filetype off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
+Plugin 'gmarik/vundle'
 Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
