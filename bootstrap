@@ -40,8 +40,8 @@ echo "Linking user scripts..."
 ln -s ~/dotfiles/bin ~/.bin
 
 # OS X specific config
-echo "Installing OS X apps and configuring QuickLook..."
 if [ `uname` == "Darwin" ]; then
+    echo "Installing OS X apps and configuring QuickLook..."
     if [[ -x /usr/local/bin/brew ]]; then
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     else
