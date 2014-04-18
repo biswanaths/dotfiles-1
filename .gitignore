@@ -6,6 +6,7 @@ fish/generated_completions/
 .vim/bundle/*/doc/**
 .vim/custom-dictionary.utf-8.add
 .vim/tags/*
+.vim/bundle/*
 .vim/spell/*
 .vim/session/*
 .vim/haskellmode.config
