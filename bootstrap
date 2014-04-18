@@ -27,10 +27,6 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 echo "Setting up tig..."
 ln -s ~/dotfiles/.tigrc ~/.tigrc
 
-# Slate
-echo "Setting up slate..."
-ln -s ~/dotfiles/.slate ~/.slate
-
 # Weechat
 echo "Setting up weechat..."
 ln -s ~/dotfiles/weechat ~/.weechat
@@ -41,6 +37,10 @@ ln -s ~/dotfiles/bin ~/.bin
 
 # OS X specific config
 if [ `uname` == "Darwin" ]; then
+    # Slate
+    echo "Setting up slate..."
+    ln -s ~/dotfiles/.slate ~/.slate
+
     echo "Installing OS X apps and configuring QuickLook..."
     if [[ -x /usr/local/bin/brew ]]; then
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
