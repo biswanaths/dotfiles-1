@@ -182,9 +182,6 @@ nnoremap <leader>gC :Git co -b<space>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 
-" Clang_Complete {{{2
-let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
 " Tabular {{{2
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
