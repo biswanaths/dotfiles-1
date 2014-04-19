@@ -42,8 +42,8 @@ KEYTIMEOUT=1
 bindkey -v
 bindkey -M vicmd "?" history-incremental-pattern-search-backward
 bindkey -M vicmd "/" history-incremental-pattern-search-forward
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line

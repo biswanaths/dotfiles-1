@@ -36,6 +36,7 @@ set hidden
 set laststatus=2
 set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
+set modeline
 set mouse=nv
 set number relativenumber
 set completeopt-=preview
