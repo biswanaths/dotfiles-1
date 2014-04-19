@@ -29,7 +29,7 @@ Plugin 'vim-ruby/vim-ruby'
 " General Settings {{{1
 set autoread
 set backspace=indent,eol,start
-set clipboard+=unnamed
+set clipboard^=unnamedplus
 set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
@@ -79,7 +79,7 @@ set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
-    set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h13
+    set guioptions= lines=40 columns=140 guifont=UbuntuMono\ 13
 endif
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
@@ -196,13 +196,9 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 
 " Functions and Commands {{{1
 function! s:CursorShapeMode()
-    if exists('$TMUX')
-        let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    else
-        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    endif
+    au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape ibeam"
+    au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
+    au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
 endfunction
 
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>

@@ -3,8 +3,6 @@
 # General aliases
 alias c="clear"
 alias cp="cp -vi"
-alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
-alias em="emacsclient"
 alias rm="rm -v"
 alias mv="mv -vi"
 alias tmux="tmux -u2"
@@ -13,7 +11,6 @@ alias chpwn="chown"
 alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
 alias tat="tmux att"
-alias atom="open -a atom"
 alias apt="sudo apt-get --yes"
 compdef apt="apt-get"
 
@@ -36,29 +33,14 @@ alias evb="vim ~/.vim/vimrc.bundles"
 alias evt="vim ~/.tmux.conf"
 alias evz="vim ~/.zshrc"
 
-# Use Python3 always
-alias python="python3"
-alias ipython="ipython3"
-alias pip="pip3"
-
 # Useful aliases
 alias clang="clang -std=c99 -Wall -Wextra"
-alias ql="qlmanage -p 2>/dev/null"
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias ping="ping -c 5"
 alias pgrep="pgrep -l"
-alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
-alias tnotify='terminal-notifier -title "Terminal" -activate com.googlecode.iterm2 -message'
-alias mou="open -a Mou"
-alias powerlog="/Applications/Intel\ Power\ Gadget/PowerLog -verbose -resolution 3000"
 
 # geez fingers
 alias heroky="heroku"
 alias cim="vim"
-
-# Homebrew
-alias upd="brew update; brew outdated; brew upgrade"
-alias doct="brew doctor"
-alias desc="brew desc"
 # vim: ft=zsh
