@@ -1,5 +1,43 @@
 #!/usr/bin/env bash
 
+# OS X specific config
+if [ `uname` == "Darwin" ]; then
+    echo "Installing OS X apps and configuring QuickLook..."
+    if [[ -x /usr/local/bin/brew ]]; then
+        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+    else
+        echo "Homebrew not installed. Installing it now..."
+        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+    fi
+    defaults write com.apple.Finder QLEnableTextSelection -bool true
+    # Slate
+    echo "Setting up slate..."
+    ln -s ~/dotfiles/.slate ~/.slate
+fi
+
+# Linux specific: Install apps
+if [ `uname` == "Linux" ]; then
+    echo "Installing apps"
+    sudo apt-get install -y tmux zsh-dev build-essential git mercurial \
+    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev
+    cd ~/Downloads/
+    echo "Downloading vim from source..."
+    hg clone https://code.google.com/p/vim
+    cd vim
+    ./configure --with-features=huge \
+            --enable-rubyinterp \
+            --enable-pythoninterp \
+            --with-python-config-dir=/usr/lib/python2.7-config \
+            --enable-perlinterp \
+            --enable-gui=gtk2 --enable-cscope --prefix=/usr
+    make VIMRUNTIMEDIR=/usr/share/vim/vim74
+    sudo make install
+    cd ~
+    echo "Installed vim!"
+fi
+
 # Symlink vim stuff
 echo "Linking vim..."
 ln -s ~/dotfiles/.vimrc ~/.vimrc
@@ -35,28 +73,4 @@ ln -s ~/dotfiles/weechat ~/.weechat
 echo "Linking user scripts..."
 ln -s ~/dotfiles/bin ~/.bin
 
-# OS X specific config
-if [ `uname` == "Darwin" ]; then
-    # Slate
-    echo "Setting up slate..."
-    ln -s ~/dotfiles/.slate ~/.slate
-
-    echo "Installing OS X apps and configuring QuickLook..."
-    if [[ -x /usr/local/bin/brew ]]; then
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    else
-        echo "Homebrew not installed. Installing it now..."
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    fi
-    defaults write com.apple.Finder QLEnableTextSelection -bool true
-fi
 echo "Done!"
-
-# Change apps to do this so the user doesn't have to do this manually.
-if [ `uname` == "Linux" ]; then
-    echo "1. Modify zsh aliases for Linux"
-    echo "2. Remove reattach-to-user-namespace for tmux"
-    echo "3. Export term for zsh."
-    echo "4. Change clipboard support for Vim"
-fi
