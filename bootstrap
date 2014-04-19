@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# NOTE: Not tested enough.
-# Symlink vim stuff
 
+# Symlink vim stuff
 echo "Linking vim..."
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
@@ -53,3 +52,11 @@ if [ `uname` == "Darwin" ]; then
     defaults write com.apple.Finder QLEnableTextSelection -bool true
 fi
 echo "Done!"
+
+# Change apps to do this so the user doesn't have to do this manually.
+if [ `uname` == "Linux" ]; then
+    echo "1. Modify zsh aliases for Linux"
+    echo "2. Remove reattach-to-user-namespace for tmux"
+    echo "3. Export term for zsh."
+    echo "4. Change clipboard support for Vim"
+fi
