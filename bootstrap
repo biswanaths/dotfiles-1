@@ -18,6 +18,7 @@ fi
 
 # Linux specific: Install apps
 if [ `uname` == "Linux" ]; then
+    cd ~/dotfiles && git checkout linux-branch
     echo "Installing apps"
     sudo apt-get install -y tmux zsh-dev build-essential mercurial \
     libncurses5-dev libgnome2-dev libgnomeui-dev \
