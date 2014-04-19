@@ -29,4 +29,4 @@ installing packages from homebrew.
 ## Branches
 
 Looking for Linux specific config? Switch to the
-[master](https://github.com/ajh17/dotfiles/tree/linux-branch) branch instead.
+[linux](https://github.com/ajh17/dotfiles/tree/linux-branch) branch instead.
