@@ -6,13 +6,12 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source `brew --prefix`/etc/autojump.sh
-eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
+export EDITOR='vim'
+TERM=xterm-256color
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'

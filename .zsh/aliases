@@ -14,9 +14,11 @@ alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
 alias tat="tmux att"
 alias atom="open -a atom"
+alias apt="sudo apt-get --yes"
+compdef apt="apt-get"
 
 # ls Aliases
-alias ls="gls --color -A"
+alias ls="ls --color -A"
 alias sl="ls"
 alias ll="ls -lh"
 alias lt="ls -lth"
