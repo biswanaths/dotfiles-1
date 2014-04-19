@@ -25,3 +25,8 @@ Also, this will obviously not work with Windows. Ever.
 
 If you use OS X, there is likely no configuration required, outside of
 installing packages from homebrew.
+
+## Branches
+
+Looking for Linux specific config? Switch to the
+[master](https://github.com/ajh17/dotfiles/tree/linux-branch) branch instead.
