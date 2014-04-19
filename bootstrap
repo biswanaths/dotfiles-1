@@ -25,7 +25,7 @@ if [ `uname` == "Linux" ]; then
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev
     cd ~/Downloads/
     echo "Downloading vim from source..."
-    hg clone https://code.google.com/p/vim
+    hg clone -r tip https://code.google.com/p/vim
     cd vim
     ./configure --with-features=huge \
             --enable-rubyinterp \
