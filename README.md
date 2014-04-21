@@ -19,4 +19,5 @@ Various .rc files for my command line experience
 ## Branches
 
 Looking for Linux specific config? Check out (pun absolutely intended)
-[linux](https://github.com/ajh17/dotfiles/tree/linux-branch) branch instead.
+the [linux](https://github.com/ajh17/dotfiles/tree/linux-branch) branch
+instead.
