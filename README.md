@@ -18,5 +18,5 @@ Various .rc files for my command line experience
 
 ## Branches
 
-Looking for OS X specific config? Switch to the
+Looking for OS X specific config? Check out (pun very much intended) the
 [master](https://github.com/ajh17/dotfiles) branch instead.
