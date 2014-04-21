@@ -14,6 +14,7 @@ alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
 alias tat="tmux att"
 alias atom="open -a atom"
+alias tstart="tmuxinator start default"
 
 # ls Aliases
 alias ls="gls --color -A"
