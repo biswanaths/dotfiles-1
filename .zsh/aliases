@@ -11,7 +11,8 @@ alias chpwn="chown"
 alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
 alias tat="tmux att"
-alias apt="sudo apt-get --yes"
+alias apt="sudo apt-get"
+alias open="xdg-open"
 compdef apt="apt-get"
 
 # ls Aliases
