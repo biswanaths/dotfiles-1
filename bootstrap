@@ -1,78 +1,91 @@
 #!/usr/bin/env bash
 
-# OS X specific config
-if [ `uname` == "Darwin" ]; then
-    echo "Installing OS X apps and configuring QuickLook..."
-    if [[ -x /usr/local/bin/brew ]]; then
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    else
-        echo "Homebrew not installed. Installing it now..."
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    fi
-    defaults write com.apple.Finder QLEnableTextSelection -bool true
-    # Slate
-    echo "Setting up slate..."
-    ln -s ~/dotfiles/.slate ~/.slate
-fi
+# Ask for user permission first
+echo ""
+echo "This script will automatically install essential tools and"
+echo "link files from this folder to $HOME."
+echo ""
+echo "Do you wish to proceed?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
 
-# Linux specific: Install apps
+# Install linux tools.
+# TODO: Make this work with other linux distros...(probably won't do this unless I have to)
 if [ `uname` == "Linux" ]; then
-    cd ~/dotfiles && git checkout linux-branch
-    echo "Installing apps"
-    sudo apt-get install -y tmux zsh-dev build-essential mercurial \
-    xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky \
-    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev
-    cd ~/Downloads/
-    echo "Downloading vim from source..."
-    hg clone -r tip https://code.google.com/p/vim
-    cd vim
-    ./configure --with-features=huge \
+    if [ -f /etc/debian_version ]; then
+        # Just so it doesn't try to run this on any other system.
+        echo "Detected Debian-based system. Installing essential tools using apt-get ..."
+        sleep 2
+        cd ~/dotfiles
+        sudo apt-get install -y tmux zsh zsh-dev build-essential mercurial curl \
+            xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky dmenu \
+            libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
+            libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev
+        cd ~/Downloads/
+
+        # Compile vim from source because the latest vim is the greatest.
+        echo "Downloading vim from source..."
+        hg clone https://code.google.com/p/vim
+        cd vim
+        ./configure --with-features=huge \
             --enable-rubyinterp \
             --enable-pythoninterp \
             --with-python-config-dir=/usr/lib/python2.7-config \
             --enable-perlinterp \
             --enable-gui=gtk2 --enable-cscope --prefix=/usr
-    make VIMRUNTIMEDIR=/usr/share/vim/vim74
-    sudo make install
-    cd ~
-    echo "Installed vim!"
+        make VIMRUNTIMEDIR=/usr/share/vim/vim74
+        sudo make install
+        retval=$?
+        if [ $retval != 0 ]; then
+            echo "Error: [$retval] Unable to install vim."
+            exit $retval
+        else
+            echo "Successfully installed vim!"
+        fi
+
+        # Set up tomorrow-night for gnome-terminal
+        echo "Installing tomorrow-night colorscheme for gnome-terminal..."
+        curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Gnome-Terminal/setup-theme.sh
+        chmod +x setup-theme.sh
+        ./setup-theme.sh
+        cd ~
+
+        # Symlink vim stuff
+        echo "Linking vim..."
+        ln -s ~/dotfiles/.vimrc ~/.vimrc
+        ln -s ~/dotfiles/.vim ~/.vim
+        echo "Cloning Vundle..."
+        rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+        mkdir -p ~/.vim/backup/undo
+        vim +PluginInstall +qa
+        echo "Vim plugins installed!"
+
+        # Zsh
+        echo "Linking zsh"
+        chsh -s /usr/bin/zsh
+        ln -s ~/dotfiles/.zshrc ~/.zshrc
+        ln -s ~/dotfiles/.zsh ~/.zsh
+        rm -rf ~/.zsh/zsh-*
+        echo "Cloning zsh plugins..."
+        cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+        # Tmux
+        echo "Setting up tmux..."
+        ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+        # Tig
+        echo "Setting up tig..."
+        ln -s ~/dotfiles/.tigrc ~/.tigrc
+
+        # Weechat
+        echo "Setting up weechat..."
+        ln -s ~/dotfiles/weechat ~/.weechat
+
+        echo "Done!"
+    fi
 fi
-
-# Symlink vim stuff
-echo "Linking vim..."
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.vim ~/.vim
-echo "Cloning Vundle..."
-rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-mkdir -p ~/.vim/backup/undo
-vim +BundleInstall +qa
-echo "Vim plugins installed!"
-
-# Zsh
-echo "Linking zsh"
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zsh ~/.zsh
-rm -rf ~/.zsh/zsh-*
-echo "Cloning zsh plugins..."
-cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-
-# Tmux
-echo "Setting up tmux..."
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-
-# Tig
-echo "Setting up tig..."
-ln -s ~/dotfiles/.tigrc ~/.tigrc
-
-# Weechat
-echo "Setting up weechat..."
-ln -s ~/dotfiles/weechat ~/.weechat
-
-# User scripts
-echo "Linking user scripts..."
-ln -s ~/dotfiles/bin ~/.bin
-
-echo "Done!"
