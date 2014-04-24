@@ -22,7 +22,24 @@ if [ `uname` == "Darwin" ]; then
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     fi
+
+    # Install essential tools
+    echo "Installing homebrew apps...(Go get a coffee)"
+    brew install automake autoconf python python3 coreutils tmux aspell \
+        weechat --with-aspell --with-lua --with-perl --with-python \
+                --with-ruby \
+        reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
+        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
+    echo "Done installing homebrew apps!"
+
+    echo "Setting up OS X defaults tricks..."
+    # Enable text selection for quicklook.
     defaults write com.apple.Finder QLEnableTextSelection -bool true
+    # Keyboard repeat
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+    defaults write NSGlobalDomain KeyRepeat -int 0
+    # Animation speed
+    defaults write com.apple.dock expose-animation-duration -float 0.1
 
     # Slate
     echo "Setting up slate..."
