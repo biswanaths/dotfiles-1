@@ -1,30 +1,7 @@
 " ------------ ajh's .vimrc ------------
 " Load Plugins {{{1
-filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
-Plugin 'ajh17/snipmate.vim'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'dahu/SearchParty'
-Plugin 'dahu/vim-fanfingtastic'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'qstrahl/vim-dentures'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectile'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
+execute pathogen#infect()
+runtime! macros/matchit.vim
 
 " General Settings {{{1
 set autoread
