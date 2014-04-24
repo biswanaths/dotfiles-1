@@ -22,7 +22,7 @@ ln -s ~/dotfiles/.vim ~/.vim
 echo "Cloning Vundle..."
 rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 mkdir -p ~/.vim/backup/undo
-vim +BundleInstall +qa
+vim +PluginInstall +qa
 echo "Vim plugins installed!"
 
 # Zsh
