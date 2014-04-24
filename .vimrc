@@ -194,6 +194,9 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
+" Jedi-vim {{{2
+let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
+
 " Functions and Commands {{{1
 function! s:CursorShapeMode()
     if exists('$TMUX')
