@@ -1,67 +1,53 @@
 #!/usr/bin/env bash
 
-echo ""
-echo "This script will automatically install essential tools and"
-echo "link files from this folder to $HOME"
-echo ""
-echo "Do you wish to proceed?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) break;;
-        No) exit;;
-    esac
-done
-
 # OS X specific config
-if [ `uname` == "Darwin" ]; then
-    echo "Installing apps and configuring QuickLook..."
-    if [ -x /usr/local/bin/brew ]; then
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    else
-        echo "Homebrew not installed. Installing it now..."
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-        brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
-    fi
-    defaults write com.apple.Finder QLEnableTextSelection -bool true
-
-    # Slate
-    echo "Setting up slate..."
-    ln -s ~/dotfiles/.slate ~/.slate
-
-    # Symlink vim stuff
-    echo "Linking vim..."
-    ln -s ~/dotfiles/.vimrc ~/.vimrc
-    ln -s ~/dotfiles/.vim ~/.vim
-    echo "Cloning Vundle..."
-    rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    mkdir -p ~/.vim/backup/undo
-    vim +PluginInstall +qa
-    echo "Vim plugins installed!"
-
-    # Zsh
-    echo "Linking zsh"
-    ln -s ~/dotfiles/.zshrc ~/.zshrc
-    ln -s ~/dotfiles/.zsh ~/.zsh
-    rm -rf ~/.zsh/zsh-*
-    echo "Cloning zsh plugins..."
-    cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-
-    # Tmux
-    echo "Setting up tmux..."
-    ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-
-    # Tig
-    echo "Setting up tig..."
-    ln -s ~/dotfiles/.tigrc ~/.tigrc
-
-    # Weechat
-    echo "Setting up weechat..."
-    ln -s ~/dotfiles/weechat ~/.weechat
-
-    # User scripts
-    echo "Linking user scripts..."
-    ln -s ~/dotfiles/bin ~/.bin
-
-    echo "Done!"
+echo "Installing apps and configuring QuickLook..."
+if [[ -x /usr/local/bin/brew ]]; then
+    brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
+else
+    echo "Homebrew not installed. Installing it now..."
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
 fi
+defaults write com.apple.Finder QLEnableTextSelection -bool true
+
+# Slate
+echo "Setting up slate..."
+ln -s ~/dotfiles/.slate ~/.slate
+
+# Symlink vim stuff
+echo "Linking vim..."
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.vim ~/.vim
+echo "Cloning Vundle..."
+rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+mkdir -p ~/.vim/backup/undo
+vim +PluginInstall +qa
+echo "Vim plugins installed!"
+
+# Zsh
+echo "Linking zsh"
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zsh ~/.zsh
+rm -rf ~/.zsh/zsh-*
+echo "Cloning zsh plugins..."
+cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+# Tmux
+echo "Setting up tmux..."
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+# Tig
+echo "Setting up tig..."
+ln -s ~/dotfiles/.tigrc ~/.tigrc
+
+# Weechat
+echo "Setting up weechat..."
+ln -s ~/dotfiles/weechat ~/.weechat
+
+# User scripts
+echo "Linking user scripts..."
+ln -s ~/dotfiles/bin ~/.bin
+
+echo "Done!"
