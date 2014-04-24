@@ -87,6 +87,10 @@ if [ `uname` == "Linux" ]; then
         echo "Setting up weechat..."
         ln -s ~/dotfiles/weechat ~/.weechat
 
+        # User scripts folder
+        echo "Linking user scripts folder..."
+        ln -s ~/dotfiles/bin/ ~/.bin
+
         echo "Done!"
     fi
 fi

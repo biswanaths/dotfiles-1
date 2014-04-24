@@ -16,7 +16,6 @@ TERM=xterm-256color
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
-NODE_PATH=/usr/local/lib/node_modules
 fpath=(~/.zsh/Completion /usr/local/share/zsh-completions $fpath)
 
 # Settings {{{1
@@ -42,8 +41,8 @@ KEYTIMEOUT=1
 bindkey -v
 bindkey -M vicmd "?" history-incremental-pattern-search-backward
 bindkey -M vicmd "/" history-incremental-pattern-search-forward
-bindkey '^[OA' history-substring-search-up
-bindkey '^[OB' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
