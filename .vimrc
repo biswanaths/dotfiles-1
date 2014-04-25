@@ -1,9 +1,9 @@
 " ------------ ajh's .vimrc ------------
 " Load Plugins {{{1
 filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
@@ -25,6 +25,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
+call vundle#end()
 
 " General Settings {{{1
 set autoread
