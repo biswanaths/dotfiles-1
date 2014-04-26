@@ -215,3 +215,4 @@ autocmd! VimEnter * call <SID>CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
+command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
