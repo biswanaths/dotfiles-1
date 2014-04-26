@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+bold=`tput bold`
+norm=`tput sgr0`
+
 echo ""
-echo "This script will automatically install essential tools and"
+echo "${bold}==> This script will automatically install essential tools and"
 echo "link files from this folder to $HOME"
 echo ""
-echo "Do you wish to proceed?"
+echo "==> Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
@@ -14,25 +17,25 @@ done
 
 # OS X specific config
 if [ `uname` == "Darwin" ]; then
-    echo "Installing apps and configuring QuickLook..."
+    echo "${bold}Installing apps and configuring QuickLook...${norm}"
     if [ -x /usr/local/bin/brew ]; then
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     else
-        echo "Homebrew not installed. Installing it now..."
+        echo "${bold}Homebrew not installed. Installing it now...${norm}"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
         brew install zsh && brew install vim --HEAD --with-perl --with-lua --override-system-vi
     fi
 
     # Install essential tools
-    echo "Installing homebrew apps...(Go get a coffee)"
+    echo "${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
         weechat --with-aspell --with-lua --with-perl --with-python \
                 --with-ruby \
         reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
         imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
-    echo "Done installing homebrew apps!"
+    echo "${bold}Done installing homebrew apps!"
 
-    echo "Setting up OS X defaults tricks..."
+    echo "${bold}Setting up OS X defaults tricks...${norm}"
     # Enable text selection for quicklook.
     defaults write com.apple.Finder QLEnableTextSelection -bool true
     # Keyboard repeat
@@ -42,43 +45,89 @@ if [ `uname` == "Darwin" ]; then
     defaults write com.apple.dock expose-animation-duration -float 0.1
 
     # Slate
-    echo "Setting up slate..."
-    ln -s ~/dotfiles/.slate ~/.slate
+    if [ -f ~/.slate ]
+    then
+        echo ""
+        echo "Slate already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Setting up slate...${norm}"
+        ln -s ~/dotfiles/.slate ~/.slate
+    fi
 
-    # Symlink vim stuff
-    echo "Linking vim..."
-    ln -s ~/dotfiles/.vimrc ~/.vimrc
-    ln -s ~/dotfiles/.vim ~/.vim
-    echo "Cloning Vundle..."
-    rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    # Setup vim stuff.
+    if [ -d ~/.vim ] && [ -f ~/.vimrc ]; then
+        echo ""
+        echo "Vim already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Linking vim...${norm}"
+        cd ~
+        ln -s ~/dotfiles/.vimrc ~/.vimrc
+        ln -s ~/dotfiles/.vim ~/.vim
+    fi
     mkdir -p ~/.vim/backup/undo
     vim +PluginInstall +qa
-    echo "Vim plugins installed!"
+    echo "${bold}Vim plugins installed!"
 
     # Zsh
-    echo "Linking zsh"
-    ln -s ~/dotfiles/.zshrc ~/.zshrc
-    ln -s ~/dotfiles/.zsh ~/.zsh
-    rm -rf ~/.zsh/zsh-*
-    echo "Cloning zsh plugins..."
-    cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+    if [ -d ~/.zsh  ] && [ -f ~/.zshrc ]; then
+        echo ""
+        echo "Zsh already linked. Skipping..."
+        echo ""
+    else
+        echo "Linking zsh"
+        cd ~
+        ln -s ~/dotfiles/.zshrc ~/.zshrc
+        ln -s ~/dotfiles/.zsh ~/.zsh
+        rm -rf ~/.zsh/zsh-*
+        echo "${bold}Cloning zsh plugins...${norm}"
+        cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+    fi
 
     # Tmux
-    echo "Setting up tmux..."
-    ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+    if [ -f ~/.tmux.conf ]; then
+        echo ""
+        echo "Tmux already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Setting up tmux...${norm}"
+        cd ~
+        ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+    fi
 
     # Tig
-    echo "Setting up tig..."
-    ln -s ~/dotfiles/.tigrc ~/.tigrc
+    if [ -f ~/.tigrc ]; then
+        echo ""
+        echo "tigrc already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Setting up tig...${norm}"
+        ln -s ~/dotfiles/.tigrc ~/.tigrc
+    fi
 
     # Weechat
-    echo "Setting up weechat..."
-    ln -s ~/dotfiles/weechat ~/.weechat
+    if [ -d ~/.weechat ]; then
+        echo ""
+        echo "weechat already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Setting up weechat...${norm}"
+        cd ~
+        ln -s ~/dotfiles/weechat ~/.weechat
+    fi
 
     # User scripts
-    echo "Linking user scripts..."
-    ln -s ~/dotfiles/bin ~/.bin
+    if [ -d ~/.bin ]; then
+        echo ""
+        echo "User scripts folder already linked. Skipping..."
+        echo ""
+    else
+        echo "${bold}Linking user scripts...${norm}"
+        ln -s ~/dotfiles/bin ~/.bin
 
-    echo "Done!"
+    fi
+
+    echo "${bold}Done!${norm}"
 fi
