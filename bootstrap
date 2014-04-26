@@ -3,15 +3,13 @@
 bold=`tput bold`
 norm=`tput sgr0`
 
-echo ""
-echo "${bold}==> This script will automatically install essential tools and"
-echo "link files from this folder to $HOME"
-echo ""
+echo -e "\n${bold}==> This script will automatically install essential tools and"
+echo -e "link files from this folder to $HOME\n"
 echo "==> Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
-        No) exit;;
+        No) echo "Okay stopping..." && exit;;
     esac
 done
 
@@ -27,15 +25,15 @@ if [ `uname` == "Darwin" ]; then
     fi
 
     # Install essential tools
-    echo "${bold}Installing homebrew apps...(Go get a coffee)${norm}"
+    echo -e" \n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
         weechat --with-aspell --with-lua --with-perl --with-python \
                 --with-ruby \
         reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
         imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
-    echo "${bold}Done installing homebrew apps!"
+    echo -e "\n${bold}Done installing homebrew apps!"
 
-    echo "${bold}Setting up OS X defaults tricks...${norm}"
+    echo -e "\n${bold}Setting up OS X defaults tricks...${norm}"
     # Enable text selection for quicklook.
     defaults write com.apple.Finder QLEnableTextSelection -bool true
     # Keyboard repeat
@@ -47,9 +45,7 @@ if [ `uname` == "Darwin" ]; then
     # Slate
     if [ -f ~/.slate ]
     then
-        echo ""
-        echo "Slate already linked. Skipping..."
-        echo ""
+        echo -e "\nSlate already linked. Skipping..."
     else
         echo "${bold}Setting up slate...${norm}"
         ln -s ~/dotfiles/.slate ~/.slate
@@ -57,9 +53,7 @@ if [ `uname` == "Darwin" ]; then
 
     # Setup vim stuff.
     if [ -d ~/.vim ] && [ -f ~/.vimrc ]; then
-        echo ""
-        echo "Vim already linked. Skipping..."
-        echo ""
+        echo -e "\nVim already linked. Skipping..."
     else
         echo "${bold}Linking vim...${norm}"
         cd ~
@@ -67,14 +61,12 @@ if [ `uname` == "Darwin" ]; then
         ln -s ~/dotfiles/.vim ~/.vim
     fi
     mkdir -p ~/.vim/backup/undo
-    vim +PluginInstall +qa
-    echo "${bold}Vim plugins installed!"
+    vim +PluginInstall! +qa
+    echo -e "\n${bold}Vim plugins installed!"
 
     # Zsh
     if [ -d ~/.zsh  ] && [ -f ~/.zshrc ]; then
-        echo ""
-        echo "Zsh already linked. Skipping..."
-        echo ""
+        echo -e "\nZsh already linked. Skipping..."
     else
         echo "Linking zsh"
         cd ~
@@ -88,9 +80,7 @@ if [ `uname` == "Darwin" ]; then
 
     # Tmux
     if [ -f ~/.tmux.conf ]; then
-        echo ""
-        echo "Tmux already linked. Skipping..."
-        echo ""
+        echo -e "\nTmux already linked. Skipping..."
     else
         echo "${bold}Setting up tmux...${norm}"
         cd ~
@@ -99,9 +89,7 @@ if [ `uname` == "Darwin" ]; then
 
     # Tig
     if [ -f ~/.tigrc ]; then
-        echo ""
-        echo "tigrc already linked. Skipping..."
-        echo ""
+        echo -e "\nTigrc is already linked. Skipping..."
     else
         echo "${bold}Setting up tig...${norm}"
         ln -s ~/dotfiles/.tigrc ~/.tigrc
@@ -109,9 +97,7 @@ if [ `uname` == "Darwin" ]; then
 
     # Weechat
     if [ -d ~/.weechat ]; then
-        echo ""
-        echo "weechat already linked. Skipping..."
-        echo ""
+        echo -e "\nWeechat is already linked. Skipping..."
     else
         echo "${bold}Setting up weechat...${norm}"
         cd ~
@@ -120,14 +106,11 @@ if [ `uname` == "Darwin" ]; then
 
     # User scripts
     if [ -d ~/.bin ]; then
-        echo ""
-        echo "User scripts folder already linked. Skipping..."
-        echo ""
+        echo -e "\nUser scripts folder already linked. Skipping..."
     else
         echo "${bold}Linking user scripts...${norm}"
         ln -s ~/dotfiles/bin ~/.bin
-
     fi
 
-    echo "${bold}Done!${norm}"
+    echo -e "\n${bold}Done!${norm}"
 fi
