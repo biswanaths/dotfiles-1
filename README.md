@@ -12,7 +12,7 @@ Various .rc files for my command line experience
 - IRC      : Weechat
 
 ### Screenshots:
-![Vim](http://cl.ly/V5dA/shell.png "Vim, tmux demo")
+![Vim](http://cl.ly/VDEF/vim.png "Vim, tmux demo")
 
 ## Branches
 Looking for Linux specific config? Check out (pun absolutely intended)
