@@ -12,6 +12,7 @@ alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias gist="gist -s -P"
 alias tat="tmux att"
 alias apt="sudo apt-get"
+alias xclip="xclip -sel clip"
 alias open="xdg-open"
 compdef apt="apt-get"
 
