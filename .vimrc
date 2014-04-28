@@ -8,7 +8,7 @@ Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
 Plugin 'dahu/vim-fanfingtastic'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/rope-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
@@ -42,6 +42,7 @@ set mouse=nv
 set number relativenumber
 set completeopt-=preview
 set showcmd
+set shell=/usr/bin/zsh
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
@@ -188,6 +189,9 @@ nnoremap <leader>gs :Gstatus<CR>
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
+
+" Rope-vim {{{2
+let [ropevim_vim_completion, ropevim_extended_complete] = [1, 1]
 
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
