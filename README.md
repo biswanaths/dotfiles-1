@@ -14,7 +14,7 @@ Various .rc files for my command line experience
 
 ### Screenshots:
 
-![Vim](http://cl.ly/V5dA/shell.png "Vim, tmux demo")
+![Vim](http://cl.ly/VDEF/vim.png "Vim, tmux demo")
 
 ## Branches
 
