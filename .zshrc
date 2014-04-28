@@ -9,6 +9,8 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/autojump/autojump.zsh
 
 # Variables {{{1
+export PATH="$HOME/.linuxbrew/bin:$HOME/.bin:$PATH"
+export LD_LIBRARY_PATH=/home/ajh/.linuxbrew/lib:
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 export EDITOR='vim'
