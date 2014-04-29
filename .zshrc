@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 # ajh17's ~/.zshrc
+
+# Autoload {{{1
+autoload -U edit-command-line
+zle -N edit-command-line
+
 # Source externals {{{1
 source ~/.zsh/styles.zsh
 source ~/.zsh/aliases
@@ -17,7 +22,7 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 NODE_PATH=/usr/local/lib/node_modules
-fpath=(~/.zsh/Completion /usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh/Completion $fpath)
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete
@@ -42,6 +47,7 @@ KEYTIMEOUT=1
 bindkey -v
 bindkey -M vicmd "?" history-incremental-pattern-search-backward
 bindkey -M vicmd "/" history-incremental-pattern-search-forward
+bindkey -M vicmd v edit-command-line
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
