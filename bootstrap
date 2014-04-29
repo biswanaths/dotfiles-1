@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
+bold=`tput bold`
+norm=`tput sgr0`
 
 # Ask for user permission first
-echo ""
-echo "This script will automatically install essential tools and"
+echo -e "\n${bold}This script will automatically install essential tools and"
 echo "link files from this folder to $HOME."
-echo ""
-echo "Do you wish to proceed?"
+echo "Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
-        No ) exit;;
-    esac
+        No ) echo "Fine. Exiting..." && exit;;
+esac
 done
 
 # Install linux tools.
@@ -18,79 +18,108 @@ done
 if [ `uname` == "Linux" ]; then
     if [ -f /etc/debian_version ]; then
         # Just so it doesn't try to run this on any other system.
-        echo "Detected Debian-based system. Installing essential tools using apt-get ..."
+        echo "${bold}Detected Debian-based system. Installing tools with apt-get...${norm}"
         sleep 2
+        echo -e "\nGo get some coffee, this might take a while..."
         cd ~/dotfiles
-        sudo apt-get install -y tmux zsh zsh-dev build-essential mercurial curl \
-            xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky dmenu \
+        sudo apt-get install -y zsh zsh-dev build-essential mercurial curl \
+            xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
             libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
             libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
             autojump
         cd ~/Downloads/
 
         # Compile vim from source because the latest vim is the greatest.
-        echo "Downloading vim from source..."
-        hg clone https://code.google.com/p/vim
-        cd vim
-        ./configure --with-features=huge \
-            --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7-config \
-            --enable-perlinterp \
-            --enable-gui=gtk2 --enable-cscope --prefix=/usr
-        make VIMRUNTIMEDIR=/usr/share/vim/vim74
-        sudo make install
-        retval=$?
-        if [ $retval != 0 ]; then
-            echo "Error: [$retval] Unable to install vim."
-            exit $retval
-        else
-            echo "Successfully installed vim!"
+        if [ -x /usr/bin/vim ]; then 
+            echo -e "${bold}\nVim not installed. Downloading vim from source...${norm}"
+            hg clone https://code.google.com/p/vim
+            cd vim
+            ./configure --with-features=huge \
+                --enable-rubyinterp \
+                --enable-pythoninterp \
+                --with-python-config-dir=/usr/lib/python2.7-config \
+                --enable-perlinterp \
+                --enable-gui=gtk2 --enable-cscope --prefix=/usr
+            make VIMRUNTIMEDIR=/usr/share/vim/vim74
+            sudo make install
+            retval=$?
+            if [ $retval != 0 ]; then
+                echo "${bold}Error: [$retval] Unable to install vim.${norm}"
+                exit $retval
+            else
+                echo "Successfully installed vim!"
+            fi
         fi
 
         # Set up tomorrow-night for gnome-terminal
-        echo "Installing tomorrow-night colorscheme for gnome-terminal..."
+        echo "${bold}Installing tomorrow-night colorscheme for gnome-terminal...${norm}"
         curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Gnome-Terminal/setup-theme.sh
         chmod +x setup-theme.sh
         ./setup-theme.sh
         cd ~
 
         # Symlink vim stuff
-        echo "Linking vim..."
-        ln -s ~/dotfiles/.vimrc ~/.vimrc
-        ln -s ~/dotfiles/.vim ~/.vim
-        echo "Cloning Vundle..."
-        rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-        mkdir -p ~/.vim/backup/undo
-        vim +PluginInstall +qa
-        echo "Vim plugins installed!"
+        if [ -d ~/.vim ] && [ -f ~/.vimrc ]; then
+            echo -e "\nVim already linked. Skipping..."
+        else
+            echo "${bold}Linking vim...${norm}"
+            cd ~
+            ln -s ~/dotfiles/.vimrc ~/.vimrc
+            ln -s ~/dotfiles/.vim ~/.vim
+        fi
+
+        if [ -d ~/.vim/bundle/Vundle.vim ]; then
+            echo -e "\nVundle is already installed. Skipping..."
+            echo -e "\n${bold}Updating Vim plugins instead...${norm}"
+            sleep 3
+            vim +PluginUpdate +qa
+            echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
+        else
+            echo "Cloning Vundle..."
+            rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+            mkdir -p ~/.vim/backup/undo
+            vim +PluginInstall +qa
+            echo "Vim plugins installed!"
+        fi
 
         # Zsh
-        echo "Linking zsh"
-        chsh -s /usr/bin/zsh
-        ln -s ~/dotfiles/.zshrc ~/.zshrc
-        ln -s ~/dotfiles/.zsh ~/.zsh
-        rm -rf ~/.zsh/zsh-*
-        echo "Cloning zsh plugins..."
-        cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+        if [ -d ~/.zsh ] && [ -f ~/.zshrc ]; then
+            echo -e "\nZsh already linked. Skipping..."
+        else
+            echo "${bold}Linking zsh...${norm}"
+            chsh -s /usr/bin/zsh
+            ln -s ~/dotfiles/.zshrc ~/.zshrc
+            ln -s ~/dotfiles/.zsh ~/.zsh
+            rm -rf ~/.zsh/zsh-*
+            echo "${bold}Cloning zsh plugins...${norm}"
+            cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+            git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+        fi
 
         # Tmux
-        echo "Setting up tmux..."
-        ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+        if [ -f ~/.tmux.conf ]; then
+            echo -e "\nTmux is already linked. Skipping..."
+        else
+            echo "${bold}Setting up tmux...${norm}"
+            ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+        fi
 
         # Tig
-        echo "Setting up tig..."
-        ln -s ~/dotfiles/.tigrc ~/.tigrc
-
-        # Weechat
-        echo "Setting up weechat..."
-        ln -s ~/dotfiles/weechat ~/.weechat
+        if [ -f ~/.tigrc ]; then 
+            echo -e "${bold}\nTig is already linked. Skipping...${norm}"
+        else
+            echo "${bold}Setting up tig...${norm}"
+            ln -s ~/dotfiles/.tigrc ~/.tigrc
+        fi
 
         # User scripts folder
-        echo "Linking user scripts folder..."
-        ln -s ~/dotfiles/bin/ ~/.bin
+        if [ -d ~/.bin ]; then
+            echo -e "\nUser scripts folder already linked. Skipping..."
+        else
+            echo "${bold}Linking user scripts folder...${norm}"
+            ln -s ~/dotfiles/bin/ ~/.bin
+        fi
 
-        echo "Done!"
+        echo -e "\n${bold}Done!${norm}"
     fi
 fi
