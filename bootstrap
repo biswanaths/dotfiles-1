@@ -30,7 +30,8 @@ if [ `uname` == "Darwin" ]; then
         weechat --with-aspell --with-lua --with-perl --with-python \
                 --with-ruby \
         reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
-        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
+        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump \
+        zsh-completions
     echo -e "\n${bold}Done installing homebrew apps!"
 
     echo -e "\n${bold}Setting up OS X defaults tricks...${norm}"
