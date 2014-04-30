@@ -25,13 +25,12 @@ if [ `uname` == "Darwin" ]; then
     fi
 
     # Install essential tools
-    echo -e" \n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
+    echo -e "\n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
         weechat --with-aspell --with-lua --with-perl --with-python \
                 --with-ruby \
         reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
-        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump \
-        zsh-completions
+        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
     echo -e "\n${bold}Done installing homebrew apps!"
 
     echo -e "\n${bold}Setting up OS X defaults tricks...${norm}"
@@ -58,8 +57,8 @@ if [ `uname` == "Darwin" ]; then
     else
         echo "${bold}Linking vim...${norm}"
         cd ~
-        ln -s ~/dotfiles/.vimrc ~/.vimrc
-        ln -s ~/dotfiles/.vim ~/.vim
+        ln -s ~/dotfiles/.vimrc
+        ln -s ~/dotfiles/.vim
     fi
     mkdir -p ~/.vim/backup/undo
     vim +PluginInstall! +qa
