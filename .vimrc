@@ -46,6 +46,7 @@ set shell=/usr/bin/zsh
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
+set virtualedit=block
 set wildmenu wildcharm=<C-z>
 
 " Colorscheme and Syntax {{{1
