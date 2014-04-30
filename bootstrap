@@ -26,8 +26,8 @@ if [ `uname` == "Linux" ]; then
             xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
             libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
             libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
-            autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4 \
-            openssl-dev libexpat-dev libncurses-dev zlib1g-dev
+            autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4-openssl-dev \
+            libexpat-dev libncurses-dev zlib1g-dev silversearcher-ag
         cd ~/Downloads/
 
         # Setup linux brew
@@ -76,7 +76,7 @@ if [ `uname` == "Linux" ]; then
 
         # Symlink vim stuff
         if [ -d ~/.vim ] && [ -f ~/.vimrc ]; then
-            echo -e "\nVim already linked. Skipping..."
+            echo -e "\n${bold}Vim already linked. Skipping...${norm}"
         else
             echo "${bold}Linking vim...${norm}"
             cd ~
@@ -85,7 +85,7 @@ if [ `uname` == "Linux" ]; then
         fi
 
         if [ -d ~/.vim/bundle/Vundle.vim ]; then
-            echo -e "\nVundle is already installed. Skipping..."
+            echo -e "\n${bold}Vundle is already installed. Skipping...${norm}"
             echo -e "\n${bold}Updating Vim plugins instead...${norm}"
             sleep 3
             vim +PluginUpdate +qa
@@ -95,12 +95,12 @@ if [ `uname` == "Linux" ]; then
             rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
             mkdir -p ~/.vim/backup/undo
             vim +PluginInstall +qa
-            echo "Vim plugins installed!"
+            echo "${bold}Vim plugins installed!${norm}"
         fi
 
         # Zsh
         if [ -d ~/.zsh ] && [ -f ~/.zshrc ]; then
-            echo -e "\nZsh already linked. Skipping..."
+            echo -e "\n${bold}Zsh already linked. Skipping...${norm}"
         else
             echo "${bold}Linking zsh...${norm}"
             chsh -s /usr/bin/zsh
@@ -114,7 +114,7 @@ if [ `uname` == "Linux" ]; then
 
         # Tmux
         if [ -f ~/.tmux.conf ]; then
-            echo -e "\nTmux is already linked. Skipping..."
+            echo -e "\n${bold}Tmux is already linked. Skipping...${norm}"
         else
             echo "${bold}Setting up tmux...${norm}"
             ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -130,7 +130,7 @@ if [ `uname` == "Linux" ]; then
 
         # User scripts folder
         if [ -d ~/.bin ]; then
-            echo -e "\nUser scripts folder already linked. Skipping..."
+            echo -e "\n${bold}User scripts folder already linked. Skipping...${norm}"
         else
             echo "${bold}Linking user scripts folder...${norm}"
             ln -s ~/dotfiles/bin/ ~/.bin
