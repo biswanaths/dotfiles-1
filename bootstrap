@@ -136,6 +136,10 @@ if [ `uname` == "Linux" ]; then
             ln -s ~/dotfiles/bin/ ~/.bin
         fi
 
+        # Remap caps lock to control
+        echo -e "\n${bold}Remapping caps lock to control${norm}"
+        setxkbmap -option ctrl:nocaps
+
         echo -e "\n${bold}Done!${norm}"
     fi
 fi
