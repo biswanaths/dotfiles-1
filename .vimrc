@@ -8,7 +8,7 @@ Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
 Plugin 'dahu/vim-fanfingtastic'
-Plugin 'klen/rope-vim'
+Plugin 'klen/python-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
@@ -191,8 +191,8 @@ let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
-" Rope-vim {{{2
-let [ropevim_vim_completion, ropevim_extended_complete] = [1, 1]
+" Python-mode {{{2
+let [pymode_breakpoint, pymode_lint] = [0, 0]
 
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
