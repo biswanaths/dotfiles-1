@@ -5,10 +5,10 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ajh17/snipmate.vim'
+Plugin 'ajh17/rope-vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
 Plugin 'dahu/vim-fanfingtastic'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
@@ -24,7 +24,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 
 " General Settings {{{1
