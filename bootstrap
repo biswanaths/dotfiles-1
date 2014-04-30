@@ -26,8 +26,22 @@ if [ `uname` == "Linux" ]; then
             xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
             libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
             libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
-            autojump
+            autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4 \
+            openssl-dev libexpat-dev libncurses-dev zlib1g-dev
         cd ~/Downloads/
+
+        # Setup linux brew
+        if [ -d ~/.linuxbrew ]; then
+            echo -e "\n${bold}It looks like linuxbrew already installed. Skipping...${norm}"
+        else
+            echo -e "\n${bold}Installing linuxbrew...${norm}"
+            git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
+        fi
+
+        # Install tmux from linuxbrew because apt-get sucks.
+        echo -e "\n${bold}Installing tmux with linuxbrew...${norm}"
+        brew install tmux
+        echo -e "\n${bold}Finished installing tmux.${norm}"
 
         # Compile vim from source because the latest vim is the greatest.
         if [ -x /usr/bin/vim ]; then 
