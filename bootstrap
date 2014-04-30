@@ -44,7 +44,9 @@ if [ `uname` == "Linux" ]; then
         echo -e "\n${bold}Finished installing tmux.${norm}"
 
         # Compile vim from source because the latest vim is the greatest.
-        if [ -x /usr/bin/vim ]; then 
+        if [ -x /usr/bin/vim ]; then
+            echo -e "\n${bold}Vim is already installed. Skipping...${norm}"
+        else
             echo -e "${bold}\nVim not installed. Downloading vim from source...${norm}"
             hg clone https://code.google.com/p/vim
             cd vim
