@@ -192,7 +192,7 @@ xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
 " Python-mode {{{2
-let [pymode_breakpoint, pymode_lint] = [0, 0]
+let [pymode_options, pymode_trim_whitespaces, pymode_breakpoint, pymode_lint] = [0, 0, 0, 0]
 
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
