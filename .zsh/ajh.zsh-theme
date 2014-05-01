@@ -20,7 +20,15 @@ zstyle ':vcs_info:*' enable git hg
 zstyle ':vcs_info:*' stagedstr '%F{28}●'
 zstyle ':vcs_info:*' unstagedstr '%F{11}●'
 zstyle ':vcs_info:*' check-for-changes true
+
+preexec () {
+   (( $#_elapsed > 1000 )) && set -A _elapsed $_elapsed[-1000,-1]
+   typeset -ig _start=SECONDS
+}
+
 precmd () {
+   (( _start >= 0 )) && set -A _elapsed $_elapsed $(( SECONDS-_start ))
+   _start=-1
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
         zstyle ':vcs_info:*' formats ' %F{blue}[%F{green}%b%c%u%F{blue}]'
     } else {
@@ -38,15 +46,6 @@ function zle-keymap-select {
   zle reset-prompt
 }
 zle -N zle-keymap-select
-
-preexec () {
-   (( $#_elapsed > 1000 )) && set -A _elapsed $_elapsed[-1000,-1]
-   typeset -ig _start=SECONDS
-}
-precmd() {
-   (( _start >= 0 )) && set -A _elapsed $_elapsed $(( SECONDS-_start ))
-   _start=-1
-}
 
 function zle-line-finish {
   vim_mode=$vim_insert_mode
