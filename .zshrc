@@ -15,10 +15,14 @@ source `brew --prefix`/etc/autojump.sh
 eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
+export EDITOR=vim
+export KEYTIMEOUT=1
+export CORRECT_IGNORE='_*'
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 NODE_PATH=/usr/local/lib/node_modules
@@ -35,7 +39,7 @@ setopt longlistjobs autoresume multios
 setopt autocd cdablevars multios rmstarwait
 setopt rcquotes autoparamslash markdirs
 setopt chaselinks combiningchars
-unsetopt flowcontrol caseglob clobber extendedhistory
+unsetopt flowcontrol caseglob clobber extendedhistory nomatch
 
 # History {{{1
 HISTFILE=$HOME/.cache/.zhistory
@@ -43,20 +47,24 @@ HISTSIZE=200000
 SAVEHIST=200000
 
 # Key Remappings (Vi-mode) {{{1
-KEYTIMEOUT=1
 bindkey -v
 bindkey -M vicmd "?" history-incremental-pattern-search-backward
 bindkey -M vicmd "/" history-incremental-pattern-search-forward
 bindkey -M vicmd v edit-command-line
+bindkey -M vicmd 'u' undo
+bindkey -M vicmd '^r' redo
+bindkey -M vicmd '~' vi-swap-case
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' reverse-menu-complete
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '^L' clear-screen
-bindkey '^R' history-incremental-search-backward
-bindkey '^P' history-search-backward
-bindkey '^N' insert-last-word
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^l' clear-screen
+bindkey '^k' kill-line
+bindkey '^u' backward-kill-line
+bindkey '^r' history-incremental-search-backward
+bindkey '^p' history-search-backward
+bindkey '^n' insert-last-word
 bindkey '^?' backward-delete-char
 
 # Functions {{{1
