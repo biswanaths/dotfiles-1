@@ -162,6 +162,12 @@ nnoremap <expr> <leader>B functions#bufNav("vertical")
 nnoremap <leader>l :b#<CR>
 nnoremap <leader>L :vertical sb#<CR>
 
+" Make arrow keys useful
+nnoremap <left> :vertical resize +2 <CR>
+nnoremap <right> :vertical resize -2 <CR>
+nnoremap <up> :resize +2 <CR>
+nnoremap <down> :resize -2 <CR>
+
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
