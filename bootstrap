@@ -9,8 +9,8 @@ echo "==> Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
-        No) echo "Okay stopping..." && exit;;
-    esac
+    No) echo "Okay stopping..." && exit;;
+esac
 done
 
 # OS X specific config
@@ -28,7 +28,7 @@ if [ `uname` == "Darwin" ]; then
     echo -e "\n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
         weechat --with-aspell --with-lua --with-perl --with-python \
-                --with-ruby \
+        --with-ruby \
         reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
         imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
     echo -e "\n${bold}Done installing homebrew apps!"
@@ -59,10 +59,23 @@ if [ `uname` == "Darwin" ]; then
         cd ~
         ln -s ~/dotfiles/.vimrc
         ln -s ~/dotfiles/.vim
+        mkdir -p ~/.vim/backup/undo
     fi
-    mkdir -p ~/.vim/backup/undo
-    vim +PluginInstall! +qa
-    echo -e "\n${bold}Vim plugins installed!"
+
+    # Install Vundle
+    if [ -d ~/.vim/bundle/Vundle.vim ]; then
+        echo -e "\n${bold}Vundle is already installed. Skipping...${norm}"
+        echo -e "\n${bold}Updating Vim plugins instead...${norm}"
+        sleep 3
+        vim +PluginUpdate +qa
+        echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
+    else
+        echo "Cloning Vundle..."
+        rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        mkdir -p ~/.vim/backup/undo
+        vim +PluginInstall +qa
+        echo "${bold}Vim plugins were installed!${norm}"
+    fi
 
     # Zsh
     if [ -d ~/.zsh  ] && [ -f ~/.zshrc ]; then
