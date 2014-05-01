@@ -7,8 +7,8 @@ echo -e "\n${bold}==> This script will automatically install essential tools and
 echo -e "link files from this folder to $HOME\n"
 echo "==> Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) break;;
+case $yn in
+    Yes ) break;;
     No) echo "Okay stopping..." && exit;;
 esac
 done
@@ -27,10 +27,10 @@ if [ `uname` == "Darwin" ]; then
     # Install essential tools
     echo -e "\n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
-        weechat --with-aspell --with-lua --with-perl --with-python \
-        --with-ruby \
-        reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
-        imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
+    weechat --with-aspell --with-lua --with-perl --with-python \
+    --with-ruby \
+    reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
+    imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
     echo -e "\n${bold}Done installing homebrew apps!"
 
     echo -e "\n${bold}Setting up OS X defaults tricks...${norm}"
