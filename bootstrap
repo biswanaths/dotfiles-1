@@ -27,8 +27,7 @@ if [ `uname` == "Darwin" ]; then
     # Install essential tools
     echo -e "\n${bold}Installing homebrew apps...(Go get a coffee)${norm}"
     brew install automake autoconf python python3 coreutils tmux aspell \
-    weechat --with-aspell --with-lua --with-perl --with-python \
-    --with-ruby \
+    weechat --with-aspell --with-lua --with-perl --with-python --with-ruby \
     reattach-to-user-namespace --wrap-pbcopy-and-pbpaste \
     imagemagick curl-ca-bundle curl ack ctags bash rbenv autojump
     echo -e "\n${bold}Done installing homebrew apps!"
@@ -81,7 +80,7 @@ if [ `uname` == "Darwin" ]; then
     if [ -d ~/.zsh  ] && [ -f ~/.zshrc ]; then
         echo -e "\nZsh already linked. Skipping..."
     else
-        echo "Linking zsh"
+        echo "${bold}Linking zsh...${norm}"
         cd ~
         ln -s ~/dotfiles/.zshrc ~/.zshrc
         ln -s ~/dotfiles/.zsh ~/.zsh
