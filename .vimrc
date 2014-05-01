@@ -8,9 +8,9 @@ Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
 Plugin 'dahu/vim-fanfingtastic'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'qstrahl/vim-dentures'
 Plugin 'Rip-Rip/clang_complete'
@@ -30,6 +30,7 @@ call vundle#end()
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
+set completeopt-=preview
 set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
@@ -38,11 +39,11 @@ set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
 set number relativenumber
-set completeopt-=preview
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
+set virtualedit=block
 set wildmenu wildcharm=<C-z>
 
 " Colorscheme and Syntax {{{1
@@ -195,8 +196,8 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
-" Jedi-vim {{{2
-let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
+" Python-mode {{{2
+let [pymode_options, pymode_breakpoint] = [0, 0]
 
 " Functions and Commands {{{1
 function! s:CursorShapeMode()
