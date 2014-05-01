@@ -1,14 +1,12 @@
 # Settings
-set horizontal-scroll = 33%
+set main-view = line-number:no,interval=4 \
+    id:yes \
+    date:short \
+    author:full \
+    commit-title:yes,graph,refs,overflow=72
+
 set line-graphics = utf-8
-set show-id = yes
-set show-notes = yes
-set show-filename = always
 set show-changes = yes
-set show-author = yes
-set show-date = relative
-set show-refs = yes
-set show-rev-graph = yes
 
 # Colors
 color cursor white black
@@ -21,5 +19,5 @@ color main-tag magenta default
 color stat-staged green default
 color stat-unstaged red bold
 color stat-untracked yellow default
-color tree-head white default
-color tree-dir cyan default
+color tree.header white default
+color tree.directory cyan default
