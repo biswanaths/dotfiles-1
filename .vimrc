@@ -21,7 +21,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-projectile'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
@@ -94,6 +93,7 @@ let g:html_indent_style1="inc"
 let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_rails] = [1, 1, 1]
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
+let [ruby_path] = [system('echo $HOME/.rbenv/shims')]
 
 " General Mappings {{{1
 let mapleader = ' '
