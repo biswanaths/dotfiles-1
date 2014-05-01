@@ -39,6 +39,15 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
+preexec () {
+   (( $#_elapsed > 1000 )) && set -A _elapsed $_elapsed[-1000,-1]
+   typeset -ig _start=SECONDS
+}
+precmd() {
+   (( _start >= 0 )) && set -A _elapsed $_elapsed $(( SECONDS-_start ))
+   _start=-1
+}
+
 function zle-line-finish {
   vim_mode=$vim_insert_mode
 }
@@ -46,5 +55,5 @@ zle -N zle-line-finish
 PROMPT=$'
 %{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}${vcs_info_msg_0_}%F{blue}
 %(?/%F{blue}/%F{red})${vim_mode} %{$reset_color%}'
-RPROMPT='%F{blue}⚙ %j %{$reset_color%}'
+RPROMPT='%F{blue}⚙ %j%{$reset_color%} :: %{$orange%}(${_elapsed[-1]}s) %{$reset_color%}'
 # vim: ft=zsh
