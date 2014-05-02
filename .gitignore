@@ -11,13 +11,3 @@ fish/generated_completions/
 .vim/session/*
 .vim/haskellmode.config
 .vim/.netrwhist
-**doc/tags
-weechat/logs/*
-weechat/*.conf
-!weechat/weechat.conf
-weechat/python/sysinfo.py
-weechat/python/autoload/sysinfo.py
-weechat/python/.ropeproject/**
-weechat/weechat.log
-weechat/urlserver_list.txt
-tags
