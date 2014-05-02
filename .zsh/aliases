@@ -9,30 +9,20 @@ alias irc="weechat-curses"
 alias tat="tmux att"
 alias atom="open -a atom"
 alias muxd="tmuxinator start default"
-
-# ls Aliases
-alias ls="gls --color -A"
-alias sl="ls"
-alias ll="ls -lh"
-alias lt="ls -lth"
+if [ -x /usr/local/bin/gls ]; then
+    alias ls="gls --color -A"
+else
+    alias ls="ls -AG"
+fi
 
 # Git aliases
 alias g="git"
 alias gst="git status -sb"
-alias gcl="git clone"
-alias gcm="git commit -m"
-alias gcam="git commit -am"
 
 # Edit stuff
-alias evi="vim ~/dotfiles/.vimrc"
-alias evb="vim ~/.vim/vimrc.bundles"
-alias evt="vim ~/.tmux.conf"
-alias evz="vim ~/.zshrc"
-
-# Use Python3 always
-alias python="python3"
-alias ipython="ipython3"
-alias pip="pip3"
+alias vconf="vim ~/dotfiles/.vimrc"
+alias tconf="vim ~/dotfiles/.tmux.conf"
+alias zconf="vim ~/dotfiles/.zshrc"
 
 # Useful aliases
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
@@ -40,7 +30,6 @@ alias ping="ping -c 5"
 alias pgrep="pgrep -l"
 alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
-alias mou="open -a Mou"
 alias upd="brew update; brew outdated; brew upgrade"
 alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
 # vim: ft=zsh
