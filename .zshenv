@@ -1,0 +1,3 @@
+fpath=(~/.zsh/Completion $fpath)
+path=(/usr/local/bin /usr/local/sbin $path)
+NODE_PATH=/usr/local/lib/node_modules

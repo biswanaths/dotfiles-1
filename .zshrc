@@ -31,9 +31,6 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
-NODE_PATH=/usr/local/lib/node_modules
-fpath=(~/.zsh/Completion $fpath)
-path=(/usr/local/bin /usr/local/sbin $path)
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete

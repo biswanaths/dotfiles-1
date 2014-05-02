@@ -62,8 +62,9 @@ if [ `uname` == "Darwin" ]; then
     # Zsh
     echo "${bold}Linking zsh...${norm}"
     cd $HOME
-    /bin/ln -sfv ~/dotfiles/.zshrc
     /bin/ln -sFv ~/dotfiles/.zsh
+    /bin/ln -sfv ~/dotfiles/.zshrc
+    /bin/ln -sfv ~/dotfiles/.zshenv
     rm -rf ~/.zsh/zsh-* && rm -rf ~/.zsh/opp.zsh
     echo "${bold}Cloning zsh plugins...${norm}"
     cd ~/.zsh
@@ -75,9 +76,11 @@ if [ `uname` == "Darwin" ]; then
     echo "${bold}Linking tmux...${norm}"
     /bin/ln -sfv ~/dotfiles/.tmux.conf $HOME
 
-    # Tig
+    # Git stuff
     echo "${bold}Linking tig...${norm}"
     /bin/ln -sfv ~/dotfiles/.tigrc $HOME
+    echo "${bold}Linking git templates...${norm}"
+    /bin/ln -sFv ~/dotfiles/.git_template/ $HOME
 
     # User scripts
     echo "${bold}Linking user scripts...${norm}"
