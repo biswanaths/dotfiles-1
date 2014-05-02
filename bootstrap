@@ -82,9 +82,11 @@ if [ `uname` == "Linux" ]; then
     echo "${bold}Linking tmux...${norm}"
     /bin/ln -sfv ~/dotfiles/.tmux.conf $HOME
 
-    # Tig
+    # Git stuff
     echo "${bold}Linking tig...${norm}"
     /bin/ln -sfv ~/dotfiles/.tigrc $HOME
+    echo "${bold}Linking git templates...${norm}"
+    /bin/ln -snfv ~/dotfiles/.git_template $HOME
 
     # User scripts folder
     echo "${bold}Linking user scripts folder...${norm}"
