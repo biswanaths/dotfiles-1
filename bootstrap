@@ -19,6 +19,8 @@ if [ `uname` == "Darwin" ]; then
     if [ ! -x /usr/local/bin/brew ]; then
         echo -e "${bold}\nHomebrew not installed. Installing it now...${norm}"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    else
+        echo -e "Homebrew is already installed."
     fi
 
     # Install homebrew apps
