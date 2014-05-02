@@ -8,7 +8,7 @@ install bash
 install coreutils
 install ctags
 install curl
-install git --with-brewed-curl --with-brewed-openssl --with-pcre --with-persistent-https
+install git --without-completions --with-brewed-curl --with-brewed-openssl --with-pcre --with-persistent-https
 install hub --without-completions
 install imagemagick
 install python
