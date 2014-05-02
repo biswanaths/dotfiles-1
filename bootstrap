@@ -21,12 +21,12 @@ if [ `uname` == "Linux" ]; then
         sleep 2
         echo -e "\nGo get some coffee, this might take a while..."
         cd ~/dotfiles
-        sudo apt-get install -y zsh zsh-dev build-essential mercurial curl \
+        sudo apt-get install -y build-essential mercurial curl \
         xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
-        autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4-openssl-dev \
-        libexpat-dev libncurses-dev zlib1g-dev silversearcher-ag
+        autojump git ruby texinfo libbz2-dev libcurl4-openssl-dev \
+        libexpat-dev libncurses-dev zlib1g-dev
         cd ~/Downloads/
 
         # Set up tomorrow-night for gnome-terminal
@@ -45,18 +45,13 @@ if [ `uname` == "Linux" ]; then
         git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
     fi
 
-    # Install tmux from linuxbrew.
-    echo -e "\n${bold}Installing tmux with linuxbrew...${norm}"
-    brew install tmux
-    echo -e "\n${bold}Finished installing tmux.${norm}"
+    # Install linuxbrew apps from Brewfile
+    echo -e "${bold}Installing linuxbrew apps...${norm}"
+    brew bundle $HOME/dotfiles/
+    echo -e "${bold}Installed linuxbrew apps!${norm}"
 
-    # Install vim from linuxbrew.
-    echo -e "\n${bold}Installing vim...${norm}"
-    brew install vim --HEAD --with-perl --disable-nls
-    echo -e "\n${bold}Vim is installed!${norm}"
-
-    # Symlink vim stuff
-    echo "${bold}Linking vim...${norm}"
+    # Setup vim
+    echo "${bold}\nLinking vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
     /bin/ln -snfv ~/dotfiles/.vim $HOME
 
