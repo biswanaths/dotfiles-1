@@ -8,7 +8,7 @@ echo "link files from this folder to $HOME."
 echo "Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
 case $yn in
-    Yes ) break;;
+    Yes ) echo "Proceeding with installation..." && break;;
     No ) echo "Fine. Exiting..." && exit;;
 esac
 done
@@ -57,9 +57,8 @@ if [ `uname` == "Linux" ]; then
 
     # Symlink vim stuff
     echo "${bold}Linking vim...${norm}"
-    cd $HOME
-    ln -sfv ~/dotfiles/.vimrc $HOME
-    ln -snfv ~/dotfiles/.vim $HOME
+    /bin/ln -sfv ~/dotfiles/.vimrc $HOME
+    /bin/ln -snfv ~/dotfiles/.vim $HOME
 
     if [ -d ~/.vim/bundle/Vundle.vim ]; then
         echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
@@ -76,8 +75,8 @@ if [ `uname` == "Linux" ]; then
 
     # Zsh
     echo "${bold}Linking zsh...${norm}"
-    ln -sfv ~/dotfiles/.zshrc $HOME
-    ln -snfv ~/dotfiles/.zsh $HOME
+    /bin/ln -sfv ~/dotfiles/.zshrc $HOME
+    /bin/ln -snfv ~/dotfiles/.zsh $HOME
     rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
     echo "${bold}Cloning zsh plugins...${norm}"
     cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
@@ -86,15 +85,15 @@ if [ `uname` == "Linux" ]; then
 
     # Tmux
     echo "${bold}Linking tmux...${norm}"
-    ln -sfv ~/dotfiles/.tmux.conf $HOME
+    /bin/ln -sfv ~/dotfiles/.tmux.conf $HOME
 
     # Tig
     echo "${bold}Linking tig...${norm}"
-    ln -sfv ~/dotfiles/.tigrc $HOME
+    /bin/ln -sfv ~/dotfiles/.tigrc $HOME
 
     # User scripts folder
     echo "${bold}Linking user scripts folder...${norm}"
-    ln -snfv ~/dotfiles/.bin $HOME
+    /bin/ln -snfv ~/dotfiles/.bin $HOME
 
     # Remap caps lock to control
     echo -e "\n${bold}Remapping caps lock to control${norm}"
