@@ -7,8 +7,8 @@ echo -e "\n${bold}This script will automatically install essential tools and"
 echo "link files from this folder to $HOME."
 echo "Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) break;;
+case $yn in
+    Yes ) break;;
     No ) echo "Fine. Exiting..." && exit;;
 esac
 done
@@ -23,11 +23,11 @@ if [ `uname` == "Linux" ]; then
         echo -e "\nGo get some coffee, this might take a while..."
         cd ~/dotfiles
         sudo apt-get install -y zsh zsh-dev build-essential mercurial curl \
-            xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
-            libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
-            libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
-            autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4-openssl-dev \
-            libexpat-dev libncurses-dev zlib1g-dev silversearcher-ag
+        xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
+        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
+        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
+        autojump exuberant-ctags git ruby texinfo libbz2-dev libcurl4-openssl-dev \
+        libexpat-dev libncurses-dev zlib1g-dev silversearcher-ag
         cd ~/Downloads/
 
         # Setup linux brew
@@ -44,35 +44,16 @@ if [ `uname` == "Linux" ]; then
         echo -e "\n${bold}Finished installing tmux.${norm}"
 
         # Compile vim from source because the latest vim is the greatest.
-        if [ -x /usr/bin/vim ]; then
-            echo -e "\n${bold}Vim is already installed. Skipping...${norm}"
-        else
-            echo -e "${bold}\nVim not installed. Downloading vim from source...${norm}"
-            hg clone https://code.google.com/p/vim
-            cd vim
-            ./configure --with-features=huge \
-                --enable-rubyinterp \
-                --enable-pythoninterp \
-                --with-python-config-dir=/usr/lib/python2.7-config \
-                --enable-perlinterp \
-                --enable-gui=gtk2 --enable-cscope --prefix=/usr
-            make VIMRUNTIMEDIR=/usr/share/vim/vim74
-            sudo make install
-            retval=$?
-            if [ $retval != 0 ]; then
-                echo "${bold}Error: [$retval] Unable to install vim.${norm}"
-                exit $retval
-            else
-                echo "Successfully installed vim!"
-            fi
-        fi
+        echo -e "\n${bold}Installing vim...${norm}"
+        brew install vim --HEAD --with-perl --disable-nls
+        echo -e "\n${bold}Vim is installed!${norm}"
 
         # Set up tomorrow-night for gnome-terminal
         echo "${bold}Installing tomorrow-night colorscheme for gnome-terminal...${norm}"
         curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Gnome-Terminal/setup-theme.sh
         chmod +x setup-theme.sh
         ./setup-theme.sh
-        cd ~
+        cd $HOME
 
         # Symlink vim stuff
         echo "${bold}Linking vim...${norm}"
@@ -104,11 +85,11 @@ if [ `uname` == "Linux" ]; then
         git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
 
         # Tmux
-        echo "${bold}Setting up tmux...${norm}"
+        echo "${bold}Linking tmux...${norm}"
         ln -sfv ~/dotfiles/.tmux.conf $HOME
 
         # Tig
-        echo "${bold}Setting up tig...${norm}"
+        echo "${bold}Linking tig...${norm}"
         ln -sfv ~/dotfiles/.tigrc $HOME
 
         # User scripts folder
