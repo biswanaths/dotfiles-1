@@ -25,7 +25,7 @@ if [ `uname` == "Linux" ]; then
         xclip libncurses5-dev libgnome2-dev libgnomeui-dev docky suckless-tools \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev tig gnome-terminal \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev \
-        autojump git ruby texinfo libbz2-dev libcurl4-openssl-dev \
+        autojump ruby texinfo libbz2-dev libcurl4-openssl-dev \
         libexpat-dev libncurses-dev zlib1g-dev
         cd ~/Downloads/
 
