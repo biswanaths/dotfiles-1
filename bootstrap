@@ -39,31 +39,30 @@ if [ `uname` == "Linux" ]; then
 
     # Setup linux brew
     if [ -d ~/.linuxbrew ]; then
-        echo -e "\n${bold}It looks like linuxbrew is already installed. Skipping...${norm}"
+        echo -e "\n${bold}Detected linuxbrew.${norm}"
     else
-        echo -e "\n${bold}Installing linuxbrew...${norm}"
+        echo -e "\n${bold}Linuxbrew not installed. Installing it now...${norm}"
         git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
     fi
 
     # Install linuxbrew apps from Brewfile
     echo -e "${bold}Installing linuxbrew apps...${norm}"
-    brew bundle $HOME/dotfiles/
-    echo -e "${bold}Installed linuxbrew apps!${norm}"
+    cd $HOME/dotfiles && brew bundle
+    echo -e "${bold}Installed linuxbrew apps!${norm}" && cd $HOME
 
     # Setup vim
-    echo "${bold}\nLinking vim...${norm}"
+    echo "${bold}\nSetting up vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
     /bin/ln -snfv ~/dotfiles/.vim $HOME
+    mkdir -p ~/.vim/backup/undo
 
     if [ -d ~/.vim/bundle/Vundle.vim ]; then
         echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
-        sleep 3
-        vim +PluginUpdate +qa
+        sleep 3 && vim +PluginUpdate +qa
         echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
     else
         echo "Cloning Vundle..."
         rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        mkdir -p ~/.vim/backup/undo
         vim +PluginInstall +qa
         echo "${bold}Vim plugins installed!${norm}"
     fi
