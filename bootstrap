@@ -9,7 +9,7 @@ echo "Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
-        No ) echo "Fine. Exiting..." && exit;;
+    No ) echo "Fine. Exiting..." && exit;;
 esac
 done
 
@@ -32,7 +32,7 @@ if [ `uname` == "Linux" ]; then
 
         # Setup linux brew
         if [ -d ~/.linuxbrew ]; then
-            echo -e "\n${bold}It looks like linuxbrew already installed. Skipping...${norm}"
+            echo -e "\n${bold}It looks like linuxbrew is already installed. Skipping...${norm}"
         else
             echo -e "\n${bold}Installing linuxbrew...${norm}"
             git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
@@ -75,18 +75,13 @@ if [ `uname` == "Linux" ]; then
         cd ~
 
         # Symlink vim stuff
-        if [ -d ~/.vim ] && [ -f ~/.vimrc ]; then
-            echo -e "\n${bold}Vim already linked. Skipping...${norm}"
-        else
-            echo "${bold}Linking vim...${norm}"
-            cd ~
-            ln -s ~/dotfiles/.vimrc ~/.vimrc
-            ln -s ~/dotfiles/.vim ~/.vim
-        fi
+        echo "${bold}Linking vim...${norm}"
+        cd $HOME
+        ln -sfv ~/dotfiles/.vimrc $HOME
+        ln -sFv ~/dotfiles/.vim $HOME
 
         if [ -d ~/.vim/bundle/Vundle.vim ]; then
-            echo -e "\n${bold}Vundle is already installed. Skipping...${norm}"
-            echo -e "\n${bold}Updating Vim plugins instead...${norm}"
+            echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
             sleep 3
             vim +PluginUpdate +qa
             echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
@@ -99,42 +94,26 @@ if [ `uname` == "Linux" ]; then
         fi
 
         # Zsh
-        if [ -d ~/.zsh ] && [ -f ~/.zshrc ]; then
-            echo -e "\n${bold}Zsh already linked. Skipping...${norm}"
-        else
-            echo "${bold}Linking zsh...${norm}"
-            chsh -s /usr/bin/zsh
-            ln -s ~/dotfiles/.zshrc ~/.zshrc
-            ln -s ~/dotfiles/.zsh ~/.zsh
-            rm -rf ~/.zsh/zsh-*
-            echo "${bold}Cloning zsh plugins...${norm}"
-            cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-            git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-        fi
+        echo "${bold}Linking zsh...${norm}"
+        ln -sfv ~/dotfiles/.zshrc $HOME
+        ln -sFv ~/dotfiles/.zsh $HOME
+        rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
+        echo "${bold}Cloning zsh plugins...${norm}"
+        cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+        git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
 
         # Tmux
-        if [ -f ~/.tmux.conf ]; then
-            echo -e "\n${bold}Tmux is already linked. Skipping...${norm}"
-        else
-            echo "${bold}Setting up tmux...${norm}"
-            ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-        fi
+        echo "${bold}Setting up tmux...${norm}"
+        ln -sfv ~/dotfiles/.tmux.conf $HOME
 
         # Tig
-        if [ -f ~/.tigrc ]; then 
-            echo -e "${bold}\nTig is already linked. Skipping...${norm}"
-        else
-            echo "${bold}Setting up tig...${norm}"
-            ln -s ~/dotfiles/.tigrc ~/.tigrc
-        fi
+        echo "${bold}Setting up tig...${norm}"
+        ln -sfv ~/dotfiles/.tigrc $HOME
 
         # User scripts folder
-        if [ -d ~/.bin ]; then
-            echo -e "\n${bold}User scripts folder already linked. Skipping...${norm}"
-        else
-            echo "${bold}Linking user scripts folder...${norm}"
-            ln -s ~/dotfiles/bin/ ~/.bin
-        fi
+        echo "${bold}Linking user scripts folder...${norm}"
+        ln -sFv ~/dotfiles/.bin $HOME
 
         # Remap caps lock to control
         echo -e "\n${bold}Remapping caps lock to control${norm}"
