@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 # ajh17's ~/.zshrc
+
+# Autoload {{{1
+autoload -U edit-command-line
+zle -N edit-command-line
+
 # Source externals {{{1
 source ~/.zsh/styles.zsh
 source ~/.zsh/aliases
@@ -16,7 +21,6 @@ export LD_LIBRARY_PATH=$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH
 export EDITOR=vim
 export KEYTIMEOUT=1
 export CORRECT_IGNORE='_*'
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 export EDITOR='vim'
@@ -25,7 +29,6 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
-fpath=(~/.zsh/Completion /usr/local/share/zsh-completions $fpath)
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete

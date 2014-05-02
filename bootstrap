@@ -70,6 +70,7 @@ if [ `uname` == "Linux" ]; then
     # Zsh
     echo "${bold}Linking zsh...${norm}"
     /bin/ln -sfv ~/dotfiles/.zshrc $HOME
+    /bin/ln -sfv ~/dotfiles/.zshenv $HOME
     /bin/ln -snfv ~/dotfiles/.zsh $HOME
     rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
     echo "${bold}Cloning zsh plugins...${norm}"
