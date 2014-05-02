@@ -6,6 +6,8 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/opp.zsh/opp.zsh
+source ~/.zsh/opp.zsh/opp/surround.zsh
 source /usr/share/autojump/autojump.zsh
 
 # Variables {{{1
