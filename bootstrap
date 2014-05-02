@@ -14,7 +14,6 @@ esac
 done
 
 # Install linux tools.
-# TODO: Make this work with other linux distros...(probably won't do this unless I have to)
 if [ `uname` == "Linux" ]; then
     if [ -f /etc/debian_version ]; then
         # Just so it doesn't try to run this on any other system.
@@ -30,76 +29,76 @@ if [ `uname` == "Linux" ]; then
         libexpat-dev libncurses-dev zlib1g-dev silversearcher-ag
         cd ~/Downloads/
 
-        # Setup linux brew
-        if [ -d ~/.linuxbrew ]; then
-            echo -e "\n${bold}It looks like linuxbrew is already installed. Skipping...${norm}"
-        else
-            echo -e "\n${bold}Installing linuxbrew...${norm}"
-            git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
-        fi
-
-        # Install tmux from linuxbrew because apt-get sucks.
-        echo -e "\n${bold}Installing tmux with linuxbrew...${norm}"
-        brew install tmux
-        echo -e "\n${bold}Finished installing tmux.${norm}"
-
-        # Compile vim from source because the latest vim is the greatest.
-        echo -e "\n${bold}Installing vim...${norm}"
-        brew install vim --HEAD --with-perl --disable-nls
-        echo -e "\n${bold}Vim is installed!${norm}"
-
         # Set up tomorrow-night for gnome-terminal
         echo "${bold}Installing tomorrow-night colorscheme for gnome-terminal...${norm}"
         curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Gnome-Terminal/setup-theme.sh
         chmod +x setup-theme.sh
         ./setup-theme.sh
         cd $HOME
-
-        # Symlink vim stuff
-        echo "${bold}Linking vim...${norm}"
-        cd $HOME
-        ln -sfv ~/dotfiles/.vimrc $HOME
-        ln -sFv ~/dotfiles/.vim $HOME
-
-        if [ -d ~/.vim/bundle/Vundle.vim ]; then
-            echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
-            sleep 3
-            vim +PluginUpdate +qa
-            echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
-        else
-            echo "Cloning Vundle..."
-            rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-            mkdir -p ~/.vim/backup/undo
-            vim +PluginInstall +qa
-            echo "${bold}Vim plugins installed!${norm}"
-        fi
-
-        # Zsh
-        echo "${bold}Linking zsh...${norm}"
-        ln -sfv ~/dotfiles/.zshrc $HOME
-        ln -sFv ~/dotfiles/.zsh $HOME
-        rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
-        echo "${bold}Cloning zsh plugins...${norm}"
-        cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-        git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
-
-        # Tmux
-        echo "${bold}Linking tmux...${norm}"
-        ln -sfv ~/dotfiles/.tmux.conf $HOME
-
-        # Tig
-        echo "${bold}Linking tig...${norm}"
-        ln -sfv ~/dotfiles/.tigrc $HOME
-
-        # User scripts folder
-        echo "${bold}Linking user scripts folder...${norm}"
-        ln -sFv ~/dotfiles/.bin $HOME
-
-        # Remap caps lock to control
-        echo -e "\n${bold}Remapping caps lock to control${norm}"
-        setxkbmap -option ctrl:nocaps
-
-        echo -e "\n${bold}Done!${norm}"
     fi
+
+    # Setup linux brew
+    if [ -d ~/.linuxbrew ]; then
+        echo -e "\n${bold}It looks like linuxbrew is already installed. Skipping...${norm}"
+    else
+        echo -e "\n${bold}Installing linuxbrew...${norm}"
+        git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
+    fi
+
+    # Install tmux from linuxbrew.
+    echo -e "\n${bold}Installing tmux with linuxbrew...${norm}"
+    brew install tmux
+    echo -e "\n${bold}Finished installing tmux.${norm}"
+
+    # Install vim from linuxbrew.
+    echo -e "\n${bold}Installing vim...${norm}"
+    brew install vim --HEAD --with-perl --disable-nls
+    echo -e "\n${bold}Vim is installed!${norm}"
+
+    # Symlink vim stuff
+    echo "${bold}Linking vim...${norm}"
+    cd $HOME
+    ln -sfv ~/dotfiles/.vimrc $HOME
+    ln -snfv ~/dotfiles/.vim $HOME
+
+    if [ -d ~/.vim/bundle/Vundle.vim ]; then
+        echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
+        sleep 3
+        vim +PluginUpdate +qa
+        echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
+    else
+        echo "Cloning Vundle..."
+        rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        mkdir -p ~/.vim/backup/undo
+        vim +PluginInstall +qa
+        echo "${bold}Vim plugins installed!${norm}"
+    fi
+
+    # Zsh
+    echo "${bold}Linking zsh...${norm}"
+    ln -sfv ~/dotfiles/.zshrc $HOME
+    ln -snfv ~/dotfiles/.zsh $HOME
+    rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
+    echo "${bold}Cloning zsh plugins...${norm}"
+    cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+    git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
+
+    # Tmux
+    echo "${bold}Linking tmux...${norm}"
+    ln -sfv ~/dotfiles/.tmux.conf $HOME
+
+    # Tig
+    echo "${bold}Linking tig...${norm}"
+    ln -sfv ~/dotfiles/.tigrc $HOME
+
+    # User scripts folder
+    echo "${bold}Linking user scripts folder...${norm}"
+    ln -snfv ~/dotfiles/.bin $HOME
+
+    # Remap caps lock to control
+    echo -e "\n${bold}Remapping caps lock to control${norm}"
+    setxkbmap -option ctrl:nocaps
+
+    echo -e "\n${bold}Done!${norm}"
 fi
