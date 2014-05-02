@@ -6,35 +6,25 @@ alias cp="cp -vi"
 alias rm="rm -v"
 alias mv="mv -vi"
 alias tmux="tmux -u2"
-alias weechat="weechat-curses"
-alias chpwn="chown"
-alias stubs="bundle install --binstubs .bundle/bin && rbenv rehash"
-alias gist="gist -s -P"
+alias irc="weechat"
 alias tat="tmux att"
 alias apt="sudo apt-get"
 alias xclip="xclip -sel clip"
 alias open="xdg-open"
-compdef apt="apt-get"
-
-# ls Aliases
 alias ls="ls --color -A"
-alias sl="ls"
-alias ll="ls -lh"
-alias lt="ls -lth"
+
+# Use apt-get completions
+compdef apt="apt-get"
 
 # Git aliases
 alias g="git"
 alias gst="git status -sb"
-alias gcl="git clone"
-alias gcm="git commit -m"
-alias gcam="git commit -am"
 
 # Edit stuff
 alias vi="vim"
-alias evi="vim ~/dotfiles/.vimrc"
-alias evb="vim ~/.vim/vimrc.bundles"
-alias evt="vim ~/.tmux.conf"
-alias evz="vim ~/.zshrc"
+alias vconf="vim ~/dotfiles/.vimrc"
+alias tconf="vim ~/dotfiles/.tmux.conf"
+alias zconf="vim ~/dotfiles/.zshrc"
 
 # Useful aliases
 alias clang="clang -std=c99 -Wall -Wextra"
@@ -42,8 +32,6 @@ alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r 
 alias ping="ping -c 5"
 alias pgrep="pgrep -l"
 alias unzip="unzip -d ~/Downloads"
-
-# geez fingers
-alias heroky="heroku"
-alias cim="vim"
+alias upd="brew update; brew outdated; brew upgrade"
+alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
 # vim: ft=zsh
