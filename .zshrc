@@ -11,6 +11,8 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/opp.zsh/opp.zsh
+source ~/.zsh/opp.zsh/opp/surround.zsh
 source `brew --prefix`/etc/autojump.sh
 eval "$(rbenv init - --no-rehash zsh)"
 
@@ -21,12 +23,17 @@ export CORRECT_IGNORE='_*'
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
+export BROWSER='open'
+export PAGER='less'
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+export LANG='en_US.UTF-8'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
 NODE_PATH=/usr/local/lib/node_modules
 fpath=(~/.zsh/Completion $fpath)
+path=(/usr/local/bin /usr/local/sbin $path)
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete
