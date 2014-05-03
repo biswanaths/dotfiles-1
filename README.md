@@ -5,13 +5,13 @@ Various .rc files for my command line experience
     git clone https://github.com/ajh17/dotfiles.git
     chmod +x ~/dotfiles/bootstrap && ~/dotfiles/bootstrap
 
-### My Environment:
+## My Environment:
 - OS       : OS X
 - Terminal : zsh + tmux
 - Editor   : Vim
 - IRC      : Weechat
 
-### Screenshots:
+## Screenshots:
 ![Vim](http://cl.ly/VDEF/vim.png "Vim, tmux demo")
 
 ## Branches
