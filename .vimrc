@@ -38,7 +38,9 @@ set laststatus=2
 set lazyredraw
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set mouse=nv
+set nostartofline
 set number relativenumber
+set path=.,**
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
