@@ -31,6 +31,7 @@ call vundle#end()
 set autoread
 set backspace=indent,eol,start
 set clipboard^=unnamedplus
+set completeopt-=preview
 set dictionary+=/usr/share/dict/words
 set formatoptions+=1j
 set hidden
@@ -40,9 +41,9 @@ set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
 set modeline
 set mouse=nv
 set number relativenumber
-set completeopt-=preview
-set showcmd
+set path=.,**
 set shell=/usr/bin/zsh
+set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
