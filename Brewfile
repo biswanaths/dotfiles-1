@@ -1,6 +1,7 @@
 install ack
 install ag
 install aspell
+install astyle
 install autoconf
 install autojump
 install automake
