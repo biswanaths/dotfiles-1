@@ -37,9 +37,10 @@ set formatoptions+=1j
 set hidden
 set laststatus=2
 set lazyredraw
-set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:·,trail:·
+set list listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·,trail:·
 set modeline
 set mouse=nv
+set nostartofline
 set number relativenumber
 set path=.,**
 set shell=/usr/bin/zsh
