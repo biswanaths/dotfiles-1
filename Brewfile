@@ -1,4 +1,6 @@
 install ack
+install ag
+install astyle
 install ctags
 install git --without-completions --with-pcre
 install the_silver_searcher
