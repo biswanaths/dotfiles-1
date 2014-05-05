@@ -180,8 +180,8 @@ nmap <leader>x <Plug>SearchPartyHighlightClear
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
 " Dispatch {{{2
-nnoremap <leader>d :Dispatch<space>
-nnoremap <leader>D :Dispatch<CR>
+nnoremap d<space> :Dispatch<space>
+nnoremap d<CR> :Dispatch<CR>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
