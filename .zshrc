@@ -17,20 +17,21 @@ source `brew --prefix`/etc/autojump.sh
 eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
-export EDITOR=vim
-export KEYTIMEOUT=1
-export CORRECT_IGNORE='_*'
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;33'
+export ARCHFLAGS="-arch x86_64"
 export BROWSER='open'
-export PAGER='less'
-export LESS='-F -g -i -M -R -S -w -X -z-4'
+export CORRECT_IGNORE='_*'
+export EDITOR=vim
+export GREP_COLOR='1;33'
+export GREP_OPTIONS='--color=auto'
+export KEYTIMEOUT=1
 export LANG='en_US.UTF-8'
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+export PAGER='less'
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=yellow,bold'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete
