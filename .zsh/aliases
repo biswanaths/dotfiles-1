@@ -32,4 +32,5 @@ alias flush="dscacheutil -flushcache"
 alias unzip="unzip -d ~/Downloads"
 alias upd="brew update; brew outdated; brew upgrade"
 alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
+alias betty="~/Documents/Repositories/betty/main.rb"
 # vim: ft=zsh
