@@ -1,10 +1,13 @@
 # Styles for completions
 
+# Cache completions
 ZCACHEDIR=~/.cache/
+zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion' cache-path $ZCACHEDIR
 autoload -Uz compinit && compinit -i -C -d $ZCACHEDIR/zcompdump
 
+# Completion options.
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:matches' group 'yes'
