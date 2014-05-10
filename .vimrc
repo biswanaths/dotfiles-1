@@ -156,7 +156,7 @@ nnoremap <leader>q :cclose<CR>
 nnoremap <leader>ev :e ~/dotfiles/.vimrc<CR>
 
 " Reindent entire file and return cursor to the same line
-nnoremap <leader>ef m`gg=G``
+nnoremap <leader>ef gg=G``
 
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
