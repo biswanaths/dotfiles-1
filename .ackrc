@@ -15,7 +15,7 @@
 --smart-case
 --color-filename=bold red
 --color-match=bold yellow
---color 
+--color
 --flush
 --follow
 --group
