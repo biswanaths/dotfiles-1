@@ -65,12 +65,6 @@ if [ `uname` == "Darwin" ]; then
     /bin/ln -sFv ~/dotfiles/.zsh
     /bin/ln -sfv ~/dotfiles/.zshrc
     /bin/ln -sfv ~/dotfiles/.zshenv
-    rm -rf ~/.zsh/zsh-* && rm -rf ~/.zsh/opp.zsh
-    echo "${bold}Cloning zsh plugins...${norm}"
-    cd ~/.zsh
-    git clone https://github.com/zsh-users/zsh-history-substring-search.git
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-    git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
 
     # Tmux
     echo "${bold}Linking tmux...${norm}"
