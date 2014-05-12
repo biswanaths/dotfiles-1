@@ -19,7 +19,7 @@ compdef apt="apt-get"
 # Git aliases
 alias g="git"
 alias gst="git status -sb"
-alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | pbcopy && echo 'Copied `pbpaste`'"
+alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | xclip -sel clip && echo 'Copied `xclip -out`'"
 
 # Edit stuff
 alias vi="vim"
