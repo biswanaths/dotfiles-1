@@ -72,11 +72,6 @@ if [ `uname` == "Linux" ]; then
     /bin/ln -sfv ~/dotfiles/.zshrc $HOME
     /bin/ln -sfv ~/dotfiles/.zshenv $HOME
     /bin/ln -snfv ~/dotfiles/.zsh $HOME
-    rm -rf ~/.zsh/zsh-* ~/.zsh/opp.zsh
-    echo "${bold}Cloning zsh plugins...${norm}"
-    cd ~/.zsh && git clone https://github.com/zsh-users/zsh-history-substring-search.git
-    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-    git clone https://github.com/hchbaw/opp.zsh.git && cd $HOME
 
     # Tmux
     echo "${bold}Linking tmux...${norm}"
