@@ -2,7 +2,7 @@
 Various .rc files for my command line experience
 
 ## Installation
-    git clone https://github.com/ajh17/dotfiles.git
+    git clone --recursive https://github.com/ajh17/dotfiles.git
     chmod +x ~/dotfiles/bootstrap && ~/dotfiles/bootstrap
 
 ## My Environment:
