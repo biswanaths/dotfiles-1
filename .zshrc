@@ -9,10 +9,10 @@ zle -N edit-command-line
 source ~/.zsh/styles.zsh
 source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/opp.zsh/opp.zsh
-source ~/.zsh/opp.zsh/opp/surround.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/plugins/opp/opp.zsh
+source ~/.zsh/plugins/opp/opp/surround.zsh
 source `brew --prefix`/etc/autojump.sh
 eval "$(rbenv init - --no-rehash zsh)"
 
