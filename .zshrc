@@ -73,10 +73,22 @@ bindkey '^n' insert-last-word
 bindkey '^?' backward-delete-char
 
 # Functions {{{1
+# Create a directory and automatically cd into it.
 function mkcd {
     [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
+# cd into a directory and list contents
 function cdls {
     builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
+}
+
+# cd to the directory opened in the Finder.
+function cdf {
+    target=`osascript -e 'tell application "Finder" to get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'There are no Finder windows!' >$2
+    fi
 }
