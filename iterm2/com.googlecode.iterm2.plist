@@ -1233,9 +1233,9 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 795 400 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
-	<string>1171 720 578 392 0 0 1920 1178 </string>
+	<string>963 756 578 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 155 1466 729 0 0 1920 1178 </string>
+	<string>4 449 1466 729 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>449 311 978 867 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2836,7 +2836,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-12T03:37:25Z</date>
+	<date>2014-05-14T02:14:26Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
@@ -2892,6 +2892,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140508-nightly</string>
+	<string>1.0.0.20140513-nightly</string>
 </dict>
 </plist>
