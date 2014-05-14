@@ -55,17 +55,10 @@ if [ `uname` == "Linux" ]; then
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
     /bin/ln -snfv ~/dotfiles/.vim $HOME
     mkdir -p ~/.vim/backup/undo
-
-    if [ -d ~/.vim/bundle/Vundle.vim ]; then
-        echo -e "\n${bold}Vundle is already installed. Updating Vim plugins instead...${norm}"
-        sleep 3 && vim +PluginUpdate +qa
-        echo -e "\n${bold}Vim plugins have been brought up to date.${norm}"
-    else
-        echo "Cloning Vundle..."
-        rm -rf ~/.vim/bundle/ ; git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        vim +PluginInstall +qa
-        echo "${bold}Vim plugins installed!${norm}"
+    if [ -d ~/.vim/bundle/ ]; then
+        mkdir ~/.vim/bundle
     fi
+    scripts/install_bundles
 
     # Zsh
     echo "${bold}Linking zsh...${norm}"

@@ -1,31 +1,12 @@
 " ------------ ajh's .vimrc ------------
 " Load Plugins {{{1
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ajh17/snipmate.vim'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'dahu/SearchParty'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'PeterRincker/vim-argumentative'
-Plugin 'qstrahl/vim-dentures'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-call vundle#end()
+execute pathogen#infect()
+runtime! macros/matchit.vim
+
+" Colorscheme and Syntax {{{1
+syntax on
+filetype plugin indent on
+colorscheme hybrid_mod
 
 " General Settings {{{1
 set autoread
@@ -50,11 +31,6 @@ set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
 set virtualedit=block
 set wildmenu wildcharm=<C-z>
-
-" Colorscheme and Syntax {{{1
-syntax on
-filetype plugin indent on
-colorscheme hybrid_mod
 
 " Search Settings {{{1
 set incsearch hlsearch
