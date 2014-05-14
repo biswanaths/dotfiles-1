@@ -182,9 +182,6 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
-" Python-mode {{{2
-let [pymode_options, pymode_breakpoint] = [0, 0]
-
 " Functions and Commands {{{1
 function! s:CursorShapeMode()
     if exists('$TMUX')
@@ -196,6 +193,7 @@ function! s:CursorShapeMode()
     endif
 endfunction
 
+" Auto commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call <SID>CursorShapeMode()
