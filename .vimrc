@@ -149,12 +149,13 @@ nnoremap <right> :vertical resize -2<cr>
 nnoremap <up> :resize +2<cr>
 nnoremap <down> :resize -2<cr>
 
+" Visual star search
+xnoremap * :<C-u>call functions#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
+
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
-
-" SearchParty {{{2
-nmap <leader>x <Plug>SearchPartyHighlightClear
 
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
