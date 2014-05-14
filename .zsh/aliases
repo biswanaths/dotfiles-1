@@ -9,11 +9,7 @@ alias irc="weechat-curses"
 alias tat="tmux att"
 alias atom="open -a atom"
 alias muxd="tmuxinator start default"
-if [ -x /usr/local/bin/gls ]; then
-    alias ls="gls --color -A"
-else
-    alias ls="ls -AG"
-fi
+alias ls="ls --color -A"
 
 # Git aliases
 alias g="git"
