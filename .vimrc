@@ -183,13 +183,14 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
 
-" Functions and Commands {{{1
+" Functions {{{1
 function! s:CursorShapeMode()
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape ibeam"
     au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
     au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
 endfunction
 
+" Auto commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call <SID>CursorShapeMode()
