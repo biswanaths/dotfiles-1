@@ -7,11 +7,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'ajh17/snipmate.vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'dahu/SearchParty'
-Plugin 'dahu/vim-fanfingtastic'
-Plugin 'dahu/vimple'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'PeterRincker/vim-argumentative'
 Plugin 'qstrahl/vim-dentures'
@@ -201,9 +198,6 @@ nnoremap <leader>gs :Gstatus<CR>
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
-
-" Python-mode {{{2
-let [pymode_options, pymode_trim_whitespaces, pymode_breakpoint, pymode_lint] = [0, 0, 0, 0]
 
 " CtrlP {{{2
 nnoremap <leader>f :CtrlP<CR>
