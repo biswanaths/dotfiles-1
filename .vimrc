@@ -154,7 +154,7 @@ xnoremap * :<C-u>call functions#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 
 " Literal word search
-nnoremap g/ /\<\><left><left>
+nnoremap g/ /\<C-f>i<\><c-o>F\
 
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
