@@ -55,7 +55,7 @@ if [ `uname` == "Linux" ]; then
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
     /bin/ln -snfv ~/dotfiles/.vim $HOME
     mkdir -p ~/.vim/backup/undo
-    if [ -d ~/.vim/bundle/ ]; then
+    if [ ! -d ~/.vim/bundle/ ]; then
         mkdir ~/.vim/bundle
     fi
     ~/dotfiles/.vimutil/install_bundles
