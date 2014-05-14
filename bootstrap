@@ -58,7 +58,7 @@ if [ `uname` == "Linux" ]; then
     if [ -d ~/.vim/bundle/ ]; then
         mkdir ~/.vim/bundle
     fi
-    scripts/install_bundles
+    ~/dotfiles/.vimutil/install_bundles
 
     # Zsh
     echo "${bold}Linking zsh...${norm}"
