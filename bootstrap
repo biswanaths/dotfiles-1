@@ -51,7 +51,7 @@ if [ `uname` == "Linux" ]; then
     echo -e "${bold}Installed linuxbrew apps!${norm}" && cd $HOME
 
     # Setup vim
-    echo "${bold}\nSetting up vim...${norm}"
+    echo "${bold}Setting up vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
     /bin/ln -snfv ~/dotfiles/.vim $HOME
     mkdir -p ~/.vim/backup/undo
