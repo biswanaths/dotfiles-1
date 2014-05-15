@@ -78,6 +78,6 @@ function cdf {
     if [[ "$target" != "" ]]; then
         cd "$target"; echo "Going to $target"
     else
-        echo 'There are no Finder windows!' >$2
+        echo -e 'There are no Finder windows!' >$2
     fi
 }
