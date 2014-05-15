@@ -8,8 +8,8 @@ echo -e "link files from this folder to $HOME\n"
 echo "==> Do you wish to proceed?${norm}"
 select yn in "Yes" "No"; do
 case $yn in
-    Yes ) break;;
-    No) echo "Okay stopping..." && exit;;
+    Yes ) echo "Okay, proceeding..." && break;;
+    No) echo "Okay, stopping..." && exit;;
 esac
 done
 
