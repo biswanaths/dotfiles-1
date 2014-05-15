@@ -18,7 +18,7 @@ fi
 # Git aliases
 alias g="git"
 alias gst="git status -sb"
-alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | pbcopy && echo 'Copied `pbpaste`'"
+alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | pbcopy && echo 'Copied \c' && pbpaste && echo ''"
 
 # Edit stuff
 alias vconf="vim ~/dotfiles/.vimrc"
