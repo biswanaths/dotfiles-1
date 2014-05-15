@@ -149,7 +149,7 @@ nnoremap <up> :resize +2 <CR>
 nnoremap <down> :resize -2 <CR>
 
 " Literal word search
-nnoremap g/ /\<\><left><left>
+nnoremap g/ /\<
 
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
