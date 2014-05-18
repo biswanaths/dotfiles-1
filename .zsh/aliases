@@ -25,6 +25,11 @@ alias vconf="vim ~/dotfiles/.vimrc"
 alias tconf="vim ~/dotfiles/.tmux.conf"
 alias zconf="vim ~/dotfiles/.zshrc"
 
+# Vim util
+alias vupd=". ~/dotfiles/.vimutil/upgrade_vim"
+alias vbund=". ~/dotfiles/.vimutil/upgrade_bundles"
+alias vins=". ~/dotfiles/.vimutil/install_bundles"
+
 # Useful aliases
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias ping="ping -c 5"
