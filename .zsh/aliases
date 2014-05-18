@@ -6,9 +6,6 @@ alias cp="cp -vi"
 alias mv="mv -vi"
 alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
 alias irc="weechat-curses"
-alias tat="tmux att"
-alias atom="open -a atom"
-alias muxd="tmuxinator start default"
 if [ -x /usr/local/bin/gls ]; then
     alias ls="gls --color -A"
 else
@@ -17,26 +14,29 @@ fi
 
 # Git aliases
 alias g="git"
-alias gst="git status -sb"
 alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | pbcopy && echo 'Copied \c' && pbpaste && echo ''"
+alias gst="git status -sb"
 
 # Edit stuff
-alias vconf="vim ~/dotfiles/.vimrc"
 alias tconf="vim ~/dotfiles/.tmux.conf"
+alias vconf="vim ~/dotfiles/.vimrc"
 alias zconf="vim ~/dotfiles/.zshrc"
 
 # Vim util
-alias vupd=". ~/dotfiles/.vimutil/upgrade_vim"
 alias vbund=". ~/dotfiles/.vimutil/upgrade_bundles"
 alias vins=". ~/dotfiles/.vimutil/install_bundles"
+alias vupd=". ~/dotfiles/.vimutil/upgrade_vim"
 
 # Useful aliases
-alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
-alias ping="ping -c 5"
-alias pgrep="pgrep -l"
+alias atom="open -a atom"
+alias betty="~/Documents/Repositories/betty/main.rb"
+alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
 alias flush="dscacheutil -flushcache"
+alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
+alias muxd="tmuxinator start default"
+alias pgrep="pgrep -l"
+alias ping="ping -c 5"
+alias tat="tmux att"
 alias unzip="unzip -d ~/Downloads"
 alias upd="brew update; brew outdated; brew upgrade"
-alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
-alias betty="~/Documents/Repositories/betty/main.rb"
 # vim: ft=zsh
