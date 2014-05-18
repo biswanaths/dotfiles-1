@@ -1,2 +1,2 @@
 #!/bin/sh
-brew rm vim; brew install vim --HEAD --with-perl --with-lua --with-luajit --with-python3 --override-system-vi
+brew rm vim; brew install vim --with-perl --with-lua --with-luajit --with-python3 --override-system-vi
