@@ -22,10 +22,13 @@ alias tconf="vim ~/dotfiles/.tmux.conf"
 alias vconf="vim ~/dotfiles/.vimrc"
 alias zconf="vim ~/dotfiles/.zshrc"
 
-# Vim util
+# Vimutil aliases
 alias vbund=". ~/dotfiles/.vimutil/upgrade_bundles"
 alias vins=". ~/dotfiles/.vimutil/install_bundles"
 alias vupd=". ~/dotfiles/.vimutil/upgrade_vim"
+alias ebund="vim ~/dotfiles/.vimutil/upgrade_bundles"
+alias eins="vim ~/dotfiles/.vimutil/install_bundles"
+alias eupd="vim ~/dotfiles/.vimutil/upgrade_vim"
 
 # Useful aliases
 alias atom="open -a atom"
