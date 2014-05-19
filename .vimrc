@@ -80,7 +80,7 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ' '
 
-" Use backspace key for matchit.vim
+" Use backspace key for matchit.vim (allow recursive mapping on % for matchit)
 nmap <BS> %
 xmap <BS> %
 
