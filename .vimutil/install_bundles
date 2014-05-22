@@ -2,6 +2,7 @@
 cd $HOME/.vim/bundle
 git clone https://github.com/ajh17/snipmate.vim
 git clone https://github.com/ajh17/VimCompletesMe
+git clone https://github.com/AndrewRadev/splitjoin.vim
 git clone https://github.com/davidhalter/jedi-vim
 git clone https://github.com/godlygeek/tabular
 git clone https://github.com/kien/ctrlp.vim
