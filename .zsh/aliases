@@ -6,11 +6,10 @@ alias cp="cp -vi"
 alias mv="mv -vi"
 alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
 alias irc="weechat-curses"
-if [ -x /usr/local/bin/gls ]; then
-    alias ls="gls --color -A"
-else
-    alias ls="ls -AG"
-fi
+
+# ls aliases
+alias ls="gls --color -A"
+alias le="gls --color -d *(-/DN^F)"   # List empty directories
 
 # Git aliases
 alias g="git"
