@@ -5,6 +5,9 @@
 autoload -U edit-command-line
 zle -N edit-command-line
 
+# Zsh massive rename
+autoload -U zmv
+
 # Source externals {{{1
 source ~/.zsh/styles.zsh
 source ~/.zsh/aliases
