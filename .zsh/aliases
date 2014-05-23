@@ -11,10 +11,15 @@ alias tat="tmux att"
 alias apt="sudo apt-get"
 alias xclip="xclip -sel clip"
 alias open="xdg-open"
-alias ls="ls --color -A"
 
 # Use apt-get completions
 compdef apt="apt-get"
+alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
+alias irc="weechat-curses"
+
+# ls aliases
+alias ls="gls --color -A"
+alias le="gls --color -d *(-/DN^F)"   # List empty directories
 
 # Git aliases
 alias g="git"
