@@ -167,6 +167,10 @@ let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
 
+" Over.vim {{{2
+nnoremap <leader>s :OverCommandLine<CR>s/
+nnoremap <leader>S :OverCommandLine<CR>%s/
+
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
