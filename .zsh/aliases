@@ -19,7 +19,8 @@ alias irc="weechat-curses"
 
 # ls aliases
 alias ls="gls --color -A"
-alias le="gls --color -d *(-/DN^F)"   # List empty directories
+alias ll="gls --color -A -l"        # List format
+alias le="gls --color -d *(-/DN^F)" # List empty directories
 
 # Git aliases
 alias g="git"
