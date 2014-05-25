@@ -1,3 +1,4 @@
+update
 install ack
 install ag
 install aspell
@@ -20,3 +21,4 @@ install ruby-build
 install tmux
 install weechat --with-aspell --with-lua --with-perl --with-python --with-ruby
 install zsh
+doctor
