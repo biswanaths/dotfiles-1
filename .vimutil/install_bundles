@@ -4,12 +4,10 @@ cd $HOME/.vim/bundle
 git clone https://github.com/ajh17/snipmate.vim
 git clone https://github.com/ajh17/VimCompletesMe
 git clone https://github.com/AndrewRadev/splitjoin.vim
-git clone https://github.com/dahu/vim-fanfingtastic.git
 git clone https://github.com/davidhalter/jedi-vim
 git clone https://github.com/godlygeek/tabular
 git clone https://github.com/kien/ctrlp.vim
 git clone https://github.com/mattn/emmet-vim
-git clone https://github.com/osyo-manga/vim-over.git
 git clone https://github.com/PeterRincker/vim-argumentative
 git clone https://github.com/qstrahl/vim-dentures
 git clone https://github.com/Rip-Rip/clang_complete
