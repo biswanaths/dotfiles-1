@@ -18,9 +18,9 @@ alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
 alias irc="weechat-curses"
 
 # ls aliases
-alias ls="gls --color -A"
-alias ll="gls --color -A -l"        # List format
-alias le="gls --color -d *(-/DN^F)" # List empty directories
+alias ls="ls --color -A"
+alias ll="ls --color -A -l"        # List format
+alias le="ls --color -d *(-/DN^F)" # List empty directories
 
 # Git aliases
 alias g="git"
