@@ -26,14 +26,6 @@ function! functions#bufNav(arrangement)
     endif
 endfunction
 
-" Visual star-search. (Allow * usage on visually selected word)
-function! functions#VSetSearch(cmdtype)
-    let temp = @s
-    norm! gv"sy
-    let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-    let @s = temp
-endfunction
-
 " Get the buffer list
 function! functions#bufferList()
     let buflist = []
@@ -43,4 +35,12 @@ function! functions#bufferList()
         endif
     endfor
     return join(map(buflist, 'escape(v:val, " ")'), ' ')
+endfunction
+
+" Visual star-search. (Allow * usage on visually selected word)
+function! functions#VSetSearch(cmdtype)
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+    let @s = temp
 endfunction
