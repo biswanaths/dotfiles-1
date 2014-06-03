@@ -14,7 +14,6 @@ alias open="xdg-open"
 
 # Use apt-get completions
 compdef apt="apt-get"
-alias curl="/usr/local/Cellar/curl/7.36.0/bin/curl"
 alias irc="weechat-curses"
 
 # ls aliases
