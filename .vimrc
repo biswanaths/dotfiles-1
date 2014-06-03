@@ -45,8 +45,8 @@ set autoindent
 set nofoldenable
 
 " Status Line {{{1
-set statusline=%t\ \%R\ \%H\ \%W\ \%m\ \%{fugitive#statusline()}\%=\ \%Y
-set statusline+=\ \|\ \%{&fenc}\ \|\ \%{&ff}\ \|\ LN\ \%1.7l\:\%1.7c\ 
+set statusline=%t\ %R\ %H\ %W\ %m\ %{fugitive#statusline()}%=\ %Y
+set statusline+=\ \|\ %{&fenc}\ \|\ %{&ff}\ \|\ LN\ %1.7l:%1.7c
 
 " Wildignore Settings {{{1
 set fileignorecase
@@ -66,7 +66,7 @@ endif
 
 " Vim Niceties (Colorcolumn and Returning to the same line) {{{1
 call matchadd('ColorColumn', '\%81v', 100)
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm! g`\"zz" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
 
 " Filetype Settings {{{1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
