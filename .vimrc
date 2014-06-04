@@ -156,6 +156,10 @@ xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 " Literal word search
 nnoremap g/ /\<
 
+" Black-hole register
+nnoremap <leader>x "_
+xnoremap <leader>x "_
+
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
