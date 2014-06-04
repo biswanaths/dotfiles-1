@@ -189,7 +189,7 @@ nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Jedi {{{2
-let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
+let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
 
 " Functions {{{1
 function! s:CursorShapeMode()
