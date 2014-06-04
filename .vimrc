@@ -149,6 +149,10 @@ nnoremap <down> :resize -2 <CR>
 " Literal word search
 nnoremap g/ /\<
 
+" Black-hole register
+nnoremap <leader>x "_
+xnoremap <leader>x "_
+
 " Gist support for vim. No 1000 line vim plugin required.
 nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
 
