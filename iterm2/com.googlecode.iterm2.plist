@@ -1237,7 +1237,7 @@
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>671 598 578 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2 486 1522 692 0 0 1920 1178 </string>
+	<string>0 485 1522 692 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>449 311 978 867 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2842,9 +2842,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-01T03:11:20Z</date>
+	<date>2014-06-04T05:26:10Z</date>
 	<key>SUSkippedVersion</key>
-	<string>1.0.0.20140530-nightly</string>
+	<string>1.0.0.20140601-nightly</string>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
