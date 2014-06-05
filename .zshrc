@@ -13,9 +13,7 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/plugins/opp/opp.zsh
-source ~/.zsh/plugins/opp/opp/surround.zsh
-source `brew --prefix`/etc/autojump.sh
+source /usr/local/etc/autojump.sh
 eval "$(rbenv init - --no-rehash zsh)"
 
 # Variables {{{1
