@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # ajh17's ~/.zshrc
 
 # Autoload {{{1
