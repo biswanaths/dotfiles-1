@@ -140,8 +140,7 @@ nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 " Buffers
 nnoremap <expr> <leader>b functions#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#bufNav("vertical")
-nnoremap <leader>l :b#<CR>
-nnoremap <leader>L :vertical sb#<CR>
+nnoremap <leader>l :vertical sb#<CR>
 
 " Make arrow keys useful
 nnoremap <left> :vertical resize +2<cr>
