@@ -191,6 +191,8 @@ nnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>f :CtrlP<CR>
 let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
+" Clang-complete {{{2
+let g:clang_library_path = "/usr/lib/llvm-3.3/lib/"
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
 
