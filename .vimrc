@@ -198,7 +198,7 @@ function! s:CursorShapeMode()
     au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
 endfunction
 
-" Auto commands {{{1
+" Commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call <SID>CursorShapeMode()
