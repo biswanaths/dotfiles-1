@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # ajh17's ~/.zshrc
 
 # Autoload {{{1
@@ -14,8 +13,6 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/plugins/opp/opp.zsh
-source ~/.zsh/plugins/opp/opp/surround.zsh
 source /usr/share/autojump/autojump.zsh
 
 # Variables {{{1
