@@ -13,8 +13,14 @@ source ~/.zsh/aliases
 source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/local/etc/autojump.sh
-eval "$(rbenv init - --no-rehash zsh)"
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+
+# Fasd {{{1
+fasd_cache="$HOME/.cache/.fash-init-zsh"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    fasd --init posix-alias zsh-hook >| "$fasd_cache"
+fi
+source "$fasd_cache" && unset fasd_cache
 
 # Variables {{{1
 export ARCHFLAGS="-arch x86_64"
