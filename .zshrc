@@ -14,6 +14,7 @@ source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # Fasd {{{1
 fasd_cache="$HOME/.cache/.fash-init-zsh"
