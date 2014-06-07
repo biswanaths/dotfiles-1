@@ -8,6 +8,10 @@ alias rm="rm -v"
 alias curl="/usr/local/Cellar/curl/7.37.0/bin/curl"
 alias irc="weechat-curses"
 
+# Fasd Aliases
+alias j="z"
+alias v="f -e vim"
+
 # ls aliases
 alias ls="gls --color -A"
 alias ll="gls --color -A -l"        # List format
