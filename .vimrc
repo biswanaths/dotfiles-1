@@ -160,7 +160,7 @@ nnoremap <leader>x "_
 xnoremap <leader>x "_
 
 " Gist support for vim. No 1000 line vim plugin required.
-nnoremap <leader>p :silent !gist -Pacos -f <C-r>% <C-r>=&ft<CR><CR>:redraw!<CR>
+nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
 
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
