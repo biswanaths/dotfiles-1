@@ -1231,7 +1231,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1388 127 459 270 0 0 1920 1178 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>391 278 924 485 0 0 1920 1178 </string>
+	<string>693 446 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 795 400 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
@@ -1480,7 +1480,7 @@
 			<key>Columns</key>
 			<integer>189</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/bin/zsh</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -1493,6 +1493,17 @@
 				<real>0.73333334922790527</real>
 				<key>Red Component</key>
 				<real>0.71764707565307617</real>
+			</dict>
+			<key>Cursor Guide Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.28254029977375561</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
+				<key>Green Component</key>
+				<real>0.26321752119880282</real>
+				<key>Red Component</key>
+				<real>0.24509759758430244</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -1997,6 +2008,8 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Cursor Guide</key>
+			<false/>
 			<key>Use HFS Plus Mapping</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -2842,9 +2855,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-04T05:26:10Z</date>
-	<key>SUSkippedVersion</key>
-	<string>1.0.0.20140601-nightly</string>
+	<date>2014-06-08T07:29:05Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
