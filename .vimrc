@@ -137,6 +137,12 @@ nnoremap <leader>ef m`gg=G``
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
+" Files
+nnoremap <leader>f :find **
+nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*<CR>
+nnoremap <leader>s :sfind **
+nnoremap <leader>S :sfind <C-r>=expand('%:p:h').'/**/*<CR>
+
 " Buffers
 nnoremap <expr> <leader>b functions#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#bufNav("vertical")
@@ -173,10 +179,6 @@ let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
 
-" Over.vim {{{2
-nnoremap <leader>s :OverCommandLine<CR>s/
-nnoremap <leader>S :OverCommandLine<CR>%s/
-
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
@@ -189,10 +191,6 @@ nnoremap <leader>gs :Gstatus<CR>
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
-
-" CtrlP {{{2
-nnoremap <leader>f :CtrlP<CR>
-let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Clang-complete {{{2
 let g:clang_library_path = "/usr/lib/llvm-3.3/lib/"
