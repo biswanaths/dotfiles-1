@@ -48,6 +48,7 @@ alias pgrep="pgrep -l"
 alias ping="ping -c 5"
 alias binstubs="bundle install --binstubs .bundle/bin && rbenv rehash"
 alias tat="tmux att"
+alias swi="xcrun swift -i"
 alias unzip="unzip -d ~/Downloads"
 alias upd="brew update; brew outdated; brew upgrade"
 # vim: ft=zsh
