@@ -11,6 +11,7 @@ fish/generated_completions/
 .vim/session/*
 .vim/haskellmode.config
 .vim/.netrwhist
+.vimutil
 **doc/tags
 weechat/logs/*
 weechat/*.conf
