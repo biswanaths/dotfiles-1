@@ -1,5 +1,5 @@
 " Format a c/cpp/java file with AStyle
-function! functions#AStyleFormat()
+function! functions#general#AStyleFormat()
     norm! mf
     if &filetype == 'c' || &filetype == 'cpp'
         :%!astyle --mode=c
@@ -10,7 +10,7 @@ function! functions#AStyleFormat()
 endfunction
 
 " A simple buffer navigation function.
-function! functions#bufNav(arrangement)
+function! functions#general#bufNav(arrangement)
     if a:arrangement ==? "horizontal"
         if len(filter(map(range(bufnr('$')), 'buflisted(v:val)'), 'v:val == 1')) > 1
             return ":buffer \<C-z>\<S-Tab>"
@@ -27,7 +27,7 @@ function! functions#bufNav(arrangement)
 endfunction
 
 " Get the buffer list
-function! functions#bufferList()
+function! functions#general#bufferList()
     let buflist = []
     for i in range(1, bufnr('$'))
         if bufexists(i)

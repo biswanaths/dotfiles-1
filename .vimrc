@@ -159,9 +159,6 @@ nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
-" SearchParty {{{2
-nmap <leader>x <Plug>SearchPartyHighlightClear
-
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
@@ -192,21 +189,10 @@ let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
 
-" Functions {{{1
-function! s:CursorShapeMode()
-    if exists('$TMUX')
-        let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    else
-        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    endif
-endfunction
-
 " Commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
-autocmd! VimEnter * call <SID>CursorShapeMode()
+autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
