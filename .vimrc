@@ -134,6 +134,12 @@ nnoremap <leader>ef m`gg=G``
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
+" Finding files
+nnoremap <leader>f :find *
+nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*'<CR>
+nnoremap <leader>s :vertical sfind *
+nnoremap <leader>S :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
+
 " Buffers
 nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#general#bufNav("vertical")
@@ -181,10 +187,6 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
-
-" CtrlP {{{2
-nnoremap <leader>f :CtrlP<CR>
-let [ctrlp_use_caching, ctrlp_user_command] = [0, 'ag %s -l --nocolor --hidden -g ""']
 
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
