@@ -1,7 +1,7 @@
 " ------------ ajh's .vimrc ------------
 " Load Plugins {{{1
 execute pathogen#infect()
-runtime! macros/matchit.vim
+runtime macros/matchit.vim
 
 " Colorscheme and Syntax {{{1
 syntax on
