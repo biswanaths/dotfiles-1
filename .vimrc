@@ -135,8 +135,8 @@ nnoremap <leader>ef m`gg=G``
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
 " Buffers
-nnoremap <expr> <leader>b functions#bufNav("horizontal")
-nnoremap <expr> <leader>B functions#bufNav("vertical")
+nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
+nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 nnoremap <leader>l :vertical sb#<CR>
 
 " Make arrow keys useful
