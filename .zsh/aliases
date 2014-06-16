@@ -11,6 +11,7 @@ alias tat="tmux att"
 alias apt="sudo apt-get"
 alias xclip="xclip -sel clip"
 alias open="xdg-open"
+alias nose="nosetests"
 
 # Use apt-get completions
 compdef apt="apt-get"

@@ -14,6 +14,8 @@ source ~/.zsh/ajh.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/autojump/autojump.zsh
+source /home/ajh/.linuxbrew/opt/chruby/share/chruby/chruby.sh
+source /home/ajh/.linuxbrew/opt/chruby/share/chruby/auto.sh
 
 # Variables {{{1
 export PATH="$HOME/.linuxbrew/bin:$HOME/.bin:$PATH"
