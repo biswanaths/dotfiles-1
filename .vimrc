@@ -1,7 +1,7 @@
 " ------------ ajh's .vimrc ------------
 " Load Plugins {{{1
 execute pathogen#infect()
-runtime! macros/matchit.vim
+runtime macros/matchit.vim
 
 " Colorscheme and Syntax {{{1
 syntax on
@@ -138,8 +138,8 @@ nnoremap <leader>ef m`gg=G``
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
 " Buffers
-nnoremap <expr> <leader>b functions#bufNav("horizontal")
-nnoremap <expr> <leader>B functions#bufNav("vertical")
+nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
+nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 nnoremap <leader>l :vertical sb#<CR>
 
 " Make arrow keys useful
@@ -200,17 +200,10 @@ let g:clang_library_path = "/usr/lib/llvm-3.3/lib/"
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
 
-" Functions {{{1
-function! s:CursorShapeMode()
-    au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape ibeam"
-    au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
-    au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Tomorrow/cursor_shape block"
-endfunction
-
 " Commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
-autocmd! VimEnter * call <SID>CursorShapeMode()
+autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
