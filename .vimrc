@@ -157,15 +157,13 @@ nnoremap <leader>f :find **
 nnoremap <leader>F :find <C-r>=expand('%:h').'/**'<CR>
 nnoremap <leader>s :vertical sfind **
 nnoremap <leader>S :vertical sfind <C-r>=expand('%:h').'/**'<CR>
-nnoremap <leader>x :find<space>
-nnoremap <leader>X :vertical sfind<space>
 
 " Literal word search
 nnoremap g/ /\<
 
 " Black-hole register
-nnoremap <leader>h "_
-xnoremap <leader>h "_
+nnoremap <leader>x "_
+xnoremap <leader>x "_
 
 " Gist support for vim. No 1000 line vim plugin required.
 nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
