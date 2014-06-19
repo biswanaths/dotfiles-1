@@ -43,7 +43,7 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta,bold'
 
 # Settings {{{1
 setopt alwaystoend completeinword completealiases pathdirs automenu autolist menucomplete
-setopt prompt_subst extendedglob globdots globcomplete correct recexact
+setopt prompt_subst transientrprompt extendedglob globdots globcomplete correct recexact
 setopt sharehistory histignoredups histreduceblanks histignorespace
 setopt banghist incappendhistory histexpiredupsfirst histignorealldups
 setopt histfindnodups histsavenodups histverify
