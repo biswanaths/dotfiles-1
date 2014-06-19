@@ -45,6 +45,6 @@ function zle-line-finish {
   vim_mode=$vim_insert_mode
 }
 zle -N zle-line-finish
-PROMPT=$'%{$orange%}%~%{$reset_color%} ${vim_mode} %{$reset_color%}'
+PROMPT=$'%{$orange%}%~ %{$reset_color%}${vim_mode}%{$reset_color%} '
 RPROMPT='[${vcs_info_msg_0_}%F{blue}bg:%j%{$reset_color%} %{$orange%}t:${_elapsed[-1]}s%{$reset_color%}]'
 # vim: ft=zsh
