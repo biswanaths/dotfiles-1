@@ -37,8 +37,8 @@ precmd () {
     vcs_info
 }
 
-vim_insert_mode="%B%F{red}❯%F{yellow}❯%F{green}❯%f%b%{$reset_color%}"
-vim_cmd_mode="%B%F{green}❮%F{yellow}❮%F{red}❮%f%b%{$reset_color%}"
+vim_insert_mode="%B%F{green}❯%{$reset_color%}"
+vim_cmd_mode="%B%F{red}❮%{$reset_color%}"
 vim_mode=$vim_insert_mode
 
 function zle-keymap-select {
