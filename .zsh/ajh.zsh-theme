@@ -24,9 +24,9 @@ precmd () {
    (( _start >= 0 )) && set -A _elapsed $_elapsed $(( SECONDS-_start ))
    _start=-1
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' %F{blue}[%F{green}%b%c%u%F{blue}]'
+        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{blue} '
     } else {
-        zstyle ':vcs_info:*' formats ' %F{blue}[%F{green}%b%c%u%F{red}●%F{blue}]'
+        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{red}●%F{blue}'
     }
     vcs_info
 }
@@ -45,8 +45,6 @@ function zle-line-finish {
   vim_mode=$vim_insert_mode
 }
 zle -N zle-line-finish
-PROMPT=$'
-%{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}${vcs_info_msg_0_}%F{blue}
-%(?/%F{blue}/%F{red})${vim_mode} %{$reset_color%}'
-RPROMPT='%F{blue}⚙ %j%{$reset_color%} :: %{$orange%}(${_elapsed[-1]}s) %{$reset_color%}'
+PROMPT=$'%{$orange%}%~%{$reset_color%} ${vim_mode} %{$reset_color%}'
+RPROMPT='[${vcs_info_msg_0_}%F{blue}bg:%j%{$reset_color%} %{$orange%}t:${_elapsed[-1]}s%{$reset_color%}]'
 # vim: ft=zsh
