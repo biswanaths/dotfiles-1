@@ -1,24 +1,18 @@
-#
-#
-### Adapted from steeef zsh prompt theme.
-### Modified anough behaviors to rename it
-#
-#
+# My Zsh theme.
+# Features => Indicators for git status, vim mode, last command execution time and backgrounded app.
 setopt prompt_subst
 autoload colors
 autoload -Uz vcs_info
 colors
 
-turquoise="%F{81}"
 orange="%F{166}"
 purple="%F{135}"
-hotpink="%F{161}"
 limegreen="%F{118}"
 
 # Version control
 zstyle ':vcs_info:*' enable git hg
 zstyle ':vcs_info:*' stagedstr '%F{28}●'
-zstyle ':vcs_info:*' unstagedstr '%F{11}●'
+zstyle ':vcs_info:*' unstagedstr '%F{161}●'
 zstyle ':vcs_info:*' check-for-changes true
 
 preexec () {
