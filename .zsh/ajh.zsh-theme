@@ -31,8 +31,8 @@ precmd () {
     vcs_info
 }
 
-vim_insert_mode="%B%F{green}❯%{$reset_color%}"
-vim_cmd_mode="%B%F{red}❮%{$reset_color%}"
+vim_insert_mode="%B%F{green}❯%f%b%{$reset_color%}"
+vim_cmd_mode="%B%F{red}❮%f%b%{$reset_color%}"
 vim_mode=$vim_insert_mode
 
 function zle-keymap-select {
@@ -45,6 +45,6 @@ function zle-line-finish {
   vim_mode=$vim_insert_mode
 }
 zle -N zle-line-finish
-PROMPT=$'%{$orange%}%~%{$reset_color%} ${vim_mode} %{$reset_color%}'
+PROMPT=$'%{$orange%}%~ %{$reset_color%}${vim_mode}%{$reset_color%} '
 RPROMPT='[${vcs_info_msg_0_}%F{blue}bg:%j%{$reset_color%} %{$orange%}t:${_elapsed[-1]}s%{$reset_color%}]'
 # vim: ft=zsh
