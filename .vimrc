@@ -97,7 +97,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Expand buffer list similar to ## for the argslist
-cnoremap %% <C-R>=functions#bufferList()<CR>
+cnoremap %% <C-R>=functions#general#bufferList()<CR>
 
 " Remap some keys to be more useful
 nnoremap ' `
