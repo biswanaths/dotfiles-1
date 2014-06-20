@@ -18,5 +18,4 @@ git clone https://github.com/tpope/vim-obsession.git
 git clone https://github.com/tpope/vim-rails
 git clone https://github.com/tpope/vim-repeat
 git clone https://github.com/tpope/vim-surround
-git clone https://github.com/tpope/vim-unimpaired
 cd $prev
