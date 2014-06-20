@@ -24,9 +24,9 @@ precmd () {
    (( _start >= 0 )) && set -A _elapsed $_elapsed $(( SECONDS-_start ))
    _start=-1
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{blue}'
+        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{blue} '
     } else {
-        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{red}●%F{blue}'
+        zstyle ':vcs_info:*' formats '%F{blue}%F{green}%b%c%u%F{red}●%F{blue} '
     }
     vcs_info
 }
@@ -46,5 +46,5 @@ function zle-line-finish {
 }
 zle -N zle-line-finish
 PROMPT=$'%{$orange%}%~ %f${vim_mode}%f '
-RPROMPT='[${vcs_info_msg_0_} %F{blue}bg:%j%f %{$orange%}t:${_elapsed[-1]}s%f]'
+RPROMPT='[${vcs_info_msg_0_}%F{blue}bg:%j%f %{$orange%}t:${_elapsed[-1]}s%f]'
 # vim: ft=zsh
