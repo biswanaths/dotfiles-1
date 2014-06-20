@@ -18,7 +18,7 @@ set formatoptions+=1j
 set hidden
 set laststatus=2
 set lazyredraw
-set list listchars=eol:¬,tab:▸\ ,trail:·
+set list listchars=eol:\ ,tab:▸\ ,trail:·
 set modeline
 set mouse=nv
 set nostartofline
