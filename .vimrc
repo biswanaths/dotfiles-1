@@ -77,10 +77,6 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ' '
 
-" Use backspace key for matchit.vim
-nmap <BS> %
-xmap <BS> %
-
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -97,7 +93,6 @@ nnoremap k gk
 cnoremap %% <C-R>=functions#bufferList()<CR>
 
 " Remap some keys to be more useful
-nnoremap ' `
 nnoremap Q gq
 nnoremap S i<CR><ESC>^m`gk:silent! s/\v +$//<CR>:noh<CR>``
 nnoremap Y y$
