@@ -180,6 +180,8 @@ let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-
 " Dispatch {{{2
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
+nnoremap m<CR> :make<CR>
+nnoremap M<CR> :Make<CR>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
