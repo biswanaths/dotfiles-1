@@ -18,11 +18,10 @@ set formatoptions+=1j
 set hidden
 set laststatus=2
 set lazyredraw
-set list listchars=eol:¬,tab:▸\ ,trail:·
-set mouse=nv
+set list listchars=eol:\ ,tab:▸\ ,trail:·
+set mouse=n
 set nostartofline
 set number relativenumber
-set path=.,**
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
@@ -90,7 +89,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Expand buffer list similar to ## for the argslist
-cnoremap %% <C-R>=functions#bufferList()<CR>
+cnoremap %% <C-R>=functions#general#bufferList()<CR>
 
 " Remap some keys to be more useful
 nnoremap Q gq
