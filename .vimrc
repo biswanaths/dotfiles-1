@@ -1,14 +1,14 @@
 " ------------ ajh's .vimrc ------------
-" Load Plugins {{{1
+" Load Plugins
 execute pathogen#infect()
 runtime macros/matchit.vim
 
-" Colorscheme and Syntax {{{1
+" Colorscheme and Syntax
 syntax on
 filetype plugin indent on
 colorscheme hybrid_mod
 
-" General Settings {{{1
+" General Settings
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -30,42 +30,42 @@ set ttimeoutlen=50
 set virtualedit=block
 set wildmenu wildcharm=<C-z>
 
-" Search Settings {{{1
+" Search Settings
 set incsearch hlsearch
 set smartcase ignorecase
 set showmatch matchtime=2
 set grepprg=ag\ --nogroup\ --nocolor
 
-" Indent and Fold Settings {{{1
+" Indent and Fold Settings
 set softtabstop=4 shiftwidth=4
 set smarttab expandtab
 set autoindent
 set nofoldenable
 
-" Status Line {{{1
+" Status Line
 set statusline=%t\ %R\ %H\ %W\ %m\ %{fugitive#statusline()}%=\ %Y
 set statusline+=\ \|\ %{&fenc}\ \|\ %{&ff}\ \|\ LN\ %1.7l:%1.7c
 
-" Wildignore Settings {{{1
+" Wildignore Settings
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class,*.manifest,*~,#*#,%*
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,**/temp/***.obj
 
-" History, Backup and Undo settings {{{1
+" History, Backup and Undo settings
 set history=10000
 set backup undofile noswapfile
 set backupdir=~/.vim/backup/
 set undodir=~/.vim/backup/undo/
 
-" GUI Settings {{{1
+" GUI Settings
 if has("gui_running")
     set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h13
 endif
 
-" Vim Niceties (Colorcolumn and Returning to the same line) {{{1
+" Vim Niceties (Colorcolumn and Returning to the same line)
 call matchadd('ColorColumn', '\%81v', 100)
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
 
-" Filetype Settings {{{1
+" Filetype Settings
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
@@ -74,7 +74,7 @@ let [rubycomplete_buffer_loading, rubycomplete_classes_in_global, rubycomplete_r
 let [python_highlight_all, java_highlight_all] = [1, 1]
 let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highlight_debug] = [1, 1, 1, 1]
 
-" General Mappings {{{1
+" General Mappings
 let mapleader = ' '
 
 " Window switching
@@ -148,9 +148,10 @@ nnoremap <leader>x "_
 xnoremap <leader>x "_
 
 " Gist support for vim. No 1000 line vim plugin required.
+xnoremap <leader>p y:silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
 nnoremap <leader>p :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
 
-" Selection of mappings similar to unimpaired.vim
+" Selection of mappings from unimpaired.vim
 nnoremap [a :prev<CR>
 nnoremap ]a :next<CR>
 nnoremap [b :bprev<CR>
@@ -161,28 +162,28 @@ nnoremap col :set list!<CR>
 nnoremap coh :set hlsearch!<CR>
 nnoremap cos :set spell!<CR>
 
-" Plugin Settings and Mappings {{{1
-" Netrw {{{2
+" Plugin Settings and Mappings
+" Netrw
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 
-" Emmet {{{2
+" Emmet
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
-" Vimple {{{2
+" Vimple
 let g:vimple_init_vars = 0
 
-" VimFindsMe/VFM {{{2
+" VimFindsMe/VFM
 let vfm_use_split = 1
 nnoremap <leader>f :VFMEdit<CR>
 nnoremap <leader>F :VFMArgs<CR>
 
-" Dispatch {{{2
+" Dispatch
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
 nnoremap m<CR> :make<CR>
 nnoremap M<CR> :Make<CR>
 
-" Fugitive {{{2
+" Fugitive
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit<CR>
@@ -190,18 +191,18 @@ nnoremap <leader>gC :Git co -b<space>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 
-" Clang_Complete {{{2
+" Clang_Complete
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-" Tabular {{{2
+" Tabular
 let g:no_default_tabular_maps=1
 xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
-" Jedi {{{2
+" Jedi
 let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
 
-" Commands {{{1
+" Commands
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
