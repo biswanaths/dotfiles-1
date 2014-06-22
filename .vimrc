@@ -186,6 +186,9 @@ let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
 " Emmet {{{2
 let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-b>", 1, 'i']
 
+" Vimple {{{2
+let g:vimple_init_vars = 0
+
 " Dispatch {{{2
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
@@ -197,7 +200,7 @@ nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gC :Git co -b<space>
-nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 
 " Tabular {{{2
