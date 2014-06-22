@@ -173,8 +173,8 @@ let g:vimple_init_vars = 0
 
 " VimFindsMe/VFM {{{2
 let vfm_use_split = 1
-nnoremap <leader>f :VFMEdit
-nnoremap <leader>F :VFMArgs
+nnoremap <leader>f :VFMEdit<CR>
+nnoremap <leader>F :VFMArgs<CR>
 
 " Dispatch {{{2
 nnoremap d<space> :Dispatch<space>
