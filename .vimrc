@@ -189,6 +189,11 @@ let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-
 " Vimple {{{2
 let g:vimple_init_vars = 0
 
+" VimFindsMe/VFM {{{2
+let vfm_use_split = 1
+nnoremap <leader>f :VFMEdit<CR>
+nnoremap <leader>F :VFMArgs<CR>
+
 " Dispatch {{{2
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
