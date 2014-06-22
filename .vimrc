@@ -128,14 +128,6 @@ nnoremap <leader>ef m`gg=G``
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
-" Finding files
-nnoremap <leader>f :find *
-nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>s :vertical sfind *
-nnoremap <leader>S :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>h :sfind *
-nnoremap <leader>H :sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-
 " Buffers
 nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#general#bufNav("vertical")
