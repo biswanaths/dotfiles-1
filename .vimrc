@@ -22,6 +22,7 @@ set list listchars=eol:\ ,tab:▸\ ,trail:·
 set mouse=n
 set nostartofline
 set number relativenumber
+set path=.,**
 set showcmd
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
