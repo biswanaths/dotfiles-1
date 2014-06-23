@@ -49,7 +49,7 @@ set statusline+=\ \|\ %{&fenc}\ \|\ %{&ff}\ \|\ LN\ %1.7l:%1.7c
 " Wildignore Settings {{{1
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class,*.manifest,*~,#*#,%*
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,*.xib,*.xc*,xc**,*.pbxproj,xc*.plist,xcshareddata,xcuserdata
-set wildignore+=Images.xcassets/**,*.appiconset,*.imageset*.launchimage
+set wildignore+=Images.xcassets/**,*.appiconset/**,*.imageset,*.launchimage*/**,*launchimage,*.appiconset
 
 " History, Backup and Undo settings {{{1
 set history=10000
