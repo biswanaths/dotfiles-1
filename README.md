@@ -1,22 +1,9 @@
 # Dotfiles
-Various .rc files for my command line experience
+Various .rc files for my command line experience on Linux.
 
-
-## Installation
-    git clone --recursive https://github.com/ajh17/dotfiles.git
-    chmod +x ~/dotfiles/bootstrap && ~/dotfiles/bootstrap
-
-### My Environment:
-- OS       : Xubuntu 14.04 Trusty Tahr
-- Terminal : zsh + tmux
-- Editor   : Vim
-- IRC      : Weechat
-
-### Screenshots:
-
+### Screenshot:
 ![Vim](http://cl.ly/VDEF/vim.png "Vim, tmux demo")
 
 ## Branches
-
-Looking for OS X specific config? Check out (pun very much intended) the
+Looking for OS X specific config? Check out (pardon the pun) the
 [master](https://github.com/ajh17/dotfiles) branch instead.
