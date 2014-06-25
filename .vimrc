@@ -163,12 +163,6 @@ nnoremap g/ /\<
 nnoremap <leader>x "_
 xnoremap <leader>x "_
 
-" Gist support for vim. No 1000 line vim plugin required.
-nnoremap <leader>a :silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
-nnoremap <leader>p :silent !gist -Pcos -f <C-r>%<CR>:redraw!<CR>
-xnoremap <leader>a y:silent !gist -Pacos -f <C-r>%<CR>:redraw!<CR>
-xnoremap <leader>p y:silent !gist -Pcos -f <C-r>%<CR>:redraw!<CR>
-
 " Selection of mappings similar to unimpaired.vim
 nnoremap [a :prev<CR>
 nnoremap ]a :next<CR>
