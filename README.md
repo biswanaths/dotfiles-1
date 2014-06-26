@@ -1,15 +1,5 @@
 # Dotfiles
-Various .rc files for my command line experience
-
-## Installation
-    git clone --recursive https://github.com/ajh17/dotfiles.git
-    chmod +x ~/dotfiles/bootstrap && ~/dotfiles/bootstrap
-
-## My Environment:
-- OS       : OS X
-- Terminal : zsh + tmux
-- Editor   : Vim
-- IRC      : Weechat
+Various .rc files for my command line experience in OS X
 
 ## Screenshots:
 ![Vim](http://cl.ly/W9Vz/Screen%20Shot%202014-06-19%20at%2001.05.29.png "Vim tmux demo")
