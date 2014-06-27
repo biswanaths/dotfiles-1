@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 PATHOGEN_DIR="${HOME}/.vim/autoload"
 BUNDLES_DIR="${HOME}/.vim/bundle"
+PREV=`pwd`
 
 if [[ -d "${PATHOGEN_DIR}" ]]; then
   echo "Updating pathogen..."
@@ -18,3 +19,4 @@ if [[ -d "${BUNDLES_DIR}" ]]; then
     fi
   done
 fi
+cd $PREV
