@@ -111,7 +111,6 @@ nnoremap g<C-]> g<C-]>zz
 
 " Selection mappings
 nnoremap <leader>v ^vg_
-nnoremap <leader>V `[V`]
 
 " Autoclose
 inoremap {<CR> {<CR>}<ESC>O
@@ -147,6 +146,10 @@ nnoremap g/ /\<
 " Black-hole register
 nnoremap <leader>x "_
 xnoremap <leader>x "_
+
+" Quick  grepping
+nnoremap <leader>s :grep<space>
+nnoremap <leader>V :vimgrep<space>
 
 " Selection of mappings from unimpaired.vim
 nnoremap [a :prev<CR>
