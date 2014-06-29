@@ -1,3 +1,4 @@
+" General settings
 set clipboard=unnamed
 set relativenumber
 set ignorecase
@@ -5,3 +6,27 @@ set smartcase
 set nowrap
 set wrapscan
 set laststatus=0
+
+" Windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Go to file/symbol
+map <space>f :xccmd openQuickly<CR>
+
+" Show in Finder
+map <space>F :xccmd showInFinder<CR>
+
+" Show API Reference
+map <space>d :xccmd showDeveloperDocumentation<CR>
+
+" Toggle various toolbars
+map <space>tl :xccmd toggleUtilitiesVisibility<CR>
+map <space>th :xccmd toggleNavigatorsVisibility<CR>
+map <space>tj :xccmd toggleDebuggerVisibility<CR>
+
+" Jump to issues
+map <space>n :xcmenucmd Jump to Next Issue<CR>
+map <space>p :xcmenucmd Jump to Previous Issue<CR>
