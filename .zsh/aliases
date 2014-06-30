@@ -15,6 +15,7 @@ alias nose="nosetests"
 
 # Use apt-get completions
 compdef apt="apt-get"
+alias aupd="sudo apt-get update && sudo apt-get --yes upgrade && sudo apt-get --yes dist-upgrade"
 
 # ls aliases
 alias ls="ls --color -A"
