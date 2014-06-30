@@ -23,7 +23,7 @@ set mouse=n
 set nostartofline
 set number relativenumber
 set path=.,**
-set shell=/usr/bin/zsh
+set shell=/bin/zsh
 set showcmd showbreak=↪
 set splitbelow splitright switchbuf=useopen
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
