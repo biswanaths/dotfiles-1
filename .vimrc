@@ -148,14 +148,6 @@ nnoremap <down> :resize -2<cr>
 xnoremap * :<C-u>call functions#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 
-" Finding files
-nnoremap <leader>f :find *
-nnoremap <leader>F :find <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>s :vertical sfind *
-nnoremap <leader>S :vertical sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-nnoremap <leader>h :sfind *
-nnoremap <leader>H :sfind <C-r>=expand('%:p:h').'/**/*'<CR>
-
 " Literal word search
 nnoremap g/ /\<
 
