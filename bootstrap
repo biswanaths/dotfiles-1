@@ -46,7 +46,7 @@ if [ `uname` == "Darwin" ]; then
     if [ ! -d ~/.vim/bundle/ ]; then
         mkdir ~/.vim/bundle
     fi
-    . ~/Library/Mobile\ Documents/com~apple~CloudDocs/Vim/.vimutil/install_bundles
+    . ~/Library/Mobile\ Documents/com~apple~CloudDocs/Vim/vimutil/install_bundles
 
     # Zsh
     echo "${bold}Linking zsh...${norm}"
