@@ -43,6 +43,7 @@ alias eupd="vim ~/dotfiles/.vimutil/upgrade_vim"
 
 # Useful aliases
 alias clang="clang -std=c99 -Wall -Wextra"
+alias sdiff="svn diff | colordiff | less -R"
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias ping="ping -c 5"
 alias pgrep="pgrep -l"
