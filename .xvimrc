@@ -14,13 +14,16 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Go to file/symbol
-map <space>f :xccmd openQuickly<CR>
+map <space>f :xcmenucmd Open Quickly...<CR>
 
 " Show in Finder
 map <space>F :xccmd showInFinder<CR>
 
 " Show API Reference
-map <space>d :xccmd showDeveloperDocumentation<CR>
+map <space>D :xccmd showDeveloperDocumentation<CR>
+
+" Show Quick Help
+map <space>d :xcmenucmd Quick Help for Selected Item<CR>
 
 " Toggle various toolbars
 map <space>tl :xccmd toggleUtilitiesVisibility<CR>
