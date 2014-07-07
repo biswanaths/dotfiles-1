@@ -26,9 +26,9 @@ map <space>D :xccmd showDeveloperDocumentation<CR>
 map <space>d :xcmenucmd Quick Help for Selected Item<CR>
 
 " Toggle various toolbars
-map <space>tl :xccmd toggleUtilitiesVisibility<CR>
-map <space>th :xccmd toggleNavigatorsVisibility<CR>
-map <space>tj :xccmd toggleDebuggerVisibility<CR>
+map <space>h :xccmd toggleNavigatorsVisibility<CR>
+map <space>j :xccmd toggleDebuggerVisibility<CR>
+map <space>l :xccmd toggleUtilitiesVisibility<CR>
 
 " Jump to issues
 map <space>n :xcmenucmd Jump to Next Issue<CR>
