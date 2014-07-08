@@ -7,6 +7,9 @@ set nowrap
 set wrapscan
 set laststatus=0
 
+" Use backspace for %
+map <BS> %
+
 " Windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
