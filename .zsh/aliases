@@ -13,9 +13,9 @@ alias j="z"
 alias v="f -e vim"
 
 # ls aliases
-alias ls="ls -G -A"
-alias ll="ls -G -A -l"        # List format
-alias le="ls -G -d *(-/DN^F)" # List empty directories
+alias ls="ls -GAp"
+alias ll="ls -GAl"          # List format
+alias le="ls -Gd *(-/DN^F)" # List empty directories
 
 # Git aliases
 alias g="git"
