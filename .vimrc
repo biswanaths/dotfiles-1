@@ -78,6 +78,10 @@ let [hs_highlight_boolean, hs_highlight_types, hs_highlight_more_types, hs_highl
 " General Mappings {{{1
 let mapleader = ' '
 
+" Use backspace for % (recursive mapping for matchit.vim)
+nmap <BS> %
+xmap <BS> %
+
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
