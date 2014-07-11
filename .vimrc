@@ -99,6 +99,8 @@ cnoremap %% <C-R>=functions#general#bufferList()<CR>
 
 " Remap some keys to be more useful
 nnoremap Q gq
+nnoremap ^ 0
+nnoremap 0 ^
 nnoremap S i<CR><ESC>^m`gk:silent! s/\v +$//<CR>:noh<CR>``
 nnoremap Y y$
 nnoremap <CR> za
