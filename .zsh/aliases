@@ -37,7 +37,6 @@ alias eins="vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Vim/vimutil/inst
 alias eupd="vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Vim/vimutil/upgrade_vim"
 
 # Useful aliases
-alias atom="open -a atom"
 alias bust="buster generate --domain=http://127.0.0.1:2368 && buster deploy"
 alias flush="sudo discoveryutil mdnsflushcache"
 alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
