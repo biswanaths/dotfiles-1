@@ -40,7 +40,7 @@ alias eupd="vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Vim/vimutil/upgr
 alias bust="buster generate --domain=http://127.0.0.1:2368 && buster deploy"
 alias flush="sudo discoveryutil mdnsflushcache"
 alias compl="rm -rf ~/.zcomp* ~/.cache/zcomp* && compinit"
-alias lyrics="osascript -e 'tell app \"iTunes\" to get lyrics of current track' | vim -"
+alias lyrics="osascript -e 'tell app \"iTunes\" to get lyrics of current track' | vim - +set\ buftype=nofile"
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 alias muxd="tmuxinator start default"
 alias pgrep="pgrep -l"
