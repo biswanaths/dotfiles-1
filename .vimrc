@@ -84,6 +84,10 @@ let mapleader = ' '
 nmap <BS> %
 xmap <BS> %
 
+" Faster grepping
+nnoremap <leader>s :grep<space>
+nnoremap <leader>S :vimgrep<space>
+
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
@@ -149,8 +153,8 @@ nnoremap <up> :resize +2<cr>
 nnoremap <down> :resize -2<cr>
 
 " Visual star search
-xnoremap * :<C-u>call functions#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
-xnoremap # :<C-u>call functions#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
+xnoremap * :<C-u>call functions#general#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u>call functions#general#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 
 " Literal word search
 nnoremap g/ /\<
