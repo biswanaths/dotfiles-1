@@ -24,7 +24,7 @@ alias le="ls --color -d *(-/DN^F)" # List empty directories
 
 # Git aliases
 alias g="git"
-alias gst="git status -sb"
+alias gst="git status"
 alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | xclip -sel clip && echo 'Copied `xclip -out`'"
 
 # Edit stuff
