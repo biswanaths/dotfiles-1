@@ -81,6 +81,7 @@ let mapleader = ' '
 " Use backspace for % (recursive mapping for matchit.vim)
 nmap <BS> %
 xmap <BS> %
+omap <BS> %
 
 " Window switching
 nnoremap <silent> <C-h> <C-w><C-h>
