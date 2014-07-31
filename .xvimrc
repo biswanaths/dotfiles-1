@@ -12,10 +12,6 @@ set gdefault
 nmap <BS> %
 vmap <BS> %
 
-" Reverse ^/0 mappings
-nmap 0 ^
-nmap ^ 0
-
 " Windows
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j

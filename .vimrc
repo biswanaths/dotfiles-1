@@ -34,7 +34,7 @@ set wildmenu wildcharm=<C-z>
 set incsearch hlsearch
 set smartcase ignorecase
 set showmatch matchtime=2
-set grepprg=ag\ --nogroup\ --nocolor
+" set grepprg=ag\ --nogroup\ --nocolor
 
 " Indent and Fold Settings {{{1
 set softtabstop=4 shiftwidth=4
@@ -100,8 +100,6 @@ cnoremap %% <C-R>=functions#general#bufferList()<CR>
 
 " Remap some keys to be more useful
 nnoremap Q gq
-nnoremap ^ 0
-nnoremap 0 ^
 nnoremap S i<CR><ESC>^m`gk:silent! s/\v +$//<CR>:noh<CR>``
 nnoremap Y y$
 nnoremap <CR> za
