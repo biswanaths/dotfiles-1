@@ -38,7 +38,7 @@ function! functions#general#bufferList()
 endfunction
 
 " Visual star-search. (Allow * usage on visually selected word)
-function! functions#VSetSearch(cmdtype)
+function! functions#general#VSetSearch(cmdtype)
     let temp = @s
     norm! gv"sy
     let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
