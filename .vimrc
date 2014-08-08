@@ -62,10 +62,6 @@ if has("gui_running")
     set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h13
 endif
 
-" Vim Niceties (Colorcolumn and Returning to the same line) {{{1
-call matchadd('ColorColumn', '\%81v', 100)
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
-
 " Filetype Settings {{{1
 let g:html_indent_inctags="head,html,body,p,head,table,tbody,div"
 let g:html_indent_script1="inc"
@@ -215,6 +211,7 @@ let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
+autocmd! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
