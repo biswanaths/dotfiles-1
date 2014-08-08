@@ -106,6 +106,10 @@ nnoremap <CR> za
 xnoremap < <gv
 xnoremap > >gv
 
+" Visual star search
+xnoremap * :<C-u>call functions#general#VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call functions#general#VSetSearch('?')<CR>/<C-R>=@/<CR><CR>
+
 " Center the screen and open folds when moving/searching/jumping
 nnoremap '' ``zzzv
 nnoremap g; g;zzzv

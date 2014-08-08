@@ -26,6 +26,13 @@ function! functions#general#bufNav(arrangement)
     endif
 endfunction
 
+function! functions#general#VSetSearch(cmdtype)
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\n\n', 'g')
+    let @s = temp
+endfunction
+
 " Get the buffer list
 function! functions#general#bufferList()
     let buflist = []
