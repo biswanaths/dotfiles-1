@@ -34,7 +34,7 @@ set wildmenu wildcharm=<C-z>
 set incsearch hlsearch
 set smartcase ignorecase
 set showmatch matchtime=2
-" set grepprg=ag\ --nogroup\ --nocolor
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Indent and Fold Settings {{{1
 set softtabstop=4 shiftwidth=4
