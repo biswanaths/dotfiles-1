@@ -21,6 +21,7 @@ alias le="ls -Gd *(-/DN^F)" # List empty directories
 alias g="git"
 alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | pbcopy && echo 'Copied \c' && pbpaste && echo ''"
 alias gst="git status"
+alias tower="gittower ."
 
 # Edit stuff
 alias e=$EDITOR
