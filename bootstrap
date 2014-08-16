@@ -37,19 +37,6 @@ if [ `uname` == "Linux" ]; then
         cd $HOME
     fi
 
-    # Setup linux brew
-    if [ -d ~/.linuxbrew ]; then
-        echo -e "\n${bold}Detected linuxbrew.${norm}"
-    else
-        echo -e "\n${bold}Linuxbrew not installed. Installing it now...${norm}"
-        git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
-    fi
-
-    # Install linuxbrew apps from Brewfile
-    echo -e "${bold}Installing linuxbrew apps...${norm}"
-    cd $HOME/dotfiles && brew bundle
-    echo -e "${bold}Installed linuxbrew apps!${norm}" && cd $HOME
-
     # Setup vim
     echo "${bold}Setting up vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
