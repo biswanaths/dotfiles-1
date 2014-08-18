@@ -21,7 +21,7 @@ if [ `uname` == "Linux" ]; then
         sleep 2
         echo -e "\nGo get some coffee, this might take a while..."
         cd ~/dotfiles
-        sudo apt-get install -y build-essential mercurial curl xclip libncurses5-dev autojump
+        sudo apt-get install -y build-essential mercurial curl xclip libncurses5-dev gnome-terminal autojump
         cd ~/Downloads/
 
         # Set up tomorrow-night for gnome-terminal
