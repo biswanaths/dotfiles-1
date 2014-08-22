@@ -153,7 +153,7 @@ xnoremap * :<C-u>call functions#general#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call functions#general#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
 
 " Literal word search
-nnoremap g/ /\<
+nnoremap g/ /\<\><left><left>
 
 " Black-hole register
 nnoremap <leader>x "_
