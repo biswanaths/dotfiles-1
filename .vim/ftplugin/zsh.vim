@@ -1,2 +1,1 @@
-set foldenable
-set foldmethod=marker
+setlocal foldenable foldmethod=marker

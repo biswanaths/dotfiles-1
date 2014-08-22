@@ -1,5 +1,4 @@
-set textwidth=900
-set nowrap
-set commentstring=#\ %s
-set foldenable
-set foldmethod=marker
+setlocal textwidth=900
+setlocal nowrap
+setlocal commentstring=#\ %s
+setlocal foldenable foldmethod=marker
