@@ -55,7 +55,7 @@ bindkey -M vicmd '^r' redo
 bindkey -M vicmd '~' vi-swap-case
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
-bindkey '^[OZ' reverse-menu-complete
+bindkey '^[[Z' reverse-menu-complete
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 bindkey '^l' clear-screen
