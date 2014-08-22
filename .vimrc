@@ -142,12 +142,6 @@ nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 nnoremap <leader>l :b#<CR>
 nnoremap <leader>L :vertical sb#<CR>
 
-" Make arrow keys useful
-nnoremap <left> :vertical resize +2<cr>
-nnoremap <right> :vertical resize -2<cr>
-nnoremap <up> :resize +2<cr>
-nnoremap <down> :resize -2<cr>
-
 " Visual star search
 xnoremap * :<C-u>call functions#general#VSetSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call functions#general#VSetSearch('?')<CR>/<C-r>=@/<CR><CR>
@@ -205,7 +199,7 @@ xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
 " Clang-complete {{{2
-let g:clang_library_path = "/usr/lib/llvm-3.3/lib/"
+let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
 
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
