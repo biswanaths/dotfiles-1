@@ -1,2 +1,5 @@
 #!/bin/sh
-brew rm vim; brew install vim --HEAD --disable-nls
+echo "-- Installing vim --"
+hg clone https://code.google.com/p/vim/ && cd vim
+./configure --with-features=huge --enable-multibyte --enable-pythoninterp --enable-perlinterp --prefix=/usr
+make && sudo make install
