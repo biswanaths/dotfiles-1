@@ -61,7 +61,7 @@ set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
-    set guioptions= lines=40 columns=140 guifont=UbuntuMono\ 13
+    set guioptions= lines=40 columns=140 guifont=FiraMono\ 12
 endif
 
 " Filetype Settings {{{1
@@ -199,7 +199,7 @@ xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
 " Clang-complete {{{2
-let g:clang_library_path = "/usr/lib/llvm-3.5/lib/libclang.so.1"
+let g:clang_library_path = "/usr/lib/llvm-3.5/lib"
 
 " Jedi {{{2
 let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers, jedi#show_call_signatures] = [0, 0, 0, 0]

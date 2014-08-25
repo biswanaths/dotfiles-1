@@ -2,9 +2,9 @@
 function! functions#general#AStyleFormat()
     norm! mf
     if &filetype == 'c' || &filetype == 'cpp'
-        :%!astyle --mode=c
+        :%!clang-format-3.5
     elseif &filetype == 'java'
-        :%!astyle --mode=java
+        :%!clang-format-3.5
     endif
     norm! `fzz
 endfunction
