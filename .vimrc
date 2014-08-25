@@ -199,16 +199,16 @@ xnoremap <leader>t :Tabularize<space>/
 nnoremap <leader>t :Tabularize<space>/
 
 " Clang-complete {{{2
-let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
+let g:clang_library_path = "/usr/lib/llvm-3.5/lib/libclang.so.1"
 
 " Jedi {{{2
-let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers] = [0, 0, 0]
+let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers, jedi#show_call_signatures] = [0, 0, 0, 0]
 
 " Commands {{{1
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
-autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
 autocmd! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
+autocmd! Bufread,BufWrite syslog set ft=messages
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
