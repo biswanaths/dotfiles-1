@@ -5,7 +5,7 @@ alias c="clear"
 alias cp="cp -vi"
 alias mv="mv -vi"
 alias rm="rm -v"
-alias curl="/usr/local/Cellar/curl/7.37.1/bin/curl"
+alias curl="/usr/local/Cellar/curl/7.37.1_1/bin/curl"
 alias irc="weechat-curses"
 
 # Fasd Aliases
