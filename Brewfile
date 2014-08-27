@@ -4,7 +4,7 @@ install ag
 install aspell
 install astyle
 install autoconf
-install autojump
+install fasd
 install automake
 install bash
 install coreutils
