@@ -4,9 +4,7 @@ let b:dispatch = 'clang %'
 setlocal makeprg=clang\ %
 
 " General
-setlocal foldmethod=syntax
-setlocal nofoldenable
+setlocal nofoldenable foldmethod=syntax
 setlocal commentstring=//\ %s
 setlocal textwidth=80
-setlocal equalprg=astyle\ --mode=c
 command! -nargs=0 Format call self#AStyleFormat()
