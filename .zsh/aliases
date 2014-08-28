@@ -28,6 +28,7 @@ alias gst="git status"
 alias gcopy="git log -n 1 | head -n 1 | cut -d ' ' -f2 | tr -d '\n' | xclip -sel clip && echo 'Copied `xclip -o -selection clipboard 2>/dev/null`'"
 
 # Edit stuff
+alias e=$EDITOR
 alias vi="vim"
 alias vconf="vim ~/dotfiles/.vimrc"
 alias tconf="vim ~/dotfiles/.tmux.conf"
