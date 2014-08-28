@@ -9,6 +9,7 @@ git clone https://github.com/AndrewRadev/splitjoin.vim
 git clone https://github.com/davidhalter/jedi-vim
 git clone https://github.com/godlygeek/tabular
 git clone https://github.com/mattn/emmet-vim
+git clone https://github.com/qstrahl/vim-dentures.git
 git clone https://github.com/Rip-Rip/clang_complete
 git clone https://github.com/tommcdo/vim-exchange
 git clone https://github.com/tpope/vim-commentary
