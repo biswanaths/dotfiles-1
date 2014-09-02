@@ -208,7 +208,6 @@ let [jedi#auto_vim_configuration, jedi#popup_on_dot, jedi#use_tabs_not_buffers, 
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
 autocmd! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
-autocmd! Bufread,BufWrite syslog set ft=messages | setlocal nomodifiable
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
