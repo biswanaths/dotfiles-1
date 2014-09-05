@@ -1,0 +1,1 @@
+syntax keyword vimOption contained breakindent breakindentopt
