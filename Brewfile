@@ -1,4 +1,5 @@
 update
+tap homebrew/dupes
 install ag
 install aspell
 install astyle
@@ -8,6 +9,7 @@ install ctags
 install curl
 install fasd
 install git --without-completions --with-brewed-curl --with-brewed-openssl --with-pcre
+install grep
 install reattach-to-user-namespace
 install ruby-install
 install tmux
