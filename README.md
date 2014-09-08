@@ -9,7 +9,5 @@ to suit others.
 ![Vim](http://cl.ly/XPPx/dotfiles.png "Vim tmux demo")
 
 ## Branches
-I "organize" my config files for Linux on a separate branch.
-
-Check it out (pardon the pun)
-[here](https://github.com/ajh17/dotfiles/tree/linux-branch).
+I "organize" my config files for Linux on a separate branch.  Check it out
+(pardon the pun) [here](https://github.com/ajh17/dotfiles/tree/linux-branch).
