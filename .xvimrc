@@ -6,7 +6,6 @@ set smartcase
 set nowrap
 set wrapscan
 set laststatus=0
-set gdefault
 
 " Use backspace for %
 nmap <BS> %
