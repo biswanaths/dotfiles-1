@@ -58,7 +58,7 @@ set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
-    set guioptions= lines=40 columns=140 guifont=Inconsolata-g:h13
+    set guioptions= lines=40 columns=140 guifont=FiraMono:h13
 endif
 
 " Filetype Settings {{{1
@@ -177,8 +177,7 @@ nnoremap <leader>F :VFMArgs<CR>
 " Dispatch {{{2
 nnoremap d<space> :Dispatch<space>
 nnoremap d<CR> :Dispatch<CR>
-nnoremap m<CR> :make<CR>
-nnoremap M<CR> :Make<CR>
+nnoremap m<CR> :Make<CR>
 
 " Fugitive {{{2
 nnoremap <leader>ga :Git add --all .<CR>:Gcommit<CR>
