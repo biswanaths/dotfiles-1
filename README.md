@@ -11,5 +11,5 @@ to suit others.
 ## Branches
 I "organize" my config files for Linux on a separate branch.
 
-Check out (pardon the pun) my
-[Linux](https://github.com/ajh17/dotfiles/tree/linux-branch) branch instead.
+Check it out (pardon the pun)
+[here](https://github.com/ajh17/dotfiles/tree/linux-branch).
