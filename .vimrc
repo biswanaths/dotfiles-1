@@ -137,12 +137,6 @@ nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 
-" Make arrow keys useful
-nnoremap <left> :vertical resize +2 <CR>
-nnoremap <right> :vertical resize -2 <CR>
-nnoremap <up> :resize +2 <CR>
-nnoremap <down> :resize -2 <CR>
-
 " Literal word search
 nnoremap g/ /\<\><left><left>
 
