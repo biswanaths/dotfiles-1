@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 bold=`tput bold`
@@ -30,7 +29,7 @@ if [ `uname` == "Darwin" ]; then
     brew bundle $HOME/dotfiles/
     echo -e "\n${bold}Done installing homebrew apps!"
 
-    echo -e "\n${bold}Setting up OS X defaults tricks...${norm}"
+    echo -e "\n${bold}Setting up OS X defaults...${norm}"
     defaults write com.apple.Finder QLEnableTextSelection -bool true
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
     defaults write NSGlobalDomain KeyRepeat -int 0
@@ -56,6 +55,7 @@ if [ `uname` == "Darwin" ]; then
     /bin/ln -sFv ~/dotfiles/.zsh
     /bin/ln -sfv ~/dotfiles/.zshrc
     /bin/ln -sfv ~/dotfiles/.zshenv
+    cd ~/dotfiles && git submodule update --init --recursive && cd $HOME
 
     # Tmux
     echo "${bold}Linking tmux...${norm}"
