@@ -58,7 +58,7 @@ set undodir=~/.vim/backup/undo/
 
 " GUI Settings {{{1
 if has("gui_running")
-    set guioptions= lines=40 columns=140 guifont=FiraMono:h13
+    set guioptions= lines=40 columns=140 guifont=FiraMono:h12
 endif
 
 " Filetype Settings {{{1
