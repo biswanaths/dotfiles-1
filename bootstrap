@@ -35,10 +35,6 @@ if [ `uname` == "Darwin" ]; then
     defaults write NSGlobalDomain KeyRepeat -int 0
     defaults write com.apple.dock expose-animation-duration -float 0.1
 
-    # Slate
-    echo "${bold}Linking slate...${norm}"
-    /bin/ln -sfv ~/dotfiles/.slate $HOME
-
     # Vim
     echo "${bold}Linking vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
