@@ -47,5 +47,5 @@ alias muxd="tmuxinator start default"
 alias pgrep="pgrep -l"
 alias tat="tmux att"
 alias swi="xcrun swift -i"
-alias upd="brew update --verbose; brew outdated; brew upgrade --verbose"
+alias upd="brew update --verbose; brew outdated; brew upgrade"
 # vim: ft=zsh
