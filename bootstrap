@@ -35,6 +35,9 @@ if [ `uname` == "Darwin" ]; then
     defaults write NSGlobalDomain KeyRepeat -int 0
     defaults write com.apple.dock expose-animation-duration -float 0.1
 
+    # Link iCloud Drive to $HOME for easy access.
+    /bin/ln -sFv ~/Library/Mobile\ Documents/com-apple~CloudDocs ~/iCloudDrive
+
     # Vim
     echo "${bold}Linking vim...${norm}"
     /bin/ln -sfv ~/dotfiles/.vimrc $HOME
