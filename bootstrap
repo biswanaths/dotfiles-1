@@ -19,24 +19,30 @@ if [ `uname` == "Darwin" ]; then
     echo -e "${bold}Checking if Homebrew is installed...${norm}"
     if [ ! -x /usr/local/bin/brew ]; then
         echo -e "${bold}\nHomebrew not installed. Installing it now...${norm}"
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
         echo -e "Homebrew is already installed."
     fi
 
     # Install homebrew apps
     echo -e "\n${bold}Installing homebrew apps (Go get a coffee)...${norm}"
-    brew bundle $HOME/dotfiles/
+    brew install ag aspell fasd chruby ruby-install reattach-to-user-namespace tmux
+    brew install git --without-completions --with-pcre --with-brewed-curl --with-brewed-openssl
+    brew install grep --default-names
+    brew install python python3
+    brew install vim --disable-nls --without-ruby --override-system-vi
+    brew install weechat --with-aspell --with-lua --with-perl --with-python --with-ruby
     echo -e "\n${bold}Done installing homebrew apps!"
 
     echo -e "\n${bold}Setting up OS X defaults...${norm}"
+    mkdir $HOME/.cache
     defaults write com.apple.Finder QLEnableTextSelection -bool true
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
     defaults write NSGlobalDomain KeyRepeat -int 0
-    defaults write com.apple.dock expose-animation-duration -float 0.1
+    defaults write com.apple.dock expose-animation-duration -float 0.15
 
     # Link iCloud Drive to $HOME for easy access.
-    /bin/ln -sFv ~/Library/Mobile\ Documents/com-apple~CloudDocs ~/iCloudDrive
+    /bin/ln -sFv ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloudDrive
 
     # Vim
     echo "${bold}Linking vim...${norm}"
