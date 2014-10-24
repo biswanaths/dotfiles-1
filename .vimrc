@@ -85,10 +85,10 @@ nnoremap <silent> <C-k> <C-w><C-k>
 nnoremap <silent> <C-l> <C-w><C-l>
 
 " Move by display lines by default
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap gj j
 nnoremap gk k
-nnoremap j gj
-nnoremap k gk
 
 " Expand buffer list similar to ## for the argslist
 cnoremap %% <C-R>=functions#general#bufferList()<CR>
