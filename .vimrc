@@ -24,7 +24,7 @@ set nostartofline
 set number relativenumber
 set path=.,**
 set showcmd showbreak=↪
-set splitbelow splitright switchbuf=useopen
+set splitbelow splitright switchbuf=useopen,usetab
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
 set virtualedit=block
@@ -50,7 +50,7 @@ set statusline+=\ \|\ %{&fenc}\ \|\ %{&ff}\ \|\ LN\ %1.7l:%1.7c
 set wildignore+=.hg,.git,.svn,*.pyc,*.spl,*.o,*.out,*.DS_Store,*.class,*.manifest,*~,#*#,%*
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,*.xc*,*.pbxproj,*.xcodeproj/**,*.xcassets/**
 
-" History, Backup and Undo settings {{{1
+" History, Backup, Undo {{{1
 set history=10000
 set backup undofile noswapfile
 set backupdir=~/.vim/backup/
@@ -78,7 +78,7 @@ nmap <BS> %
 xmap <BS> %
 omap <BS> %
 
-" Window switching
+" Switch between splits
 nnoremap <silent> <C-h> <C-w><C-h>
 nnoremap <silent> <C-j> <C-w><C-j>
 nnoremap <silent> <C-k> <C-w><C-k>
@@ -87,8 +87,8 @@ nnoremap <silent> <C-l> <C-w><C-l>
 " Move by display lines by default
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap gj j
-nnoremap gk k
+nnoremap <expr> gj (v:count == 0 ? 'j' : 'gj')
+nnoremap <expr> gk (v:count == 0 ? 'k' : 'gk')
 
 " Expand buffer list similar to ## for the argslist
 cnoremap %% <C-R>=functions#general#bufferList()<CR>
@@ -101,7 +101,7 @@ nnoremap <CR> za
 xnoremap < <gv
 xnoremap > >gv
 
-" Visual star search
+" Use * and # in visual mode
 xnoremap * :<C-u>call functions#general#VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call functions#general#VSetSearch('?')<CR>/<C-R>=@/<CR><CR>
 
@@ -113,14 +113,14 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap g<C-]> g<C-]>zz
 
-" Selection mappings
+" Select entire line without any trailing or leading spaces
 nnoremap <leader>v ^vg_
 
 " Autoclose
 inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 
-" Mappings for opening and closing the qf list
+" Open and close the qf list
 nnoremap <leader>c :copen<CR>
 nnoremap <leader>q :cclose<CR>
 
@@ -133,7 +133,7 @@ nnoremap <leader>ef m`gg=G``
 " Remove trailing whitespace
 nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 
-" Buffers
+" Buffer switching
 nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 
@@ -148,7 +148,7 @@ xnoremap <leader>x "_
 nnoremap <leader>s :grep<space>
 nnoremap <leader>V :vimgrep<space>
 
-" Selection of mappings from unimpaired.vim
+" Some mappings from unimpaired.vim
 nnoremap [a :prev<CR>
 nnoremap ]a :next<CR>
 nnoremap [b :bprev<CR>
