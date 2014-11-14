@@ -12,3 +12,4 @@ fish/generated_completions/
 .vim/session/*
 .vim/haskellmode.config
 .vim/.netrwhist
+tags
