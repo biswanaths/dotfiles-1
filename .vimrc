@@ -24,15 +24,16 @@ set nostartofline
 set number relativenumber
 set path=.,**
 set showcmd showbreak=↪
-set splitbelow splitright switchbuf=useopen,usetab
+set splitbelow splitright
+set switchbuf=useopen,usetab
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
 set virtualedit=block
 set wildmenu wildcharm=<C-z>
 
 " Search Settings {{{1
-set incsearch hlsearch
-set smartcase ignorecase
+set hlsearch incsearch
+set ignorecase smartcase
 set showmatch matchtime=2
 set grepprg=ag\ --nogroup\ --nocolor
 
@@ -204,6 +205,5 @@ autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
 autocmd! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
-command! -narg=1 -complete=help H h <args> <bar> only <bar> setlocal ls=0
 command! BD silent e# | bd#
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
