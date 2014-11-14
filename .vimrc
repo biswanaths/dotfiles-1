@@ -137,16 +137,14 @@ nnoremap <leader>W m`:%s/\s\+$//<CR>:let @/=''<CR>``
 nnoremap <expr> <leader>b functions#general#bufNav("horizontal")
 nnoremap <expr> <leader>B functions#general#bufNav("vertical")
 
-" Literal word search
-nnoremap g/ /\<\><left><left>
-
-" Black-hole register
+" Into the black hole
 nnoremap <leader>x "_
 xnoremap <leader>x "_
 
-" Quick  grepping
+" Search mappings
 nnoremap <leader>s :grep<space>
 nnoremap <leader>V :vimgrep<space>
+nnoremap g/ /\<\><left><left>
 
 " Some mappings from unimpaired.vim
 nnoremap [a :prev<CR>
