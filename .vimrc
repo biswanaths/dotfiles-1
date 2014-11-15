@@ -28,7 +28,6 @@ set splitbelow splitright
 set switchbuf=useopen,usetab
 set termencoding=utf-8 fileencoding=utf-8 fileformats=unix,dos,mac
 set ttimeoutlen=50
-set virtualedit=block
 set wildmenu wildcharm=<C-z>
 
 " Search Settings {{{1
