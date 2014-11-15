@@ -38,7 +38,7 @@ set showmatch matchtime=2
 set grepprg=ag\ --nogroup\ --nocolor
 
 " Indent and Fold Settings {{{1
-set softtabstop=4 shiftwidth=4
+set softtabstop=4 shiftwidth=4 shiftround
 set smarttab expandtab
 set autoindent breakindent breakindentopt=sbr
 set nofoldenable
