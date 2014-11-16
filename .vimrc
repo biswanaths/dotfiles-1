@@ -144,17 +144,6 @@ nnoremap <leader>s :grep<space>
 nnoremap <leader>V :vimgrep<space>
 nnoremap g/ /\<\><left><left>
 
-" Some mappings from unimpaired.vim
-nnoremap [a :prev<CR>
-nnoremap ]a :next<CR>
-nnoremap [b :bprev<CR>
-nnoremap ]b :bnext<CR>
-nnoremap [q  :cprevious<CR>
-nnoremap ]q  :cnext<CR>
-nnoremap col :set list!<CR>
-nnoremap coh :set hlsearch!<CR>
-nnoremap cos :set spell!<CR>
-
 " Plugin Settings and Mappings {{{1
 " Netrw {{{2
 let [netrw_winsize, netrw_banner, netrw_liststyle] = [20, 0, 3]
