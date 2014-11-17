@@ -154,6 +154,9 @@ let [user_emmet_expandabbr_key, use_emmet_complete_tag, user_emmet_mode] = ["<c-
 " Vimple {{{2
 let g:vimple_init_vars = 0
 
+" Fist {{{2
+let [fist_in_private, fist_anonymously] = [0, 0]
+
 " VimFindsMe/VFM {{{2
 let vfm_use_split = 1
 nnoremap <leader>f :VFMEdit<CR>
