@@ -14,10 +14,6 @@ vmap <BS> %
 " Make Y behave like C or D
 nmap Y y$
 
-" Center text when searching
-nmap n nzz
-nmap N Nzz
-
 " Windows
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
