@@ -189,7 +189,7 @@ let [jedi#auto_vim_configuration, jedi#popup_on_dot] = [0, 0]
 autocmd! CmdWinEnter * nnoremap <buffer> <CR> <CR>
 autocmd! QuickFixCmdPost * copen
 autocmd! VimEnter * call functions#cursorshape#CursorShapeMode()
-autocmd! BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe 'norm! g`"zz' | endif
+autocmd! BufReadPost * normal! g`"zz
 command! -bang -nargs=* -range=% -complete=file W <line1>,<line2> w<bang> <args>
 command! BD silent e# | bd#
 command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
